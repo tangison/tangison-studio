@@ -79,7 +79,7 @@ export function InsightsPage() {
       >
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
-            <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-rust-signal block mb-6">
+            <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-signal-teal block mb-6">
               INSIGHTS
             </span>
             <h1 className="font-cabinet text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-6">
@@ -94,7 +94,7 @@ export function InsightsPage() {
 
       {/* Section 2: Route Cards */}
       <section
-        className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-warm-gray"
+        className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone"
         aria-label="Explore insights"
       >
         <div className="max-w-[1400px] mx-auto">
@@ -123,16 +123,16 @@ export function InsightsPage() {
               >
                 <Link
                   href={card.href}
-                  className="group block border border-black/[0.06] bg-warm-white p-8 md:p-10 lg:p-12 h-full hover:border-black/[0.1] transition-all duration-500"
+                  className="group block border border-black/[0.06] bg-signal-white p-8 md:p-10 lg:p-12 h-full hover:border-black/[0.1] transition-all duration-500"
                 >
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 border border-black/[0.06] flex items-center justify-center group-hover:border-rust-signal/30 transition-colors duration-500">
-                      <card.icon className="w-5 h-5 text-ink-muted group-hover:text-rust-signal transition-colors duration-300" />
+                    <div className="w-12 h-12 border border-black/[0.06] flex items-center justify-center group-hover:border-signal-teal/30 transition-colors duration-500">
+                      <card.icon className="w-5 h-5 text-ink-muted group-hover:text-signal-teal transition-colors duration-300" />
                     </div>
-                    <ArrowUpRight className="w-5 h-5 text-ink-muted/30 group-hover:text-rust-signal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                    <ArrowUpRight className="w-5 h-5 text-ink-muted/30 group-hover:text-signal-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                   </div>
 
-                  <h3 className="font-cabinet text-2xl md:text-3xl font-bold tracking-tight text-ink mb-4 group-hover:text-rust-signal transition-colors duration-300">
+                  <h3 className="font-cabinet text-2xl md:text-3xl font-bold tracking-tight text-ink mb-4 group-hover:text-signal-teal transition-colors duration-300">
                     {card.title}
                   </h3>
 
@@ -140,7 +140,7 @@ export function InsightsPage() {
                     {card.description}
                   </p>
 
-                  <div className="flex items-center gap-2 mt-8 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-rust-signal transition-colors duration-300">
+                  <div className="flex items-center gap-2 mt-8 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-signal-teal transition-colors duration-300">
                     <span>Read</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
@@ -180,7 +180,7 @@ export function InsightsPage() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
-                <div className="group border border-black/[0.06] bg-warm-gray/40 p-6 md:p-8 h-full flex flex-col hover:border-black/[0.1] transition-all duration-500">
+                <div className="group border border-black/[0.06] bg-skeleton-bone/40 p-6 md:p-8 h-full flex flex-col hover:border-black/[0.1] transition-all duration-500">
                   <h3 className="font-cabinet text-xl font-bold tracking-tight text-ink mb-3">
                     {article.title}
                   </h3>
@@ -191,7 +191,7 @@ export function InsightsPage() {
 
                   {article.comingSoon && (
                     <div className="inline-flex self-start">
-                      <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-ink-muted bg-warm-gray px-3 py-1.5">
+                      <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-ink-muted bg-skeleton-bone px-3 py-1.5">
                         Coming Soon
                       </span>
                     </div>
@@ -205,7 +205,7 @@ export function InsightsPage() {
 
       {/* Section: Featured Resources */}
       <section
-        className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-warm-gray"
+        className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone"
         aria-label="Featured resources"
       >
         <div className="max-w-[1400px] mx-auto">
@@ -221,7 +221,7 @@ export function InsightsPage() {
             </motion.h2>
             <Link
               href="/insights/resources"
-              className="hidden md:inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-rust-signal transition-colors duration-300 group"
+              className="hidden md:inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300 group"
             >
               View All
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -259,18 +259,18 @@ export function InsightsPage() {
               >
                 <Link
                   href="/insights/resources"
-                  className="group block border border-black/[0.06] bg-warm-white p-6 md:p-8 h-full hover:border-black/[0.1] transition-all duration-500"
+                  className="group block border border-black/[0.06] bg-signal-white p-6 md:p-8 h-full hover:border-black/[0.1] transition-all duration-500"
                 >
-                  <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-rust-signal mb-4 block">
+                  <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-signal-teal mb-4 block">
                     {resource.category}
                   </span>
-                  <h3 className="font-cabinet text-xl font-bold tracking-tight text-ink mb-3 group-hover:text-rust-signal transition-colors duration-300">
+                  <h3 className="font-cabinet text-xl font-bold tracking-tight text-ink mb-3 group-hover:text-signal-teal transition-colors duration-300">
                     {resource.title}
                   </h3>
                   <p className="font-satoshi text-ink-muted text-sm leading-relaxed">
                     {resource.summary}
                   </p>
-                  <div className="flex items-center gap-2 mt-6 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-rust-signal transition-colors duration-300">
+                  <div className="flex items-center gap-2 mt-6 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-signal-teal transition-colors duration-300">
                     <span>Download</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
@@ -283,7 +283,7 @@ export function InsightsPage() {
           <div className="md:hidden mt-8 text-center">
             <Link
               href="/insights/resources"
-              className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-rust-signal transition-colors duration-300 group"
+              className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300 group"
             >
               View All Resources
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -305,7 +305,7 @@ export function InsightsPage() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
             <div
-              className="w-12 h-[2px] bg-rust-signal/50 mx-auto mb-8"
+              className="w-12 h-[2px] bg-signal-teal/50 mx-auto mb-8"
               aria-hidden="true"
             />
             <h2 className="font-cabinet text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-skeleton-bone mb-6">

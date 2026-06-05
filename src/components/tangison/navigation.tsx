@@ -6,24 +6,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
-/* ─── Hero Theme Map ─────────────────────────────────────────── */
-
-/**
- * Determines whether the nav should use light-on-dark or dark-on-light
- * styling when the page is at the top (not scrolled).
- * Only pages with a dark hero section need "dark" — everything else
- * defaults to "light" so the logo and links are visible against the
- * white/warm-white page background.
- */
-function getHeroTheme(pathname: string): "dark" | "light" {
-  // Only the home page has a dark (atlantic-black) hero
-  if (pathname === "/") return "dark";
-  return "light";
-}
-
 /* ─── Navigation Data ─────────────────────────────────────────── */
 
-interface SubItem {
+interface MegaSubItem {
   label: string;
   href: string;
   description?: string;
@@ -32,53 +17,54 @@ interface SubItem {
 interface NavItem {
   label: string;
   href: string;
-  children?: SubItem[];
+  children?: MegaSubItem[];
+  megaImage?: string;
+  megaImageAlt?: string;
+  megaTagline?: string;
 }
 
 const navItems: NavItem[] = [
   {
+    label: "Work",
+    href: "/work",
+    children: [
+      { label: "Case Studies", href: "/work#case-studies", description: "Results from the field" },
+      { label: "By Industry", href: "/work#industries", description: "Sector-specific outcomes" },
+    ],
+    megaImage: "/images/gallery/concrete-glass-architecture-blue-sky.webp",
+    megaImageAlt: "Architectural project showcasing Tangison Studio design work",
+    megaTagline: "Work that moves ideas forward.",
+  },
+  {
     label: "Services",
     href: "/services",
     children: [
-      { label: "Applied AI", href: "/services/applied-ai", description: "Custom AI solutions for real-world problems" },
-      { label: "AI Infrastructure", href: "/services/infrastructure", description: "Scalable systems built for production" },
-      { label: "AI Consulting", href: "/services/consulting", description: "Strategic guidance for AI adoption" },
+      { label: "Website Design", href: "/services#website-design", description: "Intentional interfaces" },
+      { label: "Website Development", href: "/services#website-development", description: "Engineered to perform" },
+      { label: "Application Design", href: "/services#application-design", description: "Complex systems, clear UX" },
+      { label: "Product Design", href: "/services#product-design", description: "End-to-end product thinking" },
+      { label: "Brand Systems", href: "/services#brand-systems", description: "Cohesive visual identity" },
+      { label: "Design Systems", href: "/services#design-systems", description: "Scalable component architecture" },
+      { label: "Creative Direction", href: "/services#creative-direction", description: "Strategic visual leadership" },
     ],
+    megaImage: "/images/gallery/desk-succulent-sketch-pencil.webp",
+    megaImageAlt: "Design workspace with sketch materials for creative direction",
+    megaTagline: "Seven disciplines. One studio.",
   },
   {
-    label: "Products",
-    href: "/products",
-    children: [
-      { label: "SkillsCamp", href: "/products/skillscamp", description: "Hands-on AI skill development" },
-      { label: "Tangison Agent", href: "/products/tangison-agent", description: "Autonomous AI operations platform" },
-      { label: "SMEFrog Academy", href: "/products/smefrog-academy", description: "AI education for growing businesses" },
-      { label: "Feorm", href: "/products/feorm", description: "Intelligent data orchestration" },
-    ],
-  },
-  {
-    label: "Research",
-    href: "/research",
-    children: [
-      { label: "Projects", href: "/research/projects", description: "Active research initiatives" },
-      { label: "Open Source", href: "/research/open-source", description: "Tools and frameworks we share" },
-    ],
-  },
-  {
-    label: "Insights",
-    href: "/insights",
-    children: [
-      { label: "Articles", href: "/insights/articles", description: "Technical writing and analysis" },
-      { label: "Case Studies", href: "/insights/case-studies", description: "Results from the field" },
-      { label: "Resources", href: "/insights/resources", description: "AI guides and frameworks" },
-    ],
+    label: "Process",
+    href: "/process",
   },
   {
     label: "About",
     href: "/about",
     children: [
-      { label: "Company", href: "/about", description: "Who we are and what drives us" },
-      { label: "Brand Guidelines", href: "/brand", description: "Visual and verbal identity" },
+      { label: "The Studio", href: "/about", description: "Who we are" },
+      { label: "Brand Identity", href: "/brand", description: "Visual and verbal system" },
     ],
+    megaImage: "/images/gallery/desert-glass-concrete-landscape.webp",
+    megaImageAlt: "Desert architecture reflecting the Tangison Studio design philosophy",
+    megaTagline: "Designing from Windhoek.",
   },
   {
     label: "Contact",
@@ -86,19 +72,18 @@ const navItems: NavItem[] = [
   },
 ];
 
-/* ─── Hamburger Icon (two-line → X) ───────────────────────────── */
+/* ─── Hamburger Icon ──────────────────────────────────────────── */
 
-function HamburgerIcon({ isOpen, useDarkStyle }: { isOpen: boolean; useDarkStyle: boolean }) {
-  const color = useDarkStyle ? "bg-ink" : "bg-warm-white";
+function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
   return (
     <div className="w-5 h-5 flex flex-col justify-center gap-[5px] relative">
       <span
-        className={`block w-full h-[1.5px] ${color} transition-all duration-300 origin-center ${
+        className={`block w-full h-[1.5px] bg-ink transition-all duration-300 origin-center ${
           isOpen ? "rotate-45 translate-y-[3.25px]" : ""
         }`}
       />
       <span
-        className={`block w-full h-[1.5px] ${color} transition-all duration-300 origin-center ${
+        className={`block w-full h-[1.5px] bg-ink transition-all duration-300 origin-center ${
           isOpen ? "-rotate-45 -translate-y-[3.25px]" : ""
         }`}
       />
@@ -106,15 +91,11 @@ function HamburgerIcon({ isOpen, useDarkStyle }: { isOpen: boolean; useDarkStyle
   );
 }
 
-/* ─── Desktop Dropdown ────────────────────────────────────────── */
+/* ─── Desktop Mega-Menu Dropdown ──────────────────────────────── */
 
-function DesktopDropdown({ item, pathname, useDarkStyle }: { item: NavItem; pathname: string; useDarkStyle: boolean }) {
+function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const textActive = useDarkStyle ? "text-ink" : "text-warm-white";
-  const textMuted = useDarkStyle ? "text-ink-muted" : "text-white/50";
-  const textHover = useDarkStyle ? "hover:text-ink" : "hover:text-warm-white";
 
   const handleMouseEnter = useCallback(() => {
     if (timeoutRef.current) {
@@ -130,7 +111,6 @@ function DesktopDropdown({ item, pathname, useDarkStyle }: { item: NavItem; path
     }, 150);
   }, []);
 
-  // Clean up timeout on unmount
   useEffect(() => {
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -147,64 +127,94 @@ function DesktopDropdown({ item, pathname, useDarkStyle }: { item: NavItem; path
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Top-level link */}
       <Link
         href={item.href}
         className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 ${
           isActive
-            ? textActive
-            : `${textMuted} ${textHover}`
+            ? "text-ink"
+            : "text-ink-muted hover:text-ink"
         }`}
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
         {item.label}
-        {/* Underline indicator */}
         <span
           className={`absolute -bottom-1 left-0 h-[1.5px] transition-all duration-300 ease-out ${
             isActive
-              ? "w-full bg-rust-signal"
-              : "w-0 group-hover:w-full bg-rust-signal/60"
+              ? "w-full bg-signal-teal"
+              : "w-0 group-hover:w-full bg-signal-teal/60"
           }`}
         />
       </Link>
 
-      {/* Dropdown panel */}
       <AnimatePresence>
         {isOpen && item.children && (
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed left-0 right-0 top-[72px] z-50"
             role="menu"
             aria-label={`${item.label} submenu`}
           >
-            <div className="bg-warm-white border border-black/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.06)] min-w-[240px] py-2">
-              {item.children.map((child) => {
-                const isChildActive = pathname === child.href;
-                return (
-                  <Link
-                    key={child.href}
-                    href={child.href}
-                    className={`block px-5 py-3 font-jetbrains text-[10px] uppercase tracking-[0.15em] transition-all duration-200 ${
-                      isChildActive
-                        ? "text-ink bg-warm-gray"
-                        : "text-ink-muted hover:text-ink hover:bg-warm-gray"
-                    }`}
-                    role="menuitem"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <span className="block">{child.label}</span>
-                    {child.description && (
-                      <span className="block text-[9px] tracking-[0.1em] normal-case mt-0.5 text-ink-muted/60 font-jetbrains">
-                        {child.description}
-                      </span>
-                    )}
-                  </Link>
-                );
-              })}
+            <div className="bg-signal-white border-b border-black/[0.06]">
+              {/* Teal accent line */}
+              <div className="h-[2px] bg-signal-teal" aria-hidden="true" />
+
+              <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-8 md:py-10">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+                  {/* Left: Editorial image */}
+                  {item.megaImage && (
+                    <div className="md:col-span-5 relative h-48 md:h-64 overflow-hidden">
+                      <Image
+                        src={item.megaImage}
+                        alt={item.megaImageAlt || ""}
+                        className="object-cover cinematic-image"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 40vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-signal-white/20" />
+                      {item.megaTagline && (
+                        <p className="absolute bottom-4 left-4 font-cabinet text-lg md:text-xl font-bold text-signal-white tracking-tight drop-shadow-lg">
+                          {item.megaTagline}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Right: Links */}
+                  <div className={item.megaImage ? "md:col-span-7" : "md:col-span-12"}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1">
+                      {item.children.map((child) => {
+                        const isChildActive = pathname === child.href;
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className={`block px-3 py-3 transition-all duration-200 ${
+                              isChildActive
+                                ? "text-ink bg-ocean-mist"
+                                : "text-ink-muted hover:text-ink hover:bg-ocean-mist/50"
+                            }`}
+                            role="menuitem"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <span className="font-cabinet text-base md:text-lg font-bold tracking-tight">
+                              {child.label}
+                            </span>
+                            {child.description && (
+                              <span className="block font-satoshi text-sm text-ink-muted/60 mt-0.5">
+                                {child.description}
+                              </span>
+                            )}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
@@ -231,7 +241,6 @@ function MobileAccordionItem({
 
   return (
     <div>
-      {/* Top-level item */}
       {hasChildren ? (
         <button
           className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 flex items-center gap-3 ${
@@ -256,7 +265,7 @@ function MobileAccordionItem({
           onClick={onClose}
           className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 block ${
             item.href === "/contact"
-              ? "text-rust-signal hover:text-rust-signal/80"
+              ? "text-signal-teal hover:text-signal-teal-light"
               : isActive
               ? "text-ink"
               : "text-ink-muted hover:text-ink"
@@ -266,7 +275,6 @@ function MobileAccordionItem({
         </Link>
       )}
 
-      {/* Sub-items accordion */}
       <AnimatePresence initial={false}>
         {isExpanded && hasChildren && (
           <motion.div
@@ -277,7 +285,7 @@ function MobileAccordionItem({
             style={{ transformOrigin: "top" }}
             className="overflow-hidden"
           >
-            <div className="flex flex-col gap-2 pt-3 pl-4 border-l border-ink/10">
+            <div className="flex flex-col gap-2 pt-3 pl-4 border-l-2 border-signal-teal/30">
               {item.children!.map((child) => {
                 const isChildActive = pathname === child.href;
                 return (
@@ -285,7 +293,7 @@ function MobileAccordionItem({
                     key={child.href}
                     href={child.href}
                     onClick={onClose}
-                    className={`font-jetbrains text-[11px] uppercase tracking-[0.15em] transition-colors duration-200 py-1 ${
+                    className={`font-satoshi text-sm transition-colors duration-200 py-1 ${
                       isChildActive
                         ? "text-ink"
                         : "text-ink-muted hover:text-ink"
@@ -310,24 +318,15 @@ export function Navigation() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  // Determine hero theme based on current page
-  const heroTheme = getHeroTheme(pathname);
-
-  // When nav is scrolled (solid white bg) or mobile menu is open (white overlay),
-  // always use dark style. When transparent, use dark style only on light-hero pages.
-  const useDarkStyle = isScrolled || isMobileOpen || heroTheme === "light";
-
-  // Scroll-aware background change
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 60);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Check initial state
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Escape key handler + body overflow lock
   useEffect(() => {
     if (isMobileOpen) {
       document.body.style.overflow = "hidden";
@@ -349,14 +348,14 @@ export function Navigation() {
 
   return (
     <>
-      {/* ─── Desktop / Shared Nav Bar ─── */}
+      {/* Desktop / Shared Nav Bar */}
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 px-5 sm:px-6 md:px-12 py-4 md:py-5 flex justify-between items-center ${
           isScrolled
-            ? "bg-warm-white/90 border-b border-black/[0.06] py-3 md:py-4"
+            ? "bg-signal-white/90 border-b border-black/[0.06] py-3 md:py-4"
             : "bg-transparent"
         }`}
         style={{
@@ -368,32 +367,18 @@ export function Navigation() {
         role="navigation"
         aria-label="Main navigation"
       >
-        {/* TANGISON Logo — dedicated dark/white variants, cross-fade on theme change */}
+        {/* Logo — light variant */}
         <Link
           href="/"
-          className="relative h-10 md:h-14 flex items-center transition-opacity duration-300 hover:opacity-80"
-          aria-label="Tangison home"
+          className="relative h-10 md:h-12 flex items-center transition-opacity duration-300 hover:opacity-80"
+          aria-label="Tangison Studio home"
         >
-          {/* Dark logo (visible when useDarkStyle) */}
           <Image
-            src="/images/logo.webp"
-            alt="TANGISON"
+            src="/brand/logo-light.webp"
+            alt="TANGISON STUDIO"
             width={874}
             height={286}
-            className={`h-10 md:h-14 w-auto object-contain absolute inset-0 transition-opacity duration-500 ${
-              useDarkStyle ? "opacity-100" : "opacity-0"
-            }`}
-            priority
-          />
-          {/* White logo (visible when !useDarkStyle) */}
-          <Image
-            src="/images/logo-white.webp"
-            alt="TANGISON"
-            width={874}
-            height={286}
-            className={`h-10 md:h-14 w-auto object-contain transition-opacity duration-500 ${
-              useDarkStyle ? "opacity-0" : "opacity-100"
-            }`}
+            className="h-8 md:h-10 w-auto object-contain"
             priority
           />
         </Link>
@@ -402,26 +387,25 @@ export function Navigation() {
         <div className="hidden lg:flex items-center gap-7">
           {navItems.map((item) =>
             item.children ? (
-              <DesktopDropdown key={item.label} item={item} pathname={pathname} useDarkStyle={useDarkStyle} />
+              <DesktopDropdown key={item.label} item={item} pathname={pathname} />
             ) : (
               <Link
                 key={item.label}
                 href={item.href}
                 className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 ${
                   pathname === item.href
-                    ? (useDarkStyle ? "text-ink" : "text-warm-white")
+                    ? "text-ink"
                     : item.href === "/contact"
-                    ? "text-rust-signal hover:text-rust-signal/80"
-                    : (useDarkStyle ? "text-ink-muted hover:text-ink" : "text-white/50 hover:text-warm-white")
+                    ? "text-signal-teal hover:text-signal-teal-light"
+                    : "text-ink-muted hover:text-ink"
                 }`}
               >
                 {item.label}
-                {/* Underline indicator */}
                 <span
                   className={`absolute -bottom-1 left-0 h-[1.5px] transition-all duration-300 ease-out ${
                     pathname === item.href
-                      ? "w-full bg-rust-signal"
-                      : "w-0 group-hover:w-full bg-rust-signal/60"
+                      ? "w-full bg-signal-teal"
+                      : "w-0 group-hover:w-full bg-signal-teal/60"
                   }`}
                 />
               </Link>
@@ -429,18 +413,26 @@ export function Navigation() {
           )}
         </div>
 
+        {/* CTA Button */}
+        <Link
+          href="/contact"
+          className="hidden lg:inline-flex items-center gap-2 bg-signal-teal text-signal-white px-7 py-3.5 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300"
+        >
+          Let&apos;s Build →
+        </Link>
+
         {/* Mobile hamburger */}
         <button
-          className={`lg:hidden p-2 -mr-2 ${useDarkStyle ? "text-ink" : "text-warm-white"}`}
+          className="lg:hidden p-2 -mr-2 text-ink"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           aria-label={isMobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileOpen}
         >
-          <HamburgerIcon isOpen={isMobileOpen} useDarkStyle={useDarkStyle} />
+          <HamburgerIcon isOpen={isMobileOpen} />
         </button>
       </motion.nav>
 
-      {/* ─── Mobile Menu Overlay ─── */}
+      {/* Mobile Menu Overlay — Atlantic Black */}
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
@@ -448,13 +440,21 @@ export function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-warm-white flex flex-col"
+            className="fixed inset-0 z-40 bg-atlantic-black flex flex-col"
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
           >
-            {/* Spacer for nav bar height */}
-            <div className="h-16 md:h-20 shrink-0" />
+            {/* Close button */}
+            <div className="flex justify-end px-5 sm:px-6 pt-4 md:pt-5">
+              <button
+                onClick={() => setIsMobileOpen(false)}
+                className="text-skeleton-bone p-2 -mr-2"
+                aria-label="Close menu"
+              >
+                <HamburgerIcon isOpen={true} />
+              </button>
+            </div>
 
             {/* Centered nav links */}
             <div className="flex-1 flex flex-col items-center justify-center px-6">
@@ -472,24 +472,37 @@ export function Navigation() {
                     }}
                     className="w-full text-center"
                   >
-                    <MobileAccordionItem
-                      item={item}
-                      pathname={pathname}
-                      onClose={() => setIsMobileOpen(false)}
-                    />
+                    {/* Mobile links on dark bg */}
+                    {item.children ? (
+                      <MobileAccordionItemDark item={item} pathname={pathname} onClose={() => setIsMobileOpen(false)} />
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMobileOpen(false)}
+                        className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 block ${
+                          item.href === "/contact"
+                            ? "text-signal-teal hover:text-signal-teal-light"
+                            : pathname === item.href
+                            ? "text-skeleton-bone"
+                            : "text-fog-gray/60 hover:text-skeleton-bone"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
               </nav>
             </div>
 
-            {/* Bottom location tag */}
+            {/* Bottom tag */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}
               className="pb-8 text-center shrink-0"
             >
-              <span className="font-jetbrains text-[9px] text-ink-muted/40 uppercase tracking-[0.3em]">
+              <span className="font-jetbrains text-[9px] text-fog-gray/30 uppercase tracking-[0.3em]">
                 Windhoek, Namibia
               </span>
             </motion.div>
@@ -497,5 +510,77 @@ export function Navigation() {
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+/* ─── Mobile Accordion Item — Dark Variant ────────────────────── */
+
+function MobileAccordionItemDark({
+  item,
+  pathname,
+  onClose,
+}: {
+  item: NavItem;
+  pathname: string;
+  onClose: () => void;
+}) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const hasChildren = item.children && item.children.length > 0;
+  const isActive =
+    pathname === item.href || pathname.startsWith(item.href + "/");
+
+  return (
+    <div>
+      <button
+        className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 flex items-center gap-3 mx-auto ${
+          isActive ? "text-skeleton-bone" : "text-fog-gray/60 hover:text-skeleton-bone"
+        }`}
+        onClick={() => setIsExpanded(!isExpanded)}
+        aria-expanded={isExpanded}
+        aria-label={`${item.label} — ${isExpanded ? "collapse" : "expand"} submenu`}
+      >
+        {item.label}
+        <motion.span
+          animate={{ rotate: isExpanded ? 45 : 0 }}
+          transition={{ duration: 0.2 }}
+          className="font-jetbrains text-[12px] text-fog-gray/30 leading-none"
+        >
+          +
+        </motion.span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isExpanded && hasChildren && (
+          <motion.div
+            initial={{ opacity: 0, scaleY: 0 }}
+            animate={{ opacity: 1, scaleY: 1 }}
+            exit={{ opacity: 0, scaleY: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            style={{ transformOrigin: "top" }}
+            className="overflow-hidden"
+          >
+            <div className="flex flex-col gap-2 pt-3 pl-4 border-l-2 border-signal-teal/30">
+              {item.children!.map((child) => {
+                const isChildActive = pathname === child.href;
+                return (
+                  <Link
+                    key={child.href}
+                    href={child.href}
+                    onClick={onClose}
+                    className={`font-satoshi text-sm transition-colors duration-200 py-1 ${
+                      isChildActive
+                        ? "text-skeleton-bone"
+                        : "text-fog-gray/50 hover:text-skeleton-bone"
+                    }`}
+                  >
+                    {child.label}
+                  </Link>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

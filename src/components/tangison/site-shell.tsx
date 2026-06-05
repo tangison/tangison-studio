@@ -13,10 +13,10 @@ export function SiteShell({
   footerSlot?: React.ReactNode;
 }) {
   return (
-    <div className="relative min-h-screen flex flex-col bg-warm-white">
+    <div className="relative min-h-screen flex flex-col bg-skeleton-bone">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-[9999] focus:bg-rust-signal focus:text-warm-white focus:px-4 focus:py-2 focus:font-jetbrains focus:text-xs focus:uppercase focus:tracking-widest"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-[9999] focus:bg-signal-teal focus:text-signal-white focus:px-4 focus:py-2 focus:font-jetbrains focus:text-xs focus:uppercase focus:tracking-widest"
       >
         Skip to main content
       </a>

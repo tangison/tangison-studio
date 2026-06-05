@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
+import { BrandPage } from "./page-client";
 
 export const metadata: Metadata = {
-  title: "Brand Guidelines | TANGISON",
+  title: "Brand Identity | TANGISON STUDIO",
   description:
-    "TANGISON brand system for partners and designers. Access our logo, color palette, typography guidelines, voice and tone standards for consistent brand representation.",
+    "The Tangison Studio brand system — identity mark, wordmark, color system, typography, motion, and design rules. For partners, designers, and collaborators.",
   alternates: {
     canonical: "/brand",
   },
 };
 
-export { default } from "./page-client";
+export default function Page() {
+  return <BrandPage />;
+}

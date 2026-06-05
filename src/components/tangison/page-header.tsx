@@ -12,6 +12,7 @@ interface PageHeaderProps {
   subtitle?: string;
   backHref?: string;
   backLabel?: string;
+  variant?: "light" | "dark";
 }
 
 export function PageHeader({
@@ -20,9 +21,12 @@ export function PageHeader({
   subtitle,
   backHref = "/",
   backLabel = "Home",
+  variant = "light",
 }: PageHeaderProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const isInView = useInView(headingRef, { once: true, margin: "-50px" });
+
+  const isDark = variant === "dark";
 
   useEffect(() => {
     if (!headingRef.current || !isInView) return;
@@ -44,9 +48,12 @@ export function PageHeader({
   }, [isInView]);
 
   return (
-    <section className="relative pt-36 md:pt-44 pb-20 md:pb-28 px-6 md:px-12 lg:px-20 bg-atlantic-black overflow-hidden">
-      {/* Subtle top gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean/20 to-transparent pointer-events-none" />
+    <section className={`relative pt-36 md:pt-44 pb-20 md:pb-28 px-6 md:px-12 lg:px-20 overflow-hidden ${
+      isDark ? "bg-atlantic-black" : "bg-skeleton-bone"
+    }`}>
+      {isDark && (
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean/20 to-transparent pointer-events-none" />
+      )}
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         <motion.div
@@ -57,7 +64,9 @@ export function PageHeader({
         >
           <Link
             href={backHref}
-            className="inline-flex items-center gap-2 font-jetbrains text-[10px] text-fog-gray/40 uppercase tracking-[0.25em] hover:text-fog-gray/70 transition-colors duration-300 group"
+            className={`inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.25em] transition-colors duration-300 group ${
+              isDark ? "text-fog-gray/40 hover:text-fog-gray/70" : "text-ink-muted hover:text-ink"
+            }`}
           >
             <ArrowLeft className="w-3 h-3 transition-transform duration-300 group-hover:-translate-x-1" />
             {backLabel}
@@ -70,15 +79,19 @@ export function PageHeader({
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="flex items-center gap-3 mb-6"
         >
-          <div className="w-2 h-2 bg-rust-signal" aria-hidden="true" />
-          <span className="font-jetbrains text-[10px] text-fog-gray/50 uppercase tracking-[0.3em]">
+          <div className="w-2 h-2 bg-signal-teal" aria-hidden="true" />
+          <span className={`font-jetbrains text-[10px] uppercase tracking-[0.3em] ${
+            isDark ? "text-fog-gray/50" : "text-ink-muted"
+          }`}>
             {label}
           </span>
         </motion.div>
 
         <h1
           ref={headingRef}
-          className="font-cabinet text-[clamp(2.2rem,5vw,4.5rem)] font-black tracking-[-0.03em] leading-[0.95] text-skeleton-bone max-w-5xl"
+          className={`font-cabinet text-[clamp(2.2rem,5vw,4.5rem)] font-black tracking-[-0.04em] leading-[0.95] max-w-5xl ${
+            isDark ? "text-skeleton-bone" : "text-ink"
+          }`}
         >
           {title.split(" ").map((word, i) => (
             <span
@@ -96,15 +109,18 @@ export function PageHeader({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 text-fog-gray font-satoshi text-lg md:text-xl max-w-2xl font-light leading-relaxed"
+            className={`mt-6 text-lg md:text-xl max-w-2xl font-light leading-relaxed ${
+              isDark ? "text-fog-gray" : "text-ink-muted"
+            }`}
           >
             {subtitle}
           </motion.p>
         )}
       </div>
 
-      {/* Bottom edge line */}
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/5" aria-hidden="true" />
+      {isDark && (
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/5" aria-hidden="true" />
+      )}
     </section>
   );
 }

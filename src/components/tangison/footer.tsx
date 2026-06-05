@@ -1,74 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Copy, Check, ArrowUpRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
+import { socialLinks } from "@/config/social";
 
-const footerLinks = {
-  Services: [
-    { label: "Applied AI", href: "/services/applied-ai" },
-    { label: "AI Infrastructure", href: "/services/infrastructure" },
-    { label: "AI Consulting", href: "/services/consulting" },
-  ],
-  Products: [
-    { label: "SkillsCamp", href: "/products/skillscamp" },
-    { label: "Tangison Agent", href: "/products/tangison-agent" },
-    { label: "SMEFrog Academy", href: "/products/smefrog-academy" },
-    { label: "Feorm", href: "/products/feorm" },
-  ],
-  Company: [
+const footerColumns = {
+  Studio: [
+    { label: "Work", href: "/work" },
+    { label: "Services", href: "/services" },
+    { label: "Process", href: "/process" },
     { label: "About", href: "/about" },
-    { label: "Research", href: "/research" },
+  ],
+  Resources: [
+    { label: "Blog", href: "/blog" },
     { label: "Brand", href: "/brand" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Resources", href: "/resources" },
   ],
-  Insights: [
-    { label: "Articles", href: "/insights/articles" },
-    { label: "Case Studies", href: "/insights/case-studies" },
-    { label: "Resources", href: "/insights/resources" },
-  ],
-  Connect: [
-    { label: "contact@tangison.com", href: "mailto:contact@tangison.com", external: true },
-    { label: "github.com/tangison", href: "https://github.com/tangison", external: true },
+  Legal: [
+    { label: "Privacy", href: "/legal/privacy" },
+    { label: "Terms", href: "/legal/terms" },
   ],
 } as const;
-
-function CopyDomainButton() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText("tangison.com");
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      const textArea = document.createElement("textarea");
-      textArea.value = "tangison.com";
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textArea);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
-
-  return (
-    <button
-      onClick={handleCopy}
-      className="group flex items-center gap-2 font-jetbrains text-[11px] text-white/30 tracking-[0.15em] hover:text-white/60 transition-colors duration-300"
-      aria-label="Copy tangison.com to clipboard"
-    >
-      <span>tangison.com</span>
-      {copied ? (
-        <Check className="w-3 h-3 text-rust-signal" />
-      ) : (
-        <Copy className="w-3 h-3 opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
-      )}
-    </button>
-  );
-}
 
 export function Footer() {
   const footerRef = React.useRef<HTMLElement>(null);
@@ -79,7 +34,7 @@ export function Footer() {
       ref={footerRef}
       className="bg-atlantic-black border-t border-white/[0.04]"
     >
-      {/* Top section with big logo and tagline */}
+      {/* Top section — logo + tagline + images */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -87,35 +42,52 @@ export function Footer() {
         className="px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-12 md:pb-16"
       >
         <div className="max-w-[1400px] mx-auto">
-          {/* Big logo */}
+          {/* Logo mark + wordmark */}
           <div className="mb-8">
             <Image
-              src="/images/logo-white.webp"
-              alt="TANGISON"
+              src="/brand/logo-dark.webp"
+              alt="TANGISON STUDIO"
               width={874}
               height={286}
-              className="h-16 md:h-20 lg:h-24 w-auto object-contain"
+              className="h-14 md:h-18 lg:h-20 w-auto object-contain"
             />
           </div>
 
-          {/* Tagline + location row */}
-          <div className="flex flex-col sm:flex-row sm:items-end gap-6 sm:gap-12 mb-12 md:mb-16">
-            <p className="font-cabinet text-2xl md:text-3xl lg:text-4xl font-bold text-white/90 tracking-tight leading-tight max-w-lg">
-              Applied AI.<br />
-              Built in Africa.
-            </p>
-            <div className="flex flex-col gap-1 pb-1">
-              <span className="font-jetbrains text-[10px] text-white/25 uppercase tracking-[0.3em]">Location</span>
-              <span className="font-jetbrains text-[11px] text-white/50 uppercase tracking-[0.15em]">Windhoek, Namibia</span>
+          {/* Tagline */}
+          <p className="font-satoshi text-lg md:text-xl text-skeleton-bone/70 font-light leading-relaxed max-w-lg mb-10">
+            Designing the interfaces through which intelligence becomes useful.
+          </p>
+
+          {/* Two editorial images */}
+          <div className="grid grid-cols-2 gap-3 mb-12 md:mb-16">
+            <div className="relative h-32 md:h-48 lg:h-56 overflow-hidden">
+              <Image
+                src="/images/gallery/desert-path-quiver-trees.webp"
+                alt="Quiver trees lining a desert path in southern Namibia"
+                className="object-cover cinematic-image"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-atlantic-black/60 to-transparent" />
+            </div>
+            <div className="relative h-32 md:h-48 lg:h-56 overflow-hidden">
+              <Image
+                src="/images/gallery/concrete-glass-architecture-structure.webp"
+                alt="Concrete and glass architectural structure representing design precision"
+                className="object-cover cinematic-image"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-atlantic-black/60 to-transparent" />
             </div>
           </div>
 
           {/* Divider */}
-          <div className="h-[1px] bg-white/[0.06] mb-12 md:mb-16" />
+          <div className="h-[1px] bg-white/[0.06]" />
         </div>
       </motion.div>
 
-      {/* Link columns */}
+      {/* Link columns + Contact */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -124,115 +96,104 @@ export function Footer() {
       >
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-16">
-            {/* Services column */}
+            {/* Studio column */}
             <div>
-              <h3 className="font-jetbrains text-[9px] text-white/20 uppercase tracking-[0.3em] mb-5">
-                Services
+              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
+                Studio
               </h3>
               <div className="flex flex-col gap-3">
-                {footerLinks.Services.map((link) => (
+                {footerColumns.Studio.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="font-jetbrains text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                    className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
                   >
                     {link.label}
-                    <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-rust-signal/50 group-hover/link:w-full transition-all duration-500" />
+                    <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Products column */}
+            {/* Resources column */}
             <div>
-              <h3 className="font-jetbrains text-[9px] text-white/20 uppercase tracking-[0.3em] mb-5">
-                Products
+              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
+                Resources
               </h3>
               <div className="flex flex-col gap-3">
-                {footerLinks.Products.map((link) => (
+                {footerColumns.Resources.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="font-jetbrains text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                    className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
                   >
                     {link.label}
-                    <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-rust-signal/50 group-hover/link:w-full transition-all duration-500" />
+                    <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Company column */}
+            {/* Legal column */}
             <div>
-              <h3 className="font-jetbrains text-[9px] text-white/20 uppercase tracking-[0.3em] mb-5">
-                Company
+              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
+                Legal
               </h3>
               <div className="flex flex-col gap-3">
-                {footerLinks.Company.map((link) => (
+                {footerColumns.Legal.map((link) => (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="font-jetbrains text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                    className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
                   >
                     {link.label}
-                    <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-rust-signal/50 group-hover/link:w-full transition-all duration-500" />
+                    <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
                   </Link>
                 ))}
               </div>
             </div>
 
-            {/* Insights column */}
-            <div>
-              <h3 className="font-jetbrains text-[9px] text-white/20 uppercase tracking-[0.3em] mb-5">
-                Insights
+            {/* Contact column */}
+            <div className="col-span-2 sm:col-span-1">
+              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
+                Contact
               </h3>
               <div className="flex flex-col gap-3">
-                {footerLinks.Insights.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className="font-jetbrains text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
-                  >
-                    {link.label}
-                    <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-rust-signal/50 group-hover/link:w-full transition-all duration-500" />
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Connect column */}
-            <div>
-              <h3 className="font-jetbrains text-[9px] text-white/20 uppercase tracking-[0.3em] mb-5">
-                Connect
-              </h3>
-              <div className="flex flex-col gap-3">
-                {footerLinks.Connect.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noopener noreferrer" : undefined}
-                    className="font-jetbrains text-[10px] text-white/40 uppercase tracking-[0.2em] hover:text-white/80 transition-colors duration-300 relative group/link inline-flex items-center gap-1.5 w-fit"
-                  >
-                    {link.label}
-                    {link.external && <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover/link:opacity-60 transition-opacity" />}
-                    <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-rust-signal/50 group-hover/link:w-full transition-all duration-500" />
-                  </a>
-                ))}
-              </div>
-
-              {/* CTA in Connect column */}
-              <div className="mt-6">
+                <a
+                  href="mailto:hello@studio.tangison.com"
+                  className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                >
+                  hello@studio.tangison.com
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
+                </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-3 bg-rust-signal text-warm-white px-6 py-3.5 font-jetbrains text-[10px] uppercase tracking-[0.2em] hover:bg-rust-light transition-colors duration-300 group"
+                  className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
                 >
-                  Contact Us
-                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  studio.tangison.com
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
                 </Link>
               </div>
-              <div className="mt-5">
-                <CopyDomainButton />
+            </div>
+
+            {/* Social icons */}
+            <div className="col-span-2 sm:col-span-1">
+              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
+                Follow
+              </h3>
+              <div className="flex flex-col gap-3">
+                {Object.entries(socialLinks).map(([platform, url]) => (
+                  <a
+                    key={platform}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-satoshi text-sm text-white/40 hover:text-signal-teal transition-colors duration-300 relative group/link inline-block w-fit capitalize"
+                  >
+                    {platform}
+                    <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -248,25 +209,11 @@ export function Footer() {
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="font-jetbrains text-[9px] text-white/20 uppercase tracking-[0.3em]">
-            &copy; {new Date().getFullYear()} TANGISON. ALL RIGHTS RESERVED.
+            &copy; 2026 Tangison Systems. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link
-              href="/legal/privacy"
-              className="font-jetbrains text-[9px] text-white/20 uppercase tracking-[0.2em] hover:text-white/40 transition-colors"
-            >
-              Privacy
-            </Link>
-            <Link
-              href="/legal/terms"
-              className="font-jetbrains text-[9px] text-white/20 uppercase tracking-[0.2em] hover:text-white/40 transition-colors"
-            >
-              Terms
-            </Link>
-            <span className="font-jetbrains text-[9px] text-white/15 uppercase tracking-[0.2em]">
-              Windhoek, Namibia
-            </span>
-          </div>
+          <p className="font-jetbrains text-[9px] text-white/15 uppercase tracking-[0.2em]">
+            Digital Infrastructure by Tuppaman Group
+          </p>
         </div>
       </motion.div>
     </footer>

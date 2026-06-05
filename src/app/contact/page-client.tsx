@@ -120,7 +120,7 @@ export function ContactPage() {
       <section className="pt-36 md:pt-44 pb-20 md:pb-28 px-6 md:px-12 lg:px-20">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
-            <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-rust-signal block mb-6">
+            <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-signal-teal block mb-6">
               CONTACT
             </span>
             <h1 className="font-cabinet text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-6">
@@ -154,9 +154,9 @@ export function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="border border-black/[0.06] bg-warm-gray p-10 md:p-12 flex flex-col items-center text-center"
+                  className="border border-black/[0.06] bg-skeleton-bone p-10 md:p-12 flex flex-col items-center text-center"
                 >
-                  <CheckCircle className="w-10 h-10 text-rust-signal mb-6" />
+                  <CheckCircle className="w-10 h-10 text-signal-teal mb-6" />
                   <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink mb-3">
                     Thank you.
                   </h3>
@@ -172,9 +172,9 @@ export function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="border border-black/[0.06] bg-warm-gray p-10 md:p-12 flex flex-col items-center text-center"
+                  className="border border-black/[0.06] bg-skeleton-bone p-10 md:p-12 flex flex-col items-center text-center"
                 >
-                  <AlertCircle className="w-10 h-10 text-rust-signal mb-6" />
+                  <AlertCircle className="w-10 h-10 text-signal-teal mb-6" />
                   <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink mb-3">
                     Something went wrong.
                   </h3>
@@ -182,7 +182,7 @@ export function ContactPage() {
                     Please try again or email us directly at{" "}
                     <a
                       href="mailto:contact@tangison.com"
-                      className="text-rust-signal hover:text-rust-light transition-colors"
+                      className="text-signal-teal hover:text-signal-teal-light transition-colors"
                     >
                       contact@tangison.com
                     </a>
@@ -190,7 +190,7 @@ export function ContactPage() {
                   </p>
                   <button
                     onClick={() => setFormState("idle")}
-                    className="bg-ink text-warm-white font-jetbrains text-[11px] uppercase tracking-[0.15em] px-8 py-4 hover:bg-rust-signal transition-colors"
+                    className="bg-ink text-signal-white font-jetbrains text-[11px] uppercase tracking-[0.15em] px-8 py-4 hover:bg-signal-teal transition-colors"
                   >
                     Try again
                   </button>
@@ -211,7 +211,7 @@ export function ContactPage() {
                       htmlFor="name"
                       className="block font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2"
                     >
-                      Name <span className="text-rust-signal">*</span>
+                      Name <span className="text-signal-teal">*</span>
                     </label>
                     <input
                       id="name"
@@ -221,7 +221,7 @@ export function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className="w-full border border-black/[0.1] bg-warm-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-rust-signal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-rust-signal focus-visible:ring-offset-1 transition"
+                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
                       autoComplete="name"
                     />
                   </div>
@@ -232,7 +232,7 @@ export function ContactPage() {
                       htmlFor="email"
                       className="block font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2"
                     >
-                      Email <span className="text-rust-signal">*</span>
+                      Email <span className="text-signal-teal">*</span>
                     </label>
                     <input
                       id="email"
@@ -242,7 +242,7 @@ export function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="you@organization.com"
-                      className="w-full border border-black/[0.1] bg-warm-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-rust-signal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-rust-signal focus-visible:ring-offset-1 transition"
+                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
                       autoComplete="email"
                     />
                   </div>
@@ -253,7 +253,7 @@ export function ContactPage() {
                       htmlFor="organization"
                       className="block font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2"
                     >
-                      Organization <span className="text-rust-signal">*</span>
+                      Organization <span className="text-signal-teal">*</span>
                     </label>
                     <input
                       id="organization"
@@ -263,7 +263,7 @@ export function ContactPage() {
                       value={formData.organization}
                       onChange={handleChange}
                       placeholder="Your organization"
-                      className="w-full border border-black/[0.1] bg-warm-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-rust-signal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-rust-signal focus-visible:ring-offset-1 transition"
+                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
                       autoComplete="organization"
                     />
                   </div>
@@ -274,7 +274,7 @@ export function ContactPage() {
                       htmlFor="message"
                       className="block font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2"
                     >
-                      Message <span className="text-rust-signal">*</span>
+                      Message <span className="text-signal-teal">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -284,7 +284,7 @@ export function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell us about your project or inquiry..."
-                      className="w-full border border-black/[0.1] bg-warm-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-rust-signal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-rust-signal focus-visible:ring-offset-1 transition resize-none"
+                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition resize-none"
                     />
                   </div>
 
@@ -306,7 +306,7 @@ export function ContactPage() {
                   <button
                     type="submit"
                     disabled={formState === "submitting"}
-                    className="bg-ink text-warm-white font-jetbrains text-[11px] uppercase tracking-[0.15em] p-4 w-full hover:bg-rust-signal transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
+                    className="bg-ink text-signal-white font-jetbrains text-[11px] uppercase tracking-[0.15em] p-4 w-full hover:bg-signal-teal transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
                   >
                     {formState === "submitting" ? (
                       <>
@@ -347,7 +347,7 @@ export function ContactPage() {
                 className="border-b border-black/[0.06] py-6 first:pt-0 last:border-b-0"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <detail.icon className="w-4 h-4 text-rust-signal" />
+                  <detail.icon className="w-4 h-4 text-signal-teal" />
                   <span className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">
                     {detail.label}
                   </span>
@@ -357,11 +357,11 @@ export function ContactPage() {
                     href={detail.href}
                     target={detail.href.startsWith("http") ? "_blank" : undefined}
                     rel={detail.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink hover:text-rust-signal transition-colors duration-300 inline-flex items-center gap-2 group"
+                    className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink hover:text-signal-teal transition-colors duration-300 inline-flex items-center gap-2 group"
                   >
                     {detail.value}
                     {detail.href.startsWith("http") && (
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-ink-muted group-hover:text-rust-signal" />
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-ink-muted group-hover:text-signal-teal" />
                     )}
                   </a>
                 ) : (
@@ -374,9 +374,9 @@ export function ContactPage() {
 
             {/* Additional context */}
             <div className="pt-8">
-              <div className="border border-black/[0.06] bg-warm-gray p-6 md:p-8">
+              <div className="border border-black/[0.06] bg-skeleton-bone p-6 md:p-8">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-1.5 h-1.5 bg-rust-signal" aria-hidden="true" />
+                  <div className="w-1.5 h-1.5 bg-signal-teal" aria-hidden="true" />
                   <span className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">
                     Response Time
                   </span>
@@ -391,7 +391,7 @@ export function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-warm-gray" aria-label="Frequently asked questions">
+      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone" aria-label="Frequently asked questions">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp} className="flex items-center gap-4 mb-4">
             <div className="editorial-divider" aria-hidden="true" />
@@ -433,7 +433,7 @@ export function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-warm-white p-6 md:p-8"
+                className="border border-black/[0.06] bg-signal-white p-6 md:p-8"
               >
                 <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-3">
                   {faq.question}

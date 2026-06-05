@@ -58,12 +58,12 @@ export function CaseStudiesPage() {
           <motion.div {...fadeUp}>
             <Link
               href="/insights"
-              className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.2em] text-ink-muted hover:text-rust-signal transition-colors duration-300 mb-8 group"
+              className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.2em] text-ink-muted hover:text-signal-teal transition-colors duration-300 mb-8 group"
             >
               <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-0.5" />
               Insights
             </Link>
-            <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-rust-signal block mb-6">
+            <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-signal-teal block mb-6">
               CASE STUDIES
             </span>
             <h1 className="font-cabinet text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-6">
@@ -78,7 +78,7 @@ export function CaseStudiesPage() {
 
       {/* Section 2: Upcoming Case Studies */}
       <section
-        className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-warm-gray"
+        className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone"
         aria-label="Upcoming case studies"
       >
         <div className="max-w-[1400px] mx-auto">
@@ -104,14 +104,14 @@ export function CaseStudiesPage() {
                   delay: i * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group border border-black/[0.06] bg-warm-white p-6 md:p-8 flex flex-col hover:border-black/[0.1] transition-all duration-500"
+                className="group border border-black/[0.06] bg-signal-white p-6 md:p-8 flex flex-col hover:border-black/[0.1] transition-all duration-500"
               >
                 {/* Industry tag + status */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-rust-signal">
+                  <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-signal-teal">
                     {study.industry}
                   </span>
-                  <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-ink-muted bg-warm-gray px-3 py-1.5">
+                  <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-ink-muted bg-skeleton-bone px-3 py-1.5">
                     {study.status}
                   </span>
                 </div>
@@ -158,14 +158,14 @@ export function CaseStudiesPage() {
 
             {/* Decorative divider */}
             <div
-              className="w-12 h-[1px] bg-rust-signal/30 mx-auto my-10"
+              className="w-12 h-[1px] bg-signal-teal/30 mx-auto my-10"
               aria-hidden="true"
             />
 
             {/* CTA */}
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-3 bg-ink text-warm-white px-8 py-4 font-jetbrains text-[11px] uppercase tracking-[0.15em] hover:bg-ink-light transition-colors duration-300"
+              className="group inline-flex items-center gap-3 bg-ink text-signal-white px-8 py-4 font-jetbrains text-[11px] uppercase tracking-[0.15em] hover:bg-ink-light transition-colors duration-300"
             >
               Discuss a project
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

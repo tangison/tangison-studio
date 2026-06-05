@@ -2,12 +2,9 @@ import type { Metadata } from "next";
 import { ServicesPage } from "./page-client";
 
 export const metadata: Metadata = {
-  title: "Services | TANGISON",
-  description:
-    "We build custom AI systems, deploy self-hosted infrastructure, and provide independent consulting for organizations across Africa.",
-  alternates: {
-    canonical: "/services",
-  },
+  title: "Services | TANGISON STUDIO",
+  description: "Seven disciplines. One studio. Website design, development, application design, product design, brand systems, design systems, and creative direction.",
+  alternates: { canonical: "/services" },
 };
 
 export default function Page() {

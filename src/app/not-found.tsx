@@ -1,11 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-warm-white flex flex-col items-center justify-center px-6">
+    <div className="min-h-screen bg-skeleton-bone flex flex-col items-center justify-center px-6">
       <div className="text-center">
+        {/* Logo */}
+        <div className="mb-8">
+          <Image
+            src="/brand/logo-light.webp"
+            alt="TANGISON STUDIO"
+            width={874}
+            height={286}
+            className="h-10 w-auto object-contain mx-auto opacity-30"
+          />
+        </div>
+
         {/* Large 404 */}
-        <h1 className="font-cabinet text-[8rem] sm:text-[10rem] md:text-[14rem] font-black text-ink/10 leading-none tracking-tighter">
+        <h1 className="font-cabinet text-[8rem] sm:text-[10rem] md:text-[14rem] font-black text-ink/5 leading-none tracking-tighter">
           404
         </h1>
 
@@ -19,18 +31,9 @@ export default function NotFound() {
         {/* Return link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-3 bg-ink text-warm-white px-8 py-4 font-jetbrains text-xs uppercase tracking-[0.2em] hover:bg-ink-light transition-colors duration-300 group"
+          className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-8 py-4 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300"
         >
-          Return home
-          <svg
-            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path d="M4 12L12 4M12 4H6M12 4V10" />
-          </svg>
+          Return home →
         </Link>
       </div>
     </div>

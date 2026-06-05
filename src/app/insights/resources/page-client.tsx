@@ -243,11 +243,11 @@ function DocumentCard({ doc, index }: { doc: Document; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.7, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
-      className="group border border-black/[0.06] bg-warm-white p-6 md:p-8 flex flex-col hover:border-black/[0.1] transition-all duration-500"
+      className="group border border-black/[0.06] bg-signal-white p-6 md:p-8 flex flex-col hover:border-black/[0.1] transition-all duration-500"
     >
       {/* Document number + category */}
       <div className="flex items-center gap-3 mb-4">
-        <span className="font-jetbrains text-[10px] text-rust-signal uppercase tracking-[0.2em]">
+        <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em]">
           {doc.num}
         </span>
         <span className="font-jetbrains text-[9px] text-ink-muted/50 uppercase tracking-[0.15em]">
@@ -256,7 +256,7 @@ function DocumentCard({ doc, index }: { doc: Document; index: number }) {
       </div>
 
       {/* Title */}
-      <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-3 group-hover:text-rust-signal transition-colors duration-300">
+      <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-3 group-hover:text-signal-teal transition-colors duration-300">
         {doc.title}
       </h3>
 
@@ -270,7 +270,7 @@ function DocumentCard({ doc, index }: { doc: Document; index: number }) {
         <a
           href={`/documents/${doc.filename}`}
           download
-          className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-rust-signal transition-colors duration-300"
+          className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-signal-teal transition-colors duration-300"
         >
           <Download className="w-3.5 h-3.5" />
           Download PDF
@@ -289,12 +289,12 @@ export function ResourcesPage() {
           <motion.div {...fadeUp}>
             <Link
               href="/insights"
-              className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.2em] text-ink-muted hover:text-rust-signal transition-colors duration-300 mb-8 group"
+              className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.2em] text-ink-muted hover:text-signal-teal transition-colors duration-300 mb-8 group"
             >
               <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-0.5" />
               Insights
             </Link>
-            <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-rust-signal block mb-6">
+            <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-signal-teal block mb-6">
               RESOURCES
             </span>
             <h1 className="font-cabinet text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-6">
@@ -308,7 +308,7 @@ export function ResourcesPage() {
       </section>
 
       {/* Section 2: Strategic Frameworks */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-warm-gray" aria-label="Strategic frameworks">
+      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone" aria-label="Strategic frameworks">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp} className="flex items-center gap-4 mb-4">
             <div className="editorial-divider" aria-hidden="true" />
@@ -353,7 +353,7 @@ export function ResourcesPage() {
       <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-atlantic-black" aria-label="Get started">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div {...fadeUp}>
-            <span className="font-jetbrains text-[10px] text-rust-signal/50 uppercase tracking-[0.3em] mb-4 block">
+            <span className="font-jetbrains text-[10px] text-signal-teal/50 uppercase tracking-[0.3em] mb-4 block">
               Next Step
             </span>
             <h2 className="font-cabinet text-3xl md:text-5xl tracking-tight text-skeleton-bone mb-6">

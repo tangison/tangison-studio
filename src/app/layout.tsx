@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: "%s | TANGISON STUDIO",
   },
   description:
-    "Tangison Studio is a Namibian creative digital agency that designs, builds, and deploys beautiful digital experiences, brands, and platforms for organizations across Africa.",
+    "Tangison Studio is a creative digital agency that designs and builds digital experiences that move ideas forward. Windhoek, Namibia.",
   keywords: [
     "Tangison Studio",
     "creative agency",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "TANGISON STUDIO | Creative Digital Agency",
-    description: "Creative digital agency. Built in Africa. Design, build, deploy.",
+    description: "We design and build digital experiences that move ideas forward.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com",
     siteName: "Tangison Studio",
     type: "website",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TANGISON STUDIO | Creative Digital Agency",
-    description: "Creative digital agency. Built in Africa.",
+    description: "We design and build digital experiences that move ideas forward.",
     images: ["/brand/favicon.png"],
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com"),

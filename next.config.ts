@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
   ],
   async redirects() {
     return [
+      // Old page redirects
       {
         source: "/architecture",
         destination: "/services",
@@ -24,12 +25,39 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/intelligence",
-        destination: "/research",
+        destination: "/work",
         permanent: true,
       },
       {
         source: "/manifesto",
         destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/research",
+        destination: "/resources",
+        permanent: true,
+      },
+      // Insights → Blog redirect
+      {
+        source: "/insights",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/insights/:path*",
+        destination: "/blog",
+        permanent: true,
+      },
+      // Products → Work redirect
+      {
+        source: "/products",
+        destination: "/work",
+        permanent: true,
+      },
+      {
+        source: "/products/:path*",
+        destination: "/work",
         permanent: true,
       },
     ];
