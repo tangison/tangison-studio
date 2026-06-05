@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { TermsPage } from "./page-client";
+import { TermsOfServicePage } from "./page-client";
 
 export const metadata: Metadata = {
   title: "Terms of Service | TANGISON STUDIO",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <TermsPage />;
+  return <TermsOfServicePage />;
 }

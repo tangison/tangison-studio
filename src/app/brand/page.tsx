@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BrandPage } from "./page-client";
+import BrandPage from "./page-client";
 
 export const metadata: Metadata = {
   title: "Brand Identity | TANGISON STUDIO",
