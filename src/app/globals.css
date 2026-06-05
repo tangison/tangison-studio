@@ -11,25 +11,27 @@
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   --font-display: 'Cabinet Grotesk', 'Satoshi', system-ui, sans-serif;
 
-  /* Light theme — primary surfaces */
-  --color-warm-white: #FAFAF8;
-  --color-warm-gray: #F0EDE8;
-  --color-sand-gray: #E8E5DF;
-  --color-ink: #111315;
+  /* ─── TANGISON STUDIO BRAND TOKENS ─── */
+
+  /* Backgrounds */
+  --color-skeleton-bone: #F6F4EF;      /* Page base — Skeleton Bone */
+  --color-signal-white: #FFFFFF;        /* Cards, panels — maximum contrast */
+  --color-atlantic-black: #111315;      /* Dark sections, footer — Atlantic Black */
+  --color-terminal-black: #0A0B0C;     /* Deepest dark — Terminal Black */
+  --color-ocean-mist: #E6F2F1;         /* Subtle teal tint, hover — Ocean Mist */
+
+  /* Text */
+  --color-ink: #111315;                /* Atlantic Black — primary text */
   --color-ink-light: #3D3F44;
   --color-ink-muted: #6B6860;
+  --color-fog-gray: #D9D7D2;           /* Secondary text, dividers */
 
-  /* Dark surfaces — for contrast sections and AI widget */
-  --color-atlantic-black: #111315;
-  --color-terminal-black: #0A0B0C;
-  --color-steel-shadow: #1C1E22;
+  /* Accent — Signal Teal (Tangison Studio signature) */
+  --color-signal-teal: #2CB5B4;        /* Signature accent — links, CTAs, STUDIO descriptor */
+  --color-signal-teal-light: #3CC8C7;  /* Hover state for Signal Teal */
+  --color-signal-teal-muted: rgba(44, 181, 180, 0.15); /* Subtle teal background */
 
-  /* Legacy light-on-dark tokens — kept for dark sections and AI widget */
-  --color-skeleton-bone: #F6F4EF;
-  --color-fog-gray: #D9D7D2;
-  --color-deep-ocean: #16353D;
-
-  /* Accent */
+  /* Legacy accent — parent brand reference (used on /brand page ONLY) */
   --color-rust-signal: #C56A4A;
   --color-rust-light: #D4896F;
   --color-rust-muted: rgba(197, 106, 74, 0.15);
@@ -39,8 +41,14 @@
   --color-error: #C54444;
 
   /* Card surface */
-  --color-card-surface: #F0EDE8;
-  --color-card-border: rgba(0,0,0,0.06);
+  --color-card-surface: #FFFFFF;
+  --color-card-border: rgba(17, 19, 21, 0.09);
+
+  /* Supporting */
+  --color-warm-gray: #F0EDE8;
+  --color-sand-gray: #E8E5DF;
+  --color-steel-shadow: #1C1E22;
+  --color-deep-ocean: #16353D;
 
   /* shadcn/ui compatible tokens */
   --color-ring: var(--ring);
@@ -58,7 +66,7 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
 
-  /* Zero border-radius — Tangison design language */
+  /* Border radius — zero by default (Studio design language) */
   --radius-sm: 0px;
   --radius-md: 0px;
   --radius-lg: 0px;
@@ -66,24 +74,74 @@
 }
 
 :root {
+  /* ─── CSS Custom Properties (Brand System) ─── */
+
+  /* Backgrounds */
+  --color-bg-base:        #F6F4EF;
+  --color-bg-surface:     #FFFFFF;
+  --color-bg-dark:        #111315;
+  --color-bg-deep:        #0A0B0C;
+  --color-bg-mist:        #E6F2F1;
+
+  /* Text */
+  --color-text-primary:   #111315;
+  --color-text-secondary: #D9D7D2;
+  --color-text-inverted:  #F6F4EF;
+
+  /* Accent */
+  --color-teal:           #2CB5B4;
+  --color-teal-mist:      #E6F2F1;
+
+  /* Borders */
+  --color-border:         rgba(17, 19, 21, 0.09);
+
+  /* Typography */
+  --font-display:   'Cabinet Grotesk', Georgia, serif;
+  --font-body:      'Satoshi', system-ui, sans-serif;
+  --font-mono:      'JetBrains Mono', monospace;
+
+  /* Spacing scale */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   32px;
+  --space-2xl:  48px;
+  --space-3xl:  64px;
+  --space-4xl:  96px;
+  --space-5xl:  128px;
+  --space-6xl:  192px;
+
+  /* Motion */
+  --ease-primary:   cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast:  0.4s;
+  --duration-base:  0.6s;
+  --duration-slow:  1.2s;
+
+  /* Layout */
+  --container-max:  1400px;
+  --container-pad:  48px;
+
+  /* Radius */
   --radius: 0px;
-  /* Light theme — default */
-  --background: #FAFAF8;
+
+  /* Theme variables */
+  --background: #F6F4EF;
   --foreground: #111315;
-  --card: #F0EDE8;
+  --card: #FFFFFF;
   --card-foreground: #111315;
-  --primary: #111315;
-  --primary-foreground: #FAFAF8;
-  --secondary: #E8E5DF;
+  --primary: #2CB5B4;
+  --primary-foreground: #F6F4EF;
+  --secondary: #E6F2F1;
   --secondary-foreground: #111315;
   --muted: #E8E5DF;
   --muted-foreground: #6B6860;
-  --accent: #C56A4A;
-  --accent-foreground: #FAFAF8;
+  --accent: #2CB5B4;
+  --accent-foreground: #F6F4EF;
   --destructive: #C54444;
-  --border: rgba(0,0,0,0.08);
-  --input: rgba(0,0,0,0.1);
-  --ring: #C56A4A;
+  --border: rgba(17, 19, 21, 0.09);
+  --input: rgba(17, 19, 21, 0.1);
+  --ring: #2CB5B4;
 }
 
 @layer base {
@@ -97,15 +155,15 @@
 
 /* Font family classes */
 .font-satoshi {
-  font-family: 'Satoshi', system-ui, sans-serif;
+  font-family: var(--font-body);
 }
 
 .font-cabinet {
-  font-family: 'Cabinet Grotesk', 'Satoshi', system-ui, sans-serif;
+  font-family: var(--font-display);
 }
 
 .font-jetbrains {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
 }
 
 /* Custom Scrollbar — light theme */
@@ -113,13 +171,13 @@
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAFAF8;
+  background: var(--color-bg-base);
 }
 ::-webkit-scrollbar-thumb {
-  background: #D9D7D2;
+  background: var(--color-fog-gray);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6B6860;
+  background: var(--color-ink-muted);
 }
 
 /* Thin scrollbar for overflow containers */
@@ -127,24 +185,24 @@
   height: 3px;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: rgba(197, 106, 74, 0.3);
+  background: rgba(44, 181, 180, 0.3);
 }
 .scrollbar-thin::-webkit-scrollbar-track {
   background: transparent;
 }
 
-/* Cinematic image filter — editorial warm */
+/* Cinematic image filter — editorial */
 .cinematic-image {
-  filter: grayscale(30%) contrast(1.05) brightness(0.95);
-  transition: filter 1.2s ease;
+  filter: grayscale(20%) contrast(1.05) brightness(0.97);
+  transition: filter 1.2s var(--ease-primary);
 }
 .cinematic-image:hover {
-  filter: grayscale(10%) contrast(1.1) brightness(1);
+  filter: grayscale(0%) contrast(1.08) brightness(1);
 }
 
-/* Selection color */
+/* Selection color — Signal Teal */
 ::selection {
-  background-color: rgba(197, 106, 74, 0.3);
+  background-color: rgba(44, 181, 180, 0.3);
   color: #111315;
 }
 
@@ -166,16 +224,16 @@ html {
   }
 }
 
-/* Zero border-radius globally — Tangison design language */
+/* Zero border-radius globally — Studio design language */
 *,
 *::before,
 *::after {
   border-radius: 0 !important;
 }
 
-/* Focus visible styles for accessibility */
+/* Focus visible styles for accessibility — Signal Teal */
 :focus-visible {
-  outline: 2px solid #C56A4A;
+  outline: 2px solid var(--color-signal-teal);
   outline-offset: 2px;
 }
 
@@ -204,7 +262,7 @@ img {
   100% { opacity: 1; }
 }
 main {
-  animation: page-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: page-enter var(--duration-base) var(--ease-primary) forwards;
 }
 
 /* Global links */
@@ -267,7 +325,7 @@ button, a {
   background: rgba(246, 244, 239, 0.1);
 }
 
-/* Dark section utility — for hero, CTA and other dark sections */
+/* Dark section utility */
 .section-dark {
   --background: #111315;
   --foreground: #F6F4EF;
@@ -275,18 +333,18 @@ button, a {
   color: #F6F4EF;
 }
 
-/* Editorial divider */
+/* Editorial divider — Signal Teal */
 .editorial-divider {
   width: 40px;
   height: 1px;
-  background: var(--color-rust-signal);
+  background: var(--color-signal-teal);
 }
 
 /* Pillar card hover */
 .pillar-card {
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.5s var(--ease-primary);
 }
 .pillar-card:hover {
-  background-color: #F0EDE8;
-  border-color: rgba(0,0,0,0.1);
+  background-color: var(--color-ocean-mist);
+  border-color: rgba(17, 19, 21, 0.12);
 }
