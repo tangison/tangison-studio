@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: "%s | TANGISON STUDIO",
   },
   description:
-    "TANGISON STUDIO is a Namibian creative digital agency that designs, builds, and deploys beautiful digital experiences, brands, and platforms for organizations across Africa.",
+    "Tangison Studio is a Namibian creative digital agency that designs, builds, and deploys beautiful digital experiences, brands, and platforms for organizations across Africa.",
   keywords: [
     "Tangison Studio",
     "creative agency",
@@ -15,29 +15,32 @@ export const metadata: Metadata = {
     "web design",
     "brand design",
     "UI/UX",
+    "product design",
     "Africa",
     "Namibia",
     "Windhoek",
   ],
-  authors: [{ name: "Tangison Studio", email: "tangison@proton.me" }],
+  authors: [{ name: "Tangison Studio", url: "mailto:tangison@proton.me" }],
+  publisher: "Tangison Studio",
+  creator: "Tangison Studio",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/favicon.png", sizes: "64x64", type: "image/png" },
+      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "TANGISON STUDIO | Creative Digital Agency",
     description: "Creative digital agency. Built in Africa. Design, build, deploy.",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://tangisonstudio.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com",
     siteName: "Tangison Studio",
     type: "website",
     images: [
       {
-        url: "/images/og-image.png",
-        width: 1344,
-        height: 768,
+        url: "/brand/favicon.png",
+        width: 499,
+        height: 499,
         alt: "TANGISON STUDIO | Creative Digital Agency",
       },
     ],
@@ -46,9 +49,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TANGISON STUDIO | Creative Digital Agency",
     description: "Creative digital agency. Built in Africa.",
-    images: ["/images/og-image.png"],
+    images: ["/brand/favicon.png"],
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://tangisonstudio.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com"),
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -63,7 +70,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="font-satoshi antialiased bg-warm-white text-ink overflow-x-hidden">
+      <body className="font-satoshi antialiased bg-skeleton-bone text-ink overflow-x-hidden">
         {children}
       </body>
     </html>
