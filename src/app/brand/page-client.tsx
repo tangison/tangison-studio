@@ -129,7 +129,7 @@ export default function BrandPage() {
             {/* Large TANGISON wordmark */}
             <div className="mb-4">
               <Image
-                src="/brand/logo-dark.webp"
+                src="/brand/logo-light.webp"
                 alt="TANGISON STUDIO"
                 width={874}
                 height={286}
@@ -179,7 +179,7 @@ export default function BrandPage() {
               <div className="flex flex-col items-center gap-4">
                 <div className="bg-atlantic-black p-12 md:p-16 w-full flex items-center justify-center">
                   <Image
-                    src="/brand/logo-dark.webp"
+                    src="/brand/logo-light.webp"
                     alt="TANGISON STUDIO identity mark on dark background"
                     width={874}
                     height={286}
@@ -191,7 +191,7 @@ export default function BrandPage() {
               <div className="flex flex-col items-center gap-4">
                 <div className="bg-skeleton-bone p-12 md:p-16 w-full flex items-center justify-center border border-black/[0.06]">
                   <Image
-                    src="/brand/logo-light.webp"
+                    src="/brand/logo-dark.webp"
                     alt="TANGISON STUDIO identity mark on light background"
                     width={874}
                     height={286}
@@ -258,7 +258,7 @@ export default function BrandPage() {
             {/* Wordmark large on white */}
             <div className="bg-signal-white border border-black/[0.06] p-12 md:p-20 mb-6">
               <Image
-                src="/brand/logo-light.webp"
+                src="/brand/logo-dark.webp"
                 alt="TANGISON STUDIO wordmark on light background"
                 width={874}
                 height={286}
@@ -269,7 +269,7 @@ export default function BrandPage() {
             {/* Wordmark large on dark */}
             <div className="bg-atlantic-black p-12 md:p-20 mb-12">
               <Image
-                src="/brand/logo-dark.webp"
+                src="/brand/logo-light.webp"
                 alt="TANGISON STUDIO wordmark on dark background"
                 width={874}
                 height={286}
@@ -534,7 +534,7 @@ export default function BrandPage() {
               {/* Logo */}
               <div className="mb-12">
                 <Image
-                  src="/brand/logo-dark.webp"
+                  src="/brand/logo-light.webp"
                   alt="TANGISON STUDIO brand board logo"
                   width={874}
                   height={286}

@@ -7,7 +7,7 @@ export default function Loading() {
         {/* Logo mark with breathing glow */}
         <div className="relative">
           <Image
-            src="/brand/logo-light.webp"
+            src="/brand/logo-dark.webp"
             alt="TANGISON STUDIO"
             width={874}
             height={286}

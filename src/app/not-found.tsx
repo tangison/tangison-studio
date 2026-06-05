@@ -8,7 +8,7 @@ export default function NotFound() {
         {/* Logo */}
         <div className="mb-8">
           <Image
-            src="/brand/logo-light.webp"
+            src="/brand/logo-dark.webp"
             alt="TANGISON STUDIO"
             width={874}
             height={286}

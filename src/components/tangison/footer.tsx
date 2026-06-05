@@ -45,7 +45,7 @@ export function Footer() {
           {/* Logo mark + wordmark */}
           <div className="mb-8">
             <Image
-              src="/brand/logo-dark.webp"
+              src="/brand/logo-light.webp"
               alt="TANGISON STUDIO"
               width={874}
               height={286}
