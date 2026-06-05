@@ -160,10 +160,10 @@ export function Footer() {
               </h3>
               <div className="flex flex-col gap-3">
                 <a
-                  href="mailto:hello@studio.tangison.com"
+                  href="mailto:studio@tangison.com"
                   className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
                 >
-                  hello@studio.tangison.com
+                  studio@tangison.com
                   <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
                 </a>
                 <Link

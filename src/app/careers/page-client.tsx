@@ -43,8 +43,8 @@ export function CareersPage() {
               </p>
               <p className="font-satoshi text-ink-muted text-sm leading-relaxed">
                 We&apos;re a small studio and hire when we have the right role. Send your portfolio to{" "}
-                <a href="mailto:hello@studio.tangison.com" className="text-signal-teal hover:text-signal-teal-light transition-colors">
-                  hello@studio.tangison.com
+                <a href="mailto:studio@tangison.com" className="text-signal-teal hover:text-signal-teal-light transition-colors">
+                  studio@tangison.com
                 </a>{" "}
                 and we&apos;ll keep you in mind.
               </p>

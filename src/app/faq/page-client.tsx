@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "How do I start a project?",
-    answer: "Fill out the contact form or email hello@studio.tangison.com. Tell us about your organization and what you need. We respond to every message within two business days.",
+    answer: "Fill out the contact form or email studio@tangison.com. Tell us about your organization and what you need. We respond to every message within two business days.",
   },
   {
     question: "What if I only need design, not development?",

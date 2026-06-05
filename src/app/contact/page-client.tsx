@@ -38,8 +38,8 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@tangison.com",
-    href: "mailto:contact@tangison.com",
+    value: "studio@tangison.com",
+    href: "mailto:studio@tangison.com",
   },
   {
     icon: Lock,
@@ -181,10 +181,10 @@ export function ContactPage() {
                   <p className="font-satoshi text-ink-muted text-base leading-relaxed max-w-md mb-6">
                     Please try again or email us directly at{" "}
                     <a
-                      href="mailto:contact@tangison.com"
+                      href="mailto:studio@tangison.com"
                       className="text-signal-teal hover:text-signal-teal-light transition-colors"
                     >
-                      contact@tangison.com
+                      studio@tangison.com
                     </a>
                     .
                   </p>
@@ -416,7 +416,7 @@ export function ContactPage() {
               },
               {
                 question: "How do I engage TANGISON for a project?",
-                answer: "Fill out the contact form on this page, or email us at contact@tangison.com. Tell us about your organization and what you need AI to do. We respond to every message within two business days."
+                answer: "Fill out the contact form on this page, or email us at studio@tangison.com. Tell us about your organization and what you need AI to do. We respond to every message within two business days."
               },
               {
                 question: "What is SkillsCamp?",
