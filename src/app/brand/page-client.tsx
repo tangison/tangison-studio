@@ -272,7 +272,7 @@ export default function BrandPage() {
   return (
     <SiteShell>
       {/* ─── Sticky Export Bar ─── */}
-      <div className="sticky top-0 z-50 bg-terminal-black/95 backdrop-blur-sm border-b border-white/[0.06]">
+      <div className="sticky top-[72px] md:top-[80px] z-40 bg-terminal-black/95 backdrop-blur-sm border-b border-white/[0.06]">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-3 flex items-center justify-between">
           <span className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em]">TNG-STUDIO-ID-01 · Brand System v1.0</span>
           <div className="flex gap-3">
