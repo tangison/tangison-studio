@@ -205,7 +205,7 @@ export function ArticlesPage() {
                 Results from the Field
               </h3>
               <p className="font-satoshi text-ink-muted text-sm leading-relaxed">
-                Real projects. Real outcomes. See how organizations are deploying AI with TANGISON.
+                Real projects. Real outcomes. See how organizations are deploying AI with TANGISON STUDIO.
               </p>
               <div className="flex items-center gap-2 mt-6 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-signal-teal transition-colors duration-300">
                 <span>Read</span>

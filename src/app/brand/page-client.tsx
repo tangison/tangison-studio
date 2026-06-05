@@ -121,6 +121,11 @@ export default function BrandPage() {
       <section className="relative py-32 md:py-48 px-6 md:px-12 lg:px-20 bg-atlantic-black overflow-hidden">
         <div className="max-w-[1400px] mx-auto text-center">
           <motion.div {...fadeUp}>
+            {/* H1 — Brand Identity heading */}
+            <h1 className="font-cabinet text-5xl md:text-7xl lg:text-8xl font-black tracking-[-0.04em] text-skeleton-bone mb-8">
+              Brand Identity
+            </h1>
+
             {/* Large TANGISON wordmark */}
             <div className="mb-4">
               <Image

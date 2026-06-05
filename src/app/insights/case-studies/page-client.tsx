@@ -70,7 +70,7 @@ export function CaseStudiesPage() {
               Real Projects, Real Outcomes
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              Detailed accounts of challenges, approaches, and outcomes from Tangison projects.
+              Detailed accounts of challenges, approaches, and outcomes from Tangison Studio projects.
             </p>
           </motion.div>
         </div>

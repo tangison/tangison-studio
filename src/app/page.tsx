@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    title: "TANGISON STUDIO | Creative Digital Agency",
+    description:
+      "We design and build digital experiences that move ideas forward. Website design, development, brand systems, and creative direction from Windhoek, Namibia.",
+    url: "/",
+  },
 };
 
 export default function Page() {

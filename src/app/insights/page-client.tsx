@@ -21,7 +21,7 @@ const routeCards = [
   {
     title: "Case Studies",
     description:
-      "Real projects. Real outcomes. From the Tangison laboratory.",
+      "Real projects. Real outcomes. From the Tangison Studio team.",
     href: "/insights/case-studies",
     icon: FlaskConical,
   },
