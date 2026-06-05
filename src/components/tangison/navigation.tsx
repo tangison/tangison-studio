@@ -31,8 +31,8 @@ const navItems: NavItem[] = [
       { label: "Case Studies", href: "/work#case-studies", description: "Results from the field" },
       { label: "By Industry", href: "/work#industries", description: "Sector-specific outcomes" },
     ],
-    megaImage: "/images/gallery/concrete-glass-architecture-blue-sky.webp",
-    megaImageAlt: "Architectural project showcasing Tangison Studio design work",
+    megaImage: "/images/gallery/nav-work.webp",
+    megaImageAlt: "Work portfolio",
     megaTagline: "Work that moves ideas forward.",
   },
   {
@@ -47,8 +47,8 @@ const navItems: NavItem[] = [
       { label: "Design Systems", href: "/services#design-systems", description: "Scalable component architecture" },
       { label: "Creative Direction", href: "/services#creative-direction", description: "Strategic visual leadership" },
     ],
-    megaImage: "/images/gallery/desk-succulent-sketch-pencil.webp",
-    megaImageAlt: "Design workspace with sketch materials for creative direction",
+    megaImage: "/images/gallery/nav-services.webp",
+    megaImageAlt: "Design services",
     megaTagline: "Seven disciplines. One studio.",
   },
   {
@@ -62,8 +62,8 @@ const navItems: NavItem[] = [
       { label: "The Studio", href: "/about", description: "Who we are" },
       { label: "Brand Identity", href: "/brand", description: "Visual and verbal system" },
     ],
-    megaImage: "/images/gallery/desert-glass-concrete-landscape.webp",
-    megaImageAlt: "Desert architecture reflecting the Tangison Studio design philosophy",
+    megaImage: "/images/gallery/nav-about.webp",
+    megaImageAlt: "About Tangison Studio",
     megaTagline: "Designing from Windhoek.",
   },
   {

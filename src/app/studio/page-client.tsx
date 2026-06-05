@@ -55,8 +55,8 @@ export function StudioPage() {
             className="relative min-h-[300px] md:min-h-[400px] overflow-hidden"
           >
             <Image
-              src="/images/gallery/concrete-glass-architecture-blue-sky.webp"
-              alt="Studio workspace — concrete and glass architecture in Windhoek"
+              src="/images/gallery/studio-workspace.webp"
+              alt="Tangison Studio workspace"
               className="object-cover cinematic-image"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -132,8 +132,8 @@ export function StudioPage() {
               className="relative min-h-[280px] md:min-h-[360px] overflow-hidden"
             >
               <Image
-                src="/images/gallery/desert-path-quiver-trees.webp"
-                alt="Quiver trees lining a desert path in southern Namibia"
+                src="/images/gallery/studio-location.webp"
+                alt="Skeleton Coast aerial view"
                 className="object-cover cinematic-image"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

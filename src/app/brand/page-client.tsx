@@ -102,12 +102,152 @@ function MotionDemo() {
 
 /* ─── Main Brand Page ─────────────────────────────────────────── */
 
+/* ─── Brand System Markdown Export ──────────────────────────── */
+
+const brandSystemMarkdown = `# TANGISON STUDIO — Brand System v1.0
+
+**Document ID:** TNG-STUDIO-ID-01  
+**Status:** Immutable  
+**URL:** studio.tangison.com/brand
+
+---
+
+## Identity Mark
+
+**Name:** Shipwreck Mast  
+**Description:** The Tangison Studio Mark  
+**Variants:**  
+- logo-dark: Black mark + black TANGISON + teal STUDIO (for light backgrounds)  
+- logo-light: White/ghost mark + white TANGISON + teal STUDIO (for dark backgrounds)  
+**Favicon:** Circular teal with black Shipwreck Mast mark  
+**Rules:**  
+- Use logo-light on dark backgrounds  
+- Use logo-dark on light backgrounds  
+- Maintain clearspace equal to mark height  
+- Minimum size: 24px height  
+- Do not rotate, skew, or alter the mark  
+- Do not place on busy backgrounds without container  
+- Do not use mark without wordmark  
+- Do not change the mark colors
+
+---
+
+## Wordmark System
+
+**Font:** Cabinet Grotesk 800–900  
+**Structure:** TANGISON + STUDIO (inverted)  
+**STUDIO Color:** Signal Teal #2CB5B4  
+**Tracking:** -0.04em  
+**Minimum Size:** 24px height  
+**Clearspace:** Equal to mark height on all sides
+
+---
+
+## Color System
+
+### Primary
+- Skeleton Bone: #F6F4EF — Page base, light backgrounds
+- Signal White: #FFFFFF — Cards, panels, maximum contrast
+- Atlantic Black: #111315 — Primary text, dark sections
+- Terminal Black: #0A0B0C — Deepest dark, footer
+
+### Accent
+- Signal Teal: #2CB5B4 — CTAs, links, STUDIO descriptor, highlights
+
+### Supporting
+- Ocean Mist: #E6F2F1 — Subtle teal tint, hover states
+- Fog Gray: #D9D7D2 — Secondary text, dividers
+- Ink Muted: #6B6860 — Secondary text
+
+---
+
+## Typography
+
+### Cabinet Grotesk — Headlines Only · 800–900
+tracking: -0.04em  
+Used for headlines, section titles, and the wordmark.
+
+### Satoshi — Body Text · 300–400
+line-height: 1.6  
+Used for paragraphs, descriptions, and interface text.
+
+### JetBrains Mono — Metadata · Labels · 400
+tracking: 0.1–0.3em · size: 9–12px · uppercase preferred  
+Used for metadata, labels, version numbers, and navigation items ONLY.
+
+---
+
+## Design Elements
+
+- **Accent Line:** 2px height, Signal Teal, section dividers and emphasis
+- **Arrow Suffix:** Unicode arrow (→), always follows primary CTA text
+- **Primary Button:** Signal Teal bg, white text, Cabinet Grotesk bold, no border-radius
+- **Secondary Button:** Transparent bg, Signal Teal border and text
+
+---
+
+## Illustration Style
+
+**Name:** Flat Editorial Illustration  
+**Reference:** Japanese travel poster aesthetic — Hiroshi Yoshida meets Studio Ghibli background art. Not anime. Not photorealistic.  
+**Technique:** Clean flat colour fields, minimal linework, subtle paper grain texture only  
+
+### Illustration Palette
+- Bone White: #F6F4EF — Light surfaces
+- Atlantic Black: #111315 — Dark surfaces, silhouettes
+- Signal Teal: #2CB5B4 — Sole accent colour
+- Deep Navy: #0A0B0C — Sky, deep shadow
+- Fog Gray: #D9D7D2 — Neutral elements
+- Burnt Orange: #C4622D — Namibian earth, dune faces
+- Pale Sand: #E8DFD0 — Desert ground, salt pans
+
+**Rule:** Maximum 6 flat colours per image. No other colours permitted.
+
+### Composition Rules
+- Vast empty space is intentional
+- Fewer elements is always better
+- Maximum 3 focal elements per image
+- Humans: flat illustrated silhouette only, in motion, face never detailed
+
+### Forbidden Techniques
+- Gradients  
+- Glows  
+- Photorealism  
+- Neon  
+- Text in images  
+- Logos in images  
+- Rounded bubbly shapes  
+- Lens flares  
+- More than 6 colours per image
+
+---
+
+## Motion System
+
+**Easing Curve:** cubic-bezier(0.16, 1, 0.3, 1)  
+**Duration:** 0.6s–1.2s entrance, 0.4s hover/micro  
+**Entrance:** opacity 0→1 + translateY 24px→0, staggered by 0.1s  
+**Rules:** No bounce. No spring. Always include prefers-reduced-motion support.
+
+---
+
+## Anti-Patterns
+
+- Never use gradients on any element
+- No text-shadow or drop-shadow on type
+- All elements use sharp corners (max 4px radius)
+- No decorative blobs or floating elements
+- Silence is design — remove unnecessary words
+- No bounce, spring, or playful easing curves
+`;
+
 export default function BrandPage() {
   const [copied, setCopied] = useState(false);
+  const [mdCopied, setMdCopied] = useState(false);
 
-  const handleCopyAll = async () => {
+  const handleCopyText = async () => {
     try {
-      await navigator.clipboard.writeText("TANGISON STUDIO Brand System v1.0 — see studio.tangison.com/brand");
+      await navigator.clipboard.writeText(brandSystemMarkdown);
     } catch {
       // fallback
     }
@@ -115,8 +255,45 @@ export default function BrandPage() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const handleDownloadMarkdown = () => {
+    const blob = new Blob([brandSystemMarkdown], { type: "text/markdown" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "tangison-studio-brand-system-v1.md";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    setMdCopied(true);
+    setTimeout(() => setMdCopied(false), 2000);
+  };
+
   return (
     <SiteShell>
+      {/* ─── Sticky Export Bar ─── */}
+      <div className="sticky top-0 z-50 bg-terminal-black/95 backdrop-blur-sm border-b border-white/[0.06]">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-3 flex items-center justify-between">
+          <span className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em]">TNG-STUDIO-ID-01 · Brand System v1.0</span>
+          <div className="flex gap-3">
+            <button
+              onClick={handleCopyText}
+              className="bg-atlantic-black text-skeleton-bone/80 px-4 py-2 font-jetbrains text-[9px] uppercase tracking-[0.15em] hover:bg-signal-teal hover:text-signal-white transition-colors duration-300 border border-white/[0.06]"
+              aria-label="Copy brand system as text"
+            >
+              {copied ? "Copied" : "Copy as Text"}
+            </button>
+            <button
+              onClick={handleDownloadMarkdown}
+              className="bg-signal-teal text-signal-white px-4 py-2 font-jetbrains text-[9px] uppercase tracking-[0.15em] hover:bg-signal-teal/80 transition-colors duration-300"
+              aria-label="Download brand system as Markdown"
+            >
+              {mdCopied ? "Downloaded" : "Download .md"}
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* ─── Section 1: Hero — Full-width dark ─── */}
       <section className="relative py-32 md:py-48 px-6 md:px-12 lg:px-20 bg-atlantic-black overflow-hidden">
         <div className="max-w-[1400px] mx-auto text-center">
@@ -469,6 +646,98 @@ export default function BrandPage() {
         </div>
       </section>
 
+      {/* ─── Section 6.5: Illustration Style ─── */}
+      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-black/[0.06]" aria-label="Illustration Style">
+        <div className="max-w-[1400px] mx-auto">
+          <motion.div {...fadeUp}>
+            <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-4">Illustration Style</h2>
+            <p className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-16">
+              Flat Editorial Illustration — Named Brand Asset
+            </p>
+
+            {/* Full-width example image */}
+            <div className="mb-16 border border-black/[0.06] overflow-hidden">
+              <Image
+                src="/images/gallery/hero-slider-namibia.webp"
+                alt="Flat editorial illustration example — Sossusvlei dead vlei at dawn"
+                width={1344}
+                height={768}
+                className="w-full h-auto object-contain"
+                priority
+              />
+            </div>
+
+            {/* Style reference */}
+            <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10 mb-8">
+              <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Style Reference</h3>
+              <p className="font-satoshi text-sm text-ink-muted leading-relaxed max-w-3xl mb-6">
+                Japanese travel poster aesthetic — Hiroshi Yoshida meets Studio Ghibli background art. Not anime. Not photorealistic. Clean flat colour fields, minimal linework, subtle paper grain texture only. The illustration system treats every scene as a graphic composition: flat shapes, limited palette, vast empty space, and Signal Teal as the sole accent colour.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  ["Technique", "Clean flat colour fields, minimal linework, subtle paper grain texture only"],
+                  ["Composition", "Maximum 3 focal elements per image. Vast empty space is intentional."],
+                  ["Humans", "Flat illustrated silhouette only, in motion, face never detailed, treated as a graphic shape"],
+                  ["Aspect Ratio", "16:9 landscape only"],
+                ].map(([label, value]) => (
+                  <div key={label} className="flex gap-3">
+                    <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.15em] shrink-0 min-w-[100px]">
+                      {label}
+                    </span>
+                    <span className="font-satoshi text-sm text-ink">{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Illustration palette swatches */}
+            <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10 mb-8">
+              <h3 className="font-cabinet text-lg font-bold text-ink mb-6">Illustration Palette</h3>
+              <p className="font-satoshi text-sm text-ink-muted mb-6">Maximum 6 flat colours per image. No other colours permitted.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+                {[
+                  { name: "Bone White", hex: "#F6F4EF", usage: "Light surfaces" },
+                  { name: "Atlantic Black", hex: "#111315", usage: "Dark surfaces, silhouettes" },
+                  { name: "Signal Teal", hex: "#2CB5B4", usage: "Sole accent colour" },
+                  { name: "Deep Navy", hex: "#0A0B0C", usage: "Sky, deep shadow" },
+                  { name: "Fog Gray", hex: "#D9D7D2", usage: "Neutral elements" },
+                  { name: "Burnt Orange", hex: "#C4622D", usage: "Namibian earth, dune faces" },
+                  { name: "Pale Sand", hex: "#E8DFD0", usage: "Desert ground, salt pans" },
+                ].map((swatch) => {
+                  const isLight = ["#F6F4EF", "#D9D7D2", "#E8DFD0"].includes(swatch.hex);
+                  return (
+                    <div key={swatch.hex} className="border border-black/[0.06]">
+                      <div
+                        className="h-20 w-full"
+                        style={{ backgroundColor: swatch.hex }}
+                      />
+                      <div className="p-3">
+                        <p className="font-cabinet text-xs font-bold text-ink">{swatch.name}</p>
+                        <p className="font-jetbrains text-[10px] text-ink mt-0.5">{swatch.hex}</p>
+                        <p className="font-satoshi text-[10px] text-ink-muted mt-1">{swatch.usage}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Forbidden techniques */}
+            <div className="border border-error/20 bg-signal-white p-6 md:p-10">
+              <span className="font-jetbrains text-[9px] text-error uppercase tracking-[0.2em]">Forbidden Techniques</span>
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {["Gradients", "Glows", "Photorealism", "Neon", "Text in images", "Logos in images", "Rounded bubbly shapes", "Lens flares", "More than 6 colours per image"].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <div className="w-3 h-[2px] bg-error/40 shrink-0" />
+                    <span className="font-satoshi text-sm text-ink-muted">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ─── Section 7: Motion System ─── */}
       <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-black/[0.06]" aria-label="Motion System">
         <div className="max-w-[1400px] mx-auto">
@@ -588,21 +857,26 @@ export default function BrandPage() {
         </div>
       </section>
 
-      {/* ─── Copy All ─── */}
+      {/* ─── Export Section ─── */}
       <section className="py-16 px-6 md:px-12 lg:px-20 bg-signal-white border-t border-black/[0.06]">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
-            <button
-              onClick={handleCopyAll}
-              className="w-full bg-ink text-signal-white p-4 font-jetbrains uppercase tracking-[0.15em] text-sm hover:bg-signal-teal transition-colors duration-300"
-              aria-label="Copy brand specifications to clipboard"
-            >
-              {copied ? (
-                <span className="text-signal-teal">COPIED</span>
-              ) : (
-                "Copy Brand Specifications"
-              )}
-            </button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <button
+                onClick={handleCopyText}
+                className="w-full bg-ink text-signal-white p-4 font-jetbrains uppercase tracking-[0.15em] text-sm hover:bg-signal-teal transition-colors duration-300"
+                aria-label="Copy brand system as text"
+              >
+                {copied ? "Copied to Clipboard" : "Copy as Text"}
+              </button>
+              <button
+                onClick={handleDownloadMarkdown}
+                className="w-full bg-signal-teal text-signal-white p-4 font-jetbrains uppercase tracking-[0.15em] text-sm hover:bg-signal-teal/80 transition-colors duration-300"
+                aria-label="Download brand system as Markdown"
+              >
+                {mdCopied ? "Downloaded" : "Download as Markdown"}
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -62,8 +62,8 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-3 mb-12 md:mb-16">
             <div className="relative h-32 md:h-48 lg:h-56 overflow-hidden">
               <Image
-                src="/images/gallery/desert-path-quiver-trees.webp"
-                alt="Quiver trees lining a desert path in southern Namibia"
+                src="/images/gallery/footer-editorial-left.webp"
+                alt="Namibian dune landscape"
                 className="object-cover cinematic-image"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
@@ -72,8 +72,8 @@ export function Footer() {
             </div>
             <div className="relative h-32 md:h-48 lg:h-56 overflow-hidden">
               <Image
-                src="/images/gallery/concrete-glass-architecture-structure.webp"
-                alt="Concrete and glass architectural structure representing design precision"
+                src="/images/gallery/footer-editorial-right.webp"
+                alt="Etosha salt pan"
                 className="object-cover cinematic-image"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"

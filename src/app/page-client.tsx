@@ -13,9 +13,9 @@ import { SiteShell } from "@/components/tangison/site-shell";
    ────────────────────────────────────────────── */
 
 const heroImages = [
-  { src: "/images/gallery/desert-path-quiver-trees.webp", alt: "Quiver trees lining a desert path in southern Namibia" },
-  { src: "/images/gallery/concrete-glass-architecture-blue-sky.webp", alt: "Concrete and glass building under blue sky" },
-  { src: "/images/gallery/desert-glass-concrete-landscape.webp", alt: "Modern concrete and glass architecture in the desert" },
+  { src: "/images/gallery/hero-01-digital-interface.webp", alt: "Abstract digital interface grid" },
+  { src: "/images/gallery/hero-02-ai-workflow.webp", alt: "AI workflow node diagram" },
+  { src: "/images/gallery/hero-slider-namibia.webp", alt: "Namibian desert landscape at dawn" },
 ];
 
 const featuredWork = [
@@ -23,22 +23,22 @@ const featuredWork = [
     name: "Tangison Agent",
     category: "Application Design",
     href: "/work",
-    image: "/images/gallery/concrete-glass-architecture-structure.webp",
-    imageAlt: "Tangison Agent — autonomous AI operations platform",
+    image: "/images/gallery/work-tangison-agent.webp",
+    imageAlt: "Tangison Agent platform design",
   },
   {
     name: "SkillsCamp",
     category: "Product Design",
     href: "/work",
-    image: "/images/gallery/desk-books-lamp-sunlight.webp",
-    imageAlt: "SkillsCamp — modular AI skill directory",
+    image: "/images/gallery/work-skillscamp.webp",
+    imageAlt: "SkillsCamp product design",
   },
   {
     name: "SMEFrog Academy",
     category: "Website Design",
     href: "/work",
-    image: "/images/gallery/business-registration-compliance.webp",
-    imageAlt: "SMEFrog Academy — AI education platform for African SMEs",
+    image: "/images/gallery/work-smefrog-academy.webp",
+    imageAlt: "SMEFrog Academy interface design",
   },
 ];
 
@@ -206,8 +206,8 @@ function HeroSection() {
             className="relative h-64 md:h-80 lg:h-[500px] overflow-hidden hidden lg:block"
           >
             <Image
-              src="/images/gallery/desert-road-landscape.webp"
-              alt="Desert road stretching toward the horizon in Namibia"
+              src="/images/gallery/hero-editorial-studio.webp"
+              alt="Minimal studio workspace"
               className="object-cover cinematic-image"
               fill
               sizes="40vw"

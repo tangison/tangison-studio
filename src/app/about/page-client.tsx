@@ -54,8 +54,8 @@ export function AboutPage() {
             className="relative min-h-[300px] md:min-h-[400px] overflow-hidden"
           >
             <Image
-              src="/images/gallery/desert-glass-concrete-landscape.webp"
-              alt="Desert landscape with concrete and glass structures in Namibia"
+              src="/images/gallery/about-philosophy.webp"
+              alt="Namibian landscape philosophy"
               className="object-cover cinematic-image"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

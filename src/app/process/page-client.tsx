@@ -112,8 +112,8 @@ export function ProcessPage() {
       {/* Image Break */}
       <section className="relative h-48 md:h-72 overflow-hidden" aria-hidden="true">
         <Image
-          src="/images/gallery/desert-road-line.webp"
-          alt="Straight desert road under vast sky representing the Tangison Studio process"
+          src="/images/gallery/process-flow.webp"
+          alt="Desert road stretching to the horizon"
           className="object-cover cinematic-image"
           fill
           sizes="100vw"
