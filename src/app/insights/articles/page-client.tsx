@@ -88,12 +88,12 @@ export function ArticlesPage() {
           <motion.div {...fadeUp}>
             <Link
               href="/insights"
-              className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.2em] text-ink-muted hover:text-rust-signal transition-colors duration-300 mb-8 group"
+              className="inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.2em] text-ink-muted hover:text-signal-teal transition-colors duration-300 mb-8 group"
             >
               <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-0.5" />
               Insights
             </Link>
-            <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-rust-signal block mb-6">
+            <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-signal-teal block mb-6">
               ARTICLES
             </span>
             <h1 className="font-cabinet text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-6">
@@ -108,7 +108,7 @@ export function ArticlesPage() {
 
       {/* Section 2: Article Cards */}
       <section
-        className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-warm-gray"
+        className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone"
         aria-label="Articles"
       >
         <div className="max-w-[1400px] mx-auto">
@@ -124,10 +124,10 @@ export function ArticlesPage() {
                   delay: i * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group border border-black/[0.06] bg-warm-white p-6 md:p-8 flex flex-col hover:border-black/[0.1] transition-all duration-500"
+                className="group border border-black/[0.06] bg-signal-white p-6 md:p-8 flex flex-col hover:border-black/[0.1] transition-all duration-500"
               >
                 {/* Category tag */}
-                <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-rust-signal mb-4">
+                <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-signal-teal mb-4">
                   {article.category}
                 </span>
 
@@ -147,7 +147,7 @@ export function ArticlesPage() {
                     {article.readTime} read
                   </span>
                   {article.comingSoon && (
-                    <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-ink-muted bg-warm-gray px-3 py-1.5">
+                    <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-ink-muted bg-skeleton-bone px-3 py-1.5">
                       Coming Soon
                     </span>
                   )}
@@ -162,7 +162,7 @@ export function ArticlesPage() {
             className="mt-16 md:mt-20 text-center"
           >
             <div
-              className="w-8 h-[1px] bg-rust-signal/30 mx-auto mb-6"
+              className="w-8 h-[1px] bg-signal-teal/30 mx-auto mb-6"
               aria-hidden="true"
             />
             <p className="font-satoshi text-ink-muted text-base">
@@ -178,36 +178,36 @@ export function ArticlesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link
               href="/insights/resources"
-              className="group block border border-black/[0.06] bg-warm-white p-8 md:p-10 hover:border-black/[0.1] transition-all duration-500"
+              className="group block border border-black/[0.06] bg-signal-white p-8 md:p-10 hover:border-black/[0.1] transition-all duration-500"
             >
-              <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-rust-signal mb-4 block">
+              <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-signal-teal mb-4 block">
                 Resources
               </span>
-              <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink mb-3 group-hover:text-rust-signal transition-colors duration-300">
+              <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink mb-3 group-hover:text-signal-teal transition-colors duration-300">
                 AI Guides and Frameworks
               </h3>
               <p className="font-satoshi text-ink-muted text-sm leading-relaxed">
                 Download our comprehensive library of AI strategy guides, maturity frameworks, and industry-specific playbooks.
               </p>
-              <div className="flex items-center gap-2 mt-6 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-rust-signal transition-colors duration-300">
+              <div className="flex items-center gap-2 mt-6 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-signal-teal transition-colors duration-300">
                 <span>Browse</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </Link>
             <Link
               href="/insights/case-studies"
-              className="group block border border-black/[0.06] bg-warm-white p-8 md:p-10 hover:border-black/[0.1] transition-all duration-500"
+              className="group block border border-black/[0.06] bg-signal-white p-8 md:p-10 hover:border-black/[0.1] transition-all duration-500"
             >
-              <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-rust-signal mb-4 block">
+              <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-signal-teal mb-4 block">
                 Case Studies
               </span>
-              <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink mb-3 group-hover:text-rust-signal transition-colors duration-300">
+              <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink mb-3 group-hover:text-signal-teal transition-colors duration-300">
                 Results from the Field
               </h3>
               <p className="font-satoshi text-ink-muted text-sm leading-relaxed">
                 Real projects. Real outcomes. See how organizations are deploying AI with TANGISON.
               </p>
-              <div className="flex items-center gap-2 mt-6 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-rust-signal transition-colors duration-300">
+              <div className="flex items-center gap-2 mt-6 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted group-hover:text-signal-teal transition-colors duration-300">
                 <span>Read</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </div>

@@ -25,18 +25,18 @@ const sections = [
 export function CookiePolicyPage() {
   return (
     <>
-    <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-rust-signal focus:text-warm-white focus:px-4 focus:py-2 font-jetbrains text-xs uppercase tracking-widest">
+    <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-signal-teal focus:text-signal-white focus:px-4 focus:py-2 font-jetbrains text-xs uppercase tracking-widest">
       Skip to main content
     </a>
-    <div className="bg-warm-white min-h-screen flex flex-col">
+    <div className="bg-signal-white min-h-screen flex flex-col">
       <main id="main-content" className="flex-1 py-28 md:py-36 px-6 md:px-12 lg:px-20">
         <div className="max-w-[800px] mx-auto">
           {/* Back link */}
           <Link
             href="/"
-            className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-ink-muted hover:text-rust-signal transition-colors duration-300 inline-block mb-16"
+            className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-ink-muted hover:text-signal-teal transition-colors duration-300 inline-block mb-16"
           >
-            &larr; Back to tangison.com
+            &larr; Back to studio.tangison.com
           </Link>
 
           {/* Page header */}
@@ -70,19 +70,19 @@ export function CookiePolicyPage() {
           <div className="flex gap-6">
             <Link
               href="/legal/privacy"
-              className="font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-rust-signal transition-colors duration-300"
+              className="font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300"
             >
               Privacy
             </Link>
             <Link
               href="/legal/terms"
-              className="font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-rust-signal transition-colors duration-300"
+              className="font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300"
             >
               Terms
             </Link>
             <Link
               href="/legal/cookies"
-              className="font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-rust-signal transition-colors duration-300"
+              className="font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300"
             >
               Cookies
             </Link>
