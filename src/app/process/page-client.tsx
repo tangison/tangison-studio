@@ -118,7 +118,7 @@ export function ProcessPage() {
           fill
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-skeleton-bone/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-skeleton-bone via-transparent to-skeleton-bone" />
       </section>
 
       {/* CTA */}

@@ -52,7 +52,7 @@ export function PageHeader({
       isDark ? "bg-atlantic-black" : "bg-skeleton-bone"
     }`}>
       {isDark && (
-        <div className="absolute inset-0 bg-deep-ocean/10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean/20 to-transparent pointer-events-none" />
       )}
 
       <div className="max-w-[1400px] mx-auto relative z-10">

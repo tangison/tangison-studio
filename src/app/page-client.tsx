@@ -213,7 +213,7 @@ function HeroSection() {
               sizes="40vw"
               priority
             />
-            <div className="absolute inset-0 bg-skeleton-bone/15" />
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-skeleton-bone/20" />
           </motion.div>
         </div>
       </motion.div>

@@ -2499,3 +2499,30 @@ Stage Summary:
 - Navigation is ultra-dynamic with 3 scroll states + Cmd+K search
 - Build passes clean with Next.js 16.1.0
 - Vercel auto-deploy should now work (no standalone output, no Docker commands)
+---
+Task ID: 7
+Agent: Main Agent
+Task: Fix email, optimize for Vercel Hobby, implement ultra-dynamic navigation, push to GitHub
+
+Work Log:
+- Fixed public contact email: footer.tsx + layout.tsx changed from tangison@proton.me → studio@tangison.com
+- Verified legal/privacy pages correctly keep tangison@proton.me (backoffice use)
+- Verified contact page has correct dual email setup (studio@tangison.com for general, proton.me for Legal/Privacy)
+- Removed bun.lock from repo (was conflicting with package-lock.json on Vercel)
+- Added bun.lock to .gitignore
+- Fixed start script: "bun .next/standalone/server.js" → "next start" (Vercel-compatible)
+- Optimized next.config.ts: limited deviceSizes/imageSizes, removed poweredByHeader, cleaned dev origins
+- Implemented ultra-dynamic desktop navigation:
+  * Sliding hover indicator: shared teal underline that glides between nav items with spring physics
+  * Staggered entrance animation: nav items cascade in on page load with staggered delay
+  * Proportional scroll-driven backdrop: opacity increases with scroll distance (not just on/off)
+  * Spring-physics floating transitions: nav uses framer-motion springs instead of CSS transitions
+  * Enhanced dropdown: tagline + image preview, staggered child animation
+  * Active page indicator: shared layoutId underline that slides between active pages
+- Build passes clean: 29 static pages, 4 dynamic API routes
+- Pushed commit 3c0bd66 to GitHub as tangison@proton.me
+
+Stage Summary:
+- All 3 critical issues resolved: email fix, Vercel optimization, ultra-dynamic nav
+- Build verified clean before push
+- Commit: 3c0bd66 pushed to origin/main

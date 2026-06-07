@@ -68,7 +68,7 @@ export function Footer() {
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-atlantic-black/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-atlantic-black/60 to-transparent" />
             </div>
             <div className="relative h-32 md:h-48 lg:h-56 overflow-hidden">
               <Image
@@ -78,7 +78,7 @@ export function Footer() {
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-atlantic-black/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-atlantic-black/60 to-transparent" />
             </div>
           </div>
 

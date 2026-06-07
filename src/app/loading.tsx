@@ -28,7 +28,7 @@ export default function Loading() {
         {/* Signal line with traveling pulse */}
         <div className="w-32 h-[1px] bg-ink/10 relative overflow-hidden">
           <div
-            className="absolute inset-y-0 w-8 bg-signal-teal/80"
+            className="absolute inset-y-0 w-8 bg-gradient-to-r from-transparent via-signal-teal/80 to-transparent"
             style={{
               animation: "signal-travel 1.4s cubic-bezier(0.16, 1, 0.3, 1) infinite",
             }}
