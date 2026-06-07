@@ -1,0 +1,15 @@
+{
+  "registry": "https://skills.sh",
+  "fallback": "skills/local/",
+  "defaults": [
+    "obra/superpowers",
+    "anthropic/deep-research",
+    "vercel/labs-skills"
+  ],
+  "install": "npx skills add [skill] --dir skills/local/",
+  "discover": {
+    "trending": "https://skills.sh/trending",
+    "search": "https://skills.sh/search?q=[query]"
+  },
+  "note": "Agent fetches trending + project-relevant skills at session start if internet available. Falls back to skills/local/ if offline."
+}

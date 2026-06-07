@@ -51,8 +51,12 @@ test
 prompt
 
 server.log
-# Skills directory
-/skills/
+
+# Studio OS — local skills (not tracked)
+skills/local/
+# Studio OS — logs
+logs/*.log
 # Upload directory (raw assets)
 /upload/squirrel.toml
+# Bun lockfile (Vercel uses npm)
 bun.lock
