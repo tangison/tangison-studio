@@ -504,10 +504,16 @@ export function TangisonAIWidget() {
       stopSpeaking();
 
       try {
+        // Send conversation history from client for serverless compatibility
+        const history = messages.slice(-16).map((m) => ({
+          role: m.role === "bot" ? "assistant" : "user",
+          content: m.content,
+        }));
+
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ sessionId: SESSION_ID, message: text.trim() }),
+          body: JSON.stringify({ message: text.trim(), history }),
         });
 
         if (!res.ok) throw new Error("Failed to get response");
@@ -614,19 +620,13 @@ export function TangisonAIWidget() {
   };
 
   /* ─── Clear Conversation ─── */
-  const clearConversation = useCallback(async () => {
+  const clearConversation = useCallback(() => {
     stopSpeaking();
     stopListening();
     setMessages([GREETING_MESSAGE]);
     setShowPrompts(true);
     setInput("");
     setTranscript("");
-
-    try {
-      await fetch(`/api/chat?sessionId=${SESSION_ID}`, { method: "DELETE" });
-    } catch {
-      // Silently fail
-    }
   }, [stopSpeaking, stopListening]);
 
   /* ─── Close Panel ─── */

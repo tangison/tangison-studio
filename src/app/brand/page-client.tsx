@@ -333,7 +333,7 @@ export default function BrandPage() {
               <div
                 className="w-full h-6 absolute top-0"
                 style={{
-                  backgroundColor: "rgba(44,181,180,0.4)",
+                  background: "rgba(44,181,180,0.4)",
                   animation: "scroll-pulse 2.8s cubic-bezier(0.16, 1, 0.3, 1) infinite",
                 }}
               />

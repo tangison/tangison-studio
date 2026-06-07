@@ -118,7 +118,7 @@ export function ProcessPage() {
           fill
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-skeleton-bone/30" />
+        <div className="absolute inset-0 bg-skeleton-bone/50" />
       </section>
 
       {/* CTA */}
@@ -133,7 +133,7 @@ export function ProcessPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 group"
+              className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300 group"
             >
               Start a Project →
             </Link>

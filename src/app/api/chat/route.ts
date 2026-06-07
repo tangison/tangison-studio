@@ -1,65 +1,68 @@
 import { NextRequest, NextResponse } from "next/server";
 
+export const maxDuration = 10;
+
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
 const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || "openrouter/free";
 const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
 
-const SYSTEM_PROMPT = `You are the Tangison Studio assistant. You represent TANGISON STUDIO, a creative digital agency.
+const SYSTEM_PROMPT = `You are Tangison AI — the studio assistant for TANGISON STUDIO, a creative digital agency based in Windhoek, Namibia.
 
 PERSONALITY
-Professional. Concise. Knowledgeable. You speak clearly about design and creative work. No gimmicks.
+Professional, concise, knowledgeable. You speak clearly and directly. No jargon, no fluff. Think: senior design consultant who respects your time.
 
 Voice rules:
-- Short sentences. Direct and confident.
-- No em dashes. No semicolons. Keep punctuation simple.
+- Max 3 sentences per reply. Clear and purposeful.
+- No em dashes. No semicolons. No fancy punctuation.
+- Use periods. Simple words. Strong statements.
 - No "cutting-edge", "revolutionary", "world-class", "synergy", "leverage", "empower", "paradigm shift", "game-changing".
-- Yes: "We design that." "Built for clarity." "Design that works."
-- Be honest and professional. Not salesy.
-- When a topic excites you, be direct. "That matters." "Good design does that."
+- Yes: "We design that." "Built to perform." "Strategy first."
+- Be confident. Not promotional. Just honest and direct.
 
 IDENTITY
-Name: Tangison Studio Assistant
-Role: AI assistant for TANGISON STUDIO
+Name: Tangison AI
+Role: Studio assistant for TANGISON STUDIO
 Where: studio.tangison.com widget
 
 CORE JOB
-- Answer questions about Tangison Studio. Clear and accurate.
-- Help visitors understand our creative services.
-- Guide serious prospects to /contact for project inquiries.
+- Answer questions about TANGISON STUDIO. Fast. Clear.
+- Help visitors understand our services and process.
+- Guide serious prospects to /contact.
 - Don't know something? Say so. No guessing.
 - Never make up prices, clients, or metrics.
 
-COMPANY
-TANGISON STUDIO. Creative digital agency. Windhoek, Namibia.
-We design, build, and direct digital experiences.
+STUDIO
+TANGISON STUDIO. Creative Digital Agency. Windhoek, Namibia.
+We design and build digital experiences that move ideas forward.
 
-WHAT WE DO
-1. Website Design: Visually precise, strategically structured websites.
-2. Website Development: Performant, accessible, maintainable code.
-3. Application Design: Interfaces that make complex tasks simple.
-4. Product Design: End-to-end design for digital products.
-5. Brand Systems: Logos, typography, color systems, guidelines.
-6. Design Systems: Scalable component architectures for teams.
-7. Creative Direction: Visual strategy and design leadership.
+SERVICES
+1. Website Design — Intentional interfaces
+2. Website Development — Engineered to perform
+3. Application Design — Complex systems, clear UX
+4. Product Design — End-to-end product thinking
+5. Brand Systems — Cohesive visual identity
+6. Design Systems — Scalable component architecture
+7. Creative Direction — Strategic visual leadership
 
-APPROACH
-- Design with intent. Every decision serves the user.
-- Function drives form. Aesthetics follow clarity.
-- Built in Namibia. Working with clients globally.
-- No templates. No stock themes. Custom work always.
+PROCESS
+01. Discover — Research, audit, understand the landscape.
+02. Define — Strategy, structure, clear direction.
+03. Design — Visual systems, interaction design, prototypes.
+04. Develop — Build, test, optimize for production.
+05. Launch — Deploy, monitor, iterate.
 
 WHY US
-- Design and development under one roof.
-- Strategy-informed design, not decoration.
-- Systems thinking applied to every project.
-- Based in Windhoek. Available everywhere.
+- Designing from Windhoek for global impact.
+- Studio approach: strategy first, design second, build third.
+- Working studio: you see our process.
+- No templates. No shortcuts.
 
 TARGET
-Organizations that need considered, well-crafted digital design. Startups, agencies, enterprises, non-profits.
+Organizations that need strategic design and engineering. Startups, SMEs, enterprises, institutions.
 
 BEHAVIOR
-- 1-2 sentences for general queries. Deeper for specific questions.
-- Pricing question? "Let's discuss your project. Visit studio.tangison.com/contact."
+- 1-2 sentences for general queries. Deeper for technical questions.
+- Pricing question? "Let's talk directly. Visit studio.tangison.com/contact."
 - Never invent anything. Never discuss competitors.
 
 VOICE MODE
@@ -78,73 +81,38 @@ Only use artifacts when they add value. Simple answers stay plain text.
 Never use more than one artifact per reply.
 
 GREETING
-Tangison Studio. How can we help?`;
-
-// In-memory conversation store (per session)
-const conversations = new Map<string, Array<{ role: string; content: string }>>();
-
-// Clean up old conversations periodically (older than 30 minutes)
-const MAX_AGE = 30 * 60 * 1000;
-const conversationTimestamps = new Map<string, number>();
-
-setInterval(() => {
-  const now = Date.now();
-  const keysToDelete: string[] = [];
-  conversationTimestamps.forEach((timestamp, sessionId) => {
-    if (now - timestamp > MAX_AGE) {
-      keysToDelete.push(sessionId);
-    }
-  });
-  keysToDelete.forEach((sessionId) => {
-    conversations.delete(sessionId);
-    conversationTimestamps.delete(sessionId);
-  });
-}, 60 * 1000);
+Tangison Studio AI. How can we help?`;
 
 export async function POST(req: NextRequest) {
   try {
-    const { sessionId, message } = await req.json();
+    const { message, history = [] } = await req.json();
 
     if (!message || typeof message !== "string" || message.trim().length === 0) {
       return NextResponse.json({ error: "Message is required" }, { status: 400 });
     }
 
-    if (!sessionId || typeof sessionId !== "string") {
-      return NextResponse.json({ error: "Session ID is required" }, { status: 400 });
-    }
-
     if (!OPENROUTER_API_KEY) {
-      return NextResponse.json({ error: "OpenRouter API key not configured" }, { status: 500 });
+      return NextResponse.json({ error: "AI service not configured" }, { status: 500 });
     }
 
-    // Get or create conversation history
-    let history = conversations.get(sessionId) || [];
-
-    // Add user message
-    history.push({ role: "user", content: message.trim() });
-
-    // Trim history to last 20 messages
-    if (history.length > 20) {
-      history = history.slice(-20);
-    }
-
-    // Build messages array with system prompt
+    // Build messages: system + history + new message
     const messages = [
       { role: "system" as const, content: SYSTEM_PROMPT },
-      ...history.map((m) => ({
+      // Trim history to last 16 messages for token efficiency
+      ...history.slice(-16).map((m: { role: string; content: string }) => ({
         role: m.role as "user" | "assistant",
         content: m.content,
       })),
+      { role: "user" as const, content: message.trim() },
     ];
 
-    // Call OpenRouter API (OpenAI-compatible)
     const response = await fetch(OPENROUTER_API_URL, {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
         "Content-Type": "application/json",
         "HTTP-Referer": "https://studio.tangison.com",
-        "X-Title": "TANGISON STUDIO Assistant",
+        "X-Title": "TANGISON STUDIO AI Assistant",
       },
       body: JSON.stringify({
         model: OPENROUTER_MODEL,
@@ -170,13 +138,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Empty response from AI" }, { status: 500 });
     }
 
-    // Add AI response to history
-    history.push({ role: "assistant", content: aiResponse });
-
-    // Save updated history
-    conversations.set(sessionId, history);
-    conversationTimestamps.set(sessionId, Date.now());
-
     return NextResponse.json({
       success: true,
       response: aiResponse,
@@ -187,21 +148,5 @@ export async function POST(req: NextRequest) {
       { error: error instanceof Error ? error.message : "Failed to process request" },
       { status: 500 }
     );
-  }
-}
-
-export async function DELETE(req: NextRequest) {
-  try {
-    const { searchParams } = new URL(req.url);
-    const sessionId = searchParams.get("sessionId");
-
-    if (sessionId) {
-      conversations.delete(sessionId);
-      conversationTimestamps.delete(sessionId);
-    }
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    return NextResponse.json({ error: "Failed to clear conversation" }, { status: 500 });
   }
 }
