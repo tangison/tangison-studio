@@ -209,8 +209,8 @@ Used for metadata, labels, version numbers, and navigation items ONLY.
 - Maximum 3 focal elements per image
 - Humans: flat illustrated silhouette only, in motion, face never detailed
 
-### Forbidden Techniques
-- Gradients  
+### Forbidden Techniques (Illustrations Only)
+- Gradients in illustrations  
 - Glows  
 - Photorealism  
 - Neon  
@@ -233,7 +233,8 @@ Used for metadata, labels, version numbers, and navigation items ONLY.
 
 ## Anti-Patterns
 
-- Never use gradients on any element
+- Never use gradients on any illustration
+- UI overlays and atmospheric sections may use subtle gradients
 - No text-shadow or drop-shadow on type
 - All elements use sharp corners (max 4px radius)
 - No decorative blobs or floating elements
@@ -296,6 +297,8 @@ export default function BrandPage() {
 
       {/* ─── Section 1: Hero — Full-width dark ─── */}
       <section className="relative py-32 md:py-48 px-6 md:px-12 lg:px-20 bg-atlantic-black overflow-hidden">
+        {/* Gradient atmosphere */}
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean/30 via-atlantic-black to-terminal-black/40 pointer-events-none" />
         <div className="max-w-[1400px] mx-auto text-center">
           <motion.div {...fadeUp}>
             {/* H1 — Brand Identity heading */}
@@ -724,7 +727,7 @@ export default function BrandPage() {
 
             {/* Forbidden techniques */}
             <div className="border border-error/20 bg-signal-white p-6 md:p-10">
-              <span className="font-jetbrains text-[9px] text-error uppercase tracking-[0.2em]">Forbidden Techniques</span>
+              <span className="font-jetbrains text-[9px] text-error uppercase tracking-[0.2em]">Forbidden Techniques (Illustrations)</span>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {["Gradients", "Glows", "Photorealism", "Neon", "Text in images", "Logos in images", "Rounded bubbly shapes", "Lens flares", "More than 6 colours per image"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
@@ -782,7 +785,7 @@ export default function BrandPage() {
             <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-16">Anti-Patterns</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <AntiPattern title="Gradients" desc="Never use gradients on any element. Flat colors only." />
+              <AntiPattern title="Illustration gradients" desc="Gradients are forbidden in illustrations only. UI overlays and atmospheric sections may use subtle gradients." />
               <AntiPattern title="Shadows on text" desc="No text-shadow or drop-shadow on type." />
               <AntiPattern title="Border-radius > 4px" desc="All elements use sharp corners. Maximum 4px radius." />
               <AntiPattern title="Decorative blobs" desc="No abstract shapes, floating elements, or decorative blobs." />

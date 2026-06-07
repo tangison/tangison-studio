@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Loading() {
   return (
-    <div className="fixed inset-0 bg-skeleton-bone flex flex-col items-center justify-center z-[9999]">
+    <div className="fixed inset-0 bg-gradient-to-b from-skeleton-bone to-skeleton-bone/95 flex flex-col items-center justify-center z-[9999]">
       <div className="flex flex-col items-center gap-8">
         {/* Logo mark with breathing glow */}
         <div className="relative">

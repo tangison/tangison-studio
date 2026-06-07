@@ -131,8 +131,8 @@ function HeroSection() {
             />
           </motion.div>
         </AnimatePresence>
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-skeleton-bone/70" />
+        {/* Gradient overlay — atmospheric depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-skeleton-bone/90 via-skeleton-bone/60 to-skeleton-bone/95" />
       </div>
 
       {/* Content */}
@@ -435,14 +435,16 @@ function PrinciplesSection() {
 
 function ContactTeaserSection() {
   return (
-    <section className="py-32 md:py-48 px-6 md:px-12 lg:px-20 bg-atlantic-black" aria-label="Start a project">
+    <section className="relative py-32 md:py-48 px-6 md:px-12 lg:px-20 bg-atlantic-black overflow-hidden" aria-label="Start a project">
+      {/* Gradient atmosphere */}
+      <div className="absolute inset-0 bg-gradient-to-br from-deep-ocean/40 via-atlantic-black to-terminal-black/60 pointer-events-none" />
       <div className="max-w-3xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="font-cabinet text-[clamp(2.5rem,6vw,6rem)] font-black tracking-[-0.04em] text-skeleton-bone mb-10 leading-[0.9]"
+          className="font-cabinet text-[clamp(2.5rem,6vw,6rem)] font-black tracking-[-0.04em] text-skeleton-bone mb-10 leading-[0.9] relative z-10"
         >
           Ready to build something?
         </motion.h2>
@@ -452,6 +454,7 @@ function ContactTeaserSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10"
         >
           <Link
             href="/contact"

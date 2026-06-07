@@ -32,14 +32,16 @@ export function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="bg-atlantic-black border-t border-white/[0.04]"
+      className="relative bg-atlantic-black border-t border-white/[0.04] overflow-hidden"
     >
+      {/* Gradient atmosphere */}
+      <div className="absolute inset-0 bg-gradient-to-b from-atlantic-black via-atlantic-black to-terminal-black pointer-events-none" />
       {/* Top section — logo + tagline + images */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-12 md:pb-16"
+        className="relative z-10 px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-12 md:pb-16"
       >
         <div className="max-w-[1400px] mx-auto">
           {/* Logo mark + wordmark */}
@@ -92,7 +94,7 @@ export function Footer() {
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-        className="px-6 md:px-12 lg:px-20 pb-12 md:pb-16"
+        className="relative z-10 px-6 md:px-12 lg:px-20 pb-12 md:pb-16"
       >
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-16">
@@ -205,7 +207,7 @@ export function Footer() {
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="border-t border-white/[0.04]"
+        className="relative z-10 border-t border-white/[0.04]"
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="font-jetbrains text-[9px] text-white/20 uppercase tracking-[0.3em]">
