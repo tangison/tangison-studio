@@ -2453,3 +2453,49 @@ Stage Summary:
 - All SEO metadata tightened and made more benefit-focused
 - All image alt texts made more descriptive
 - Zero lint errors, zero TypeScript errors, build succeeds
+
+---
+Task ID: 2
+Agent: Main Agent
+Task: Vercel Hobby plan optimization, ultra-dynamic navigation, zero gradients, deployment fix
+
+Work Log:
+- Verified email correctness: studio@tangison.com (public contact), tangison@proton.me (backoffice/legal)
+- Removed output:"standalone" from next.config.ts (not needed for Vercel)
+- Simplified build script: "next build" (removed Docker-specific cp commands)
+- Fixed CSP: removed microphone=() restriction, added media-src blob: for voice features
+- Refactored /api/chat for serverless: client sends history, no in-memory Map, no setInterval
+- Refactored /api/contact for serverless: removed in-memory rate limiting, kept honeypot+validation
+- Added maxDuration=10 to all API routes for Vercel Hobby plan (10s function limit)
+- Pinned Next.js to 16.1.0 (16.2.7 has Turbopack build panic - "missing VAR_MODULE_GLOBAL_ERROR")
+- Complete navigation redesign with ultra-dynamic scroll states:
+  - Three states: "top" (transparent), "floating" (pill with blur), "hidden" (scroll down)
+  - Floating pill on scroll with backdrop blur, teal accent line, scroll progress indicator
+  - Cmd+K search overlay with keyboard navigation (↑↓ arrows, Enter, Escape)
+  - Search across all pages and 7 services
+  - Hide on scroll-down (after 300px), reveal on scroll-up
+  - Dropdown menus with arrow indicators instead of full-width mega-menu
+  - Search trigger button with ⌘K hint on desktop
+- Removed ALL remaining gradient violations (8 total):
+  - Footer image overlays: gradient→flat bg-atlantic-black/40
+  - Page header dark overlay: gradient→flat bg-deep-ocean/10
+  - Process page image overlay: gradient→flat bg-skeleton-bone/50
+  - Loading bar: gradient→flat bg-signal-teal/80
+  - Brand page scroll indicator: linear-gradient→flat rgba
+  - Hero editorial image: gradient→flat bg-skeleton-bone/10
+- Hero section improvements:
+  - Center-aligned content (items-center instead of items-end)
+  - 12-column grid (7+5 split) for better proportions
+  - Taller editorial image (560px)
+  - Proper nav clearance padding (pt-28)
+- Chat API personality updated: professional studio assistant (not caveman)
+- Resolved merge conflicts with remote during push
+- Build verified clean, pushed as tangison@proton.me
+
+Stage Summary:
+- Commit: 03f4ff1 pushed to origin/main
+- Zero gradients remaining across entire codebase
+- All API routes are serverless-compatible for Vercel Hobby plan
+- Navigation is ultra-dynamic with 3 scroll states + Cmd+K search
+- Build passes clean with Next.js 16.1.0
+- Vercel auto-deploy should now work (no standalone output, no Docker commands)

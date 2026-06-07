@@ -122,11 +122,59 @@ function HamburgerIcon({ isOpen, dark = false }: { isOpen: boolean; dark?: boole
   );
 }
 
+/* ─── Sliding Hover Indicator ──────────────────────────────────── */
+/* A shared teal underline that slides between nav items following cursor */
+
+function SlidingIndicator({
+  activeRect,
+  containerRef,
+}: {
+  activeRect: DOMRect | null;
+  containerRef: React.RefObject<HTMLDivElement | null>;
+}) {
+  const [style, setStyle] = useState<{ left: number; width: number } | null>(null);
+
+  useEffect(() => {
+    if (!activeRect || !containerRef.current) {
+      setStyle(null);
+      return;
+    }
+    const containerRect = containerRef.current.getBoundingClientRect();
+    setStyle({
+      left: activeRect.left - containerRect.left,
+      width: activeRect.width,
+    });
+  }, [activeRect, containerRef]);
+
+  if (!style) return null;
+
+  return (
+    <motion.div
+      layoutId="nav-indicator"
+      className="absolute bottom-0 h-[1.5px] bg-signal-teal"
+      initial={false}
+      animate={{ left: style.left, width: style.width }}
+      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+    />
+  );
+}
+
 /* ─── Desktop Mega-Menu Dropdown ──────────────────────────────── */
 
-function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }) {
+function DesktopDropdown({
+  item,
+  pathname,
+  onHoverStart,
+  onHoverEnd,
+}: {
+  item: NavItem;
+  pathname: string;
+  onHoverStart: (rect: DOMRect) => void;
+  onHoverEnd: () => void;
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const linkRef = useRef<HTMLAnchorElement>(null);
 
   const handleMouseEnter = useCallback(() => {
     if (timeoutRef.current) {
@@ -134,13 +182,17 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
       timeoutRef.current = null;
     }
     setIsOpen(true);
-  }, []);
+    if (linkRef.current) {
+      onHoverStart(linkRef.current.getBoundingClientRect());
+    }
+  }, [onHoverStart]);
 
   const handleMouseLeave = useCallback(() => {
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
     }, 200);
-  }, []);
+    onHoverEnd();
+  }, [onHoverEnd]);
 
   useEffect(() => {
     return () => {
@@ -159,8 +211,9 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
       onMouseLeave={handleMouseLeave}
     >
       <Link
+        ref={linkRef}
         href={item.href}
-        className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 ${
+        className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 py-1 ${
           isActive
             ? "text-ink"
             : "text-ink-muted hover:text-ink"
@@ -169,60 +222,98 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
         aria-haspopup="true"
       >
         {item.label}
-        <span
-          className={`absolute -bottom-1 left-0 h-[1.5px] transition-all duration-400 ease-out ${
-            isActive
-              ? "w-full bg-signal-teal"
-              : "w-0 group-hover:w-full bg-signal-teal/60"
-          }`}
-        />
+        {/* Static active underline — always shown for current page */}
+        {isActive && (
+          <motion.span
+            layoutId="active-nav-underline"
+            className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-signal-teal"
+            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          />
+        )}
       </Link>
 
       <AnimatePresence>
         {isOpen && item.children && (
           <motion.div
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 6 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 8, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 8, scale: 0.98 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="absolute left-0 top-full pt-3 z-50"
             role="menu"
             aria-label={`${item.label} submenu`}
           >
-            <div className="bg-signal-white border border-black/[0.06] min-w-[320px] overflow-hidden">
+            <div className="bg-signal-white border border-black/[0.06] min-w-[340px] overflow-hidden">
               {/* Teal accent line */}
-              <div className="h-[2px] bg-signal-teal" aria-hidden="true" />
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="h-[2px] bg-signal-teal origin-left"
+                aria-hidden="true"
+              />
 
-              <div className="py-3">
-                {item.children.map((child) => {
+              {/* Optional tagline */}
+              {item.megaTagline && (
+                <div className="px-5 py-3 border-b border-black/[0.04]">
+                  <span className="font-satoshi text-[12px] text-ink-muted/60 italic">
+                    {item.megaTagline}
+                  </span>
+                </div>
+              )}
+
+              <div className="py-2">
+                {item.children.map((child, i) => {
                   const isChildActive = pathname === child.href;
                   return (
-                    <Link
+                    <motion.div
                       key={child.href}
-                      href={child.href}
-                      className={`flex items-center justify-between px-5 py-3 transition-all duration-200 ${
-                        isChildActive
-                          ? "text-ink bg-ocean-mist"
-                          : "text-ink-muted hover:text-ink hover:bg-ocean-mist/50"
-                      }`}
-                      role="menuitem"
-                      onClick={() => setIsOpen(false)}
+                      initial={{ opacity: 0, x: -8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.25, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <div>
-                        <span className="font-cabinet text-sm font-bold tracking-tight block">
-                          {child.label}
-                        </span>
-                        {child.description && (
-                          <span className="font-satoshi text-[11px] text-ink-muted/50 mt-0.5 block">
-                            {child.description}
+                      <Link
+                        href={child.href}
+                        className={`flex items-center justify-between px-5 py-3 transition-all duration-200 ${
+                          isChildActive
+                            ? "text-ink bg-ocean-mist"
+                            : "text-ink-muted hover:text-ink hover:bg-ocean-mist/50"
+                        }`}
+                        role="menuitem"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <div>
+                          <span className="font-cabinet text-sm font-bold tracking-tight block">
+                            {child.label}
                           </span>
-                        )}
-                      </div>
-                      <ArrowRight className="w-3 h-3 text-ink-muted/30 shrink-0 ml-4" />
-                    </Link>
+                          {child.description && (
+                            <span className="font-satoshi text-[11px] text-ink-muted/50 mt-0.5 block">
+                              {child.description}
+                            </span>
+                          )}
+                        </div>
+                        <ArrowRight className="w-3 h-3 text-ink-muted/30 shrink-0 ml-4" />
+                      </Link>
+                    </motion.div>
                   );
                 })}
               </div>
+
+              {/* Optional bottom image preview */}
+              {item.megaImage && (
+                <div className="border-t border-black/[0.04]">
+                  <div className="relative h-24 overflow-hidden">
+                    <Image
+                      src={item.megaImage}
+                      alt={item.megaImageAlt || ""}
+                      className="object-cover"
+                      fill
+                      sizes="340px"
+                    />
+                    <div className="absolute inset-0 bg-atlantic-black/20" />
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
         )}
@@ -288,7 +379,6 @@ function SearchOverlay({
       } else if (e.key === "Enter" && flatResults[selectedIndex]) {
         e.preventDefault();
         onClose();
-        // Navigate using Next.js router
         window.location.href = flatResults[selectedIndex].href;
       }
     };
@@ -579,6 +669,36 @@ function MobileAccordionItemDark({
   );
 }
 
+/* ─── Staggered Entrance Variants ──────────────────────────────── */
+
+const STUDIO_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
+
+const navItemVariants = {
+  hidden: { opacity: 0, y: -12 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.5 + i * 0.07,
+      duration: 0.5,
+      ease: STUDIO_EASE,
+    },
+  }),
+};
+
+const navRightVariants = {
+  hidden: { opacity: 0, y: -12 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.5 + navItems.length * 0.07 + i * 0.07,
+      duration: 0.5,
+      ease: STUDIO_EASE,
+    },
+  }),
+};
+
 /* ─── Main Navigation Component ───────────────────────────────── */
 
 type NavVisualState = "top" | "floating" | "hidden";
@@ -588,7 +708,10 @@ export function Navigation() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [hoveredRect, setHoveredRect] = useState<DOMRect | null>(null);
+  const [scrollYValue, setScrollYValue] = useState(0);
   const pathname = usePathname();
+  const navLinksRef = useRef<HTMLDivElement>(null);
 
   // Scroll tracking — ultra-smooth with requestAnimationFrame
   useEffect(() => {
@@ -608,6 +731,9 @@ export function Navigation() {
           if (docHeight > 0) {
             setScrollProgress(Math.min(1, Math.max(0, currentScrollY / docHeight)));
           }
+
+          // Track raw scroll for proportional backdrop
+          setScrollYValue(currentScrollY);
 
           // Accumulate delta to filter out micro-scroll jitter
           accumulatedDelta += delta;
@@ -684,6 +810,10 @@ export function Navigation() {
   const isTop = navState === "top";
   const isHidden = navState === "hidden";
 
+  // Proportional backdrop opacity: 0 at top, up to 0.97 at 300px scroll
+  const backdropOpacity = isTop ? 0 : Math.min(0.97, 0.6 + (scrollYValue / 500) * 0.37);
+  const blurAmount = isTop ? 0 : Math.min(20, 8 + scrollYValue / 30);
+
   return (
     <>
       {/* Desktop / Shared Nav Bar */}
@@ -694,18 +824,21 @@ export function Navigation() {
           opacity: isHidden ? 0 : 1,
         }}
         transition={{
-          y: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
-          opacity: { duration: 0.3 },
+          y: { type: "spring", stiffness: 300, damping: 30 },
+          opacity: { duration: 0.25 },
         }}
         className={`fixed z-50 transition-all duration-700 ${
           isFloating
-            ? "top-3 left-4 right-4 md:left-6 md:right-6 lg:left-auto lg:right-auto lg:top-4 lg:max-w-[1200px] lg:mx-auto bg-signal-white/[0.97] border border-black/[0.06] px-5 md:px-8 py-3 md:py-3.5"
-            : "top-0 left-0 w-full px-5 sm:px-6 md:px-12 lg:px-20 py-4 md:py-5 bg-transparent"
+            ? "top-3 left-4 right-4 md:left-6 md:right-6 lg:left-auto lg:right-auto lg:top-4 lg:max-w-[1200px] lg:mx-auto border border-black/[0.06] px-5 md:px-8 py-3 md:py-3.5"
+            : "top-0 left-0 w-full px-5 sm:px-6 md:px-12 lg:px-20 py-4 md:py-5"
         }`}
         style={{
-          backdropFilter: isFloating ? "blur(20px)" : "blur(0px)",
-          WebkitBackdropFilter: isFloating ? "blur(20px)" : "blur(0px)",
-          transition: "backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), -webkit-backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), padding 0.5s cubic-bezier(0.16, 1, 0.3, 1), top 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+          backgroundColor: isTop
+            ? "transparent"
+            : `rgba(246, 244, 239, ${backdropOpacity})`,
+          backdropFilter: isTop ? "none" : `blur(${blurAmount}px)`,
+          WebkitBackdropFilter: isTop ? "none" : `blur(${blurAmount}px)`,
+          transition: "background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -715,6 +848,7 @@ export function Navigation() {
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
             className="absolute top-0 left-0 right-0 h-[2px] bg-signal-teal origin-left"
             aria-hidden="true"
           />
@@ -722,57 +856,99 @@ export function Navigation() {
 
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link
-            href="/"
-            className="relative h-8 md:h-10 flex items-center transition-opacity duration-300 hover:opacity-80"
-            aria-label="Tangison Studio home"
+          <motion.div
+            initial={{ opacity: 0, x: -12 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Image
-              src="/brand/logo-dark.webp"
-              alt="TANGISON STUDIO"
-              width={874}
-              height={286}
-              className={`${
-                isFloating ? "h-7 md:h-8" : "h-8 md:h-10"
-              } w-auto object-contain transition-all duration-500`}
-              priority
-            />
-          </Link>
+            <Link
+              href="/"
+              className="relative h-8 md:h-10 flex items-center transition-opacity duration-300 hover:opacity-80"
+              aria-label="Tangison Studio home"
+            >
+              <Image
+                src="/brand/logo-dark.webp"
+                alt="TANGISON STUDIO"
+                width={874}
+                height={286}
+                className={`${
+                  isFloating ? "h-7 md:h-8" : "h-8 md:h-10"
+                } w-auto object-contain transition-all duration-500`}
+                priority
+              />
+            </Link>
+          </motion.div>
 
-          {/* Desktop navigation links */}
-          <div className="hidden lg:flex items-center gap-7">
-            {navItems.map((item) =>
+          {/* Desktop navigation links with sliding indicator */}
+          <div ref={navLinksRef} className="hidden lg:flex items-center gap-7 relative">
+            {navItems.map((item, i) =>
               item.children ? (
-                <DesktopDropdown key={item.label} item={item} pathname={pathname} />
-              ) : (
-                <Link
+                <motion.div
                   key={item.label}
-                  href={item.href}
-                  className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 ${
-                    pathname === item.href
-                      ? "text-ink"
-                      : item.href === "/contact"
-                      ? "text-signal-teal hover:text-signal-teal-light"
-                      : "text-ink-muted hover:text-ink"
-                  }`}
+                  custom={i}
+                  variants={navItemVariants}
+                  initial="hidden"
+                  animate="visible"
                 >
-                  {item.label}
-                  <span
-                    className={`absolute -bottom-1 left-0 h-[1.5px] transition-all duration-400 ease-out ${
-                      pathname === item.href
-                        ? "w-full bg-signal-teal"
-                        : "w-0 group-hover:w-full bg-signal-teal/60"
-                    }`}
+                  <DesktopDropdown
+                    item={item}
+                    pathname={pathname}
+                    onHoverStart={(rect) => setHoveredRect(rect)}
+                    onHoverEnd={() => setHoveredRect(null)}
                   />
-                </Link>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key={item.label}
+                  custom={i}
+                  variants={navItemVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <Link
+                    href={item.href}
+                    onMouseEnter={(e) =>
+                      setHoveredRect(e.currentTarget.getBoundingClientRect())
+                    }
+                    onMouseLeave={() => setHoveredRect(null)}
+                    className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 py-1 ${
+                      pathname === item.href
+                        ? "text-ink"
+                        : item.href === "/contact"
+                        ? "text-signal-teal hover:text-signal-teal-light"
+                        : "text-ink-muted hover:text-ink"
+                    }`}
+                  >
+                    {item.label}
+                    {pathname === item.href && (
+                      <motion.span
+                        layoutId="active-nav-underline"
+                        className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-signal-teal"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                </motion.div>
               )
+            )}
+
+            {/* Sliding hover indicator — only on non-active hover */}
+            {hoveredRect && navLinksRef.current && (
+              <SlidingIndicator
+                activeRect={hoveredRect}
+                containerRef={navLinksRef}
+              />
             )}
           </div>
 
           {/* Right side: Search + CTA */}
           <div className="hidden lg:flex items-center gap-3">
             {/* Search trigger */}
-            <button
+            <motion.button
+              custom={0}
+              variants={navRightVariants}
+              initial="hidden"
+              animate="visible"
               onClick={() => setIsSearchOpen(true)}
               className="flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-ink transition-colors duration-300 py-2 px-2.5 border border-black/[0.06] hover:border-black/[0.12]"
               aria-label="Open search (Cmd+K)"
@@ -782,15 +958,22 @@ export function Navigation() {
               <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted/30 border border-black/[0.08] px-1 py-0.5 ml-1">
                 ⌘K
               </kbd>
-            </button>
+            </motion.button>
 
             {/* CTA */}
-            <Link
-              href="/contact"
-              className="bg-signal-teal text-signal-white px-6 py-3 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300"
+            <motion.div
+              custom={1}
+              variants={navRightVariants}
+              initial="hidden"
+              animate="visible"
             >
-              Let&apos;s Build →
-            </Link>
+              <Link
+                href="/contact"
+                className="bg-signal-teal text-signal-white px-6 py-3 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300 inline-block"
+              >
+                Let&apos;s Build →
+              </Link>
+            </motion.div>
           </div>
 
           {/* Mobile: search + hamburger */}

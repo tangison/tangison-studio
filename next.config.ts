@@ -2,13 +2,22 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+
+  /* ─── Image Optimization — Vercel Hobby budget: 1GB/mo ─── */
   images: {
     formats: ["image/avif", "image/webp"],
+    // Limit device sizes to reduce optimization quota usage
+    deviceSizes: [640, 828, 1080, 1200],
+    imageSizes: [16, 32, 48, 64, 96, 128],
   },
+
+  /* ─── Vercel-specific ─── */
+  poweredByHeader: false,
+
   allowedDevOrigins: [
     ".space-z.ai",
-    "preview-chat-88af9309-14b5-435f-89ee-6a47c486aa49.space-z.ai",
   ],
+
   async redirects() {
     return [
       // Old page redirects

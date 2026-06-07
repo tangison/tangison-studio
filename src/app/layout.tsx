@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "Namibia",
     "Windhoek",
   ],
-  authors: [{ name: "Tangison Studio", url: "mailto:tangison@proton.me" }],
+  authors: [{ name: "Tangison Studio", url: "mailto:studio@tangison.com" }],
   publisher: "Tangison Studio",
   creator: "Tangison Studio",
   icons: {
