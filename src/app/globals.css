@@ -336,7 +336,7 @@ button, a {
 /* Editorial divider — Signal Teal */
 .editorial-divider {
   width: 40px;
-  height: 1px;
+  height: 2px;
   background: var(--color-signal-teal);
 }
 

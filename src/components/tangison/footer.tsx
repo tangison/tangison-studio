@@ -68,7 +68,7 @@ export function Footer() {
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-atlantic-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-atlantic-black/40" />
             </div>
             <div className="relative h-32 md:h-48 lg:h-56 overflow-hidden">
               <Image
@@ -78,7 +78,7 @@ export function Footer() {
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-atlantic-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-atlantic-black/40" />
             </div>
           </div>
 
@@ -160,10 +160,10 @@ export function Footer() {
               </h3>
               <div className="flex flex-col gap-3">
                 <a
-                  href="mailto:studio@tangison.com"
+                  href="mailto:tangison@proton.me"
                   className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
                 >
-                  studio@tangison.com
+                  tangison@proton.me
                   <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
                 </a>
                 <Link

@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect, useCallback, useSyncExternalStore }
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowUp, Mic, MicOff, Volume2, Copy, Check, RotateCcw, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 /* ─── Types ─── */
 interface Message {
@@ -48,16 +49,16 @@ interface ArtifactData {
 const SESSION_ID = `tng-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
 const SUGGESTED_PROMPTS = [
-  "What does Tangison Studio build?",
-  "How does self-hosted AI work?",
+  "What services does Tangison Studio offer?",
+  "How does the design process work?",
   "What industries do you serve?",
-  "How do I engage Tangison Studio?",
+  "How do I start a project with the studio?",
 ];
 
 const GREETING_MESSAGE: Message = {
   id: "greeting",
   role: "bot",
-  content: "Tangison Studio AI. What do you need?",
+  content: "Tangison Studio. How can we help?",
   timestamp: Date.now(),
   artifact: null,
 };
@@ -118,23 +119,17 @@ function WaveformVisualizer({ state, bars = 5 }: { state: VoiceState; bars?: num
   );
 }
 
-/* ─── Custom Tangison Mark Icon ─── */
-function TangisonMark({ size = 20, color = "var(--color-skeleton-bone)" }: { size?: number; color?: string }) {
+/* ─── Studio Favicon Avatar ─── */
+function StudioAvatar({ size = 20 }: { size?: number }) {
   return (
-    <svg
-      width={size * 0.6}
+    <Image
+      src="/brand/favicon.webp"
+      alt="Tangison Studio"
+      width={size}
       height={size}
-      viewBox="0 0 24 40"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <line x1="12" y1="0" x2="12" y2="40" stroke={color} strokeWidth="3" strokeLinecap="square" />
-      <line x1="4" y1="14" x2="20" y2="14" stroke={color} strokeWidth="3" strokeLinecap="square" />
-      <line x1="7" y1="6" x2="12" y2="0" stroke={color} strokeWidth="3" strokeLinecap="square" />
-      <line x1="17" y1="6" x2="12" y2="0" stroke={color} strokeWidth="3" strokeLinecap="square" />
-      <rect x="8.5" y="24" width="7" height="7" fill={color} />
-    </svg>
+      className="object-contain"
+      priority
+    />
   );
 }
 
@@ -465,7 +460,7 @@ export function TangisonAIWidget() {
         .replace(/^[-•]\s/gm, "")
         .trim();
 
-      // Truncate for voice (max ~80 words for caveman style)
+      // Truncate for voice (max ~80 words)
       const words = clean.split(/\s+/);
       const truncated = words.length > 80 ? words.slice(0, 80).join(" ") + "." : clean;
 
@@ -660,7 +655,7 @@ export function TangisonAIWidget() {
             ? "1px solid color-mix(in srgb, var(--color-skeleton-bone) 20%, transparent)"
             : "1px solid color-mix(in srgb, var(--color-skeleton-bone) 12%, transparent)",
         }}
-        aria-label={isOpen ? "Close Tangison Studio AI" : "Open Tangison Studio AI"}
+        aria-label={isOpen ? "Close Tangison Studio" : "Open Tangison Studio"}
         aria-expanded={isOpen}
       >
         <AnimatePresence mode="wait">
@@ -683,7 +678,7 @@ export function TangisonAIWidget() {
               transition={{ duration: 0.2 }}
               className="relative flex items-center justify-center"
             >
-              <TangisonMark size={22} color="var(--color-skeleton-bone)" />
+              <StudioAvatar size={22} />
               <span className="absolute inset-0 border border-signal-teal/30 animate-[signal-ring-expand_2s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
             </motion.div>
           )}
@@ -691,7 +686,7 @@ export function TangisonAIWidget() {
 
         {!isOpen && (
           <span className="absolute right-full mr-3 whitespace-nowrap font-jetbrains text-[10px] text-fog-gray/40 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            Tangison AI
+            Tangison Studio
           </span>
         )}
 
@@ -715,11 +710,11 @@ export function TangisonAIWidget() {
             onClick={() => setIsOpen(true)}
             className="fixed bottom-[88px] right-6 z-[9998] cursor-pointer max-w-[220px] flex items-center gap-2 px-3.5 py-2.5 bg-atlantic-black border border-skeleton-bone/[0.1]"
             role="button"
-            aria-label="Open Tangison AI chat"
+            aria-label="Open Tangison Studio chat"
           >
             <div className="w-1.5 h-1.5 bg-signal-teal shrink-0" />
             <span className="font-jetbrains text-[11px] text-fog-gray leading-snug">
-              Tangison AI. Ask anything.
+              Tangison Studio. Ask anything.
             </span>
           </motion.div>
         )}
@@ -741,20 +736,20 @@ export function TangisonAIWidget() {
             }}
             role="dialog"
             aria-modal="true"
-            aria-label="Tangison AI Chat"
+            aria-label="Tangison Studio Chat"
           >
             {/* ─── Header ─── */}
             <div
               className="flex items-center gap-3 px-4 py-3.5 shrink-0 bg-terminal-black border-b border-skeleton-bone/[0.06]"
             >
-              <TangisonMark size={28} color="var(--color-skeleton-bone)" />
+              <StudioAvatar size={28} />
 
               <div className="flex-1">
                 <div className="font-jetbrains text-[11px] tracking-[0.14em] text-skeleton-bone font-medium">
-                  TANGISON AI
+                  TANGISON STUDIO
                 </div>
                 <div className="font-jetbrains text-[9px] text-fog-gray/50 tracking-[0.1em] mt-0.5">
-                  Applied AI. Ask anything.
+                  Creative Agency. Ask anything.
                 </div>
               </div>
 
@@ -861,7 +856,7 @@ export function TangisonAIWidget() {
                     /* Bot Bubble */
                     <div className="self-start max-w-[95%] group/bot">
                       <div className="font-jetbrains text-[9px] text-signal-teal/70 tracking-[0.12em] pl-3 mb-1">
-                        TANGISON AI
+                        TANGISON STUDIO
                       </div>
                       <div
                         className="px-3.5 py-2.5 text-[13.5px] leading-[1.65] font-satoshi text-fog-gray font-normal bg-transparent border-l-2 border-signal-teal/45 pl-3"
@@ -1036,7 +1031,7 @@ export function TangisonAIWidget() {
               className="flex items-center justify-between px-4 py-1.5 shrink-0 bg-terminal-black border-t border-skeleton-bone/[0.04]"
             >
               <span className="font-jetbrains text-[9px] text-fog-gray/25 tracking-[0.1em]">
-                TANGISON AI
+                TANGISON STUDIO
               </span>
               <span className="font-jetbrains text-[9px] text-fog-gray/20 tracking-[0.06em]">
                 {voiceMode ? "VOICE" : "TEXT"}

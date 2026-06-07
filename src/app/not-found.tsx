@@ -31,7 +31,7 @@ export default function NotFound() {
         {/* Return link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-8 py-4 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300"
+          className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-8 py-4 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300"
         >
           Return home →
         </Link>

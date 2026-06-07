@@ -107,11 +107,11 @@ function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen w-full flex items-end pb-20 md:pb-32 px-6 md:px-12 lg:px-20 overflow-hidden bg-skeleton-bone"
+      className="relative w-full overflow-hidden bg-skeleton-bone"
       aria-label="Hero section"
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
+      {/* ── Mobile: Full-bleed background slider with improved overlay ── */}
+      <div className="lg:hidden absolute inset-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -131,116 +131,146 @@ function HeroSection() {
             />
           </motion.div>
         </AnimatePresence>
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-skeleton-bone/70" />
+        {/* Stronger overlay on mobile for cleaner readability */}
+        <div className="absolute inset-0 bg-skeleton-bone/80" />
       </div>
 
-      {/* Content */}
-      <motion.div style={{ opacity: heroOpacity }} className="relative z-10 max-w-6xl w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-end">
-          {/* Left: Text */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-3 mb-6"
-            >
-              <div className="w-2 h-2 bg-signal-teal" aria-hidden="true" />
-              <span className="font-jetbrains text-[11px] text-ink-muted uppercase tracking-[0.25em]">
-                Creative Digital Agency
-              </span>
-            </motion.div>
-
-            <h1
-              ref={headingRef}
-              className="font-cabinet text-[clamp(2.4rem,5vw,5rem)] font-black tracking-[-0.04em] leading-[0.95] text-ink mb-8"
-              style={{ perspective: "800px" }}
-            >
-              {headline.split(" ").map((word, i) => (
-                <span
-                  key={i}
-                  className="hero-word inline-block mr-[0.2em]"
-                  style={{ opacity: 0 }}
-                >
-                  {word}
+      {/* ── Content wrapper ── */}
+      <motion.div style={{ opacity: heroOpacity }} className="relative z-10 min-h-screen flex flex-col justify-end lg:justify-center pb-20 md:pb-28 lg:pb-0 pt-24 md:pt-32 px-6 md:px-12 lg:px-20">
+        <div className="max-w-[1400px] mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end lg:items-center">
+            {/* Left: Text — clean bone background on desktop */}
+            <div className="lg:col-span-6 xl:col-span-7">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="flex items-center gap-3 mb-6"
+              >
+                <div className="w-2 h-2 bg-signal-teal" aria-hidden="true" />
+                <span className="font-jetbrains text-[11px] text-ink-muted uppercase tracking-[0.25em]">
+                  Creative Digital Agency
                 </span>
-              ))}
-            </h1>
+              </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-ink-muted font-satoshi text-lg md:text-xl font-light leading-relaxed mb-10 max-w-lg"
-            >
-              Strategy, design, and engineering from Windhoek.
-            </motion.p>
+              <h1
+                ref={headingRef}
+                className="font-cabinet text-[clamp(2.4rem,5vw,4.5rem)] lg:text-[clamp(2.8rem,4.2vw,5.5rem)] font-black tracking-[-0.04em] leading-[0.95] text-ink mb-8"
+                style={{ perspective: "800px" }}
+              >
+                {headline.split(" ").map((word, i) => (
+                  <span
+                    key={i}
+                    className="hero-word inline-block mr-[0.2em]"
+                    style={{ opacity: 0 }}
+                  >
+                    {word}
+                  </span>
+                ))}
+              </h1>
 
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                className="text-ink-muted font-satoshi text-lg md:text-xl font-light leading-relaxed mb-10 max-w-lg"
+              >
+                Strategy, design, and engineering from Windhoek.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-wrap gap-4"
+              >
+                <Link
+                  href="/work"
+                  className="bg-signal-teal text-signal-white px-7 py-4 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 flex items-center gap-2"
+                >
+                  Explore Work →
+                </Link>
+                <Link
+                  href="/contact"
+                  className="border border-signal-teal text-signal-teal px-7 py-4 font-cabinet font-bold text-sm tracking-tight hover:bg-ocean-mist transition-all duration-300"
+                >
+                  Start a Project
+                </Link>
+              </motion.div>
+
+              {/* Slider indicators — mobile: below CTAs, desktop: below CTAs in left column */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                className="flex items-center gap-1.5 mt-10"
+                aria-label="Image slider indicators"
+              >
+                {heroImages.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentSlide(i)}
+                    className="p-1.5 flex items-center"
+                    aria-label={`Go to slide ${i + 1}`}
+                    aria-current={i === currentSlide ? "true" : undefined}
+                  >
+                    <span
+                      className={`block transition-all duration-700 ${
+                        i === currentSlide
+                          ? "w-8 h-[2px] bg-signal-teal"
+                          : "w-4 h-[2px] bg-ink/15 hover:bg-ink/30"
+                      }`}
+                    />
+                  </button>
+                ))}
+                <span className="font-jetbrains text-[10px] text-ink-muted/50 ml-3 tracking-wider">
+                  {String(currentSlide + 1).padStart(2, "0")} / {String(heroImages.length).padStart(2, "0")}
+                </span>
+              </motion.div>
+            </div>
+
+            {/* Right: Contained editorial image — desktop only, slider-driven */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-wrap gap-4"
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-6 xl:col-span-5 relative hidden lg:block"
             >
-              <Link
-                href="/work"
-                className="bg-signal-teal text-signal-white px-7 py-4 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300 flex items-center gap-2"
-              >
-                Explore Work →
-              </Link>
-              <Link
-                href="/contact"
-                className="border border-signal-teal text-signal-teal px-7 py-4 font-cabinet font-bold text-sm tracking-tight hover:bg-ocean-mist transition-all duration-300"
-              >
-                Start a Project
-              </Link>
+              <div className="relative h-[480px] xl:h-[560px] overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentSlide}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={heroImages[currentSlide].src}
+                      alt={heroImages[currentSlide].alt}
+                      className="object-cover cinematic-image"
+                      fill
+                      sizes="45vw"
+                      priority={currentSlide === 0}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+                {/* Thin inner border frame — editorial treatment */}
+                <div className="absolute inset-3 border border-signal-white/20 pointer-events-none" aria-hidden="true" />
+              </div>
+              {/* Caption below image */}
+              <div className="flex items-center justify-between mt-4">
+                <span className="font-jetbrains text-[10px] text-ink-muted/40 uppercase tracking-[0.2em]">
+                  {heroImages[currentSlide].alt}
+                </span>
+                <span className="font-jetbrains text-[10px] text-ink-muted/40 tracking-wider">
+                  {String(currentSlide + 1).padStart(2, "0")} / {String(heroImages.length).padStart(2, "0")}
+                </span>
+              </div>
             </motion.div>
           </div>
-
-          {/* Right: Large editorial image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative h-64 md:h-80 lg:h-[500px] overflow-hidden hidden lg:block"
-          >
-            <Image
-              src="/images/gallery/hero-editorial-studio.webp"
-              alt="Minimal studio workspace"
-              className="object-cover cinematic-image"
-              fill
-              sizes="40vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-skeleton-bone/20" />
-          </motion.div>
         </div>
-      </motion.div>
-
-      {/* Slider indicators */}
-      <motion.div
-        style={{ opacity: heroOpacity }}
-        className="absolute bottom-8 left-6 md:left-12 lg:left-20 flex items-end gap-1.5 z-20"
-        aria-label="Image slider indicators"
-      >
-        {heroImages.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrentSlide(i)}
-            className="p-1.5 flex items-center"
-            aria-label={`Go to slide ${i + 1}`}
-            aria-current={i === currentSlide ? "true" : undefined}
-          >
-            <span
-              className={`block transition-all duration-700 ${
-                i === currentSlide
-                  ? "w-6 h-[1px] bg-signal-teal"
-                  : "w-3 h-[1px] bg-ink/20 hover:bg-ink/40"
-              }`}
-            />
-          </button>
-        ))}
       </motion.div>
 
       {/* Bottom edge line */}
@@ -455,7 +485,7 @@ function ContactTeaserSection() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300 group"
+            className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 group"
           >
             Start a Project →
           </Link>
