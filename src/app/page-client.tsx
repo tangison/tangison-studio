@@ -43,13 +43,13 @@ const featuredWork = [
 ];
 
 const services = [
-  "Website Design",
-  "Website Development",
-  "Application Design",
-  "Product Design",
-  "Brand Systems",
-  "Design Systems",
-  "Creative Direction",
+  { name: "Website Design", href: "/services/website-design" },
+  { name: "Website Development", href: "/services/website-development" },
+  { name: "Application Design", href: "/services/application-design" },
+  { name: "Product Design", href: "/services/product-design" },
+  { name: "Brand Systems", href: "/services/brand-systems" },
+  { name: "Design Systems", href: "/services/design-systems" },
+  { name: "Creative Direction", href: "/services/creative-direction" },
 ];
 
 const processSteps = [
@@ -353,20 +353,20 @@ function ServicesSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {services.map((service, i) => (
             <motion.div
-              key={service}
+              key={service.name}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link
-                href="/services"
+                href={service.href}
                 className="pillar-card group block border border-black/[0.06] bg-signal-white p-6 md:p-8 h-full"
               >
                 {/* Teal accent line */}
                 <div className="w-8 h-[2px] bg-signal-teal mb-6" aria-hidden="true" />
                 <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink group-hover:text-signal-teal transition-colors duration-300">
-                  {service}
+                  {service.name}
                 </h3>
               </Link>
             </motion.div>

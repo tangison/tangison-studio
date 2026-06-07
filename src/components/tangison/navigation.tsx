@@ -88,13 +88,13 @@ const searchIndex: SearchEntry[] = [
   { label: "Case Studies", href: "/work#case-studies", category: "Work", description: "Results from the field" },
   { label: "By Industry", href: "/work#industries", category: "Work", description: "Sector-specific outcomes" },
   { label: "Services", href: "/services", category: "Pages", description: "Seven disciplines, one studio" },
-  { label: "Website Design", href: "/services#website-design", category: "Services", description: "Intentional interfaces" },
-  { label: "Website Development", href: "/services#website-development", category: "Services", description: "Engineered to perform" },
-  { label: "Application Design", href: "/services#application-design", category: "Services", description: "Complex systems, clear UX" },
-  { label: "Product Design", href: "/services#product-design", category: "Services", description: "End-to-end product thinking" },
-  { label: "Brand Systems", href: "/services#brand-systems", category: "Services", description: "Cohesive visual identity" },
-  { label: "Design Systems", href: "/services#design-systems", category: "Services", description: "Scalable component architecture" },
-  { label: "Creative Direction", href: "/services#creative-direction", category: "Services", description: "Strategic visual leadership" },
+  { label: "Website Design", href: "/services/website-design", category: "Services", description: "Intentional interfaces" },
+  { label: "Website Development", href: "/services/website-development", category: "Services", description: "Engineered to perform" },
+  { label: "Application Design", href: "/services/application-design", category: "Services", description: "Complex systems, clear UX" },
+  { label: "Product Design", href: "/services/product-design", category: "Services", description: "End-to-end product thinking" },
+  { label: "Brand Systems", href: "/services/brand-systems", category: "Services", description: "Cohesive visual identity" },
+  { label: "Design Systems", href: "/services/design-systems", category: "Services", description: "Scalable component architecture" },
+  { label: "Creative Direction", href: "/services/creative-direction", category: "Services", description: "Strategic visual leadership" },
   { label: "Process", href: "/process", category: "Pages", description: "How we work" },
   { label: "About", href: "/about", category: "Pages", description: "Who we are" },
   { label: "Brand", href: "/brand", category: "Pages", description: "Visual and verbal identity" },
@@ -305,7 +305,7 @@ function SearchOverlay({
 
 /* ─── Desktop Mega-Menu Dropdown ──────────────────────────────── */
 
-function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }) {
+function DesktopDropdown({ item, pathname, navTheme = "light" }: { item: NavItem; pathname: string; navTheme?: "light" | "dark" }) {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -343,8 +343,8 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
         href={item.href}
         className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 ${
           isActive
-            ? "text-ink"
-            : "text-ink-muted hover:text-ink"
+            ? navTheme === "dark" ? "text-skeleton-bone" : "text-ink"
+            : navTheme === "dark" ? "text-skeleton-bone/60 hover:text-skeleton-bone" : "text-ink-muted hover:text-ink"
         }`}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -366,11 +366,11 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed left-0 right-0 top-[72px] z-50"
+            className="fixed left-3 right-3 top-[68px] z-50"
             role="menu"
             aria-label={`${item.label} submenu`}
           >
-            <div className="bg-signal-white border-b border-black/[0.06]">
+            <div className="bg-signal-white border-b border-black/[0.06]" style={{ maxWidth: "1600px", margin: "0 auto" }}>
               {/* Teal accent line */}
               <div className="h-[2px] bg-signal-teal" aria-hidden="true" />
 
@@ -585,6 +585,11 @@ export function Navigation() {
   // When nav IS scrolled → show dark logo (white bg with blur)
   const logoSrc = isScrolled ? "/brand/logo-dark.webp" : "/brand/logo-light.webp";
 
+  // Nav text colors switch: light when transparent (floating), dark when scrolled (white bg)
+  const navTextColor = isScrolled ? "text-ink" : "text-skeleton-bone";
+  const navTextMutedColor = isScrolled ? "text-ink-muted" : "text-skeleton-bone/60";
+  const navTextMutedHoverColor = isScrolled ? "hover:text-ink" : "hover:text-skeleton-bone";
+
   return (
     <>
       {/* Desktop / Shared Nav Bar */}
@@ -628,17 +633,17 @@ export function Navigation() {
         <div className="hidden lg:flex items-center gap-7">
           {navItems.map((item) =>
             item.children ? (
-              <DesktopDropdown key={item.label} item={item} pathname={pathname} />
+              <DesktopDropdown key={item.label} item={item} pathname={pathname} navTheme={isScrolled ? "light" : "dark"} />
             ) : (
               <Link
                 key={item.label}
                 href={item.href}
                 className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 ${
                   pathname === item.href
-                    ? "text-ink"
+                    ? navTextColor
                     : item.href === "/contact"
                     ? "text-signal-teal hover:text-signal-teal-light"
-                    : "text-ink-muted hover:text-ink"
+                    : `${navTextMutedColor} ${navTextMutedHoverColor}`
                 }`}
               >
                 {item.label}
@@ -656,7 +661,7 @@ export function Navigation() {
           {/* Search toggle button */}
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="font-jetbrains text-[10px] uppercase tracking-[0.2em] inline-flex items-center gap-1.5 text-ink-muted hover:text-ink transition-colors duration-300"
+            className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] inline-flex items-center gap-1.5 ${navTextMutedColor} ${navTextMutedHoverColor} transition-colors duration-300`}
             aria-label="Open search (⌘K)"
           >
             <Search className="w-3.5 h-3.5" />
