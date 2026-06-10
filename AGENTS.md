@@ -228,6 +228,23 @@ Route feedback to the relevant skill. Re-execute. Repeat until Tangi says "ship 
 
 ## Step 8 — Commit and Remember
 
+**Git Identity — MANDATORY:**
+Before any commit, verify the git author is set correctly. Vercel blocks deployments from unrecognized emails.
+
+```bash
+# Verify before committing:
+git config user.email   # MUST be: tangison@proton.me
+git config user.name    # MUST be: tangison
+
+# If wrong, fix immediately:
+git config user.email "tangison@proton.me"
+git config user.name "tangison"
+```
+
+Never commit with any other email. Never use `z@container`, `root@`, or any system default. Vercel requires the commit email to match the GitHub account. If the email is wrong, the deployment is blocked.
+
+Then commit:
+
 ```bash
 git add .
 git commit -m "[type]: [what changed] — Tangison Studio"
