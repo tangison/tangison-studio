@@ -66,11 +66,11 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
 
-  /* Border radius — zero by default (Studio design language) */
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
+  /* Border radius — subtle rounding (Studio design language v2.0) */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
 }
 
 :root {
@@ -123,7 +123,7 @@
   --container-pad:  48px;
 
   /* Radius */
-  --radius: 0px;
+  --radius: 6px;
 
   /* Theme variables */
   --background: #F6F4EF;

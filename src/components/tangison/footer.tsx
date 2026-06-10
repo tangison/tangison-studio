@@ -113,7 +113,7 @@ export function Footer() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-10 lg:gap-16">
             {/* Studio column */}
             <div>
-              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
+              <h3 className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em] mb-5">
                 Studio
               </h3>
               <div className="flex flex-col gap-3">
@@ -121,7 +121,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                    className="font-satoshi text-sm text-fog-gray hover:text-skeleton-bone transition-colors duration-300 relative group/link inline-block w-fit"
                   >
                     {link.label}
                     <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
@@ -132,7 +132,7 @@ export function Footer() {
 
             {/* Resources column */}
             <div>
-              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
+              <h3 className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em] mb-5">
                 Resources
               </h3>
               <div className="flex flex-col gap-3">
@@ -140,7 +140,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                    className="font-satoshi text-sm text-fog-gray hover:text-skeleton-bone transition-colors duration-300 relative group/link inline-block w-fit"
                   >
                     {link.label}
                     <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
@@ -151,7 +151,7 @@ export function Footer() {
 
             {/* Legal column */}
             <div>
-              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
+              <h3 className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em] mb-5">
                 Legal
               </h3>
               <div className="flex flex-col gap-3">
@@ -159,7 +159,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                    className="font-satoshi text-sm text-fog-gray hover:text-skeleton-bone transition-colors duration-300 relative group/link inline-block w-fit"
                   >
                     {link.label}
                     <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
@@ -170,10 +170,10 @@ export function Footer() {
 
             {/* Tangison Technologies column */}
             <div>
-              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-2">
+              <h3 className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em] mb-2">
                 {techColumn.label}
               </h3>
-              <p className="font-satoshi text-[11px] text-white/20 mb-4">
+              <p className="font-satoshi text-[11px] text-fog-gray mb-4">
                 {techColumn.descriptor}
               </p>
               <div className="flex flex-col gap-3">
@@ -183,7 +183,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                    className="font-satoshi text-sm text-fog-gray hover:text-skeleton-bone transition-colors duration-300 relative group/link inline-block w-fit"
                   >
                     {link.label}
                     <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
@@ -194,20 +194,20 @@ export function Footer() {
 
             {/* Contact column */}
             <div className="col-span-2 sm:col-span-1">
-              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
+              <h3 className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em] mb-5">
                 Contact
               </h3>
               <div className="flex flex-col gap-3">
                 <a
                   href="mailto:studio@tangison.com"
-                  className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                  className="font-satoshi text-sm text-fog-gray hover:text-skeleton-bone transition-colors duration-300 relative group/link inline-block w-fit"
                 >
                   studio@tangison.com
                   <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
                 </a>
                 <Link
                   href="/contact"
-                  className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                  className="font-satoshi text-sm text-fog-gray hover:text-skeleton-bone transition-colors duration-300 relative group/link inline-block w-fit"
                 >
                   studio.tangison.com
                   <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
@@ -217,7 +217,7 @@ export function Footer() {
 
             {/* Social icons */}
             <div className="col-span-2 sm:col-span-1">
-              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
+              <h3 className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em] mb-5">
                 Follow
               </h3>
               <div className="flex flex-col gap-3">
@@ -247,10 +247,10 @@ export function Footer() {
         className="relative z-10 border-t border-white/[0.04]"
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="font-jetbrains text-[9px] text-white/20 uppercase tracking-[0.3em]">
+          <p className="font-jetbrains text-[9px] text-fog-gray/60 uppercase tracking-[0.3em]">
             &copy; 2026 Tangison Systems. All Rights Reserved.
           </p>
-          <p className="font-jetbrains text-[9px] text-white/15 uppercase tracking-[0.2em]">
+          <p className="font-jetbrains text-[9px] text-fog-gray/50 uppercase tracking-[0.2em]">
             Digital Infrastructure by Tuppaman Group
           </p>
         </div>

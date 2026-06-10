@@ -60,7 +60,7 @@ const process = [
   {
     step: "04",
     name: "Document & Deliver",
-    description: "Final designs are documented with comprehensive specifications: component behaviour, interaction details, responsive rules, and accessibility requirements. We deliver a design system that bridges design and development seamlessly, and remain available during implementation to ensure fidelity.",
+    description: "Final designs are documented with comprehensive specifications: component behaviour, interaction details, responsive rules, and accessibility requirements. We deliver a design system that bridges design and development effectively, and remain available during implementation to ensure fidelity.",
   },
 ];
 
@@ -246,9 +246,9 @@ export function ApplicationDesignPage() {
             {[1, 2, 3].map((i) => (
               <div key={i} className="border border-fog-gray/20 p-6 text-center">
                 <div className="w-full aspect-[4/3] bg-fog-gray/10 mb-4 flex items-center justify-center">
-                  <span className="font-jetbrains text-xs text-fog-gray/40 tracking-wider uppercase">Coming Soon</span>
+                  <span className="font-jetbrains text-xs text-fog-gray tracking-wider uppercase">Coming Soon</span>
                 </div>
-                <p className="font-satoshi text-sm text-fog-gray/60">Case study {i}</p>
+                <p className="font-satoshi text-sm text-fog-gray">Case study {i}</p>
               </div>
             ))}
           </div>

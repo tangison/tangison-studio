@@ -206,7 +206,7 @@ function DesktopDropdown({
           <motion.span
             layoutId="active-nav-underline"
             className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-signal-teal"
-            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+            transition={{ type: "tween", duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           />
         )}
       </Link>
@@ -222,7 +222,7 @@ function DesktopDropdown({
             role="menu"
             aria-label={`${item.label} submenu`}
           >
-            <div className="bg-skeleton-bone/95 border border-black/[0.08] min-w-[340px] overflow-hidden" style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}>
+            <div className="bg-skeleton-bone/95 border border-black/[0.08] min-w-[280px] sm:min-w-[340px] max-w-[calc(100vw-48px)] overflow-hidden" style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}>
               {/* Teal accent line */}
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -760,7 +760,7 @@ export function Navigation() {
                       <motion.span
                         layoutId="active-nav-underline"
                         className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-signal-teal"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        transition={{ type: "tween", duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                       />
                     )}
                   </Link>

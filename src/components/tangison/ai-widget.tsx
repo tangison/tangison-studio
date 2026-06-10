@@ -708,6 +708,8 @@ export function TangisonAIWidget() {
             exit={{ opacity: 0, x: 8 }}
             transition={{ duration: 0.3 }}
             onClick={() => setIsOpen(true)}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setIsOpen(true); } }}
+            tabIndex={0}
             className="fixed bottom-[88px] right-6 z-[9998] cursor-pointer max-w-[220px] flex items-center gap-2 px-3.5 py-2.5 bg-atlantic-black border border-skeleton-bone/[0.1]"
             role="button"
             aria-label="Open Tangison Studio chat"

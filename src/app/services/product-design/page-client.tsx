@@ -246,9 +246,9 @@ export function ProductDesignPage() {
             {[1, 2, 3].map((i) => (
               <div key={i} className="border border-fog-gray/20 p-6 text-center">
                 <div className="w-full aspect-[4/3] bg-fog-gray/10 mb-4 flex items-center justify-center">
-                  <span className="font-jetbrains text-xs text-fog-gray/40 tracking-wider uppercase">Coming Soon</span>
+                  <span className="font-jetbrains text-xs text-fog-gray tracking-wider uppercase">Coming Soon</span>
                 </div>
-                <p className="font-satoshi text-sm text-fog-gray/60">Case study {i}</p>
+                <p className="font-satoshi text-sm text-fog-gray">Case study {i}</p>
               </div>
             ))}
           </div>
