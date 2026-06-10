@@ -122,7 +122,7 @@ const searchableItems: SearchItem[] = [
 /* ─── Hamburger Icon ──────────────────────────────────────────── */
 
 function HamburgerIcon({ isOpen, dark = false }: { isOpen: boolean; dark?: boolean }) {
-  const color = dark ? "bg-ink" : "bg-skeleton-bone";
+  const color = dark ? "bg-skeleton-bone" : "bg-ink";
   return (
     <div className="w-5 h-5 flex flex-col justify-center gap-[5px] relative">
       <span
@@ -195,8 +195,8 @@ function DesktopDropdown({
         href={item.href}
         className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 py-1 ${
           isActive
-            ? "text-skeleton-bone"
-            : "text-skeleton-bone/60 hover:text-skeleton-bone"
+            ? "text-ink"
+            : "text-ink-muted hover:text-ink"
         }`}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -222,7 +222,7 @@ function DesktopDropdown({
             role="menu"
             aria-label={`${item.label} submenu`}
           >
-            <div className="bg-atlantic-black/95 border border-white/[0.08] min-w-[340px] overflow-hidden" style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}>
+            <div className="bg-skeleton-bone/95 border border-black/[0.08] min-w-[340px] overflow-hidden" style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}>
               {/* Teal accent line */}
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -234,8 +234,8 @@ function DesktopDropdown({
 
               {/* Optional tagline */}
               {item.megaTagline && (
-                <div className="px-5 py-3 border-b border-white/[0.06]">
-                  <span className="font-satoshi text-[12px] text-skeleton-bone/40 italic">
+                <div className="px-5 py-3 border-b border-black/[0.06]">
+                  <span className="font-satoshi text-[12px] text-ink-muted/50 italic">
                     {item.megaTagline}
                   </span>
                 </div>
@@ -255,8 +255,8 @@ function DesktopDropdown({
                         href={child.href}
                         className={`flex items-center justify-between px-5 py-3 transition-all duration-200 ${
                           isChildActive
-                            ? "text-skeleton-bone bg-white/[0.08]"
-                            : "text-skeleton-bone/60 hover:text-skeleton-bone hover:bg-white/[0.05]"
+                            ? "text-ink bg-signal-teal-muted"
+                            : "text-ink-muted hover:text-ink hover:bg-black/[0.04]"
                         }`}
                         role="menuitem"
                         onClick={() => setIsOpen(false)}
@@ -266,12 +266,12 @@ function DesktopDropdown({
                             {child.label}
                           </span>
                           {child.description && (
-                            <span className="font-satoshi text-[11px] text-skeleton-bone/30 mt-0.5 block">
+                            <span className="font-satoshi text-[11px] text-ink-muted/50 mt-0.5 block">
                               {child.description}
                             </span>
                           )}
                         </div>
-                        <ArrowRight className="w-3 h-3 text-skeleton-bone/20 shrink-0 ml-4" />
+                        <ArrowRight className="w-3 h-3 text-ink-muted/30 shrink-0 ml-4" />
                       </Link>
                     </motion.div>
                   );
@@ -280,7 +280,7 @@ function DesktopDropdown({
 
               {/* Optional bottom image preview */}
               {item.megaImage && (
-                <div className="border-t border-white/[0.06]">
+                <div className="border-t border-black/[0.06]">
                   <div className="relative h-24 overflow-hidden">
                     <Image
                       src={item.megaImage}
@@ -289,7 +289,7 @@ function DesktopDropdown({
                       fill
                       sizes="340px"
                     />
-                    <div className="absolute inset-0 bg-atlantic-black/30" />
+                    <div className="absolute inset-0 bg-skeleton-bone/20" />
                   </div>
                 </div>
               )}
@@ -377,7 +377,7 @@ function SearchOverlay({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 z-[60] bg-atlantic-black/60"
+            className="fixed inset-0 z-[60] bg-atlantic-black/40"
             style={{ backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)" }}
           />
           <motion.div
@@ -385,14 +385,14 @@ function SearchOverlay({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.98 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed top-[15vh] left-1/2 -translate-x-1/2 z-[61] w-[min(640px,calc(100vw-48px))] bg-atlantic-black border border-white/[0.08] overflow-hidden"
+            className="fixed top-[15vh] left-1/2 -translate-x-1/2 z-[61] w-[min(640px,calc(100vw-48px))] bg-skeleton-bone border border-black/[0.08] overflow-hidden"
             style={{ backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}
             role="dialog"
             aria-modal="true"
             aria-label="Search"
           >
-            <div className="flex items-center px-5 py-4 border-b border-white/[0.06]">
-              <Search className="w-4 h-4 text-skeleton-bone/50 mr-3 shrink-0" />
+            <div className="flex items-center px-5 py-4 border-b border-black/[0.06]">
+              <Search className="w-4 h-4 text-ink-muted mr-3 shrink-0" />
               <input
                 ref={inputRef}
                 value={query}
@@ -401,10 +401,10 @@ function SearchOverlay({
                   setSelectedIndex(0);
                 }}
                 placeholder="Search pages, services..."
-                className="flex-1 bg-transparent font-jetbrains text-sm text-skeleton-bone placeholder:text-skeleton-bone/30 focus:outline-none"
+                className="flex-1 bg-transparent font-jetbrains text-sm text-ink placeholder:text-ink-muted/40 focus:outline-none"
                 aria-label="Search"
               />
-              <kbd className="font-jetbrains text-[9px] text-skeleton-bone/20 border border-white/[0.08] px-1.5 py-0.5 ml-3">
+              <kbd className="font-jetbrains text-[9px] text-ink-muted/40 border border-black/[0.1] px-1.5 py-0.5 ml-3">
                 ESC
               </kbd>
             </div>
@@ -413,7 +413,7 @@ function SearchOverlay({
               {Object.entries(grouped).map(([category, items]) => (
                 <div key={category}>
                   <div className="px-3 py-2">
-                    <span className="font-jetbrains text-[9px] text-skeleton-bone/25 uppercase tracking-[0.2em]">
+                    <span className="font-jetbrains text-[9px] text-ink-muted/40 uppercase tracking-[0.2em]">
                       {category}
                     </span>
                   </div>
@@ -427,8 +427,8 @@ function SearchOverlay({
                         onClick={onClose}
                         className={`flex items-center justify-between px-3 py-2.5 transition-colors duration-150 ${
                           flatIndex === selectedIndex
-                            ? "bg-white/[0.08] text-skeleton-bone"
-                            : "text-skeleton-bone/50 hover:text-skeleton-bone hover:bg-white/[0.04]"
+                            ? "bg-signal-teal-muted text-ink"
+                            : "text-ink-muted hover:text-ink hover:bg-black/[0.03]"
                         }`}
                       >
                         <div>
@@ -436,12 +436,12 @@ function SearchOverlay({
                             {item.label}
                           </span>
                           {item.description && (
-                            <span className="block font-satoshi text-[11px] text-skeleton-bone/30">
+                            <span className="block font-satoshi text-[11px] text-ink-muted/50">
                               {item.description}
                             </span>
                           )}
                         </div>
-                        <ArrowRight className="w-3 h-3 text-skeleton-bone/15 shrink-0 ml-3" />
+                        <ArrowRight className="w-3 h-3 text-ink-muted/30 shrink-0 ml-3" />
                       </Link>
                     );
                   })}
@@ -449,25 +449,25 @@ function SearchOverlay({
               ))}
               {filtered.length === 0 && (
                 <div className="px-3 py-8 text-center">
-                  <span className="font-jetbrains text-[11px] text-skeleton-bone/25 uppercase tracking-[0.15em]">
+                  <span className="font-jetbrains text-[11px] text-ink-muted/40 uppercase tracking-[0.15em]">
                     No results found
                   </span>
                 </div>
               )}
             </div>
 
-            <div className="px-5 py-2.5 border-t border-white/[0.04] flex items-center gap-4">
-              <span className="font-jetbrains text-[9px] text-skeleton-bone/20">
-                <kbd className="border border-white/[0.08] px-1 py-0.5 mr-0.5">↑</kbd>
-                <kbd className="border border-white/[0.08] px-1 py-0.5 mr-1">↓</kbd>
+            <div className="px-5 py-2.5 border-t border-black/[0.04] flex items-center gap-4">
+              <span className="font-jetbrains text-[9px] text-ink-muted/30">
+                <kbd className="border border-black/[0.1] px-1 py-0.5 mr-0.5">↑</kbd>
+                <kbd className="border border-black/[0.1] px-1 py-0.5 mr-1">↓</kbd>
                 Navigate
               </span>
-              <span className="font-jetbrains text-[9px] text-skeleton-bone/20">
-                <kbd className="border border-white/[0.08] px-1 py-0.5 mr-1">↵</kbd>
+              <span className="font-jetbrains text-[9px] text-ink-muted/30">
+                <kbd className="border border-black/[0.1] px-1 py-0.5 mr-1">↵</kbd>
                 Open
               </span>
-              <span className="font-jetbrains text-[9px] text-skeleton-bone/20">
-                <kbd className="border border-white/[0.08] px-1 py-0.5 mr-1">esc</kbd>
+              <span className="font-jetbrains text-[9px] text-ink-muted/30">
+                <kbd className="border border-black/[0.1] px-1 py-0.5 mr-1">esc</kbd>
                 Close
               </span>
             </div>
@@ -685,14 +685,12 @@ export function Navigation() {
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
           background: isScrolled
-            ? "rgba(0, 0, 0, 0.4)"
-            : "rgba(255, 255, 255, 0.08)",
-          border: isScrolled
-            ? "1px solid rgba(255, 255, 255, 0.15)"
-            : "1px solid rgba(255, 255, 255, 0.12)",
-          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.15)",
-          padding: "0.6rem 1.25rem",
-          transition: "background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
+            ? "rgba(246, 244, 239, 0.95)"
+            : "rgba(246, 244, 239, 0.75)",
+          border: "1px solid rgba(0, 0, 0, 0.08)",
+          boxShadow: "0 4px 24px rgba(0, 0, 0, 0.08)",
+          padding: "0.75rem 1.5rem",
+          transition: "background 0.3s ease, box-shadow 0.3s ease",
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -709,9 +707,9 @@ export function Navigation() {
               className="relative h-7 md:h-8 flex items-center transition-opacity duration-300 hover:opacity-80"
               aria-label="Tangison Studio home"
             >
-              {/* Light logo for floating dark nav */}
+              {/* Dark logo for light floating nav */}
               <Image
-                src="/brand/logo-light.webp"
+                src="/brand/logo-dark.webp"
                 alt="TANGISON STUDIO"
                 width={874}
                 height={286}
@@ -753,8 +751,8 @@ export function Navigation() {
                       item.href === "/contact"
                         ? "text-signal-teal hover:text-signal-teal-light"
                         : pathname === item.href
-                        ? "text-skeleton-bone"
-                        : "text-skeleton-bone/60 hover:text-skeleton-bone"
+                        ? "text-ink"
+                        : "text-ink-muted hover:text-ink"
                     }`}
                   >
                     {item.label}
@@ -779,12 +777,12 @@ export function Navigation() {
               initial="hidden"
               animate="visible"
               onClick={() => setIsSearchOpen(true)}
-              className="flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-skeleton-bone/60 hover:text-skeleton-bone transition-colors duration-300 py-1.5 px-2.5 border border-white/[0.1] hover:border-white/[0.2]"
+              className="flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-ink transition-colors duration-300 py-1.5 px-2.5 border border-black/[0.1] hover:border-black/[0.2]"
               aria-label="Open search (Cmd+K)"
             >
               <Search className="w-3.5 h-3.5" />
               <span className="hidden xl:inline">Search</span>
-              <kbd className="hidden md:inline font-jetbrains text-[8px] text-skeleton-bone/25 border border-white/[0.1] px-1 py-0.5 ml-1">
+              <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted/40 border border-black/[0.1] px-1 py-0.5 ml-1">
                 ⌘K
               </kbd>
             </motion.button>
@@ -809,13 +807,13 @@ export function Navigation() {
           <div className="lg:hidden flex items-center gap-2">
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-skeleton-bone/70 hover:text-skeleton-bone transition-colors"
+              className="p-2 text-ink-muted hover:text-ink transition-colors"
               aria-label="Open search"
             >
               <Search className="w-4 h-4" />
             </button>
             <button
-              className="p-2 -mr-2 text-skeleton-bone/70 hover:text-skeleton-bone transition-colors"
+              className="p-2 -mr-2 text-ink-muted hover:text-ink transition-colors"
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               aria-label={isMobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileOpen}
@@ -862,7 +860,7 @@ export function Navigation() {
                 className="text-skeleton-bone p-2 -mr-2"
                 aria-label="Close menu"
               >
-                <HamburgerIcon isOpen={true} />
+                <HamburgerIcon isOpen={true} dark={true} />
               </button>
             </div>
 

@@ -241,7 +241,8 @@ nav[role="navigation"],
 nav[role="navigation"] *,
 .hero-search-bar,
 .hero-search-bar *,
-.pill-button {
+.pill-button,
+.work-scroll-placeholder {
   border-radius: revert !important;
 }
 
@@ -328,11 +329,29 @@ button, a {
   50% { opacity: 0; }
 }
 
-/* Hero overflow fix */
+/* Hero — background image, overlay, overflow fix */
 .hero {
+  background-image: url('/images/gallery/hero-bg-skeleton-coast.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
   overflow: hidden;
   box-sizing: border-box;
   width: 100%;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(246, 244, 239, 0.82);
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Hero viewport height — CSS progressive enhancement for dvh */
@@ -340,14 +359,24 @@ button, a {
   min-height: 700px;
   min-height: 100vh;
   min-height: 100dvh;
-  padding-top: calc(80px + 1.5rem);
+  padding-top: calc(72px + 2rem);
+}
+
+/* Work scroll placeholder — responsive heights */
+.work-scroll-placeholder {
+  min-height: 280px;
+}
+@media (min-width: 1024px) {
+  .work-scroll-placeholder {
+    min-height: 420px;
+  }
 }
 
 /* Floating nav — mobile responsive */
 @media (max-width: 768px) {
   nav[role="navigation"] {
     border-radius: 16px !important;
-    padding: 0.5rem 0.75rem !important;
+    padding: 0.6rem 1rem !important;
     width: calc(100% - 1.5rem) !important;
   }
 }
