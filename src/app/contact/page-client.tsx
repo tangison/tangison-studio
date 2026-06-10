@@ -290,7 +290,7 @@ export function ContactPage() {
 
                   {/* Honeypot field - hidden from real users, bots will fill it */}
                   <div className="absolute opacity-0 h-0 w-0 overflow-hidden" aria-hidden="true">
-                    <label htmlFor="website">Website</label>
+                    <label htmlFor="website" tabIndex={-1}>Website</label>
                     <input
                       id="website"
                       name="website"
@@ -299,6 +299,7 @@ export function ContactPage() {
                       onChange={handleChange}
                       tabIndex={-1}
                       autoComplete="off"
+                      aria-hidden="true"
                     />
                   </div>
 

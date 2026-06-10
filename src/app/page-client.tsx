@@ -117,7 +117,7 @@ function HeroSection() {
               className="text-ink-muted font-satoshi font-light leading-relaxed mb-10 max-w-lg"
               style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)" }}
             >
-              Strategy, design, and engineering from Windhoek.
+              Strategy, design, and engineering from Windhoek. We partner with organizations across Africa to create websites, applications, brand systems, and design systems that are intentional, scalable, and built to last.
             </motion.p>
 
             <motion.div
@@ -203,6 +203,7 @@ function FeaturedWorkSection() {
                     className="object-cover cinematic-image group-hover:scale-105 transition-transform duration-700"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
+                    priority={i === 0}
                   />
                 </div>
                 {/* Caption */}

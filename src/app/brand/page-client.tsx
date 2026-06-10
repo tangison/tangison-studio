@@ -294,14 +294,12 @@ export default function BrandPage() {
             <button
               onClick={handleCopyText}
               className="bg-atlantic-black text-skeleton-bone/80 px-4 py-2 font-jetbrains text-[9px] uppercase tracking-[0.15em] hover:bg-signal-teal hover:text-signal-white transition-colors duration-300 border border-white/[0.06]"
-              aria-label="Copy brand system as text"
             >
               {copied ? "Copied" : "Copy as Text"}
             </button>
             <button
               onClick={handleDownloadMarkdown}
               className="bg-signal-teal text-signal-white px-4 py-2 font-jetbrains text-[9px] uppercase tracking-[0.15em] hover:bg-signal-teal/80 transition-colors duration-300"
-              aria-label="Download brand system as Markdown"
             >
               {mdCopied ? "Downloaded" : "Download .md"}
             </button>
@@ -914,14 +912,12 @@ export default function BrandPage() {
               <button
                 onClick={handleCopyText}
                 className="w-full bg-ink text-signal-white p-4 font-jetbrains uppercase tracking-[0.15em] text-sm hover:bg-signal-teal transition-colors duration-300"
-                aria-label="Copy brand system as text"
               >
                 {copied ? "Copied to Clipboard" : "Copy as Text"}
               </button>
               <button
                 onClick={handleDownloadMarkdown}
                 className="w-full bg-signal-teal text-signal-white p-4 font-jetbrains uppercase tracking-[0.15em] text-sm hover:bg-signal-teal/80 transition-colors duration-300"
-                aria-label="Download brand system as Markdown"
               >
                 {mdCopied ? "Downloaded" : "Download as Markdown"}
               </button>

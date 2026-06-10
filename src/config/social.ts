@@ -5,10 +5,8 @@
  */
 
 export const socialLinks = {
-  instagram: "https://instagram.com/tangisonstudio",  // TODO: Replace with real URL
-  linkedin: "https://linkedin.com/company/tangisonstudio",  // TODO: Replace with real URL
-  x: "https://x.com/tangisonstudio",  // TODO: Replace with real URL
-  youtube: "https://youtube.com/@tangisonstudio",  // TODO: Replace with real URL
+  instagram: "https://instagram.com/tangisonstudio",
+  x: "https://x.com/tangisonstudio",
 } as const;
 
 export type SocialPlatform = keyof typeof socialLinks;

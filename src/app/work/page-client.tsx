@@ -91,7 +91,7 @@ export function WorkPage() {
               Coming Soon
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              We are literally just rebranding from Gemsweb Digital.
+              We are evolving from Gemsweb Digital to Tangison Studio. Our full portfolio and case studies are being assembled — in the meantime, explore the industries we serve across Africa.
             </p>
           </motion.div>
         </div>

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description:
       "We design and build digital experiences that move ideas forward. Website design, development, brand systems, and creative direction from Windhoek, Namibia.",
     url: "/",
+    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
   },
 };
 

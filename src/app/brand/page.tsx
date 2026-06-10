@@ -9,10 +9,11 @@ export const metadata: Metadata = {
     canonical: "/brand",
   },
   openGraph: {
-    title: "Brand Identity",
+    title: "Brand Identity | TANGISON STUDIO",
     description:
       "The Tangison Studio brand system — identity mark, wordmark, color system, typography, motion, and design rules. For partners, designers, and collaborators.",
     url: "/brand",
+    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
   },
 };
 

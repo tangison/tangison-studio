@@ -12,16 +12,19 @@ const footerColumns = {
     { label: "Services", href: "/services" },
     { label: "Process", href: "/process" },
     { label: "About", href: "/about" },
+    { label: "The Studio", href: "/studio" },
   ],
   Resources: [
     { label: "Blog", href: "/blog" },
     { label: "Brand", href: "/brand" },
     { label: "FAQ", href: "/faq" },
     { label: "Resources", href: "/resources" },
+    { label: "Careers", href: "/careers" },
   ],
   Legal: [
     { label: "Privacy", href: "/legal/privacy" },
     { label: "Terms", href: "/legal/terms" },
+    { label: "Cookies", href: "/legal/cookies" },
   ],
 } as const;
 

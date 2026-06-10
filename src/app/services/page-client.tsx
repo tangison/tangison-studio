@@ -63,7 +63,7 @@ export function ServicesPage() {
               Seven Disciplines
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              One studio. Every project gets the right combination of strategy, design, and engineering.
+              One studio. Every project gets the right combination of strategy, design, and engineering. We work across seven disciplines to deliver digital experiences that are intentional, scalable, and built to perform.
             </p>
           </motion.div>
         </div>

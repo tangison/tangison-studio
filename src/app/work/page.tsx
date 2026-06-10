@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { WorkPage } from "./page-client";
 
 export const metadata: Metadata = {
-  title: "Work — Coming Soon",
-  description: "We are rebranding from Gemsweb Digital to Tangison Studio. Our portfolio and case studies are being assembled. Explore the industries we serve.",
+  title: "Our Work & Case Studies",
+  description: "Explore our portfolio of digital experiences across nine industries in Africa. From SMEs and mining to healthcare and education — see how Tangison Studio delivers strategic, functional design.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Work — Coming Soon",
-    description: "We are rebranding from Gemsweb Digital to Tangison Studio. Our portfolio and case studies are being assembled. Explore the industries we serve.",
+    title: "Our Work & Case Studies | TANGISON STUDIO",
+    description: "Explore our portfolio of digital experiences across nine industries in Africa. From SMEs and mining to healthcare and education — see how Tangison Studio delivers strategic, functional design.",
     url: "/work",
   },
 };
