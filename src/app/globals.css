@@ -148,6 +148,10 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -225,10 +229,20 @@ html {
 }
 
 /* Zero border-radius globally — Studio design language */
-*,
+/* Exception: floating nav pill, hero search bar, and pill buttons */
+*:not(nav):not(.hero-search-bar):not(.hero-search-bar *):not(.pill-button),
 *::before,
 *::after {
   border-radius: 0 !important;
+}
+
+/* Restore border-radius for floating elements */
+nav[role="navigation"],
+nav[role="navigation"] *,
+.hero-search-bar,
+.hero-search-bar *,
+.pill-button {
+  border-radius: revert !important;
 }
 
 /* Focus visible styles for accessibility — Signal Teal */
@@ -312,6 +326,30 @@ button, a {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+/* Hero overflow fix */
+.hero {
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Hero viewport height — CSS progressive enhancement for dvh */
+.hero-viewport {
+  min-height: 700px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: calc(80px + 1.5rem);
+}
+
+/* Floating nav — mobile responsive */
+@media (max-width: 768px) {
+  nav[role="navigation"] {
+    border-radius: 16px !important;
+    padding: 0.5rem 0.75rem !important;
+    width: calc(100% - 1.5rem) !important;
+  }
 }
 
 /* AI Widget — custom scrollbar for chat panel */

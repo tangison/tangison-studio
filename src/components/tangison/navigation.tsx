@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Search, ArrowRight } from "lucide-react";
 
 /* ─── Navigation Data ─────────────────────────────────────────── */
@@ -139,43 +139,6 @@ function HamburgerIcon({ isOpen, dark = false }: { isOpen: boolean; dark?: boole
   );
 }
 
-/* ─── Sliding Hover Indicator ──────────────────────────────────── */
-/* A shared teal underline that slides between nav items following cursor */
-
-function SlidingIndicator({
-  activeRect,
-  containerRef,
-}: {
-  activeRect: DOMRect | null;
-  containerRef: React.RefObject<HTMLDivElement | null>;
-}) {
-  const [style, setStyle] = useState<{ left: number; width: number } | null>(null);
-
-  useEffect(() => {
-    if (!activeRect || !containerRef.current) {
-      setStyle(null);
-      return;
-    }
-    const containerRect = containerRef.current.getBoundingClientRect();
-    setStyle({
-      left: activeRect.left - containerRect.left,
-      width: activeRect.width,
-    });
-  }, [activeRect, containerRef]);
-
-  if (!style) return null;
-
-  return (
-    <motion.div
-      layoutId="nav-indicator"
-      className="absolute bottom-0 h-[1.5px] bg-signal-teal"
-      initial={false}
-      animate={{ left: style.left, width: style.width }}
-      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-    />
-  );
-}
-
 /* ─── Desktop Mega-Menu Dropdown ──────────────────────────────── */
 
 function DesktopDropdown({
@@ -232,14 +195,13 @@ function DesktopDropdown({
         href={item.href}
         className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 py-1 ${
           isActive
-            ? "text-ink"
-            : "text-ink-muted hover:text-ink"
+            ? "text-skeleton-bone"
+            : "text-skeleton-bone/60 hover:text-skeleton-bone"
         }`}
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
         {item.label}
-        {/* Static active underline — always shown for current page */}
         {isActive && (
           <motion.span
             layoutId="active-nav-underline"
@@ -260,7 +222,7 @@ function DesktopDropdown({
             role="menu"
             aria-label={`${item.label} submenu`}
           >
-            <div className="bg-signal-white border border-black/[0.06] min-w-[340px] overflow-hidden">
+            <div className="bg-atlantic-black/95 border border-white/[0.08] min-w-[340px] overflow-hidden" style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}>
               {/* Teal accent line */}
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -272,8 +234,8 @@ function DesktopDropdown({
 
               {/* Optional tagline */}
               {item.megaTagline && (
-                <div className="px-5 py-3 border-b border-black/[0.04]">
-                  <span className="font-satoshi text-[12px] text-ink-muted/60 italic">
+                <div className="px-5 py-3 border-b border-white/[0.06]">
+                  <span className="font-satoshi text-[12px] text-skeleton-bone/40 italic">
                     {item.megaTagline}
                   </span>
                 </div>
@@ -293,8 +255,8 @@ function DesktopDropdown({
                         href={child.href}
                         className={`flex items-center justify-between px-5 py-3 transition-all duration-200 ${
                           isChildActive
-                            ? "text-ink bg-ocean-mist"
-                            : "text-ink-muted hover:text-ink hover:bg-ocean-mist/50"
+                            ? "text-skeleton-bone bg-white/[0.08]"
+                            : "text-skeleton-bone/60 hover:text-skeleton-bone hover:bg-white/[0.05]"
                         }`}
                         role="menuitem"
                         onClick={() => setIsOpen(false)}
@@ -304,12 +266,12 @@ function DesktopDropdown({
                             {child.label}
                           </span>
                           {child.description && (
-                            <span className="font-satoshi text-[11px] text-ink-muted/50 mt-0.5 block">
+                            <span className="font-satoshi text-[11px] text-skeleton-bone/30 mt-0.5 block">
                               {child.description}
                             </span>
                           )}
                         </div>
-                        <ArrowRight className="w-3 h-3 text-ink-muted/30 shrink-0 ml-4" />
+                        <ArrowRight className="w-3 h-3 text-skeleton-bone/20 shrink-0 ml-4" />
                       </Link>
                     </motion.div>
                   );
@@ -318,7 +280,7 @@ function DesktopDropdown({
 
               {/* Optional bottom image preview */}
               {item.megaImage && (
-                <div className="border-t border-black/[0.04]">
+                <div className="border-t border-white/[0.06]">
                   <div className="relative h-24 overflow-hidden">
                     <Image
                       src={item.megaImage}
@@ -327,7 +289,7 @@ function DesktopDropdown({
                       fill
                       sizes="340px"
                     />
-                    <div className="absolute inset-0 bg-atlantic-black/20" />
+                    <div className="absolute inset-0 bg-atlantic-black/30" />
                   </div>
                 </div>
               )}
@@ -355,7 +317,6 @@ function SearchOverlay({
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
-  // Filter results
   const filtered = query.trim()
     ? searchableItems.filter(
         (item) =>
@@ -365,7 +326,6 @@ function SearchOverlay({
       )
     : searchableItems;
 
-  // Group by category
   const grouped = filtered.reduce<Record<string, SearchItem[]>>((acc, item) => {
     if (!acc[item.category]) acc[item.category] = [];
     acc[item.category].push(item);
@@ -374,7 +334,6 @@ function SearchOverlay({
 
   const flatResults = Object.values(grouped).flat();
 
-  // Focus input on open
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 100);
@@ -383,7 +342,6 @@ function SearchOverlay({
     }
   }, [isOpen]);
 
-  // Keyboard navigation
   useEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -403,7 +361,6 @@ function SearchOverlay({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, flatResults, selectedIndex, onClose]);
 
-  // Scroll selected into view
   useEffect(() => {
     if (!resultsRef.current) return;
     const selected = resultsRef.current.querySelector(`[data-index="${selectedIndex}"]`);
@@ -414,31 +371,28 @@ function SearchOverlay({
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 z-[60] bg-atlantic-black/50"
+            className="fixed inset-0 z-[60] bg-atlantic-black/60"
             style={{ backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)" }}
           />
-
-          {/* Search panel */}
           <motion.div
             initial={{ opacity: 0, y: -20, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.98 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed top-[15vh] left-1/2 -translate-x-1/2 z-[61] w-[min(640px,calc(100vw-48px))] bg-signal-white border border-black/[0.06] overflow-hidden"
+            className="fixed top-[15vh] left-1/2 -translate-x-1/2 z-[61] w-[min(640px,calc(100vw-48px))] bg-atlantic-black border border-white/[0.08] overflow-hidden"
+            style={{ backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}
             role="dialog"
             aria-modal="true"
             aria-label="Search"
           >
-            {/* Input */}
-            <div className="flex items-center px-5 py-4 border-b border-black/[0.06]">
-              <Search className="w-4 h-4 text-ink-muted mr-3 shrink-0" />
+            <div className="flex items-center px-5 py-4 border-b border-white/[0.06]">
+              <Search className="w-4 h-4 text-skeleton-bone/50 mr-3 shrink-0" />
               <input
                 ref={inputRef}
                 value={query}
@@ -447,20 +401,19 @@ function SearchOverlay({
                   setSelectedIndex(0);
                 }}
                 placeholder="Search pages, services..."
-                className="flex-1 bg-transparent font-jetbrains text-sm text-ink placeholder:text-ink-muted/40 focus:outline-none"
+                className="flex-1 bg-transparent font-jetbrains text-sm text-skeleton-bone placeholder:text-skeleton-bone/30 focus:outline-none"
                 aria-label="Search"
               />
-              <kbd className="font-jetbrains text-[9px] text-ink-muted/30 border border-black/[0.08] px-1.5 py-0.5 ml-3">
+              <kbd className="font-jetbrains text-[9px] text-skeleton-bone/20 border border-white/[0.08] px-1.5 py-0.5 ml-3">
                 ESC
               </kbd>
             </div>
 
-            {/* Results */}
             <div ref={resultsRef} className="max-h-[45vh] overflow-y-auto p-2">
               {Object.entries(grouped).map(([category, items]) => (
                 <div key={category}>
                   <div className="px-3 py-2">
-                    <span className="font-jetbrains text-[9px] text-ink-muted/40 uppercase tracking-[0.2em]">
+                    <span className="font-jetbrains text-[9px] text-skeleton-bone/25 uppercase tracking-[0.2em]">
                       {category}
                     </span>
                   </div>
@@ -474,8 +427,8 @@ function SearchOverlay({
                         onClick={onClose}
                         className={`flex items-center justify-between px-3 py-2.5 transition-colors duration-150 ${
                           flatIndex === selectedIndex
-                            ? "bg-ocean-mist text-ink"
-                            : "text-ink-muted hover:text-ink hover:bg-ocean-mist/30"
+                            ? "bg-white/[0.08] text-skeleton-bone"
+                            : "text-skeleton-bone/50 hover:text-skeleton-bone hover:bg-white/[0.04]"
                         }`}
                       >
                         <div>
@@ -483,12 +436,12 @@ function SearchOverlay({
                             {item.label}
                           </span>
                           {item.description && (
-                            <span className="block font-satoshi text-[11px] text-ink-muted/50">
+                            <span className="block font-satoshi text-[11px] text-skeleton-bone/30">
                               {item.description}
                             </span>
                           )}
                         </div>
-                        <ArrowRight className="w-3 h-3 text-ink-muted/20 shrink-0 ml-3" />
+                        <ArrowRight className="w-3 h-3 text-skeleton-bone/15 shrink-0 ml-3" />
                       </Link>
                     );
                   })}
@@ -496,26 +449,25 @@ function SearchOverlay({
               ))}
               {filtered.length === 0 && (
                 <div className="px-3 py-8 text-center">
-                  <span className="font-jetbrains text-[11px] text-ink-muted/40 uppercase tracking-[0.15em]">
+                  <span className="font-jetbrains text-[11px] text-skeleton-bone/25 uppercase tracking-[0.15em]">
                     No results found
                   </span>
                 </div>
               )}
             </div>
 
-            {/* Footer */}
-            <div className="px-5 py-2.5 border-t border-black/[0.04] flex items-center gap-4">
-              <span className="font-jetbrains text-[9px] text-ink-muted/30">
-                <kbd className="border border-black/[0.08] px-1 py-0.5 mr-0.5">↑</kbd>
-                <kbd className="border border-black/[0.08] px-1 py-0.5 mr-1">↓</kbd>
+            <div className="px-5 py-2.5 border-t border-white/[0.04] flex items-center gap-4">
+              <span className="font-jetbrains text-[9px] text-skeleton-bone/20">
+                <kbd className="border border-white/[0.08] px-1 py-0.5 mr-0.5">↑</kbd>
+                <kbd className="border border-white/[0.08] px-1 py-0.5 mr-1">↓</kbd>
                 Navigate
               </span>
-              <span className="font-jetbrains text-[9px] text-ink-muted/30">
-                <kbd className="border border-black/[0.08] px-1 py-0.5 mr-1">↵</kbd>
+              <span className="font-jetbrains text-[9px] text-skeleton-bone/20">
+                <kbd className="border border-white/[0.08] px-1 py-0.5 mr-1">↵</kbd>
                 Open
               </span>
-              <span className="font-jetbrains text-[9px] text-ink-muted/30">
-                <kbd className="border border-black/[0.08] px-1 py-0.5 mr-1">esc</kbd>
+              <span className="font-jetbrains text-[9px] text-skeleton-bone/20">
+                <kbd className="border border-white/[0.08] px-1 py-0.5 mr-1">esc</kbd>
                 Close
               </span>
             </div>
@@ -523,94 +475,6 @@ function SearchOverlay({
         </>
       )}
     </AnimatePresence>
-  );
-}
-
-/* ─── Mobile Accordion Item ───────────────────────────────────── */
-
-function MobileAccordionItem({
-  item,
-  pathname,
-  onClose,
-}: {
-  item: NavItem;
-  pathname: string;
-  onClose: () => void;
-}) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const hasChildren = item.children && item.children.length > 0;
-  const isActive =
-    pathname === item.href || pathname.startsWith(item.href + "/");
-
-  return (
-    <div>
-      {hasChildren ? (
-        <button
-          className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 flex items-center gap-3 ${
-            isActive ? "text-ink" : "text-ink-muted hover:text-ink"
-          }`}
-          onClick={() => setIsExpanded(!isExpanded)}
-          aria-expanded={isExpanded}
-          aria-label={`${item.label} — ${isExpanded ? "collapse" : "expand"} submenu`}
-        >
-          {item.label}
-          <motion.span
-            animate={{ rotate: isExpanded ? 45 : 0 }}
-            transition={{ duration: 0.2 }}
-            className="font-jetbrains text-[12px] text-ink-muted/50 leading-none"
-          >
-            +
-          </motion.span>
-        </button>
-      ) : (
-        <Link
-          href={item.href}
-          onClick={onClose}
-          className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 block ${
-            item.href === "/contact"
-              ? "text-signal-teal hover:text-signal-teal-light"
-              : isActive
-              ? "text-ink"
-              : "text-ink-muted hover:text-ink"
-          }`}
-        >
-          {item.label}
-        </Link>
-      )}
-
-      <AnimatePresence initial={false}>
-        {isExpanded && hasChildren && (
-          <motion.div
-            initial={{ opacity: 0, scaleY: 0 }}
-            animate={{ opacity: 1, scaleY: 1 }}
-            exit={{ opacity: 0, scaleY: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{ transformOrigin: "top" }}
-            className="overflow-hidden"
-          >
-            <div className="flex flex-col gap-2 pt-3 pl-4 border-l-2 border-signal-teal/30">
-              {item.children!.map((child) => {
-                const isChildActive = pathname === child.href;
-                return (
-                  <Link
-                    key={child.href}
-                    href={child.href}
-                    onClick={onClose}
-                    className={`font-satoshi text-sm transition-colors duration-200 py-1 ${
-                      isChildActive
-                        ? "text-ink"
-                        : "text-ink-muted hover:text-ink"
-                    }`}
-                  >
-                    {child.label}
-                  </Link>
-                );
-              })}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
   );
 }
 
@@ -632,23 +496,39 @@ function MobileAccordionItemDark({
 
   return (
     <div>
-      <button
-        className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 flex items-center gap-3 mx-auto ${
-          isActive ? "text-skeleton-bone" : "text-fog-gray/60 hover:text-skeleton-bone"
-        }`}
-        onClick={() => setIsExpanded(!isExpanded)}
-        aria-expanded={isExpanded}
-        aria-label={`${item.label} — ${isExpanded ? "collapse" : "expand"} submenu`}
-      >
-        {item.label}
-        <motion.span
-          animate={{ rotate: isExpanded ? 45 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="font-jetbrains text-[12px] text-fog-gray/30 leading-none"
+      {hasChildren ? (
+        <button
+          className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 flex items-center gap-3 mx-auto ${
+            isActive ? "text-skeleton-bone" : "text-fog-gray/60 hover:text-skeleton-bone"
+          }`}
+          onClick={() => setIsExpanded(!isExpanded)}
+          aria-expanded={isExpanded}
+          aria-label={`${item.label} — ${isExpanded ? "collapse" : "expand"} submenu`}
         >
-          +
-        </motion.span>
-      </button>
+          {item.label}
+          <motion.span
+            animate={{ rotate: isExpanded ? 45 : 0 }}
+            transition={{ duration: 0.2 }}
+            className="font-jetbrains text-[12px] text-fog-gray/30 leading-none"
+          >
+            +
+          </motion.span>
+        </button>
+      ) : (
+        <Link
+          href={item.href}
+          onClick={onClose}
+          className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 block text-center ${
+            item.href === "/contact"
+              ? "text-signal-teal hover:text-signal-teal-light"
+              : isActive
+              ? "text-skeleton-bone"
+              : "text-fog-gray/60 hover:text-skeleton-bone"
+          }`}
+        >
+          {item.label}
+        </Link>
+      )}
 
       <AnimatePresence initial={false}>
         {isExpanded && hasChildren && (
@@ -718,30 +598,22 @@ const navRightVariants = {
 
 /* ─── Main Navigation Component ───────────────────────────────── */
 
-type NavVisualState = "top" | "floating" | "hidden";
-
 export function Navigation() {
-  const [navState, setNavState] = useState<NavVisualState>("top");
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [hoveredRect, setHoveredRect] = useState<DOMRect | null>(null);
-  const [scrollYValue, setScrollYValue] = useState(0);
   const pathname = usePathname();
-  const navLinksRef = useRef<HTMLDivElement>(null);
 
-  // Scroll tracking — ultra-smooth with requestAnimationFrame
+  // Scroll tracking — determine if scrolled past hero area
   useEffect(() => {
-    let lastScrollY = 0;
     let ticking = false;
-    let scrollDirection: "up" | "down" | "idle" = "idle";
-    let accumulatedDelta = 0;
 
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
-          const delta = currentScrollY - lastScrollY;
+          setIsScrolled(currentScrollY > 60);
 
           // Scroll progress for page indicator
           const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -749,27 +621,6 @@ export function Navigation() {
             setScrollProgress(Math.min(1, Math.max(0, currentScrollY / docHeight)));
           }
 
-          // Track raw scroll for proportional backdrop
-          setScrollYValue(currentScrollY);
-
-          // Accumulate delta to filter out micro-scroll jitter
-          accumulatedDelta += delta;
-
-          if (Math.abs(accumulatedDelta) > 8) {
-            scrollDirection = accumulatedDelta > 0 ? "down" : "up";
-            accumulatedDelta = 0;
-          }
-
-          // State transitions
-          if (currentScrollY < 60) {
-            setNavState("top");
-          } else if (scrollDirection === "down" && currentScrollY > 300) {
-            setNavState("hidden");
-          } else {
-            setNavState("floating");
-          }
-
-          lastScrollY = currentScrollY;
           ticking = false;
         });
         ticking = true;
@@ -777,7 +628,7 @@ export function Navigation() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial call
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -804,12 +655,10 @@ export function Navigation() {
   // Global keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Cmd+K / Ctrl+K for search
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
         setIsSearchOpen((prev) => !prev);
       }
-      // Escape to close search
       if (e.key === "Escape" && isSearchOpen) {
         setIsSearchOpen(false);
       }
@@ -823,81 +672,57 @@ export function Navigation() {
     setIsSearchOpen(false);
   }, [pathname]);
 
-  const isFloating = navState === "floating";
-  const isTop = navState === "top";
-  const isHidden = navState === "hidden";
-
-  // Proportional backdrop opacity: 0 at top, up to 0.97 at 300px scroll
-  const backdropOpacity = isTop ? 0 : Math.min(0.97, 0.6 + (scrollYValue / 500) * 0.37);
-  const blurAmount = isTop ? 0 : Math.min(20, 8 + scrollYValue / 30);
-
   return (
     <>
-      {/* Desktop / Shared Nav Bar */}
+      {/* ── Floating Pill Navigation ── */}
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
-        animate={{
-          y: isHidden ? -100 : 0,
-          opacity: isHidden ? 0 : 1,
-        }}
-        transition={{
-          y: { type: "spring", stiffness: 300, damping: 30 },
-          opacity: { duration: 0.25 },
-        }}
-        className={`fixed z-50 transition-all duration-700 ${
-          isFloating
-            ? "top-3 left-4 right-4 md:left-6 md:right-6 lg:left-auto lg:right-auto lg:top-4 lg:max-w-[1200px] lg:mx-auto border border-black/[0.06] px-5 md:px-8 py-3 md:py-3.5"
-            : "top-0 left-0 w-full px-5 sm:px-6 md:px-12 lg:px-20 py-4 md:py-5"
-        }`}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="fixed z-[1000] top-4 left-1/2 -translate-x-1/2 w-[min(1200px,calc(100%-2rem))] md:top-4"
         style={{
-          backgroundColor: isTop
-            ? "transparent"
-            : `rgba(246, 244, 239, ${backdropOpacity})`,
-          backdropFilter: isTop ? "none" : `blur(${blurAmount}px)`,
-          WebkitBackdropFilter: isTop ? "none" : `blur(${blurAmount}px)`,
-          transition: "background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+          borderRadius: "999px",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          background: isScrolled
+            ? "rgba(0, 0, 0, 0.4)"
+            : "rgba(255, 255, 255, 0.08)",
+          border: isScrolled
+            ? "1px solid rgba(255, 255, 255, 0.15)"
+            : "1px solid rgba(255, 255, 255, 0.12)",
+          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.15)",
+          padding: "0.6rem 1.25rem",
+          transition: "background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease",
         }}
         role="navigation"
         aria-label="Main navigation"
       >
-        {/* Teal accent line — visible when floating */}
-        {isFloating && (
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="absolute top-0 left-0 right-0 h-[2px] bg-signal-teal origin-left"
-            aria-hidden="true"
-          />
-        )}
-
         <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <Link
               href="/"
-              className="relative h-8 md:h-10 flex items-center transition-opacity duration-300 hover:opacity-80"
+              className="relative h-7 md:h-8 flex items-center transition-opacity duration-300 hover:opacity-80"
               aria-label="Tangison Studio home"
             >
+              {/* Light logo for floating dark nav */}
               <Image
-                src="/brand/logo-dark.webp"
+                src="/brand/logo-light.webp"
                 alt="TANGISON STUDIO"
                 width={874}
                 height={286}
-                className={`${
-                  isFloating ? "h-7 md:h-8" : "h-8 md:h-10"
-                } w-auto object-contain transition-all duration-500`}
+                className="h-6 md:h-7 w-auto object-contain"
                 priority
               />
             </Link>
           </motion.div>
 
-          {/* Desktop navigation links with sliding indicator */}
-          <div ref={navLinksRef} className="hidden lg:flex items-center gap-7 relative">
+          {/* Desktop navigation links */}
+          <div className="hidden lg:flex items-center gap-6 relative">
             {navItems.map((item, i) =>
               item.children ? (
                 <motion.div
@@ -910,8 +735,8 @@ export function Navigation() {
                   <DesktopDropdown
                     item={item}
                     pathname={pathname}
-                    onHoverStart={(rect) => setHoveredRect(rect)}
-                    onHoverEnd={() => setHoveredRect(null)}
+                    onHoverStart={() => {}}
+                    onHoverEnd={() => {}}
                   />
                 </motion.div>
               ) : (
@@ -924,16 +749,12 @@ export function Navigation() {
                 >
                   <Link
                     href={item.href}
-                    onMouseEnter={(e) =>
-                      setHoveredRect(e.currentTarget.getBoundingClientRect())
-                    }
-                    onMouseLeave={() => setHoveredRect(null)}
                     className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 py-1 ${
-                      pathname === item.href
-                        ? "text-ink"
-                        : item.href === "/contact"
+                      item.href === "/contact"
                         ? "text-signal-teal hover:text-signal-teal-light"
-                        : "text-ink-muted hover:text-ink"
+                        : pathname === item.href
+                        ? "text-skeleton-bone"
+                        : "text-skeleton-bone/60 hover:text-skeleton-bone"
                     }`}
                   >
                     {item.label}
@@ -948,36 +769,26 @@ export function Navigation() {
                 </motion.div>
               )
             )}
-
-            {/* Sliding hover indicator — only on non-active hover */}
-            {hoveredRect && navLinksRef.current && (
-              <SlidingIndicator
-                activeRect={hoveredRect}
-                containerRef={navLinksRef}
-              />
-            )}
           </div>
 
           {/* Right side: Search + CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Search trigger */}
             <motion.button
               custom={0}
               variants={navRightVariants}
               initial="hidden"
               animate="visible"
               onClick={() => setIsSearchOpen(true)}
-              className="flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-ink transition-colors duration-300 py-2 px-2.5 border border-black/[0.06] hover:border-black/[0.12]"
+              className="flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-skeleton-bone/60 hover:text-skeleton-bone transition-colors duration-300 py-1.5 px-2.5 border border-white/[0.1] hover:border-white/[0.2]"
               aria-label="Open search (Cmd+K)"
             >
               <Search className="w-3.5 h-3.5" />
               <span className="hidden xl:inline">Search</span>
-              <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted/30 border border-black/[0.08] px-1 py-0.5 ml-1">
+              <kbd className="hidden md:inline font-jetbrains text-[8px] text-skeleton-bone/25 border border-white/[0.1] px-1 py-0.5 ml-1">
                 ⌘K
               </kbd>
             </motion.button>
 
-            {/* CTA */}
             <motion.div
               custom={1}
               variants={navRightVariants}
@@ -986,7 +797,8 @@ export function Navigation() {
             >
               <Link
                 href="/contact"
-                className="bg-signal-teal text-signal-white px-6 py-3 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300 inline-block"
+                className="bg-signal-teal text-signal-white px-5 py-2.5 font-cabinet font-bold text-[11px] tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 inline-block"
+                style={{ borderRadius: "999px" }}
               >
                 Let&apos;s Build →
               </Link>
@@ -997,29 +809,27 @@ export function Navigation() {
           <div className="lg:hidden flex items-center gap-2">
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-ink"
+              className="p-2 text-skeleton-bone/70 hover:text-skeleton-bone transition-colors"
               aria-label="Open search"
             >
-              <Search className="w-4.5 h-4.5" />
+              <Search className="w-4 h-4" />
             </button>
             <button
-              className="p-2 -mr-2 text-ink"
+              className="p-2 -mr-2 text-skeleton-bone/70 hover:text-skeleton-bone transition-colors"
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               aria-label={isMobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileOpen}
             >
-              <HamburgerIcon isOpen={isMobileOpen} dark />
+              <HamburgerIcon isOpen={isMobileOpen} />
             </button>
           </div>
         </div>
 
         {/* Scroll progress indicator */}
-        {isFloating && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="absolute bottom-0 left-0 h-[1.5px] bg-signal-teal/30"
-            style={{ width: `${scrollProgress * 100}%` }}
+        {isScrolled && (
+          <div
+            className="absolute bottom-0 left-4 right-4 h-[1px] bg-signal-teal/30"
+            style={{ width: `${scrollProgress * 100}%`, maxWidth: "calc(100% - 2rem)" }}
             aria-hidden="true"
           />
         )}
@@ -1040,7 +850,7 @@ export function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-atlantic-black flex flex-col"
+            className="fixed inset-0 z-[999] bg-atlantic-black flex flex-col"
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
@@ -1072,23 +882,7 @@ export function Navigation() {
                     }}
                     className="w-full text-center"
                   >
-                    {item.children ? (
-                      <MobileAccordionItemDark item={item} pathname={pathname} onClose={() => setIsMobileOpen(false)} />
-                    ) : (
-                      <Link
-                        href={item.href}
-                        onClick={() => setIsMobileOpen(false)}
-                        className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 block ${
-                          item.href === "/contact"
-                            ? "text-signal-teal hover:text-signal-teal-light"
-                            : pathname === item.href
-                            ? "text-skeleton-bone"
-                            : "text-fog-gray/60 hover:text-skeleton-bone"
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                    )}
+                    <MobileAccordionItemDark item={item} pathname={pathname} onClose={() => setIsMobileOpen(false)} />
                   </motion.div>
                 ))}
               </nav>
