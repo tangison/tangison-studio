@@ -289,8 +289,8 @@ export function ContactPage() {
                   </div>
 
                   {/* Honeypot field - hidden from real users, bots will fill it */}
-                  <div className="absolute opacity-0 h-0 w-0 overflow-hidden" aria-hidden="true">
-                    <label htmlFor="website" tabIndex={-1}>Website</label>
+                  <div className="absolute opacity-0 h-0 w-0 overflow-hidden" aria-hidden="true" inert>
+                    <label htmlFor="website" className="sr-only" aria-hidden="true">Website</label>
                     <input
                       id="website"
                       name="website"
