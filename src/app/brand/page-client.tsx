@@ -188,37 +188,51 @@ Used for metadata, labels, version numbers, and navigation items ONLY.
 
 ## Illustration Style
 
-**Name:** Flat Editorial Illustration  
-**Reference:** Japanese travel poster aesthetic — Hiroshi Yoshida meets Studio Ghibli background art. Not anime. Not photorealistic.  
-**Technique:** Clean flat colour fields, minimal linework, subtle paper grain texture only  
+**Name:** Analogue Namibia  
+**Reference:** 1970s–1990s documentary and travel photography. Think grainy 35mm film, faded Kodachrome and Ektachrome colour shifts, slight overexposure, natural Namibian light. The aesthetic of National Geographic field photography from that era — not staged, not cinematic, not digital.
 
-### Illustration Palette
-- Bone White: #F6F4EF — Light surfaces
-- Atlantic Black: #111315 — Dark surfaces, silhouettes
-- Signal Teal: #2CB5B4 — Sole accent colour
-- Deep Navy: #0A0B0C — Sky, deep shadow
-- Fog Gray: #D9D7D2 — Neutral elements
-- Burnt Orange: #C4622D — Namibian earth, dune faces
-- Pale Sand: #E8DFD0 — Desert ground, salt pans
+**Technique:** Real-feeling analogue grain, slightly desaturated warm tones, high contrast between light and shadow, minimal post-processing feel. Images must feel found, not art-directed.
 
-**Rule:** Maximum 6 flat colours per image. No other colours permitted.
+**Subject Matter — Namibian Locations Only**
+Use only well-known, recognisable Namibian places. Permitted locations:
+- Skeleton Coast — desolate shoreline, bleached whale bones, fog rolling in from the Atlantic
+- Sossusvlei / Deadvlei — red dunes, cracked white clay pan, dead camelthorn trees
+- Swakopmund beachfront — colonial architecture, Atlantic mist, harbour
+- Lüderitz harbour — coloured buildings, fishing boats, cold desert meeting sea
+- Etosha Pan — vast white salt flat, lone acacia, heat shimmer
+- Fish River Canyon — deep layered rock formations, arid vastness
+- Walvis Bay lagoon — flamingos, flat water, industrial cranes in distance
 
 ### Composition Rules
-- Vast empty space is intentional
-- Fewer elements is always better
-- Maximum 3 focal elements per image
-- Humans: flat illustrated silhouette only, in motion, face never detailed
+- Vast empty space is intentional — the sky, the pan, the fog can take 70% of the frame
+- Maximum 2–3 focal elements per image
+- Simple, elementary compositions — if you can remove an element, remove it
+- No busy scenes, no markets, no crowds, no complex cityscapes
+- Texture is mandatory — grain, dust, atmospheric haze, aged film texture
 
-### Forbidden Techniques (Illustrations Only)
-- Gradients in illustrations  
-- Glows  
-- Photorealism  
-- Neon  
-- Text in images  
-- Logos in images  
-- Rounded bubbly shapes  
-- Lens flares  
-- More than 6 colours per image
+### People Rules
+- Whenever a person appears they must be in fast motion — running, walking with purpose, turning away
+- Motion blur on the person is required — they should be unrecognisable, a streak of movement
+- Face must never be visible or identifiable
+- The person represents speed — the studio moves fast, thinks fast, builds fast
+- No posed people. No portraits. No faces.
+
+### Colour Feel
+- Warm faded yellows, burnt oranges, dusty whites, deep shadow blacks
+- Slight cyan shift in shadows (Kodachrome characteristic)
+- Never oversaturated
+- Never neon, never digital-looking
+
+### Forbidden
+- Illustrations of any kind
+- Flat colour fields
+- Japanese or anime aesthetic
+- Gradients or glows
+- Text or logos in images
+- Modern digital photography look
+- Posed people or visible faces
+- Busy compositions with many elements
+- Images of places outside Namibia
 
 ---
 
@@ -649,20 +663,20 @@ export default function BrandPage() {
         </div>
       </section>
 
-      {/* ─── Section 6.5: Illustration Style ─── */}
+      {/* ─── Section 6.5: Illustration Style — Analogue Namibia ─── */}
       <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-black/[0.06]" aria-label="Illustration Style">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-4">Illustration Style</h2>
             <p className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-16">
-              Flat Editorial Illustration — Named Brand Asset
+              Analogue Namibia — Named Brand Asset
             </p>
 
             {/* Full-width example image */}
             <div className="mb-16 border border-black/[0.06] overflow-hidden">
               <Image
                 src="/images/gallery/hero-slider-namibia.webp"
-                alt="Flat editorial illustration example — Sossusvlei dead vlei at dawn"
+                alt="Analogue Namibia example — Sossusvlei dead vlei at dawn, grainy 35mm film aesthetic"
                 width={1344}
                 height={768}
                 className="w-full h-auto object-contain"
@@ -672,15 +686,15 @@ export default function BrandPage() {
 
             {/* Style reference */}
             <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10 mb-8">
-              <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Style Reference</h3>
+              <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Analogue Namibia</h3>
               <p className="font-satoshi text-sm text-ink-muted leading-relaxed max-w-3xl mb-6">
-                Japanese travel poster aesthetic — Hiroshi Yoshida meets Studio Ghibli background art. Not anime. Not photorealistic. Clean flat colour fields, minimal linework, subtle paper grain texture only. The illustration system treats every scene as a graphic composition: flat shapes, limited palette, vast empty space, and Signal Teal as the sole accent colour.
+                1970s–1990s documentary and travel photography. Think grainy 35mm film, faded Kodachrome and Ektachrome colour shifts, slight overexposure, natural Namibian light. The aesthetic of National Geographic field photography from that era — not staged, not cinematic, not digital. Real-feeling analogue grain, slightly desaturated warm tones, high contrast between light and shadow. Images must feel found, not art-directed.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  ["Technique", "Clean flat colour fields, minimal linework, subtle paper grain texture only"],
-                  ["Composition", "Maximum 3 focal elements per image. Vast empty space is intentional."],
-                  ["Humans", "Flat illustrated silhouette only, in motion, face never detailed, treated as a graphic shape"],
+                  ["Technique", "Analogue grain, desaturated warm tones, high contrast, found-not-directed feel"],
+                  ["Composition", "Maximum 2–3 focal elements. Sky, pan, fog can take 70% of frame. Remove anything removable."],
+                  ["People", "Fast motion only — running, walking with purpose, turning away. Motion blur required. No faces ever visible."],
                   ["Aspect Ratio", "16:9 landscape only"],
                 ].map(([label, value]) => (
                   <div key={label} className="flex gap-3">
@@ -693,43 +707,75 @@ export default function BrandPage() {
               </div>
             </div>
 
-            {/* Illustration palette swatches */}
+            {/* Permitted locations */}
             <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10 mb-8">
-              <h3 className="font-cabinet text-lg font-bold text-ink mb-6">Illustration Palette</h3>
-              <p className="font-satoshi text-sm text-ink-muted mb-6">Maximum 6 flat colours per image. No other colours permitted.</p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+              <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Subject Matter — Namibian Locations Only</h3>
+              <p className="font-satoshi text-sm text-ink-muted mb-6">Use only well-known, recognisable Namibian places.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {[
-                  { name: "Bone White", hex: "#F6F4EF", usage: "Light surfaces" },
-                  { name: "Atlantic Black", hex: "#111315", usage: "Dark surfaces, silhouettes" },
-                  { name: "Signal Teal", hex: "#2CB5B4", usage: "Sole accent colour" },
-                  { name: "Deep Navy", hex: "#0A0B0C", usage: "Sky, deep shadow" },
-                  { name: "Fog Gray", hex: "#D9D7D2", usage: "Neutral elements" },
-                  { name: "Burnt Orange", hex: "#C4622D", usage: "Namibian earth, dune faces" },
-                  { name: "Pale Sand", hex: "#E8DFD0", usage: "Desert ground, salt pans" },
-                ].map((swatch) => {
-                  const isLight = ["#F6F4EF", "#D9D7D2", "#E8DFD0"].includes(swatch.hex);
-                  return (
-                    <div key={swatch.hex} className="border border-black/[0.06]">
-                      <div
-                        className="h-20 w-full"
-                        style={{ backgroundColor: swatch.hex }}
-                      />
-                      <div className="p-3">
-                        <p className="font-cabinet text-xs font-bold text-ink">{swatch.name}</p>
-                        <p className="font-jetbrains text-[10px] text-ink mt-0.5">{swatch.hex}</p>
-                        <p className="font-satoshi text-[10px] text-ink-muted mt-1">{swatch.usage}</p>
-                      </div>
+                  { name: "Skeleton Coast", desc: "Desolate shoreline, bleached whale bones, fog rolling in from the Atlantic" },
+                  { name: "Sossusvlei / Deadvlei", desc: "Red dunes, cracked white clay pan, dead camelthorn trees" },
+                  { name: "Swakopmund beachfront", desc: "Colonial architecture, Atlantic mist, harbour" },
+                  { name: "Lüderitz harbour", desc: "Coloured buildings, fishing boats, cold desert meeting sea" },
+                  { name: "Etosha Pan", desc: "Vast white salt flat, lone acacia, heat shimmer" },
+                  { name: "Fish River Canyon", desc: "Deep layered rock formations, arid vastness" },
+                  { name: "Walvis Bay lagoon", desc: "Flamingos, flat water, industrial cranes in distance" },
+                ].map((loc) => (
+                  <div key={loc.name} className="flex gap-3">
+                    <div className="w-1.5 h-1.5 bg-signal-teal shrink-0 mt-2" />
+                    <div>
+                      <span className="font-cabinet text-sm font-bold text-ink block">{loc.name}</span>
+                      <span className="font-satoshi text-xs text-ink-muted">{loc.desc}</span>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Forbidden techniques */}
+            {/* People Rules */}
+            <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10 mb-8">
+              <h3 className="font-cabinet text-lg font-bold text-ink mb-4">People Rules</h3>
+              <p className="font-satoshi text-sm text-ink-muted leading-relaxed max-w-3xl mb-4">
+                Whenever a person appears they must be in fast motion — running, walking with purpose, turning away. Motion blur on the person is required — they should be unrecognisable, a streak of movement. The person represents speed — the studio moves fast, thinks fast, builds fast.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  "Motion blur required on all people",
+                  "Face must never be visible or identifiable",
+                  "No posed people. No portraits. No faces.",
+                  "Person = speed, movement, purpose",
+                ].map((rule) => (
+                  <div key={rule} className="flex items-center gap-2">
+                    <div className="w-3 h-[2px] bg-signal-teal shrink-0" />
+                    <span className="font-satoshi text-sm text-ink-muted">{rule}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Colour Feel */}
+            <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10 mb-8">
+              <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Colour Feel</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  "Warm faded yellows, burnt oranges, dusty whites, deep shadow blacks",
+                  "Slight cyan shift in shadows (Kodachrome characteristic)",
+                  "Never oversaturated",
+                  "Never neon, never digital-looking",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2">
+                    <div className="w-3 h-[2px] bg-signal-teal shrink-0 mt-2" />
+                    <span className="font-satoshi text-sm text-ink-muted">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Forbidden */}
             <div className="border border-error/20 bg-signal-white p-6 md:p-10">
-              <span className="font-jetbrains text-[9px] text-error uppercase tracking-[0.2em]">Forbidden Techniques (Illustrations)</span>
+              <span className="font-jetbrains text-[9px] text-error uppercase tracking-[0.2em]">Forbidden</span>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {["Gradients", "Glows", "Photorealism", "Neon", "Text in images", "Logos in images", "Rounded bubbly shapes", "Lens flares", "More than 6 colours per image"].map((item) => (
+                {["Illustrations of any kind", "Flat colour fields", "Japanese or anime aesthetic", "Gradients or glows", "Text or logos in images", "Modern digital photography look", "Posed people or visible faces", "Busy compositions with many elements", "Images of places outside Namibia"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <div className="w-3 h-[2px] bg-error/40 shrink-0" />
                     <span className="font-satoshi text-sm text-ink-muted">{item}</span>
