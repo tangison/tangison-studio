@@ -71,6 +71,7 @@
   --radius-md: 6px;
   --radius-lg: 8px;
   --radius-xl: 12px;
+  --radius-button: 8px;
 }
 
 :root {
@@ -124,6 +125,7 @@
 
   /* Radius */
   --radius: 6px;
+  --radius-button: 8px;
 
   /* Theme variables */
   --background: #F6F4EF;
@@ -229,11 +231,17 @@ html {
 }
 
 /* Subtle border-radius globally — Studio design language v2.0 */
-/* All elements get 6px radius. Pill elements (nav, search) use inline 999px */
+/* All elements get 6px radius. Buttons/CTAs get 8px. Pill elements use inline 999px */
 *,
 *::before,
 *::after {
   border-radius: 6px !important;
+}
+
+/* Buttons and CTA links — slightly more rounded than global default */
+button,
+a.inline-flex:not(.pill-button) {
+  border-radius: 8px !important;
 }
 
 /* Restore full border-radius for pill-shaped elements */
