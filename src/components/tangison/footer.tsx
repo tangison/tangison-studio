@@ -25,6 +25,16 @@ const footerColumns = {
   ],
 } as const;
 
+const techColumn = {
+  label: "Tangison Technologies",
+  descriptor: "One company. Two arms.",
+  links: [
+    { label: "Applied AI Laboratory", href: "https://tangison.com", external: true },
+    { label: "Creative Studio", href: "https://studio.tangison.com", external: true },
+    { label: "About the Company", href: "https://tangison.com/about", external: true },
+  ],
+} as const;
+
 export function Footer() {
   const footerRef = React.useRef<HTMLElement>(null);
   const isInView = useInView(footerRef, { once: true, margin: "-50px" });
@@ -97,7 +107,7 @@ export function Footer() {
         className="relative z-10 px-6 md:px-12 lg:px-20 pb-12 md:pb-16"
       >
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-16">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-10 lg:gap-16">
             {/* Studio column */}
             <div>
               <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-5">
@@ -151,6 +161,30 @@ export function Footer() {
                     {link.label}
                     <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
                   </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Tangison Technologies column */}
+            <div>
+              <h3 className="font-jetbrains text-[9px] text-signal-teal/60 uppercase tracking-[0.3em] mb-2">
+                {techColumn.label}
+              </h3>
+              <p className="font-satoshi text-[11px] text-white/20 mb-4">
+                {techColumn.descriptor}
+              </p>
+              <div className="flex flex-col gap-3">
+                {techColumn.links.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-satoshi text-sm text-white/40 hover:text-white/80 transition-colors duration-300 relative group/link inline-block w-fit"
+                  >
+                    {link.label}
+                    <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
+                  </a>
                 ))}
               </div>
             </div>

@@ -767,6 +767,19 @@ export function Navigation() {
                 </motion.div>
               )
             )}
+            {/* Cross-site link — Labs */}
+            <motion.a
+              custom={navItems.length}
+              variants={navItemVariants}
+              initial="hidden"
+              animate="visible"
+              href="https://tangison.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-jetbrains text-[10px] uppercase tracking-[0.2em] inline-flex items-center gap-1 text-fog-gray/60 hover:text-ink-muted transition-colors duration-300 py-1"
+            >
+              Labs ↗
+            </motion.a>
           </div>
 
           {/* Right side: Search + CTA */}
@@ -884,6 +897,23 @@ export function Navigation() {
                   </motion.div>
                 ))}
               </nav>
+
+              {/* Cross-site link — Labs (mobile) */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navItems.length * 0.06 + 0.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full text-center pt-4 mt-4 border-t border-white/[0.06]"
+              >
+                <a
+                  href="https://tangison.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-fog-gray/40 hover:text-skeleton-bone/70 transition-colors duration-300"
+                >
+                  Labs ↗
+                </a>
+              </motion.div>
             </div>
 
             {/* Bottom tag */}

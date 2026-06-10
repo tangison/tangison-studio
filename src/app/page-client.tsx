@@ -393,12 +393,56 @@ function ContactTeaserSection() {
    HOME PAGE (CLIENT COMPONENT)
    ────────────────────────────────────────────── */
 
+/* ──────────────────────────────────────────────
+   LABS CROSS-LINK CTA
+   ────────────────────────────────────────────── */
+
+function LabsCtaSection() {
+  return (
+    <section className="py-20 md:py-28 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-fog-gray" aria-label="Tangison Labs">
+      <div className="max-w-[1400px] mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-xl"
+        >
+          <span className="font-jetbrains text-[10px] uppercase tracking-[0.3em] text-ink-muted/50 block mb-4">
+            TANGISON LABS
+          </span>
+          <h2 className="font-cabinet text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-ink mb-4">
+            Need the AI behind the interface?
+          </h2>
+          <p className="font-satoshi text-ink-muted font-light leading-relaxed mb-6" style={{ fontSize: "clamp(1rem, 1.5vw, 1.125rem)" }}>
+            Our laboratory arm builds custom AI systems, agents, and infrastructure.
+          </p>
+          <a
+            href="https://tangison.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted/60 hover:text-ink transition-colors duration-300 inline-flex items-center gap-2 group"
+          >
+            Visit the Lab ↗
+            <span className="inline-block w-0 group-hover:w-4 h-[1px] bg-ink/30 transition-all duration-300" />
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────────────────────────────────────
+   HOME PAGE (CLIENT COMPONENT)
+   ────────────────────────────────────────────── */
+
 export function HomePage() {
   return (
     <SiteShell>
       <HeroSection />
       <FeaturedWorkSection />
       <ServicesSection />
+      <LabsCtaSection />
       <ProcessSection />
       <PrinciplesSection />
       <ContactTeaserSection />
