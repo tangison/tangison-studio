@@ -23,6 +23,7 @@ Next.js 16 App Router, TypeScript, npm, Tailwind CSS 4, Framer Motion, GSAP, Ver
 - console.log in production
 - Secrets in repo
 - Gradients in illustrations (UI gradients are allowed)
+- Claims without evidence (see: standards/evidence-based-coding.md)
 
 ## Commit Format
 [type]: [what changed] — Tangison Studio

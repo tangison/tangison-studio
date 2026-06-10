@@ -4,6 +4,17 @@ All notable changes to the Tangison Studio website.
 
 ---
 
+## [0.6.0] — 2026-06-10
+
+### Added
+- Evidence-Based Coding Agent Protocol baked into AGENTS.md as a core rule
+- New standard: `standards/evidence-based-coding.md` — full protocol document
+- Every technical claim must be backed by evidence; no claims without diffs, output, or verification
+- Anti-hallucination rules, completion criteria, shadcn/ui enforcement, and large refactor phases
+- Global memory updated: "Claims without evidence" added to Never Ship list
+
+---
+
 ## [0.5.0] — 2026-06-07
 
 ### Added
