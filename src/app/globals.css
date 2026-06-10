@@ -228,21 +228,20 @@ html {
   }
 }
 
-/* Zero border-radius globally — Studio design language */
-/* Exception: floating nav pill, hero search bar, and pill buttons */
-*:not(nav):not(.hero-search-bar):not(.hero-search-bar *):not(.pill-button),
+/* Subtle border-radius globally — Studio design language v2.0 */
+/* All elements get 6px radius. Pill elements (nav, search) use inline 999px */
+*,
 *::before,
 *::after {
-  border-radius: 0 !important;
+  border-radius: 6px !important;
 }
 
-/* Restore border-radius for floating elements */
+/* Restore full border-radius for pill-shaped elements */
 nav[role="navigation"],
 nav[role="navigation"] *,
 .hero-search-bar,
 .hero-search-bar *,
-.pill-button,
-.work-scroll-placeholder {
+.pill-button {
   border-radius: revert !important;
 }
 

@@ -116,7 +116,7 @@ export function BrandSystemsPage() {
       {/* B. Hero Image */}
       <section className="relative w-full">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="relative overflow-hidden" style={{ borderRadius: 0 }}>
+          <div className="relative overflow-hidden">
             <Image
               src="/images/services/brand-systems.webp"
               alt="Brand identity materials including logo variations, colour palettes, and typography specimens laid out on a clean surface"
@@ -147,7 +147,7 @@ export function BrandSystemsPage() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 className="border border-black/[0.06] bg-signal-white p-8"
-                style={{ borderRadius: 0 }}
+               
               >
                 <div className="flex items-start gap-3 mb-4">
                   <div className="w-2 h-2 bg-signal-teal mt-2 shrink-0" aria-hidden="true" />
@@ -182,7 +182,7 @@ export function BrandSystemsPage() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="border border-black/[0.06] bg-skeleton-bone p-8 md:p-10"
-                style={{ borderRadius: 0 }}
+               
               >
                 <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-signal-teal block mb-4">
                   {step.step}
@@ -217,7 +217,7 @@ export function BrandSystemsPage() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 className="border border-black/[0.06] bg-signal-white p-8"
-                style={{ borderRadius: 0 }}
+               
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-1.5 h-1.5 bg-signal-teal" aria-hidden="true" />
@@ -244,7 +244,7 @@ export function BrandSystemsPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="border border-fog-gray/20 p-6 text-center" style={{ borderRadius: 0 }}>
+              <div key={i} className="border border-fog-gray/20 p-6 text-center">
                 <div className="w-full aspect-[4/3] bg-fog-gray/10 mb-4 flex items-center justify-center">
                   <span className="font-jetbrains text-xs text-fog-gray/40 tracking-wider uppercase">Coming Soon</span>
                 </div>
@@ -263,7 +263,7 @@ export function BrandSystemsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedServices.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                <div className="border border-black/[0.06] bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500" style={{ borderRadius: 0 }}>
+                <div className="border border-black/[0.06] bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
                   <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-2 group-hover:text-signal-teal transition-colors duration-300">
                     {service.title} →
                   </h3>
@@ -290,7 +290,7 @@ export function BrandSystemsPage() {
             <Link
               href="/contact"
               className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300"
-              style={{ borderRadius: 0 }}
+             
             >
               Start a Project →
             </Link>

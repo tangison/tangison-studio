@@ -181,7 +181,7 @@ Used for metadata, labels, version numbers, and navigation items ONLY.
 
 - **Accent Line:** 2px height, Signal Teal, section dividers and emphasis
 - **Arrow Suffix:** Unicode arrow (→), always follows primary CTA text
-- **Primary Button:** Signal Teal bg, white text, Cabinet Grotesk bold, no border-radius
+- **Primary Button:** Signal Teal bg, white text, Cabinet Grotesk bold, 6px border-radius
 - **Secondary Button:** Transparent bg, Signal Teal border and text
 
 ---
@@ -645,7 +645,7 @@ export default function BrandPage() {
                 <div className="bg-signal-teal text-signal-white px-4 py-3 font-cabinet font-bold text-sm inline-block mb-4">
                   Let&apos;s Build →
                 </div>
-                <p className="font-satoshi text-[12px] text-ink-muted">Signal Teal bg, white text, Cabinet Grotesk bold, 14px 28px padding, no border-radius.</p>
+                <p className="font-satoshi text-[12px] text-ink-muted">Signal Teal bg, white text, Cabinet Grotesk bold, 14px 28px padding, 6px border-radius.</p>
               </div>
 
               {/* Secondary Button */}
