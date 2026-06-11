@@ -87,17 +87,17 @@ const relatedServices = [
   {
     title: "Creative Direction",
     slug: "creative-direction",
-    description: "Strategic visual leadership that ensures every touchpoint aligns.",
+    description: "Visual leadership that makes every piece line up.",
   },
   {
     title: "Design Systems",
     slug: "design-systems",
-    description: "Scalable component architecture for your entire product.",
+    description: "One source of truth for your entire product.",
   },
   {
     title: "Website Design",
     slug: "website-design",
-    description: "Intentional interfaces that communicate clearly and convert.",
+    description: "Pages that communicate clearly and convert.",
   },
 ];
 
@@ -108,7 +108,7 @@ export function BrandSystemsPage() {
       <PageHeader
         label="BRAND SYSTEMS"
         title="Cohesive Visual Identity"
-        subtitle="Marks, wordmarks, palettes, and guidelines that scale. We build brand systems that work everywhere — consistently, recognisably, and with the flexibility to grow as your organisation does."
+        subtitle="Marks, wordmarks, palettes, and guidelines that work everywhere. We build brand systems that are consistent, recognizable, and flexible enough to grow as your organization does."
         backHref="/services"
         backLabel="Services"
       />
@@ -285,7 +285,7 @@ export function BrandSystemsPage() {
               Ready to define your brand?
             </h2>
             <p className="font-satoshi text-skeleton-bone/60 text-lg mb-10 max-w-lg mx-auto">
-              Tell us about your organisation. We will develop a brand system that is distinctive, consistent, and built to scale with you.
+              Tell us about your organization. We will build a brand system that is distinctive, consistent, and ready to grow with you.
             </p>
             <Link
               href="/contact"

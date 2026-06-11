@@ -87,17 +87,17 @@ const relatedServices = [
   {
     title: "Website Design",
     slug: "website-design",
-    description: "Intentional interfaces that communicate clearly and convert.",
+    description: "Pages that communicate clearly and convert.",
   },
   {
     title: "Application Design",
     slug: "application-design",
-    description: "Complex systems with clear UX and intuitive experiences.",
+    description: "Complex made simple with intuitive UX.",
   },
   {
     title: "Design Systems",
     slug: "design-systems",
-    description: "Scalable component architecture for your entire product.",
+    description: "One source of truth for your entire product.",
   },
 ];
 
@@ -108,7 +108,7 @@ export function WebsiteDevelopmentPage() {
       <PageHeader
         label="WEBSITE DEVELOPMENT"
         title="Engineered to Perform"
-        subtitle="Clean code, fast load times, and built to scale. We develop websites that deliver on every metric — from Core Web Vitals to content management flexibility. Engineering is not an afterthought; it is half the product."
+        subtitle="Clean code, fast load times, built to scale. We develop websites that deliver on every metric, from Core Web Vitals to content management. Engineering is not an afterthought. It is half the product."
         backHref="/services"
         backLabel="Services"
       />
@@ -285,7 +285,7 @@ export function WebsiteDevelopmentPage() {
               Ready to build something that lasts?
             </h2>
             <p className="font-satoshi text-skeleton-bone/60 text-lg mb-10 max-w-lg mx-auto">
-              Tell us about your project. We will define the technical approach, plan the build, and deliver a website engineered for performance.
+              Tell us about your project. We will lay out the technical approach, plan the build, and deliver a site that performs.
             </p>
             <Link
               href="/contact"

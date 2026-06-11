@@ -87,17 +87,17 @@ const relatedServices = [
   {
     title: "Application Design",
     slug: "application-design",
-    description: "Complex systems with clear UX and intuitive experiences.",
+    description: "Complex made simple with intuitive UX.",
   },
   {
     title: "Creative Direction",
     slug: "creative-direction",
-    description: "Strategic visual leadership that ensures every touchpoint aligns.",
+    description: "Visual leadership that makes every piece line up.",
   },
   {
     title: "Design Systems",
     slug: "design-systems",
-    description: "Scalable component architecture for your entire product.",
+    description: "One source of truth for your entire product.",
   },
 ];
 
@@ -108,7 +108,7 @@ export function ProductDesignPage() {
       <PageHeader
         label="PRODUCT DESIGN"
         title="End-to-End Product Thinking"
-        subtitle="From concept to launch and beyond. We design products that solve real problems and create lasting value — not just interfaces, but complete experiences backed by strategy, research, and a clear path to market."
+        subtitle="From concept to launch and beyond. We design products that solve real problems and create lasting value. Not just interfaces, but complete experiences backed by strategy, research, and a clear path to market."
         backHref="/services"
         backLabel="Services"
       />
@@ -285,7 +285,7 @@ export function ProductDesignPage() {
               Ready to build a product that matters?
             </h2>
             <p className="font-satoshi text-skeleton-bone/60 text-lg mb-10 max-w-lg mx-auto">
-              Tell us about your vision. We will define the strategy, design the experience, and help you launch with confidence.
+              Tell us about your vision. We will set the strategy, design the experience, and help you launch with confidence.
             </p>
             <Link
               href="/contact"

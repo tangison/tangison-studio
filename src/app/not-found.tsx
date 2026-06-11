@@ -24,7 +24,7 @@ export default function NotFound() {
         {/* Message */}
         <div className="-mt-8 mb-10">
           <p className="font-satoshi text-ink-muted text-base sm:text-lg font-light max-w-md mx-auto leading-relaxed">
-            The page you&apos;re looking for doesn&apos;t exist or has been moved.
+            The page you are looking for does not exist or has been moved.
           </p>
         </div>
 

@@ -87,17 +87,17 @@ const relatedServices = [
   {
     title: "Brand Systems",
     slug: "brand-systems",
-    description: "Cohesive visual identity that scales across every touchpoint.",
+    description: "Identity that sticks across every touchpoint.",
   },
   {
     title: "Application Design",
     slug: "application-design",
-    description: "Complex systems with clear UX and intuitive experiences.",
+    description: "Complex made simple with intuitive UX.",
   },
   {
     title: "Product Design",
     slug: "product-design",
-    description: "End-to-end product thinking from concept to launch and beyond.",
+    description: "From idea to launch and beyond.",
   },
 ];
 
@@ -108,7 +108,7 @@ export function DesignSystemsPage() {
       <PageHeader
         label="DESIGN SYSTEMS"
         title="Scalable Component Architecture"
-        subtitle="One source of truth for your entire product. We build design systems that unify teams, accelerate delivery, and ensure consistency at scale — not just a style guide, but a living system that grows with your product."
+        subtitle="One source of truth for your entire product. We build design systems that unify teams, speed up delivery, and keep things consistent at scale. Not just a style guide, but a living system that grows with your product."
         backHref="/services"
         backLabel="Services"
       />
@@ -282,10 +282,10 @@ export function DesignSystemsPage() {
         <div className="max-w-3xl mx-auto text-center">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-skeleton-bone mb-6">
-              Ready to systematise your design?
+              Ready to systematize your design?
             </h2>
             <p className="font-satoshi text-skeleton-bone/60 text-lg mb-10 max-w-lg mx-auto">
-              Tell us about your product. We will audit your patterns, architect the system, and deliver a design system that scales with your team.
+              Tell us about your product. We will audit your patterns, plan the system, and deliver a design system that scales with your team.
             </p>
             <Link
               href="/contact"

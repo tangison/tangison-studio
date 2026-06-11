@@ -8,11 +8,11 @@ import { SiteShell } from "@/components/tangison/site-shell";
 const faqs = [
   {
     question: "What does Tangison Studio do?",
-    answer: "We design and build digital experiences — websites, applications, brand systems, and design systems. We work from Windhoek, Namibia, and serve clients across Africa and internationally.",
+    answer: "We design and build websites, applications, brand systems, and design systems. We work from Windhoek, Namibia, and serve clients across Africa and beyond.",
   },
   {
     question: "What services do you offer?",
-    answer: "Seven disciplines: Website Design, Website Development, Application Design, Product Design, Brand Systems, Design Systems, and Creative Direction. We can engage on any single service or combine them for full-scope projects.",
+    answer: "Seven disciplines: Website Design, Website Development, Application Design, Product Design, Brand Systems, Design Systems, and Creative Direction. We can handle any single service or combine them for full-scope projects.",
   },
   {
     question: "What is your process?",
@@ -20,27 +20,27 @@ const faqs = [
   },
   {
     question: "How do you price projects?",
-    answer: "We scope every project individually based on requirements, complexity, and timeline. After the Discover phase, you receive a detailed proposal with transparent pricing. No hidden fees.",
+    answer: "We scope every project individually based on requirements, complexity, and timeline. After the Discover phase, you get a detailed proposal with transparent pricing. No hidden fees.",
   },
   {
     question: "Do you work with organizations outside Namibia?",
-    answer: "Yes. While based in Windhoek, we work with organizations across Africa and internationally. Our design and development process works remotely by default.",
+    answer: "Yes. We are based in Windhoek but work with organizations across Africa and internationally. Our design and development process works remotely.",
   },
   {
     question: "How long does a typical project take?",
-    answer: "Timelines depend on scope. A brand identity system can take 4–6 weeks. A full website design and build typically runs 8–14 weeks. We set clear milestones and delivery dates in every proposal.",
+    answer: "Timelines depend on scope. A brand identity system takes 4 to 6 weeks. A full website design and build typically runs 8 to 14 weeks. We set clear milestones and delivery dates in every proposal.",
   },
   {
     question: "Do you build with specific technologies?",
-    answer: "We choose technology based on the project requirements, not the other way around. Our team works with modern frameworks including Next.js, React, and others. We prioritize performance, accessibility, and maintainability.",
+    answer: "We choose technology based on what the project needs, not the other way around. Our team works with modern frameworks including Next.js, React, and others. We prioritize performance, accessibility, and maintainability.",
   },
   {
     question: "How do I start a project?",
-    answer: "Fill out the contact form or email studio@tangison.com. Tell us about your organization and what you need. We respond to every message within two business days.",
+    answer: "Fill out the contact form or email studio@tangison.com. Tell us about your organization and what you need. We reply to every message within two business days.",
   },
   {
     question: "What if I only need design, not development?",
-    answer: "We can engage on design-only projects. We deliver complete design files, specifications, and a handoff package your developers can use. We also offer development review as an add-on.",
+    answer: "We can handle design-only projects. We deliver complete design files, specifications, and a handoff package your developers can use right away. We also offer development review as an add-on.",
   },
   {
     question: "Do you offer ongoing support after launch?",

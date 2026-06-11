@@ -71,7 +71,7 @@ const fadeUp = {
    ────────────────────────────────────────────── */
 
 function HeroSection() {
-  const headline = "We design and build digital experiences that move ideas forward.";
+  const headline = "We design and build digital products that get results.";
 
   return (
     <section
@@ -117,7 +117,7 @@ function HeroSection() {
               className="text-ink-muted font-satoshi font-light leading-relaxed mb-10 max-w-lg"
               style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)" }}
             >
-              Strategy, design, and engineering from Windhoek. We partner with organizations across Africa to create websites, applications, brand systems, and design systems that are intentional, scalable, and built to last.
+              Strategy, design, and engineering from Windhoek, Namibia. We work with organizations across Africa to build websites, applications, brand systems, and design systems that do their job and last for years.
             </motion.p>
 
             <motion.div
@@ -131,7 +131,7 @@ function HeroSection() {
                 className="pill-button bg-signal-teal text-signal-white px-7 py-4 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 inline-flex items-center gap-2"
                 style={{ borderRadius: "999px" }}
               >
-                Explore Work →
+                See Our Work →
               </Link>
               <Link
                 href="/contact"
@@ -368,7 +368,7 @@ function ContactTeaserSection() {
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="font-cabinet text-[clamp(2.5rem,6vw,6rem)] font-black tracking-[-0.04em] text-skeleton-bone mb-10 leading-[0.9] relative z-10"
         >
-          Ready to build something?
+          Got a project in mind?
         </motion.h2>
 
         <motion.div
@@ -416,7 +416,7 @@ function LabsCtaSection() {
             Need the AI behind the interface?
           </h2>
           <p className="font-satoshi text-ink-muted font-light leading-relaxed mb-6" style={{ fontSize: "clamp(1rem, 1.5vw, 1.125rem)" }}>
-            Our laboratory arm builds custom AI systems, agents, and infrastructure.
+            Tangison Labs builds custom AI systems, agents, and self-hosted infrastructure for organizations that need their own stack.
           </p>
           <a
             href="https://tangison.com"

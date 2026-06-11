@@ -37,13 +37,13 @@ export function StudioPage() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24">
           <motion.div {...fadeUp} className="space-y-6">
             <p className="font-satoshi text-ink text-base md:text-lg leading-relaxed">
-              Tangison Studio is a creative digital agency that designs and builds digital experiences. We work with organizations that need strategic, functional, beautiful, and scalable digital products.
+              Tangison Studio is a creative digital agency that designs and builds digital products. We work with organizations that need strategic, functional, beautiful, and scalable digital products.
             </p>
             <p className="font-satoshi text-ink text-base md:text-lg leading-relaxed">
               Based in Windhoek, we combine design thinking with engineering discipline. Every project starts with understanding the problem. Every solution is built to last.
             </p>
             <p className="font-satoshi text-ink text-base md:text-lg leading-relaxed">
-              Our approach is simple: research before designing, design before building, and build before promising. We believe digital experiences should be invisible — they should work so well that people don&apos;t notice them.
+              Our method is straightforward: research before designing, design before building, and build before promising. We believe digital products should be invisible. They should work so well that people do not notice them.
             </p>
           </motion.div>
 
@@ -77,10 +77,10 @@ export function StudioPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {[
-              { title: "Design is problem-solving", desc: "Aesthetics serve function. Every visual decision answers a question." },
+              { title: "Design is problem-solving", desc: "Aesthetics serve function. Every visual decision answers a question. If it looks good but does not work, it is not done." },
               { title: "Quality is non-negotiable", desc: "No shortcuts. No templates. Every system built to perform for years, not months." },
-              { title: "Africa is a context, not a market", desc: "We build for African realities — connectivity, access, constraints — not assumptions imported from elsewhere." },
-              { title: "Silence is part of design", desc: "We remove unnecessary elements, words, and interactions. Restraint is a choice." },
+              { title: "Africa is a context, not a market", desc: "We build for African realities: connectivity, access, constraints. Not assumptions imported from somewhere else." },
+              { title: "Silence is part of design", desc: "We remove what is unnecessary: elements, words, interactions. Restraint is a choice." },
             ].map((value, i) => (
               <motion.div
                 key={value.title}

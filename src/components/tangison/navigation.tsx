@@ -42,23 +42,23 @@ const navItems: NavItem[] = [
     ],
     megaImage: "/images/gallery/nav-work.webp",
     megaImageAlt: "Work portfolio",
-    megaTagline: "Work that moves ideas forward.",
+    megaTagline: "Work that gets results."
   },
   {
     label: "Services",
     href: "/services",
     children: [
-      { label: "Website Design", href: "/services/website-design", description: "Intentional interfaces" },
-      { label: "Website Development", href: "/services/website-development", description: "Engineered to perform" },
-      { label: "Application Design", href: "/services/application-design", description: "Complex systems, clear UX" },
-      { label: "Product Design", href: "/services/product-design", description: "End-to-end product thinking" },
-      { label: "Brand Systems", href: "/services/brand-systems", description: "Cohesive visual identity" },
-      { label: "Design Systems", href: "/services/design-systems", description: "Scalable component architecture" },
-      { label: "Creative Direction", href: "/services/creative-direction", description: "Strategic visual leadership" },
+      { label: "Website Design", href: "/services/website-design", description: "Pages that work" },
+      { label: "Website Development", href: "/services/website-development", description: "Fast, clean code" },
+      { label: "Application Design", href: "/services/application-design", description: "Complex made simple" },
+      { label: "Product Design", href: "/services/product-design", description: "From idea to launch" },
+      { label: "Brand Systems", href: "/services/brand-systems", description: "Identity that sticks" },
+      { label: "Design Systems", href: "/services/design-systems", description: "One source of truth" },
+      { label: "Creative Direction", href: "/services/creative-direction", description: "Visual leadership" },
     ],
     megaImage: "/images/gallery/nav-services.webp",
     megaImageAlt: "Design services",
-    megaTagline: "Seven disciplines. One studio.",
+    megaTagline: "Seven disciplines. One studio."
   },
   {
     label: "Process",
@@ -110,13 +110,13 @@ const searchableItems: SearchItem[] = [
   { label: "Education", href: "/work/education", category: "Industries", description: "Learning platforms and EdTech" },
   { label: "Healthcare", href: "/work/healthcare", category: "Industries", description: "Patient portals and telemedicine" },
   { label: "Energy", href: "/work/energy", category: "Industries", description: "Renewable energy and utility platforms" },
-  { label: "Website Design", href: "/services/website-design", category: "Services", description: "Intentional interfaces" },
-  { label: "Website Development", href: "/services/website-development", category: "Services", description: "Engineered to perform" },
-  { label: "Application Design", href: "/services/application-design", category: "Services", description: "Complex systems, clear UX" },
-  { label: "Product Design", href: "/services/product-design", category: "Services", description: "End-to-end product thinking" },
-  { label: "Brand Systems", href: "/services/brand-systems", category: "Services", description: "Cohesive visual identity" },
-  { label: "Design Systems", href: "/services/design-systems", category: "Services", description: "Scalable component architecture" },
-  { label: "Creative Direction", href: "/services/creative-direction", category: "Services", description: "Strategic visual leadership" },
+  { label: "Website Design", href: "/services/website-design", category: "Services", description: "Pages that work" },
+  { label: "Website Development", href: "/services/website-development", category: "Services", description: "Fast, clean code" },
+  { label: "Application Design", href: "/services/application-design", category: "Services", description: "Complex made simple" },
+  { label: "Product Design", href: "/services/product-design", category: "Services", description: "From idea to launch" },
+  { label: "Brand Systems", href: "/services/brand-systems", category: "Services", description: "Identity that sticks" },
+  { label: "Design Systems", href: "/services/design-systems", category: "Services", description: "One source of truth" },
+  { label: "Creative Direction", href: "/services/creative-direction", category: "Services", description: "Visual leadership" },
 ];
 
 /* ─── Hamburger Icon ──────────────────────────────────────────── */
@@ -811,7 +811,7 @@ export function Navigation() {
                 className="bg-signal-teal text-signal-white px-5 py-2.5 font-cabinet font-bold text-[11px] tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 inline-block"
                 style={{ borderRadius: "999px" }}
               >
-                Let&apos;s Build →
+                Start a Project →
               </Link>
             </motion.div>
           </div>

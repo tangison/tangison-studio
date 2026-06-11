@@ -9,43 +9,43 @@ const services = [
   {
     title: "Website Design",
     slug: "website-design",
-    description: "Intentional interfaces. We design websites that communicate clearly and convert effectively.",
+    description: "Pages that work. We design websites that communicate clearly and turn visitors into customers.",
     capabilities: ["User experience design", "Wireframing and prototyping", "Visual design systems", "Responsive design"],
   },
   {
     title: "Website Development",
     slug: "website-development",
-    description: "Engineered to perform. Clean code, fast load times, built to scale.",
+    description: "Fast, clean code. Built to load fast and scale without falling over.",
     capabilities: ["Frontend development", "CMS integration", "Performance optimization", "SEO implementation"],
   },
   {
     title: "Application Design",
     slug: "application-design",
-    description: "Complex systems, clear UX. We design applications that make complexity manageable.",
+    description: "Complex made simple. We design applications that make complicated things easy to use.",
     capabilities: ["Information architecture", "Interaction design", "User flow mapping", "Interface design"],
   },
   {
     title: "Product Design",
     slug: "product-design",
-    description: "End-to-end product thinking. From concept to launch and beyond.",
+    description: "From idea to launch and beyond. Full product thinking, not just pretty screens.",
     capabilities: ["Product strategy", "Feature prioritization", "Design sprints", "Launch planning"],
   },
   {
     title: "Brand Systems",
     slug: "brand-systems",
-    description: "Cohesive visual identity. Marks, wordmarks, palettes, and guidelines that scale.",
+    description: "Identity that sticks. Marks, palettes, and guidelines that people remember.",
     capabilities: ["Logo and wordmark design", "Color and type systems", "Brand guidelines", "Asset libraries"],
   },
   {
     title: "Design Systems",
     slug: "design-systems",
-    description: "Scalable component architecture. One source of truth for your entire product.",
+    description: "One source of truth. Every component, every token, every rule in one place.",
     capabilities: ["Component libraries", "Token systems", "Documentation", "Governance frameworks"],
   },
   {
     title: "Creative Direction",
     slug: "creative-direction",
-    description: "Strategic visual leadership. We set the direction and ensure every touchpoint aligns.",
+    description: "Visual leadership. We set the direction and make sure every piece lines up.",
     capabilities: ["Campaign strategy", "Art direction", "Visual storytelling", "Cross-channel consistency"],
   },
 ];
@@ -69,7 +69,7 @@ export function ServicesPage() {
               Seven Disciplines
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              One studio. Every project gets the right combination of strategy, design, and engineering. We work across seven disciplines to deliver digital experiences that are intentional, scalable, and built to perform.
+              One studio. Every project gets the right combination of strategy, design, and engineering. We work across seven disciplines to deliver digital products that work right, look right, and hold up over time.
             </p>
           </motion.div>
         </div>
@@ -128,10 +128,10 @@ export function ServicesPage() {
         <div className="max-w-3xl mx-auto text-center">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-skeleton-bone mb-6">
-              Not sure which service you need?
+              Not sure which service fits?
             </h2>
             <p className="font-satoshi text-skeleton-bone/60 text-lg mb-10 max-w-lg mx-auto">
-              Tell us about your project. We&apos;ll recommend the right approach.
+              Tell us about your project. We will point you in the right direction.
             </p>
             <Link
               href="/contact"

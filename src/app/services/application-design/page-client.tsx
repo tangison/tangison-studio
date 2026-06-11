@@ -87,17 +87,17 @@ const relatedServices = [
   {
     title: "Product Design",
     slug: "product-design",
-    description: "End-to-end product thinking from concept to launch and beyond.",
+    description: "From idea to launch and beyond.",
   },
   {
     title: "Design Systems",
     slug: "design-systems",
-    description: "Scalable component architecture for your entire product.",
+    description: "One source of truth for your entire product.",
   },
   {
     title: "Website Development",
     slug: "website-development",
-    description: "Engineered to perform with clean code and fast load times.",
+    description: "Fast, clean code and fast load times.",
   },
 ];
 
@@ -108,7 +108,7 @@ export function ApplicationDesignPage() {
       <PageHeader
         label="APPLICATION DESIGN"
         title="Complex Systems, Clear UX"
-        subtitle="We design applications that make complexity manageable. Whether it is a data-heavy dashboard, a multi-step workflow, or an enterprise platform, we turn dense functionality into intuitive experiences that people can use without thinking."
+        subtitle="We design applications that make complicated things easy to use. Whether it is a data-heavy dashboard, a multi-step workflow, or an enterprise platform, we turn dense functionality into something people can use without thinking."
         backHref="/services"
         backLabel="Services"
       />
@@ -285,7 +285,7 @@ export function ApplicationDesignPage() {
               Ready to simplify complexity?
             </h2>
             <p className="font-satoshi text-skeleton-bone/60 text-lg mb-10 max-w-lg mx-auto">
-              Tell us about your application. We will research the problem space, design the experience, and deliver a system that works for real users.
+              Tell us about your application. We will dig into the problem, design the experience, and deliver a system that works for real people.
             </p>
             <Link
               href="/contact"

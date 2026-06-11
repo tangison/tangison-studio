@@ -127,7 +127,7 @@ export function ContactPage() {
               Get in Touch
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              We read and respond to every message.
+              We read every message and reply within two business days.
             </p>
           </motion.div>
         </div>
@@ -161,8 +161,7 @@ export function ContactPage() {
                     Thank you.
                   </h3>
                   <p className="font-satoshi text-ink-muted text-base leading-relaxed max-w-md">
-                    We received your message and will respond as soon as
-                    possible.
+                  We received your message. We will get back to you within two business days.
                   </p>
                 </motion.div>
               ) : formState === "error" ? (
@@ -179,7 +178,7 @@ export function ContactPage() {
                     Something went wrong.
                   </h3>
                   <p className="font-satoshi text-ink-muted text-base leading-relaxed max-w-md mb-6">
-                    Please try again or email us directly at{" "}
+                    Please try again, or email us directly at{" "}
                     <a
                       href="mailto:studio@tangison.com"
                       className="text-signal-teal hover:text-signal-teal-light transition-colors"
@@ -383,7 +382,7 @@ export function ContactPage() {
                   </span>
                 </div>
                 <p className="font-satoshi text-ink text-sm leading-relaxed">
-                  We read and respond to every message. Expect a reply within two business days.
+                  We read every message. Expect a reply within two business days.
                 </p>
               </div>
             </div>
@@ -404,28 +403,28 @@ export function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                question: "What does TANGISON do?",
-                answer: "We research, build, and deploy applied AI systems for organizations across Africa. Our work spans custom AI agents, self-hosted infrastructure, consulting, and product development. We operate from Windhoek, Namibia."
+                question: "What does Tangison Studio do?",
+                answer: "We design and build websites, applications, brand systems, and design systems. We are a creative digital agency based in Windhoek, Namibia, working with clients across Africa and beyond."
               },
               {
                 question: "Do you work with organizations outside Namibia?",
-                answer: "Yes. While we are based in Windhoek, we work with organizations across Africa and internationally. Our systems are designed for African conditions first, but the infrastructure and agent skills apply globally."
+                answer: "Yes. We are based in Windhoek but work with organizations across Africa and internationally. Our process works remotely by default."
               },
               {
-                question: "What is self-hosted AI infrastructure?",
-                answer: "It means the AI systems run on your own servers, not on someone else's cloud. You control the data, the uptime, and the costs. No vendor lock-in, no surprise bills, and it works even when the internet doesn't."
+                question: "How much does a project cost?",
+                answer: "We scope every project individually based on requirements, complexity, and timeline. After the Discover phase, you get a detailed proposal with transparent pricing. No hidden fees."
               },
               {
-                question: "How do I engage TANGISON for a project?",
-                answer: "Fill out the contact form on this page, or email us at studio@tangison.com. Tell us about your organization and what you need AI to do. We respond to every message within two business days."
-              },
-              {
-                question: "What is SkillsCamp?",
-                answer: "SkillsCamp is our directory of 531+ modular AI agent skills. Each skill is self-contained, runs offline, and integrates with any agent framework. Visit skillscamp.tangison.com to explore the full directory."
+                question: "How do I start a project?",
+                answer: "Fill out the contact form on this page, or email us at studio@tangison.com. Tell us about your organization and what you need. We reply to every message within two business days."
               },
               {
                 question: "What industries do you serve?",
-                answer: "We serve organizations in agriculture, mining, tourism, fishing, banking, retail, healthcare, education, construction, logistics, energy, media, legal, insurance, manufacturing, telecom, government, NGOs, and more. Our approach adapts to the specific needs of each sector."
+                answer: "We work across mining, tourism, agriculture, finance, government, healthcare, education, energy, and more. Our approach adapts to the specific needs of each sector."
+              },
+              {
+                question: "What if I only need design, not development?",
+                answer: "We can handle design-only projects. We deliver complete design files, specifications, and a handoff package your developers can use right away."
               },
             ].map((faq, i) => (
               <motion.div

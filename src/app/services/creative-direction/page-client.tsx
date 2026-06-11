@@ -87,17 +87,17 @@ const relatedServices = [
   {
     title: "Brand Systems",
     slug: "brand-systems",
-    description: "Cohesive visual identity that scales across every touchpoint.",
+    description: "Identity that sticks across every touchpoint.",
   },
   {
     title: "Website Design",
     slug: "website-design",
-    description: "Intentional interfaces that communicate clearly and convert.",
+    description: "Pages that communicate clearly and convert.",
   },
   {
     title: "Product Design",
     slug: "product-design",
-    description: "End-to-end product thinking from concept to launch and beyond.",
+    description: "From idea to launch and beyond.",
   },
 ];
 
@@ -108,7 +108,7 @@ export function CreativeDirectionPage() {
       <PageHeader
         label="CREATIVE DIRECTION"
         title="Strategic Visual Leadership"
-        subtitle="We set the direction and ensure every touchpoint aligns. Creative direction is the discipline of making sure that strategy, design, and execution converge into a single, coherent experience — across campaigns, channels, and contexts."
+        subtitle="We set the direction and make sure every piece lines up. Creative direction is the discipline of making strategy, design, and execution converge into one coherent experience across campaigns, channels, and contexts."
         backHref="/services"
         backLabel="Services"
       />
@@ -282,10 +282,10 @@ export function CreativeDirectionPage() {
         <div className="max-w-3xl mx-auto text-center">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-skeleton-bone mb-6">
-              Ready to elevate your creative output?
+              Ready to raise the bar on your creative output?
             </h2>
             <p className="font-satoshi text-skeleton-bone/60 text-lg mb-10 max-w-lg mx-auto">
-              Tell us about your project or campaign. We will set the direction, direct the execution, and ensure every touchpoint aligns.
+              Tell us about your project or campaign. We will set the direction, guide the execution, and make sure every piece lines up.
             </p>
             <Link
               href="/contact"

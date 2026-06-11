@@ -11,31 +11,31 @@ const steps = [
   {
     num: "01",
     name: "Discover",
-    description: "We listen. We research. We understand the problem, the audience, and the context before proposing anything.",
+    description: "We listen. We research. We understand the problem, the audience, and the context before we propose anything.",
     details: ["Stakeholder interviews", "Competitive audit", "User research", "Technical constraints review"],
   },
   {
     num: "02",
     name: "Define",
-    description: "From research to strategy. We establish scope, objectives, and a clear plan of action.",
+    description: "From research to strategy. We set scope, objectives, and a clear plan of action.",
     details: ["Project brief", "Information architecture", "Content strategy", "Technical specification"],
   },
   {
     num: "03",
     name: "Design",
-    description: "Visual systems, interface design, and prototyping. Every decision rooted in the strategy.",
+    description: "Visual systems, interface design, and prototyping. Every decision tied back to the strategy.",
     details: ["Wireframes", "Visual design", "Interactive prototypes", "Design system creation"],
   },
   {
     num: "04",
     name: "Develop",
-    description: "Engineered with precision. Clean code, performance-first, built to scale.",
+    description: "Built with precision. Clean code, fast performance, ready to scale.",
     details: ["Frontend development", "Backend integration", "Performance optimization", "Quality assurance"],
   },
   {
     num: "05",
     name: "Launch",
-    description: "Deployment, monitoring, and iteration. We don't disappear after launch day.",
+    description: "Deployment, monitoring, and iteration. We do not vanish after launch day.",
     details: ["Deployment pipeline", "Analytics setup", "Post-launch support", "Iterative improvements"],
   },
 ];
@@ -59,7 +59,7 @@ export function ProcessPage() {
               How We Work
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              Five phases. No shortcuts. Every step intentional.
+              Five phases. No shortcuts. Every step counts.
             </p>
           </motion.div>
         </div>

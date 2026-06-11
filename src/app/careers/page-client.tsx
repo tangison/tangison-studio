@@ -23,7 +23,7 @@ export function CareersPage() {
               Join the Studio
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              We&apos;re always looking for talented people who care about quality.
+              We are always looking for talented people who care about quality.
             </p>
           </motion.div>
         </div>
@@ -42,11 +42,11 @@ export function CareersPage() {
                 No open positions at this time.
               </p>
               <p className="font-satoshi text-ink-muted text-sm leading-relaxed">
-                We&apos;re a small studio and hire when we have the right role. Send your portfolio to{" "}
+                We are a small studio and hire when we have the right role. Send your portfolio to{" "}
                 <a href="mailto:studio@tangison.com" className="text-signal-teal hover:text-signal-teal-light transition-colors">
                   studio@tangison.com
                 </a>{" "}
-                and we&apos;ll keep you in mind.
+                and we will keep you in mind.
               </p>
             </div>
           </motion.div>
@@ -62,7 +62,7 @@ export function CareersPage() {
             </h2>
             <div className="space-y-6">
               {[
-                { title: "Craft", desc: "You care about details. Typography, spacing, interaction — you notice everything." },
+                { title: "Craft", desc: "You care about details. Typography, spacing, interaction: you notice everything." },
                 { title: "Thinking", desc: "You ask why before how. You research before you design. You challenge assumptions." },
                 { title: "Communication", desc: "You can explain your decisions. You write clearly. You listen well." },
                 { title: "Independence", desc: "You work well autonomously. You take ownership. You deliver." },

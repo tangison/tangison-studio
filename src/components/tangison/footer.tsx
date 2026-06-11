@@ -32,7 +32,7 @@ const techColumn = {
   label: "Tangison Technologies",
   descriptor: "One company. Two arms.",
   links: [
-    { label: "Applied AI Laboratory", href: "https://tangison.com", external: true },
+    { label: "Applied AI Lab", href: "https://tangison.com", external: true },
     { label: "Creative Studio", href: "https://studio.tangison.com", external: true },
     { label: "About the Company", href: "https://tangison.com/about", external: true },
   ],
@@ -70,7 +70,7 @@ export function Footer() {
 
           {/* Tagline */}
           <p className="font-satoshi text-lg md:text-xl text-skeleton-bone/70 font-light leading-relaxed max-w-lg mb-10">
-            Designing the interfaces through which intelligence becomes useful.
+            Designing the interfaces where intelligence does actual work.
           </p>
 
           {/* Two editorial images */}

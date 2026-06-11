@@ -26,7 +26,7 @@ export function AboutPage() {
               Tangison Studio
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              A creative digital agency. Designing from Windhoek.
+              A creative digital agency. Based in Windhoek.
             </p>
           </motion.div>
         </div>
@@ -37,13 +37,13 @@ export function AboutPage() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-24">
           <motion.div {...fadeUp} className="space-y-6">
             <p className="font-satoshi text-ink text-base md:text-lg leading-relaxed">
-              Tangison Studio is a creative digital agency in Windhoek, Namibia. We design and build digital experiences — websites, applications, brand systems, and design systems.
+              Tangison Studio is a creative digital agency in Windhoek, Namibia. We design and build websites, applications, brand systems, and design systems for organizations that need their digital presence to actually perform.
             </p>
             <p className="font-satoshi text-ink text-base md:text-lg leading-relaxed">
-              We work with organizations that need strategic, functional, beautiful, and scalable digital products. Our approach is simple: research before designing, design before building, and build before promising.
+              We work with organizations that want strategic, functional, beautiful, and scalable digital products. Our method is straightforward: research before designing, design before building, and build before promising.
             </p>
             <p className="font-satoshi text-ink text-base md:text-lg leading-relaxed">
-              Every project starts with understanding the problem. Every solution is built to last. We don&apos;t chase trends — we solve problems.
+              Every project starts with understanding the problem. Every solution is built to last. We do not chase trends. We solve problems.
             </p>
           </motion.div>
           <motion.div
@@ -75,10 +75,10 @@ export function AboutPage() {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {[
-              { title: "Design is problem-solving", desc: "Aesthetics serve function. Every visual decision answers a question." },
-              { title: "Quality is non-negotiable", desc: "No shortcuts. No templates. Every system is built to perform for years, not months." },
-              { title: "Africa is a context, not a market", desc: "We build for African realities — connectivity, access, constraints — not assumptions imported from elsewhere." },
-              { title: "Silence is part of design", desc: "We remove unnecessary elements, words, and interactions. Restraint is a choice." },
+              { title: "Design is problem-solving", desc: "Aesthetics serve function. Every visual decision answers a question. If it looks good but does not work, it is not done." },
+              { title: "Quality is non-negotiable", desc: "No shortcuts. No templates. Every system is built to perform for years, not months. We would rather turn down work than ship something half-baked." },
+              { title: "Africa is a context, not a market", desc: "We build for African realities: connectivity, access, constraints. Not assumptions imported from somewhere else." },
+              { title: "Silence is part of design", desc: "We remove what is unnecessary: elements, words, interactions. Restraint is a choice, and empty space works harder than clutter." },
             ].map((value, i) => (
               <motion.div
                 key={value.title}
@@ -117,8 +117,8 @@ export function AboutPage() {
           </motion.h2>
           <div className="max-w-3xl">
             {[
-              { name: "GemsWeb Digital", description: "Founded as a digital agency delivering web and marketing solutions across Namibia." },
-              { name: "Tangison", description: "Evolved into Tangison Studio — a creative digital agency focused on strategic design and engineering." },
+              { name: "GemsWeb Digital", description: "Started as a digital agency delivering web and marketing solutions across Namibia." },
+              { name: "Tangison", description: "Grew into Tangison Studio: a creative digital agency focused on strategic design and engineering with a sharper identity and a broader vision." },
             ].map((entry, i) => (
               <motion.div
                 key={entry.name}

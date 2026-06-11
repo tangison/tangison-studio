@@ -10,14 +10,14 @@ const industries = [
   {
     name: "SMEs & Startups",
     slug: "smes",
-    description: "Small and medium enterprises building their digital presence from the ground up — brand systems, websites, and product design tailored for growth-stage ventures across Africa.",
+    description: "Small and medium enterprises building their digital presence from the ground up: brand systems, websites, and product design tailored for growth-stage ventures across Africa.",
     icon: Rocket,
     href: "/work/smes",
   },
   {
     name: "Mining & Resources",
     slug: "mining",
-    description: "Corporate digital platforms for Namibia's mining sector — safety portals, stakeholder dashboards, and compliance-grade interfaces built for heavy industry.",
+    description: "Corporate digital platforms for Namibia's mining sector: safety portals, stakeholder dashboards, and compliance-grade interfaces built for heavy industry.",
     icon: Building2,
     href: "/work/mining",
   },
@@ -31,35 +31,35 @@ const industries = [
   {
     name: "Tourism & Hospitality",
     slug: "tourism",
-    description: "Immersive booking platforms, lodge websites, and safari brand systems that connect travellers to Namibia's extraordinary landscapes.",
+    description: "Booking platforms, lodge websites, and safari brand systems that connect travelers to Namibia's extraordinary landscapes.",
     icon: Building2,
     href: "/work/tourism",
   },
   {
     name: "Agriculture & Agro-processing",
     slug: "agriculture",
-    description: "Marketplace platforms, cooperative management tools, and agri-tech interfaces designed for Namibia's farming communities and value-chain operators.",
+    description: "Marketplace platforms, cooperative management tools, and agri-tech interfaces built for Namibia's farming communities and value-chain operators.",
     icon: Building2,
     href: "/work/agriculture",
   },
   {
     name: "Financial Services",
     slug: "finance",
-    description: "Secure fintech dashboards, banking portals, and micro-lending platforms engineered for compliance, clarity, and low-bandwidth accessibility.",
+    description: "Secure fintech dashboards, banking portals, and micro-lending platforms built for compliance, clarity, and low-bandwidth access.",
     icon: Building2,
     href: "/work/finance",
   },
   {
     name: "Education & EdTech",
     slug: "education",
-    description: "Learning management systems, AI education platforms, and academic portals designed for accessibility across bandwidth-constrained environments.",
+    description: "Learning management systems, AI education platforms, and academic portals built for access across low-bandwidth environments.",
     icon: Building2,
     href: "/work/education",
   },
   {
     name: "Healthcare & Wellness",
     slug: "healthcare",
-    description: "Patient portals, telemedicine interfaces, and health information systems built with accessibility, privacy, and care at the centre.",
+    description: "Patient portals, telemedicine interfaces, and health information systems built with accessibility, privacy, and care at the center.",
     icon: Building2,
     href: "/work/healthcare",
   },
@@ -91,7 +91,7 @@ export function WorkPage() {
               Coming Soon
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              We are evolving from Gemsweb Digital to Tangison Studio. Our full portfolio and case studies are being assembled — in the meantime, explore the industries we serve across Africa.
+              We are evolving from Gemsweb Digital to Tangison Studio. Our full portfolio and case studies are being assembled. In the meantime, explore the industries we serve across Africa.
             </p>
           </motion.div>
         </div>
@@ -107,13 +107,13 @@ export function WorkPage() {
                 From Gemsweb Digital to Tangison Studio
               </h2>
               <p className="font-satoshi text-ink-muted text-base md:text-lg leading-relaxed mb-6">
-                For years we operated as Gemsweb Digital, designing and building digital experiences for organizations across Namibia and beyond. Now we are evolving. Tangison Studio carries forward the same craft, the same clients, and the same commitment to intentional design — but with a sharper identity, a broader vision, and a redefined studio practice.
+                For years we operated as Gemsweb Digital, designing and building digital products for organizations across Namibia and beyond. Now we are growing into something sharper. Tangison Studio carries forward the same craft, the same clients, and the same commitment to doing good work, but with a clearer identity, a broader vision, and a tighter studio practice.
               </p>
               <p className="font-satoshi text-ink-muted text-base md:text-lg leading-relaxed mb-6">
-                We are working on putting everything together. Our case studies, project breakdowns, and the full portfolio from both the Gemsweb Digital era and the new Tangison Studio chapter are being carefully assembled. This takes time because we believe in presenting work with the same rigour we apply to creating it.
+                We are putting everything together. Our case studies, project breakdowns, and the full portfolio from both the Gemsweb Digital era and the new Tangison Studio chapter are being carefully assembled. This takes time because we believe in presenting work with the same care we apply to creating it.
               </p>
               <p className="font-satoshi text-ink-muted text-base md:text-lg leading-relaxed">
-                In the meantime, explore the industries we serve. Each sector page will eventually host dedicated case studies, outcomes, and the thinking behind every project we have shipped.
+                In the meantime, explore the industries we serve. Each sector page will eventually host case studies, outcomes, and the thinking behind every project we have shipped.
               </p>
             </motion.div>
           </div>
@@ -129,7 +129,7 @@ export function WorkPage() {
               By Industry
             </h2>
             <p className="font-satoshi text-ink-muted text-base md:text-lg max-w-xl leading-relaxed">
-              Sector-specific outcomes. No case studies available just yet, but each industry page outlines the work we do and the problems we solve.
+              Sector-specific work. No case studies available yet, but each industry page outlines what we do and the problems we solve.
             </p>
           </motion.div>
 

@@ -15,13 +15,13 @@ const routeCards = [
   },
   {
     title: "Case Studies",
-    description: "Real projects. Real outcomes. From the Tangison Studio.",
+    description: "Real projects. Real outcomes. From Tangison Studio.",
     href: "/insights/case-studies",
     icon: FlaskConical,
   },
   {
     title: "Resources",
-    description: "AI guides, frameworks, and industry-specific playbooks for African organizations.",
+    description: "Guides, frameworks, and industry playbooks for African organizations.",
     href: "/insights/resources",
     icon: FolderOpen,
   },
@@ -30,7 +30,7 @@ const routeCards = [
 const featuredArticles = [
   {
     title: "What Makes a Design System Scalable",
-    summary: "Principles for building component libraries that grow with your product, not against it.",
+    summary: "How to build component libraries that grow with your product, not against it.",
     comingSoon: true,
   },
   {

@@ -49,10 +49,10 @@ interface ArtifactData {
 const SESSION_ID = `tng-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
 const SUGGESTED_PROMPTS = [
-  "What services does Tangison Studio offer?",
-  "How does the design process work?",
-  "What industries do you serve?",
-  "How do I start a project with the studio?",
+  "What services do you offer?",
+  "How does your design process work?",
+  "What industries do you work with?",
+  "How do I start a project?",
 ];
 
 const GREETING_MESSAGE: Message = {
@@ -716,7 +716,7 @@ export function TangisonAIWidget() {
           >
             <div className="w-1.5 h-1.5 bg-signal-teal shrink-0" />
             <span className="font-jetbrains text-[11px] text-fog-gray leading-snug">
-              Tangison Studio. Ask anything.
+              Tangison Studio. Ask us anything.
             </span>
           </motion.div>
         )}
@@ -751,7 +751,7 @@ export function TangisonAIWidget() {
                   TANGISON STUDIO
                 </div>
                 <div className="font-jetbrains text-[9px] text-fog-gray/50 tracking-[0.1em] mt-0.5">
-                  Creative Agency. Ask anything.
+                  Creative Agency. Ask us anything.
                 </div>
               </div>
 

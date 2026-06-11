@@ -87,17 +87,17 @@ const relatedServices = [
   {
     title: "Website Development",
     slug: "website-development",
-    description: "Engineered to perform with clean code and fast load times.",
+    description: "Fast, clean code and fast load times.",
   },
   {
     title: "Brand Systems",
     slug: "brand-systems",
-    description: "Cohesive visual identity that scales across every touchpoint.",
+    description: "Identity that sticks across every touchpoint.",
   },
   {
     title: "Creative Direction",
     slug: "creative-direction",
-    description: "Strategic visual leadership that ensures every touchpoint aligns.",
+    description: "Visual leadership that makes every piece line up.",
   },
 ];
 
@@ -108,7 +108,7 @@ export function WebsiteDesignPage() {
       <PageHeader
         label="WEBSITE DESIGN"
         title="Intentional Interfaces"
-        subtitle="We design websites that communicate clearly and convert effectively. Every layout, every interaction, every visual decision is made with purpose — engineered to serve your audience and advance your business objectives."
+        subtitle="We design websites that communicate clearly and convert. Every layout, every interaction, every visual choice is deliberate. Built to serve your audience and your business goals."
         backHref="/services"
         backLabel="Services"
       />
@@ -285,7 +285,7 @@ export function WebsiteDesignPage() {
               Ready to design a website that works?
             </h2>
             <p className="font-satoshi text-skeleton-bone/60 text-lg mb-10 max-w-lg mx-auto">
-              Tell us about your project. We will map the right approach, define the scope, and deliver a website designed to perform.
+              Tell us about your project. We will figure out the right approach, set the scope, and deliver a site designed to perform.
             </p>
             <Link
               href="/contact"
