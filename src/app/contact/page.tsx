@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactPage } from "./page-client";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
   title: "Contact — Start a Project",
@@ -13,5 +14,14 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ContactPage />;
+  return (
+    <>
+      <LocalBusinessJsonLd />
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "/" },
+        { name: "Contact", url: "/contact" },
+      ]} />
+      <ContactPage />
+    </>
+  );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { WebsiteDevelopmentPage } from "./page-client";
+import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
   title: "Website Development — Tangison Studio",
@@ -13,5 +14,21 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <WebsiteDevelopmentPage />;
+  return (
+    <>
+      <ServiceJsonLd
+        name="Website Development"
+        description="Built to perform. We develop websites that are fast, accessible, and built to scale."
+        slug="website-development"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Services", url: "/services" },
+          { name: "Website Development", url: "/services/website-development" },
+        ]}
+      />
+      <WebsiteDevelopmentPage />
+    </>
+  );
 }

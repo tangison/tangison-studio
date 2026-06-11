@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BrandSystemsPage } from "./page-client";
+import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
   title: "Brand Systems — Tangison Studio",
@@ -13,5 +14,21 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <BrandSystemsPage />;
+  return (
+    <>
+      <ServiceJsonLd
+        name="Brand Systems"
+        description="Cohesive visual identity. Marks, wordmarks, and design systems that make brands unmistakable."
+        slug="brand-systems"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Services", url: "/services" },
+          { name: "Brand Systems", url: "/services/brand-systems" },
+        ]}
+      />
+      <BrandSystemsPage />
+    </>
+  );
 }

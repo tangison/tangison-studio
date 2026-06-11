@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CreativeDirectionPage } from "./page-client";
+import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
   title: "Creative Direction — Tangison Studio",
@@ -13,5 +14,21 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <CreativeDirectionPage />;
+  return (
+    <>
+      <ServiceJsonLd
+        name="Creative Direction"
+        description="Strategic creative vision. End-to-end creative leadership that aligns aesthetics with business objectives."
+        slug="creative-direction"
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Services", url: "/services" },
+          { name: "Creative Direction", url: "/services/creative-direction" },
+        ]}
+      />
+      <CreativeDirectionPage />
+    </>
+  );
 }

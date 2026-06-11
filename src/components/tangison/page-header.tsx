@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import gsap from "gsap";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -27,25 +26,6 @@ export function PageHeader({
   const isInView = useInView(headingRef, { once: true, margin: "-50px" });
 
   const isDark = variant === "dark";
-
-  useEffect(() => {
-    if (!headingRef.current || !isInView) return;
-
-    const words = headingRef.current.querySelectorAll(".page-word");
-    if (words.length === 0) return;
-
-    gsap.fromTo(
-      words,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.08,
-        ease: "power3.out",
-      }
-    );
-  }, [isInView]);
 
   return (
     <section className={`relative pt-36 md:pt-44 pb-20 md:pb-28 px-6 md:px-12 lg:px-20 overflow-hidden ${
@@ -94,13 +74,19 @@ export function PageHeader({
           }`}
         >
           {title.split(" ").map((word, i) => (
-            <span
+            <motion.span
               key={i}
-              className="page-word inline-block mr-[0.2em]"
-              style={{ opacity: 0 }}
+              className="inline-block mr-[0.2em]"
+              initial={{ y: 50, opacity: 0 }}
+              animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
+              transition={{
+                duration: 1,
+                delay: i * 0.08,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               {word}
-            </span>
+            </motion.span>
           ))}
         </h1>
 

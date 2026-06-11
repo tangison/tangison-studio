@@ -1,9 +1,15 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 import { Navigation } from "@/components/tangison/navigation";
 import { Footer } from "@/components/tangison/footer";
-import { TangisonAIWidget } from "@/components/tangison/ai-widget";
+
+/* Defer AI widget — it's a floating overlay, never needed for initial render */
+const TangisonAIWidget = dynamic(
+  () => import("@/components/tangison/ai-widget").then((mod) => mod.TangisonAIWidget),
+  { ssr: false }
+);
 
 export function SiteShell({
   children,
