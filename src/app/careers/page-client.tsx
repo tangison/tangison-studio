@@ -37,7 +37,7 @@ export function CareersPage() {
               Open Positions
             </h2>
 
-            <div className="border border-black/[0.06] bg-signal-white p-8 md:p-10 text-center">
+            <div className="border border-card-border bg-signal-white p-8 md:p-10 text-center">
               <p className="font-satoshi text-ink-muted text-base leading-relaxed mb-4">
                 No open positions at this time.
               </p>
@@ -67,7 +67,7 @@ export function CareersPage() {
                 { title: "Communication", desc: "You can explain your decisions. You write clearly. You listen well." },
                 { title: "Independence", desc: "You work well autonomously. You take ownership. You deliver." },
               ].map((item, i) => (
-                <div key={item.title} className="border-b border-black/[0.06] pb-6">
+                <div key={item.title} className="border-b border-card-border pb-6">
                   <h3 className="font-cabinet text-lg font-bold tracking-tight text-ink mb-1">{item.title}</h3>
                   <p className="font-satoshi text-ink-muted text-sm leading-relaxed">{item.desc}</p>
                 </div>

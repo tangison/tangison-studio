@@ -153,7 +153,7 @@ function HeroSection() {
             <div
               className="work-scroll-placeholder flex items-center justify-center"
               style={{
-                border: "1px solid #D9D7D2",
+                border: "1px solid var(--color-fog-gray)",
                 minHeight: "280px",
                 maskImage: "linear-gradient(to right, black 80%, transparent 100%)",
                 WebkitMaskImage: "linear-gradient(to right, black 80%, transparent 100%)",
@@ -253,7 +253,7 @@ function ServicesSection() {
             >
               <Link
                 href="/services"
-                className="pillar-card group block border border-black/[0.06] bg-signal-white p-6 md:p-8 h-full"
+                className="pillar-card group block border border-card-border bg-signal-white p-6 md:p-8 h-full"
               >
                 {/* Teal accent line */}
                 <div className="w-8 h-[2px] bg-signal-teal mb-6" aria-hidden="true" />
@@ -315,7 +315,7 @@ function ProcessSection() {
             href="/process"
             className="inline-flex items-center gap-2 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300 group"
           >
-            Learn more about our process
+            See how we work
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </motion.div>
@@ -380,7 +380,7 @@ function ContactTeaserSection() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300 group"
+            className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 group"
           >
             Start a Project →
           </Link>

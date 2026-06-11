@@ -72,15 +72,15 @@ export function StudioPage() {
             <div className="w-10 h-[1px] bg-signal-teal/50" aria-hidden="true" />
           </motion.div>
           <motion.h2 {...fadeUp} className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-skeleton-bone mb-16">
-            What We Believe
+            How We Work
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {[
-              { title: "Design is problem-solving", desc: "Aesthetics serve function. Every visual decision answers a question. If it looks good but does not work, it is not done." },
-              { title: "Quality is non-negotiable", desc: "No shortcuts. No templates. Every system built to perform for years, not months." },
-              { title: "Africa is a context, not a market", desc: "We build for African realities: connectivity, access, constraints. Not assumptions imported from somewhere else." },
-              { title: "Silence is part of design", desc: "We remove what is unnecessary: elements, words, interactions. Restraint is a choice." },
+              { title: "Deep focus over multitasking", desc: "We work on a limited number of projects at a time. This ensures every client gets our full attention, not a fraction of our bandwidth." },
+              { title: "Tools chosen with intent", desc: "We pick technology based on the problem, not the trend. Every framework, platform, and library serves a purpose we can articulate." },
+              { title: "Iterate in the open", desc: "Clients see work as it develops, not just at the finish line. Early feedback saves time and prevents misalignment." },
+              { title: "Ship, measure, improve", desc: "Launch is the beginning, not the end. We build for continuous improvement based on real data, not assumptions." },
             ].map((value, i) => (
               <motion.div
                 key={value.title}

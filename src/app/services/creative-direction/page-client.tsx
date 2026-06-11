@@ -17,7 +17,7 @@ const fadeUp = {
 const offers = [
   {
     title: "Campaign Strategy",
-    description: "We develop creative campaign strategies that translate business objectives into visual and verbal concepts with clear audience targeting, messaging hierarchies, and channel plans. Every campaign we direct starts with a strategic foundation — because memorable creative is only valuable when it drives measurable outcomes.",
+    description: "We develop creative campaign strategies that translate business objectives into visual and verbal concepts with clear audience targeting, messaging hierarchies, and channel plans. Every campaign we direct starts with a strategic foundation. Memorable creative is only valuable when it drives measurable outcomes.",
   },
   {
     title: "Art Direction",
@@ -25,11 +25,11 @@ const offers = [
   },
   {
     title: "Visual Storytelling",
-    description: "We craft visual narratives that communicate complex ideas with clarity and emotional resonance. Whether it is a brand launch, a product story, or an annual report, we structure content and design to guide the audience through a deliberate journey — building understanding, engagement, and connection at every stage.",
+    description: "We craft visual narratives that communicate complex ideas with clarity and emotional resonance. Whether it is a brand launch, a product story, or an annual report, we structure content and design to guide the audience through a deliberate journey. This builds understanding, engagement, and connection at every stage.",
   },
   {
     title: "Cross-Channel Consistency",
-    description: "When a message needs to live across digital, print, environmental, and social channels, we ensure the creative execution is adapted — not diluted — for each medium. We direct how the core concept translates to different formats, sizes, and contexts while maintaining the integrity and impact of the original idea.",
+    description: "When a message needs to live across digital, print, environmental, and social channels, we ensure the creative execution is adapted, not diluted, for each medium. We direct how the core concept translates to different formats, sizes, and contexts while maintaining the integrity and impact of the original idea.",
   },
   {
     title: "Creative Workshop Facilitation",
@@ -37,7 +37,7 @@ const offers = [
   },
   {
     title: "Vendor & Production Direction",
-    description: "When projects involve external producers — photographers, printers, fabricators, or developers — we act as the creative authority, reviewing deliverables against the brief and ensuring quality is maintained. This oversight prevents the degradation that often occurs when creative vision passes through multiple hands.",
+    description: "When projects involve external producers, photographers, printers, fabricators, or developers, we act as the creative authority, reviewing deliverables against the brief and ensuring quality is maintained. This oversight prevents the degradation that often occurs when creative vision passes through multiple hands.",
   },
 ];
 
@@ -45,7 +45,7 @@ const process = [
   {
     step: "01",
     name: "Align & Brief",
-    description: "We start by aligning with your business goals, audience, and brand context. Through workshops and stakeholder conversations, we develop a creative brief that defines the challenge, the opportunity, and the success criteria. This brief becomes the contract between strategy and execution — the standard against which every creative decision is measured.",
+    description: "We start by aligning with your business goals, audience, and brand context. Through workshops and stakeholder conversations, we develop a creative brief that defines the challenge, the opportunity, and the success criteria. This brief becomes the contract between strategy and execution: the standard against which every creative decision is measured.",
   },
   {
     step: "02",
@@ -55,7 +55,7 @@ const process = [
   {
     step: "03",
     name: "Direct & Produce",
-    description: "We oversee the production of every creative element — directing photographers, guiding illustrators, reviewing layouts, and approving production details. This hands-on direction ensures the final output matches the creative vision with precision. We do not hand off and disappear; we stay involved until every piece is right.",
+    description: "We oversee the production of every creative element. This includes directing photographers, guiding illustrators, reviewing layouts, and approving production details. This hands-on direction ensures the final output matches the creative vision with precision. We do not hand off and disappear; we stay involved until every piece is right.",
   },
   {
     step: "04",
@@ -67,19 +67,19 @@ const process = [
 const outcomes = [
   {
     title: "Creative That Serves Strategy",
-    description: "Every visual and verbal choice is grounded in business objectives. The creative work is not just beautiful — it is purposeful, measurable, and aligned with what your organisation needs to achieve. Aesthetics serve function, and the result is work that performs as well as it looks.",
+    description: "Every visual and verbal choice is grounded in business objectives. The creative work is not just beautiful. It is purposeful, measurable, and aligned with what your organisation needs to achieve. Aesthetics serve function, and the result is work that performs as well as it looks.",
   },
   {
     title: "Unified Brand Expression",
-    description: "Across every channel and touchpoint, the creative execution tells the same story with the same voice. This coherence amplifies impact — the audience encounters a consistent message wherever they interact with your brand, reinforcing recognition and trust with every impression.",
+    description: "Across every channel and touchpoint, the creative execution tells the same story with the same voice. This coherence amplifies impact. The audience encounters a consistent message wherever they interact with your brand, reinforcing recognition and trust with every impression.",
   },
   {
     title: "Efficient Production",
-    description: "With clear creative direction established upfront, production teams — internal or external — work faster and with fewer revisions. The brief, visual guidelines, and ongoing direction eliminate ambiguity and reduce the back-and-forth that wastes time and budget on projects without strong creative leadership.",
+    description: "With clear creative direction established upfront, production teams, internal or external, work faster and with fewer revisions. The brief, visual guidelines, and ongoing direction eliminate ambiguity and reduce the back-and-forth that wastes time and budget on projects without strong creative leadership.",
   },
   {
     title: "A Higher Standard of Execution",
-    description: "Creative direction raises the quality bar across every deliverable. When every decision passes through a coherent creative framework, the cumulative result is work that feels intentional, polished, and confident — the kind of output that distinguishes a brand from its competitors and earns lasting audience respect.",
+    description: "Creative direction raises the quality bar across every deliverable. When every decision passes through a coherent creative framework, the cumulative result is work that feels intentional, polished, and confident: the kind of output that distinguishes a brand from its competitors and earns lasting audience respect.",
   },
 ];
 
@@ -146,7 +146,7 @@ export function CreativeDirectionPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-start gap-3 mb-4">
@@ -181,7 +181,7 @@ export function CreativeDirectionPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-skeleton-bone p-8 md:p-10"
+                className="border border-card-border bg-skeleton-bone p-8 md:p-10"
                
               >
                 <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-signal-teal block mb-4">
@@ -216,7 +216,7 @@ export function CreativeDirectionPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -263,7 +263,7 @@ export function CreativeDirectionPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedServices.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                <div className="border border-black/[0.06] bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
+                <div className="border border-card-border bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
                   <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-2 group-hover:text-signal-teal transition-colors duration-300">
                     {service.title} →
                   </h3>

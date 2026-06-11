@@ -82,7 +82,7 @@ export function FAQPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-20px" }}
                 transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                className="border-b border-black/[0.06] py-8 first:pt-0"
+                className="border-b border-card-border py-8 first:pt-0"
               >
                 <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-3">
                   {faq.question}

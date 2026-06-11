@@ -17,11 +17,11 @@ const fadeUp = {
 const offers = [
   {
     title: "Frontend Development",
-    description: "We write clean, semantic, accessible HTML, CSS, and JavaScript that renders faithfully across browsers and devices. Our frontend code is modular, well-documented, and built for maintainability — not just the initial launch but every iteration that follows.",
+    description: "We write clean, semantic, accessible HTML, CSS, and JavaScript that renders faithfully across browsers and devices. Our frontend code is modular, well-documented, and built for maintainability. It is designed not just for the initial launch but for every iteration that follows.",
   },
   {
     title: "CMS Integration",
-    description: "Whether you need a headless CMS for editorial flexibility or a traditional platform for team-managed content, we integrate systems that empower your team to update the site independently. We configure content models, templates, and workflows that match how your organisation actually works.",
+    description: "Whether you need a headless CMS for editorial flexibility or a traditional platform for team-managed content, we integrate systems that let your team update the site independently. We configure content models, templates, and workflows that match how your organisation actually works.",
   },
   {
     title: "Performance Optimization",
@@ -33,11 +33,11 @@ const offers = [
   },
   {
     title: "API & Third-Party Integration",
-    description: "Modern websites rarely stand alone. We integrate payment gateways, CRM systems, marketing platforms, analytics tools, and custom APIs — connecting your website to the tools your business depends on, with robust error handling and graceful fallbacks.",
+    description: "Modern websites rarely stand alone. We integrate payment gateways, CRM systems, marketing platforms, analytics tools, and custom APIs. This connects your website to the tools your business depends on, with robust error handling and graceful fallbacks.",
   },
   {
     title: "Hosting & Deployment",
-    description: "We configure modern hosting environments — Vercel, Netlify, or dedicated infrastructure — with CI/CD pipelines, staging environments, and automated deployments. Your site ships reliably, scales automatically, and rolls back instantly if something goes wrong.",
+    description: "We configure modern hosting environments, including Vercel, Netlify, or dedicated infrastructure, with CI/CD pipelines, staging environments, and automated deployments. Your site ships reliably, scales automatically, and rolls back instantly if something goes wrong.",
   },
 ];
 
@@ -60,14 +60,14 @@ const process = [
   {
     step: "04",
     name: "Launch & Monitor",
-    description: "Deployment is automated and repeatable. We launch with monitoring in place — uptime checks, performance tracking, and error logging — so any issue is caught immediately. Post-launch, we provide a support window to address any adjustments and ensure the site performs reliably under real traffic.",
+    description: "Deployment is automated and repeatable. We launch with monitoring in place, including uptime checks, performance tracking, and error logging, so any issue is caught immediately. Post-launch, we provide a support window to address any adjustments and ensure the site performs reliably under real traffic.",
   },
 ];
 
 const outcomes = [
   {
     title: "A Fast, Reliable Website",
-    description: "Built on modern infrastructure with performance baked in from the start. Your site loads quickly, handles traffic spikes, and stays online — because a slow or unavailable website does not just lose visitors, it loses credibility.",
+    description: "Built on modern infrastructure with performance baked in from the start. Your site loads quickly, handles traffic spikes, and stays online. A slow or unavailable website does not just lose visitors; it loses credibility.",
   },
   {
     title: "Content Independence",
@@ -146,7 +146,7 @@ export function WebsiteDevelopmentPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-start gap-3 mb-4">
@@ -181,7 +181,7 @@ export function WebsiteDevelopmentPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-skeleton-bone p-8 md:p-10"
+                className="border border-card-border bg-skeleton-bone p-8 md:p-10"
                
               >
                 <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-signal-teal block mb-4">
@@ -216,7 +216,7 @@ export function WebsiteDevelopmentPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -263,7 +263,7 @@ export function WebsiteDevelopmentPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedServices.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                <div className="border border-black/[0.06] bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
+                <div className="border border-card-border bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
                   <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-2 group-hover:text-signal-teal transition-colors duration-300">
                     {service.title} →
                   </h3>

@@ -62,7 +62,7 @@ export function CookiePolicyPage() {
       </main>
 
       {/* Minimal footer */}
-      <footer className="py-8 px-6 md:px-12 lg:px-20 border-t border-black/[0.06]">
+      <footer className="py-8 px-6 md:px-12 lg:px-20 border-t border-card-border">
         <div className="max-w-[800px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-ink-muted">
             &copy; 2025 TANGISON

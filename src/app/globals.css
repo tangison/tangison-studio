@@ -1,8 +1,6 @@
 /* Fonts loaded via next/font — zero render-blocking imports */
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -207,8 +205,8 @@
 
 /* Selection color — Signal Teal */
 ::selection {
-  background-color: rgba(44, 181, 180, 0.3);
-  color: #111315;
+  background-color: color-mix(in srgb, var(--color-signal-teal) 30%, transparent);
+  color: var(--color-ink);
 }
 
 /* Smooth scrolling with reduced motion support */
@@ -260,8 +258,8 @@ nav[role="navigation"] *,
 
 /* Keyframes */
 @keyframes signal-travel {
-  0% { left: -2rem; }
-  100% { left: calc(100% + 2rem); }
+  0% { transform: translateX(-2rem); }
+  100% { transform: translateX(calc(100% + 2rem)); }
 }
 
 /* Smooth image loading */
@@ -271,7 +269,7 @@ img {
 
 /* Touch-friendly targets on mobile */
 @media (max-width: 768px) {
-  a, button {
+  a, button, input, textarea, select {
     min-height: 44px;
     min-width: 44px;
   }
@@ -297,10 +295,10 @@ button, a {
 }
 
 @keyframes scroll-pulse {
-  0% { top: -24px; opacity: 0; }
+  0% { transform: translateY(-24px); opacity: 0; }
   20% { opacity: 1; }
   80% { opacity: 1; }
-  100% { top: 64px; opacity: 0; }
+  100% { transform: translateY(64px); opacity: 0; }
 }
 
 @keyframes breathe-glow {
@@ -415,7 +413,7 @@ button, a {
 
 /* Pillar card hover */
 .pillar-card {
-  transition: all 0.5s var(--ease-primary);
+  transition: background-color 0.5s var(--ease-primary), border-color 0.5s var(--ease-primary);
 }
 .pillar-card:hover {
   background-color: var(--color-ocean-mist);

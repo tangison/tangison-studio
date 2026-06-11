@@ -25,7 +25,7 @@ const offers = [
   },
   {
     title: "Design Sprints",
-    description: "When you need to move fast without sacrificing rigour, we facilitate design sprints that compress weeks of exploration into days. These intensive sessions produce validated concepts, testable prototypes, and clear direction — ideal for new products, critical features, or pivots that need quick resolution.",
+    description: "When you need to move fast without sacrificing rigour, we facilitate design sprints that compress weeks of exploration into days. These intensive sessions produce validated concepts, testable prototypes, and clear direction. This is ideal for new products, critical features, or pivots that need quick resolution.",
   },
   {
     title: "User Research & Validation",
@@ -33,7 +33,7 @@ const offers = [
   },
   {
     title: "MVP & Launch Planning",
-    description: "We help you define the minimum viable product that delivers genuine value — not a skeleton, but a complete experience for a focused scope. Launch planning includes rollout strategy, onboarding design, feedback collection mechanisms, and the measurement framework you need to learn from real usage data.",
+    description: "We help you define the minimum viable product that delivers genuine value: not a skeleton, but a complete experience for a focused scope. Launch planning includes rollout strategy, onboarding design, feedback collection mechanisms, and the measurement framework you need to learn from real usage data.",
   },
   {
     title: "Iterative Evolution",
@@ -79,7 +79,7 @@ const outcomes = [
   },
   {
     title: "Built for Continuous Improvement",
-    description: "The design system, research practices, and measurement framework we establish are designed to support ongoing evolution. As your user base grows and market conditions shift, the product can adapt without starting from scratch — protecting your investment and extending the product's useful life.",
+    description: "The design system, research practices, and measurement framework we establish are designed to support ongoing evolution. As your user base grows and market conditions shift, the product can adapt without starting from scratch. This protects your investment and extends the product's useful life.",
   },
 ];
 
@@ -146,7 +146,7 @@ export function ProductDesignPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-start gap-3 mb-4">
@@ -181,7 +181,7 @@ export function ProductDesignPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-skeleton-bone p-8 md:p-10"
+                className="border border-card-border bg-skeleton-bone p-8 md:p-10"
                
               >
                 <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-signal-teal block mb-4">
@@ -216,7 +216,7 @@ export function ProductDesignPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -263,7 +263,7 @@ export function ProductDesignPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedServices.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                <div className="border border-black/[0.06] bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
+                <div className="border border-card-border bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
                   <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-2 group-hover:text-signal-teal transition-colors duration-300">
                     {service.title} →
                   </h3>

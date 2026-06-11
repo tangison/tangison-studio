@@ -154,7 +154,7 @@ export function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="border border-black/[0.06] bg-skeleton-bone p-10 md:p-12 flex flex-col items-center text-center"
+                  className="border border-card-border bg-skeleton-bone p-10 md:p-12 flex flex-col items-center text-center"
                 >
                   <CheckCircle className="w-10 h-10 text-signal-teal mb-6" />
                   <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink mb-3">
@@ -171,7 +171,7 @@ export function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="border border-black/[0.06] bg-skeleton-bone p-10 md:p-12 flex flex-col items-center text-center"
+                  className="border border-card-border bg-skeleton-bone p-10 md:p-12 flex flex-col items-center text-center"
                 >
                   <AlertCircle className="w-10 h-10 text-signal-teal mb-6" />
                   <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink mb-3">
@@ -220,7 +220,7 @@ export function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
+                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
                       autoComplete="name"
                     />
                   </div>
@@ -241,7 +241,7 @@ export function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="you@organization.com"
-                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
+                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
                       autoComplete="email"
                     />
                   </div>
@@ -262,7 +262,7 @@ export function ContactPage() {
                       value={formData.organization}
                       onChange={handleChange}
                       placeholder="Your organization"
-                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
+                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
                       autoComplete="organization"
                     />
                   </div>
@@ -283,7 +283,7 @@ export function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell us about your project or inquiry..."
-                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted/40 focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition resize-none"
+                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition resize-none"
                     />
                   </div>
 
@@ -310,7 +310,7 @@ export function ContactPage() {
                   >
                     {formState === "submitting" ? (
                       <>
-                        <div className="w-4 h-4 border-2 border-warm-white/30 border-t-warm-white animate-spin" />
+                        <div className="w-4 h-4 border-2 border-skeleton-bone/30 border-t-skeleton-bone animate-spin" />
                         Sending...
                       </>
                     ) : (
@@ -344,7 +344,7 @@ export function ContactPage() {
                   delay: i * 0.08,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="border-b border-black/[0.06] py-6 first:pt-0 last:border-b-0"
+                className="border-b border-card-border py-6 first:pt-0 last:border-b-0"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <detail.icon className="w-4 h-4 text-signal-teal" />
@@ -374,7 +374,7 @@ export function ContactPage() {
 
             {/* Additional context */}
             <div className="pt-8">
-              <div className="border border-black/[0.06] bg-skeleton-bone p-6 md:p-8">
+              <div className="border border-card-border bg-skeleton-bone p-6 md:p-8">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-1.5 h-1.5 bg-signal-teal" aria-hidden="true" />
                   <span className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">
@@ -382,7 +382,7 @@ export function ContactPage() {
                   </span>
                 </div>
                 <p className="font-satoshi text-ink text-sm leading-relaxed">
-                  We read every message. Expect a reply within two business days.
+                  Most projects begin with a discovery call within the first week of outreach.
                 </p>
               </div>
             </div>
@@ -433,7 +433,7 @@ export function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-6 md:p-8"
+                className="border border-card-border bg-signal-white p-6 md:p-8"
               >
                 <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-3">
                   {faq.question}

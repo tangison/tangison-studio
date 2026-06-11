@@ -165,10 +165,10 @@ function CopyButton({ text }: { text: string }) {
       {copied ? (
         <Check className="w-3 h-3 text-signal-teal" />
       ) : (
-        <Copy className="w-3 h-3 text-fog-gray/40" />
+        <Copy className="w-3 h-3 text-fog-gray/60" />
       )}
       <span
-        className={`font-jetbrains text-[9px] tracking-[0.08em] ${copied ? "text-signal-teal" : "text-fog-gray/40"}`}
+        className={`font-jetbrains text-[9px] tracking-[0.08em] ${copied ? "text-signal-teal" : "text-fog-gray/60"}`}
       >
         {copied ? "COPIED" : "COPY"}
       </span>
@@ -685,7 +685,7 @@ export function TangisonAIWidget() {
         </AnimatePresence>
 
         {!isOpen && (
-          <span className="absolute right-full mr-3 whitespace-nowrap font-jetbrains text-[10px] text-fog-gray/40 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <span className="absolute right-full mr-3 whitespace-nowrap font-jetbrains text-[10px] text-fog-gray/60 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             Tangison Studio
           </span>
         )}
@@ -731,11 +731,7 @@ export function TangisonAIWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.97 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-[84px] right-6 z-[9998] flex flex-col max-sm:fixed max-sm:inset-0 max-sm:bottom-0 max-sm:right-0 max-sm:w-screen max-sm:h-dvh bg-atlantic-black border border-skeleton-bone/[0.08]"
-            style={{
-              width: "min(400px, calc(100vw - 48px))",
-              height: "600px",
-            }}
+            className="fixed bottom-[84px] right-6 z-[9998] flex flex-col w-[min(400px,calc(100vw-48px))] h-[600px] max-sm:fixed max-sm:inset-0 max-sm:bottom-0 max-sm:right-0 max-sm:w-screen max-sm:h-dvh bg-atlantic-black border border-skeleton-bone/[0.08]"
             role="dialog"
             aria-modal="true"
             aria-label="Tangison Studio Chat"
@@ -770,7 +766,7 @@ export function TangisonAIWidget() {
                 {/* Clear button */}
                 <button
                   onClick={clearConversation}
-                  className="p-1 text-fog-gray/25 hover:text-fog-gray/60 transition-colors"
+                  className="p-1 text-fog-gray/50 hover:text-fog-gray/80 transition-colors"
                   title="Clear conversation"
                   aria-label="Clear conversation"
                 >
@@ -877,8 +873,8 @@ export function TangisonAIWidget() {
                           className="flex items-center gap-1.5 pl-3 opacity-0 group-hover/bot:opacity-60 hover:!opacity-100 transition-opacity"
                           aria-label="Read aloud"
                         >
-                          <Volume2 className="w-3 h-3 text-fog-gray/40" />
-                          <span className="font-jetbrains text-[9px] text-fog-gray/40 tracking-[0.08em]">
+                          <Volume2 className="w-3 h-3 text-fog-gray/60" />
+                          <span className="font-jetbrains text-[9px] text-fog-gray/60 tracking-[0.08em]">
                             {voiceMode ? "REPLAY" : "READ"}
                           </span>
                         </button>
@@ -941,7 +937,7 @@ export function TangisonAIWidget() {
               {!voiceMode && voiceState !== "idle" && (
                 <div className="flex items-center justify-center gap-2 py-2">
                   <WaveformVisualizer state={voiceState} />
-                  <span className="font-jetbrains text-[9px] text-fog-gray/40 uppercase tracking-wider">
+                  <span className="font-jetbrains text-[9px] text-fog-gray/60 uppercase tracking-wider">
                     {voiceState === "listening"
                       ? "Listening..."
                       : voiceState === "processing"
@@ -1002,7 +998,7 @@ export function TangisonAIWidget() {
                         <button
                           type="button"
                           onClick={startListening}
-                          className="p-2.5 text-fog-gray/40 hover:text-fog-gray/70 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center border border-skeleton-bone/[0.08]"
+                          className="p-2.5 text-fog-gray/60 hover:text-fog-gray/70 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center border border-skeleton-bone/[0.08]"
                           disabled={isLoading}
                           aria-label="Voice input"
                         >
@@ -1032,10 +1028,10 @@ export function TangisonAIWidget() {
             <div
               className="flex items-center justify-between px-4 py-1.5 shrink-0 bg-terminal-black border-t border-skeleton-bone/[0.04]"
             >
-              <span className="font-jetbrains text-[9px] text-fog-gray/25 tracking-[0.1em]">
+              <span className="font-jetbrains text-[9px] text-fog-gray/50 tracking-[0.1em]">
                 TANGISON STUDIO
               </span>
-              <span className="font-jetbrains text-[9px] text-fog-gray/20 tracking-[0.06em]">
+              <span className="font-jetbrains text-[9px] text-fog-gray/50 tracking-[0.06em]">
                 {voiceMode ? "VOICE" : "TEXT"}
               </span>
             </div>

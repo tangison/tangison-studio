@@ -76,11 +76,11 @@ export function ProcessPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white"
+                className="border border-card-border bg-signal-white"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
                   {/* Number + Name */}
-                  <div className="lg:col-span-4 p-8 md:p-10 lg:p-12 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-black/[0.06]">
+                  <div className="lg:col-span-4 p-8 md:p-10 lg:p-12 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-card-border">
                     <span className="font-jetbrains text-[11px] text-signal-teal tracking-[0.15em] mb-3">
                       {step.num}
                     </span>
@@ -133,7 +133,7 @@ export function ProcessPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-88 hover:-translate-y-px transition-all duration-300 group"
+              className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 group"
             >
               Start a Project →
             </Link>

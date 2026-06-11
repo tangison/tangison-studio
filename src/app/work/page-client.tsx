@@ -98,7 +98,7 @@ export function WorkPage() {
       </section>
 
       {/* Rebrand Story */}
-      <section className="py-20 md:py-28 px-6 md:px-12 lg:px-20 bg-signal-white border-y border-black/[0.06]">
+      <section className="py-20 md:py-28 px-6 md:px-12 lg:px-20 bg-signal-white border-y border-card-border">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl">
             <motion.div {...fadeUp}>
@@ -144,7 +144,7 @@ export function WorkPage() {
               >
                 <Link
                   href={industry.href}
-                  className="group block border border-black/[0.06] bg-signal-white p-6 md:p-8 hover:border-signal-teal/30 hover:bg-ocean-mist/30 transition-all duration-500 h-full"
+                  className="group block border border-card-border bg-signal-white p-6 md:p-8 hover:border-signal-teal/30 hover:bg-ocean-mist/30 transition-all duration-500 h-full"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-10 h-10 bg-signal-teal-muted flex items-center justify-center">

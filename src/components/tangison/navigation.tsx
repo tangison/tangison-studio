@@ -234,7 +234,7 @@ function DesktopDropdown({
 
               {/* Optional tagline */}
               {item.megaTagline && (
-                <div className="px-5 py-3 border-b border-black/[0.06]">
+                <div className="px-5 py-3 border-b border-card-border">
                   <span className="font-satoshi text-[12px] text-ink-muted/50 italic">
                     {item.megaTagline}
                   </span>
@@ -280,7 +280,7 @@ function DesktopDropdown({
 
               {/* Optional bottom image preview */}
               {item.megaImage && (
-                <div className="border-t border-black/[0.06]">
+                <div className="border-t border-card-border">
                   <div className="relative h-24 overflow-hidden">
                     <Image
                       src={item.megaImage}
@@ -391,7 +391,7 @@ function SearchOverlay({
             aria-modal="true"
             aria-label="Search"
           >
-            <div className="flex items-center px-5 py-4 border-b border-black/[0.06]">
+            <div className="flex items-center px-5 py-4 border-b border-card-border">
               <Search className="w-4 h-4 text-ink-muted mr-3 shrink-0" />
               <input
                 ref={inputRef}
@@ -682,13 +682,13 @@ export function Navigation() {
         className="fixed z-[1000] top-4 left-1/2 -translate-x-1/2 w-[min(1200px,calc(100%-2rem))] md:top-4"
         style={{
           borderRadius: "999px",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
           background: isScrolled
-            ? "rgba(246, 244, 239, 0.95)"
-            : "rgba(246, 244, 239, 0.75)",
-          border: "1px solid rgba(0, 0, 0, 0.08)",
-          boxShadow: "0 4px 24px rgba(0, 0, 0, 0.08)",
+            ? "#F6F4EF"
+            : "rgba(246, 244, 239, 0.97)",
+          border: "1px solid rgba(17, 19, 21, 0.06)",
+          boxShadow: isScrolled
+            ? "0 1px 3px rgba(17, 19, 21, 0.06)"
+            : "none",
           padding: "0.75rem 1.5rem",
           transition: "background 0.3s ease, box-shadow 0.3s ease",
         }}

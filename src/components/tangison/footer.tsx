@@ -227,7 +227,7 @@ export function Footer() {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-satoshi text-sm text-white/40 hover:text-signal-teal transition-colors duration-300 relative group/link inline-block w-fit capitalize"
+                    className="font-satoshi text-sm text-fog-gray/40 hover:text-signal-teal transition-colors duration-300 relative group/link inline-block w-fit capitalize"
                   >
                     {platform}
                     <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />

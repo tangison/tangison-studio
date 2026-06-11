@@ -66,7 +66,7 @@ export function IndustryComingSoonPage({
       </section>
 
       {/* Description + Services */}
-      <section className="py-20 md:py-28 px-6 md:px-12 lg:px-20 bg-signal-white border-y border-black/[0.06]">
+      <section className="py-20 md:py-28 px-6 md:px-12 lg:px-20 bg-signal-white border-y border-card-border">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             {/* Description */}

@@ -21,11 +21,11 @@ const offers = [
   },
   {
     title: "Wireframing & Prototyping",
-    description: "Before a single pixel is polished, we establish structure through wireframes and interactive prototypes. This allows us to test navigation flows, content hierarchy, and feature placement early — saving time and reducing costly revisions later.",
+    description: "Before a single pixel is polished, we establish structure through wireframes and interactive prototypes. This allows us to test navigation flows, content hierarchy, and feature placement early. This saves time and reduces costly revisions later.",
   },
   {
     title: "Visual Design Systems",
-    description: "We create cohesive visual languages — typography, colour, spacing, and component styles — that scale across every page. A well-defined design system ensures consistency and gives your team the tools to extend the site without diluting the brand.",
+    description: "We create cohesive visual languages, including typography, colour, spacing, and component styles, that scale across every page. A well-defined design system ensures consistency and gives your team the tools to extend the site without diluting the brand.",
   },
   {
     title: "Responsive Design",
@@ -33,7 +33,7 @@ const offers = [
   },
   {
     title: "Conversion-Optimised Layouts",
-    description: "Strategic placement of calls-to-action, trust signals, and content blocks is driven by research, not guesswork. We design layouts that guide visitors toward meaningful actions — whether that is a purchase, a sign-up, or an inquiry.",
+    description: "Strategic placement of calls-to-action, trust signals, and content blocks is driven by research, not guesswork. We design layouts that guide visitors toward meaningful actions, whether that is a purchase, a sign-up, or an inquiry.",
   },
   {
     title: "Landing Page Design",
@@ -60,14 +60,14 @@ const process = [
   {
     step: "04",
     name: "Deliver & Support",
-    description: "Final designs are packaged into a comprehensive handoff — annotated screens, responsive specifications, and a living design system document. We remain available during development to answer questions, review builds, and ensure the finished site matches the design intent pixel-for-pixel.",
+    description: "Final designs are packaged into a comprehensive handoff: annotated screens, responsive specifications, and a living design system document. We remain available during development to answer questions, review builds, and ensure the finished site matches the design intent pixel-for-pixel.",
   },
 ];
 
 const outcomes = [
   {
     title: "A Website That Works for Your Business",
-    description: "Not just a digital brochure — a purposeful tool designed around measurable objectives. Every element serves a function, from the first scroll to the final call-to-action, ensuring your website actively contributes to growth rather than passively existing online.",
+    description: "Not just a digital brochure. It is a purposeful tool designed around measurable objectives. Every element serves a function, from the first scroll to the final call-to-action, ensuring your website actively contributes to growth rather than passively existing online.",
   },
   {
     title: "Consistent Brand Expression",
@@ -75,7 +75,7 @@ const outcomes = [
   },
   {
     title: "Scalable Design Foundation",
-    description: "The design system we deliver is built to grow. When you need new pages, features, or sections, the existing patterns and components provide a clear framework — no redesign required. This protects your investment and accelerates future work.",
+    description: "The design system we deliver is built to grow. When you need new pages, features, or sections, the existing patterns and components provide a clear framework. No redesign is required. This protects your investment and accelerates future work.",
   },
   {
     title: "Clear Developer Handoff",
@@ -146,7 +146,7 @@ export function WebsiteDesignPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-start gap-3 mb-4">
@@ -181,7 +181,7 @@ export function WebsiteDesignPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-skeleton-bone p-8 md:p-10"
+                className="border border-card-border bg-skeleton-bone p-8 md:p-10"
                
               >
                 <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-signal-teal block mb-4">
@@ -216,7 +216,7 @@ export function WebsiteDesignPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -263,7 +263,7 @@ export function WebsiteDesignPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedServices.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                <div className="border border-black/[0.06] bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
+                <div className="border border-card-border bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
                   <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-2 group-hover:text-signal-teal transition-colors duration-300">
                     {service.title} →
                   </h3>

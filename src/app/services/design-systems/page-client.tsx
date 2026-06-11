@@ -17,7 +17,7 @@ const fadeUp = {
 const offers = [
   {
     title: "Component Libraries",
-    description: "We design and document reusable UI components — buttons, forms, cards, navigation, modals, and every pattern your product needs. Each component is designed across states, variants, and breakpoints, with clear rules for composition. The result is a library that developers can implement once and reuse everywhere.",
+    description: "We design and document reusable UI components: buttons, forms, cards, navigation, modals, and every pattern your product needs. Each component is designed across states, variants, and breakpoints, with clear rules for composition. The result is a library that developers can implement once and reuse everywhere.",
   },
   {
     title: "Token Systems",
@@ -55,12 +55,12 @@ const process = [
   {
     step: "03",
     name: "Build & Document",
-    description: "Components are designed systematically — each one defined across variants, states, and breakpoints. As components are completed, they are documented with usage guidelines, accessibility notes, and implementation specifications. The documentation grows alongside the system, never lagging behind the design work.",
+    description: "Components are designed systematically. Each one is defined across variants, states, and breakpoints. As components are completed, they are documented with usage guidelines, accessibility notes, and implementation specifications. The documentation grows alongside the system, never lagging behind the design work.",
   },
   {
     step: "04",
     name: "Adopt & Evolve",
-    description: "We support the adoption process through team training, pair implementation sessions, and review of early production usage. The system is not static — we establish contribution workflows and versioning practices that allow it to evolve. Regular audits ensure the system remains healthy, relevant, and trusted by the teams who depend on it.",
+    description: "We support the adoption process through team training, pair implementation sessions, and review of early production usage. The system is not static. We establish contribution workflows and versioning practices that allow it to evolve. Regular audits ensure the system remains healthy, relevant, and trusted by the teams who depend on it.",
   },
 ];
 
@@ -75,7 +75,7 @@ const outcomes = [
   },
   {
     title: "Visual and Interaction Consistency",
-    description: "Every screen in your product looks and behaves like it came from the same team — because it did, via the system. Users experience a coherent product, not a patchwork of individual preferences. Consistency builds trust, reduces learning curves, and makes the product feel professional and reliable.",
+    description: "Every screen in your product looks and behaves like it came from the same team, because it did via the system. Users experience a coherent product, not a patchwork of individual preferences. Consistency builds trust, reduces learning curves, and makes the product feel professional and reliable.",
   },
   {
     title: "Sustainable Growth",
@@ -146,7 +146,7 @@ export function DesignSystemsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-start gap-3 mb-4">
@@ -181,7 +181,7 @@ export function DesignSystemsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-skeleton-bone p-8 md:p-10"
+                className="border border-card-border bg-skeleton-bone p-8 md:p-10"
                
               >
                 <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-signal-teal block mb-4">
@@ -216,7 +216,7 @@ export function DesignSystemsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -263,7 +263,7 @@ export function DesignSystemsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedServices.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                <div className="border border-black/[0.06] bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
+                <div className="border border-card-border bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
                   <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-2 group-hover:text-signal-teal transition-colors duration-300">
                     {service.title} →
                   </h3>

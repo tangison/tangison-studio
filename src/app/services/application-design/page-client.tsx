@@ -21,7 +21,7 @@ const offers = [
   },
   {
     title: "Interaction Design",
-    description: "We design how users interact with your application — every click, drag, hover, and keyboard shortcut is considered and intentional. Interaction patterns are consistent, discoverable, and forgiving, ensuring that users can accomplish tasks efficiently without encountering frustrating dead ends or confusing states.",
+    description: "We design how users interact with your application. Every click, drag, hover, and keyboard shortcut is considered and intentional. Interaction patterns are consistent, discoverable, and forgiving, ensuring that users can accomplish tasks efficiently without encountering frustrating dead ends or confusing states.",
   },
   {
     title: "User Flow Mapping",
@@ -37,7 +37,7 @@ const offers = [
   },
   {
     title: "Accessibility Compliance",
-    description: "We design applications that are usable by everyone, including people using assistive technologies. Keyboard navigation, screen reader compatibility, colour contrast, and ARIA semantics are considered from the beginning — not retrofitted after the fact. Accessibility is a design requirement, not a nice-to-have.",
+    description: "We design applications that are usable by everyone, including people using assistive technologies. Keyboard navigation, screen reader compatibility, colour contrast, and ARIA semantics are considered from the beginning, not retrofitted after the fact. Accessibility is a design requirement, not a nice-to-have.",
   },
 ];
 
@@ -55,7 +55,7 @@ const process = [
   {
     step: "03",
     name: "Design & Validate",
-    description: "We design the full interface system — layouts, components, states, and interactions — through iterative cycles. Prototypes are tested with real users, feedback is synthesised, and designs are refined. Every screen is designed across breakpoints, with edge cases and error states given the same attention as the happy path.",
+    description: "We design the full interface system, including layouts, components, states, and interactions, through iterative cycles. Prototypes are tested with real users, feedback is synthesised, and designs are refined. Every screen is designed across breakpoints, with edge cases and error states given the same attention as the happy path.",
   },
   {
     step: "04",
@@ -67,7 +67,7 @@ const process = [
 const outcomes = [
   {
     title: "An Application Users Actually Understand",
-    description: "Complexity is tamed without being removed. Users can navigate, discover, and accomplish tasks without a manual. The interface meets them where they are — whether they are first-time explorers or power users — reducing support burden and increasing adoption across your user base.",
+    description: "Complexity is tamed without being removed. Users can navigate, discover, and accomplish tasks without a manual. The interface meets them where they are, whether they are first-time explorers or power users, reducing support burden and increasing adoption across your user base.",
   },
   {
     title: "Validated Design Decisions",
@@ -79,7 +79,7 @@ const outcomes = [
   },
   {
     title: "A Foundation That Scales",
-    description: "The information architecture and design system are built to accommodate future features without structural rework. As the application grows, new functionality integrates naturally into the existing framework — preserving usability and visual coherence across every release.",
+    description: "The information architecture and design system are built to accommodate future features without structural rework. As the application grows, new functionality integrates naturally into the existing framework. This preserves usability and visual coherence across every release.",
   },
 ];
 
@@ -146,7 +146,7 @@ export function ApplicationDesignPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-start gap-3 mb-4">
@@ -181,7 +181,7 @@ export function ApplicationDesignPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-skeleton-bone p-8 md:p-10"
+                className="border border-card-border bg-skeleton-bone p-8 md:p-10"
                
               >
                 <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-signal-teal block mb-4">
@@ -216,7 +216,7 @@ export function ApplicationDesignPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="border border-black/[0.06] bg-signal-white p-8"
+                className="border border-card-border bg-signal-white p-8"
                
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -263,7 +263,7 @@ export function ApplicationDesignPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedServices.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                <div className="border border-black/[0.06] bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
+                <div className="border border-card-border bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
                   <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-2 group-hover:text-signal-teal transition-colors duration-300">
                     {service.title} →
                   </h3>

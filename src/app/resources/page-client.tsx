@@ -80,7 +80,7 @@ export function ResourcesPage() {
                     href={`/documents/${item.file}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between border border-black/[0.06] bg-signal-white p-5 hover:border-black/[0.1] transition-all duration-300"
+                    className="group flex items-center justify-between border border-card-border bg-signal-white p-5 hover:border-black/[0.1] transition-all duration-300"
                   >
                     <div className="flex items-center gap-4">
                       <Download className="w-4 h-4 text-signal-teal shrink-0" />

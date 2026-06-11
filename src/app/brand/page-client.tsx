@@ -41,7 +41,7 @@ function ColorSwatch({ color, highlight = false }: { color: typeof colorGroups.P
   const isLight = lightHexes.includes(color.hex);
 
   return (
-    <div className={`border ${highlight ? "border-signal-teal/30 bg-ocean-mist/30" : "border-black/[0.06] bg-signal-white"}`}>
+    <div className={`border ${highlight ? "border-signal-teal/30 bg-ocean-mist/30" : "border-card-border bg-signal-white"}`}>
       <div
         className="h-24 w-full"
         style={{ backgroundColor: color.hex }}
@@ -104,7 +104,7 @@ function MotionDemo() {
 
 /* ─── Brand System Markdown Export ──────────────────────────── */
 
-const brandSystemMarkdown = `# TANGISON STUDIO — Brand System v1.0
+const brandSystemMarkdown = `# TANGISON STUDIO: Brand System v1.0
 
 **Document ID:** TNG-STUDIO-ID-01  
 **Status:** Immutable  
@@ -146,32 +146,32 @@ const brandSystemMarkdown = `# TANGISON STUDIO — Brand System v1.0
 ## Color System
 
 ### Primary
-- Skeleton Bone: #F6F4EF — Page base, light backgrounds
-- Signal White: #FFFFFF — Cards, panels, maximum contrast
-- Atlantic Black: #111315 — Primary text, dark sections
-- Terminal Black: #0A0B0C — Deepest dark, footer
+- Skeleton Bone: #F6F4EF (Page base, light backgrounds)
+- Signal White: #FFFFFF (Cards, panels, maximum contrast)
+- Atlantic Black: #111315 (Primary text, dark sections)
+- Terminal Black: #0A0B0C (Deepest dark, footer)
 
 ### Accent
-- Signal Teal: #2CB5B4 — CTAs, links, STUDIO descriptor, highlights
+- Signal Teal: #2CB5B4 (CTAs, links, STUDIO descriptor, highlights)
 
 ### Supporting
-- Ocean Mist: #E6F2F1 — Subtle teal tint, hover states
-- Fog Gray: #D9D7D2 — Secondary text, dividers
-- Ink Muted: #6B6860 — Secondary text
+- Ocean Mist: #E6F2F1 (Subtle teal tint, hover states)
+- Fog Gray: #D9D7D2 (Secondary text, dividers)
+- Ink Muted: #6B6860 (Secondary text)
 
 ---
 
 ## Typography
 
-### Cabinet Grotesk — Headlines Only · 800–900
+### Cabinet Grotesk: Headlines Only · 800–900
 tracking: -0.04em  
 Used for headlines, section titles, and the wordmark.
 
-### Satoshi — Body Text · 300–400
+### Satoshi: Body Text · 300–400
 line-height: 1.6  
 Used for paragraphs, descriptions, and interface text.
 
-### JetBrains Mono — Metadata · Labels · 400
+### JetBrains Mono: Metadata · Labels · 400
 tracking: 0.1–0.3em · size: 9–12px · uppercase preferred  
 Used for metadata, labels, version numbers, and navigation items ONLY.
 
@@ -189,32 +189,32 @@ Used for metadata, labels, version numbers, and navigation items ONLY.
 ## Illustration Style
 
 **Name:** Analogue Namibia  
-**Reference:** 1970s–1990s documentary and travel photography. Think grainy 35mm film, faded Kodachrome and Ektachrome colour shifts, slight overexposure, natural Namibian light. The aesthetic of National Geographic field photography from that era — not staged, not cinematic, not digital.
+**Reference:** 1970s–1990s documentary and travel photography. Think grainy 35mm film, faded Kodachrome and Ektachrome colour shifts, slight overexposure, natural Namibian light. The aesthetic of National Geographic field photography from that era, not staged, not cinematic, not digital.
 
 **Technique:** Real-feeling analogue grain, slightly desaturated warm tones, high contrast between light and shadow, minimal post-processing feel. Images must feel found, not art-directed.
 
-**Subject Matter — Namibian Locations Only**
+**Subject Matter: Namibian Locations Only**
 Use only well-known, recognisable Namibian places. Permitted locations:
-- Skeleton Coast — desolate shoreline, bleached whale bones, fog rolling in from the Atlantic
-- Sossusvlei / Deadvlei — red dunes, cracked white clay pan, dead camelthorn trees
-- Swakopmund beachfront — colonial architecture, Atlantic mist, harbour
-- Lüderitz harbour — coloured buildings, fishing boats, cold desert meeting sea
-- Etosha Pan — vast white salt flat, lone acacia, heat shimmer
-- Fish River Canyon — deep layered rock formations, arid vastness
-- Walvis Bay lagoon — flamingos, flat water, industrial cranes in distance
+- Skeleton Coast: desolate shoreline, bleached whale bones, fog rolling in from the Atlantic
+- Sossusvlei / Deadvlei: red dunes, cracked white clay pan, dead camelthorn trees
+- Swakopmund beachfront: colonial architecture, Atlantic mist, harbour
+- Lüderitz harbour: coloured buildings, fishing boats, cold desert meeting sea
+- Etosha Pan: vast white salt flat, lone acacia, heat shimmer
+- Fish River Canyon: deep layered rock formations, arid vastness
+- Walvis Bay lagoon: flamingos, flat water, industrial cranes in distance
 
 ### Composition Rules
-- Vast empty space is intentional — the sky, the pan, the fog can take 70% of the frame
+- Vast empty space is intentional. The sky, the pan, the fog can take 70% of the frame
 - Maximum 2–3 focal elements per image
-- Simple, elementary compositions — if you can remove an element, remove it
+- Simple, elementary compositions. If you can remove an element, remove it
 - No busy scenes, no markets, no crowds, no complex cityscapes
-- Texture is mandatory — grain, dust, atmospheric haze, aged film texture
+- Texture is mandatory: grain, dust, atmospheric haze, aged film texture
 
 ### People Rules
-- Whenever a person appears they must be in fast motion — running, walking with purpose, turning away
-- Motion blur on the person is required — they should be unrecognisable, a streak of movement
+- Whenever a person appears they must be in fast motion: running, walking with purpose, turning away
+- Motion blur on the person is required. They should be unrecognisable, a streak of movement
 - Face must never be visible or identifiable
-- The person represents speed — the studio moves fast, thinks fast, builds fast
+- The person represents speed: the studio moves fast, thinks fast, builds fast
 - No posed people. No portraits. No faces.
 
 ### Colour Feel
@@ -252,7 +252,7 @@ Use only well-known, recognisable Namibian places. Permitted locations:
 - No text-shadow or drop-shadow on type
 - All elements use sharp corners (max 4px radius)
 - No decorative blobs or floating elements
-- Silence is design — remove unnecessary words
+- Silence is design. Remove unnecessary words
 - No bounce, spring, or playful easing curves
 `;
 
@@ -363,7 +363,7 @@ export default function BrandPage() {
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-4">Identity Mark</h2>
             <p className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-16">
-              Shipwreck Mast — The Tangison Studio Mark
+              Shipwreck Mast: The Tangison Studio Mark
             </p>
 
             {/* Mark on dark and light backgrounds side by side */}
@@ -381,7 +381,7 @@ export default function BrandPage() {
                 <span className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em]">Dark background</span>
               </div>
               <div className="flex flex-col items-center gap-4">
-                <div className="bg-skeleton-bone p-12 md:p-16 w-full flex items-center justify-center border border-black/[0.06]">
+                <div className="bg-skeleton-bone p-12 md:p-16 w-full flex items-center justify-center border border-card-border">
                   <Image
                     src="/brand/logo-dark.webp"
                     alt="TANGISON STUDIO identity mark on light background"
@@ -442,13 +442,13 @@ export default function BrandPage() {
       </section>
 
       {/* ─── Section 3: Wordmark System ─── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-black/[0.06]" aria-label="Wordmark System">
+      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-card-border" aria-label="Wordmark System">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-16">Wordmark System</h2>
 
             {/* Wordmark large on white */}
-            <div className="bg-signal-white border border-black/[0.06] p-12 md:p-20 mb-6">
+            <div className="bg-signal-white border border-card-border p-12 md:p-20 mb-6">
               <Image
                 src="/brand/logo-dark.webp"
                 alt="TANGISON STUDIO wordmark on light background"
@@ -470,7 +470,7 @@ export default function BrandPage() {
             </div>
 
             {/* Spec table */}
-            <div className="border border-black/[0.06] bg-signal-white p-6 md:p-8">
+            <div className="border border-card-border bg-signal-white p-6 md:p-8">
               <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Specifications</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
@@ -495,7 +495,7 @@ export default function BrandPage() {
       </section>
 
       {/* ─── Section 4: Color System ─── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-signal-white border-t border-black/[0.06]" aria-label="Color System">
+      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-signal-white border-t border-card-border" aria-label="Color System">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-4">Color System</h2>
@@ -521,7 +521,7 @@ export default function BrandPage() {
             ))}
 
             {/* Teal in context */}
-            <div className="mt-16 border border-black/[0.06] bg-skeleton-bone p-8 md:p-12">
+            <div className="mt-16 border border-card-border bg-skeleton-bone p-8 md:p-12">
               <h3 className="font-cabinet text-lg font-bold text-ink mb-8">Signal Teal in Context</h3>
               <div className="flex flex-wrap gap-6 items-center">
                 {/* CTA button */}
@@ -541,14 +541,14 @@ export default function BrandPage() {
       </section>
 
       {/* ─── Section 5: Typography ─── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-black/[0.06]" aria-label="Typography">
+      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-card-border" aria-label="Typography">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-16">Typography</h2>
 
             <div className="space-y-8">
               {/* Cabinet Grotesk */}
-              <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10">
+              <div className="border border-card-border bg-signal-white p-6 md:p-10">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
                   <div>
                     <h3 className="font-cabinet text-2xl font-bold text-ink mb-2">Cabinet Grotesk</h3>
@@ -575,7 +575,7 @@ export default function BrandPage() {
               </div>
 
               {/* Satoshi */}
-              <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10">
+              <div className="border border-card-border bg-signal-white p-6 md:p-10">
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
                   <div>
                     <h3 className="font-cabinet text-2xl font-bold text-ink mb-2">Satoshi</h3>
@@ -586,7 +586,7 @@ export default function BrandPage() {
                   The primary body typeface. Used for paragraphs, descriptions, and interface text. line-height: 1.6.
                 </p>
                 <p className="font-satoshi text-lg md:text-xl text-ink font-light leading-relaxed max-w-3xl">
-                  We believe great design is invisible. It doesn&apos;t draw attention to itself — it draws attention to the work. Every pixel, every line of code, every interaction serves the idea. That&apos;s the Tangison Studio approach.
+                  We believe great design is invisible. It doesn&apos;t draw attention to itself. It draws attention to the work. Every pixel, every line of code, every interaction serves the idea. That&apos;s the Tangison Studio approach.
                 </p>
               </div>
 
@@ -619,28 +619,28 @@ export default function BrandPage() {
       </section>
 
       {/* ─── Section 6: Design Elements ─── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-signal-white border-t border-black/[0.06]" aria-label="Design Elements">
+      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-signal-white border-t border-card-border" aria-label="Design Elements">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-16">Design Elements</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Accent line */}
-              <div className="border border-black/[0.06] bg-skeleton-bone p-6">
+              <div className="border border-card-border bg-skeleton-bone p-6">
                 <span className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.2em] block mb-4">Accent Line</span>
                 <div className="w-12 h-[2px] bg-signal-teal mb-4" />
                 <p className="font-satoshi text-[12px] text-ink-muted">2px height. Signal Teal. Used as section dividers and emphasis.</p>
               </div>
 
               {/* Arrow */}
-              <div className="border border-black/[0.06] bg-skeleton-bone p-6">
+              <div className="border border-card-border bg-skeleton-bone p-6">
                 <span className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.2em] block mb-4">Arrow Suffix</span>
                 <span className="font-cabinet text-xl font-bold text-ink">→</span>
                 <p className="font-satoshi text-[12px] text-ink-muted mt-4">Unicode arrow. Always follows primary CTA text.</p>
               </div>
 
               {/* Primary Button */}
-              <div className="border border-black/[0.06] bg-skeleton-bone p-6">
+              <div className="border border-card-border bg-skeleton-bone p-6">
                 <span className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.2em] block mb-4">Primary Button</span>
                 <div className="bg-signal-teal text-signal-white px-4 py-3 font-cabinet font-bold text-sm inline-block mb-4">
                   Let&apos;s Build →
@@ -649,7 +649,7 @@ export default function BrandPage() {
               </div>
 
               {/* Secondary Button */}
-              <div className="border border-black/[0.06] bg-skeleton-bone p-6">
+              <div className="border border-card-border bg-skeleton-bone p-6">
                 <span className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.2em] block mb-4">Secondary Button</span>
                 <div className="border border-signal-teal text-signal-teal px-4 py-3 font-cabinet font-bold text-sm inline-block mb-4">
                   Learn More
@@ -662,19 +662,19 @@ export default function BrandPage() {
       </section>
 
       {/* ─── Section 6.5: Illustration Style — Analogue Namibia ─── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-black/[0.06]" aria-label="Illustration Style">
+      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-card-border" aria-label="Illustration Style">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-4">Illustration Style</h2>
             <p className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-16">
-              Analogue Namibia — Named Brand Asset
+              Analogue Namibia: Named Brand Asset
             </p>
 
             {/* Full-width example image */}
-            <div className="mb-16 border border-black/[0.06] overflow-hidden">
+            <div className="mb-16 border border-card-border overflow-hidden">
               <Image
                 src="/images/gallery/hero-slider-namibia.webp"
-                alt="Analogue Namibia example — Sossusvlei dead vlei at dawn, grainy 35mm film aesthetic"
+                alt="Analogue Namibia example: Sossusvlei dead vlei at dawn, grainy 35mm film aesthetic"
                 width={1344}
                 height={768}
                 className="w-full h-auto object-contain"
@@ -683,16 +683,16 @@ export default function BrandPage() {
             </div>
 
             {/* Style reference */}
-            <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10 mb-8">
+            <div className="border border-card-border bg-signal-white p-6 md:p-10 mb-8">
               <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Analogue Namibia</h3>
               <p className="font-satoshi text-sm text-ink-muted leading-relaxed max-w-3xl mb-6">
-                1970s–1990s documentary and travel photography. Think grainy 35mm film, faded Kodachrome and Ektachrome colour shifts, slight overexposure, natural Namibian light. The aesthetic of National Geographic field photography from that era — not staged, not cinematic, not digital. Real-feeling analogue grain, slightly desaturated warm tones, high contrast between light and shadow. Images must feel found, not art-directed.
+                1970s–1990s documentary and travel photography. Think grainy 35mm film, faded Kodachrome and Ektachrome colour shifts, slight overexposure, natural Namibian light. The aesthetic of National Geographic field photography from that era, not staged, not cinematic, not digital. Real-feeling analogue grain, slightly desaturated warm tones, high contrast between light and shadow. Images must feel found, not art-directed.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   ["Technique", "Analogue grain, desaturated warm tones, high contrast, found-not-directed feel"],
                   ["Composition", "Maximum 2–3 focal elements. Sky, pan, fog can take 70% of frame. Remove anything removable."],
-                  ["People", "Fast motion only — running, walking with purpose, turning away. Motion blur required. No faces ever visible."],
+                  ["People", "Fast motion only: running, walking with purpose, turning away. Motion blur required. No faces ever visible."],
                   ["Aspect Ratio", "16:9 landscape only"],
                 ].map(([label, value]) => (
                   <div key={label} className="flex gap-3">
@@ -706,8 +706,8 @@ export default function BrandPage() {
             </div>
 
             {/* Permitted locations */}
-            <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10 mb-8">
-              <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Subject Matter — Namibian Locations Only</h3>
+            <div className="border border-card-border bg-signal-white p-6 md:p-10 mb-8">
+              <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Subject Matter: Namibian Locations Only</h3>
               <p className="font-satoshi text-sm text-ink-muted mb-6">Use only well-known, recognisable Namibian places.</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {[
@@ -731,10 +731,10 @@ export default function BrandPage() {
             </div>
 
             {/* People Rules */}
-            <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10 mb-8">
+            <div className="border border-card-border bg-signal-white p-6 md:p-10 mb-8">
               <h3 className="font-cabinet text-lg font-bold text-ink mb-4">People Rules</h3>
               <p className="font-satoshi text-sm text-ink-muted leading-relaxed max-w-3xl mb-4">
-                Whenever a person appears they must be in fast motion — running, walking with purpose, turning away. Motion blur on the person is required — they should be unrecognisable, a streak of movement. The person represents speed — the studio moves fast, thinks fast, builds fast.
+                Whenever a person appears they must be in fast motion: running, walking with purpose, turning away. Motion blur on the person is required. They should be unrecognisable, a streak of movement. The person represents speed: the studio moves fast, thinks fast, builds fast.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
@@ -752,7 +752,7 @@ export default function BrandPage() {
             </div>
 
             {/* Colour Feel */}
-            <div className="border border-black/[0.06] bg-signal-white p-6 md:p-10 mb-8">
+            <div className="border border-card-border bg-signal-white p-6 md:p-10 mb-8">
               <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Colour Feel</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
@@ -786,7 +786,7 @@ export default function BrandPage() {
       </section>
 
       {/* ─── Section 7: Motion System ─── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-black/[0.06]" aria-label="Motion System">
+      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-skeleton-bone border-t border-card-border" aria-label="Motion System">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-16">Motion System</h2>
@@ -795,12 +795,12 @@ export default function BrandPage() {
               {/* Spec */}
               <div>
                 <h3 className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-6">Easing Curve</h3>
-                <div className="border border-black/[0.06] bg-signal-white p-6 mb-8">
+                <div className="border border-card-border bg-signal-white p-6 mb-8">
                   <code className="font-jetbrains text-sm text-ink">cubic-bezier(0.16, 1, 0.3, 1)</code>
                 </div>
 
                 <h3 className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-6">Duration Range</h3>
-                <div className="border border-black/[0.06] bg-signal-white p-6 mb-8">
+                <div className="border border-card-border bg-signal-white p-6 mb-8">
                   <p className="font-satoshi text-ink text-sm">0.6s – 1.2s for all entrance animations</p>
                   <p className="font-satoshi text-ink-muted text-sm mt-2">0.4s for hover and micro-interactions</p>
                 </div>
@@ -814,7 +814,7 @@ export default function BrandPage() {
               </div>
 
               {/* Live demo */}
-              <div className="border border-black/[0.06] bg-signal-white p-8 md:p-12 flex items-center justify-center">
+              <div className="border border-card-border bg-signal-white p-8 md:p-12 flex items-center justify-center">
                 <MotionDemo />
               </div>
             </div>
@@ -823,7 +823,7 @@ export default function BrandPage() {
       </section>
 
       {/* ─── Section 8: Anti-Patterns ─── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-signal-white border-t border-black/[0.06]" aria-label="Anti-Patterns">
+      <section className="py-28 md:py-36 px-6 md:px-12 lg:px-20 bg-signal-white border-t border-card-border" aria-label="Anti-Patterns">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
             <h2 className="font-cabinet text-3xl md:text-4xl font-bold tracking-tight text-ink mb-16">Anti-Patterns</h2>
@@ -886,10 +886,10 @@ export default function BrandPage() {
                   Cabinet Grotesk 900
                 </p>
                 <p className="font-satoshi text-lg text-skeleton-bone/60 font-light">
-                  Satoshi 300 — Body text for all reading experiences
+                  Satoshi 300: Body text for all reading experiences
                 </p>
                 <p className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.3em]">
-                  JETBRAINS MONO 400 — METADATA AND LABELS
+                  JETBRAINS MONO 400: METADATA AND LABELS
                 </p>
               </div>
 
@@ -905,7 +905,7 @@ export default function BrandPage() {
       </section>
 
       {/* ─── Export Section ─── */}
-      <section className="py-16 px-6 md:px-12 lg:px-20 bg-signal-white border-t border-black/[0.06]">
+      <section className="py-16 px-6 md:px-12 lg:px-20 bg-signal-white border-t border-card-border">
         <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
