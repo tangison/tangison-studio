@@ -3,7 +3,7 @@ import { FAQPage } from "./page-client";
 import { FAQPageJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "FAQ — Working with Tangison Studio | Design Agency Namibia",
   description: "Frequently asked questions about working with Tangison Studio. Design process, pricing, timelines, and how we engage with organizations across Africa.",
   alternates: { canonical: "/faq" },
   openGraph: {

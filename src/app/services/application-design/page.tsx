@@ -3,7 +3,7 @@ import { ApplicationDesignPage } from "./page-client";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Application Design",
+  title: "Application Design in Namibia",
   description: "Complex systems, clear UX. We design applications that make complexity manageable, turning dense functionality into intuitive experiences.",
   alternates: { canonical: "/services/application-design" },
   openGraph: {

@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  trailingSlash: false,
 
   /* ─── Image Optimization — Vercel Hobby budget: 1GB/mo ─── */
   images: {

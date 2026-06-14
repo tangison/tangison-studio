@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PartnershipPage } from "./page-client";
 
 export const metadata: Metadata = {
-  title: "Partnership Plans",
+  title: "Website Maintenance & Support Plans | Windhoek, Namibia",
   description:
     "Keep your website live, your brand consistent, and your digital presence growing with a Tangison Studio partnership plan. Care, Partner, or Studio Plus.",
   alternates: {

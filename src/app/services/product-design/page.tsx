@@ -3,7 +3,7 @@ import { ProductDesignPage } from "./page-client";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Product Design",
+  title: "Product Design in Namibia",
   description: "Complete product thinking. From concept to launch and beyond, we design products that solve real problems and create lasting value.",
   alternates: { canonical: "/services/product-design" },
   openGraph: {

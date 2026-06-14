@@ -3,7 +3,7 @@ import { DesignSystemsPage } from "./page-client";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Design Systems",
+  title: "Design Systems in Namibia",
   description: "Scalable component architecture. One source of truth for your entire product. We build design systems that unify teams and accelerate delivery.",
   alternates: { canonical: "/services/design-systems" },
   openGraph: {

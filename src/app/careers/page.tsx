@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CareersPage } from "./page-client";
 
 export const metadata: Metadata = {
-  title: "Careers",
+  title: "Careers at Tangison Studio — Design & Development Roles in Windhoek",
   description: "Join Tangison Studio. Open positions and opportunities in Windhoek, Namibia for designers and developers who care about craft, thinking, and quality.",
   alternates: { canonical: "/careers" },
   openGraph: {

@@ -3,7 +3,7 @@ import { BrandSystemsPage } from "./page-client";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Brand Systems",
+  title: "Brand Systems in Namibia",
   description: "Cohesive visual identity. Marks, wordmarks, palettes, and guidelines that scale. We build brand systems that work everywhere, consistently.",
   alternates: { canonical: "/services/brand-systems" },
   openGraph: {

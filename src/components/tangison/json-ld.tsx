@@ -1,6 +1,6 @@
 import React from "react";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://tangison-studio.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com";
 
 /* ── Organization Schema (use on homepage) ── */
 export function OrganizationJsonLd() {
@@ -58,7 +58,7 @@ export function LocalBusinessJsonLd() {
       latitude: -22.5609,
       longitude: 17.0658,
     },
-    telephone: "+264-61-000-000",
+    telephone: "+264 85 341 1522",
     email: "studio@tangison.com",
     priceRange: "$$",
     openingHours: "Mo-Fr 08:00-17:00",

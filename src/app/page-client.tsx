@@ -42,13 +42,13 @@ const featuredWork = [
 ];
 
 const services = [
-  "Website Design",
-  "Website Development",
-  "Application Design",
-  "Product Design",
-  "Brand Systems",
-  "Design Systems",
-  "Creative Direction",
+  { name: "Website Design", slug: "website-design" },
+  { name: "Website Development", slug: "website-development" },
+  { name: "Application Design", slug: "application-design" },
+  { name: "Product Design", slug: "product-design" },
+  { name: "Brand Systems", slug: "brand-systems" },
+  { name: "Design Systems", slug: "design-systems" },
+  { name: "Creative Direction", slug: "creative-direction" },
 ];
 
 const processSteps = [
@@ -246,20 +246,20 @@ function ServicesSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {services.map((service, i) => (
             <motion.div
-              key={service}
+              key={service.slug}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link
-                href="/services"
+                href={`/services/${service.slug}`}
                 className="pillar-card group block border border-card-border bg-signal-white p-6 md:p-8 h-full"
               >
                 {/* Teal accent line */}
                 <div className="w-8 h-[2px] bg-signal-teal mb-6" aria-hidden="true" />
                 <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink group-hover:text-signal-teal transition-colors duration-300">
-                  {service}
+                  {service.name}
                 </h3>
               </Link>
             </motion.div>

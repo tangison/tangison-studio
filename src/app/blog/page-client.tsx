@@ -10,19 +10,19 @@ const routeCards = [
   {
     title: "Articles",
     description: "Perspectives and educational content on design, development, and building in Africa.",
-    href: "/insights/articles",
+    href: "/blog",
     icon: BookOpen,
   },
   {
     title: "Case Studies",
     description: "Real projects. Real outcomes. From Tangison Studio.",
-    href: "/insights/case-studies",
+    href: "/work",
     icon: FlaskConical,
   },
   {
     title: "Resources",
     description: "Guides, frameworks, and industry playbooks for African organizations.",
-    href: "/insights/resources",
+    href: "/resources",
     icon: FolderOpen,
   },
 ];
@@ -186,7 +186,7 @@ export function BlogPage() {
                 transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               >
                 <Link
-                  href="/insights/resources"
+                  href="/resources"
                   className="group block border border-card-border bg-signal-white p-6 md:p-8 h-full hover:border-card-border transition-all duration-500"
                 >
                   <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-signal-teal mb-4 block">
