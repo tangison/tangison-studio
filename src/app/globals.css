@@ -9,43 +9,83 @@
   --font-display: var(--font-cabinet-grotesk), var(--font-satoshi), system-ui, sans-serif;
 
   /* ─── TANGISON STUDIO BRAND TOKENS ─── */
+  /* Philosophy: Pentagram — "Consistency is embedded, not enforced" */
+  /*            Wolff Olins — "Color can tell a story through movement" */
+  /*            Siegel+Gale — "Remove everything that doesn't add meaning" */
 
-  /* Backgrounds */
+  /* ── Backgrounds ────────────────────────────────────────────── */
   --color-skeleton-bone: #F6F4EF;      /* Page base — Skeleton Bone */
   --color-signal-white: #FFFFFF;        /* Cards, panels — maximum contrast */
   --color-atlantic-black: #111315;      /* Dark sections, footer — Atlantic Black */
   --color-terminal-black: #0A0B0C;     /* Deepest dark — Terminal Black */
   --color-ocean-mist: #E6F2F1;         /* Subtle teal tint, hover — Ocean Mist */
 
-  /* Text */
+  /* ── Text ───────────────────────────────────────────────────── */
   --color-ink: #111315;                /* Atlantic Black — primary text */
-  --color-ink-light: #3D3F44;
-  --color-ink-muted: #6B6860;
+  --color-ink-muted: #6B6860;          /* Body text — Fog Gray family */
   --color-fog-gray: #D9D7D2;           /* Secondary text, dividers */
 
-  /* Accent — Signal Teal (Tangison Studio signature) */
+  /* ── Accent — Signal Teal (Tangison Studio signature) ──────── */
   --color-signal-teal: #2CB5B4;        /* Signature accent — links, CTAs, STUDIO descriptor */
   --color-signal-teal-light: #3CC8C7;  /* Hover state for Signal Teal */
   --color-signal-teal-muted: rgba(44, 181, 180, 0.15); /* Subtle teal background */
 
-  /* Legacy accent — parent brand reference (used on /brand page ONLY) */
+  /* ── Legacy accent — parent brand reference (used on /brand page ONLY) */
   --color-rust-signal: #C56A4A;
   --color-rust-light: #D4896F;
   --color-rust-muted: rgba(197, 106, 74, 0.15);
 
-  /* Functional */
+  /* ── Functional ─────────────────────────────────────────────── */
   --color-success: #3D7A5F;
   --color-error: #C54444;
 
-  /* Card surface */
+  /* ── Card surface ───────────────────────────────────────────── */
   --color-card-surface: #FFFFFF;
   --color-card-border: rgba(17, 19, 21, 0.09);
 
-  /* Supporting */
+  /* ── Border opacity tokens ─────────────────────────────────── */
+  /* Replaces all inline border-black/[0.XX] and border-white/[0.XX] patterns */
+  --color-border-subtle: rgba(17, 19, 21, 0.04);     /* Lightest — dividers */
+  --color-border-light: rgba(17, 19, 21, 0.06);      /* Light — card borders */
+  --color-border-default: rgba(17, 19, 21, 0.09);    /* Default — standard borders */
+  --color-border-medium: rgba(17, 19, 21, 0.12);     /* Medium — hover borders */
+  --color-border-strong: rgba(17, 19, 21, 0.15);     /* Strong — emphasis */
+  --color-border-dark-subtle: rgba(255, 255, 255, 0.04); /* Dark section — lightest */
+  --color-border-dark-light: rgba(255, 255, 255, 0.06);  /* Dark section — light */
+  --color-border-dark-medium: rgba(255, 255, 255, 0.08); /* Dark section — medium */
+
+  /* ── Supporting ─────────────────────────────────────────────── */
   --color-warm-gray: #F0EDE8;
   --color-sand-gray: #E8E5DF;
   --color-steel-shadow: #1C1E22;
   --color-deep-ocean: #16353D;
+
+  /* ── Type scale tokens (world-class typography hierarchy) ──── */
+  /* COLLINS principle: "Typography must have a clean, muscular voice" */
+  --text-display: clamp(2.5rem, 6vw, 6rem);        /* Hero / key moments */
+  --text-h1: clamp(2.2rem, 5vw, 4.5rem);           /* Page titles */
+  --text-h2: clamp(1.75rem, 3.5vw, 3rem);          /* Section titles */
+  --text-h3: clamp(1.25rem, 2vw, 1.875rem);        /* Sub-sections */
+  --text-h4: clamp(1.1rem, 1.5vw, 1.5rem);         /* Card titles */
+  --text-body: 1rem;                                /* Standard body */
+  --text-body-lg: 1.125rem;                         /* Large body */
+  --text-body-sm: 0.875rem;                         /* Small body */
+  --text-label: 0.625rem;                           /* Metadata labels */
+  --text-caption: 0.75rem;                          /* Captions */
+
+  /* ── Tracking tokens ───────────────────────────────────────── */
+  --tracking-display: -0.04em;       /* Headlines — tight */
+  --tracking-heading: -0.02em;       /* Section headings */
+  --tracking-body: 0em;              /* Body text — default */
+  --tracking-label: 0.15em;          /* Labels — open */
+  --tracking-meta: 0.25em;           /* Metadata — very open */
+  --tracking-nav: 0.3em;             /* Nav items — widest */
+
+  /* ── Line height tokens ────────────────────────────────────── */
+  --leading-display: 0.95;           /* Display headlines — very tight */
+  --leading-heading: 1.1;            /* Section headings */
+  --leading-body: 1.6;               /* Body text — comfortable */
+  --leading-label: 1.2;              /* Labels — compact */
 
   /* shadcn/ui compatible tokens */
   --color-ring: var(--ring);
@@ -63,7 +103,8 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
 
-  /* Border radius — subtle rounding (Studio design language v2.0) */
+  /* ── Border radius ─────────────────────────────────────────── */
+  /* Studio design language v2.0: subtle rounding */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
@@ -73,6 +114,7 @@
 
 :root {
   /* ─── CSS Custom Properties (Brand System) ─── */
+  /* Single source of truth — :root layer. @theme inline references these. */
 
   /* Backgrounds */
   --color-bg-base:        #F6F4EF;
@@ -98,7 +140,7 @@
   --font-body:      var(--font-satoshi), system-ui, sans-serif;
   --font-mono:      var(--font-jetbrains-mono), monospace;
 
-  /* Spacing scale */
+  /* Spacing scale — 8px base unit (Siegel+Gale principle) */
   --space-xs:   4px;
   --space-sm:   8px;
   --space-md:   16px;
@@ -110,11 +152,12 @@
   --space-5xl:  128px;
   --space-6xl:  192px;
 
-  /* Motion */
+  /* Motion — Studio Ease */
   --ease-primary:   cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-fast:  0.4s;
-  --duration-base:  0.6s;
-  --duration-slow:  1.2s;
+  --duration-fast:  0.4s;     /* Hover / micro-interactions */
+  --duration-base:  0.6s;     /* Standard entrance */
+  --duration-slow:  1.0s;     /* Hero / page-level entrances */
+  --duration-extended: 1.2s;  /* Large, dramatic reveals */
 
   /* Layout */
   --container-max:  1400px;
@@ -124,7 +167,7 @@
   --radius: 6px;
   --radius-button: 8px;
 
-  /* Theme variables */
+  /* Theme variables (shadcn/ui) */
   --background: #F6F4EF;
   --foreground: #111315;
   --card: #FFFFFF;
@@ -141,6 +184,25 @@
   --border: rgba(17, 19, 21, 0.09);
   --input: rgba(17, 19, 21, 0.1);
   --ring: #2CB5B4;
+
+  /* ── Dark mode overrides (prepared for future implementation) ── */
+  /* Uncomment and integrate with next-themes when dark mode ships:
+  --background-dark: #0A0B0C;
+  --foreground-dark: #F6F4EF;
+  --card-dark: #1C1E22;
+  --card-foreground-dark: #F6F4EF;
+  --primary-dark: #3CC8C7;
+  --primary-foreground-dark: #0A0B0C;
+  --secondary-dark: #16353D;
+  --secondary-foreground-dark: #F6F4EF;
+  --muted-dark: #1C1E22;
+  --muted-foreground-dark: #D9D7D2;
+  --accent-dark: #3CC8C7;
+  --accent-foreground-dark: #0A0B0C;
+  --border-dark: rgba(255, 255, 255, 0.06);
+  --input-dark: rgba(255, 255, 255, 0.08);
+  --ring-dark: #3CC8C7;
+  */
 }
 
 @layer base {
@@ -194,7 +256,7 @@
   background: transparent;
 }
 
-/* Cinematic image filter — editorial */
+/* Cinematic image filter — "Analogue Namibia" photography style */
 .cinematic-image {
   filter: grayscale(20%) contrast(1.05) brightness(0.97);
   transition: filter 1.2s var(--ease-primary);
@@ -227,15 +289,18 @@ html {
   }
 }
 
-/* Subtle border-radius globally — Studio design language v2.0 */
-/* All elements get 6px radius. Buttons/CTAs get 8px. Pill elements use inline 999px */
+/* ── Border radius system ────────────────────────────────────── */
+/* Studio design language v2.0: Subtle rounding */
+/* Primary: 6px default. Buttons/CTAs: 8px. Pills: inline 999px. */
+/* See brand rules: "Max 4px radius" was the v1 spec; v2 updated to 6px */
+
 *,
 *::before,
 *::after {
   border-radius: 6px !important;
 }
 
-/* Buttons and CTA links — slightly more rounded than global default */
+/* Buttons and CTA links — slightly more rounded */
 button,
 a.inline-flex:not(.pill-button) {
   border-radius: 8px !important;
@@ -349,6 +414,7 @@ button, a {
   content: '';
   position: absolute;
   inset: 0;
+  /* Skeleton Bone overlay at 82% — maintains readability while showing the image */
   background: rgba(246, 244, 239, 0.82);
   z-index: 0;
 }
