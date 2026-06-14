@@ -15,25 +15,28 @@ import { fadeUp, animateFadeUp, STUDIO_EASE, DURATION } from "@/lib/motion";
 
 const featuredWork = [
   {
-    name: "Tangison Agent",
-    category: "Application Design",
-    href: "/work",
-    image: "/images/gallery/work-tangison-agent.webp",
-    imageAlt: "Tangison Agent platform design",
+    name: "ProAvia Travel & Tours",
+    label: "Travel & Tourism",
+    href: "https://proaviainc.com",
+    image: "/images/work/screenshots/proavia-screenshot.webp",
+    imageAlt: "ProAvia Travel & Tours website",
+    external: true,
   },
   {
-    name: "SkillsCamp",
-    category: "Product Design",
-    href: "/work",
-    image: "/images/gallery/work-skillscamp.webp",
-    imageAlt: "SkillsCamp product design",
+    name: "Nalago Skincare",
+    label: "Beauty & Wellness",
+    href: "https://nalago-nam.com",
+    image: "/images/work/screenshots/nalago-screenshot.webp",
+    imageAlt: "Nalago Skincare website",
+    external: true,
   },
   {
-    name: "SMEFrog Academy",
-    category: "Website Design",
-    href: "/work",
-    image: "/images/gallery/work-smefrog-academy.webp",
-    imageAlt: "SMEFrog Academy interface design",
+    name: "Cluster Leaf Safaris",
+    label: "Safari & Tourism",
+    href: "https://www.clusterleafsafaris.com",
+    image: "/images/work/screenshots/clusterleaf-screenshot.webp",
+    imageAlt: "Cluster Leaf Safaris website",
+    external: true,
   },
 ];
 
@@ -145,7 +148,7 @@ function HeroSection() {
               }}
             >
               <span className="font-jetbrains text-xs uppercase tracking-[0.3em] text-ink-muted/40">
-                WORK COMING SOON
+                SELECTED WORK
               </span>
             </div>
           </motion.div>
@@ -179,34 +182,77 @@ function FeaturedWorkSection() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Link href={project.href} className="group block">
-                {/* Image */}
-                <div className="relative h-64 md:h-80 overflow-hidden mb-4">
-                  <Image
-                    src={project.image}
-                    alt={project.imageAlt}
-                    className="object-cover cinematic-image group-hover:scale-105 transition-transform duration-700"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    priority={i === 0}
-                  />
-                </div>
-                {/* Caption */}
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] block mb-1">
-                      {project.category}
-                    </span>
-                    <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink group-hover:text-signal-teal transition-colors duration-300">
-                      {project.name}
-                    </h3>
+              {project.external ? (
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                >
+                  {/* Image */}
+                  <div className="relative h-64 md:h-80 overflow-hidden mb-4">
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt}
+                      className="object-cover cinematic-image group-hover:scale-105 transition-transform duration-700"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      priority={i === 0}
+                    />
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-ink-muted group-hover:text-signal-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
-                </div>
-              </Link>
+                  {/* Caption */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] block mb-1">
+                        {project.label}
+                      </span>
+                      <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink group-hover:text-signal-teal transition-colors duration-300">
+                        {project.name}
+                      </h3>
+                    </div>
+                    <ArrowUpRight className="w-5 h-5 text-ink-muted group-hover:text-signal-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                  </div>
+                </a>
+              ) : (
+                <Link href={project.href} className="group block">
+                  {/* Image */}
+                  <div className="relative h-64 md:h-80 overflow-hidden mb-4">
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt}
+                      className="object-cover cinematic-image group-hover:scale-105 transition-transform duration-700"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      priority={i === 0}
+                    />
+                  </div>
+                  {/* Caption */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] block mb-1">
+                        {project.label}
+                      </span>
+                      <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink group-hover:text-signal-teal transition-colors duration-300">
+                        {project.name}
+                      </h3>
+                    </div>
+                    <ArrowUpRight className="w-5 h-5 text-ink-muted group-hover:text-signal-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                  </div>
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>
+
+        <motion.div {...fadeUp} className="mt-12">
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-2 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300 group"
+          >
+            See Our Work
+            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

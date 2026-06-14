@@ -29,7 +29,7 @@ const navItems: NavItem[] = [
     label: "Work",
     href: "/work",
     children: [
-      { label: "Coming Soon", href: "/work", description: "We are rebranding from Gemsweb Digital" },
+      { label: "Portfolio", href: "/work", description: "Websites, platforms, and digital products" },
       { label: "SMEs & Startups", href: "/work/smes", description: "Brand and digital for growing ventures" },
       { label: "Mining & Resources", href: "/work/mining", description: "Safety portals and compliance dashboards" },
       { label: "Government", href: "/work/government", description: "Accessible public sector platforms" },

@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { WorkPage } from "./page-client";
 
 export const metadata: Metadata = {
-  title: "Our Work & Case Studies",
-  description: "Explore our portfolio of digital experiences across nine industries in Africa. From SMEs and mining to healthcare and education — see how Tangison Studio delivers strategic, functional design.",
+  title: "Our Work",
+  description:
+    "Websites, platforms, and digital products for organizations across Namibia and beyond. See what Tangison Studio has designed and built.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Our Work & Case Studies | TANGISON STUDIO",
-    description: "Explore our portfolio of digital experiences across nine industries in Africa. From SMEs and mining to healthcare and education — see how Tangison Studio delivers strategic, functional design.",
+    title: "Our Work | TANGISON STUDIO",
+    description:
+      "Websites, platforms, and digital products for organizations across Namibia and beyond. See what Tangison Studio has designed and built.",
     url: "/work",
   },
 };
