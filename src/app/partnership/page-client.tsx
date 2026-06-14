@@ -341,11 +341,19 @@ function HeroSection() {
    ────────────────────────────────────────────── */
 
 function PlanCardsSection() {
-  const [expandedPlan, setExpandedPlan] = useState<string | null>(null);
+  const [expandedPlans, setExpandedPlans] = useState<Set<string>>(new Set());
 
   const togglePlan = useCallback(
     (name: string) => {
-      setExpandedPlan((prev) => (prev === name ? null : name));
+      setExpandedPlans((prev) => {
+        const next = new Set(prev);
+        if (next.has(name)) {
+          next.delete(name);
+        } else {
+          next.add(name);
+        }
+        return next;
+      });
     },
     []
   );
@@ -446,7 +454,7 @@ function PlanCardsSection() {
                   See Full Details
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-300 ${
-                      expandedPlan === plan.name ? "rotate-180" : ""
+                      expandedPlans.has(plan.name) ? "rotate-180" : ""
                     }`}
                   />
                 </StudioButton>
@@ -461,7 +469,7 @@ function PlanCardsSection() {
             <PlanExpander
               key={plan.name}
               plan={plan}
-              isOpen={expandedPlan === plan.name}
+              isOpen={expandedPlans.has(plan.name)}
               onToggle={() => togglePlan(plan.name)}
             />
           ))}
