@@ -11,42 +11,49 @@ const services = [
     slug: "website-design",
     description: "Pages that work. We design websites that communicate clearly and turn visitors into customers.",
     capabilities: ["User experience design", "Wireframing and prototyping", "Visual design systems", "Responsive design"],
+    caseStudy: { name: "ProAvia Travel & Tours", slug: "proavia" },
   },
   {
     title: "Website Development",
     slug: "website-development",
     description: "Fast, clean code. Built to load fast and scale without falling over.",
     capabilities: ["Frontend development", "CMS integration", "Performance optimization", "SEO implementation"],
+    caseStudy: { name: "Cluster Leaf Safaris", slug: "clusterleaf" },
   },
   {
     title: "Application Design",
     slug: "application-design",
     description: "Complex made simple. We design applications that make complicated things easy to use.",
     capabilities: ["Information architecture", "Interaction design", "User flow mapping", "Interface design"],
+    caseStudy: { name: "SMEFrog", slug: "smefrog" },
   },
   {
     title: "Product Design",
     slug: "product-design",
     description: "From idea to launch and beyond. Full product thinking, not just pretty screens.",
     capabilities: ["Product strategy", "Feature prioritization", "Design sprints", "Launch planning"],
+    caseStudy: { name: "Feorm", slug: "feorm" },
   },
   {
     title: "Brand Systems",
     slug: "brand-systems",
     description: "Identity that sticks. Marks, palettes, and guidelines that people remember.",
     capabilities: ["Logo and wordmark design", "Color and type systems", "Brand guidelines", "Asset libraries"],
+    caseStudy: { name: "Tangison Systems", slug: "tangison-systems" },
   },
   {
     title: "Design Systems",
     slug: "design-systems",
     description: "One source of truth. Every component, every token, every rule in one place.",
     capabilities: ["Component libraries", "Token systems", "Documentation", "Governance frameworks"],
+    caseStudy: { name: "Nalago Skincare", slug: "nalago" },
   },
   {
     title: "Creative Direction",
     slug: "creative-direction",
     description: "Visual leadership. We set the direction and make sure every piece lines up.",
     capabilities: ["Campaign strategy", "Art direction", "Visual storytelling", "Cross-channel consistency"],
+    caseStudy: { name: "Crescendo Namibia", slug: "crescendo" },
   },
 ];
 
@@ -101,12 +108,12 @@ export function ServicesPage() {
                         <span className="font-satoshi text-ink-muted text-xl transition-transform duration-300 group-hover:translate-x-1">→</span>
                       </div>
                     </div>
-                    {/* Right: Description + Capabilities */}
+                    {/* Right: Description + Capabilities + Case Study Link */}
                     <div className="lg:col-span-8">
                       <p className="font-satoshi text-ink text-base md:text-lg leading-relaxed mb-8">
                         {service.description}
                       </p>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                         {service.capabilities.map((cap) => (
                           <div key={cap} className="flex items-start gap-3">
                             <div className="w-1.5 h-1.5 bg-signal-teal mt-2 shrink-0" aria-hidden="true" />
@@ -114,6 +121,15 @@ export function ServicesPage() {
                           </div>
                         ))}
                       </div>
+                      {/* Case study link */}
+                      <Link
+                        href={`/work/${service.caseStudy.slug}`}
+                        className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-signal-teal hover:text-signal-teal-light transition-colors duration-300 inline-flex items-center gap-2 group/cs"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        See an example — {service.caseStudy.name}
+                        <span className="inline-block w-0 group-hover/cs:w-3 h-[1px] bg-signal-teal transition-all duration-300" />
+                      </Link>
                     </div>
                   </div>
                 </div>

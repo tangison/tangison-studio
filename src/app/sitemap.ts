@@ -26,6 +26,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/services/brand-systems`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/services/design-systems`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/services/creative-direction`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    // Case study pages — highest content priority
+    { url: `${baseUrl}/work/proavia`, lastModified: new Date("2026-05-01"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/work/nalago`, lastModified: new Date("2026-03-01"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/work/clusterleaf`, lastModified: new Date("2026-04-01"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/work/smefrog`, lastModified: new Date("2026-06-01"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/work/petrocor`, lastModified: new Date("2026-06-01"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/work/tangison-systems`, lastModified: new Date("2026-06-01"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/work/crescendo`, lastModified: new Date("2026-06-01"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/work/feorm`, lastModified: new Date("2026-06-01"), changeFrequency: "monthly", priority: 0.9 },
     // Work industry pages
     { url: `${baseUrl}/work/smes`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/work/mining`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },

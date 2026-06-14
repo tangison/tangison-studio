@@ -2,8 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { fadeUp } from "@/lib/motion";
 
@@ -14,6 +15,7 @@ import { fadeUp } from "@/lib/motion";
 const projects = [
   {
     name: "ProAvia Travel & Tours",
+    slug: "proavia",
     logo: "/images/work/proavia-logo.webp",
     screenshot: "/images/work/screenshots/proavia-screenshot.webp",
     description:
@@ -23,6 +25,7 @@ const projects = [
   },
   {
     name: "Nalago Skincare",
+    slug: "nalago",
     logo: "/images/work/nalago-logo.webp",
     screenshot: "/images/work/screenshots/nalago-screenshot.webp",
     description:
@@ -32,6 +35,7 @@ const projects = [
   },
   {
     name: "Cluster Leaf Safaris",
+    slug: "clusterleaf",
     logo: "/images/work/clusterleaf-logo.webp",
     screenshot: "/images/work/screenshots/clusterleaf-screenshot.webp",
     description:
@@ -41,6 +45,7 @@ const projects = [
   },
   {
     name: "SMEFrog",
+    slug: "smefrog",
     logo: "/images/work/smefrog-logo.webp",
     screenshot: "/images/work/screenshots/smefrog-screenshot.webp",
     description:
@@ -50,6 +55,7 @@ const projects = [
   },
   {
     name: "Petrocor",
+    slug: "petrocor",
     logo: "/images/work/petrocor-logo.webp",
     screenshot: "/images/work/screenshots/petrocor-screenshot.webp",
     description:
@@ -59,6 +65,7 @@ const projects = [
   },
   {
     name: "Tangison Systems",
+    slug: "tangison-systems",
     logo: "/images/work/tangison-logo.webp",
     screenshot: "/images/work/screenshots/tangison-screenshot.webp",
     description:
@@ -68,6 +75,7 @@ const projects = [
   },
   {
     name: "Crescendo Namibia",
+    slug: "crescendo",
     logo: "/images/work/crescendo-logo.webp",
     screenshot: "/images/work/screenshots/crescendo-screenshot.webp",
     description:
@@ -77,10 +85,11 @@ const projects = [
   },
   {
     name: "Feorm",
+    slug: "feorm",
     logo: "/images/work/feorm-logo.webp",
     screenshot: "/images/work/screenshots/feorm-screenshot.webp",
     description:
-      "Agrotourism and equipment rental marketplace for Namibian farming communities.",
+      "Farm stay discovery and booking platform for Namibian farming communities.",
     tags: "Platform Design & Development · Agriculture",
     url: "https://feorm.tangison.com",
   },
@@ -128,11 +137,10 @@ export function WorkPage() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block border border-card-border bg-signal-white hover:border-signal-teal/30 hover:bg-ocean-mist/30 transition-all duration-500"
+                {/* Primary link: internal case study */}
+                <Link
+                  href={`/work/${project.slug}`}
+                  className="group block border border-card-border bg-signal-white hover:border-signal-teal/30 hover:bg-ocean-mist/30 transition-all duration-500 relative"
                 >
                   {/* Screenshot */}
                   <div className="relative aspect-[16/9] overflow-hidden">
@@ -156,6 +164,17 @@ export function WorkPage() {
                         style={{ maxHeight: "32px" }}
                       />
                     </div>
+                    {/* External site link — top-right corner ↗ */}
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-3 right-3 bg-signal-white/90 p-2 text-ink-muted hover:text-signal-teal transition-colors duration-300 z-10"
+                      onClick={(e) => e.stopPropagation()}
+                      aria-label={`Visit ${project.name} live site`}
+                    >
+                      <ArrowUpRight className="w-4 h-4" />
+                    </a>
                   </div>
 
                   {/* Content */}
@@ -170,10 +189,15 @@ export function WorkPage() {
                       <span className="font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted/50">
                         {project.tags}
                       </span>
-                      <ArrowUpRight className="w-4 h-4 text-ink-muted/30 group-hover:text-signal-teal transition-colors duration-300" />
+                      <div className="flex items-center gap-3">
+                        <span className="font-jetbrains text-[10px] uppercase tracking-[0.15em] text-signal-teal opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          Read Case Study
+                        </span>
+                        <ArrowRight className="w-4 h-4 text-ink-muted/30 group-hover:text-signal-teal transition-colors duration-300" />
+                      </div>
                     </div>
                   </div>
-                </a>
+                </Link>
               </motion.div>
             ))}
           </div>

@@ -17,26 +17,26 @@ const featuredWork = [
   {
     name: "ProAvia Travel & Tours",
     label: "Travel & Tourism",
-    href: "https://proaviainc.com",
+    href: "/work/proavia",
     image: "/images/work/screenshots/proavia-screenshot.webp",
     imageAlt: "ProAvia Travel & Tours website",
-    external: true,
+    externalUrl: "https://proaviainc.com",
   },
   {
     name: "Nalago Skincare",
     label: "Beauty & Wellness",
-    href: "https://nalago-nam.com",
+    href: "/work/nalago",
     image: "/images/work/screenshots/nalago-screenshot.webp",
     imageAlt: "Nalago Skincare website",
-    external: true,
+    externalUrl: "https://nalago-nam.com",
   },
   {
     name: "Cluster Leaf Safaris",
     label: "Safari & Tourism",
-    href: "https://www.clusterleafsafaris.com",
+    href: "/work/clusterleaf",
     image: "/images/work/screenshots/clusterleaf-screenshot.webp",
     imageAlt: "Cluster Leaf Safaris website",
-    external: true,
+    externalUrl: "https://www.clusterleafsafaris.com",
   },
 ];
 
@@ -131,26 +131,27 @@ function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right column — work scroll placeholder */}
+          {/* Right column — featured project preview */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5"
+            className="lg:col-span-5 hidden lg:block"
           >
-            <div
-              className="work-scroll-placeholder flex items-center justify-center"
-              style={{
-                border: "1px solid var(--color-fog-gray)",
-                minHeight: "280px",
-                maskImage: "linear-gradient(to right, black 80%, transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to right, black 80%, transparent 100%)",
-              }}
-            >
-              <span className="font-jetbrains text-xs uppercase tracking-[0.3em] text-ink-muted/40">
-                SELECTED WORK
-              </span>
-            </div>
+            <Link href="/work/proavia" className="group block relative overflow-hidden" style={{ minHeight: "280px" }}>
+              <Image
+                src="/images/work/screenshots/proavia-screenshot.webp"
+                alt="ProAvia Travel & Tours website"
+                fill
+                priority
+                className="object-cover object-top cinematic-image group-hover:scale-105 transition-transform duration-700"
+                sizes="41vw"
+                style={{
+                  maskImage: "linear-gradient(to right, black 60%, transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to right, black 60%, transparent 100%)",
+                }}
+              />
+            </Link>
           </motion.div>
         </div>
       </div>
@@ -182,13 +183,9 @@ function FeaturedWorkSection() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              {project.external ? (
-                <a
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block"
-                >
+              <div className="group block relative">
+                {/* Primary link: internal case study */}
+                <Link href={project.href} className="block">
                   {/* Image */}
                   <div className="relative h-64 md:h-80 overflow-hidden mb-4">
                     <Image
@@ -199,6 +196,17 @@ function FeaturedWorkSection() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                       priority={i === 0}
                     />
+                    {/* External site link — top-right */}
+                    <a
+                      href={project.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-3 right-3 bg-signal-white/90 p-2 text-ink-muted hover:text-signal-teal transition-colors duration-300 z-10"
+                      onClick={(e) => e.stopPropagation()}
+                      aria-label={`Visit ${project.name} live site`}
+                    >
+                      <ArrowUpRight className="w-4 h-4" />
+                    </a>
                   </div>
                   {/* Caption */}
                   <div className="flex items-center justify-between">
@@ -210,36 +218,10 @@ function FeaturedWorkSection() {
                         {project.name}
                       </h3>
                     </div>
-                    <ArrowUpRight className="w-5 h-5 text-ink-muted group-hover:text-signal-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
-                  </div>
-                </a>
-              ) : (
-                <Link href={project.href} className="group block">
-                  {/* Image */}
-                  <div className="relative h-64 md:h-80 overflow-hidden mb-4">
-                    <Image
-                      src={project.image}
-                      alt={project.imageAlt}
-                      className="object-cover cinematic-image group-hover:scale-105 transition-transform duration-700"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      priority={i === 0}
-                    />
-                  </div>
-                  {/* Caption */}
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] block mb-1">
-                        {project.label}
-                      </span>
-                      <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink group-hover:text-signal-teal transition-colors duration-300">
-                        {project.name}
-                      </h3>
-                    </div>
-                    <ArrowUpRight className="w-5 h-5 text-ink-muted group-hover:text-signal-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                    <ArrowRight className="w-5 h-5 text-ink-muted group-hover:text-signal-teal group-hover:translate-x-1 transition-all duration-300" />
                   </div>
                 </Link>
-              )}
+              </div>
             </motion.div>
           ))}
         </div>
