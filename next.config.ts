@@ -20,6 +20,41 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // SEO: Redirect all .vercel.app traffic to the canonical domain
+      // This ensures all SEO equity goes to studio.tangison.com
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "tangison-studio.vercel.app",
+          },
+        ],
+        destination: "https://studio.tangison.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "tangison-studio-tangison-s-projects.vercel.app",
+          },
+        ],
+        destination: "https://studio.tangison.com/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "tangison-studio-git-main-tangison-s-projects.vercel.app",
+          },
+        ],
+        destination: "https://studio.tangison.com/:path*",
+        permanent: true,
+      },
       // Old page redirects
       {
         source: "/architecture",

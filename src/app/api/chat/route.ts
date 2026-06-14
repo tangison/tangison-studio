@@ -92,7 +92,11 @@ export async function POST(req: NextRequest) {
     }
 
     if (!OPENROUTER_API_KEY) {
-      return NextResponse.json({ error: "AI service not configured" }, { status: 500 });
+      console.error("Chat API: OPENROUTER_API_KEY is not set");
+      return NextResponse.json(
+        { error: "AI service not configured. The studio assistant needs an API key to work. Please contact studio@tangison.com." },
+        { status: 503 }
+      );
     }
 
     // Build messages: system + history + new message
@@ -124,6 +128,25 @@ export async function POST(req: NextRequest) {
 
     if (!response.ok) {
       const errorBody = await response.text();
+
+      // Detect authentication failures (invalid/expired API key)
+      if (response.status === 401) {
+        console.error("Chat API: OpenRouter API key is invalid or expired (401)");
+        return NextResponse.json(
+          { error: "AI service authentication failed. The API key needs to be updated. Please contact studio@tangison.com." },
+          { status: 503 }
+        );
+      }
+
+      // Rate limiting
+      if (response.status === 429) {
+        console.error("Chat API: OpenRouter rate limit exceeded (429)");
+        return NextResponse.json(
+          { error: "Too many requests. Please wait a moment and try again." },
+          { status: 429 }
+        );
+      }
+
       console.error("OpenRouter API Error:", response.status, errorBody);
       return NextResponse.json(
         { error: "AI service unavailable. Please try again." },
