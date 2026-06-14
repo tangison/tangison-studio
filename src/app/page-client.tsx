@@ -6,6 +6,8 @@ import { ArrowUpRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { SiteShell } from "@/components/tangison/site-shell";
+import { StudioButton } from "@/components/tangison/studio-button";
+import { fadeUp, animateFadeUp, STUDIO_EASE, DURATION } from "@/lib/motion";
 
 /* ──────────────────────────────────────────────
    IMAGE DATA
@@ -55,16 +57,7 @@ const processSteps = [
 
 const principles = ["Strategic", "Functional", "Beautiful", "Scalable"];
 
-/* ──────────────────────────────────────────────
-   ANIMATION VARIANTS
-   ────────────────────────────────────────────── */
-
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" as const },
-  transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-};
+/* fadeUp imported from @/lib/motion — single source of truth */
 
 /* ──────────────────────────────────────────────
    HERO SECTION
@@ -123,23 +116,15 @@ function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: DURATION.slow, delay: 1, ease: STUDIO_EASE }}
               className="flex flex-wrap gap-4"
             >
-              <Link
-                href="/work"
-                className="pill-button bg-signal-teal text-signal-white px-7 py-4 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 inline-flex items-center gap-2"
-                style={{ borderRadius: "999px" }}
-              >
-                See Our Work →
-              </Link>
-              <Link
-                href="/contact"
-                className="pill-button border border-ink/15 text-ink px-7 py-4 font-cabinet font-bold text-sm tracking-tight hover:bg-ink/5 transition-all duration-300"
-                style={{ borderRadius: "999px" }}
-              >
+              <StudioButton href="/work" variant="primary" size="lg" showArrow>
+                See Our Work
+              </StudioButton>
+              <StudioButton href="/contact" variant="ghost" size="lg">
                 Start a Project
-              </Link>
+              </StudioButton>
             </motion.div>
           </div>
 
@@ -375,15 +360,12 @@ function ContactTeaserSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ delay: 0.3, duration: DURATION.slow, ease: STUDIO_EASE }}
           className="relative z-10"
         >
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 group"
-          >
-            Start a Project →
-          </Link>
+          <StudioButton href="/contact" variant="primary" size="lg" showArrow>
+            Start a Project
+          </StudioButton>
         </motion.div>
       </div>
     </section>
