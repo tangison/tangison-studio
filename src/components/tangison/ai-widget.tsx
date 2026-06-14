@@ -58,7 +58,7 @@ const SUGGESTED_PROMPTS = [
 const GREETING_MESSAGE: Message = {
   id: "greeting",
   role: "bot",
-  content: "Tangison Studio. How can we help?",
+  content: "Hey there! Welcome to Tangison Studio. How can we help you today?",
   timestamp: Date.now(),
   artifact: null,
 };
@@ -716,7 +716,7 @@ export function TangisonAIWidget() {
           >
             <div className="w-1.5 h-1.5 bg-signal-teal shrink-0" />
             <span className="font-jetbrains text-[11px] text-fog-gray leading-snug">
-              Tangison Studio. Ask us anything.
+              Hey there! Ask us anything.
             </span>
           </motion.div>
         )}
