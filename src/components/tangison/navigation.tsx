@@ -76,6 +76,10 @@ const navItems: NavItem[] = [
     megaTagline: "Designing from Windhoek.",
   },
   {
+    label: "Partnership",
+    href: "/partnership",
+  },
+  {
     label: "Contact",
     href: "/contact",
   },

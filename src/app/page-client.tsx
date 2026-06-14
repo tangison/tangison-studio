@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/tangison/studio-button";
+import { PlanCarousel } from "@/components/tangison/plan-carousel";
 import { fadeUp, animateFadeUp, STUDIO_EASE, DURATION } from "@/lib/motion";
 
 /* ──────────────────────────────────────────────
@@ -131,27 +132,14 @@ function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right column — featured project preview */}
+          {/* Right column — Plan carousel (desktop) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 hidden lg:block"
+            className="lg:col-span-5"
           >
-            <Link href="/work/proavia" className="group block relative overflow-hidden" style={{ minHeight: "280px" }}>
-              <Image
-                src="/images/work/screenshots/proavia-screenshot.webp"
-                alt="ProAvia Travel & Tours website"
-                fill
-                priority
-                className="object-cover object-top cinematic-image group-hover:scale-105 transition-transform duration-700"
-                sizes="41vw"
-                style={{
-                  maskImage: "linear-gradient(to right, black 60%, transparent 100%)",
-                  WebkitMaskImage: "linear-gradient(to right, black 60%, transparent 100%)",
-                }}
-              />
-            </Link>
+            <PlanCarousel />
           </motion.div>
         </div>
       </div>

@@ -10,6 +10,7 @@ const footerColumns = {
   Studio: [
     { label: "Work", href: "/work" },
     { label: "Services", href: "/services" },
+    { label: "Partnership", href: "/partnership" },
     { label: "Process", href: "/process" },
     { label: "About", href: "/about" },
     { label: "The Studio", href: "/studio" },
