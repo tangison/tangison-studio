@@ -3,13 +3,14 @@ import { CreativeDirectionPage } from "./page-client";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Creative Direction — Tangison Studio",
-  description: "Strategic visual leadership. We set the direction and ensure every touchpoint aligns, from campaigns to brand experiences.",
+  title: "Creative Direction",
+  description: "Strategic visual leadership. We set the direction and make sure every touchpoint lines up, from campaigns to full brand experiences.",
   alternates: { canonical: "/services/creative-direction" },
   openGraph: {
-    title: "Creative Direction — Tangison Studio",
-    description: "Strategic visual leadership. We set the direction and ensure every touchpoint aligns, from campaigns to brand experiences.",
+    title: "Creative Direction | TANGISON STUDIO",
+    description: "Strategic visual leadership. We set the direction and make sure every touchpoint lines up, from campaigns to full brand experiences.",
     url: "/services/creative-direction",
+    images: [{ url: "/images/services/creative-direction.webp", width: 1200, height: 630, alt: "Creative Direction service" }],
   },
 };
 

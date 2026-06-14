@@ -29,7 +29,7 @@ const offers = [
   },
   {
     title: "User Research & Validation",
-    description: "We embed research into the product design process at every stage. From early concept testing to post-launch behavioural analysis, we gather evidence about what users actually need and how they behave. This research informs decisions, reduces risk, and ensures the product earns adoption rather than hoping for it.",
+    description: "We embed research into the product design process at every stage. From early concept testing to post-launch behavioural analysis, we gather evidence about what users actually need and how they behave. This research informs decisions, reduces risk, and makes sure the product earns adoption rather than hoping for it.",
   },
   {
     title: "MVP & Launch Planning",
@@ -60,7 +60,7 @@ const process = [
   {
     step: "04",
     name: "Launch & Learn",
-    description: "We support the launch with onboarding design, release documentation, and a measurement framework. Post-launch, we analyse user behaviour, gather feedback, and identify opportunities for the next iteration. The product evolves based on evidence, ensuring that each version is an improvement over the last.",
+    description: "We support the launch with onboarding design, release documentation, and a measurement framework. Post-launch, we analyse user behaviour, gather feedback, and identify opportunities for the next iteration. The product evolves based on evidence, so that each version is an improvement over the last.",
   },
 ];
 

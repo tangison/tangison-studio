@@ -507,7 +507,7 @@ function MobileAccordionItemDark({
           }`}
           onClick={() => setIsExpanded(!isExpanded)}
           aria-expanded={isExpanded}
-          aria-label={`${item.label} — ${isExpanded ? "collapse" : "expand"} submenu`}
+          aria-label={`${item.label}: ${isExpanded ? "collapse" : "expand"} submenu`}
         >
           {item.label}
           <motion.span

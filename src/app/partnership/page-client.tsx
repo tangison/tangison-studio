@@ -21,7 +21,7 @@ const plans = [
     recommended: false,
     supportHours: "2 hrs/month",
     illustration: "/images/partnership/plan-care.webp",
-    illustrationAlt: "Sparse Namibian landscape at dusk — Care plan",
+    illustrationAlt: "Sparse Namibian landscape at dusk, Care plan",
     includes: [
       "Monthly site check & uptime monitoring",
       "Up to 2 minor text or image updates per month",
@@ -36,7 +36,7 @@ const plans = [
       "Priority response",
     ],
     idealFor:
-      "Clients who want peace of mind that their site is live, secure, and up to date — without needing active growth support.",
+      "You want your site live, secure, and up to date without having to think about it. No active growth support needed.",
   },
   {
     name: "Partner",
@@ -45,7 +45,7 @@ const plans = [
     recommended: true,
     supportHours: "10 hrs/month",
     illustration: "/images/partnership/plan-partner.webp",
-    illustrationAlt: "Namibian coastal town at golden hour — Partner plan",
+    illustrationAlt: "Namibian coastal town at golden hour, Partner plan",
     includes: [
       "Everything in Care",
       "Unlimited minor site updates",
@@ -61,29 +61,29 @@ const plans = [
       "Monthly strategy sessions",
     ],
     idealFor:
-      "Growing businesses that need their site fresh and a consistent social media presence — without an in-house marketing person.",
+      "Your business needs a fresh site and a consistent social media presence, but you don't have a marketing person in-house.",
   },
   {
     name: "Studio Plus",
     price: 2000,
     tagline: "Your studio, on call.",
     recommended: false,
-    supportHours: "Priority — no cap",
+    supportHours: "Priority, no cap",
     illustration: "/images/partnership/plan-studio-plus.webp",
-    illustrationAlt: "Panoramic Namibian desert at dawn — Studio Plus plan",
+    illustrationAlt: "Panoramic Namibian desert at dawn, Studio Plus plan",
     includes: [
       "Everything in Partner",
       "Full social media management (Facebook & Instagram)",
       "Content calendar & monthly posting schedule",
       "New page additions to your website as needed",
-      "Priority support — call or message anytime, front of queue",
+      "Priority support: call or message anytime, front of queue",
       "Monthly strategy session with the studio",
       "Document & collateral support (invoices, contracts, branded docs on request)",
       "Creative direction advice included",
     ],
     excludes: [] as string[],
     idealFor:
-      "Clients who want Tangison Studio as an extension of their own team — from social media to strategy to business documents, handled.",
+      "You want us on your team. Social media, strategy, documents, creative direction: all handled, like we work in the same building.",
   },
 ];
 
@@ -91,7 +91,7 @@ const addOnServices = [
   {
     service: "Brand Identity Revamp",
     description:
-      "Refined logo, colour palette, typography system, brand guidelines — print and digital ready.",
+      "Refined logo, colour palette, typography system, brand guidelines. Print and digital ready.",
     price: "Starting from N$3,500",
   },
   {
@@ -108,7 +108,7 @@ const addOnServices = [
   {
     service: "Additional Website Pages",
     description:
-      "New pages added to your existing site — services, case studies, team, landing pages.",
+      "New pages added to your existing site: services, case studies, team pages, landing pages.",
     price: "Starting from N$500 / page",
   },
   {
@@ -121,11 +121,11 @@ const addOnServices = [
 const faqs = [
   {
     q: "Do I need to have built my website with Tangison Studio?",
-    a: "Yes — our partnership plans are designed for clients whose websites we built and host. This ensures we know the codebase and can maintain it properly.",
+    a: "No. We can take on your site even if someone else built it. We will review the codebase, get familiar with it, and take it from there. If we built your site, you are already good to go.",
   },
   {
     q: "Can I switch plans after signing up?",
-    a: "Absolutely. Upgrade or downgrade anytime — changes take effect from the next billing month.",
+    a: "Absolutely. Upgrade or downgrade anytime. Changes take effect from the next billing month.",
   },
   {
     q: "What counts as a minor update?",
@@ -133,15 +133,15 @@ const faqs = [
   },
   {
     q: "What happens if I cancel?",
-    a: "You can cancel anytime with no penalty. Your website stays live as long as your domain is renewed — that's your responsibility directly with the registrar.",
+    a: "You can cancel anytime with no penalty. Your website stays live as long as your domain is renewed. Domain renewal is your responsibility directly with the registrar.",
   },
   {
     q: "How does the Studio Plus priority support work?",
-    a: "You message or call us on WhatsApp and you go to the front of the queue. No hour cap — we treat Studio Plus clients as an extension of our own team.",
+    a: "You message or call us on WhatsApp and you go to the front of the queue. No hour cap. We treat Studio Plus clients like part of our own team.",
   },
   {
     q: "Can I get a branded document or invoice drafted under Studio Plus?",
-    a: "Yes. Document support — contracts, proposals, branded invoices, cover letters — is included in Studio Plus on request.",
+    a: "Yes. Document support (contracts, proposals, branded invoices, cover letters) is included in Studio Plus on request.",
   },
 ];
 
@@ -175,7 +175,7 @@ function PlanExpander({
         aria-expanded={isOpen}
       >
         <span className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink group-hover:text-signal-teal transition-colors duration-300">
-          {plan.name} — Full Details
+          {plan.name} Full Details
         </span>
         <ChevronDown
           className={`w-5 h-5 text-ink-muted transition-transform duration-400 shrink-0 ml-4 ${
@@ -245,7 +245,7 @@ function PlanExpander({
             size="md"
           >
             <MessageCircle className="w-4 h-4" />
-            WhatsApp Us — {plan.name}
+            WhatsApp Us, {plan.name}
           </StudioButton>
         </div>
       </div>
@@ -327,8 +327,8 @@ function HeroSection() {
           </h1>
           <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
             A Tangison Studio partnership plan keeps your site maintained, your
-            brand active, and your business looking its best — every month,
-            without the overhead of an in-house team. Cancel anytime.
+            brand active, and your business looking its best. Every month,
+            no in-house team needed. Cancel anytime.
           </p>
         </motion.div>
       </div>
@@ -495,7 +495,7 @@ function AddOnSection() {
             Need something once-off?
           </h2>
           <p className="font-satoshi text-lg text-ink-muted max-w-2xl leading-relaxed mb-16">
-            These services are available to any client at any time — no
+            These services are available to any client at any time. No
             subscription required.
           </p>
         </motion.div>
@@ -533,8 +533,8 @@ function AddOnSection() {
           {...fadeUp}
           className="mt-8 font-satoshi text-sm text-ink-muted/50 leading-relaxed"
         >
-          All prices are starting points. Final quotes are tailored to your
-          brief — message us on WhatsApp to discuss.
+          All prices are starting points. Final quotes depend on your
+          brief. Message us on WhatsApp to discuss.
         </motion.p>
       </div>
     </section>

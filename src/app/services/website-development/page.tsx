@@ -3,13 +3,14 @@ import { WebsiteDevelopmentPage } from "./page-client";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Website Development — Tangison Studio",
-  description: "Engineered to perform. Clean code, fast load times, and built to scale. We develop websites that deliver on every metric.",
+  title: "Website Development",
+  description: "Engineered to perform. Clean code, fast load times, and built to scale. We develop websites that deliver on every metric that matters.",
   alternates: { canonical: "/services/website-development" },
   openGraph: {
-    title: "Website Development — Tangison Studio",
-    description: "Engineered to perform. Clean code, fast load times, and built to scale. We develop websites that deliver on every metric.",
+    title: "Website Development | TANGISON STUDIO",
+    description: "Engineered to perform. Clean code, fast load times, and built to scale. We develop websites that deliver on every metric that matters.",
     url: "/services/website-development",
+    images: [{ url: "/images/services/website-development.webp", width: 1200, height: 630, alt: "Website Development service" }],
   },
 };
 

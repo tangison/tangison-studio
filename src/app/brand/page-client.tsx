@@ -93,7 +93,7 @@ function MotionDemo() {
       </button>
       <div className="font-jetbrains text-[10px] text-ink-muted text-center">
         <p>ease: cubic-bezier(0.16, 1, 0.3, 1)</p>
-        <p>duration: 0.6s–1.2s</p>
+        <p>duration: 0.6s to 1.2s</p>
         <p>entrance: opacity 0→1, translateY 24px→0</p>
       </div>
     </div>
@@ -134,7 +134,7 @@ const brandSystemMarkdown = `# TANGISON STUDIO: Brand System v1.0
 
 ## Wordmark System
 
-**Font:** Cabinet Grotesk 800–900  
+**Font:** Cabinet Grotesk 800 to 900  
 **Structure:** TANGISON + STUDIO (inverted)  
 **STUDIO Color:** Signal Teal #2CB5B4  
 **Tracking:** -0.04em  
@@ -163,16 +163,16 @@ const brandSystemMarkdown = `# TANGISON STUDIO: Brand System v1.0
 
 ## Typography
 
-### Cabinet Grotesk: Headlines Only · 800–900
+### Cabinet Grotesk: Headlines Only · 800 to 900
 tracking: -0.04em  
 Used for headlines, section titles, and the wordmark.
 
-### Satoshi: Body Text · 300–400
+### Satoshi: Body Text · 300 to 400
 line-height: 1.6  
 Used for paragraphs, descriptions, and interface text.
 
 ### JetBrains Mono: Metadata · Labels · 400
-tracking: 0.1–0.3em · size: 9–12px · uppercase preferred  
+tracking: 0.1 to 0.3em · size: 9 to 12px · uppercase preferred  
 Used for metadata, labels, version numbers, and navigation items ONLY.
 
 ---
@@ -189,7 +189,7 @@ Used for metadata, labels, version numbers, and navigation items ONLY.
 ## Illustration Style
 
 **Name:** Analogue Namibia  
-**Reference:** 1970s–1990s documentary and travel photography. Think grainy 35mm film, faded Kodachrome and Ektachrome colour shifts, slight overexposure, natural Namibian light. The aesthetic of National Geographic field photography from that era, not staged, not cinematic, not digital.
+**Reference:** 1970s to 1990s documentary and travel photography. Think grainy 35mm film, faded Kodachrome and Ektachrome colour shifts, slight overexposure, natural Namibian light. The aesthetic of National Geographic field photography from that era, not staged, not cinematic, not digital.
 
 **Technique:** Real-feeling analogue grain, slightly desaturated warm tones, high contrast between light and shadow, minimal post-processing feel. Images must feel found, not art-directed.
 
@@ -205,7 +205,7 @@ Use only well-known, recognisable Namibian places. Permitted locations:
 
 ### Composition Rules
 - Vast empty space is intentional. The sky, the pan, the fog can take 70% of the frame
-- Maximum 2–3 focal elements per image
+- Maximum 2 to 3 focal elements per image
 - Simple, elementary compositions. If you can remove an element, remove it
 - No busy scenes, no markets, no crowds, no complex cityscapes
 - Texture is mandatory: grain, dust, atmospheric haze, aged film texture
@@ -239,7 +239,7 @@ Use only well-known, recognisable Namibian places. Permitted locations:
 ## Motion System
 
 **Easing Curve:** cubic-bezier(0.16, 1, 0.3, 1)  
-**Duration:** 0.6s–1.2s entrance, 0.4s hover/micro  
+**Duration:** 0.6s to 1.2s entrance, 0.4s hover/micro  
 **Entrance:** opacity 0→1 + translateY 24px→0, staggered by 0.1s  
 **Rules:** No bounce. No spring. Always include prefers-reduced-motion support.
 
@@ -474,7 +474,7 @@ export default function BrandPage() {
               <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Specifications</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  ["Font", "Cabinet Grotesk 800–900"],
+                  ["Font", "Cabinet Grotesk 800 to 900"],
                   ["Wordmark", "TANGISON + STUDIO (inverted)"],
                   ["STUDIO Color", "Signal Teal #2CB5B4"],
                   ["Tracking", "-0.04em"],
@@ -552,7 +552,7 @@ export default function BrandPage() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
                   <div>
                     <h3 className="font-cabinet text-2xl font-bold text-ink mb-2">Cabinet Grotesk</h3>
-                    <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.15em]">Headlines Only · 800–900</span>
+                    <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.15em]">Headlines Only · 800 to 900</span>
                   </div>
                 </div>
                 <p className="font-satoshi text-sm text-ink-muted leading-relaxed max-w-2xl mb-10">
@@ -579,7 +579,7 @@ export default function BrandPage() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-8">
                   <div>
                     <h3 className="font-cabinet text-2xl font-bold text-ink mb-2">Satoshi</h3>
-                    <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.15em]">Body Text · 300–400</span>
+                    <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.15em]">Body Text · 300 to 400</span>
                   </div>
                 </div>
                 <p className="font-satoshi text-sm text-ink-muted leading-relaxed max-w-2xl mb-10">
@@ -599,7 +599,7 @@ export default function BrandPage() {
                   </div>
                 </div>
                 <p className="font-satoshi text-sm text-skeleton-bone/60 leading-relaxed max-w-2xl mb-10">
-                  The monospace typeface. Used for metadata, labels, version numbers, and navigation items ONLY. Never dominant. tracking: 0.1–0.3em, size: 9–12px, uppercase preferred.
+                  The monospace typeface. Used for metadata, labels, version numbers, and navigation items ONLY. Never dominant. tracking: 0.1 to 0.3em, size: 9 to 12px, uppercase preferred.
                 </p>
                 <div className="space-y-4">
                   <p className="font-jetbrains text-[11px] text-skeleton-bone/80 uppercase tracking-[0.2em]">
@@ -686,12 +686,12 @@ export default function BrandPage() {
             <div className="border border-card-border bg-signal-white p-6 md:p-10 mb-8">
               <h3 className="font-cabinet text-lg font-bold text-ink mb-4">Analogue Namibia</h3>
               <p className="font-satoshi text-sm text-ink-muted leading-relaxed max-w-3xl mb-6">
-                1970s–1990s documentary and travel photography. Think grainy 35mm film, faded Kodachrome and Ektachrome colour shifts, slight overexposure, natural Namibian light. The aesthetic of National Geographic field photography from that era, not staged, not cinematic, not digital. Real-feeling analogue grain, slightly desaturated warm tones, high contrast between light and shadow. Images must feel found, not art-directed.
+                1970s to 1990s documentary and travel photography. Think grainy 35mm film, faded Kodachrome and Ektachrome colour shifts, slight overexposure, natural Namibian light. The aesthetic of National Geographic field photography from that era, not staged, not cinematic, not digital. Real-feeling analogue grain, slightly desaturated warm tones, high contrast between light and shadow. Images must feel found, not art-directed.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   ["Technique", "Analogue grain, desaturated warm tones, high contrast, found-not-directed feel"],
-                  ["Composition", "Maximum 2–3 focal elements. Sky, pan, fog can take 70% of frame. Remove anything removable."],
+                  ["Composition", "Maximum 2 to 3 focal elements. Sky, pan, fog can take 70% of frame. Remove anything removable."],
                   ["People", "Fast motion only: running, walking with purpose, turning away. Motion blur required. No faces ever visible."],
                   ["Aspect Ratio", "16:9 landscape only"],
                 ].map(([label, value]) => (
@@ -801,7 +801,7 @@ export default function BrandPage() {
 
                 <h3 className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-6">Duration Range</h3>
                 <div className="border border-card-border bg-signal-white p-6 mb-8">
-                  <p className="font-satoshi text-ink text-sm">0.6s – 1.2s for all entrance animations</p>
+                  <p className="font-satoshi text-ink text-sm">0.6s to 1.2s for all entrance animations</p>
                   <p className="font-satoshi text-ink-muted text-sm mt-2">0.4s for hover and micro-interactions</p>
                 </div>
 

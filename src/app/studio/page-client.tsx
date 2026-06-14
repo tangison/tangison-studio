@@ -77,7 +77,7 @@ export function StudioPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {[
-              { title: "Deep focus over multitasking", desc: "We work on a limited number of projects at a time. This ensures every client gets our full attention, not a fraction of our bandwidth." },
+              { title: "Deep focus over multitasking", desc: "We work on a limited number of projects at a time. Every client gets our full attention, not a fraction of our bandwidth." },
               { title: "Tools chosen with intent", desc: "We pick technology based on the problem, not the trend. Every framework, platform, and library serves a purpose we can articulate." },
               { title: "Iterate in the open", desc: "Clients see work as it develops, not just at the finish line. Early feedback saves time and prevents misalignment." },
               { title: "Ship, measure, improve", desc: "Launch is the beginning, not the end. We build for continuous improvement based on real data, not assumptions." },

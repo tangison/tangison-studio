@@ -3,13 +3,14 @@ import { WebsiteDesignPage } from "./page-client";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Website Design — Tangison Studio",
-  description: "Intentional interfaces. We design websites that communicate clearly, convert effectively, and represent your brand with precision.",
+  title: "Website Design",
+  description: "Intentional interfaces. We design websites that communicate clearly, convert effectively, and represent your brand with precision and purpose.",
   alternates: { canonical: "/services/website-design" },
   openGraph: {
-    title: "Website Design — Tangison Studio",
-    description: "Intentional interfaces. We design websites that communicate clearly, convert effectively, and represent your brand with precision.",
+    title: "Website Design | TANGISON STUDIO",
+    description: "Intentional interfaces. We design websites that communicate clearly, convert effectively, and represent your brand with precision and purpose.",
     url: "/services/website-design",
+    images: [{ url: "/images/services/website-design.webp", width: 1200, height: 630, alt: "Website Design service" }],
   },
 };
 

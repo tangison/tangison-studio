@@ -3,13 +3,14 @@ import { ContactPage } from "./page-client";
 import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Contact — Start a Project",
-  description: "Get in touch with Tangison Studio to discuss your next digital project. We respond to every message within 48 hours. Strategy, design, and engineering from Windhoek, Namibia.",
+  title: "Contact",
+  description: "Get in touch with Tangison Studio to discuss your next digital project. We respond within 48 hours. Strategy, design, and engineering from Windhoek.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact — Start a Project | TANGISON STUDIO",
-    description: "Get in touch with Tangison Studio to discuss your next digital project. We respond to every message within 48 hours. Strategy, design, and engineering from Windhoek, Namibia.",
+    title: "Contact | TANGISON STUDIO",
+    description: "Get in touch with Tangison Studio to discuss your next digital project. We respond within 48 hours. Strategy, design, and engineering from Windhoek.",
     url: "/contact",
+    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
   },
 };
 

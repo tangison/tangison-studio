@@ -27,14 +27,14 @@ const sectionFade = {
 function HeroSection({ cs }: { cs: CaseStudy }) {
   return (
     <section className="relative w-full overflow-hidden" style={{ minHeight: "480px" }}>
-      {/* Background screenshot */}
+      {/* Contextual Analogue Namibia hero image */}
       <div className="absolute inset-0">
         <Image
-          src={`/images/work/screenshots/${cs.screenshotSlug}-screenshot.webp`}
-          alt={`${cs.name} website`}
+          src={`/images/work/hero/${cs.slug}-hero.webp`}
+          alt={`${cs.name}, ${cs.industry}`}
           fill
           priority
-          className="object-cover object-top"
+          className="object-cover cinematic-image"
           sizes="100vw"
         />
       </div>

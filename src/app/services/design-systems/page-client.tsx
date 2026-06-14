@@ -25,11 +25,11 @@ const offers = [
   },
   {
     title: "Documentation",
-    description: "A design system without documentation is just a file. We produce comprehensive, searchable documentation that covers component usage, design principles, accessibility requirements, and code examples. Documentation is structured for both designers and developers, serving as the definitive reference for the system.",
+    description: "A design system without documentation is just a file. We produce thorough, searchable documentation that covers component usage, design principles, accessibility requirements, and code examples. Documentation is structured for both designers and developers, serving as the definitive reference for the system.",
   },
   {
     title: "Governance Frameworks",
-    description: "Design systems live or die by adoption and maintenance. We establish governance models that define how the system evolves: who proposes changes, how contributions are reviewed, and when new components are added. This prevents drift, ensures quality, and keeps the system relevant as the product grows.",
+    description: "Design systems live or die by adoption and maintenance. We establish governance models that define how the system evolves: who proposes changes, how contributions are reviewed, and when new components are added. This prevents drift, keeps quality high, and keeps the system relevant as the product grows.",
   },
   {
     title: "Migration Strategy",
@@ -37,7 +37,7 @@ const offers = [
   },
   {
     title: "Cross-Platform Consistency",
-    description: "When your product spans web, mobile, and other platforms, we ensure the design system translates coherently across each. Platform-specific adaptations are documented alongside shared principles, so the experience feels native on each platform while remaining unmistakably on-brand.",
+    description: "When your product spans web, mobile, and other platforms, we make sure the design system translates coherently across each. Platform-specific adaptations are documented alongside shared principles, so the experience feels native on each platform while remaining unmistakably on-brand.",
   },
 ];
 
@@ -45,12 +45,12 @@ const process = [
   {
     step: "01",
     name: "Audit & Assess",
-    description: "We begin by auditing your existing interface patterns, identifying inconsistencies, redundancies, and gaps. This inventory reveals the true scope of the system and provides the baseline against which we measure improvement. We also assess your team's workflow, tooling, and constraints to ensure the system fits how you actually work.",
+    description: "We begin by auditing your existing interface patterns, identifying inconsistencies, redundancies, and gaps. This inventory reveals the true scope of the system and provides the baseline against which we measure improvement. We also assess your team's workflow, tooling, and constraints to make sure the system fits how you actually work.",
   },
   {
     step: "02",
     name: "Architect & Tokenize",
-    description: "With the audit complete, we establish the system's architectural foundation: token taxonomy, component hierarchy, naming conventions, and composition rules. These decisions are made collaboratively with your team, ensuring the system's structure feels intuitive and sustainable for the people who will maintain it daily.",
+    description: "With the audit complete, we establish the system's architectural foundation: token taxonomy, component hierarchy, naming conventions, and composition rules. These decisions are made collaboratively with your team, so the system's structure feels intuitive and sustainable for the people who will maintain it daily.",
   },
   {
     step: "03",
@@ -60,7 +60,7 @@ const process = [
   {
     step: "04",
     name: "Adopt & Evolve",
-    description: "We support the adoption process through team training, pair implementation sessions, and review of early production usage. The system is not static. We establish contribution workflows and versioning practices that allow it to evolve. Regular audits ensure the system remains healthy, relevant, and trusted by the teams who depend on it.",
+    description: "We support the adoption process through team training, pair implementation sessions, and review of early production usage. The system is not static. We establish contribution workflows and versioning practices that allow it to evolve. Regular audits make sure the system remains healthy, relevant, and trusted by the teams who depend on it.",
   },
 ];
 
@@ -79,7 +79,7 @@ const outcomes = [
   },
   {
     title: "Sustainable Growth",
-    description: "The design system is built to grow with your product and team. New features are faster to design and build because the foundational patterns already exist. The governance framework ensures quality is maintained as the system expands, preventing the decay that turns well-intentioned design systems into abandoned style guides.",
+    description: "The design system is built to grow with your product and team. New features are faster to design and build because the foundational patterns already exist. The governance framework keeps quality high as the system expands, preventing the decay that turns well-intentioned design systems into abandoned style guides.",
   },
 ];
 

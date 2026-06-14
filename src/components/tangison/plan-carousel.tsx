@@ -17,21 +17,21 @@ const carouselPlans = [
     price: "N$500/mo",
     tagline: "Your site, watched over.",
     illustration: "/images/partnership/plan-care.webp",
-    illustrationAlt: "Care plan — Namibian landscape at dusk",
+    illustrationAlt: "Care plan, Namibian landscape at dusk",
   },
   {
     name: "Partner",
     price: "N$1,000/mo",
     tagline: "Your site, your brand, always moving.",
     illustration: "/images/partnership/plan-partner.webp",
-    illustrationAlt: "Partner plan — Namibian coastal town",
+    illustrationAlt: "Partner plan, Namibian coastal town",
   },
   {
     name: "Studio Plus",
     price: "N$2,000/mo",
     tagline: "Your studio, on call.",
     illustration: "/images/partnership/plan-studio-plus.webp",
-    illustrationAlt: "Studio Plus plan — Namibian desert at dawn",
+    illustrationAlt: "Studio Plus plan, Namibian desert at dawn",
   },
 ];
 

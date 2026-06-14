@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     title: "Resources & Guides | TANGISON STUDIO",
     description: "AI guides, frameworks, and industry-specific playbooks for organizations across Africa. Free downloads and practical resources from Tangison Studio.",
     url: "/resources",
+    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
   },
 };
 

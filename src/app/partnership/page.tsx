@@ -4,14 +4,14 @@ import { PartnershipPage } from "./page-client";
 export const metadata: Metadata = {
   title: "Partnership Plans",
   description:
-    "Keep your website live, your brand consistent, and your digital presence growing — with a Tangison Studio partnership plan. Care, Partner, or Studio Plus.",
+    "Keep your website live, your brand consistent, and your digital presence growing with a Tangison Studio partnership plan. Care, Partner, or Studio Plus.",
   alternates: {
     canonical: "/partnership",
   },
   openGraph: {
     title: "Partnership Plans | TANGISON STUDIO",
     description:
-      "Keep your website live, your brand consistent, and your digital presence growing — with a Tangison Studio partnership plan.",
+      "Keep your website live, your brand consistent, and your digital presence growing with a Tangison Studio partnership plan.",
     url: "/partnership",
     images: [
       {

@@ -17,7 +17,7 @@ const fadeUp = {
 const offers = [
   {
     title: "User Experience Design",
-    description: "We map user journeys and design interaction patterns that feel intuitive from the first click. Every screen is built around real behaviour, not assumptions, ensuring visitors find what they need without friction or confusion.",
+    description: "We map user journeys and design interaction patterns that feel intuitive from the first click. Every screen is built around real behaviour, not assumptions, so visitors find what they need without friction or confusion.",
   },
   {
     title: "Wireframing & Prototyping",
@@ -25,15 +25,15 @@ const offers = [
   },
   {
     title: "Visual Design Systems",
-    description: "We create cohesive visual languages, including typography, colour, spacing, and component styles, that scale across every page. A well-defined design system ensures consistency and gives your team the tools to extend the site without diluting the brand.",
+    description: "We create cohesive visual languages, including typography, colour, spacing, and component styles, that scale across every page. A well-defined design system keeps things consistent and gives your team the tools to extend the site without diluting the brand.",
   },
   {
     title: "Responsive Design",
-    description: "Every layout is designed for the full spectrum of devices, from narrow mobile screens to ultrawide monitors. We prioritise mobile-first thinking while ensuring the desktop experience takes full advantage of available space.",
+    description: "Every layout is designed for the full spectrum of devices, from narrow mobile screens to ultrawide monitors. We prioritise mobile-first thinking while making sure the desktop experience takes full advantage of available space.",
   },
   {
     title: "Conversion-Optimised Layouts",
-    description: "Strategic placement of calls-to-action, trust signals, and content blocks is driven by research, not guesswork. We design layouts that guide visitors toward meaningful actions, whether that is a purchase, a sign-up, or an inquiry.",
+    description: "Strategic placement of calls-to-action, trust signals, and content blocks is driven by research, not guesswork. We design layouts that guide visitors toward meaningful actions: a purchase, a sign-up, or an inquiry.",
   },
   {
     title: "Landing Page Design",
@@ -50,7 +50,7 @@ const process = [
   {
     step: "02",
     name: "Structure & Flow",
-    description: "With the brief as our foundation, we architect the site's information hierarchy, page structure, and navigation. Wireframes map the user's path through content, ensuring the right information appears at the right moment. We prototype key flows to validate the structure before visual design begins.",
+    description: "With the brief as our foundation, we architect the site's information hierarchy, page structure, and navigation. Wireframes map the user's path through content, so the right information appears at the right moment. We prototype key flows to validate the structure before visual design begins.",
   },
   {
     step: "03",
@@ -60,14 +60,14 @@ const process = [
   {
     step: "04",
     name: "Deliver & Support",
-    description: "Final designs are packaged into a comprehensive handoff: annotated screens, responsive specifications, and a living design system document. We remain available during development to answer questions, review builds, and ensure the finished site matches the design intent pixel-for-pixel.",
+    description: "Final designs are packaged into a thorough handoff: annotated screens, responsive specifications, and a living design system document. We remain available during development to answer questions, review builds, and make sure the finished site matches the design intent pixel-for-pixel.",
   },
 ];
 
 const outcomes = [
   {
     title: "A Website That Works for Your Business",
-    description: "Not just a digital brochure. It is a purposeful tool designed around measurable objectives. Every element serves a function, from the first scroll to the final call-to-action, ensuring your website actively contributes to growth rather than passively existing online.",
+    description: "Not just a digital brochure. It is a purposeful tool designed around measurable objectives. Every element serves a function, from the first scroll to the final call-to-action, so your website actively contributes to growth rather than passively existing online.",
   },
   {
     title: "Consistent Brand Expression",
@@ -79,7 +79,7 @@ const outcomes = [
   },
   {
     title: "Clear Developer Handoff",
-    description: "Detailed specifications, responsive behaviour documentation, and a living style guide ensure your development team can build exactly what was designed. Misinterpretation between design and code is eliminated, reducing revision cycles and speeding up delivery.",
+    description: "Detailed specifications, responsive behaviour documentation, and a living style guide give your development team what they need to build exactly what was designed. Misinterpretation between design and code is eliminated, reducing revision cycles and speeding up delivery.",
   },
 ];
 

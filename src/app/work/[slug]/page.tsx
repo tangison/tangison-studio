@@ -28,21 +28,21 @@ const titleMap: Record<string, string> = {
 
 const descriptionMap: Record<string, string> = {
   proavia:
-    "Tangison built ProAvia's travel website — a Namibian tour operator site built around trust signals, real photography, and WhatsApp conversion.",
+    "Tangison built ProAvia's travel website, a Namibian tour operator site built around trust signals, real photography, and WhatsApp conversion.",
   nalago:
-    "Tangison built Nalago Skincare's e-commerce site — an organic skincare brand powered by Kalahari ingredient stories and confident pricing.",
+    "Tangison built Nalago Skincare's e-commerce site, an organic skincare brand powered by Kalahari ingredient stories and confident pricing.",
   clusterleaf:
-    "Tangison built Cluster Leaf Safaris' website — a premium safari operator site built on photography, pricing transparency, and owner-operated trust.",
+    "Tangison built Cluster Leaf Safaris' website, a premium safari operator site built on photography, pricing transparency, and owner-operated trust.",
   smefrog:
-    "Tangison built SMEFrog's LegalTech platform — a Namibian business registration site built around 2X cheaper pricing and WhatsApp conversion.",
+    "Tangison built SMEFrog's LegalTech platform, a Namibian business registration site built around 2X cheaper pricing and WhatsApp conversion.",
   petrocor:
-    "Tangison built Petrocor's B2B energy site — a corporate platform designed for procurement decision-makers with a single Get Quote CTA.",
+    "Tangison built Petrocor's B2B energy site, a corporate platform designed for procurement decision-makers with a single Get Quote CTA.",
   "tangison-systems":
-    "Tangison built its own company site — sovereign intelligence infrastructure positioned with precision from Windhoek, Namibia.",
+    "Tangison built its own company site as sovereign intelligence infrastructure, positioned with precision from Windhoek, Namibia for the African market.",
   crescendo:
-    "Tangison built Crescendo Namibia's music site — a 16-year Windhoek institution with Shop and Academy as equal pillars.",
+    "Tangison built Crescendo Namibia's music platform, a 16-year Windhoek institution with Shop and Academy as equal pillars for music education.",
   feorm:
-    "Tangison built Feorm — a farm stay discovery platform for Namibia, from brand identity to Python backend, as an internal product.",
+    "Tangison built Feorm, a farm stay discovery platform for Namibia, from brand identity to Python backend, as an internal product.",
 };
 
 export function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -60,7 +60,7 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
       description,
       alternates: { canonical },
       openGraph: {
-        title,
+        title: `${title} | TANGISON STUDIO`,
         description,
         url: canonical,
         siteName: "Tangison Studio",
@@ -69,7 +69,7 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
       },
       twitter: {
         card: "summary_large_image",
-        title,
+        title: `${title} | TANGISON STUDIO`,
         description,
         images: [ogImage],
       },

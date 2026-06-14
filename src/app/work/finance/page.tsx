@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import { IndustryComingSoonPage } from "../industry-template";
 
 export const metadata: Metadata = {
-  title: "Financial Services — Work — Tangison Studio",
+  title: "Financial Services",
   description: "Secure fintech dashboards, banking portals, and micro-lending platforms engineered for compliance and accessibility. Case studies coming soon.",
   alternates: { canonical: "/work/finance" },
+  openGraph: {
+    title: "Financial Services | TANGISON STUDIO",
+    description: "Secure fintech dashboards, banking portals, and micro-lending platforms engineered for compliance and accessibility. Case studies coming soon.",
+    url: "/work/finance",
+    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
+  },
 };
 
 export default function Page() {

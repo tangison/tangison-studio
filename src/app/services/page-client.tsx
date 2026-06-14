@@ -127,7 +127,7 @@ export function ServicesPage() {
                         className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-signal-teal hover:text-signal-teal-light transition-colors duration-300 inline-flex items-center gap-2 group/cs"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        See an example — {service.caseStudy.name}
+                        See an example: {service.caseStudy.name}
                         <span className="inline-block w-0 group-hover/cs:w-3 h-[1px] bg-signal-teal transition-all duration-300" />
                       </Link>
                     </div>

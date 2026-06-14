@@ -64,7 +64,7 @@ export function Logo({
   );
 
   return (
-    <Link href={href} aria-label="Tangison Studio — Home" className="inline-block">
+    <Link href={href} aria-label="Tangison Studio, Home" className="inline-block">
       {img}
     </Link>
   );

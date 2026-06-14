@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import { IndustryComingSoonPage } from "../industry-template";
 
 export const metadata: Metadata = {
-  title: "Education & EdTech — Work — Tangison Studio",
+  title: "Education & EdTech",
   description: "Learning management systems, AI education platforms, and academic portals designed for accessibility. Case studies coming soon.",
   alternates: { canonical: "/work/education" },
+  openGraph: {
+    title: "Education & EdTech | TANGISON STUDIO",
+    description: "Learning management systems, AI education platforms, and academic portals designed for accessibility. Case studies coming soon.",
+    url: "/work/education",
+    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
+  },
 };
 
 export default function Page() {

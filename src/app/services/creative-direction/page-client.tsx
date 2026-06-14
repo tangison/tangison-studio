@@ -21,7 +21,7 @@ const offers = [
   },
   {
     title: "Art Direction",
-    description: "From photography and illustration to motion and spatial design, we direct the visual execution of every element within a project. Art direction ensures that every image, layout, and interaction aligns with the overarching creative vision, creating a cohesive experience rather than a collection of disconnected assets.",
+    description: "From photography and illustration to motion and spatial design, we direct the visual execution of every element within a project. Art direction makes sure that every image, layout, and interaction aligns with the overarching creative vision, creating a cohesive experience rather than a collection of disconnected assets.",
   },
   {
     title: "Visual Storytelling",
@@ -29,7 +29,7 @@ const offers = [
   },
   {
     title: "Cross-Channel Consistency",
-    description: "When a message needs to live across digital, print, environmental, and social channels, we ensure the creative execution is adapted, not diluted, for each medium. We direct how the core concept translates to different formats, sizes, and contexts while maintaining the integrity and impact of the original idea.",
+    description: "When a message needs to live across digital, print, environmental, and social channels, we make sure the creative execution is adapted, not diluted, for each medium. We direct how the core concept translates to different formats, sizes, and contexts while maintaining the integrity and impact of the original idea.",
   },
   {
     title: "Creative Workshop Facilitation",
@@ -37,7 +37,7 @@ const offers = [
   },
   {
     title: "Vendor & Production Direction",
-    description: "When projects involve external producers, photographers, printers, fabricators, or developers, we act as the creative authority, reviewing deliverables against the brief and ensuring quality is maintained. This oversight prevents the degradation that often occurs when creative vision passes through multiple hands.",
+    description: "When projects involve external producers, photographers, printers, fabricators, or developers, we act as the creative authority, reviewing deliverables against the brief and making sure quality is maintained. This oversight prevents the degradation that often occurs when creative vision passes through multiple hands.",
   },
 ];
 
@@ -55,12 +55,12 @@ const process = [
   {
     step: "03",
     name: "Direct & Produce",
-    description: "We oversee the production of every creative element. This includes directing photographers, guiding illustrators, reviewing layouts, and approving production details. This hands-on direction ensures the final output matches the creative vision with precision. We do not hand off and disappear; we stay involved until every piece is right.",
+    description: "We oversee the production of every creative element. This includes directing photographers, guiding illustrators, reviewing layouts, and approving production details. This hands-on direction makes sure the final output matches the creative vision with precision. We do not hand off and disappear; we stay involved until every piece is right.",
   },
   {
     step: "04",
     name: "Review & Refine",
-    description: "After launch, we review performance against the brief's success criteria. What worked? What missed the mark? These insights inform future creative decisions and ensure that each project builds on the last. Creative direction is an ongoing relationship with your brand, not a one-time deliverable.",
+    description: "After launch, we review performance against the brief's success criteria. What worked? What missed the mark? These insights inform future creative decisions and make sure that each project builds on the last. Creative direction is an ongoing relationship with your brand, not a one-time deliverable.",
   },
 ];
 

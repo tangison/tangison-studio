@@ -21,11 +21,11 @@ const offers = [
   },
   {
     title: "Colour & Type Systems",
-    description: "Colour palettes and typographic hierarchies are the backbone of visual identity. We define systems that are flexible enough for diverse applications yet constrained enough to maintain coherence. Every colour and type choice is documented with usage rules, ensuring consistency across every medium and maker.",
+    description: "Colour palettes and typographic hierarchies are the backbone of visual identity. We define systems that are flexible enough for diverse applications yet constrained enough to maintain coherence. Every colour and type choice is documented with usage rules, so consistency holds across every medium and maker.",
   },
   {
     title: "Brand Guidelines",
-    description: "We produce comprehensive brand guidelines that codify the visual system into clear, usable rules. Spacing, sizing, placement, colour combinations, and misuse examples are all included. The guidelines serve as the single source of truth for anyone producing brand materials: internal teams, agencies, and partners alike.",
+    description: "We produce thorough brand guidelines that codify the visual system into clear, usable rules. Spacing, sizing, placement, colour combinations, and misuse examples are all included. The guidelines serve as the single source of truth for anyone producing brand materials: internal teams, agencies, and partners alike.",
   },
   {
     title: "Asset Libraries",
@@ -33,7 +33,7 @@ const offers = [
   },
   {
     title: "Verbal Identity",
-    description: "Brand is more than visual. We define the tone of voice, messaging framework, and key vocabulary that give your brand a distinct verbal character. This ensures that written communications, from website copy to social media posts, are as consistent and intentional as the visual identity.",
+    description: "Brand is more than visual. We define the tone of voice, messaging framework, and key vocabulary that give your brand a distinct verbal character. This makes sure that written communications, from website copy to social media posts, are as consistent and intentional as the visual identity.",
   },
   {
     title: "Brand Audit & Evolution",
@@ -55,12 +55,12 @@ const process = [
   {
     step: "03",
     name: "Systematise & Document",
-    description: "The chosen direction is expanded into a complete system. Every element, including logo, colour, type, pattern, and iconography, is designed, tested across applications, and codified into rules. Brand guidelines are produced with precise specifications, usage examples, and misuse boundaries, ensuring the system can be applied consistently by anyone.",
+    description: "The chosen direction is expanded into a complete system. Every element, including logo, colour, type, pattern, and iconography, is designed, tested across applications, and codified into rules. Brand guidelines are produced with precise specifications, usage examples, and misuse boundaries, so the system can be applied consistently by anyone.",
   },
   {
     step: "04",
     name: "Deliver & Activate",
-    description: "We deliver the full asset library, guidelines document, and implementation templates. But delivery is not the end. We support the rollout, review early applications, and train your team on the system. This ensures the brand launches correctly and maintains integrity as it enters the real world.",
+    description: "We deliver the full asset library, guidelines document, and implementation templates. But delivery is not the end. We support the rollout, review early applications, and train your team on the system. This makes sure the brand launches correctly and maintains integrity as it enters the real world.",
   },
 ];
 
@@ -75,7 +75,7 @@ const outcomes = [
   },
   {
     title: "Independence from External Agencies",
-    description: "Comprehensive guidelines and ready-to-use assets mean your internal team can produce on-brand materials without depending on an agency for every deliverable. The system gives your team control, not dependency. It saves time, reduces cost, and accelerates output.",
+    description: "Thorough guidelines and ready-to-use assets mean your internal team can produce on-brand materials without depending on an agency for every deliverable. The system gives your team control, not dependency. It saves time, reduces cost, and accelerates output.",
   },
   {
     title: "A System Built to Scale",

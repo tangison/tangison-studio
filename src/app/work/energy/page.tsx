@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import { IndustryComingSoonPage } from "../industry-template";
 
 export const metadata: Metadata = {
-  title: "Energy & Utilities — Work — Tangison Studio",
-  description: "Renewable energy dashboards, utility customer portals, and infrastructure monitoring interfaces. Case studies coming soon.",
+  title: "Energy & Utilities",
+  description: "Renewable energy dashboards, utility customer portals, and infrastructure monitoring interfaces for the energy sector. Case studies coming soon.",
   alternates: { canonical: "/work/energy" },
+  openGraph: {
+    title: "Energy & Utilities | TANGISON STUDIO",
+    description: "Renewable energy dashboards, utility customer portals, and infrastructure monitoring interfaces for the energy sector. Case studies coming soon.",
+    url: "/work/energy",
+    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
+  },
 };
 
 export default function Page() {

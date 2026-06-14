@@ -3,13 +3,14 @@ import { BrandSystemsPage } from "./page-client";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Brand Systems — Tangison Studio",
+  title: "Brand Systems",
   description: "Cohesive visual identity. Marks, wordmarks, palettes, and guidelines that scale. We build brand systems that work everywhere, consistently.",
   alternates: { canonical: "/services/brand-systems" },
   openGraph: {
-    title: "Brand Systems — Tangison Studio",
+    title: "Brand Systems | TANGISON STUDIO",
     description: "Cohesive visual identity. Marks, wordmarks, palettes, and guidelines that scale. We build brand systems that work everywhere, consistently.",
     url: "/services/brand-systems",
+    images: [{ url: "/images/services/brand-systems.webp", width: 1200, height: 630, alt: "Brand Systems service" }],
   },
 };
 

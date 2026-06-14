@@ -29,7 +29,7 @@ const offers = [
   },
   {
     title: "SEO Implementation",
-    description: "Technical SEO is embedded in our development process, not bolted on at the end. We implement structured data, canonical URLs, meta tag management, sitemap generation, and proper heading hierarchies to ensure search engines can crawl and index your site effectively.",
+    description: "Technical SEO is embedded in our development process, not bolted on at the end. We implement structured data, canonical URLs, meta tag management, sitemap generation, and proper heading hierarchies so search engines can crawl and index your site effectively.",
   },
   {
     title: "API & Third-Party Integration",
@@ -50,7 +50,7 @@ const process = [
   {
     step: "02",
     name: "Build & Iterate",
-    description: "Development proceeds in focused sprints, building the site component by component and page by page. We ship regularly to a staging environment so you can review progress in context, provide feedback early, and ensure the build stays aligned with the design intent.",
+    description: "Development proceeds in focused sprints, building the site component by component and page by page. We ship regularly to a staging environment so you can review progress in context, provide feedback early, and keep the build aligned with the design intent.",
   },
   {
     step: "03",
@@ -60,7 +60,7 @@ const process = [
   {
     step: "04",
     name: "Launch & Monitor",
-    description: "Deployment is automated and repeatable. We launch with monitoring in place, including uptime checks, performance tracking, and error logging, so any issue is caught immediately. Post-launch, we provide a support window to address any adjustments and ensure the site performs reliably under real traffic.",
+    description: "Deployment is automated and repeatable. We launch with monitoring in place, including uptime checks, performance tracking, and error logging, so any issue is caught immediately. Post-launch, we provide a support window to address any adjustments and keep the site performing reliably under real traffic.",
   },
 ];
 

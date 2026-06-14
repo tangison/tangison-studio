@@ -3,13 +3,14 @@ import { ProductDesignPage } from "./page-client";
 import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Product Design — Tangison Studio",
+  title: "Product Design",
   description: "End-to-end product thinking. From concept to launch and beyond, we design products that solve real problems and create lasting value.",
   alternates: { canonical: "/services/product-design" },
   openGraph: {
-    title: "Product Design — Tangison Studio",
+    title: "Product Design | TANGISON STUDIO",
     description: "End-to-end product thinking. From concept to launch and beyond, we design products that solve real problems and create lasting value.",
     url: "/services/product-design",
+    images: [{ url: "/images/services/product-design.webp", width: 1200, height: 630, alt: "Product Design service" }],
   },
 };
 

@@ -17,23 +17,23 @@ const fadeUp = {
 const offers = [
   {
     title: "Information Architecture",
-    description: "Complex applications demand rigorous structure. We organise features, data, and workflows into logical hierarchies that users can navigate without thinking. Good architecture reduces cognitive load and ensures that even feature-rich applications feel straightforward and approachable from the very first session.",
+    description: "Complex applications demand rigorous structure. We organise features, data, and workflows into logical hierarchies that users can navigate without thinking. Good architecture reduces cognitive load and makes even feature-rich applications feel straightforward and approachable from the very first session.",
   },
   {
     title: "Interaction Design",
-    description: "We design how users interact with your application. Every click, drag, hover, and keyboard shortcut is considered and intentional. Interaction patterns are consistent, discoverable, and forgiving, ensuring that users can accomplish tasks efficiently without encountering frustrating dead ends or confusing states.",
+    description: "We design how users interact with your application. Every click, drag, hover, and keyboard shortcut is considered and intentional. Interaction patterns are consistent, discoverable, and forgiving, so users can accomplish tasks efficiently without encountering frustrating dead ends or confusing states.",
   },
   {
     title: "User Flow Mapping",
-    description: "Before screens are designed, we map the complete user journey through the application. Every entry point, decision node, and exit condition is documented and validated. This ensures no path is left unconsidered and that users always know where they are, where they came from, and where they need to go next.",
+    description: "Before screens are designed, we map the complete user journey through the application. Every entry point, decision node, and exit condition is documented and validated. This way no path is left unconsidered and users always know where they are, where they came from, and where they need to go next.",
   },
   {
     title: "Interface Design",
-    description: "We design interfaces that balance density with clarity. Dashboards, forms, data tables, and configuration panels are crafted to present the right information at the right time, with visual hierarchy that guides the eye and reduces the time it takes to complete any given task.",
+    description: "We design interfaces that balance density with clarity. Dashboards, forms, data tables, and configuration panels are built to present the right information at the right time, with visual hierarchy that guides the eye and reduces the time it takes to complete any given task.",
   },
   {
     title: "Usability Testing",
-    description: "Design decisions are validated with real users, not assumptions. We conduct moderated usability sessions to test key workflows, identify friction points, and measure task completion rates. Findings directly inform design refinements, ensuring the application works for the people who will actually use it.",
+    description: "Design decisions are validated with real users, not assumptions. We conduct moderated usability sessions to test key workflows, identify friction points, and measure task completion rates. Findings directly inform design refinements, so the application works for the people who will actually use it.",
   },
   {
     title: "Accessibility Compliance",
@@ -50,7 +50,7 @@ const process = [
   {
     step: "02",
     name: "Architect & Map",
-    description: "With research insights in hand, we define the application's structural foundation. Information architecture, navigation model, and core user flows are mapped and validated with stakeholders. This phase ensures the application's skeleton is sound before visual and interaction design layers are applied.",
+    description: "With research insights in hand, we define the application's structural foundation. Information architecture, navigation model, and core user flows are mapped and validated with stakeholders. This phase locks in a sound skeleton before visual and interaction design layers are applied.",
   },
   {
     step: "03",
@@ -60,21 +60,21 @@ const process = [
   {
     step: "04",
     name: "Document & Deliver",
-    description: "Final designs are documented with comprehensive specifications: component behaviour, interaction details, responsive rules, and accessibility requirements. We deliver a design system that bridges design and development effectively, and remain available during implementation to ensure fidelity.",
+    description: "Final designs are documented with full specifications: component behaviour, interaction details, responsive rules, and accessibility requirements. We deliver a design system that bridges design and development effectively, and remain available during implementation to make sure everything stays true to the design.",
   },
 ];
 
 const outcomes = [
   {
     title: "An Application Users Actually Understand",
-    description: "Complexity is tamed without being removed. Users can navigate, discover, and accomplish tasks without a manual. The interface meets them where they are, whether they are first-time explorers or power users, reducing support burden and increasing adoption across your user base.",
+    description: "Complexity is tamed without being removed. Users can navigate, discover, and accomplish tasks without a manual. The interface meets them where they are, from first-time explorers to power users, reducing support burden and increasing adoption across your user base.",
   },
   {
     title: "Validated Design Decisions",
     description: "Every major design decision is backed by user research or testing data, not opinion. This means fewer debates during development, fewer redesigns after launch, and a product that is more likely to succeed because it was built on evidence rather than assumptions about what users want.",
   },
   {
-    title: "Comprehensive Design Documentation",
+    title: "Full Design Documentation",
     description: "Your development team receives detailed specifications that eliminate ambiguity. Component states, interaction rules, responsive behaviour, and accessibility requirements are all documented, reducing the gap between design intent and built product and accelerating the implementation timeline.",
   },
   {
@@ -108,7 +108,7 @@ export function ApplicationDesignPage() {
       <PageHeader
         label="APPLICATION DESIGN"
         title="Complex Systems, Clear UX"
-        subtitle="We design applications that make complicated things easy to use. Whether it is a data-heavy dashboard, a multi-step workflow, or an enterprise platform, we turn dense functionality into something people can use without thinking."
+        subtitle="We design applications that make complicated things easy to use. Data-heavy dashboards, multi-step workflows, enterprise platforms: we turn dense functionality into something people can use without thinking."
         backHref="/services"
         backLabel="Services"
       />

@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import { IndustryComingSoonPage } from "../industry-template";
 
 export const metadata: Metadata = {
-  title: "Mining & Resources — Work — Tangison Studio",
+  title: "Mining & Resources",
   description: "Corporate digital platforms for Namibia's mining sector. Safety portals, stakeholder dashboards, and compliance-grade interfaces. Case studies coming soon.",
   alternates: { canonical: "/work/mining" },
+  openGraph: {
+    title: "Mining & Resources | TANGISON STUDIO",
+    description: "Corporate digital platforms for Namibia's mining sector. Safety portals, stakeholder dashboards, and compliance-grade interfaces. Case studies coming soon.",
+    url: "/work/mining",
+    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
+  },
 };
 
 export default function Page() {
