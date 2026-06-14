@@ -21,7 +21,7 @@ const offers = [
   },
   {
     title: "CMS Integration",
-    description: "Whether you need a headless CMS for editorial flexibility or a traditional platform for team-managed content, we integrate systems that let your team update the site independently. We configure content models, templates, and workflows that match how your organisation actually works.",
+    description: "Need a headless CMS for editorial flexibility or a traditional platform for team-managed content? We integrate systems that let your team update the site independently. We configure content models, templates, and workflows that match how your organisation actually works.",
   },
   {
     title: "Performance Optimization",
@@ -33,7 +33,7 @@ const offers = [
   },
   {
     title: "API & Third-Party Integration",
-    description: "Modern websites rarely stand alone. We integrate payment gateways, CRM systems, marketing platforms, analytics tools, and custom APIs. This connects your website to the tools your business depends on, with robust error handling and graceful fallbacks.",
+    description: "Modern websites rarely stand alone. We integrate payment gateways, CRM systems, marketing platforms, analytics tools, and custom APIs. This connects your website to the tools your business depends on, with reliable error handling and graceful fallbacks.",
   },
   {
     title: "Hosting & Deployment",
@@ -263,7 +263,7 @@ export function WebsiteDevelopmentPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedServices.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                <div className="border border-card-border bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
+                <div className="border border-card-border bg-signal-white p-8 hover:border-card-border transition-colors duration-500">
                   <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-2 group-hover:text-signal-teal transition-colors duration-300">
                     {service.title} →
                   </h3>

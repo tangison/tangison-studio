@@ -260,7 +260,7 @@ function DesktopDropdown({
                         className={`flex items-center justify-between px-5 py-3 transition-all duration-200 ${
                           isChildActive
                             ? "text-ink bg-signal-teal-muted"
-                            : "text-ink-muted hover:text-ink hover:bg-black/[0.04]"
+                            : "text-ink-muted hover:text-ink hover:bg-card-surface"
                         }`}
                         role="menuitem"
                         onClick={() => setIsOpen(false)}
@@ -408,7 +408,7 @@ function SearchOverlay({
                 className="flex-1 bg-transparent font-jetbrains text-sm text-ink placeholder:text-ink-muted/40 focus:outline-none"
                 aria-label="Search"
               />
-              <kbd className="font-jetbrains text-[9px] text-ink-muted/40 border border-black/[0.1] px-1.5 py-0.5 ml-3">
+              <kbd className="font-jetbrains text-[9px] text-ink-muted/40 border border-card-border px-1.5 py-0.5 ml-3">
                 ESC
               </kbd>
             </div>
@@ -432,7 +432,7 @@ function SearchOverlay({
                         className={`flex items-center justify-between px-3 py-2.5 transition-colors duration-150 ${
                           flatIndex === selectedIndex
                             ? "bg-signal-teal-muted text-ink"
-                            : "text-ink-muted hover:text-ink hover:bg-black/[0.03]"
+                            : "text-ink-muted hover:text-ink hover:bg-card-surface"
                         }`}
                       >
                         <div>
@@ -462,16 +462,16 @@ function SearchOverlay({
 
             <div className="px-5 py-2.5 border-t border-black/[0.04] flex items-center gap-4">
               <span className="font-jetbrains text-[9px] text-ink-muted/30">
-                <kbd className="border border-black/[0.1] px-1 py-0.5 mr-0.5">↑</kbd>
-                <kbd className="border border-black/[0.1] px-1 py-0.5 mr-1">↓</kbd>
+                <kbd className="border border-card-border px-1 py-0.5 mr-0.5">↑</kbd>
+                <kbd className="border border-card-border px-1 py-0.5 mr-1">↓</kbd>
                 Navigate
               </span>
               <span className="font-jetbrains text-[9px] text-ink-muted/30">
-                <kbd className="border border-black/[0.1] px-1 py-0.5 mr-1">↵</kbd>
+                <kbd className="border border-card-border px-1 py-0.5 mr-1">↵</kbd>
                 Open
               </span>
               <span className="font-jetbrains text-[9px] text-ink-muted/30">
-                <kbd className="border border-black/[0.1] px-1 py-0.5 mr-1">esc</kbd>
+                <kbd className="border border-card-border px-1 py-0.5 mr-1">esc</kbd>
                 Close
               </span>
             </div>
@@ -794,12 +794,12 @@ export function Navigation() {
               initial="hidden"
               animate="visible"
               onClick={() => setIsSearchOpen(true)}
-              className="flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-ink transition-colors duration-300 py-1.5 px-2.5 border border-black/[0.1] hover:border-black/[0.2]"
+              className="flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-ink transition-colors duration-300 py-1.5 px-2.5 border border-card-border hover:border-black/[0.2]"
               aria-label="Open search (Cmd+K)"
             >
               <Search className="w-3.5 h-3.5" />
               <span className="hidden xl:inline">Search</span>
-              <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted/40 border border-black/[0.1] px-1 py-0.5 ml-1">
+              <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted/40 border border-card-border px-1 py-0.5 ml-1">
                 ⌘K
               </kbd>
             </motion.button>
@@ -913,7 +913,7 @@ export function Navigation() {
                   href="https://tangison.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-fog-gray/40 hover:text-skeleton-bone/70 transition-colors duration-300"
+                  className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-fog-gray/70 hover:text-skeleton-bone/70 transition-colors duration-300"
                 >
                   Labs ↗
                 </a>

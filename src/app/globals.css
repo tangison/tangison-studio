@@ -290,28 +290,40 @@ html {
 }
 
 /* ── Border radius system ────────────────────────────────────── */
-/* Studio design language v2.0: Subtle rounding */
-/* Primary: 6px default. Buttons/CTAs: 8px. Pills: inline 999px. */
-/* See brand rules: "Max 4px radius" was the v1 spec; v2 updated to 6px */
+/* Studio design language v3.0: Sharp by default               */
+/* Only buttons, inputs, and nav get rounding.                  */
+/* Sections, rows, columns, cards, images: SHARP (0px).        */
 
 *,
 *::before,
 *::after {
-  border-radius: 6px !important;
+  border-radius: 0 !important;
 }
 
-/* Buttons and CTA links — slightly more rounded */
+/* Buttons, CTA links, and form inputs get rounding */
 button,
-a.inline-flex:not(.pill-button) {
+a.inline-flex:not(.pill-button),
+input,
+textarea,
+select {
   border-radius: 8px !important;
 }
 
-/* Restore full border-radius for pill-shaped elements */
+/* Pill-shaped elements get full rounding */
+.pill-button,
+.pill-tag {
+  border-radius: 999px !important;
+}
+
+/* Navigation uses its own inline styles, revert to allow them */
 nav[role="navigation"],
-nav[role="navigation"] *,
+nav[role="navigation"] * {
+  border-radius: revert !important;
+}
+
+/* Hero search bar uses inline pill styling */
 .hero-search-bar,
-.hero-search-bar *,
-.pill-button {
+.hero-search-bar * {
   border-radius: revert !important;
 }
 

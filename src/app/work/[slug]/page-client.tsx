@@ -50,10 +50,10 @@ function HeroSection({ cs }: { cs: CaseStudy }) {
         >
           {/* Metadata pills */}
           <div className="flex flex-wrap gap-3 mb-6">
-            <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-white/60 bg-white/10 px-3 py-1.5">
+            <span className="pill-tag font-jetbrains text-[10px] uppercase tracking-[0.2em] text-white/60 bg-white/10 px-3 py-1.5">
               {cs.industry}
             </span>
-            <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-white/60 bg-white/10 px-3 py-1.5">
+            <span className="pill-tag font-jetbrains text-[10px] uppercase tracking-[0.2em] text-white/60 bg-white/10 px-3 py-1.5">
               {cs.year}
             </span>
           </div>
@@ -278,8 +278,7 @@ function TechStackSection({ cs }: { cs: CaseStudy }) {
             {cs.tech.map((t) => (
               <span
                 key={t}
-                className="font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted bg-skeleton-bone px-4 py-2"
-                style={{ borderRadius: "999px" }}
+                className="pill-tag font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted bg-skeleton-bone px-4 py-2"
               >
                 {t}
               </span>
@@ -459,10 +458,8 @@ export function CaseStudyPage({ caseStudy }: { caseStudy: CaseStudy }) {
       <HeroSection cs={cs} />
       <OverviewBar cs={cs} />
       <ChallengeSection cs={cs} />
-      <ScrollableViewer cs={cs} />
       <ApproachSection cs={cs} />
       <TechStackSection cs={cs} />
-      <GallerySection cs={cs} />
       <OutcomeSection cs={cs} />
       <NextProjectCta cs={cs} />
     </SiteShell>

@@ -19,7 +19,7 @@ export default function Page() {
     <>
       <ServiceJsonLd
         name="Creative Direction"
-        description="Strategic creative vision. End-to-end creative leadership that aligns aesthetics with business objectives."
+        description="Strategic creative vision. Complete creative leadership that aligns aesthetics with business objectives."
         slug="creative-direction"
       />
       <BreadcrumbJsonLd

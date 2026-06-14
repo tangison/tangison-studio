@@ -92,7 +92,7 @@ export function StudioPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-1.5 h-1.5 bg-signal-teal" aria-hidden="true" />
-                  <span className="font-jetbrains text-[10px] text-skeleton-bone/40 uppercase tracking-[0.2em]">
+                  <span className="font-jetbrains text-[10px] text-skeleton-bone/70 uppercase tracking-[0.2em]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>

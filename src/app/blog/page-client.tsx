@@ -109,7 +109,7 @@ export function BlogPage() {
               >
                 <Link
                   href={card.href}
-                  className="group block border border-card-border bg-signal-white p-8 md:p-10 h-full hover:border-black/[0.1] transition-all duration-500"
+                  className="group block border border-card-border bg-signal-white p-8 md:p-10 h-full hover:border-card-border transition-all duration-500"
                 >
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-12 h-12 border border-card-border flex items-center justify-center group-hover:border-signal-teal/30 transition-colors duration-500">
@@ -187,7 +187,7 @@ export function BlogPage() {
               >
                 <Link
                   href="/insights/resources"
-                  className="group block border border-card-border bg-signal-white p-6 md:p-8 h-full hover:border-black/[0.1] transition-all duration-500"
+                  className="group block border border-card-border bg-signal-white p-6 md:p-8 h-full hover:border-card-border transition-all duration-500"
                 >
                   <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-signal-teal mb-4 block">
                     {resource.category}

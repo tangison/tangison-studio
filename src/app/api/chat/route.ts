@@ -55,7 +55,7 @@ PROCESS
 05. Launch: Deploy, monitor, iterate. We don't disappear after launch day.
 
 WHY TANGISON
-- Designing from Windhoek for global impact. Fresh perspective, world-class standards.
+- Designing from Windhoek for global impact. Fresh perspective, high standards.
 - Studio approach: strategy first, design second, build third. Always in that order.
 - Working studio: our process is visible. No black boxes.
 - No templates. No shortcuts. Every project is built from the ground up.

@@ -21,7 +21,7 @@ const plans = [
     recommended: false,
     supportHours: "2 hrs/month",
     illustration: "/images/partnership/plan-care.webp",
-    illustrationAlt: "Sparse Namibian landscape at dusk, Care plan",
+    illustrationAlt: "Skeleton Coast fog with lone acacia, analogue film",
     includes: [
       "Monthly site check & uptime monitoring",
       "Up to 2 minor text or image updates per month",
@@ -45,7 +45,7 @@ const plans = [
     recommended: true,
     supportHours: "10 hrs/month",
     illustration: "/images/partnership/plan-partner.webp",
-    illustrationAlt: "Namibian coastal town at golden hour, Partner plan",
+    illustrationAlt: "Luderitz harbour and colonial architecture, analogue film",
     includes: [
       "Everything in Care",
       "Unlimited minor site updates",
@@ -70,7 +70,7 @@ const plans = [
     recommended: false,
     supportHours: "Priority, no cap",
     illustration: "/images/partnership/plan-studio-plus.webp",
-    illustrationAlt: "Panoramic Namibian desert at dawn, Studio Plus plan",
+    illustrationAlt: "Sossusvlei red dunes with figure at summit, analogue film",
     includes: [
       "Everything in Partner",
       "Full social media management (Facebook & Instagram)",

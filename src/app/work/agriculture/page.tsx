@@ -17,7 +17,7 @@ export default function Page() {
   return (
     <IndustryComingSoonPage
       industry="Agriculture & Agro-processing"
-      description="Agriculture is the lifeblood of Namibia's rural economy, and digital tools can unlock enormous value for farmers, cooperatives, and value-chain operators. We design marketplace platforms for produce and equipment, cooperative management tools, and agri-tech interfaces that work in the field, literally. Our designs account for intermittent connectivity, mobile-first usage patterns, and the practical realities of agricultural work."
+      description="Agriculture is the lifeblood of Namibia's rural economy, and digital tools can deliver enormous value for farmers, cooperatives, and value-chain operators. We design marketplace platforms for produce and equipment, cooperative management tools, and agri-tech interfaces that work in the field, literally. Our designs account for intermittent connectivity, mobile-first usage patterns, and the practical realities of agricultural work."
       services={[
         "Agricultural marketplace and e-commerce platforms",
         "Cooperative management and member portals",

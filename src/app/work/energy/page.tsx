@@ -17,7 +17,7 @@ export default function Page() {
   return (
     <IndustryComingSoonPage
       industry="Energy & Utilities"
-      description="Namibia's energy sector is evolving rapidly, with renewable energy projects and infrastructure modernisation driving demand for sophisticated digital platforms. We design renewable energy monitoring dashboards, utility customer portals, and infrastructure management interfaces that serve engineers, operators, and end consumers. Our designs balance technical depth with usability, ensuring complex data is always presented with clarity and purpose."
+      description="Namibia's energy sector is evolving rapidly, with renewable energy projects and infrastructure modernisation driving demand for sophisticated digital platforms. We design renewable energy monitoring dashboards, utility customer portals, and infrastructure management interfaces that serve engineers, operators, and end consumers. Our designs balance technical depth with usability, so complex data is always presented with clarity and purpose."
       services={[
         "Renewable energy monitoring and analytics dashboards",
         "Utility customer self-service portals",

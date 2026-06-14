@@ -94,7 +94,7 @@ export function ServicesPage() {
               transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link href={`/services/${service.slug}`} className="block group">
-                <div className="border border-card-border bg-signal-white p-8 md:p-10 lg:p-12 hover:border-black/[0.1] transition-colors duration-500">
+                <div className="border border-card-border bg-signal-white p-8 md:p-10 lg:p-12 hover:border-card-border transition-colors duration-500">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
                     {/* Left: Number + Name */}
                     <div className="lg:col-span-4">

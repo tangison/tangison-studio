@@ -220,7 +220,7 @@ export function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
+                      className="w-full border border-card-border bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
                       autoComplete="name"
                     />
                   </div>
@@ -241,7 +241,7 @@ export function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="you@organization.com"
-                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
+                      className="w-full border border-card-border bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
                       autoComplete="email"
                     />
                   </div>
@@ -262,7 +262,7 @@ export function ContactPage() {
                       value={formData.organization}
                       onChange={handleChange}
                       placeholder="Your organization"
-                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
+                      className="w-full border border-card-border bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition"
                       autoComplete="organization"
                     />
                   </div>
@@ -283,7 +283,7 @@ export function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell us about your project or inquiry..."
-                      className="w-full border border-black/[0.1] bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition resize-none"
+                      className="w-full border border-card-border bg-signal-white p-3 font-satoshi text-ink placeholder:text-ink-muted focus:border-signal-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1 transition resize-none"
                     />
                   </div>
 

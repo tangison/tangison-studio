@@ -132,7 +132,7 @@ export function IndustryComingSoonPage({
               </Link>
               <Link
                 href="/work#industries"
-                className="inline-flex items-center gap-2 border border-black/[0.1] text-ink px-8 py-4 font-cabinet font-bold text-sm tracking-tight hover:bg-signal-white hover:border-black/[0.15] transition-all duration-300"
+                className="inline-flex items-center gap-2 border border-card-border text-ink px-8 py-4 font-cabinet font-bold text-sm tracking-tight hover:bg-signal-white hover:border-black/[0.15] transition-all duration-300"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 All Industries

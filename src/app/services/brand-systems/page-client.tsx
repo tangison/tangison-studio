@@ -71,7 +71,7 @@ const outcomes = [
   },
   {
     title: "Consistency Across Every Touchpoint",
-    description: "Whether it is a social media post, a business card, a proposal template, or a trade show booth, the brand looks, sounds, and feels like the same organisation. This consistency eliminates the fragmentation that erodes credibility and makes even well-resourced brands appear unprofessional.",
+    description: "From a social media post to a trade show booth, the brand looks, sounds, and feels like the same organisation. This consistency eliminates the fragmentation that erodes credibility and makes even well-resourced brands appear unprofessional.",
   },
   {
     title: "Independence from External Agencies",
@@ -263,7 +263,7 @@ export function BrandSystemsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedServices.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                <div className="border border-card-border bg-signal-white p-8 hover:border-black/[0.1] transition-colors duration-500">
+                <div className="border border-card-border bg-signal-white p-8 hover:border-card-border transition-colors duration-500">
                   <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-2 group-hover:text-signal-teal transition-colors duration-300">
                     {service.title} →
                   </h3>
