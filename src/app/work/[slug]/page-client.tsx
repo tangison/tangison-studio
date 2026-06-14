@@ -30,7 +30,7 @@ function HeroSection({ cs }: { cs: CaseStudy }) {
       {/* Background screenshot */}
       <div className="absolute inset-0">
         <Image
-          src={`/images/work/screenshots/${cs.slug}-screenshot.webp`}
+          src={`/images/work/screenshots/${cs.screenshotSlug}-screenshot.webp`}
           alt={`${cs.name} website`}
           fill
           priority
@@ -175,7 +175,7 @@ function ScrollableViewer({ cs }: { cs: CaseStudy }) {
               }}
             >
               <Image
-                src={`/images/work/screenshots/full/${cs.slug}-full.webp`}
+                src={`/images/work/screenshots/full/${cs.screenshotSlug}-full.webp`}
                 alt={`${cs.name} full page screenshot`}
                 width={1440}
                 height={4000}
@@ -313,10 +313,10 @@ function GallerySection({ cs }: { cs: CaseStudy }) {
   }, []);
 
   const galleryImages = [
-    { src: `/images/work/screenshots/gallery/${cs.slug}-1.webp`, alt: `${cs.name} header` },
-    { src: `/images/work/screenshots/gallery/${cs.slug}-2.webp`, alt: `${cs.name} interior section` },
-    { src: `/images/work/screenshots/gallery/${cs.slug}-3.webp`, alt: `${cs.name} footer` },
-    { src: `/images/work/screenshots/gallery/${cs.slug}-4.webp`, alt: `${cs.name} sub-page` },
+    { src: `/images/work/screenshots/gallery/${cs.screenshotSlug}-1.webp`, alt: `${cs.name} header` },
+    { src: `/images/work/screenshots/gallery/${cs.screenshotSlug}-2.webp`, alt: `${cs.name} interior section` },
+    { src: `/images/work/screenshots/gallery/${cs.screenshotSlug}-3.webp`, alt: `${cs.name} footer` },
+    { src: `/images/work/screenshots/gallery/${cs.screenshotSlug}-4.webp`, alt: `${cs.name} sub-page` },
   ];
 
   return (

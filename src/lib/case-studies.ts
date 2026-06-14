@@ -18,6 +18,8 @@ export interface CraftNote {
 
 export interface CaseStudy {
   slug: string;
+  /** Screenshot filename prefix — differs from slug when slug has special chars */
+  screenshotSlug: string;
   name: string;
   url: string;
   year: string;
@@ -45,6 +47,7 @@ export const caseStudies: CaseStudy[] = [
      ────────────────────────────────────────────── */
   {
     slug: "proavia",
+    screenshotSlug: "proavia",
     name: "ProAvia Travel & Tours",
     url: "https://proaviainc.com",
     year: "2026",
@@ -91,6 +94,7 @@ export const caseStudies: CaseStudy[] = [
      ────────────────────────────────────────────── */
   {
     slug: "nalago",
+    screenshotSlug: "nalago",
     name: "Nalago Skincare",
     url: "https://nalago-nam.com",
     year: "2026",
@@ -137,6 +141,7 @@ export const caseStudies: CaseStudy[] = [
      ────────────────────────────────────────────── */
   {
     slug: "clusterleaf",
+    screenshotSlug: "clusterleaf",
     name: "Cluster Leaf Safaris",
     url: "https://www.clusterleafsafaris.com",
     year: "2026",
@@ -183,6 +188,7 @@ export const caseStudies: CaseStudy[] = [
      ────────────────────────────────────────────── */
   {
     slug: "smefrog",
+    screenshotSlug: "smefrog",
     name: "SMEFrog",
     url: "https://smefrog.tangison.com",
     year: "2026",
@@ -230,6 +236,7 @@ export const caseStudies: CaseStudy[] = [
      ────────────────────────────────────────────── */
   {
     slug: "petrocor",
+    screenshotSlug: "petrocor",
     name: "Petrocor",
     url: "https://petrocor.blackstarhorizon.com",
     year: "2026",
@@ -278,6 +285,7 @@ export const caseStudies: CaseStudy[] = [
      ────────────────────────────────────────────── */
   {
     slug: "tangison-systems",
+    screenshotSlug: "tangison",
     name: "Tangison Systems",
     url: "https://tangison.com",
     year: "2026",
@@ -326,6 +334,7 @@ export const caseStudies: CaseStudy[] = [
      ────────────────────────────────────────────── */
   {
     slug: "crescendo",
+    screenshotSlug: "crescendo",
     name: "Crescendo Namibia",
     url: "https://cresendona.com",
     year: "2026",
@@ -373,6 +382,7 @@ export const caseStudies: CaseStudy[] = [
      ────────────────────────────────────────────── */
   {
     slug: "feorm",
+    screenshotSlug: "feorm",
     name: "Feorm",
     url: "https://feorm.tangison.com",
     year: "2026",

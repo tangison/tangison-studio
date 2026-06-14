@@ -16,33 +16,33 @@ export function generateStaticParams() {
    ────────────────────────────────────────────── */
 
 const titleMap: Record<string, string> = {
-  proavia: "ProAvia Case Study | Tangison Studio",
-  nalago: "Nalago Case Study | Tangison Studio",
-  clusterleaf: "Cluster Leaf Case Study | Tangison Studio",
-  smefrog: "SMEFrog Case Study | Tangison Studio",
-  petrocor: "Petrocor Case Study | Tangison Studio",
-  "tangison-systems": "Tangison Systems Case Study | Tangison Studio",
-  crescendo: "Crescendo Case Study | Tangison Studio",
-  feorm: "Feorm Case Study | Tangison Studio",
+  proavia: "ProAvia Case Study",
+  nalago: "Nalago Case Study",
+  clusterleaf: "Cluster Leaf Case Study",
+  smefrog: "SMEFrog Case Study",
+  petrocor: "Petrocor Case Study",
+  "tangison-systems": "Tangison Systems Case Study",
+  crescendo: "Crescendo Case Study",
+  feorm: "Feorm Case Study",
 };
 
 const descriptionMap: Record<string, string> = {
   proavia:
-    "Tangison Studio designed and built ProAvia's travel booking website — a Namibian tour operator site built around trust signals, real photography, and WhatsApp conversion.",
+    "Tangison built ProAvia's travel website — a Namibian tour operator site built around trust signals, real photography, and WhatsApp conversion.",
   nalago:
-    "Tangison Studio built Nalago Skincare's e-commerce website — an organic skincare brand site powered by Kalahari ingredient stories and confident pricing.",
+    "Tangison built Nalago Skincare's e-commerce site — an organic skincare brand powered by Kalahari ingredient stories and confident pricing.",
   clusterleaf:
-    "Tangison Studio designed Cluster Leaf Safaris' website — a premium safari operator site built on photography, pricing transparency, and owner-operated trust.",
+    "Tangison built Cluster Leaf Safaris' website — a premium safari operator site built on photography, pricing transparency, and owner-operated trust.",
   smefrog:
-    "Tangison Studio designed SMEFrog's LegalTech platform — a Namibian business registration site built around 2X cheaper pricing and WhatsApp-first conversion.",
+    "Tangison built SMEFrog's LegalTech platform — a Namibian business registration site built around 2X cheaper pricing and WhatsApp conversion.",
   petrocor:
-    "Tangison Studio built Petrocor's B2B energy distribution website — a corporate platform designed for procurement decision-makers with a single Get Quote CTA.",
+    "Tangison built Petrocor's B2B energy site — a corporate platform designed for procurement decision-makers with a single Get Quote CTA.",
   "tangison-systems":
-    "Tangison Studio built its own parent company site — sovereign intelligence infrastructure positioned with precision, not buzzwords, from Windhoek, Namibia.",
+    "Tangison built its own company site — sovereign intelligence infrastructure positioned with precision from Windhoek, Namibia.",
   crescendo:
-    "Tangison Studio built Crescendo Namibia's music retail and academy website — a 16-year Windhoek institution with Shop and Academy as equal pillars.",
+    "Tangison built Crescendo Namibia's music site — a 16-year Windhoek institution with Shop and Academy as equal pillars.",
   feorm:
-    "Tangison Studio built Feorm — a farm stay discovery platform for Namibia, from brand identity to Python backend, as a self-authored internal product.",
+    "Tangison built Feorm — a farm stay discovery platform for Namibia, from brand identity to Python backend, as an internal product.",
 };
 
 export function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -50,10 +50,10 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
     const cs = getCaseStudy(slug);
     if (!cs) return {};
 
-    const title = titleMap[slug] || `${cs.name} Case Study | Tangison Studio`;
+    const title = titleMap[slug] || `${cs.name} Case Study`;
     const description = descriptionMap[slug] || `${cs.name} case study from Tangison Studio.`;
     const canonical = `https://studio.tangison.com/work/${slug}`;
-    const ogImage = `/images/work/screenshots/${slug}-screenshot.webp`;
+    const ogImage = `/images/work/screenshots/${cs.screenshotSlug}-screenshot.webp`;
 
     return {
       title,
@@ -92,7 +92,7 @@ export default async function CaseStudyRoute({ params }: { params: Promise<{ slu
     "@type": "Article",
     name: cs.name,
     headline: cs.challengeH2,
-    image: `https://studio.tangison.com/images/work/screenshots/${slug}-screenshot.webp`,
+    image: `https://studio.tangison.com/images/work/screenshots/${cs.screenshotSlug}-screenshot.webp`,
     author: {
       "@type": "Organization",
       name: "Tangison Studio",
