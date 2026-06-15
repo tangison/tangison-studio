@@ -84,9 +84,9 @@ export function FAQPage() {
                 transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
                 className="border-b border-card-border py-8 first:pt-0"
               >
-                <h3 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-3">
+                <h2 className="font-cabinet text-lg md:text-xl font-bold tracking-tight text-ink mb-3">
                   {faq.question}
-                </h3>
+                </h2>
                 <p className="font-satoshi text-ink-muted text-base leading-relaxed">
                   {faq.answer}
                 </p>
@@ -107,7 +107,7 @@ export function FAQPage() {
               href="/contact"
               className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-10 py-5 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300"
             >
-              Get in Touch →
+              Get in Touch
             </Link>
           </motion.div>
         </div>

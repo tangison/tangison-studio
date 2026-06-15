@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Quote } from "lucide-react";
 import { SiteShell } from "@/components/tangison/site-shell";
 
 const fadeUp = {
@@ -13,6 +13,57 @@ const fadeUp = {
   viewport: { once: true, margin: "-60px" as const },
   transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
 };
+
+const testimonials = [
+  {
+    quote: "Great man. I will definitely come back next year with a better course plan since this is just a startup.",
+    author: "Mr. Job",
+    company: "Nalago",
+    role: "Founder",
+  },
+  {
+    quote: "Awesome work man. Now my customers have all the information they need.",
+    author: "Mr. T",
+    company: "Cluster Leaf Safaris",
+    role: "Director",
+  },
+  {
+    quote: "We would work on major projects together.",
+    author: "Mr. Makopa",
+    company: "Petrocor & Blackster Horizon",
+    role: "Managing Director",
+  },
+  {
+    quote: "She loves the work we are doing.",
+    author: "Miss Kay",
+    company: "Proavia Travel",
+    role: "Owner",
+  },
+  {
+    quote: "Our AI agent is the best. Nangula AI now Tangison Agent.",
+    author: "Mr. Timoteus",
+    company: "Rico Pro Linting",
+    role: "Operations",
+  },
+  {
+    quote: "She will definitely work with us.",
+    author: "Miss Helen",
+    company: "Stanpriet VC",
+    role: "Partner",
+  },
+  {
+    quote: "Paife ochima owechidhenga neeh ndumhenu.",
+    author: "Mr. Micheal",
+    company: "Techbridge College",
+    role: "Principal",
+  },
+  {
+    quote: "Tried to scam us.",
+    author: "Miss Patricia",
+    company: "Emerald Training",
+    role: "Client",
+  },
+];
 
 export function AboutPage() {
   return (
@@ -26,7 +77,7 @@ export function AboutPage() {
               Tangison Studio
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              A creative digital agency. Based in Windhoek.
+              A creative digital agency. Based in Windhoek, Namibia.
             </p>
           </motion.div>
         </div>
@@ -61,6 +112,65 @@ export function AboutPage() {
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </motion.div>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section className="py-20 md:py-28 px-6 md:px-12 lg:px-20 bg-signal-white border-y border-card-border">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="max-w-3xl">
+            <motion.div {...fadeUp}>
+              <div className="editorial-divider mb-8" />
+              <h2 className="font-cabinet text-2xl md:text-3xl font-bold tracking-tight text-ink mb-6">
+                Founded by Tangi Iigonda
+              </h2>
+              <p className="font-satoshi text-ink-muted text-base md:text-lg leading-relaxed mb-6">
+                Tangison Studio started in 2023 as Gemsweb Digital, founded by Tangi Iigonda with a clear mission: build fast, honest, and functional digital products for businesses in Namibia and across Africa. What began as a solo operation in Windhoek has grown into a studio that serves organizations in tourism, finance, education, agriculture, mining, and more.
+              </p>
+              <p className="font-satoshi text-ink-muted text-base md:text-lg leading-relaxed mb-6">
+                Under the Gemsweb Digital name, the studio delivered websites, AI tools, and brand systems for clients across Namibia. As the work grew in scope and ambition, the evolution to Tangison Studio became a natural next step: a sharper identity, a broader vision, and the same commitment to doing good work.
+              </p>
+              <p className="font-satoshi text-ink-muted text-base md:text-lg leading-relaxed">
+                Tangison Studio is part of the Tuppaman Group. The studio operates from Windhoek, Namibia, and works with clients across Africa and internationally.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 md:py-28 px-6 md:px-12 lg:px-20">
+        <div className="max-w-[1400px] mx-auto">
+          <motion.div {...fadeUp}>
+            <div className="editorial-divider mb-8" />
+            <h2 className="font-cabinet text-2xl md:text-3xl font-bold tracking-tight text-ink mb-4">
+              Client Testimonials
+            </h2>
+            <p className="font-satoshi text-ink-muted text-base md:text-lg max-w-xl leading-relaxed mb-12">
+              Real feedback from the organizations we have worked with across Namibia.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {testimonials.map((testimonial, i) => (
+              <motion.div
+                key={testimonial.author}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.6, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                className="border border-card-border bg-signal-white p-6 hover:border-signal-teal/30 hover:bg-ocean-mist/20 transition-all duration-500"
+              >
+                <Quote className="w-5 h-5 text-signal-teal/40 mb-4" />
+                <p className="font-satoshi text-ink text-sm md:text-base leading-relaxed mb-5">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <div className="border-t border-card-border pt-4">
+                  <p className="font-cabinet text-sm font-bold text-ink">{testimonial.author}</p>
+                  <p className="font-satoshi text-ink-muted text-xs mt-0.5">{testimonial.role}, {testimonial.company}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -117,8 +227,8 @@ export function AboutPage() {
           </motion.h2>
           <div className="max-w-3xl">
             {[
-              { name: "GemsWeb Digital", description: "Started as a digital agency delivering web and marketing solutions across Namibia." },
-              { name: "Tangison", description: "Grew into Tangison Studio: a creative digital agency focused on strategic design and engineering with a sharper identity and a broader vision." },
+              { name: "GemsWeb Digital", year: "2023", description: "Founded by Tangi Iigonda in Windhoek, Namibia as Gemsweb Digital. Started as a digital agency delivering websites, brand systems, and AI tools for businesses across Namibia." },
+              { name: "Tangison Studio", year: "2025", description: "Grew into Tangison Studio: a creative digital agency focused on strategic design and engineering with a sharper identity and a broader vision. Part of Tuppaman Group." },
             ].map((entry, i) => (
               <motion.div
                 key={entry.name}
@@ -128,6 +238,7 @@ export function AboutPage() {
               >
                 <div className="absolute left-0 top-2 bottom-0 w-[1px] bg-black/[0.08]" aria-hidden="true" />
                 <div className="absolute left-0 top-2 -translate-x-1/2 w-2 h-2 bg-signal-teal" aria-hidden="true" />
+                <span className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-2 block">{entry.year}</span>
                 <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink mb-2">
                   {entry.name}
                 </h3>

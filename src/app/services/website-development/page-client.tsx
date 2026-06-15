@@ -234,21 +234,24 @@ export function WebsiteDevelopmentPage() {
         </div>
       </section>
 
-      {/* F. Case Studies — Coming Soon */}
+      {/* F. Client Testimonials */}
       <section className="py-24 bg-atlantic-black">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <p className="font-jetbrains text-xs tracking-[0.2em] uppercase text-signal-teal mb-4">Case Studies</p>
-          <h2 className="font-cabinet text-3xl lg:text-4xl text-skeleton-bone mb-6">Work in Progress</h2>
-          <p className="font-satoshi text-lg text-fog-gray max-w-2xl mx-auto mb-8">
-            We are documenting our website development projects. Real case studies with measurable outcomes will appear here soon.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="border border-fog-gray/20 p-6 text-center">
-                <div className="w-full aspect-[4/3] bg-fog-gray/10 mb-4 flex items-center justify-center">
-                  <span className="font-jetbrains text-xs text-fog-gray tracking-wider uppercase">Coming Soon</span>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <p className="font-jetbrains text-xs tracking-[0.2em] uppercase text-signal-teal mb-4 text-center">Client Testimonials</p>
+          <h2 className="font-cabinet text-3xl lg:text-4xl text-skeleton-bone mb-12 text-center">What Our Clients Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {[
+              { quote: "Great man. I will definitely come back next year with a better course plan since this is just a startup.", author: "Mr. Job", company: "Nalago" },
+              { quote: "Awesome work man. Now my customers have all the information they need.", author: "Mr. T", company: "Cluster Leaf Safaris" },
+              { quote: "We would work on major projects together.", author: "Mr. Makopa", company: "Petrocor & Blackster Horizon" },
+              { quote: "She loves the work we are doing.", author: "Miss Kay", company: "Proavia Travel" },
+            ].map((testimonial, i) => (
+              <div key={i} className="border border-white/[0.06] p-6">
+                <p className="font-satoshi text-skeleton-bone/80 text-sm leading-relaxed mb-4">&ldquo;{testimonial.quote}&rdquo;</p>
+                <div className="border-t border-white/[0.06] pt-3">
+                  <p className="font-cabinet text-xs font-bold text-skeleton-bone">{testimonial.author}</p>
+                  <p className="font-satoshi text-xs text-fog-gray/60">{testimonial.company}</p>
                 </div>
-                <p className="font-satoshi text-sm text-fog-gray">Case study {i}</p>
               </div>
             ))}
           </div>
