@@ -66,17 +66,20 @@ const principles = ["Strategic", "Functional", "Beautiful", "Scalable"];
 /* ──────────────────────────────────────────────
    HERO SECTION
 
-   Desktop layout: 2-column asymmetric grid.
-   Left (55%): Eyebrow → H1 → Subtitle → CTAs
-   Right (45%): Plan cards in cascade stack
+   Three breakpoint tiers:
+   
+   xl+ (1280px+):  2-column asymmetric grid.
+     Left:  Eyebrow, H1, Subtitle, CTAs
+     Right: Cascade plan cards (3:4 portrait)
+   
+   lg (1024-1279px): 2-column, tighter.
+     Left:  Eyebrow, H1, Subtitle, CTAs
+     Right: Tablet plan pair (4:3 landscape)
+   
+   <lg (<1024px):   Single column stack.
+     Text block, then compact mobile carousel (16:9)
 
    Spacing scale: 8pt baseline grid
-   - Eyebrow → H1:  24px (mb-6)
-   - H1 → Subtitle: 40px (mb-10)
-   - Subtitle → CTA: 48px (mb-12)
-   - Between CTAs:  16px (gap-4)
-
-   Mobile: single-column, preserved from v1.
    ────────────────────────────────────────────── */
 
 function HeroSection() {
@@ -87,11 +90,9 @@ function HeroSection() {
       className="hero hero-viewport relative w-full flex items-center overflow-hidden box-border"
       aria-label="Hero section"
     >
-      {/* Background image and overlay handled by CSS (.hero + .hero::before) */}
-
       {/* Content */}
-      <div className="relative z-10 max-w-7xl w-full px-6 md:px-12 lg:px-20 py-20 md:py-28 lg:py-36">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-20 items-center">
+      <div className="relative z-10 max-w-7xl w-full px-6 md:px-12 lg:px-16 xl:px-20 py-16 md:py-20 lg:py-24 xl:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] xl:grid-cols-[1.15fr_1fr] gap-10 lg:gap-12 xl:gap-16 items-center">
           {/* Left column — typography & CTAs */}
           <div>
             <motion.div
@@ -103,7 +104,7 @@ function HeroSection() {
               <div className="w-2 h-2 bg-signal-teal" aria-hidden="true" />
               <span
                 className="font-jetbrains uppercase tracking-[0.25em] text-ink-muted"
-                style={{ fontSize: "clamp(0.65rem, 1.2vw, 0.85rem)" }}
+                style={{ fontSize: "clamp(0.6rem, 1.1vw, 0.8rem)" }}
               >
                 CREATIVE DIGITAL AGENCY
               </span>
@@ -113,8 +114,8 @@ function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="font-cabinet font-black tracking-[-0.04em] leading-[0.95] text-ink mb-10"
-              style={{ fontSize: "clamp(2.5rem, 5vw, 5.5rem)" }}
+              className="font-cabinet font-black tracking-[-0.04em] leading-[0.95] text-ink mb-8"
+              style={{ fontSize: "clamp(2.2rem, 4.5vw, 5rem)" }}
             >
               {headline}
             </motion.h1>
@@ -123,8 +124,8 @@ function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-ink-muted font-satoshi font-light leading-relaxed mb-12 max-w-lg"
-              style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)" }}
+              className="text-ink-muted font-satoshi font-light leading-relaxed mb-10 max-w-lg"
+              style={{ fontSize: "clamp(0.9rem, 1.5vw, 1.15rem)" }}
             >
               Strategy, design, and engineering from Windhoek, Namibia. We work with organizations across Africa to build websites, applications, brand systems, and design systems that do their job and last for years.
             </motion.p>
@@ -135,12 +136,12 @@ function HeroSection() {
               transition={{ duration: DURATION.slow, delay: 1, ease: STUDIO_EASE }}
               className="flex flex-wrap items-center gap-4"
             >
-              {/* Primary CTA — compact, precise, executive */}
+              {/* Primary CTA */}
               <StudioButton href="/work" variant="primary" size="md" showArrow>
                 See Our Work
               </StudioButton>
 
-              {/* Secondary CTA — ghost text link with animated arrow */}
+              {/* Secondary CTA — ghost text link */}
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 font-satoshi text-sm font-medium text-ink-muted hover:text-signal-teal transition-colors duration-300 group py-3 px-2"
@@ -153,7 +154,7 @@ function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right column — Plan cards (cascade on desktop, carousel on mobile) */}
+          {/* Right column — Plan cards (3 tiers: cascade / tablet pair / mobile carousel) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

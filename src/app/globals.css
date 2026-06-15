@@ -436,18 +436,19 @@ button, a {
   z-index: 1;
 }
 
-/* Hero viewport height — CSS progressive enhancement for dvh */
+/* Hero viewport height — fits above fold at all breakpoints */
 .hero-viewport {
-  min-height: 700px;
+  min-height: 600px;
   min-height: 100vh;
   min-height: 100dvh;
-  padding-top: calc(72px + 2rem);
+  padding-top: calc(72px + 1rem);
 }
 
-/* Hero plan cards — intentional rounding on card images */
-@media (min-width: 1024px) {
-  .hero .plan-card-image {
-    border-radius: 4px !important;
+/* Cap hero height on smaller viewports to prevent overflow */
+@media (max-width: 1023px) {
+  .hero-viewport {
+    min-height: auto;
+    padding-top: calc(72px + 0.5rem);
   }
 }
 

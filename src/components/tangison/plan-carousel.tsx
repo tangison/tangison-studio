@@ -37,22 +37,22 @@ const carouselPlans = [
 
 /* ──────────────────────────────────────────────
    DESKTOP PLAN CARDS — Cascade Stack
-   3:4 portrait ratio, two visible cards with
-   a deliberate offset creating depth.
+   Responsive sizing using percentages, not fixed px.
+   Cards scale with the viewport for proper proportions
+   at all desktop sizes (1280px+).
    ────────────────────────────────────────────── */
 
 function DesktopPlanCards() {
-  /* Show the two premium cards in a cascade */
   const featuredCards = [carouselPlans[2], carouselPlans[1]]; // Studio Plus, Partner
 
   return (
-    <div className="hidden lg:flex relative w-full items-start justify-end">
-      {/* Back card (Partner) — offset left and down, more pronounced cascade */}
+    <div className="hidden xl:flex relative w-full items-start justify-end min-h-[420px]">
+      {/* Back card (Partner) — offset creating depth */}
       <motion.div
-        initial={{ opacity: 0, y: 32, x: -24 }}
+        initial={{ opacity: 0, y: 32, x: -16 }}
         animate={{ opacity: 1, y: 0, x: 0 }}
         transition={{ duration: 1, delay: 0.8, ease: STUDIO_EASE }}
-        className="absolute top-12 -left-6 w-[260px] z-[1]"
+        className="absolute top-10 -left-2 w-[55%] max-w-[280px] z-[1]"
       >
         <div className="relative w-full aspect-[3/4] overflow-hidden border border-card-border bg-signal-white shadow-sm">
           <Image
@@ -60,24 +60,24 @@ function DesktopPlanCards() {
             alt={featuredCards[1].illustrationAlt}
             fill
             className="object-cover"
-            sizes="260px"
+            sizes="(max-width: 1280px) 200px, 280px"
           />
-          <div className="absolute bottom-0 left-0 right-0 bg-signal-white/95 backdrop-blur-sm px-5 py-4 border-t border-card-border">
-            <span className="font-jetbrains text-[8px] uppercase tracking-[0.2em] text-signal-teal block mb-0.5">
+          <div className="absolute bottom-0 left-0 right-0 bg-signal-white/95 backdrop-blur-sm px-4 py-3 border-t border-card-border">
+            <span className="font-jetbrains text-[7px] uppercase tracking-[0.2em] text-signal-teal block mb-0.5">
               Partnership
             </span>
-            <h3 className="font-cabinet text-lg font-bold tracking-tight text-ink">
+            <h3 className="font-cabinet text-base font-bold tracking-tight text-ink">
               {featuredCards[1].name}
             </h3>
-            <span className="font-cabinet text-base font-bold tracking-tight text-signal-teal block">
+            <span className="font-cabinet text-sm font-bold tracking-tight text-signal-teal block">
               {featuredCards[1].price}
             </span>
             <Link
               href="/partnership"
-              className="inline-flex items-center gap-1.5 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300 mt-2 group"
+              className="inline-flex items-center gap-1.5 font-jetbrains text-[9px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300 mt-1.5 group"
             >
               See Plans
-              <ArrowRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5" />
+              <ArrowRight className="w-2.5 h-2.5 transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
           </div>
         </div>
@@ -88,7 +88,7 @@ function DesktopPlanCards() {
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6, ease: STUDIO_EASE }}
-        className="relative w-[300px] z-[2] ml-auto"
+        className="relative w-[65%] max-w-[340px] z-[2] ml-auto"
       >
         <div className="relative w-full aspect-[3/4] overflow-hidden border border-card-border bg-signal-white shadow-md">
           <Image
@@ -96,7 +96,7 @@ function DesktopPlanCards() {
             alt={featuredCards[0].illustrationAlt}
             fill
             className="object-cover"
-            sizes="300px"
+            sizes="(max-width: 1280px) 240px, 340px"
           />
           <div className="absolute bottom-0 left-0 right-0 bg-signal-white/95 backdrop-blur-sm px-5 py-4 border-t border-card-border">
             <span className="font-jetbrains text-[8px] uppercase tracking-[0.2em] text-signal-teal block mb-0.5">
@@ -123,7 +123,59 @@ function DesktopPlanCards() {
 }
 
 /* ──────────────────────────────────────────────
+   TABLET PLAN CARDS — Horizontal pair (lg only)
+   Shows two cards side by side for 1024-1279px
+   ────────────────────────────────────────────── */
+
+function TabletPlanCards() {
+  const featuredCards = [carouselPlans[2], carouselPlans[1]];
+
+  return (
+    <div className="hidden lg:flex xl:hidden w-full gap-4">
+      {featuredCards.map((card, i) => (
+        <motion.div
+          key={card.name}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 + i * 0.15, ease: STUDIO_EASE }}
+          className="flex-1"
+        >
+          <div className="relative w-full aspect-[4/3] overflow-hidden border border-card-border bg-signal-white shadow-sm">
+            <Image
+              src={card.illustration}
+              alt={card.illustrationAlt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1280px) 400px, 400px"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-signal-white/95 backdrop-blur-sm px-4 py-3 border-t border-card-border">
+              <span className="font-jetbrains text-[7px] uppercase tracking-[0.2em] text-signal-teal block mb-0.5">
+                Partnership
+              </span>
+              <h3 className="font-cabinet text-base font-bold tracking-tight text-ink">
+                {card.name}
+              </h3>
+              <span className="font-cabinet text-sm font-bold tracking-tight text-signal-teal block">
+                {card.price}
+              </span>
+              <Link
+                href="/partnership"
+                className="inline-flex items-center gap-1.5 font-jetbrains text-[9px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300 mt-1.5 group"
+              >
+                See Plans
+                <ArrowRight className="w-2.5 h-2.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
+/* ──────────────────────────────────────────────
    MOBILE PLAN CAROUSEL — Swipeable cards
+   Compact aspect ratio (16:9) to fit above fold.
    ────────────────────────────────────────────── */
 
 function MobileCarousel() {
@@ -201,8 +253,8 @@ function MobileCarousel() {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Card */}
-      <div className="relative w-full aspect-[16/10] overflow-hidden border border-card-border bg-signal-white">
+      {/* Card — 16:9 to fit above fold on mobile */}
+      <div className="relative w-full aspect-[16/9] overflow-hidden border border-card-border bg-signal-white">
         <AnimatePresence mode="wait">
           <motion.div
             key={plan.name}
@@ -220,42 +272,41 @@ function MobileCarousel() {
               alt={plan.illustrationAlt}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 41vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-signal-white/95 backdrop-blur-sm px-6 py-5 border-t border-card-border">
-              <span className="font-jetbrains text-[9px] uppercase tracking-[0.2em] text-signal-teal block mb-1">
+            <div className="absolute bottom-0 left-0 right-0 bg-signal-white/95 backdrop-blur-sm px-5 py-3 border-t border-card-border">
+              <span className="font-jetbrains text-[8px] uppercase tracking-[0.2em] text-signal-teal block mb-0.5">
                 Partnership
               </span>
-              <h3 className="font-cabinet text-xl md:text-2xl font-bold tracking-tight text-ink mb-1">
+              <h3 className="font-cabinet text-lg font-bold tracking-tight text-ink">
                 {plan.name}
               </h3>
-              <span className="font-cabinet text-lg font-bold tracking-tight text-signal-teal block mb-1.5">
-                {plan.price}
-              </span>
-              <p className="font-satoshi text-sm text-ink-muted leading-relaxed mb-3">
-                {plan.tagline}
-              </p>
-              <Link
-                href="/partnership"
-                className="inline-flex items-center gap-2 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300 group"
-              >
-                See Plans
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
+              <div className="flex items-center justify-between">
+                <span className="font-cabinet text-base font-bold tracking-tight text-signal-teal">
+                  {plan.price}
+                </span>
+                <Link
+                  href="/partnership"
+                  className="inline-flex items-center gap-1.5 font-jetbrains text-[9px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300 group"
+                >
+                  See Plans
+                  <ArrowRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5" />
+                </Link>
+              </div>
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* Dot indicators */}
-      <div className="flex items-center justify-center gap-2 mt-4">
+      <div className="flex items-center justify-center gap-2 mt-3">
         {carouselPlans.map((_, i) => (
           <button
             key={i}
             onClick={() => goTo(i)}
-            className={`w-2 h-2 transition-all duration-400 ${
+            className={`w-1.5 h-1.5 transition-all duration-400 ${
               i === current
-                ? "bg-signal-teal w-6"
+                ? "bg-signal-teal w-5"
                 : "bg-fog-gray hover:bg-ink-muted/30"
             }`}
             style={{ borderRadius: "999px" }}
@@ -269,13 +320,14 @@ function MobileCarousel() {
 
 /* ──────────────────────────────────────────────
    PLAN CAROUSEL EXPORT
-   Desktop = Cascade stack | Mobile = Carousel
+   xl+ = Cascade | lg = Tablet pair | <lg = Carousel
    ────────────────────────────────────────────── */
 
 export function PlanCarousel() {
   return (
     <>
       <DesktopPlanCards />
+      <TabletPlanCards />
       <MobileCarousel />
     </>
   );
