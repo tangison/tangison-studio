@@ -1,6 +1,6 @@
 import React from "react";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://tangison-studio.vercel.app";
 
 /* ── Organization Schema (use on homepage) ── */
 export function OrganizationJsonLd() {
@@ -8,14 +8,20 @@ export function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Tangison Studio",
-    alternateName: "TANGISON STUDIO",
+    alternateName: ["TANGISON STUDIO", "Gemsweb Digital"],
     url: SITE_URL,
     logo: `${SITE_URL}/brand/favicon.webp`,
     description:
-      "Tangison Studio is a creative digital agency that designs and builds digital experiences that move ideas forward.",
+      "Tangison Studio is a creative digital agency in Windhoek, Namibia. Founded by Tangi Iigonda in 2023 as Gemsweb Digital. We design and build websites, brand systems, and digital products.",
+    foundingDate: "2023",
+    founder: {
+      "@type": "Person",
+      name: "Tangi Iigonda",
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Windhoek",
+      addressRegion: "Khomas",
       addressCountry: "NA",
     },
     contactPoint: {
@@ -27,6 +33,10 @@ export function OrganizationJsonLd() {
       "https://linkedin.com/company/tangison",
       "https://github.com/tangison",
     ],
+    parentOrganization: {
+      "@type": "Organization",
+      name: "Tuppaman Group",
+    },
   };
 
   return (
@@ -46,7 +56,7 @@ export function LocalBusinessJsonLd() {
     url: SITE_URL,
     logo: `${SITE_URL}/brand/favicon.webp`,
     description:
-      "Creative digital agency in Windhoek, Namibia. Website design, development, brand systems, and creative direction.",
+      "Creative digital agency in Windhoek, Namibia. Website design, development, brand systems, and creative direction. Founded by Tangi Iigonda.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Windhoek",
@@ -58,7 +68,7 @@ export function LocalBusinessJsonLd() {
       latitude: -22.5609,
       longitude: 17.0658,
     },
-    telephone: "+264 85 341 1522",
+    telephone: "+264-85-341-1522",
     email: "studio@tangison.com",
     priceRange: "$$",
     openingHours: "Mo-Fr 08:00-17:00",

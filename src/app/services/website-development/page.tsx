@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { WebsiteDevelopmentPage } from "./page-client";
-import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
+import { ServiceJsonLd, BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Website Development in Namibia",
+  title: "Website Development | Tangison Studio",
   description: "Engineered to perform. Clean code, fast load times, and built to scale. We develop websites that deliver on every metric that matters.",
   alternates: { canonical: "/services/website-development" },
   openGraph: {
-    title: "Website Development | TANGISON STUDIO",
+    title: "Website Development | Tangison Studio",
     description: "Engineered to perform. Clean code, fast load times, and built to scale. We develop websites that deliver on every metric that matters.",
     url: "/services/website-development",
     images: [{ url: "/images/services/website-development.webp", width: 1200, height: 630, alt: "Website Development service" }],
@@ -17,6 +17,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <WebPageJsonLd
+        title="Website Development | Tangison Studio"
+        description="Engineered to perform. Clean code, fast load times, and built to scale. We develop websites that deliver on every metric that matters."
+        url="/services/website-development"
+      />
       <ServiceJsonLd
         name="Website Development"
         description="Built to perform. We develop websites that are fast, accessible, and built to scale."

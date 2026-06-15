@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { BrandSystemsPage } from "./page-client";
-import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
+import { ServiceJsonLd, BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Brand Systems in Namibia",
+  title: "Brand Systems | Tangison Studio",
   description: "Cohesive visual identity. Marks, wordmarks, palettes, and guidelines that scale. We build brand systems that work everywhere, consistently.",
   alternates: { canonical: "/services/brand-systems" },
   openGraph: {
-    title: "Brand Systems | TANGISON STUDIO",
+    title: "Brand Systems | Tangison Studio",
     description: "Cohesive visual identity. Marks, wordmarks, palettes, and guidelines that scale. We build brand systems that work everywhere, consistently.",
     url: "/services/brand-systems",
     images: [{ url: "/images/services/brand-systems.webp", width: 1200, height: 630, alt: "Brand Systems service" }],
@@ -17,6 +17,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <WebPageJsonLd
+        title="Brand Systems | Tangison Studio"
+        description="Cohesive visual identity. Marks, wordmarks, palettes, and guidelines that scale. We build brand systems that work everywhere, consistently."
+        url="/services/brand-systems"
+      />
       <ServiceJsonLd
         name="Brand Systems"
         description="Cohesive visual identity. Marks, wordmarks, and design systems that make brands unmistakable."

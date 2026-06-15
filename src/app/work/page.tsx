@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
 import { WorkPage } from "./page-client";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Our Work — Website Design Portfolio | Namibia",
-  description:
-    "Websites, platforms, and digital products designed and built by Tangison Studio for organizations across Namibia and beyond. Eight projects. Full case studies.",
+  title: "Our Work | Portfolio and Case Studies",
+  description: "Explore our portfolio of digital experiences across nine industries in Africa. From SMEs and mining to healthcare and education, see how Tangison Studio delivers strategic, functional design from Windhoek, Namibia.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Our Work | TANGISON STUDIO",
-    description:
-      "Websites, platforms, and digital products designed and built by Tangison Studio for organizations across Namibia and beyond. Eight projects. Full case studies.",
+    title: "Our Work | Portfolio and Case Studies | TANGISON STUDIO",
+    description: "Explore our portfolio of digital experiences across nine industries in Africa. From SMEs and mining to healthcare and education.",
     url: "/work",
-    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
   },
 };
 
 export default function Page() {
-  return <WorkPage />;
+  return (
+    <>
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "/" },
+        { name: "Work", url: "/work" },
+      ]} />
+      <WebPageJsonLd
+        title="Our Work | Portfolio and Case Studies"
+        description="Explore our portfolio of digital experiences across nine industries in Africa."
+        url="/work"
+      />
+      <WorkPage />
+    </>
+  );
 }

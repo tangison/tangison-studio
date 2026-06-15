@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import { ContactPage } from "./page-client";
-import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/tangison/json-ld";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Start Your Digital Project | Windhoek, Namibia",
-  description: "Get in touch with Tangison Studio to discuss your next digital project. We respond within 48 hours. Strategy, design, and engineering from Windhoek. Contact us today.",
+  title: "Contact | Start a Project",
+  description: "Get in touch with Tangison Studio to discuss your next digital project. We respond to every message within 48 hours. Strategy, design, and engineering from Windhoek, Namibia.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact Us — Start Your Digital Project | TANGISON STUDIO",
-    description: "Get in touch with Tangison Studio to discuss your next digital project. We respond within 48 hours. Strategy, design, and engineering from Windhoek. Contact us today.",
+    title: "Contact | Start a Project | TANGISON STUDIO",
+    description: "Get in touch with Tangison Studio to discuss your next digital project. We respond to every message within 48 hours.",
     url: "/contact",
-    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
   },
 };
 
@@ -22,6 +21,11 @@ export default function Page() {
         { name: "Home", url: "/" },
         { name: "Contact", url: "/contact" },
       ]} />
+      <WebPageJsonLd
+        title="Contact | Start a Project"
+        description="Get in touch with Tangison Studio to discuss your next digital project."
+        url="/contact"
+      />
       <ContactPage />
     </>
   );
