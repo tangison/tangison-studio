@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PartnershipPage } from "./page-client";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
   title: "Website Maintenance & Support Plans | Windhoek, Namibia",
@@ -25,5 +26,20 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <PartnershipPage />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Partnership", url: "/partnership" },
+        ]}
+      />
+      <WebPageJsonLd
+        title="Website Maintenance & Support Plans | TANGISON STUDIO"
+        description="Keep your website live, your brand consistent, and your digital presence growing with a Tangison Studio partnership plan."
+        url="/partnership"
+      />
+      <PartnershipPage />
+    </>
+  );
 }

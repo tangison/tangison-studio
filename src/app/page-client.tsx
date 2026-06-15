@@ -65,6 +65,18 @@ const principles = ["Strategic", "Functional", "Beautiful", "Scalable"];
 
 /* ──────────────────────────────────────────────
    HERO SECTION
+
+   Desktop layout: 2-column asymmetric grid.
+   Left (55%): Eyebrow → H1 → Subtitle → CTAs
+   Right (45%): Plan cards in cascade stack
+
+   Spacing scale: 8pt baseline grid
+   - Eyebrow → H1:  24px (mb-6)
+   - H1 → Subtitle: 40px (mb-10)
+   - Subtitle → CTA: 48px (mb-12)
+   - Between CTAs:  16px (gap-4)
+
+   Mobile: single-column, preserved from v1.
    ────────────────────────────────────────────── */
 
 function HeroSection() {
@@ -78,10 +90,10 @@ function HeroSection() {
       {/* Background image and overlay handled by CSS (.hero + .hero::before) */}
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl w-full px-6 md:px-12 lg:px-20 py-16 md:py-20 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          {/* Left column — text content */}
-          <div className="lg:col-span-7">
+      <div className="relative z-10 max-w-7xl w-full px-6 md:px-12 lg:px-20 py-20 md:py-28 lg:py-36">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-20 items-center">
+          {/* Left column — typography & CTAs */}
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -101,7 +113,7 @@ function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="font-cabinet font-black tracking-[-0.04em] leading-[0.95] text-ink mb-8"
+              className="font-cabinet font-black tracking-[-0.04em] leading-[0.95] text-ink mb-10"
               style={{ fontSize: "clamp(2.5rem, 5vw, 5.5rem)" }}
             >
               {headline}
@@ -111,7 +123,7 @@ function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-ink-muted font-satoshi font-light leading-relaxed mb-10 max-w-lg"
+              className="text-ink-muted font-satoshi font-light leading-relaxed mb-12 max-w-lg"
               style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)" }}
             >
               Strategy, design, and engineering from Windhoek, Namibia. We work with organizations across Africa to build websites, applications, brand systems, and design systems that do their job and last for years.
@@ -121,23 +133,31 @@ function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: DURATION.slow, delay: 1, ease: STUDIO_EASE }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap items-center gap-4"
             >
-              <StudioButton href="/work" variant="primary" size="lg" showArrow>
+              {/* Primary CTA — compact, precise, executive */}
+              <StudioButton href="/work" variant="primary" size="md" showArrow>
                 See Our Work
               </StudioButton>
-              <StudioButton href="/contact" variant="ghost" size="lg">
+
+              {/* Secondary CTA — ghost text link with animated arrow */}
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 font-satoshi text-sm font-medium text-ink-muted hover:text-signal-teal transition-colors duration-300 group py-3 px-2"
+              >
                 Start a Project
-              </StudioButton>
+                <span className="inline-flex items-center">
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+              </Link>
             </motion.div>
           </div>
 
-          {/* Right column — Plan carousel (desktop) */}
+          {/* Right column — Plan cards (cascade on desktop, carousel on mobile) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5"
           >
             <PlanCarousel />
           </motion.div>

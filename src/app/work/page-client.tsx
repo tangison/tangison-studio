@@ -113,9 +113,7 @@ export function WorkPage() {
               What We&apos;ve Built
             </h1>
             <p className="font-satoshi text-lg md:text-xl text-ink-muted max-w-2xl leading-relaxed">
-              Websites, platforms, and digital products for organizations
-              across Namibia and beyond. Each project is designed and built from
-              the ground up.
+              Websites, platforms, and digital products for organizations across Namibia and beyond. Each project is designed and built from the ground up, starting with research and ending with a product that performs under real conditions. We work across tourism, finance, education, agriculture, energy, and more.
             </p>
           </motion.div>
         </div>
@@ -146,7 +144,7 @@ export function WorkPage() {
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image
                       src={project.screenshot}
-                      alt={`${project.name} screenshot`}
+                      alt={`${project.name} website homepage showing design and layout`}
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"

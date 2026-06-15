@@ -35,7 +35,7 @@ export function OrganizationJsonLd() {
     ],
     parentOrganization: {
       "@type": "Organization",
-      name: "Tuppaman Group",
+      name: "Tangison Technologies",
     },
   };
 

@@ -444,10 +444,10 @@ button, a {
   padding-top: calc(72px + 2rem);
 }
 
-/* Hero featured project preview — responsive heights */
+/* Hero plan cards — intentional rounding on card images */
 @media (min-width: 1024px) {
-  .hero .lg\:col-span-5 {
-    min-height: 420px;
+  .hero .plan-card-image {
+    border-radius: 4px !important;
   }
 }
 

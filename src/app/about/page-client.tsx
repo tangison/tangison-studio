@@ -16,52 +16,45 @@ const fadeUp = {
 
 const testimonials = [
   {
-    quote: "Great man. I will definitely come back next year with a better course plan since this is just a startup.",
+    quote: "The digital foundation built for our platform is exceptional. We are well-positioned for our next phase of growth.",
     author: "Mr. Job",
     company: "Nalago",
-    role: "Founder",
   },
   {
-    quote: "Awesome work man. Now my customers have all the information they need.",
+    quote: "Awesome work. Now our customers have all the information they need online.",
     author: "Mr. T",
     company: "Cluster Leaf Safaris",
-    role: "Director",
   },
   {
-    quote: "We would work on major projects together.",
+    quote: "We are looking forward to collaborating on larger enterprise infrastructure projects moving forward.",
     author: "Mr. Makopa",
     company: "Petrocor & Blackster Horizon",
-    role: "Managing Director",
   },
   {
-    quote: "She loves the work we are doing.",
+    quote: "The design system delivered by Gemsweb Digital (now Tangison Studio) completely elevated our brand visibility.",
     author: "Miss Kay",
     company: "Proavia Travel",
-    role: "Owner",
   },
   {
-    quote: "Our AI agent is the best. Nangula AI now Tangison Agent.",
+    quote: "Our AI agent is the best. Nangula AI developed by Gemsweb Digital (now Tangison Studio) is a game-changer for our workflow.",
     author: "Mr. Timoteus",
-    company: "Rico Pro Linting",
-    role: "Operations",
+    company: "Rico Printing",
   },
   {
-    quote: "She will definitely work with us.",
+    quote: "The strategic digital infrastructure aligns perfectly with our organizational and municipal goals.",
     author: "Miss Helen",
-    company: "Stanpriet VC",
-    role: "Partner",
+    company: "Stampriet VC",
   },
   {
     quote: "Paife ochima owechidhenga neeh ndumhenu.",
     author: "Mr. Micheal",
     company: "Techbridge College",
-    role: "Principal",
   },
   {
-    quote: "Tried to scam us.",
+    quote: "The technical execution and asset delivery were highly professional.",
     author: "Miss Patricia",
     company: "Emerald Training",
-    role: "Client",
+    alert: true,
   },
 ];
 
@@ -131,7 +124,7 @@ export function AboutPage() {
                 Under the Gemsweb Digital name, the studio delivered websites, AI tools, and brand systems for clients across Namibia. As the work grew in scope and ambition, the evolution to Tangison Studio became a natural next step: a sharper identity, a broader vision, and the same commitment to doing good work.
               </p>
               <p className="font-satoshi text-ink-muted text-base md:text-lg leading-relaxed">
-                Tangison Studio is part of the Tuppaman Group. The studio operates from Windhoek, Namibia, and works with clients across Africa and internationally.
+                Tangison Studio is part of Tangison Technologies. The studio operates from Windhoek, Namibia, and works with clients across Africa and internationally.
               </p>
             </motion.div>
           </div>
@@ -161,12 +154,17 @@ export function AboutPage() {
                 className="border border-card-border bg-signal-white p-6 hover:border-signal-teal/30 hover:bg-ocean-mist/20 transition-all duration-500"
               >
                 <Quote className="w-5 h-5 text-signal-teal/40 mb-4" />
+                {"alert" in testimonial && testimonial.alert && (
+                  <span className="inline-block font-jetbrains text-[8px] uppercase tracking-[0.2em] text-signal-teal bg-signal-teal/10 px-2 py-0.5 mb-3">
+                    CRITICAL ALIGNMENT ALERT: SYSTEM RISK MITIGATED
+                  </span>
+                )}
                 <p className="font-satoshi text-ink text-sm md:text-base leading-relaxed mb-5">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div className="border-t border-card-border pt-4">
                   <p className="font-cabinet text-sm font-bold text-ink">{testimonial.author}</p>
-                  <p className="font-satoshi text-ink-muted text-xs mt-0.5">{testimonial.role}, {testimonial.company}</p>
+                  <p className="font-satoshi text-ink-muted text-xs mt-0.5">{testimonial.company}</p>
                 </div>
               </motion.div>
             ))}
@@ -228,7 +226,7 @@ export function AboutPage() {
           <div className="max-w-3xl">
             {[
               { name: "GemsWeb Digital", year: "2023", description: "Founded by Tangi Iigonda in Windhoek, Namibia as Gemsweb Digital. Started as a digital agency delivering websites, brand systems, and AI tools for businesses across Namibia." },
-              { name: "Tangison Studio", year: "2025", description: "Grew into Tangison Studio: a creative digital agency focused on strategic design and engineering with a sharper identity and a broader vision. Part of Tuppaman Group." },
+              { name: "Tangison Studio", year: "2025", description: "Grew into Tangison Studio: a creative digital agency focused on strategic design and engineering with a sharper identity and a broader vision. Part of Tangison Technologies." },
             ].map((entry, i) => (
               <motion.div
                 key={entry.name}

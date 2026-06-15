@@ -252,7 +252,7 @@ export function Footer() {
             &copy; 2026 Tangison Systems. All Rights Reserved.
           </p>
           <p className="font-jetbrains text-[9px] text-fog-gray/50 uppercase tracking-[0.2em]">
-            Digital Infrastructure by Tuppaman Group
+            Digital Infrastructure by Tangison Technologies
           </p>
         </div>
       </motion.div>

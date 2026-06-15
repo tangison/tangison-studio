@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowLeft, Clock, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ArrowRight } from "lucide-react";
 import { SiteShell } from "@/components/tangison/site-shell";
 
 const fadeUp = {
@@ -55,12 +55,6 @@ export function IndustryComingSoonPage({
             <h1 className="font-cabinet text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-6">
               {industry}
             </h1>
-            <div className="flex items-center gap-2 mb-8">
-              <Clock className="w-4 h-4 text-signal-teal" />
-              <span className="font-jetbrains text-[11px] uppercase tracking-[0.15em] text-signal-teal">
-                Case studies coming soon
-              </span>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -107,37 +101,61 @@ export function IndustryComingSoonPage({
         </div>
       </section>
 
-      {/* Coming Soon Notice */}
+      {/* Approach Section - replaces Coming Soon placeholder */}
       <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-[1400px] mx-auto">
           <motion.div {...fadeUp}>
-            <div className="w-16 h-16 bg-signal-teal-muted flex items-center justify-center mx-auto mb-8">
-              <Clock className="w-7 h-7 text-signal-teal" />
-            </div>
-            <h2 className="font-cabinet text-2xl md:text-3xl font-bold tracking-tight text-ink mb-4">
-              Case Studies Are Being Assembled
+            <div className="editorial-divider mb-8" />
+            <h2 className="font-cabinet text-2xl md:text-3xl font-bold tracking-tight text-ink mb-6">
+              Our approach to {industry.toLowerCase()}
             </h2>
-            <p className="font-satoshi text-ink-muted text-base md:text-lg leading-relaxed mb-6">
-              We are carefully putting together detailed case studies from both the Gemsweb Digital era and our new work as Tangison Studio. Each case study will include project context, our process, the outcomes, and what we learned.
-            </p>
-            <p className="font-satoshi text-ink-muted text-base md:text-lg leading-relaxed mb-10">
-              In the meantime, if you have a project in the {industry.toLowerCase()} space, we would love to hear about it.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 bg-signal-teal text-signal-white px-8 py-4 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300"
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Research first",
+                body: "Every project in the " + industry.toLowerCase() + " space starts with understanding the specific regulatory, operational, and user context. We do not assume. We investigate.",
+              },
+              {
+                title: "Built for the real world",
+                body: "Digital products for " + industry.toLowerCase() + " must handle real conditions: connectivity constraints, diverse user bases, and compliance requirements. We design and build for actual use, not ideal conditions.",
+              },
+              {
+                title: "Measurable outcomes",
+                body: "We define success metrics before we start building. Whether it is conversion rates, user engagement, or operational efficiency, every deliverable is tied to a measurable result.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="border border-card-border bg-signal-white p-8"
               >
-                Start a Project &rarr;
-              </Link>
-              <Link
-                href="/work#industries"
-                className="inline-flex items-center gap-2 border border-card-border text-ink px-8 py-4 font-cabinet font-bold text-sm tracking-tight hover:bg-signal-white hover:border-black/[0.15] transition-all duration-300"
-              >
-                <ArrowLeft className="w-3.5 h-3.5" />
-                All Industries
-              </Link>
-            </div>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-1.5 h-1.5 bg-signal-teal" aria-hidden="true" />
+                  <span className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="font-cabinet text-lg font-bold tracking-tight text-ink mb-3">
+                  {item.title}
+                </h3>
+                <p className="font-satoshi text-ink-muted text-sm md:text-base leading-relaxed">
+                  {item.body}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div {...fadeUp} className="mt-12">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 font-jetbrains text-[11px] uppercase tracking-[0.15em] text-ink-muted hover:text-signal-teal transition-colors duration-300 group"
+            >
+              Discuss your {industry.toLowerCase()} project
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -150,7 +168,7 @@ export function IndustryComingSoonPage({
               Have a project?
             </h2>
             <p className="font-satoshi text-fog-gray/60 text-base md:text-lg mb-10 max-w-lg mx-auto leading-relaxed">
-              While we put the portfolio together, we are still taking on new work. Start a conversation and let&apos;s build something together.
+              We work with organizations across {industry.toLowerCase()} and beyond. Start a conversation and let us build something together.
             </p>
             <Link
               href="/contact"
