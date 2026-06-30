@@ -24,6 +24,9 @@ const titleMap: Record<string, string> = {
   "tangison-systems": "Tangison Systems Case Study",
   crescendo: "Crescendo Case Study",
   feorm: "Feorm Case Study",
+  lrclearing: "L&R Clearing Agency Case Study",
+  reviveautoworks: "Revive Auto Works Case Study",
+  miway: "MI-WAY Case Study",
 };
 
 const descriptionMap: Record<string, string> = {
@@ -43,6 +46,12 @@ const descriptionMap: Record<string, string> = {
     "Tangison built Crescendo Namibia's music platform, a 16-year Windhoek institution with Shop and Academy as equal pillars for music education.",
   feorm:
     "Tangison built Feorm, a farm stay discovery platform for Namibia, from brand identity to Python backend, as an internal product.",
+  lrclearing:
+    "Tangison built L&R Clearing Agency's site, a Namibian customs clearing and freight forwarding platform built around operational specificity at Walvis Bay, Lüderitz, and Southern African borders.",
+  reviveautoworks:
+    "Tangison built Revive Auto Works' site, a Namibian independent auto repair shop positioned around WhatsApp booking, OE parts, and the Revive Standard.",
+  miway:
+    "Tangison built MI-WAY by Malu Investment's site, a northern Namibia multi-service enterprise made legible across taxi, construction, logistics, and cleaning.",
 };
 
 export function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

@@ -36,6 +36,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/work/tangison-systems`, lastModified: new Date("2026-06-01"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/work/crescendo`, lastModified: new Date("2026-06-01"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/work/feorm`, lastModified: new Date("2026-06-01"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/work/lrclearing`, lastModified: new Date("2026-07-01"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/work/reviveautoworks`, lastModified: new Date("2026-07-01"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/work/miway`, lastModified: new Date("2026-07-01"), changeFrequency: "monthly", priority: 0.9 },
     // Work industry pages
     { url: `${baseUrl}/work/smes`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/work/mining`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },

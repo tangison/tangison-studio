@@ -93,6 +93,36 @@ const projects = [
     tags: "Platform Design & Development · Agriculture",
     url: "https://feorm.tangison.com",
   },
+  {
+    name: "L&R Clearing Agency",
+    slug: "lrclearing",
+    logo: "/images/work/lrclearing-logo.webp",
+    screenshot: "/images/work/screenshots/lrclearing-screenshot.webp",
+    description:
+      "Customs clearing and freight forwarding across Walvis Bay, Lüderitz, and Southern African borders.",
+    tags: "Website Design & Development · Logistics & Customs",
+    url: "https://lrclearing.com",
+  },
+  {
+    name: "Revive Auto Works",
+    slug: "reviveautoworks",
+    logo: "/images/work/reviveautoworks-logo.webp",
+    screenshot: "/images/work/screenshots/reviveautoworks-screenshot.webp",
+    description:
+      "Auto repairs and servicing in Namibia with WhatsApp booking and OE parts.",
+    tags: "Website Design & Development · Automotive",
+    url: "https://reviveautoworks.cc",
+  },
+  {
+    name: "MI-WAY by Malu Investment",
+    slug: "miway",
+    logo: "/images/work/miway-logo.webp",
+    screenshot: "/images/work/screenshots/miway-screenshot.webp",
+    description:
+      "Northern Namibia multi-service enterprise spanning taxi, construction, logistics, and cleaning.",
+    tags: "Website Design & Development · Transport & Multi-Service",
+    url: "https://mi-way.org",
+  },
 ];
 
 /* ──────────────────────────────────────────────

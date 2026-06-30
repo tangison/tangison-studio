@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     template: "%s | TANGISON STUDIO",
   },
   description:
-    "Tangison Studio is a creative digital agency in Windhoek, Namibia. Founded by Tangi Iigonda in 2023. Website design, development, brand systems, and creative direction for organizations across Africa.",
+    "Tangison Studio is a Windhoek-based digital agency. Website design, development, brand systems, and creative direction for organizations across Africa.",
   keywords: [
     "Tangison Studio",
     "Gemsweb Digital",
