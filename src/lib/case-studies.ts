@@ -429,6 +429,151 @@ export const caseStudies: CaseStudy[] = [
       "Feorm is live and under active development. The platform lists farm stays, supports booking inquiries, and presents each property with enough detail to make a decision. The brand identity holds. The Python backend handles data that a static site cannot. It is not finished. It was not designed to be finished. It was designed to be real.",
       "The most important lesson from Feorm was about what happens when you are both the client and the builder. You gain creative freedom. You lose external accountability. The solution was to impose the same discipline on internal projects that client work demands: a written brief, a defined scope, a deadline, and a ship date. Without those constraints, nothing ships.",
     ],
+    nextSlug: "lrclearing",
+  },
+
+  /* ──────────────────────────────────────────────
+     PROJECT 9: L&R Clearing Agency
+     ────────────────────────────────────────────── */
+  {
+    slug: "lrclearing",
+    screenshotSlug: "lrclearing",
+    name: "L&R Clearing Agency",
+    url: "https://lrclearing.com",
+    year: "2026",
+    industry: "Logistics & Customs Clearing",
+    services: ["Website Design", "Website Development"],
+    tech: ["Next.js", "Tailwind CSS"],
+    descriptor:
+      "Customs clearing and freight forwarding across Walvis Bay, Lüderitz, and Southern African borders",
+    challengeH2:
+      "Customs clearance is a trust business. The site needed to prove operational competence, not list services.",
+    challengeBody: [
+      "L&R Clearing Agency operates at Walvis Bay and Lüderitz, with on-the-ground presence at five major Southern African border posts. Cargo owners choosing a clearing agent are not shopping for features. They are shopping for reliability. A delayed clearance at Ariamsvlei or Noordoewer costs money every hour. The previous site did not communicate that L&R understood this.",
+      "The logistics category in Namibia is crowded with generic websites. Most operators list services without specifying where they work, which borders they cover, or how they handle permits. That ambiguity is a problem for a buyer who needs to know whether their cargo can move through a specific port on a specific timeline. A site that does not answer those questions forces the buyer to call. A site that answers them earns the call.",
+      "The brief was to build a site that shows operational specificity. Which ports. Which borders. What documentation. What pricing model. The site needed to make L&R look like what they are: a Namibian clearing agent with regional reach and the phone numbers to prove it.",
+    ],
+    approachH2: "Operational specificity as positioning.",
+    approachBody: [
+      "The structure was built around the five crossings L&R actually serves. Walvis Bay, Lüderitz, Ariamsvlei, Noordoewer, and the regional border posts are not abstract service areas. They are specific places with specific clearance requirements. Naming them on the site does more for trust than any tagline could.",
+      "Pricing and permits were treated as first-class content, not buried in a PDF. A buyer researching clearing agents wants to understand the cost structure and the permit process before they make contact. Making that information visible filters out unqualified leads and shortens the conversation for qualified ones. The phone number and email are still the primary conversion path. The site just makes sure the conversation starts informed.",
+    ],
+    craftNotes: [
+      {
+        label: "Five crossings, one handover",
+        body: "The site names the actual ports and borders L&R serves. Operational specificity does more for trust than any marketing copy.",
+      },
+      {
+        label: "Pricing as content",
+        body: "B2B logistics sites usually hide pricing. L&R surfaces it. Buyers who understand the cost model before they call are buyers who convert faster.",
+      },
+      {
+        label: "Permits as a section, not a footnote",
+        body: "Permits are a real buyer question. Treating them as first-class content answers that question before it becomes a sales objection.",
+      },
+    ],
+    outcomeH2:
+      "A site that signals competence before the first call.",
+    outcomeBody: [
+      "L&R launched with a site that reflects the operation. Port and border coverage is specific. Pricing is visible. Permit processes are explained. The phone numbers are real and they ring. The site does the qualifying work so that when the phone does ring, the conversation is already past the basics.",
+      "The lesson here was about honesty as a positioning tool. Logistics is an industry where most sites overpromise and under-specify. Being specific about what you actually do, where you actually do it, and what it actually costs is a differentiator. The site does not try to sound big. It tries to sound accurate.",
+    ],
+    nextSlug: "reviveautoworks",
+  },
+
+  /* ──────────────────────────────────────────────
+     PROJECT 10: Revive Auto Works
+     ────────────────────────────────────────────── */
+  {
+    slug: "reviveautoworks",
+    screenshotSlug: "reviveautoworks",
+    name: "Revive Auto Works",
+    url: "https://reviveautoworks.cc",
+    year: "2026",
+    industry: "Automotive Repair & Servicing",
+    services: ["Website Design", "Website Development"],
+    tech: ["Next.js", "Tailwind CSS"],
+    descriptor:
+      "Auto repairs and servicing in Namibia with WhatsApp booking and OE parts",
+    challengeH2:
+      "Independent auto shops compete on trust. The site needed to make that trust visible.",
+    challengeBody: [
+      "Revive Auto Works is an independent automotive repair shop in Namibia. The category is crowded. Every shop claims expert technicians, quality parts, and reliable service. Most sites look the same because most sites say the same things. A buyer with a vehicle that needs work has no way to distinguish between shops from their websites alone.",
+      "The previous Revive presence did not communicate the things that actually differentiate the shop. OE parts. Workmanship guarantee. WhatsApp booking. The standard of care. These are not abstract marketing claims. They are operational realities that a buyer cares about. A site that buries them under generic copy undersells the business.",
+      "The brief was to build a site that positions Revive as premium without pretending to be a luxury dealer service center. Premium care at independent-shop rates. The site needed to make the value visible, not just claim it.",
+    ],
+    approachH2: "Service-led structure. WhatsApp-first booking.",
+    approachBody: [
+      "The information architecture was built around services first. Routine servicing, brakes and suspension, electrical, pre-purchase inspections, general maintenance. Each service gets its own block with a clear scope. A buyer who knows what they need can find it. A buyer who does not can read and self-diagnose. That is the work the site does.",
+      "The booking flow was designed around how Namibian vehicle owners actually behave. WhatsApp is the primary channel. A WhatsApp button is visible on every section. The Revive Standard — OE parts, workmanship guarantee, expert technicians — is positioned as a commitment, not a tagline. It appears where buyers make decisions, not just on a homepage banner.",
+    ],
+    craftNotes: [
+      {
+        label: "WhatsApp on every section",
+        body: "For Namibian auto service, WhatsApp is the booking channel. Placing the button on every service block removes friction at the decision point.",
+      },
+      {
+        label: "The Revive Standard as positioning",
+        body: "OE parts, workmanship guarantee, expert technicians. Stated as a commitment, repeated where buyers decide. The standard is the differentiator.",
+      },
+      {
+        label: "Service-led IA",
+        body: "Each service has its own block with scope. Buyers who know what they need find it fast. Buyers who do not can self-diagnose.",
+      },
+    ],
+    outcomeH2: "A site that makes the value visible.",
+    outcomeBody: [
+      "Revive launched with a site that reflects the standard of the shop. The service structure is clear. The booking path is one tap away from every section. The Revive Standard is visible where it matters. The site does what it was built to do: make a premium independent shop look like what it is.",
+      "The lesson was about clarity as positioning. In a category where most sites say the same things, being specific about what you do, how you book, and what you guarantee is the differentiator. The site does not try to sound premium. It tries to be clear. Clarity is the premium signal.",
+    ],
+    nextSlug: "miway",
+  },
+
+  /* ──────────────────────────────────────────────
+     PROJECT 11: MI-WAY by Malu Investment
+     ────────────────────────────────────────────── */
+  {
+    slug: "miway",
+    screenshotSlug: "miway",
+    name: "MI-WAY by Malu Investment",
+    url: "https://mi-way.org",
+    year: "2026",
+    industry: "Transport & Multi-Service",
+    services: ["Website Design", "Website Development"],
+    tech: ["Next.js", "Tailwind CSS"],
+    descriptor:
+      "Northern Namibia multi-service enterprise spanning taxi, construction, logistics, and cleaning",
+    challengeH2:
+      "A multi-service business is hard to position. The site needed to make four service lines legible.",
+    challengeBody: [
+      "MI-WAY by Malu Investment is a northern Namibian enterprise operating across four service lines: taxi transport, construction, logistics, and cleaning. Established in 2017. Operating out of Oshakati, Ongwediva, and Ondangwa. The previous presence did not communicate the scope or the standard. A buyer looking for a taxi and a buyer looking for a construction contractor are different audiences with different needs, and they both need to understand what MI-WAY does within seconds of landing.",
+      "Multi-service businesses struggle with positioning. The temptation is to list everything and hope the visitor finds what they need. That approach assumes the visitor already knows what they are looking for. Most do not. They arrive with a question — can this company help me with this — and they leave if the answer is not obvious. The site needed to answer that question for four different audiences without diluting the brand.",
+      "The brief was to build a site that makes a multi-service business legible. Four service lines, one standard, one brand. Northern Namibia roots as positioning, not just geography. A booking path that works for taxi customers without alienating construction clients.",
+    ],
+    approachH2: "Four services. One standard. Northern roots.",
+    approachBody: [
+      "The structure was built around the four service lines as equal pillars. Taxi transport, construction, logistics, cleaning. Each gets its own section with scope, coverage, and a clear next step. The MI-WAY standard — show up, do the work, do it well — runs across all four. A visitor can scan the services and find theirs in seconds.",
+      "The positioning leans into northern Namibia. Oshakati, Ongwediva, Ondangwa are not just cities on a map. They are the operating territory. Naming them on the site signals where MI-WAY is strong and filters out inquiries from outside the coverage area. The booking flow is taxi-first because that is the highest-volume service, but every service has a clear contact path.",
+    ],
+    craftNotes: [
+      {
+        label: "Four services, one standard",
+        body: "Taxi, construction, logistics, cleaning. Equal pillars, one brand standard. The site does not force visitors to choose a primary service.",
+      },
+      {
+        label: "Northern Namibia as positioning",
+        body: "Oshakati, Ongwediva, Ondangwa are named on the site. Geography is not just coverage. It is positioning.",
+      },
+      {
+        label: "Booking-first hero",
+        body: "The hero leads with Book a Ride because taxi is the highest-volume service. Other services have clear contact paths lower down.",
+      },
+    ],
+    outcomeH2: "A multi-service business made legible.",
+    outcomeBody: [
+      "MI-WAY launched with a site that makes a four-service business understandable in seconds. The service pillars are clear. The geography is specific. The booking path for the highest-volume service is one tap away. The site does what it was built to do: help different audiences find what they need without confusion.",
+      "The lesson was about legibility as a design problem. Multi-service businesses fail on websites when they try to be everything to everyone. The solution is not to hide services. It is to structure them so that each audience can find theirs fast. MI-WAY's site does that. Four services, one standard, one clear path for each.",
+    ],
     nextSlug: "proavia",
   },
 ];
