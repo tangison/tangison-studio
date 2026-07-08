@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type React from "react";
 import localFont from "next/font/local";
 import { OrganizationJsonLd } from "@/components/tangison/json-ld";
 import "./globals.css";

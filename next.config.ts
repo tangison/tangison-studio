@@ -137,7 +137,18 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; media-src blob:; connect-src 'self' https://openrouter.ai; frame-ancestors 'none'; base-uri 'self'; form-action 'self';",
+            // CSP review (agent/audit-fix-pass-1):
+            // - Removed 'unsafe-eval' from script-src. Next.js 16 production builds
+            //   do not require eval; dev mode does, but dev is not served with these
+            //   headers (Vercel dev server does not run next.config.ts headers()).
+            //   Verified by `npm run build` + `npm run start` smoke test (see PR).
+            // - KEPT 'unsafe-inline' in script-src and style-src. Next.js App Router
+            //   injects inline runtime scripts for hydration and inline styles for
+            //   Tailwind/RSC. Removing 'unsafe-inline' would break hydration.
+            //   FOLLOW-UP TECH DEBT: replace 'unsafe-inline' with nonce-based CSP
+            //   (Next.js 16 supports `nonce` per-request via middleware). Tracked
+            //   as a separate task — requires middleware setup + per-request nonce.
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; media-src blob:; connect-src 'self' https://openrouter.ai; frame-ancestors 'none'; base-uri 'self'; form-action 'self';",
           },
         ],
       },
