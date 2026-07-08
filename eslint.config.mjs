@@ -10,14 +10,20 @@ const eslintConfig = [...nextCoreWebVitals, ...nextTypescript, {
   rules: {
     // TypeScript rules
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-unused-vars": "off",
+    // Re-enabled as warn first (pass 1) — known ~41 violations across the codebase.
+    // Promote to default (error) in pass 2 once violations are cleaned up.
+    "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/prefer-as-const": "off",
     "@typescript-eslint/no-unused-disable-directive": "off",
     
     // React rules
-    "react-hooks/exhaustive-deps": "off",
+    // Re-enabled as warn first (pass 1) — known violations in navigation.tsx and case-study pages.
+    "react-hooks/exhaustive-deps": "warn",
+    // Downgraded to warn for pass 1 — 2 pre-existing violations in navigation.tsx (lines 344, 676)
+    // that require event-handler refactoring to fix. Promote to error in pass 2.
+    "react-hooks/set-state-in-effect": "warn",
     "react-hooks/purity": "off",
     "react/no-unescaped-entities": "off",
     "react/display-name": "off",
@@ -29,18 +35,20 @@ const eslintConfig = [...nextCoreWebVitals, ...nextTypescript, {
     "@next/next/no-html-link-for-pages": "off",
     
     // General JavaScript rules
-    "prefer-const": "off",
-    "no-unused-vars": "off",
+    // Re-enabled (pass 1) — these are core correctness rules; no known violations expected.
+    "prefer-const": "error",
+    "no-debugger": "error",
+    "no-unreachable": "error",
+    "no-undef": "error",
+    // Still off (low-value noise rules; revisit later):
+    "no-unused-vars": "off", // covered by @typescript-eslint/no-unused-vars above
     "no-console": "off",
-    "no-debugger": "off",
     "no-empty": "off",
     "no-irregular-whitespace": "off",
     "no-case-declarations": "off",
     "no-fallthrough": "off",
     "no-mixed-spaces-and-tabs": "off",
     "no-redeclare": "off",
-    "no-undef": "off",
-    "no-unreachable": "off",
     "no-useless-escape": "off",
   },
 }, {

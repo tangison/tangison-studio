@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: Lint, Typecheck, Build, Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      # Security audit — non-blocking on pass 1.
+      # Next.js 16.1.0 has known high-severity CVEs that require a minor version
+      # upgrade to fix (see PR description). Making this non-blocking so CI doesn't
+      # gate every PR on a framework upgrade. Once Next.js is upgraded, remove
+      # continue-on-error and make this a hard gate.
+      - name: Security audit (high+)
+        continue-on-error: true
+        run: npm audit --audit-level=high

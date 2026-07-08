@@ -8,7 +8,13 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/"],
+        // /_next/ (Next.js static assets: JS chunks, CSS, fonts) was previously disallowed.
+        // Removed because: (1) these assets are required for search renderers that
+        // execute JS, (2) Googlebot can fetch them fine and they are immutable per-build,
+        // (3) blocking them can cause "soft 404" / "blocked resource" warnings in
+        // Search Console's URL Inspection tool. Only /api/ remains disallowed because
+        // those routes are not public-facing content.
+        disallow: ["/api/"],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

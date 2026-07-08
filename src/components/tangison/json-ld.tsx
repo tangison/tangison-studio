@@ -1,6 +1,6 @@
 import React from "react";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://tangison-studio.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com";
 
 /* ── Organization Schema (use on homepage) ── */
 export function OrganizationJsonLd() {
