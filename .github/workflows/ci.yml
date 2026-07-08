@@ -37,11 +37,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      # Security audit — non-blocking on pass 1.
-      # Next.js 16.1.0 has known high-severity CVEs that require a minor version
-      # upgrade to fix (see PR description). Making this non-blocking so CI doesn't
-      # gate every PR on a framework upgrade. Once Next.js is upgraded, remove
-      # continue-on-error and make this a hard gate.
+      # Security audit — hard gate. Next.js upgraded to 16.2.10 and postcss
+      # overridden to ^8.5.16 in package.json, so 0 vulnerabilities remain.
       - name: Security audit (high+)
-        continue-on-error: true
         run: npm audit --audit-level=high
