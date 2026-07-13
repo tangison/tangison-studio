@@ -643,9 +643,8 @@ button, a {
 
 /* ─── Accessibility fixes (WCAG AA color contrast) ─── */
 
-/* Hover/active teal for text links — must pass 4.5:1 on light backgrounds */
+/* Hover/active teal for text links on light backgrounds — must pass 4.5:1 */
 .hover\:text-signal-teal:hover { color: var(--color-signal-teal-text) !important; }
-.text-signal-teal { color: var(--color-signal-teal-text) !important; }
 .hover\:text-signal-teal-light:hover { color: var(--color-signal-teal-text) !important; }
 
 /* The mono-label-studio uses #153E52 (Deep Ocean Navy) — already passes */
