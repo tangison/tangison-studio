@@ -28,6 +28,8 @@ interface StudioLogoProps {
   size?: number;
   showWordmark?: boolean;
   className?: string;
+  /** Wordmark text color — defaults to ink (#111315). Use "light" for dark backgrounds. */
+  wordmarkColor?: "ink" | "light";
 }
 
 export function StudioLogo({
@@ -35,8 +37,10 @@ export function StudioLogo({
   size = 36,
   showWordmark = true,
   className,
+  wordmarkColor = "ink",
 }: StudioLogoProps) {
   const { bg } = variantStyles[variant];
+  const textColor = wordmarkColor === "light" ? "#E6F2F1" : "#111315";
 
   return (
     <span
@@ -64,11 +68,12 @@ export function StudioLogo({
       </span>
       {showWordmark && (
         <span
-          className="font-display font-bold text-ink"
+          className="font-display font-bold"
           style={{
             fontSize: `${size * 0.5}px`,
             letterSpacing: "-0.02em",
             lineHeight: 1,
+            color: textColor,
           }}
         >
           Studio

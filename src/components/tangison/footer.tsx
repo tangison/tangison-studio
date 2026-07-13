@@ -59,9 +59,9 @@ export function Footer() {
         className="relative z-10 px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-12 md:pb-16"
       >
         <div className="max-w-[1400px] mx-auto">
-          {/* Logo — Studio circular lockup (light variant for dark footer) */}
+          {/* Logo — Studio circular lockup (light wordmark for dark footer) */}
           <div className="mb-8">
-            <StudioLogo variant="navy" size={48} />
+            <StudioLogo variant="navy" size={48} wordmarkColor="light" />
           </div>
 
           {/* Tagline */}
