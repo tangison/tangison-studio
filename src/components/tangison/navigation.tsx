@@ -1,936 +1,199 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { StudioLogo } from "@/components/studio/studio-logo";
 
-/* ─── Navigation Data ─────────────────────────────────────────── */
+/**
+ * Minimal Collins-style navigation.
+ *
+ * A simple top bar: logo left, text links center-right, menu on mobile.
+ * No mega-menus, no search overlay, no floating pill, no animations.
+ * Just clean, editorial restraint.
+ */
 
-interface MegaSubItem {
-  label: string;
-  href: string;
-  description?: string;
-}
-
-interface NavItem {
-  label: string;
-  href: string;
-  children?: MegaSubItem[];
-  megaImage?: string;
-  megaImageAlt?: string;
-  megaTagline?: string;
-}
-
-const navItems: NavItem[] = [
-  {
-    label: "Work",
-    href: "/work",
-    children: [
-      { label: "Portfolio", href: "/work", description: "Websites, platforms, and digital products" },
-      { label: "SMEs & Startups", href: "/work/smes", description: "Brand and digital for growing ventures" },
-      { label: "Mining & Resources", href: "/work/mining", description: "Safety portals and compliance dashboards" },
-      { label: "Government", href: "/work/government", description: "Accessible public sector platforms" },
-      { label: "Tourism & Hospitality", href: "/work/tourism", description: "Booking platforms and destination brands" },
-      { label: "Agriculture", href: "/work/agriculture", description: "Agri-tech and marketplace platforms" },
-      { label: "Finance", href: "/work/finance", description: "Fintech dashboards and banking portals" },
-      { label: "Education", href: "/work/education", description: "Learning platforms and EdTech" },
-      { label: "Healthcare", href: "/work/healthcare", description: "Patient portals and telemedicine" },
-      { label: "Energy", href: "/work/energy", description: "Renewable energy and utility platforms" },
-    ],
-    megaImage: "/images/gallery/nav-work.webp",
-    megaImageAlt: "Work portfolio",
-    megaTagline: "Work that gets results."
-  },
-  {
-    label: "Services",
-    href: "/services",
-    children: [
-      { label: "Website Design", href: "/services/website-design", description: "Pages that work" },
-      { label: "Website Development", href: "/services/website-development", description: "Fast, clean code" },
-      { label: "Application Design", href: "/services/application-design", description: "Complex made simple" },
-      { label: "Product Design", href: "/services/product-design", description: "From idea to launch" },
-      { label: "Brand Systems", href: "/services/brand-systems", description: "Identity that sticks" },
-      { label: "Design Systems", href: "/services/design-systems", description: "One source of truth" },
-      { label: "Creative Direction", href: "/services/creative-direction", description: "Visual leadership" },
-    ],
-    megaImage: "/images/gallery/nav-services.webp",
-    megaImageAlt: "Design services",
-    megaTagline: "Seven disciplines. One studio."
-  },
-  {
-    label: "Process",
-    href: "/process",
-  },
-  {
-    label: "About",
-    href: "/about",
-    children: [
-      { label: "The Studio", href: "/about", description: "Who we are" },
-      { label: "Brand Identity", href: "/brand", description: "Visual and verbal system" },
-    ],
-    megaImage: "/images/gallery/nav-about.webp",
-    megaImageAlt: "About Tangison Studio",
-    megaTagline: "Designing from Windhoek.",
-  },
-  {
-    label: "Partnership",
-    href: "/partnership",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
-
-/* ─── Search Data ─────────────────────────────────────────── */
-
-interface SearchItem {
-  label: string;
-  href: string;
-  category: string;
-  description?: string;
-}
-
-const searchableItems: SearchItem[] = [
-  { label: "Home", href: "/", category: "Pages" },
-  { label: "Work", href: "/work", category: "Pages" },
-  { label: "Services", href: "/services", category: "Pages" },
-  { label: "Process", href: "/process", category: "Pages" },
-  { label: "About", href: "/about", category: "Pages" },
-  { label: "Contact", href: "/contact", category: "Pages" },
-  { label: "Blog", href: "/blog", category: "Pages" },
-  { label: "Brand Identity", href: "/brand", category: "Pages" },
-  { label: "Careers", href: "/careers", category: "Pages" },
-  { label: "FAQ", href: "/faq", category: "Pages" },
-  { label: "SMEs & Startups", href: "/work/smes", category: "Industries", description: "Brand and digital for growing ventures" },
-  { label: "Mining & Resources", href: "/work/mining", category: "Industries", description: "Safety portals and compliance dashboards" },
-  { label: "Government", href: "/work/government", category: "Industries", description: "Accessible public sector platforms" },
-  { label: "Tourism & Hospitality", href: "/work/tourism", category: "Industries", description: "Booking platforms and destination brands" },
-  { label: "Agriculture", href: "/work/agriculture", category: "Industries", description: "Agri-tech and marketplace platforms" },
-  { label: "Finance", href: "/work/finance", category: "Industries", description: "Fintech dashboards and banking portals" },
-  { label: "Education", href: "/work/education", category: "Industries", description: "Learning platforms and EdTech" },
-  { label: "Healthcare", href: "/work/healthcare", category: "Industries", description: "Patient portals and telemedicine" },
-  { label: "Energy", href: "/work/energy", category: "Industries", description: "Renewable energy and utility platforms" },
-  { label: "Website Design", href: "/services/website-design", category: "Services", description: "Pages that work" },
-  { label: "Website Development", href: "/services/website-development", category: "Services", description: "Fast, clean code" },
-  { label: "Application Design", href: "/services/application-design", category: "Services", description: "Complex made simple" },
-  { label: "Product Design", href: "/services/product-design", category: "Services", description: "From idea to launch" },
-  { label: "Brand Systems", href: "/services/brand-systems", category: "Services", description: "Identity that sticks" },
-  { label: "Design Systems", href: "/services/design-systems", category: "Services", description: "One source of truth" },
-  { label: "Creative Direction", href: "/services/creative-direction", category: "Services", description: "Visual leadership" },
-];
-
-/* ─── Hamburger Icon ──────────────────────────────────────────── */
-
-function HamburgerIcon({ isOpen, dark = false }: { isOpen: boolean; dark?: boolean }) {
-  const color = dark ? "bg-skeleton-bone" : "bg-ink";
-  return (
-    <div className="w-5 h-5 flex flex-col justify-center gap-[5px] relative">
-      <span
-        className={`block w-full h-[1.5px] ${color} transition-all duration-300 origin-center ${
-          isOpen ? "rotate-45 translate-y-[3.25px]" : ""
-        }`}
-      />
-      <span
-        className={`block w-full h-[1.5px] ${color} transition-all duration-300 origin-center ${
-          isOpen ? "-rotate-45 -translate-y-[3.25px]" : ""
-        }`}
-      />
-    </div>
-  );
-}
-
-/* ─── Desktop Mega-Menu Dropdown ──────────────────────────────── */
-
-function DesktopDropdown({
-  item,
-  pathname,
-  onHoverStart,
-  onHoverEnd,
-}: {
-  item: NavItem;
-  pathname: string;
-  onHoverStart: (rect: DOMRect) => void;
-  onHoverEnd: () => void;
-}) {
-  const [isOpen, setIsOpen] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const linkRef = useRef<HTMLAnchorElement>(null);
-
-  const handleMouseEnter = useCallback(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    setIsOpen(true);
-    if (linkRef.current) {
-      onHoverStart(linkRef.current.getBoundingClientRect());
-    }
-  }, [onHoverStart]);
-
-  const handleMouseLeave = useCallback(() => {
-    timeoutRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 200);
-    onHoverEnd();
-  }, [onHoverEnd]);
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
-
-  const isActive =
-    pathname === item.href ||
-    pathname.startsWith(item.href + "/");
-
-  return (
-    <div
-      className="relative"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <Link
-        ref={linkRef}
-        href={item.href}
-        className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 py-1 ${
-          isActive
-            ? "text-ink"
-            : "text-ink-muted hover:text-ink"
-        }`}
-        aria-expanded={isOpen}
-        aria-haspopup="true"
-      >
-        {item.label}
-        {isActive && (
-          <motion.span
-            layoutId="active-nav-underline"
-            className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-signal-teal"
-            transition={{ type: "tween", duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          />
-        )}
-      </Link>
-
-      <AnimatePresence>
-        {isOpen && item.children && (
-          <motion.div
-            initial={{ opacity: 0, y: 8, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 8, scale: 0.98 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute left-0 top-full pt-3 z-50"
-            role="menu"
-            aria-label={`${item.label} submenu`}
-          >
-            <div className="bg-skeleton-bone/95 border border-black/[0.08] min-w-[280px] sm:min-w-[340px] max-w-[calc(100vw-48px)] overflow-hidden" style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}>
-              {/* Teal accent line */}
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="h-[2px] bg-signal-teal origin-left"
-                aria-hidden="true"
-              />
-
-              {/* Optional tagline */}
-              {item.megaTagline && (
-                <div className="px-5 py-3 border-b border-card-border">
-                  <span className="font-satoshi text-[12px] text-ink-muted/50 italic">
-                    {item.megaTagline}
-                  </span>
-                </div>
-              )}
-
-              <div className="py-2">
-                {item.children.map((child, i) => {
-                  const isChildActive = pathname === child.href;
-                  return (
-                    <motion.div
-                      key={child.href}
-                      initial={{ opacity: 0, x: -8 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.25, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                      <Link
-                        href={child.href}
-                        className={`flex items-center justify-between px-5 py-3 transition-all duration-200 ${
-                          isChildActive
-                            ? "text-ink bg-signal-teal-muted"
-                            : "text-ink-muted hover:text-ink hover:bg-card-surface"
-                        }`}
-                        role="menuitem"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <div>
-                          <span className="font-cabinet text-sm font-bold tracking-tight block">
-                            {child.label}
-                          </span>
-                          {child.description && (
-                            <span className="font-satoshi text-[11px] text-ink-muted/50 mt-0.5 block">
-                              {child.description}
-                            </span>
-                          )}
-                        </div>
-                        <ArrowRight className="w-3 h-3 text-ink-muted/30 shrink-0 ml-4" />
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-              </div>
-
-              {/* Optional bottom image preview */}
-              {item.megaImage && (
-                <div className="border-t border-card-border">
-                  <div className="relative h-24 overflow-hidden">
-                    <Image
-                      src={item.megaImage}
-                      alt={item.megaImageAlt || ""}
-                      className="object-cover"
-                      fill
-                      sizes="340px"
-                    />
-                    <div className="absolute inset-0 bg-skeleton-bone/20" />
-                  </div>
-                </div>
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
-/* ─── Search Overlay (Cmd+K) ──────────────────────────────────── */
-
-function SearchOverlay({
-  isOpen,
-  onClose,
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-}) {
-  const [query, setQuery] = useState("");
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const resultsRef = useRef<HTMLDivElement>(null);
-
-  const filtered = query.trim()
-    ? searchableItems.filter(
-        (item) =>
-          item.label.toLowerCase().includes(query.toLowerCase()) ||
-          item.category.toLowerCase().includes(query.toLowerCase()) ||
-          (item.description && item.description.toLowerCase().includes(query.toLowerCase()))
-      )
-    : searchableItems;
-
-  const grouped = filtered.reduce<Record<string, SearchItem[]>>((acc, item) => {
-    if (!acc[item.category]) acc[item.category] = [];
-    acc[item.category].push(item);
-    return acc;
-  }, {});
-
-  const flatResults = Object.values(grouped).flat();
-
-  useEffect(() => {
-    if (!isOpen) return;
-    const timer = setTimeout(() => inputRef.current?.focus(), 100);
-    return () => clearTimeout(timer);
-  }, [isOpen]);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowDown") {
-        e.preventDefault();
-        setSelectedIndex((prev) => Math.min(prev + 1, flatResults.length - 1));
-      } else if (e.key === "ArrowUp") {
-        e.preventDefault();
-        setSelectedIndex((prev) => Math.max(prev - 1, 0));
-      } else if (e.key === "Enter" && flatResults[selectedIndex]) {
-        e.preventDefault();
-        onClose();
-        window.location.href = flatResults[selectedIndex].href;
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, flatResults, selectedIndex, onClose]);
-
-  useEffect(() => {
-    if (!resultsRef.current) return;
-    const selected = resultsRef.current.querySelector(`[data-index="${selectedIndex}"]`);
-    selected?.scrollIntoView({ block: "nearest" });
-  }, [selectedIndex]);
-
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={onClose}
-            className="fixed inset-0 z-[60] bg-atlantic-black/40"
-            style={{ backdropFilter: "blur(4px)", WebkitBackdropFilter: "blur(4px)" }}
-          />
-          <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.98 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed top-[15vh] left-1/2 -translate-x-1/2 z-[61] w-[min(640px,calc(100vw-48px))] bg-skeleton-bone border border-black/[0.08] overflow-hidden"
-            style={{ backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Search"
-          >
-            <div className="flex items-center px-5 py-4 border-b border-card-border">
-              <Search className="w-4 h-4 text-ink-muted mr-3 shrink-0" />
-              <input
-                ref={inputRef}
-                value={query}
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                  setSelectedIndex(0);
-                }}
-                placeholder="Search pages, services..."
-                className="flex-1 bg-transparent font-jetbrains text-sm text-ink placeholder:text-ink-muted/40 focus:outline-none"
-                aria-label="Search"
-              />
-              <kbd className="font-jetbrains text-[9px] text-ink-muted border border-card-border px-1.5 py-0.5 ml-3">
-                ESC
-              </kbd>
-            </div>
-
-            <div ref={resultsRef} className="max-h-[45vh] overflow-y-auto p-2">
-              {Object.entries(grouped).map(([category, items]) => (
-                <div key={category}>
-                  <div className="px-3 py-2">
-                    <span className="font-jetbrains text-[9px] text-ink-muted/40 uppercase tracking-[0.2em]">
-                      {category}
-                    </span>
-                  </div>
-                  {items.map((item) => {
-                    const flatIndex = flatResults.indexOf(item);
-                    return (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        data-index={flatIndex}
-                        onClick={onClose}
-                        className={`flex items-center justify-between px-3 py-2.5 transition-colors duration-150 ${
-                          flatIndex === selectedIndex
-                            ? "bg-signal-teal-muted text-ink"
-                            : "text-ink-muted hover:text-ink hover:bg-card-surface"
-                        }`}
-                      >
-                        <div>
-                          <span className="font-cabinet text-sm font-bold tracking-tight">
-                            {item.label}
-                          </span>
-                          {item.description && (
-                            <span className="block font-satoshi text-[11px] text-ink-muted/50">
-                              {item.description}
-                            </span>
-                          )}
-                        </div>
-                        <ArrowRight className="w-3 h-3 text-ink-muted/30 shrink-0 ml-3" />
-                      </Link>
-                    );
-                  })}
-                </div>
-              ))}
-              {filtered.length === 0 && (
-                <div className="px-3 py-8 text-center">
-                  <span className="font-jetbrains text-[11px] text-ink-muted/40 uppercase tracking-[0.15em]">
-                    No results found
-                  </span>
-                </div>
-              )}
-            </div>
-
-            <div className="px-5 py-2.5 border-t border-black/[0.04] flex items-center gap-4">
-              <span className="font-jetbrains text-[9px] text-ink-muted/30">
-                <kbd className="border border-card-border px-1 py-0.5 mr-0.5">↑</kbd>
-                <kbd className="border border-card-border px-1 py-0.5 mr-1">↓</kbd>
-                Navigate
-              </span>
-              <span className="font-jetbrains text-[9px] text-ink-muted/30">
-                <kbd className="border border-card-border px-1 py-0.5 mr-1">↵</kbd>
-                Open
-              </span>
-              <span className="font-jetbrains text-[9px] text-ink-muted/30">
-                <kbd className="border border-card-border px-1 py-0.5 mr-1">esc</kbd>
-                Close
-              </span>
-            </div>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
-  );
-}
-
-/* ─── Mobile Accordion Item — Dark Variant ────────────────────── */
-
-function MobileAccordionItemDark({
-  item,
-  pathname,
-  onClose,
-}: {
-  item: NavItem;
-  pathname: string;
-  onClose: () => void;
-}) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const hasChildren = item.children && item.children.length > 0;
-  const isActive =
-    pathname === item.href || pathname.startsWith(item.href + "/");
-
-  return (
-    <div>
-      {hasChildren ? (
-        <button
-          className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 flex items-center gap-3 mx-auto ${
-            isActive ? "text-skeleton-bone" : "text-fog-gray/60 hover:text-skeleton-bone"
-          }`}
-          onClick={() => setIsExpanded(!isExpanded)}
-          aria-expanded={isExpanded}
-          aria-label={`${item.label}: ${isExpanded ? "collapse" : "expand"} submenu`}
-        >
-          {item.label}
-          <motion.span
-            animate={{ rotate: isExpanded ? 45 : 0 }}
-            transition={{ duration: 0.2 }}
-            className="font-jetbrains text-[12px] text-fog-gray/30 leading-none"
-          >
-            +
-          </motion.span>
-        </button>
-      ) : (
-        <Link
-          href={item.href}
-          onClick={onClose}
-          className={`font-cabinet text-xl sm:text-2xl tracking-[0.15em] uppercase transition-colors duration-300 block text-center ${
-            item.href === "/contact"
-              ? "text-signal-teal hover:text-signal-teal-light"
-              : isActive
-              ? "text-skeleton-bone"
-              : "text-fog-gray/60 hover:text-skeleton-bone"
-          }`}
-        >
-          {item.label}
-        </Link>
-      )}
-
-      <AnimatePresence initial={false}>
-        {isExpanded && hasChildren && (
-          <motion.div
-            initial={{ opacity: 0, scaleY: 0 }}
-            animate={{ opacity: 1, scaleY: 1 }}
-            exit={{ opacity: 0, scaleY: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{ transformOrigin: "top" }}
-            className="overflow-hidden"
-          >
-            <div className="flex flex-col gap-2 pt-3 pl-4 border-l-2 border-signal-teal/30">
-              {item.children!.map((child) => {
-                const isChildActive = pathname === child.href;
-                return (
-                  <Link
-                    key={child.href}
-                    href={child.href}
-                    onClick={onClose}
-                    className={`font-satoshi text-sm transition-colors duration-200 py-1 ${
-                      isChildActive
-                        ? "text-skeleton-bone"
-                        : "text-fog-gray/50 hover:text-skeleton-bone"
-                    }`}
-                  >
-                    {child.label}
-                  </Link>
-                );
-              })}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
-/* ─── Staggered Entrance Variants ──────────────────────────────── */
-
-const STUDIO_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
-
-const navItemVariants = {
-  hidden: { opacity: 0, y: -12 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.5 + i * 0.07,
-      duration: 0.5,
-      ease: STUDIO_EASE,
-    },
-  }),
-};
-
-const navRightVariants = {
-  hidden: { opacity: 0, y: -12 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.5 + navItems.length * 0.07 + i * 0.07,
-      duration: 0.5,
-      ease: STUDIO_EASE,
-    },
-  }),
-};
-
-/* ─── Main Navigation Component ───────────────────────────────── */
+const navLinks = [
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+] as const;
 
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchOpenCount, setSearchOpenCount] = useState(0);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
-  const openSearch = () => {
-    setIsSearchOpen(true);
-    setSearchOpenCount((c) => c + 1);
-  };
-
-  // Scroll tracking — determine if scrolled past hero area
+  // Close on route change
   useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY;
-          setIsScrolled(currentScrollY > 60);
-
-          // Scroll progress for page indicator
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          if (docHeight > 0) {
-            setScrollProgress(Math.min(1, Math.max(0, currentScrollY / docHeight)));
-          }
-
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Body lock for mobile menu
-  useEffect(() => {
-    if (isMobileOpen) {
-      document.body.style.overflow = "hidden";
-      const handleEsc = (e: KeyboardEvent) => {
-        if (e.key === "Escape") setIsMobileOpen(false);
-      };
-      window.addEventListener("keydown", handleEsc);
-      return () => {
-        document.body.style.overflow = "";
-        window.removeEventListener("keydown", handleEsc);
-      };
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isMobileOpen]);
-
-  // Global keyboard shortcuts
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-        e.preventDefault();
-        setIsSearchOpen((prev) => !prev);
-      }
-      if (e.key === "Escape" && isSearchOpen) {
-        setIsSearchOpen(false);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isSearchOpen]);
-
-  // Close search on route change
-  useEffect(() => {
-    setIsSearchOpen(false); // eslint-disable-line react-hooks/set-state-in-effect -- close search on route change is a legitimate sync
+    setMobileOpen(false); // eslint-disable-line react-hooks/set-state-in-effect -- close menu on route change is a legitimate sync
   }, [pathname]);
+
+  // Escape closes mobile menu, focus returns to trigger
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+
+    // Focus close button
+    const t = setTimeout(() => closeBtnRef.current?.focus(), 50);
+
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+      clearTimeout(t);
+      previouslyFocused?.focus();
+    };
+  }, [mobileOpen]);
+
+  const isActive = (href: string) =>
+    pathname === href || pathname.startsWith(href + "/");
 
   return (
     <>
-      {/* ── Floating Pill Navigation ── */}
-      <motion.nav
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed z-[1000] top-4 left-1/2 -translate-x-1/2 w-[min(1200px,calc(100%-2rem))] md:top-4"
-        style={{
-          borderRadius: "999px",
-          background: isScrolled
-            ? "#F6F4EF"
-            : "rgba(246, 244, 239, 0.97)",
-          border: "1px solid rgba(17, 19, 21, 0.06)",
-          boxShadow: isScrolled
-            ? "0 1px 3px rgba(17, 19, 21, 0.06)"
-            : "none",
-          padding: "0.75rem 1.5rem",
-          transition: "background 0.3s ease, box-shadow 0.3s ease",
-        }}
-        role="navigation"
-        aria-label="Main navigation"
+      <header
+        className="sticky top-0 z-50 w-full border-b border-card-border bg-skeleton-bone/90 backdrop-blur-sm"
+        role="banner"
       >
-        <div className="flex justify-between items-center">
-          {/* Logo — Studio circular lockup */}
-          <motion.div
-            initial={{ opacity: 0, x: -12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        <nav
+          className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"
+          aria-label="Main navigation"
+        >
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center"
+            aria-label="Studio — home"
           >
-            <Link
-              href="/"
-              className="relative flex items-center transition-opacity duration-300 hover:opacity-80"
-              aria-label="Studio home"
-            >
-              <StudioLogo size={32} />
-            </Link>
-          </motion.div>
+            <StudioLogo size={32} />
+          </Link>
 
-          {/* Desktop navigation links */}
-          <div className="hidden lg:flex items-center gap-6 relative">
-            {navItems.map((item, i) =>
-              item.children ? (
-                <motion.div
-                  key={item.label}
-                  custom={i}
-                  variants={navItemVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  <DesktopDropdown
-                    item={item}
-                    pathname={pathname}
-                    onHoverStart={() => {}}
-                    onHoverEnd={() => {}}
-                  />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key={item.label}
-                  custom={i}
-                  variants={navItemVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  <Link
-                    href={item.href}
-                    className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 py-1 ${
-                      item.href === "/contact"
-                        ? "text-ink hover:text-signal-teal-text"
-                        : pathname === item.href
-                        ? "text-ink"
-                        : "text-ink-muted hover:text-ink"
-                    }`}
-                  >
-                    {item.label}
-                    {pathname === item.href && (
-                      <motion.span
-                        layoutId="active-nav-underline"
-                        className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-signal-teal"
-                        transition={{ type: "tween", duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      />
-                    )}
-                  </Link>
-                </motion.div>
-              )
-            )}
-            {/* Cross-site link — Labs */}
-            <motion.a
-              custom={navItems.length}
-              variants={navItemVariants}
-              initial="hidden"
-              animate="visible"
-              href="https://tangison.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-jetbrains text-[10px] uppercase tracking-[0.2em] inline-flex items-center gap-1 text-ink-muted hover:text-ink transition-colors duration-300 py-1"
-            >
-              Labs ↗
-            </motion.a>
-          </div>
-
-          {/* Right side: Search + CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <motion.button
-              custom={0}
-              variants={navRightVariants}
-              initial="hidden"
-              animate="visible"
-              onClick={openSearch}
-              className="flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-ink transition-colors duration-300 py-1.5 px-2.5 border border-card-border hover:border-black/[0.2]"
-              aria-label="Open search (Cmd+K)"
-            >
-              <Search className="w-3.5 h-3.5" />
-              <span className="hidden xl:inline">Search</span>
-              <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted border border-card-border px-1 py-0.5 ml-1">
-                ⌘K
-              </kbd>
-            </motion.button>
-
-            <motion.div
-              custom={1}
-              variants={navRightVariants}
-              initial="hidden"
-              animate="visible"
-            >
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
               <Link
-                href="/contact"
-                className="text-signal-white px-5 py-2.5 font-cabinet font-bold text-[11px] tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 inline-block"
-                style={{ background: "var(--color-signal-teal-button)", borderRadius: "999px" }}
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium transition-colors ${
+                  isActive(link.href)
+                    ? "text-ink"
+                    : "text-ink-muted hover:text-ink"
+                }`}
               >
-                Start a Project →
+                {link.label}
               </Link>
-            </motion.div>
+            ))}
           </div>
 
-          {/* Mobile: search + hamburger */}
-          <div className="lg:hidden flex items-center gap-2">
-            <button
-              onClick={openSearch}
-              className="p-2 text-ink-muted hover:text-ink transition-colors"
-              aria-label="Open search"
-            >
-              <Search className="w-4 h-4" />
-            </button>
-            <button
-              className="p-2 -mr-2 text-ink-muted hover:text-ink transition-colors"
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              aria-label={isMobileOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isMobileOpen}
-            >
-              <HamburgerIcon isOpen={isMobileOpen} />
-            </button>
-          </div>
-        </div>
-
-        {/* Scroll progress indicator */}
-        {isScrolled && (
-          <div
-            className="absolute bottom-0 left-4 right-4 h-[1px] bg-signal-teal/30"
-            style={{ width: `${scrollProgress * 100}%`, maxWidth: "calc(100% - 2rem)" }}
-            aria-hidden="true"
-          />
-        )}
-      </motion.nav>
-
-      {/* Search Overlay — key forces remount (state reset) when opened */}
-      {isSearchOpen && (
-        <SearchOverlay
-          key={`search-${searchOpenCount}`}
-          isOpen={isSearchOpen}
-          onClose={() => setIsSearchOpen(false)}
-        />
-      )}
-
-      {/* Mobile Menu Overlay — Atlantic Black */}
-      <AnimatePresence>
-        {isMobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[999] bg-atlantic-black flex flex-col"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Navigation menu"
+          {/* Mobile menu trigger */}
+          <button
+            ref={triggerRef}
+            type="button"
+            onClick={() => setMobileOpen(true)}
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center text-ink"
+            aria-label="Open menu"
           >
-            {/* Close button */}
-            <div className="flex justify-end px-5 sm:px-6 pt-4 md:pt-5">
+            <Menu className="h-5 w-5" />
+          </button>
+        </nav>
+      </header>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-[100] md:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site menu"
+        >
+          {/* Backdrop */}
+          <button
+            type="button"
+            className="absolute inset-0 bg-atlantic-black/40"
+            aria-label="Close menu"
+            tabIndex={-1}
+            onClick={() => setMobileOpen(false)}
+          />
+
+          {/* Panel */}
+          <div className="absolute right-0 top-0 h-full w-full max-w-sm bg-skeleton-bone shadow-xl flex flex-col">
+            <div className="flex h-16 items-center justify-between px-6 border-b border-card-border">
+              <StudioLogo size={28} />
               <button
-                onClick={() => setIsMobileOpen(false)}
-                className="text-skeleton-bone p-2 -mr-2"
+                ref={closeBtnRef}
+                type="button"
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex h-10 w-10 items-center justify-center text-ink"
                 aria-label="Close menu"
               >
-                <HamburgerIcon isOpen={true} dark={true} />
+                <X className="h-5 w-5" />
               </button>
             </div>
 
-            {/* Centered nav links */}
-            <div className="flex-1 flex flex-col items-center justify-center px-6">
-              <nav className="flex flex-col items-center gap-5 sm:gap-6 w-full max-w-sm">
-                {navItems.map((item, i) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, y: 16, scale: 0.97 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -8, scale: 0.99 }}
-                    transition={{
-                      delay: i * 0.06 + 0.1,
-                      duration: 0.5,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                    className="w-full text-center"
-                  >
-                    <MobileAccordionItemDark item={item} pathname={pathname} onClose={() => setIsMobileOpen(false)} />
-                  </motion.div>
+            <nav className="flex-1 overflow-y-auto px-6 py-8" aria-label="Mobile navigation">
+              <ul className="space-y-1">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`block py-3 text-lg font-display font-medium ${
+                        isActive(link.href) ? "text-ink" : "text-ink-muted"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
                 ))}
-              </nav>
+              </ul>
 
-              {/* Cross-site link — Labs (mobile) */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navItems.length * 0.06 + 0.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full text-center pt-4 mt-4 border-t border-white/[0.06]"
+              <div className="my-6 h-px bg-card-border" />
+
+              <ul className="space-y-1">
+                {[
+                  { label: "Partnership", href: "/partnership" },
+                  { label: "Process", href: "/process" },
+                  { label: "Studio", href: "/studio" },
+                  { label: "Blog", href: "/blog" },
+                  { label: "Resources", href: "/resources" },
+                  { label: "FAQ", href: "/faq" },
+                  { label: "Careers", href: "/careers" },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="block py-3 text-base text-ink-muted"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div className="border-t border-card-border px-6 py-4">
+              <a
+                href="mailto:studio@tangison.com"
+                className="text-sm font-medium text-ink"
               >
-                <a
-                  href="https://tangison.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-fog-gray/70 hover:text-skeleton-bone/70 transition-colors duration-300"
-                >
-                  Labs ↗
-                </a>
-              </motion.div>
+                studio@tangison.com
+              </a>
+              <p className="mt-1 text-xs text-ink-muted">Windhoek, Namibia</p>
             </div>
-
-            {/* Bottom tag */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="pb-8 text-center shrink-0"
-            >
-              <span className="font-jetbrains text-[9px] text-fog-gray/30 uppercase tracking-[0.3em]">
-                Windhoek, Namibia
-              </span>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      )}
     </>
   );
 }
