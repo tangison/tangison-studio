@@ -30,7 +30,9 @@ export function OrganizationJsonLd() {
       contactType: "customer service",
     },
     sameAs: [
-      "https://linkedin.com/company/tangison",
+      "https://www.facebook.com/namibia.digital",
+      "https://www.instagram.com/tangison_studio",
+      "https://www.threads.net/@tangison_studio",
       "https://github.com/tangison",
     ],
     parentOrganization: {
@@ -85,6 +87,13 @@ export function LocalBusinessJsonLd() {
       "Design Systems",
       "Creative Direction",
     ],
+    sameAs: [
+      "https://www.facebook.com/namibia.digital",
+      "https://www.instagram.com/tangison_studio",
+      "https://www.threads.net/@tangison_studio",
+      "https://github.com/tangison",
+    ],
+    hasMap: "https://www.google.com/maps/search/?api=1&query=Tangison+Studio+Windhoek+Namibia",
   };
 
   return (

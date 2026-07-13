@@ -51,7 +51,7 @@ const contactDetails = [
     icon: MapPin,
     label: "Office",
     value: "Corner of Frans Indongo Street and John Meinert Street, Windhoek, Namibia",
-    href: null,
+    href: "https://www.google.com/maps/search/?api=1&query=Tangison+Studio+Windhoek+Namibia",
   },
   {
     icon: Github,
@@ -385,6 +385,52 @@ export function ContactPage() {
                   Most projects begin with a discovery call within the first week of outreach.
                 </p>
               </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Google Maps — Studio location in Windhoek */}
+      <section className="pb-28 md:pb-36 px-6 md:px-12 lg:px-20" aria-label="Studio location map">
+        <div className="max-w-[1400px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <MapPin className="w-4 h-4 text-signal-teal" aria-hidden="true" />
+              <span className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">
+                Find us in Windhoek
+              </span>
+            </div>
+            <div className="relative w-full h-[400px] md:h-[480px] border border-card-border overflow-hidden bg-skeleton-bone">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d288.0412345678!2d17.0837!3d-22.5599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDMzJzM1LjYiUyAxN8KwMDUnMDEuMyJF!5e0!3m2!1sen!2sna!4v1700000000000!5m2!1sen!2sna"
+                width="100%"
+                height="100%"
+                style={{ border: 0, position: "absolute", top: 0, left: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Studio location in Windhoek, Namibia — Corner of Frans Indongo Street and John Meinert Street"
+                aria-label="Google Maps showing Studio's location in Windhoek, Namibia"
+              />
+            </div>
+            <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <p className="font-satoshi text-sm text-ink-muted">
+                Corner of Frans Indongo Street and John Meinert Street, Windhoek, Namibia
+              </p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Tangison+Studio+Windhoek+Namibia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-satoshi text-sm text-signal-teal hover:text-signal-teal-light transition-colors inline-flex items-center gap-1.5 group"
+              >
+                Open in Google Maps
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+              </a>
             </div>
           </motion.div>
         </div>

@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { socialLinks } from "@/config/social";
+import { socialLinks, googleBusinessProfile } from "@/config/social";
 import { StudioLogo } from "@/components/studio/studio-logo";
 
 const footerColumns = {
@@ -208,6 +208,15 @@ export function Footer() {
                   studio.tangison.com
                   <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
                 </Link>
+                <a
+                  href={googleBusinessProfile.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-satoshi text-sm text-fog-gray hover:text-skeleton-bone transition-colors duration-300 relative group/link inline-block w-fit"
+                >
+                  Windhoek, Namibia
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-[1px] bg-signal-teal/50 group-hover/link:w-full transition-all duration-500" />
+                </a>
               </div>
             </div>
 
