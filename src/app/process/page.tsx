@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Our five-phase design process: Discover, Define, Design, Develop, Launch. Every Tangison Studio project is grounded in research and built to deliver measurable outcomes from Windhoek, Namibia.",
   alternates: { canonical: "/process" },
   openGraph: {
-    title: "Our Design Process | TANGISON STUDIO",
+    title: "Our Design Process | Studio",
     description: "Our five-phase design process: Discover, Define, Design, Develop, Launch. Every project is grounded in research and built to deliver measurable outcomes.",
     url: "/process",
   },

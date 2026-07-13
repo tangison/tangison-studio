@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Explore our portfolio of digital experiences across nine industries in Africa. From SMEs and mining to healthcare and education, see how Tangison Studio delivers strategic, functional design from Windhoek, Namibia.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Our Work | Portfolio and Case Studies | TANGISON STUDIO",
+    title: "Our Work | Portfolio and Case Studies | Studio",
     description: "Explore our portfolio of digital experiences across nine industries in Africa. From SMEs and mining to healthcare and education.",
     url: "/work",
   },

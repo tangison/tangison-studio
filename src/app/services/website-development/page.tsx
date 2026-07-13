@@ -1,40 +1,22 @@
-import type { Metadata } from "next";
-import { WebsiteDevelopmentPage } from "./page-client";
-import { ServiceJsonLd, BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
+import { permanentRedirect } from "next/navigation";
+import { mapServiceToCapability } from "@/lib/capabilities";
 
-export const metadata: Metadata = {
-  title: "Website Development | Tangison Studio",
-  description: "Engineered to perform. Clean code, fast load times, and built to scale. We develop websites that deliver on every metric that matters.",
-  alternates: { canonical: "/services/website-development" },
-  openGraph: {
-    title: "Website Development | Tangison Studio",
-    description: "Engineered to perform. Clean code, fast load times, and built to scale. We develop websites that deliver on every metric that matters.",
-    url: "/services/website-development",
-    images: [{ url: "/images/services/website-development.webp", width: 1200, height: 630, alt: "Website Development service" }],
-  },
-};
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
-export default function Page() {
-  return (
-    <>
-      <WebPageJsonLd
-        title="Website Development | Tangison Studio"
-        description="Engineered to perform. Clean code, fast load times, and built to scale. We develop websites that deliver on every metric that matters."
-        url="/services/website-development"
-      />
-      <ServiceJsonLd
-        name="Website Development"
-        description="Built to perform. We develop websites that are fast, accessible, and built to scale."
-        slug="website-development"
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Services", url: "/services" },
-          { name: "Website Development", url: "/services/website-development" },
-        ]}
-      />
-      <WebsiteDevelopmentPage />
-    </>
-  );
+/**
+ * /services/website-development → /services#<capability>
+ *
+ * The flat seven-service presentation has been collapsed into three
+ * outcome-led capabilities: Brand, Product, Intelligence.
+ * This redirect preserves SEO equity (308 permanent) and routes
+ * visitors to the relevant capability section.
+ */
+export default async function ServiceRedirect() {
+  const capabilityId = mapServiceToCapability("website-development");
+  if (capabilityId) {
+    permanentRedirect(`/services#${capabilityId}`);
+  }
+  permanentRedirect("/services");
 }

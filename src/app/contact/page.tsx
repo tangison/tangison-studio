@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Get in touch with Tangison Studio to discuss your next digital project. We respond to every message within 48 hours. Strategy, design, and engineering from Windhoek, Namibia.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact | Start a Project | TANGISON STUDIO",
+    title: "Contact | Start a Project | Studio",
     description: "Get in touch with Tangison Studio to discuss your next digital project. We respond to every message within 48 hours.",
     url: "/contact",
   },

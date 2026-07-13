@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { socialLinks } from "@/config/social";
+import { StudioLogo } from "@/components/studio/studio-logo";
 
 const footerColumns = {
   Studio: [
@@ -58,20 +59,14 @@ export function Footer() {
         className="relative z-10 px-6 md:px-12 lg:px-20 pt-16 md:pt-24 pb-12 md:pb-16"
       >
         <div className="max-w-[1400px] mx-auto">
-          {/* Logo mark + wordmark */}
+          {/* Logo — Studio circular lockup (light variant for dark footer) */}
           <div className="mb-8">
-            <Image
-              src="/brand/logo-light.webp"
-              alt="TANGISON STUDIO"
-              width={874}
-              height={286}
-              className="h-14 md:h-18 lg:h-20 w-auto object-contain"
-            />
+            <StudioLogo variant="navy" size={48} />
           </div>
 
           {/* Tagline */}
           <p className="font-satoshi text-lg md:text-xl text-skeleton-bone/70 font-light leading-relaxed max-w-lg mb-10">
-            Designing the interfaces where intelligence does actual work.
+            We build the brand, the product and the AI systems behind it.
           </p>
 
           {/* Two editorial images */}
@@ -249,10 +244,10 @@ export function Footer() {
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-20 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="font-jetbrains text-[9px] text-fog-gray/60 uppercase tracking-[0.3em]">
-            &copy; 2026 Tangison Systems. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Tangison Studio. All Rights Reserved.
           </p>
           <p className="font-jetbrains text-[9px] text-fog-gray/50 uppercase tracking-[0.2em]">
-            Digital Infrastructure by Tangison Technologies
+            A Tangison Technologies company · Windhoek, Namibia
           </p>
         </div>
       </motion.div>

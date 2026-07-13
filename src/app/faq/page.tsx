@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Frequently asked questions about working with Tangison Studio. Learn about our design process, project pricing, timelines, and how we engage with organizations across Africa.",
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "FAQ | TANGISON STUDIO",
+    title: "FAQ | Studio",
     description: "Frequently asked questions about working with Tangison Studio. Learn about our design process, project pricing, timelines, and how we engage with organizations across Africa.",
     url: "/faq",
   },

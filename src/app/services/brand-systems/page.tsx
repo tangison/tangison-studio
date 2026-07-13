@@ -1,40 +1,22 @@
-import type { Metadata } from "next";
-import { BrandSystemsPage } from "./page-client";
-import { ServiceJsonLd, BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
+import { permanentRedirect } from "next/navigation";
+import { mapServiceToCapability } from "@/lib/capabilities";
 
-export const metadata: Metadata = {
-  title: "Brand Systems | Tangison Studio",
-  description: "Cohesive visual identity. Marks, wordmarks, palettes, and guidelines that scale. We build brand systems that work everywhere, consistently.",
-  alternates: { canonical: "/services/brand-systems" },
-  openGraph: {
-    title: "Brand Systems | Tangison Studio",
-    description: "Cohesive visual identity. Marks, wordmarks, palettes, and guidelines that scale. We build brand systems that work everywhere, consistently.",
-    url: "/services/brand-systems",
-    images: [{ url: "/images/services/brand-systems.webp", width: 1200, height: 630, alt: "Brand Systems service" }],
-  },
-};
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
-export default function Page() {
-  return (
-    <>
-      <WebPageJsonLd
-        title="Brand Systems | Tangison Studio"
-        description="Cohesive visual identity. Marks, wordmarks, palettes, and guidelines that scale. We build brand systems that work everywhere, consistently."
-        url="/services/brand-systems"
-      />
-      <ServiceJsonLd
-        name="Brand Systems"
-        description="Cohesive visual identity. Marks, wordmarks, and design systems that make brands unmistakable."
-        slug="brand-systems"
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Services", url: "/services" },
-          { name: "Brand Systems", url: "/services/brand-systems" },
-        ]}
-      />
-      <BrandSystemsPage />
-    </>
-  );
+/**
+ * /services/brand-systems → /services#<capability>
+ *
+ * The flat seven-service presentation has been collapsed into three
+ * outcome-led capabilities: Brand, Product, Intelligence.
+ * This redirect preserves SEO equity (308 permanent) and routes
+ * visitors to the relevant capability section.
+ */
+export default async function ServiceRedirect() {
+  const capabilityId = mapServiceToCapability("brand-systems");
+  if (capabilityId) {
+    permanentRedirect(`/services#${capabilityId}`);
+  }
+  permanentRedirect("/services");
 }

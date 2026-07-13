@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Tangison Studio privacy policy. How we collect, use, and protect your personal information when you use our website and services.",
   alternates: { canonical: "/legal/privacy" },
   openGraph: {
-    title: "Privacy Policy | TANGISON STUDIO",
+    title: "Privacy Policy | Studio",
     description: "Tangison Studio privacy policy. How we collect, use, and protect your personal information.",
     url: "/legal/privacy",
   },

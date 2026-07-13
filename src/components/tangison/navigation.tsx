@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, ArrowRight } from "lucide-react";
+import { StudioLogo } from "@/components/studio/studio-logo";
 
 /* ─── Navigation Data ─────────────────────────────────────────── */
 
@@ -700,7 +701,7 @@ export function Navigation() {
         aria-label="Main navigation"
       >
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo — Studio circular lockup */}
           <motion.div
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
@@ -708,18 +709,10 @@ export function Navigation() {
           >
             <Link
               href="/"
-              className="relative h-7 md:h-8 flex items-center transition-opacity duration-300 hover:opacity-80"
-              aria-label="Tangison Studio home"
+              className="relative flex items-center transition-opacity duration-300 hover:opacity-80"
+              aria-label="Studio home"
             >
-              {/* Dark logo for light floating nav */}
-              <Image
-                src="/brand/logo-dark.webp"
-                alt="TANGISON STUDIO"
-                width={874}
-                height={286}
-                className="h-6 md:h-7 w-auto object-contain"
-                priority
-              />
+              <StudioLogo size={32} />
             </Link>
           </motion.div>
 

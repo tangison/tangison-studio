@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: "/partnership",
   },
   openGraph: {
-    title: "Partnership Plans | TANGISON STUDIO",
+    title: "Partnership Plans | Studio",
     description:
       "Keep your website live, your brand consistent, and your digital presence growing with a Tangison Studio partnership plan.",
     url: "/partnership",
@@ -35,7 +35,7 @@ export default function Page() {
         ]}
       />
       <WebPageJsonLd
-        title="Website Maintenance & Support Plans | TANGISON STUDIO"
+        title="Website Maintenance & Support Plans | Studio"
         description="Keep your website live, your brand consistent, and your digital presence growing with a Tangison Studio partnership plan."
         url="/partnership"
       />

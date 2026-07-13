@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Tangison Studio cookie policy. Information about how and why we use cookies on our website to improve your experience and analyze site usage.",
   alternates: { canonical: "/legal/cookies" },
   openGraph: {
-    title: "Cookie Policy | TANGISON STUDIO",
+    title: "Cookie Policy | Studio",
     description: "Tangison Studio cookie policy. Information about how and why we use cookies on our website.",
     url: "/legal/cookies",
   },

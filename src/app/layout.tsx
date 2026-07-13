@@ -39,28 +39,12 @@ const jetbrainsMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "TANGISON STUDIO | Creative Digital Agency in Namibia",
-    template: "%s | TANGISON STUDIO",
+    default: "Studio | Digital Product Design and Development in Namibia",
+    template: "%s | Studio",
   },
   description:
-    "Tangison Studio is a Windhoek-based digital agency. Website design, development, brand systems, and creative direction for organizations across Africa.",
-  keywords: [
-    "Tangison Studio",
-    "Gemsweb Digital",
-    "Tangi Iigonda",
-    "creative agency",
-    "digital agency",
-    "web design Namibia",
-    "brand design",
-    "UI/UX",
-    "product design",
-    "Africa",
-    "Namibia",
-    "Windhoek",
-    "website development",
-    "design systems",
-    "creative direction",
-  ],
+    "Studio brings brand, digital product design and applied intelligence together for ambitious organizations across Africa. One studio instead of three vendors.",
+  keywords: [],
   authors: [{ name: "Tangi Iigonda", url: "mailto:studio@tangison.com" }],
   publisher: "Tangison Studio",
   creator: "Tangi Iigonda",
@@ -72,25 +56,27 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "TANGISON STUDIO | Creative Digital Agency in Namibia",
-    description: "We design and build websites, brand systems, and digital products for organizations across Africa. Founded by Tangi Iigonda in Windhoek, Namibia.",
+    title: "Studio | Digital Product Design and Development in Namibia",
+    description:
+      "Studio brings brand, digital product design and applied intelligence together for ambitious organizations across Africa.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com",
-    siteName: "Tangison Studio",
+    siteName: "Studio",
     type: "website",
     images: [
       {
-        url: "/brand/favicon.png",
-        width: 499,
-        height: 499,
-        alt: "TANGISON STUDIO | Creative Digital Agency in Namibia",
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Studio — Digital products built with clarity, character and purpose.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TANGISON STUDIO | Creative Digital Agency in Namibia",
-    description: "We design and build websites, brand systems, and digital products for organizations across Africa.",
-    images: ["/brand/favicon.png"],
+    title: "Studio | Digital Product Design and Development in Namibia",
+    description:
+      "Studio brings brand, digital product design and applied intelligence together for ambitious organizations across Africa.",
+    images: ["/og.png"],
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com"),
   robots: {

@@ -69,16 +69,16 @@ export function generateMetadata({ params }: { params: Promise<{ slug: string }>
       description,
       alternates: { canonical },
       openGraph: {
-        title: `${title} | TANGISON STUDIO`,
+        title: `${title} | Studio`,
         description,
         url: canonical,
-        siteName: "Tangison Studio",
+        siteName: "Studio",
         images: [{ url: ogImage, width: 1200, height: 800, alt: `${cs.name} website` }],
         type: "article",
       },
       twitter: {
         card: "summary_large_image",
-        title: `${title} | TANGISON STUDIO`,
+        title: `${title} | Studio`,
         description,
         images: [ogImage],
       },
@@ -104,7 +104,7 @@ export default async function CaseStudyRoute({ params }: { params: Promise<{ slu
     image: `https://studio.tangison.com/images/work/screenshots/${cs.screenshotSlug}-screenshot.webp`,
     author: {
       "@type": "Organization",
-      name: "Tangison Studio",
+      name: "Studio",
       url: "https://studio.tangison.com",
     },
     datePublished: `${cs.year}-01-01`,

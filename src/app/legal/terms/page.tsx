@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Terms of service for Tangison Studio. Using our services and website.",
   alternates: { canonical: "/legal/terms" },
   openGraph: {
-    title: "Terms of Service | TANGISON STUDIO",
+    title: "Terms of Service | Studio",
     description: "Terms of service for Tangison Studio. Using our services and website.",
     url: "/legal/terms",
   },

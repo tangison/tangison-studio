@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   description: "The Tangison Studio brand system: identity mark, wordmark, color system, typography, motion, and design rules. For partners, designers, and collaborators.",
   alternates: { canonical: "/brand" },
   openGraph: {
-    title: "Brand Identity | TANGISON STUDIO",
+    title: "Brand Identity | Studio",
     description: "The Tangison Studio brand system: identity mark, wordmark, color system, typography, motion, and design rules.",
     url: "/brand",
-    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }],
   },
 };
 

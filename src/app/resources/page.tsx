@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   description: "AI guides, frameworks, and industry-specific playbooks for organizations across Africa. Free downloads and practical resources from Tangison Studio in Windhoek, Namibia.",
   alternates: { canonical: "/resources" },
   openGraph: {
-    title: "Resources & Guides | TANGISON STUDIO",
+    title: "Resources & Guides | Studio",
     description: "AI guides, frameworks, and industry-specific playbooks for organizations across Africa. Free downloads and practical resources.",
     url: "/resources",
-    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }],
   },
 };
 

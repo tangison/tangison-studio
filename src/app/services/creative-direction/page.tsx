@@ -1,40 +1,22 @@
-import type { Metadata } from "next";
-import { CreativeDirectionPage } from "./page-client";
-import { ServiceJsonLd, BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
+import { permanentRedirect } from "next/navigation";
+import { mapServiceToCapability } from "@/lib/capabilities";
 
-export const metadata: Metadata = {
-  title: "Creative Direction | Tangison Studio",
-  description: "Strategic visual leadership. We set the direction and make sure every touchpoint lines up, from campaigns to full brand experiences.",
-  alternates: { canonical: "/services/creative-direction" },
-  openGraph: {
-    title: "Creative Direction | Tangison Studio",
-    description: "Strategic visual leadership. We set the direction and make sure every touchpoint lines up, from campaigns to full brand experiences.",
-    url: "/services/creative-direction",
-    images: [{ url: "/images/services/creative-direction.webp", width: 1200, height: 630, alt: "Creative Direction service" }],
-  },
-};
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
-export default function Page() {
-  return (
-    <>
-      <WebPageJsonLd
-        title="Creative Direction | Tangison Studio"
-        description="Strategic visual leadership. We set the direction and make sure every touchpoint lines up, from campaigns to full brand experiences."
-        url="/services/creative-direction"
-      />
-      <ServiceJsonLd
-        name="Creative Direction"
-        description="Strategic creative vision. Complete creative leadership that aligns aesthetics with business objectives."
-        slug="creative-direction"
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Services", url: "/services" },
-          { name: "Creative Direction", url: "/services/creative-direction" },
-        ]}
-      />
-      <CreativeDirectionPage />
-    </>
-  );
+/**
+ * /services/creative-direction → /services#<capability>
+ *
+ * The flat seven-service presentation has been collapsed into three
+ * outcome-led capabilities: Brand, Product, Intelligence.
+ * This redirect preserves SEO equity (308 permanent) and routes
+ * visitors to the relevant capability section.
+ */
+export default async function ServiceRedirect() {
+  const capabilityId = mapServiceToCapability("creative-direction");
+  if (capabilityId) {
+    permanentRedirect(`/services#${capabilityId}`);
+  }
+  permanentRedirect("/services");
 }

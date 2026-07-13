@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   description: "Perspectives on design, engineering, and building digital products in Africa. Articles, case studies, and resources from Tangison Studio in Windhoek, Namibia.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Insights & Blog | TANGISON STUDIO",
+    title: "Insights & Blog | Studio",
     description: "Perspectives on design, engineering, and building digital products in Africa. Articles, case studies, and resources from Tangison Studio.",
     url: "/blog",
-    images: [{ url: "/brand/favicon.webp", width: 499, height: 499, alt: "TANGISON STUDIO" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }],
   },
 };
 

@@ -495,3 +495,145 @@ button, a {
   background-color: var(--color-ocean-mist);
   border-color: rgba(17, 19, 21, 0.12);
 }
+
+/* ─── Studio Redesign — Perfect Circle + Editorial Layout ─── */
+
+/* Perfect circle — never distorts, never shrinks */
+.circle-container {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Narrow editorial shell */
+.shell-editorial {
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.shell-wide-editorial {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.reading-column {
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Status pill */
+.status-pill-studio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  background: var(--color-ocean-mist);
+  color: var(--color-deep-ocean, #153E52);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid var(--color-fog-gray);
+}
+
+.status-pill-studio::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-signal-teal);
+  flex-shrink: 0;
+}
+
+/* Pill button */
+.btn-pill-studio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-family: var(--font-satoshi), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1;
+  min-height: 44px;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-pill-primary {
+  background: var(--color-atlantic-black);
+  color: var(--color-ocean-mist);
+}
+
+.btn-pill-primary:hover {
+  background: #153E52;
+}
+
+.btn-pill-outline {
+  background: transparent;
+  color: var(--color-atlantic-black);
+  border: 1px solid var(--color-fog-gray);
+}
+
+.btn-pill-outline:hover {
+  border-color: var(--color-atlantic-black);
+}
+
+/* Mono label */
+.mono-label-studio {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #153E52;
+  text-transform: uppercase;
+}
+
+/* Teal indicator dot */
+.dot-teal-studio {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-signal-teal);
+  flex-shrink: 0;
+}
+
+/* Image frame — large rounded */
+.painting-frame {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--color-ocean-mist);
+  border: 1px solid var(--color-fog-gray);
+}
+
+/* Card quiet */
+.card-quiet-studio {
+  background: #ffffff;
+  border: 1px solid var(--color-fog-gray);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* Panel dark */
+.panel-dark-studio {
+  background: var(--color-atlantic-black);
+  color: var(--color-ocean-mist);
+  border-radius: 24px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn-pill-studio {
+    transition: none;
+  }
+}

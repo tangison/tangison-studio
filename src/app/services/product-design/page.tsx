@@ -1,40 +1,22 @@
-import type { Metadata } from "next";
-import { ProductDesignPage } from "./page-client";
-import { ServiceJsonLd, BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
+import { permanentRedirect } from "next/navigation";
+import { mapServiceToCapability } from "@/lib/capabilities";
 
-export const metadata: Metadata = {
-  title: "Product Design | Tangison Studio",
-  description: "Complete product thinking. From concept to launch and beyond, we design products that solve real problems and create lasting value.",
-  alternates: { canonical: "/services/product-design" },
-  openGraph: {
-    title: "Product Design | Tangison Studio",
-    description: "Complete product thinking. From concept to launch and beyond, we design products that solve real problems and create lasting value.",
-    url: "/services/product-design",
-    images: [{ url: "/images/services/product-design.webp", width: 1200, height: 630, alt: "Product Design service" }],
-  },
-};
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
-export default function Page() {
-  return (
-    <>
-      <WebPageJsonLd
-        title="Product Design | Tangison Studio"
-        description="Complete product thinking. From concept to launch and beyond, we design products that solve real problems and create lasting value."
-        url="/services/product-design"
-      />
-      <ServiceJsonLd
-        name="Product Design"
-        description="From concept to launch. Complete product design that balances user needs with business goals."
-        slug="product-design"
-      />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Services", url: "/services" },
-          { name: "Product Design", url: "/services/product-design" },
-        ]}
-      />
-      <ProductDesignPage />
-    </>
-  );
+/**
+ * /services/product-design → /services#<capability>
+ *
+ * The flat seven-service presentation has been collapsed into three
+ * outcome-led capabilities: Brand, Product, Intelligence.
+ * This redirect preserves SEO equity (308 permanent) and routes
+ * visitors to the relevant capability section.
+ */
+export default async function ServiceRedirect() {
+  const capabilityId = mapServiceToCapability("product-design");
+  if (capabilityId) {
+    permanentRedirect(`/services#${capabilityId}`);
+  }
+  permanentRedirect("/services");
 }

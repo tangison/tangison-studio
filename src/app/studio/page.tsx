@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Inside Tangison Studio: a creative digital agency in Windhoek, Namibia. Our space, our tools, our philosophy. Founded by Tangi Iigonda in 2023.",
   alternates: { canonical: "/studio" },
   openGraph: {
-    title: "The Studio | TANGISON STUDIO",
+    title: "The Studio | Studio",
     description: "Inside Tangison Studio: a creative digital agency in Windhoek, Namibia. Our space, our tools, our philosophy.",
     url: "/studio",
   },
