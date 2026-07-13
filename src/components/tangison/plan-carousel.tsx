@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { STUDIO_EASE, DURATION } from "@/lib/motion";
+import { STUDIO_EASE } from "@/lib/motion";
 
 /* ──────────────────────────────────────────────
    CAROUSEL DATA

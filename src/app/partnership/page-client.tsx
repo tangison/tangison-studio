@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { ChevronDown, ArrowUpRight, MessageCircle, Mail, Check, X, Plus } from "lucide-react";
+import { ChevronDown, MessageCircle, Mail, Check, X, Plus } from "lucide-react";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/tangison/studio-button";
-import { fadeUp, STUDIO_EASE, DURATION, VIEWPORT } from "@/lib/motion";
+import { fadeUp, DURATION, VIEWPORT } from "@/lib/motion";
 
 /* ──────────────────────────────────────────────
    PLAN DATA

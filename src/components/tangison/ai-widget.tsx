@@ -46,7 +46,6 @@ interface ArtifactData {
 }
 
 /* ─── Constants ─── */
-const SESSION_ID = `tng-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
 const SUGGESTED_PROMPTS = [
   "What services do you offer?",
@@ -546,7 +545,7 @@ export function TangisonAIWidget() {
         setIsTyping(false);
       }
     },
-    [isLoading, voiceMode, speak, stopSpeaking]
+    [isLoading, voiceMode, speak, stopSpeaking, messages]
   );
 
   /* ─── Browser-native STT ─── */

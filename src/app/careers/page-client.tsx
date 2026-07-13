@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { SiteShell } from "@/components/tangison/site-shell";
 
@@ -66,7 +65,7 @@ export function CareersPage() {
                 { title: "Thinking", desc: "You ask why before how. You research before you design. You challenge assumptions." },
                 { title: "Communication", desc: "You can explain your decisions. You write clearly. You listen well." },
                 { title: "Independence", desc: "You work well autonomously. You take ownership. You deliver." },
-              ].map((item, i) => (
+              ].map((item) => (
                 <div key={item.title} className="border-b border-card-border pb-6">
                   <h3 className="font-cabinet text-lg font-bold tracking-tight text-ink mb-1">{item.title}</h3>
                   <p className="font-satoshi text-ink-muted text-sm leading-relaxed">{item.desc}</p>

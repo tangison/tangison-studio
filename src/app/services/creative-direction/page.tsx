@@ -1,10 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 import { mapServiceToCapability } from "@/lib/capabilities";
 
-interface PageProps {
-  params: Promise<{ slug: string }>;
-}
-
 /**
  * /services/creative-direction → /services#<capability>
  *

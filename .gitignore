@@ -60,3 +60,9 @@ logs/*.log
 /upload/squirrel.toml
 # Bun lockfile (Vercel uses npm)
 bun.lock
+
+# Audit results (not committed)
+audit-results/
+# Playwright
+playwright-report/
+test-results/

@@ -311,11 +311,9 @@ function DesktopDropdown({
 function SearchOverlay({
   isOpen,
   onClose,
-  pathname,
 }: {
   isOpen: boolean;
   onClose: () => void;
-  pathname: string;
 }) {
   const [query, setQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -340,11 +338,9 @@ function SearchOverlay({
   const flatResults = Object.values(grouped).flat();
 
   useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 100);
-      setQuery("");
-      setSelectedIndex(0);
-    }
+    if (!isOpen) return;
+    const timer = setTimeout(() => inputRef.current?.focus(), 100);
+    return () => clearTimeout(timer);
   }, [isOpen]);
 
   useEffect(() => {
@@ -607,8 +603,14 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchOpenCount, setSearchOpenCount] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
+
+  const openSearch = () => {
+    setIsSearchOpen(true);
+    setSearchOpenCount((c) => c + 1);
+  };
 
   // Scroll tracking — determine if scrolled past hero area
   useEffect(() => {
@@ -674,7 +676,7 @@ export function Navigation() {
 
   // Close search on route change
   useEffect(() => {
-    setIsSearchOpen(false);
+    setIsSearchOpen(false); // eslint-disable-line react-hooks/set-state-in-effect -- close search on route change is a legitimate sync
   }, [pathname]);
 
   return (
@@ -786,7 +788,7 @@ export function Navigation() {
               variants={navRightVariants}
               initial="hidden"
               animate="visible"
-              onClick={() => setIsSearchOpen(true)}
+              onClick={openSearch}
               className="flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.15em] text-ink-muted hover:text-ink transition-colors duration-300 py-1.5 px-2.5 border border-card-border hover:border-black/[0.2]"
               aria-label="Open search (Cmd+K)"
             >
@@ -816,7 +818,7 @@ export function Navigation() {
           {/* Mobile: search + hamburger */}
           <div className="lg:hidden flex items-center gap-2">
             <button
-              onClick={() => setIsSearchOpen(true)}
+              onClick={openSearch}
               className="p-2 text-ink-muted hover:text-ink transition-colors"
               aria-label="Open search"
             >
@@ -843,12 +845,14 @@ export function Navigation() {
         )}
       </motion.nav>
 
-      {/* Search Overlay */}
-      <SearchOverlay
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        pathname={pathname}
-      />
+      {/* Search Overlay — key forces remount (state reset) when opened */}
+      {isSearchOpen && (
+        <SearchOverlay
+          key={`search-${searchOpenCount}`}
+          isOpen={isSearchOpen}
+          onClose={() => setIsSearchOpen(false)}
+        />
+      )}
 
       {/* Mobile Menu Overlay — Atlantic Black */}
       <AnimatePresence>

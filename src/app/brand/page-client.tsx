@@ -24,8 +24,6 @@ const colorGroups = {
   ],
 };
 
-const lightHexes = ["#F6F4EF", "#FFFFFF", "#E6F2F1", "#D9D7D2"];
-
 /* ─── Animation helpers ───────────────────────────────────────── */
 
 const fadeUp = {
@@ -38,7 +36,6 @@ const fadeUp = {
 /* ─── ColorSwatch Component ───────────────────────────────────── */
 
 function ColorSwatch({ color, highlight = false }: { color: typeof colorGroups.Primary[number]; highlight?: boolean }) {
-  const isLight = lightHexes.includes(color.hex);
 
   return (
     <div className={`border ${highlight ? "border-signal-teal/30 bg-ocean-mist/30" : "border-card-border bg-signal-white"}`}>

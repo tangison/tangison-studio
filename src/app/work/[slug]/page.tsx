@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CaseStudyPage } from "./page-client";
-import { getCaseStudy, getAllCaseStudySlugs, caseStudies } from "@/lib/case-studies";
+import { getCaseStudy, getAllCaseStudySlugs } from "@/lib/case-studies";
 
 /* ──────────────────────────────────────────────
    STATIC PARAMS
