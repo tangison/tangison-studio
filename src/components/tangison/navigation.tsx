@@ -307,7 +307,7 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="font-satoshi text-sm text-skeleton-bone/60"
+                className="font-satoshi text-sm text-skeleton-bone/70"
               >
                 One studio instead of three vendors.
               </motion.p>
@@ -354,9 +354,9 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
 
           {/* Bottom — social */}
           <div className="flex items-center gap-6 px-6 md:px-12 py-6 border-t border-white/5">
-            <a href="https://www.facebook.com/namibia.digital" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/60 hover:text-signal-teal transition-colors">Facebook</a>
-            <a href="https://www.instagram.com/tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/60 hover:text-signal-teal transition-colors">Instagram</a>
-            <a href="https://www.threads.net/@tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/60 hover:text-signal-teal transition-colors">Threads</a>
+            <a href="https://www.facebook.com/namibia.digital" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Facebook</a>
+            <a href="https://www.instagram.com/tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Instagram</a>
+            <a href="https://www.threads.net/@tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Threads</a>
             <span className="ml-auto font-jetbrains text-[9px] text-skeleton-bone/40 uppercase tracking-[0.2em]">Windhoek, Namibia</span>
           </div>
         </div>
@@ -480,7 +480,7 @@ export function Navigation() {
             >
               <Search className="w-3.5 h-3.5" />
               <span className="hidden md:inline font-satoshi text-xs">Search</span>
-              <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted/60 border border-card-border px-1 py-0.5 rounded">
+              <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted border border-card-border px-1 py-0.5 rounded">
                 ⌘K
               </kbd>
             </button>

@@ -78,7 +78,7 @@ export default function Page() {
                 <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">
                   Windhoek · Namibia
                 </p>
-                <p className="font-jetbrains text-[10px] text-ink-muted/60 uppercase tracking-[0.2em] mt-1">
+                <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mt-1">
  Independent digital product studio
                 </p>
               </div>

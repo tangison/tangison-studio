@@ -40,7 +40,7 @@ export function Footer() {
             <h2 className="font-display font-bold text-skeleton-bone text-2xl md:text-3xl mb-3">
               Build something worth shipping.
             </h2>
-            <p className="font-satoshi text-sm text-skeleton-bone/60 mb-6 max-w-md">
+            <p className="font-satoshi text-sm text-skeleton-bone/70 mb-6 max-w-md">
               Studio designs and builds digital products from Windhoek, Namibia.
             </p>
             <Link href="/contact" className="btn-pill btn-pill-teal">
@@ -80,7 +80,7 @@ export function Footer() {
               <ul className="space-y-2">
                 {footerLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="font-satoshi text-sm text-skeleton-bone/60 hover:text-signal-teal transition-colors">
+                    <Link href={link.href} className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -93,7 +93,7 @@ export function Footer() {
               <ul className="space-y-2">
                 {Object.entries(socialLinks).map(([platform, url]) => (
                   <li key={platform}>
-                    <a href={url} target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/60 hover:text-signal-teal transition-colors capitalize">
+                    <a href={url} target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors capitalize">
                       {platform}
                     </a>
                   </li>
@@ -106,7 +106,7 @@ export function Footer() {
               <ul className="space-y-2">
                 {legalLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="font-satoshi text-sm text-skeleton-bone/60 hover:text-signal-teal transition-colors">
+                    <Link href={link.href} className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">
                       {link.label}
                     </Link>
                   </li>
