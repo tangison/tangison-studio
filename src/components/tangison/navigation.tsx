@@ -775,7 +775,7 @@ export function Navigation() {
               href="https://tangison.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-jetbrains text-[10px] uppercase tracking-[0.2em] inline-flex items-center gap-1 text-fog-gray/60 hover:text-ink-muted transition-colors duration-300 py-1"
+              className="font-jetbrains text-[10px] uppercase tracking-[0.2em] inline-flex items-center gap-1 text-ink-muted hover:text-ink transition-colors duration-300 py-1"
             >
               Labs ↗
             </motion.a>
@@ -794,7 +794,7 @@ export function Navigation() {
             >
               <Search className="w-3.5 h-3.5" />
               <span className="hidden xl:inline">Search</span>
-              <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted/40 border border-card-border px-1 py-0.5 ml-1">
+              <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted border border-card-border px-1 py-0.5 ml-1">
                 ⌘K
               </kbd>
             </motion.button>
@@ -807,8 +807,8 @@ export function Navigation() {
             >
               <Link
                 href="/contact"
-                className="bg-signal-teal text-signal-white px-5 py-2.5 font-cabinet font-bold text-[11px] tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 inline-block"
-                style={{ borderRadius: "999px" }}
+                className="text-signal-white px-5 py-2.5 font-cabinet font-bold text-[11px] tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300 inline-block"
+                style={{ background: "var(--color-signal-teal-button)", borderRadius: "999px" }}
               >
                 Start a Project →
               </Link>
