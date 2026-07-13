@@ -26,9 +26,12 @@
   --color-fog-gray: #D9D7D2;           /* Secondary text, dividers */
 
   /* ── Accent — Signal Teal (Tangison Studio signature) ──────── */
-  --color-signal-teal: #2CB5B4;        /* Signature accent — links, CTAs, STUDIO descriptor */
+  --color-signal-teal: #2CB5B4;        /* Signature accent — decorative, large elements only */
   --color-signal-teal-light: #3CC8C7;  /* Hover state for Signal Teal */
   --color-signal-teal-muted: rgba(44, 181, 180, 0.15); /* Subtle teal background */
+  /* Accessible teal variants for text and interactive elements (WCAG AA) */
+  --color-signal-teal-text: #157372;   /* Teal for text/links on light bg — 5.6:1 on white, passes AA */
+  --color-signal-teal-button: #0F5C5B; /* Teal for button backgrounds with white text — 7.8:1, passes AAA */
 
   /* ── Legacy accent — parent brand reference (used on /brand page ONLY) */
   --color-rust-signal: #C56A4A;
@@ -637,3 +640,14 @@ button, a {
     transition: none;
   }
 }
+
+/* ─── Accessibility fixes (WCAG AA color contrast) ─── */
+
+/* Hover/active teal for text links — must pass 4.5:1 on light backgrounds */
+.hover\:text-signal-teal:hover { color: var(--color-signal-teal-text) !important; }
+.text-signal-teal { color: var(--color-signal-teal-text) !important; }
+.hover\:text-signal-teal-light:hover { color: var(--color-signal-teal-text) !important; }
+
+/* The mono-label-studio uses #153E52 (Deep Ocean Navy) — already passes */
+
+/* Status pill text — Deep Ocean Navy on Ocean Mist, passes */

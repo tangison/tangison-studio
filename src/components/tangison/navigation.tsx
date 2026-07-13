@@ -409,7 +409,7 @@ function SearchOverlay({
                 className="flex-1 bg-transparent font-jetbrains text-sm text-ink placeholder:text-ink-muted/40 focus:outline-none"
                 aria-label="Search"
               />
-              <kbd className="font-jetbrains text-[9px] text-ink-muted/40 border border-card-border px-1.5 py-0.5 ml-3">
+              <kbd className="font-jetbrains text-[9px] text-ink-muted border border-card-border px-1.5 py-0.5 ml-3">
                 ESC
               </kbd>
             </div>
@@ -746,7 +746,7 @@ export function Navigation() {
                     href={item.href}
                     className={`font-jetbrains text-[10px] uppercase tracking-[0.2em] relative group inline-flex items-center transition-colors duration-300 py-1 ${
                       item.href === "/contact"
-                        ? "text-signal-teal hover:text-signal-teal-light"
+                        ? "text-ink hover:text-signal-teal-text"
                         : pathname === item.href
                         ? "text-ink"
                         : "text-ink-muted hover:text-ink"

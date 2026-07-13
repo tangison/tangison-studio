@@ -94,6 +94,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${cabinetGrotesk.variable} ${satoshi.variable} ${jetbrainsMono.variable}`} style={{ maxWidth: "100%", overflowX: "hidden" }}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Preload the LCP hero painting for faster Largest Contentful Paint */}
+        <link rel="preload" as="image" href="/images/paintings/atlantic-signal-hero.webp" fetchPriority="high" />
         <OrganizationJsonLd />
       </head>
       <body className="font-satoshi antialiased bg-skeleton-bone text-ink overflow-x-hidden" style={{ maxWidth: "100%" }}>

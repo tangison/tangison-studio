@@ -1,0 +1,21 @@
+Running axe-core 4.12.1 in chrome-headless
+
+Testing https://studio.tangison.com ... please wait, this may take a minute.
+
+  Violation of "color-contrast" with 3 occurrences!
+    Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds. Correct invalid elements at:
+     - .hover\:opacity-80 > .gap-2\.5.inline-flex > .font-display.font-bold.text-ink
+     - .btn-pill-studio[href$="tangison.com"][target="_blank"]
+     - .btn-pill-studio.inline-flex[href="mailto:studio@tangison.com"]
+    For details, see: https://dequeuniversity.com/rules/axe/4.12/color-contrast
+
+  Violation of "image-redundant-alt" with 1 occurrences!
+    Ensure image alternative is not repeated as text. Correct invalid elements at:
+     - img[alt="Tangison Studio"]
+    For details, see: https://dequeuniversity.com/rules/axe/4.12/image-redundant-alt
+
+4 Accessibility issues detected.
+Testing complete of 1 pages
+
+Saved file at /home/z/my-project/real-repo/audit-results/08-axe-core.json 
+

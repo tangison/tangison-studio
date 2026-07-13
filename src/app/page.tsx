@@ -4,7 +4,6 @@ import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { caseStudies } from "@/lib/case-studies";
 import { capabilities } from "@/lib/capabilities";
-import { StudioLogo } from "@/components/studio/studio-logo";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { WebPageJsonLd } from "@/components/tangison/json-ld";
 
@@ -47,7 +46,7 @@ export default function Page() {
         {/* 1. HERO — sharp claim, no pricing, no service list */}
         <section className="py-20 md:py-28" aria-labelledby="hero-heading">
           <div className="shell-editorial">
-            <div className="status-pill-studio mb-6" aria-label="Studio status">
+            <div className="status-pill-studio mb-6" role="status">
               Independent digital product studio · Windhoek, Namibia
             </div>
 
@@ -214,8 +213,9 @@ export default function Page() {
                     <Link
                       href={`/services#${cap.id}`}
                       className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-ink hover:text-signal-teal transition-colors"
+                      aria-label={`Learn more about ${cap.name} capability`}
                     >
-                      Learn more
+                      Learn more about {cap.name.toLowerCase()}
                       <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                     </Link>
                   </div>
@@ -261,7 +261,7 @@ export default function Page() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-pill-studio inline-flex"
-                style={{ background: "var(--color-signal-teal)", color: "#ffffff" }}
+                style={{ background: "var(--color-signal-teal-button)", color: "#ffffff" }}
               >
                 Explore Tangison Labs
                 <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
@@ -394,7 +394,7 @@ export default function Page() {
               <a
                 href="mailto:studio@tangison.com"
                 className="btn-pill-studio inline-flex"
-                style={{ background: "var(--color-signal-teal)", color: "#ffffff" }}
+                style={{ background: "var(--color-signal-teal-button)", color: "#ffffff" }}
               >
                 studio@tangison.com
               </a>

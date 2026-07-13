@@ -24,7 +24,7 @@ import path from "path";
 
 const PAINTINGS_DIR = path.resolve(process.cwd(), "public/images/paintings");
 const INTEL_DIR = path.resolve(process.cwd(), "public/images/intelligence");
-const PUBLIC_DIR = path.resolve(process.cwd(), "public");
+
 
 if (!fs.existsSync(PAINTINGS_DIR)) fs.mkdirSync(PAINTINGS_DIR, { recursive: true });
 if (!fs.existsSync(INTEL_DIR)) fs.mkdirSync(INTEL_DIR, { recursive: true });

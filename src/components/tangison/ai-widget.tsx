@@ -124,7 +124,7 @@ function StudioAvatar({ size = 20 }: { size?: number }) {
   return (
     <Image
       src="/brand/favicon.webp"
-      alt="Tangison Studio"
+      alt=""
       width={size}
       height={size}
       className="object-contain"
