@@ -120,10 +120,10 @@ export function Footer() {
       {/* Bottom — copyright + endorsement */}
       <div className="mx-auto max-w-6xl px-6 py-5 border-t border-white/5">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-          <p className="font-jetbrains text-[9px] text-skeleton-bone/40 uppercase tracking-[0.2em]">
+          <p className="font-jetbrains text-[9px] text-skeleton-bone/60 uppercase tracking-[0.2em]">
             © {new Date().getFullYear()} Tangison Studio
           </p>
-          <p className="font-jetbrains text-[9px] text-skeleton-bone/40 uppercase tracking-[0.2em]">
+          <p className="font-jetbrains text-[9px] text-skeleton-bone/60 uppercase tracking-[0.2em]">
             A Tangison Technologies company · Windhoek, Namibia
           </p>
         </div>
