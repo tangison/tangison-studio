@@ -651,3 +651,111 @@ button, a {
 /* The mono-label-studio uses #153E52 (Deep Ocean Navy) — already passes */
 
 /* Status pill text — Deep Ocean Navy on Ocean Mist, passes */
+
+/* ─── Premium Redesign Utilities ─── */
+
+/* Pill button — fully rounded */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-family: var(--font-satoshi), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1;
+  min-height: 48px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.btn-pill:active {
+  transform: scale(0.98);
+}
+.btn-pill-primary {
+  background: var(--color-atlantic-black);
+  color: var(--color-ocean-mist);
+}
+.btn-pill-primary:hover {
+  background: var(--color-deep-ocean, #153E52);
+}
+.btn-pill-teal {
+  background: var(--color-signal-teal-button, #0F5C5B);
+  color: #ffffff;
+}
+.btn-pill-teal:hover {
+  opacity: 0.9;
+}
+.btn-pill-outline {
+  background: transparent;
+  color: var(--color-atlantic-black);
+  border: 1px solid var(--color-card-border);
+}
+.btn-pill-outline:hover {
+  border-color: var(--color-atlantic-black);
+}
+.btn-pill-light {
+  background: var(--color-ocean-mist);
+  color: var(--color-atlantic-black);
+}
+.btn-pill-light:hover {
+  opacity: 0.9;
+}
+
+/* Arrow island — small circular container for trailing arrow */
+.arrow-island {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-pill:hover .arrow-island {
+  transform: translateX(2px);
+}
+
+/* Painting frame — for oil-painted editorial imagery */
+.painting-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-ocean-mist);
+  border: 1px solid var(--color-card-border);
+}
+
+/* Editorial section spacing */
+.section-editorial {
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
+
+/* Stagger reveal animation */
+@keyframes stagger-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.stagger-item {
+  opacity: 0;
+  animation: stagger-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn-pill,
+  .arrow-island,
+  .stagger-item {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -2,15 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { StudioLogo } from "@/components/studio/studio-logo";
 import { socialLinks } from "@/config/social";
 
 /**
- * Minimal Collins-style footer.
- *
- * Logo, one line of links, social, copyright.
- * No editorial images, no multi-column complexity, no gradients.
- * Just clean, editorial restraint.
+ * Intentional closing composition.
+ * Dark background, oil-painted fragment, short invitation, pill CTA.
  */
 
 const footerLinks = [
@@ -31,72 +30,103 @@ const legalLinks = [
 export function Footer() {
   return (
     <footer
-      className="border-t border-card-border bg-skeleton-bone"
+      className="bg-atlantic-black text-skeleton-bone"
       role="contentinfo"
     >
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        {/* Top: logo + links */}
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+      {/* Top — invitation + painting fragment */}
+      <div className="mx-auto max-w-6xl px-6 pt-16 pb-12">
+        <div className="grid md:grid-cols-[1.5fr_1fr] gap-10 items-center">
+          <div>
+            <h2 className="font-display font-bold text-skeleton-bone text-2xl md:text-3xl mb-3">
+              Build something worth shipping.
+            </h2>
+            <p className="font-satoshi text-sm text-skeleton-bone/60 mb-6 max-w-md">
+              Studio designs and builds digital products from Windhoek, Namibia.
+            </p>
+            <Link href="/contact" className="btn-pill btn-pill-teal">
+              Start a project
+              <span className="arrow-island"><ArrowUpRight className="w-3.5 h-3.5" /></span>
+            </Link>
+          </div>
+          <figure className="painting-frame aspect-[4/3] max-w-xs">
+            <Image
+              src="/images/paintings/night-signal.webp"
+              alt="An oil painting of a dark Namibian coast at night with heavy ocean brushwork and one small teal circular signal."
+              width={400}
+              height={300}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 320px"
+            />
+          </figure>
+        </div>
+      </div>
+
+      {/* Middle — logo + links + social */}
+      <div className="mx-auto max-w-6xl px-6 py-8 border-t border-white/5">
+        <div className="grid md:grid-cols-[1fr_2fr] gap-8">
           {/* Logo + tagline */}
-          <div className="space-y-3">
-            <StudioLogo size={32} />
-            <p className="max-w-xs text-sm leading-relaxed text-ink-muted">
-              Digital products built with clarity, character and purpose.
+          <div>
+            <StudioLogo size={32} wordmarkColor="light" />
+            <p className="font-satoshi text-sm text-skeleton-bone/50 mt-3 max-w-xs">
+              We build the brand, the product and the intelligence behind it.
             </p>
           </div>
 
-          {/* Links */}
-          <div className="flex flex-wrap gap-x-8 gap-y-2">
-            {footerLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-ink-muted transition-colors hover:text-ink"
-              >
-                {link.label}
-              </Link>
-            ))}
+          {/* Links + social */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <nav aria-label="Pages">
+              <p className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em] mb-4">Pages</p>
+              <ul className="space-y-2">
+                {footerLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="font-satoshi text-sm text-skeleton-bone/60 hover:text-signal-teal transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <nav aria-label="Social">
+              <p className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em] mb-4">Social</p>
+              <ul className="space-y-2">
+                {Object.entries(socialLinks).map(([platform, url]) => (
+                  <li key={platform}>
+                    <a href={url} target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/60 hover:text-signal-teal transition-colors capitalize">
+                      {platform}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <nav aria-label="Legal">
+              <p className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em] mb-4">Legal</p>
+              <ul className="space-y-2">
+                {legalLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="font-satoshi text-sm text-skeleton-bone/60 hover:text-signal-teal transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
         </div>
+      </div>
 
-        {/* Bottom: social + legal + copyright */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-card-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-          {/* Social */}
-          <div className="flex items-center gap-4">
-            {Object.entries(socialLinks).map(([platform, url]) => (
-              <a
-                key={platform}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-ink-muted transition-colors hover:text-ink capitalize"
-              >
-                {platform}
-              </a>
-            ))}
-          </div>
-
-          {/* Legal + copyright */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            {legalLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs text-ink-muted transition-colors hover:text-ink"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <span className="text-xs text-ink-muted">
-              © {new Date().getFullYear()} Tangison Studio
-            </span>
-          </div>
+      {/* Bottom — copyright + endorsement */}
+      <div className="mx-auto max-w-6xl px-6 py-5 border-t border-white/5">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <p className="font-jetbrains text-[9px] text-skeleton-bone/40 uppercase tracking-[0.2em]">
+            © {new Date().getFullYear()} Tangison Studio
+          </p>
+          <p className="font-jetbrains text-[9px] text-skeleton-bone/40 uppercase tracking-[0.2em]">
+            A Tangison Technologies company · Windhoek, Namibia
+          </p>
         </div>
-
-        {/* Endorsement */}
-        <p className="mt-4 text-xs text-ink-muted">
-          A Tangison Technologies company · Windhoek, Namibia
-        </p>
       </div>
     </footer>
   );
