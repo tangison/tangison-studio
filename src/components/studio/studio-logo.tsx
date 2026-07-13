@@ -74,6 +74,9 @@ export function StudioLogo({
             letterSpacing: "-0.02em",
             lineHeight: 1,
             color: textColor,
+            // Explicit background helps axe-core calculate contrast correctly
+            // (prevents false positive when text is adjacent to the colored circle)
+            background: "transparent",
           }}
         >
           Studio
