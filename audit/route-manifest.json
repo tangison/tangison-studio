@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-07-14",
+  "repository": "tangison/tangison-studio",
+  "branch": "redesign/complete-site-rebuild",
+  "baseSHA": "8141f32",
+  "routes": [
+    { "url": "/", "source": "src/app/page.tsx", "type": "homepage", "status": "rebuilt", "designStatus": "complete", "copyStatus": "complete", "mobileStatus": "complete", "a11yStatus": "complete", "seoStatus": "complete" },
+    { "url": "/work", "source": "src/app/work/page.tsx", "type": "index", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/work/[slug]", "source": "src/app/work/[slug]/page.tsx", "type": "dynamic", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/services", "source": "src/app/services/page.tsx", "type": "index", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/about", "source": "src/app/about/page.tsx", "type": "page", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/studio", "source": "src/app/studio/page.tsx", "type": "page", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/process", "source": "src/app/process/page.tsx", "type": "page", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/partnership", "source": "src/app/partnership/page.tsx", "type": "page", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/contact", "source": "src/app/contact/page.tsx", "type": "page", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/faq", "source": "src/app/faq/page.tsx", "type": "page", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/blog", "source": "src/app/blog/page.tsx", "type": "index", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/resources", "source": "src/app/resources/page.tsx", "type": "page", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/careers", "source": "src/app/careers/page.tsx", "type": "page", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/brand", "source": "src/app/brand/page.tsx", "type": "page", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/legal/privacy", "source": "src/app/legal/privacy/page.tsx", "type": "legal", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/legal/terms", "source": "src/app/legal/terms/page.tsx", "type": "legal", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/legal/cookies", "source": "src/app/legal/cookies/page.tsx", "type": "legal", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "pending" },
+    { "url": "/not-found", "source": "src/app/not-found.tsx", "type": "error", "status": "pending", "designStatus": "pending", "copyStatus": "pending", "mobileStatus": "pending", "a11yStatus": "pending", "seoStatus": "n/a" },
+    { "url": "/sitemap.xml", "source": "src/app/sitemap.ts", "type": "infrastructure", "status": "complete", "designStatus": "n/a", "copyStatus": "n/a", "mobileStatus": "n/a", "a11yStatus": "n/a", "seoStatus": "complete" },
+    { "url": "/robots.txt", "source": "src/app/robots.ts", "type": "infrastructure", "status": "complete", "designStatus": "n/a", "copyStatus": "n/a", "mobileStatus": "n/a", "a11yStatus": "n/a", "seoStatus": "complete" },
+    { "url": "/api/version", "source": "src/app/api/version/route.ts", "type": "api", "status": "complete", "designStatus": "n/a", "copyStatus": "n/a", "mobileStatus": "n/a", "a11yStatus": "n/a", "seoStatus": "n/a" },
+    { "url": "/api/contact", "source": "src/app/api/contact/route.ts", "type": "api", "status": "complete", "designStatus": "n/a", "copyStatus": "n/a", "mobileStatus": "n/a", "a11yStatus": "n/a", "seoStatus": "n/a" },
+    { "url": "/api/chat", "source": "src/app/api/chat/route.ts", "type": "api", "status": "complete", "designStatus": "n/a", "copyStatus": "n/a", "mobileStatus": "n/a", "a11yStatus": "n/a", "seoStatus": "n/a" }
+  ]
+}

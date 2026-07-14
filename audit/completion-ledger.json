@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-07-14",
+  "routes": {
+    "/": "complete",
+    "/work": "complete",
+    "/work/[slug]": "complete",
+    "/services": "complete",
+    "/about": "complete",
+    "/studio": "complete",
+    "/process": "complete",
+    "/partnership": "complete",
+    "/contact": "complete",
+    "/faq": "complete",
+    "/blog": "complete",
+    "/blog/[slug]": "complete",
+    "/resources": "complete",
+    "/careers": "complete",
+    "/brand": "complete",
+    "/legal/privacy": "needs_verified_content",
+    "/legal/terms": "needs_verified_content",
+    "/legal/cookies": "needs_verified_content",
+    "/not-found": "complete",
+    "/sitemap.xml": "complete",
+    "/robots.txt": "complete",
+    "/api/version": "complete",
+    "/api/contact": "complete",
+    "/api/chat": "complete"
+  },
+  "summary": {
+    "total": 24,
+    "complete": 21,
+    "pending": 0,
+    "failed": 0,
+    "needs_verified_content": 3,
+    "percentage": 88
+  }
+}

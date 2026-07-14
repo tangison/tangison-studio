@@ -1,45 +1,59 @@
 import type { Metadata } from "next";
-import { FAQPage } from "./page-client";
-import { FAQPageJsonLd, BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
+import { SiteShell } from "@/components/tangison/site-shell";
+import { StudioButton } from "@/components/studio/button";
+import { BreadcrumbJsonLd, WebPageJsonLd, FAQJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "FAQ | Tangison Studio",
-  description: "Frequently asked questions about working with Tangison Studio. Learn about our design process, project pricing, timelines, and how we engage with organizations across Africa.",
+  title: "FAQ",
+  description: "Frequently asked questions about working with Studio: process, pricing, timelines, and partnership.",
   alternates: { canonical: "/faq" },
-  openGraph: {
-    title: "FAQ | Studio",
-    description: "Frequently asked questions about working with Tangison Studio. Learn about our design process, project pricing, timelines, and how we engage with organizations across Africa.",
-    url: "/faq",
-  },
+  openGraph: { title: "FAQ | Studio", description: "Frequently asked questions.", url: "/faq", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }] },
 };
 
-const faqItems = [
-  { question: "What does Tangison Studio do?", answer: "We design and build websites, applications, brand systems, and design systems. We work from Windhoek, Namibia, and serve clients across Africa and beyond." },
-  { question: "What services do you offer?", answer: "Seven disciplines: Website Design, Website Development, Application Design, Product Design, Brand Systems, Design Systems, and Creative Direction." },
-  { question: "What is your process?", answer: "Five phases: Discover, Define, Design, Develop, Launch. Every project starts with research and ends with a working product." },
-  { question: "How do you price projects?", answer: "We scope every project individually based on requirements, complexity, and timeline. After the Discover phase, you receive a detailed proposal with transparent pricing." },
-  { question: "Do you work with organizations outside Namibia?", answer: "Yes. While based in Windhoek, we work with organizations across Africa and internationally." },
-  { question: "How long does a typical project take?", answer: "A brand identity system can take 4 to 6 weeks. A full website design and build typically runs 8 to 14 weeks." },
-  { question: "Do you build with specific technologies?", answer: "We choose technology based on what the project needs. Our team works with modern frameworks including Next.js, React, and others. We prioritize performance, accessibility, and maintainability." },
-  { question: "How do I start a project?", answer: "Fill out the contact form or email studio@tangison.com. We respond to every message within two business days." },
-  { question: "What if I only need design, not development?", answer: "We can handle design-only projects. We deliver complete design files, specifications, and a handoff package your developers can use right away." },
-  { question: "Do you offer ongoing support after launch?", answer: "Yes. We offer maintenance and support plans for launched projects. Details and pricing are included in your project proposal." },
+const faqs = [
+  { q: "What does a typical project cost?", a: "We offer four partnership models. Care at N$500/month, Partner at N$1,000/month, Studio Plus at N$2,000/month, and Studio Project at a custom proposal. Most new websites and applications fall into the Studio Project model." },
+  { q: "How long does a project take?", a: "A focused marketing website typically takes four to eight weeks from discovery to launch. More complex applications can take three to six months. We give you a realistic timeline in the proposal phase and stick to it." },
+  { q: "Do you work with clients outside Namibia?", a: "Yes. We work with organizations across Africa and beyond. Our base in Windhoek informs how we design, particularly around performance on constrained connections, but the work travels." },
+  { q: "What is your process?", a: "Five steps: discover, define, design, build, launch. Each step has a clear purpose and we do not stretch engagements beyond what the work needs." },
+  { q: "Do you offer ongoing support after launch?", a: "Yes. After launch we hand over documentation and train your team, then continue through one of the partnership models depending on how much ongoing work the project needs." },
+  { q: "What technologies do you use?", a: "We build with modern, maintainable web technology. Typically Next.js, TypeScript, and Tailwind CSS. We choose the stack based on what the project needs, not on fashion." },
+  { q: "Can you work with our existing brand?", a: "Yes. We can extend an existing brand system or help you build a new one. If your current identity needs work, we will say so honestly in the discovery phase." },
+  { q: "How do we get started?", a: "Send us a message through the contact page or email studio@tangison.com. Tell us what you are working on, your timeline, and any budget constraints. We reply to every serious enquiry within two working days." },
 ];
 
 export default function Page() {
   return (
     <>
-      <FAQPageJsonLd faqs={faqItems} />
-      <BreadcrumbJsonLd items={[
-        { name: "Home", url: "/" },
-        { name: "FAQ", url: "/faq" },
-      ]} />
-      <WebPageJsonLd
-        title="FAQ | Tangison Studio"
-        description="Frequently asked questions about working with Tangison Studio."
-        url="/faq"
-      />
-      <FAQPage />
+      <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "FAQ", url: "/faq" }]} />
+      <WebPageJsonLd title="FAQ" description="Frequently asked questions." url="/faq" />
+      <FAQJsonLd faqs={faqs} />
+      <SiteShell>
+        <section className="pt-12 md:pt-20 pb-8">
+          <div className="mx-auto max-w-4xl px-6">
+            <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">FAQ</p>
+            <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">Frequently asked questions.</h1>
+            <p className="font-satoshi text-lg text-ink-muted max-w-2xl">Straight answers to the questions we hear most often.</p>
+          </div>
+        </section>
+        <section className="py-12">
+          <div className="mx-auto max-w-4xl px-6">
+            <dl className="space-y-8">
+              {faqs.map((faq) => (
+                <div key={faq.q} className="pb-8 border-b border-card-border last:border-0">
+                  <dt className="font-display font-bold text-ink text-lg mb-2">{faq.q}</dt>
+                  <dd className="font-satoshi text-base leading-relaxed text-ink-muted">{faq.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+        <section className="py-16 md:py-24 bg-atlantic-black">
+          <div className="mx-auto max-w-3xl px-6 text-center">
+            <h2 className="font-display font-bold text-skeleton-bone text-3xl mb-4">Still have questions?</h2>
+            <StudioButton as="link" href="/contact" variant="inverse" hasArrow arrowType="up-right">Contact us</StudioButton>
+          </div>
+        </section>
+      </SiteShell>
     </>
   );
 }

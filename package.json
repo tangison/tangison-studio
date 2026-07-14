@@ -22,7 +22,6 @@
     "z-ai-web-dev-sdk": "^0.0.18"
   },
   "devDependencies": {
-    "@axe-core/cli": "^4.12.1",
     "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "25.7.0",
@@ -30,8 +29,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "^16.2.10",
-    "lighthouse": "^13.4.0",
-    "pa11y": "^9.1.1",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.1.10"
