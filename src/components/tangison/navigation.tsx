@@ -288,8 +288,8 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
                 className="painting-frame mb-8"
               >
                 <Image
-                  src="/images/paintings/atlantic-signal-hero.webp"
-                  alt="An oil painting of the Skeleton Coast at first light"
+                  src="/images/paintings/hero-skeleton-coast.webp"
+                  alt="An oil painting of a solitary weathered signal mast on the Skeleton Coast at first light."
                   width={600}
                   height={400}
                   className="w-full h-auto"
@@ -469,28 +469,24 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Right controls */}
+          {/* Right controls — both circular */}
           <div className="flex items-center gap-2">
-            {/* Search button */}
+            {/* Search button — circular */}
             <button
               type="button"
               onClick={() => setIsSearchOpen(true)}
-              className="inline-flex h-9 items-center gap-2 px-3 rounded-full border border-card-border text-ink-muted hover:text-ink hover:border-ink/20 transition-colors"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-ink-muted hover:text-ink hover:border-ink/20 transition-colors"
               aria-label="Open search (Cmd+K)"
             >
-              <Search className="w-3.5 h-3.5" />
-              <span className="hidden md:inline font-satoshi text-xs">Search</span>
-              <kbd className="hidden md:inline font-jetbrains text-[8px] text-ink-muted border border-card-border px-1 py-0.5 rounded">
-                ⌘K
-              </kbd>
+              <Search className="w-4 h-4" />
             </button>
 
-            {/* Two-line menu toggle */}
+            {/* Two-line menu toggle — circular */}
             <button
               ref={menuTriggerRef}
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-card-border text-ink hover:border-ink/20 transition-colors"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-ink hover:border-ink/20 transition-colors"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
             >

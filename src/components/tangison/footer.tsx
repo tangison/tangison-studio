@@ -3,8 +3,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import { StudioLogo } from "@/components/studio/studio-logo";
+import { StudioButton } from "@/components/studio/button";
 import { socialLinks } from "@/config/social";
 
 /**
@@ -43,10 +43,9 @@ export function Footer() {
             <p className="font-satoshi text-sm text-skeleton-bone/70 mb-6 max-w-md">
               Studio designs and builds digital products from Windhoek, Namibia.
             </p>
-            <Link href="/contact" className="btn-pill btn-pill-teal">
+            <StudioButton as="link" href="/contact" variant="inverse" hasArrow arrowType="up-right">
               Start a project
-              <span className="arrow-island"><ArrowUpRight className="w-3.5 h-3.5" /></span>
-            </Link>
+            </StudioButton>
           </div>
           <figure className="painting-frame aspect-[4/3] max-w-xs">
             <Image
