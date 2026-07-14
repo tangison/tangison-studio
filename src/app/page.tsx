@@ -28,15 +28,15 @@ const featuredWork = featuredSlugs
   .filter((c): c is NonNullable<typeof c> => Boolean(c));
 
 const projectPaintings: Record<string, string> = {
-  proavia: "/images/paintings/projects/proavia.webp",
-  nalago: "/images/paintings/projects/nalago.webp",
-  clusterleaf: "/images/paintings/projects/clusterleaf.webp",
+  proavia: "/images/paintings/projects/proavia-v2.webp",
+  nalago: "/images/paintings/projects/nalago-v2.webp",
+  clusterleaf: "/images/paintings/projects/clusterleaf-v2.webp",
 };
 
 const capabilityPaintings: Record<string, string> = {
-  brand: "/images/paintings/identity-table.webp",
-  product: "/images/paintings/product-workshop.webp",
-  intelligence: "/images/paintings/intelligence-systems.webp",
+  brand: "/images/paintings/capability-brand-v2.webp",
+  product: "/images/paintings/capability-product-v2.webp",
+  intelligence: "/images/paintings/capability-intelligence-v2.webp",
 };
 
 const principles = [
@@ -103,7 +103,7 @@ export default function Page() {
           <div className="mx-auto max-w-6xl px-6">
             <figure className="overflow-hidden rounded-[28px]">
               <Image
-                src="/images/paintings/hero-skeleton-coast.webp"
+                src="/images/paintings/hero-skeleton-coast-v2.webp"
                 alt="An oil painting of a solitary weathered signal mast on the Skeleton Coast shoreline at first light, with heavy impasto waves, dark volcanic rocks, and a tiny teal circular beacon at the mast top."
                 width={1344}
                 height={768}
@@ -243,7 +243,7 @@ export default function Page() {
               <div>
                 <div className="aspect-[4/3] overflow-hidden rounded-[24px] bg-ocean-mist mb-6">
                   <Image
-                    src="/images/paintings/principles-texture.webp"
+                    src="/images/paintings/capability-brand-v2.webp"
                     alt="An oil painting of a studio work surface with linen, charcoal, teal pigment, and a circular signal dot."
                     width={600}
                     height={450}
@@ -324,7 +324,7 @@ export default function Page() {
               </div>
               <div className="aspect-[4/3] overflow-hidden rounded-[24px] bg-ocean-mist">
                 <Image
-                  src="/images/paintings/collaboration-studio.webp"
+                  src="/images/paintings/collaboration-studio-v2.webp"
                   alt="An oil painting of two pairs of hands collaborating over interface sketches, color swatches, and a laptop on a worn wooden studio table."
                   width={600}
                   height={450}

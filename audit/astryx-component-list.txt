@@ -1,0 +1,40 @@
+
+> tangison-studio@1.0.0 astryx
+> node node_modules/@astryxdesign/cli/bin/astryx.mjs component --list
+
+
+AppShell  ← @astryxdesign/core/AppShell
+AspectRatio  ← @astryxdesign/core/AspectRatio
+Avatar (group)
+  Avatar  ← @astryxdesign/core/Avatar
+  AvatarGroup  ← @astryxdesign/core/AvatarGroup
+  AvatarGroupOverflow  ← @astryxdesign/core/AvatarGroup
+  AvatarStatusDot  ← @astryxdesign/core/Avatar
+Badge  ← @astryxdesign/core/Badge
+Banner  ← @astryxdesign/core/Banner
+Blockquote  ← @astryxdesign/core/Blockquote
+Breadcrumbs (group)
+  BreadcrumbItem  ← @astryxdesign/core/Breadcrumbs
+  Breadcrumbs  ← @astryxdesign/core/Breadcrumbs
+Button (group)
+  Button  ← @astryxdesign/core/Button
+  ButtonGroup  ← @astryxdesign/core/ButtonGroup
+  IconButton  ← @astryxdesign/core/IconButton
+  ToggleButton  ← @astryxdesign/core/ToggleButton
+  ToggleButtonGroup  ← @astryxdesign/core/ToggleButton
+Calendar  ← @astryxdesign/core/Calendar
+Card (group)
+  Card  ← @astryxdesign/core/Card
+  ClickableCard  ← @astryxdesign/core/ClickableCard
+  SelectableCard  ← @astryxdesign/core/SelectableCard
+Carousel  ← @astryxdesign/core/Carousel
+Chat (group)
+  ChatComposer  ← @astryxdesign/core/Chat
+  ChatComposerDrawer  ← @astryxdesign/core/Chat
+  ChatComposerInput  ← @astryxdesign/core/Chat
+  ChatDictationButton  ← @astryxdesign/core/Chat
+  ChatLayout  ← @astryxdesign/core/Chat
+  ChatLayoutScrollButton  ← @astryxdesign/core/Chat
+  ChatMessage  ← @astryxdesign/core/Chat
+  ChatMessageList  ← @astryxdesign/core/Chat
+  ChatMessageMetadata  ← @astryxdesign/core/Chat

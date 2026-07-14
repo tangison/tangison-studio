@@ -288,7 +288,7 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
                 className="painting-frame mb-8"
               >
                 <Image
-                  src="/images/paintings/hero-skeleton-coast.webp"
+                  src="/images/paintings/hero-skeleton-coast-v2.webp"
                   alt="An oil painting of a solitary weathered signal mast on the Skeleton Coast at first light."
                   width={600}
                   height={400}

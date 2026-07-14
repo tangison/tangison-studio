@@ -49,7 +49,7 @@ export function Footer() {
           </div>
           <figure className="painting-frame aspect-[4/3] max-w-xs">
             <Image
-              src="/images/paintings/night-signal.webp"
+              src="/images/paintings/not-found-signal-v2.webp"
               alt="An oil painting of a dark Namibian coast at night with heavy ocean brushwork and one small teal circular signal."
               width={400}
               height={300}

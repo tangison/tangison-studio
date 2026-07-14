@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 };
 
 const capabilityPaintings: Record<string, string> = {
-  brand: "/images/paintings/identity-table.webp",
-  product: "/images/paintings/product-workshop.webp",
-  intelligence: "/images/paintings/intelligence-systems.webp",
+  brand: "/images/paintings/capability-brand-v2.webp",
+  product: "/images/paintings/capability-product-v2.webp",
+  intelligence: "/images/paintings/capability-intelligence-v2.webp",
 };
 
 export default function Page() {

@@ -39,17 +39,17 @@ export async function generateMetadata({
 }
 
 const projectPaintings: Record<string, string> = {
-  proavia: "/images/paintings/projects/proavia.webp",
-  nalago: "/images/paintings/projects/nalago.webp",
-  clusterleaf: "/images/paintings/projects/clusterleaf.webp",
-  smefrog: "/images/paintings/digital-journey.webp",
-  petrocor: "/images/paintings/built-at-the-edge.webp",
-  "tangison-systems": "/images/paintings/intelligence-systems.webp",
-  crescendo: "/images/paintings/painted-signal-flag.webp",
-  feorm: "/images/paintings/desert-threshold.webp",
-  lrclearing: "/images/paintings/windhoek-studio-window.webp",
-  reviveautoworks: "/images/paintings/product-detail.webp",
-  miway: "/images/paintings/responsive-system.webp",
+  proavia: "/images/paintings/projects/proavia-v2.webp",
+  nalago: "/images/paintings/projects/nalago-v2.webp",
+  clusterleaf: "/images/paintings/projects/clusterleaf-v2.webp",
+  smefrog: "/images/paintings/process-progressive-v2.webp",
+  petrocor: "/images/paintings/about-windhoek-v2.webp",
+  "tangison-systems": "/images/paintings/capability-intelligence-v2.webp",
+  crescendo: "/images/paintings/capability-brand-v2.webp",
+  feorm: "/images/paintings/not-found-signal-v2.webp",
+  lrclearing: "/images/paintings/about-windhoek-v2.webp",
+  reviveautoworks: "/images/paintings/capability-product-v2.webp",
+  miway: "/images/paintings/collaboration-studio-v2.webp",
 };
 
 export default async function CaseStudyPage({
