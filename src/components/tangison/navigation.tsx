@@ -15,17 +15,12 @@ const menuGroups = [
     title: "Work",
     links: [
       { label: "All Work", href: "/work" },
-      { label: "ProAvia Travel & Tours", href: "/work/proavia" },
-      { label: "Nalago Skincare", href: "/work/nalago" },
-      { label: "Cluster Leaf Safaris", href: "/work/clusterleaf" },
     ],
   },
   {
-    title: "Capabilities",
+    title: "Services",
     links: [
-      { label: "Brand", href: "/services#brand" },
-      { label: "Product", href: "/services#product" },
-      { label: "Intelligence", href: "/services#intelligence" },
+      { label: "Capabilities", href: "/services" },
     ],
   },
   {
@@ -37,12 +32,10 @@ const menuGroups = [
     ],
   },
   {
-    title: "Resources",
+    title: "Journal",
     links: [
       { label: "Blog", href: "/blog" },
       { label: "FAQ", href: "/faq" },
-      { label: "Resources", href: "/resources" },
-      { label: "Careers", href: "/careers" },
     ],
   },
   {
@@ -261,9 +254,10 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
         animate={{ x: 0 }}
         exit={{ x: "100%" }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="relative ml-auto w-full md:w-[85%] lg:w-[75%] xl:w-[65%] bg-atlantic-black overflow-y-auto"
+        className="relative ml-auto w-full md:w-[85%] lg:w-[75%] xl:w-[65%] bg-atlantic-black overflow-y-auto overscroll-contain"
+        style={{ minHeight: "100dvh" }}
       >
-        <div className="min-h-full flex flex-col">
+        <div className="flex flex-col" style={{ minHeight: "100dvh" }}>
           {/* Top bar — close button */}
           <div className="flex items-center justify-between px-6 md:px-12 py-6">
             <StudioLogo size={28} wordmarkColor="light" />

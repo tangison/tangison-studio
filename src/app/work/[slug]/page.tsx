@@ -42,14 +42,14 @@ const projectPaintings: Record<string, string> = {
   proavia: "/images/paintings/projects/proavia-v2.webp",
   nalago: "/images/paintings/projects/nalago-v2.webp",
   clusterleaf: "/images/paintings/projects/clusterleaf-v2.webp",
-  smefrog: "/images/paintings/process-progressive-v2.webp",
-  petrocor: "/images/paintings/about-windhoek-v2.webp",
-  "tangison-systems": "/images/paintings/capability-intelligence-v2.webp",
-  crescendo: "/images/paintings/capability-brand-v2.webp",
-  feorm: "/images/paintings/not-found-signal-v2.webp",
-  lrclearing: "/images/paintings/about-windhoek-v2.webp",
-  reviveautoworks: "/images/paintings/capability-product-v2.webp",
-  miway: "/images/paintings/collaboration-studio-v2.webp",
+  smefrog: "/images/paintings/projects/smefrog.webp",
+  petrocor: "/images/paintings/projects/petrocor.webp",
+  "tangison-systems": "/images/paintings/projects/tangison-systems.webp",
+  crescendo: "/images/paintings/projects/crescendo.webp",
+  feorm: "/images/paintings/projects/feorm.webp",
+  lrclearing: "/images/paintings/projects/lrclearing.webp",
+  reviveautoworks: "/images/paintings/projects/reviveautoworks.webp",
+  miway: "/images/paintings/projects/miway.webp",
 };
 
 export default async function CaseStudyPage({
@@ -164,7 +164,7 @@ export default async function CaseStudyPage({
           <div className="mx-auto max-w-5xl px-6">
             <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Live proof</p>
             <h2 className="font-display font-bold text-ink text-2xl md:text-3xl mb-6">The production website</h2>
-            <div className="overflow-hidden rounded-[24px] border border-card-border bg-signal-white">
+            <div className="overflow-hidden rounded-[24px] bg-signal-white">
               <div className="flex items-center justify-between px-4 py-3 border-b border-card-border bg-skeleton-bone">
                 <div className="flex items-center gap-2">
                   <Monitor className="w-4 h-4 text-ink-muted" />
@@ -176,13 +176,12 @@ export default async function CaseStudyPage({
                   </a>
                 )}
               </div>
-              <div className="max-h-[500px] overflow-y-auto bg-skeleton-bone">
+              <div className="relative aspect-[16/10] bg-skeleton-bone overflow-hidden">
                 <Image
                   src={screenshotPath}
                   alt={`${project.name} live website screenshot`}
-                  width={1080}
-                  height={2000}
-                  className="w-full h-auto"
+                  fill
+                  className="object-top object-cover"
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, 1080px"
                 />

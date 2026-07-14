@@ -24,14 +24,14 @@ const projectPaintings: Record<string, string> = {
   proavia: "/images/paintings/projects/proavia-v2.webp",
   nalago: "/images/paintings/projects/nalago-v2.webp",
   clusterleaf: "/images/paintings/projects/clusterleaf-v2.webp",
-  smefrog: "/images/paintings/process-progressive-v2.webp",
-  petrocor: "/images/paintings/about-windhoek-v2.webp",
-  "tangison-systems": "/images/paintings/capability-intelligence-v2.webp",
-  crescendo: "/images/paintings/capability-brand-v2.webp",
-  feorm: "/images/paintings/not-found-signal-v2.webp",
-  lrclearing: "/images/paintings/about-windhoek-v2.webp",
-  reviveautoworks: "/images/paintings/capability-product-v2.webp",
-  miway: "/images/paintings/collaboration-studio-v2.webp",
+  smefrog: "/images/paintings/projects/smefrog.webp",
+  petrocor: "/images/paintings/projects/petrocor.webp",
+  "tangison-systems": "/images/paintings/projects/tangison-systems.webp",
+  crescendo: "/images/paintings/projects/crescendo.webp",
+  feorm: "/images/paintings/projects/feorm.webp",
+  lrclearing: "/images/paintings/projects/lrclearing.webp",
+  reviveautoworks: "/images/paintings/projects/reviveautoworks.webp",
+  miway: "/images/paintings/projects/miway.webp",
 };
 
 export default function Page() {
