@@ -30,9 +30,9 @@ const buttonVariants = cva(
         inverse: "bg-skeleton-bone text-atlantic-black hover:bg-ocean-mist",
       },
       size: {
-        sm: "px-4 py-2 text-xs min-h-[42px] rounded-full",
-        md: "px-6 py-3 text-sm min-h-[50px] rounded-full",
-        lg: "px-8 py-4 text-base min-h-[56px] rounded-full",
+        sm: "px-4 py-2 text-xs min-h-[42px] rounded-[25px]",
+        md: "px-6 py-3 text-sm min-h-[50px] rounded-[25px]",
+        lg: "px-8 py-4 text-base min-h-[56px] rounded-[25px]",
       },
     },
     defaultVariants: {

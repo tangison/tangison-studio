@@ -39,7 +39,7 @@ export default function Page() {
             <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-4">Color palette</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {colors.map((c) => (
-                <div key={c.hex} className="overflow-hidden rounded-full border border-card-border">
+                <div key={c.hex} className="overflow-hidden rounded-[25px] border border-card-border">
                   <div className="h-20" style={{ background: c.hex }} />
                   <div className="p-3 bg-signal-white">
                     <p className="font-satoshi text-sm font-medium text-ink">{c.name}</p>
@@ -55,15 +55,15 @@ export default function Page() {
           <div className="mx-auto max-w-4xl px-6">
             <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-4">Typography</p>
             <div className="space-y-4">
-              <div className="p-6 rounded-full border border-card-border bg-signal-white">
+              <div className="p-6 rounded-[25px] border border-card-border bg-signal-white">
                 <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-2">Display — Cabinet Grotesk</p>
                 <p className="font-display font-bold text-ink text-3xl">We build the brand.</p>
               </div>
-              <div className="p-6 rounded-full border border-card-border bg-signal-white">
+              <div className="p-6 rounded-[25px] border border-card-border bg-signal-white">
                 <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-2">Body — Satoshi</p>
                 <p className="font-satoshi text-base text-ink">Studio designs focused websites, applications and brand systems for ambitious organizations across Africa.</p>
               </div>
-              <div className="p-6 rounded-full border border-card-border bg-signal-white">
+              <div className="p-6 rounded-[25px] border border-card-border bg-signal-white">
                 <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-2">Technical labels — JetBrains Mono</p>
                 <p className="font-jetbrains text-sm text-ink">SELECTED WORK · WINDHOEK, NAMIBIA</p>
               </div>
@@ -73,7 +73,7 @@ export default function Page() {
         <section className="py-8 pb-20">
           <div className="mx-auto max-w-4xl px-6">
             <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-4">Identity</p>
-            <div className="p-8 rounded-full border border-card-border bg-signal-white flex items-center gap-6">
+            <div className="p-8 rounded-[25px] border border-card-border bg-signal-white flex items-center gap-6">
               <Image src="/brand/favicon.webp" alt="Studio mast icon" width={64} height={64} className="shrink-0" />
               <div>
                 <p className="font-display font-bold text-ink text-2xl">Studio</p>

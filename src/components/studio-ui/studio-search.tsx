@@ -79,7 +79,7 @@ export function StudioSearch({ isOpen, onClose, items }: StudioSearchProps) {
   return createPortal(
     <div className="fixed inset-0 z-[110] flex items-start justify-center pt-[12vh] px-4" role="dialog" aria-modal="true" aria-label="Search">
       <div className="absolute inset-0 bg-atlantic-black/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative w-full max-w-2xl bg-skeleton-bone rounded-full border border-card-border shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-2xl bg-skeleton-bone rounded-[25px] border border-card-border shadow-2xl overflow-hidden">
         <div className="flex items-center gap-3 px-6 py-5 border-b border-card-border">
           <Search className="w-5 h-5 text-ink-muted shrink-0" />
           <input ref={inputRef} type="text" value={query} onChange={(e) => { setQuery(e.target.value); setSelectedIndex(0); }} placeholder="Search work, capabilities, pages..." className="flex-1 bg-transparent font-satoshi text-lg text-ink placeholder:text-ink-muted/50 focus:outline-none" aria-label="Search" />
@@ -96,7 +96,7 @@ export function StudioSearch({ isOpen, onClose, items }: StudioSearchProps) {
                   const idx = runningIndex++;
                   const isSelected = idx === selectedIndex;
                   return (
-                    <Link key={item.href} href={item.href} onClick={onClose} className={`flex items-center justify-between px-4 py-3 rounded-full transition-colors ${isSelected ? "bg-ocean-mist" : "hover:bg-ocean-mist/50"}`}>
+                    <Link key={item.href} href={item.href} onClick={onClose} className={`flex items-center justify-between px-4 py-3 rounded-[25px] transition-colors ${isSelected ? "bg-ocean-mist" : "hover:bg-ocean-mist/50"}`}>
                       <div>
                         <p className="font-satoshi text-sm font-medium text-ink">{item.label}</p>
                         {item.description && <p className="font-satoshi text-xs text-ink-muted">{item.description}</p>}

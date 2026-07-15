@@ -70,7 +70,7 @@ export default function Page() {
                 return (
                   <article key={project.slug} className={`grid md:grid-cols-2 gap-6 md:gap-10 items-center ${isReversed ? "md:[direction:rtl]" : ""}`}>
                     <div className="[direction:ltr]">
-                      <div className="aspect-[4/3] overflow-hidden rounded-full bg-ocean-mist">
+                      <div className="aspect-[4/3] overflow-hidden rounded-[25px] bg-ocean-mist">
                         <Image
                           src={painting}
                           alt={`An oil painting representing ${project.name}.`}
@@ -97,7 +97,7 @@ export default function Page() {
                       </p>
                       <div className="flex flex-wrap gap-1.5 mb-5">
                         {project.services.map((s) => (
-                          <span key={s} className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-ocean-mist text-ink">
+                          <span key={s} className="inline-flex items-center px-2.5 py-1 rounded-[25px] text-xs font-medium bg-ocean-mist text-ink">
                             {s}
                           </span>
                         ))}

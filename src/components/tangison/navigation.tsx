@@ -171,7 +171,7 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -20, scale: 0.98 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-2xl bg-skeleton-bone rounded-full shadow-2xl overflow-hidden"
+        className="relative w-full max-w-2xl bg-skeleton-bone rounded-[25px] shadow-2xl overflow-hidden"
       >
         {/* Search input */}
         <div className="flex items-center gap-3 px-6 py-5 border-b border-card-border">
@@ -213,7 +213,7 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
                       key={item.href}
                       href={item.href}
                       onClick={onClose}
-                      className={`flex items-center justify-between px-4 py-3 rounded-full transition-colors ${
+                      className={`flex items-center justify-between px-4 py-3 rounded-[25px] transition-colors ${
                         isSelected ? "bg-ocean-mist" : "hover:bg-ocean-mist/50"
                       }`}
                     >
@@ -245,7 +245,7 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-[105] md:flex"
+      className="fixed inset-0 z-[105]"
     >
       <div className="absolute inset-0 bg-atlantic-black/80 backdrop-blur-md" onClick={onClose} />
 
@@ -254,13 +254,13 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
         animate={{ x: 0 }}
         exit={{ x: "100%" }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="relative ml-auto w-full md:w-[85%] lg:w-[75%] xl:w-[65%] bg-atlantic-black overflow-y-auto overscroll-contain"
-        style={{ minHeight: "100dvh" }}
+        className="relative ml-auto w-full sm:w-[85%] md:w-[75%] lg:w-[65%] bg-atlantic-black overflow-y-auto overscroll-contain"
+        style={{ minHeight: "100dvh", paddingTop: "env(safe-area-inset-top)", paddingBottom: "env(safe-area-inset-bottom)" }}
       >
         <div className="flex flex-col" style={{ minHeight: "100dvh" }}>
           {/* Top bar — close button */}
-          <div className="flex items-center justify-between px-6 md:px-12 py-6">
-            <StudioLogo size={28} wordmarkColor="light" />
+          <div className="flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-6">
+            <StudioLogo size={26} wordmarkColor="light" />
             <button
               type="button"
               onClick={onClose}
@@ -271,9 +271,22 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
             </button>
           </div>
 
+          {/* Mobile painting (visible on all screens, smaller on mobile) */}
+          <div className="px-4 sm:px-6 md:hidden mb-4">
+            <div className="aspect-[16/9] overflow-hidden rounded-[25px]">
+              <Image
+                src="/images/paintings/work-intro.webp"
+                alt="An oil painting of an open portfolio folder beside a signal mast silhouette."
+                width={600}
+                height={338}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
           {/* Content grid */}
           <div className="flex-1 grid md:grid-cols-[1fr_1.2fr] gap-0">
-            {/* Left — oil painting + featured note */}
+            {/* Left — oil painting + featured note (desktop only) */}
             <div className="hidden md:flex flex-col justify-end p-12 border-r border-white/5">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -283,7 +296,7 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
               >
                 <Image
                   src="/images/paintings/work-intro.webp"
-                  alt="An oil painting of a solitary weathered signal mast on the Skeleton Coast at first light."
+                  alt="An oil painting of an open portfolio folder beside a signal mast silhouette."
                   width={600}
                   height={400}
                   className="w-full h-auto"
@@ -307,20 +320,20 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
               </motion.p>
             </div>
 
-            {/* Right — link groups */}
-            <div className="p-6 md:p-12">
+            {/* Right — link groups (mobile-optimized) */}
+            <div className="px-4 sm:px-6 md:p-12 pb-4">
               {menuGroups.map((group, gi) => (
                 <motion.div
                   key={group.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.15 + gi * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                  className="mb-8 last:mb-0"
+                  className="mb-6 md:mb-8 last:mb-0"
                 >
-                  <p className="font-jetbrains text-[9px] text-signal-teal uppercase tracking-[0.3em] mb-4">
+                  <p className="font-jetbrains text-[9px] md:text-[9px] text-signal-teal uppercase tracking-[0.2em] md:tracking-[0.3em] mb-3 md:mb-4">
                     {group.title}
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1 md:space-y-2">
                     {group.links.map((link) => {
                       const isActive = pathname === link.href;
                       const isExternal = link.href.startsWith("mailto:") || link.href.startsWith("http");
@@ -330,7 +343,7 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
                           <LinkComponent
                             href={link.href}
                             onClick={onClose}
-                            className={`group inline-flex items-center gap-2 font-display text-xl md:text-2xl font-bold tracking-tight transition-colors ${
+                            className={`group inline-flex items-center gap-2 font-display text-lg md:text-2xl font-bold tracking-tight transition-colors min-h-[44px] ${
                               isActive ? "text-signal-teal" : "text-skeleton-bone hover:text-signal-teal"
                             }`}
                           >
@@ -346,12 +359,12 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
             </div>
           </div>
 
-          {/* Bottom — social */}
-          <div className="flex items-center gap-6 px-6 md:px-12 py-6 border-t border-white/5">
+          {/* Bottom — social (mobile-optimized) */}
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 px-4 sm:px-6 md:px-12 py-4 md:py-6 border-t border-white/5">
             <a href="https://www.facebook.com/namibia.digital" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Facebook</a>
             <a href="https://www.instagram.com/tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Instagram</a>
             <a href="https://www.threads.net/@tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Threads</a>
-            <span className="ml-auto font-jetbrains text-[9px] text-skeleton-bone/40 uppercase tracking-[0.2em]">Windhoek, Namibia</span>
+            <span className="ml-auto font-jetbrains text-[9px] text-skeleton-bone/40 uppercase tracking-[0.15em] md:tracking-[0.2em]">Windhoek, Namibia</span>
           </div>
         </div>
       </motion.div>
@@ -414,16 +427,17 @@ export function Navigation() {
 
   return (
     <>
-      {/* Floating Pill Navigation */}
+      {/* Floating Pill Navigation — mobile-optimized */}
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed z-[100] top-3 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] md:w-auto"
+        className="fixed z-[100] top-2 sm:top-3 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] sm:w-[calc(100%-1.5rem)] md:w-auto"
+        style={{ paddingTop: "env(safe-area-inset-top)" }}
         aria-label="Main navigation"
       >
         <div
-          className="flex items-center justify-between gap-4 md:gap-8 px-4 md:px-6 py-2.5 rounded-full"
+          className="flex items-center justify-between gap-2 sm:gap-4 md:gap-8 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 rounded-[25px]"
           style={{
             background: isScrolled ? "#F6F4EF" : "rgba(246, 244, 239, 0.92)",
             backdropFilter: "blur(12px)",
@@ -432,16 +446,16 @@ export function Navigation() {
             transition: "background 0.3s ease, box-shadow 0.3s ease",
           }}
         >
-          {/* Logo */}
+          {/* Logo — smaller on mobile */}
           <Link
             href="/"
-            className="flex items-center"
+            className="flex items-center shrink-0"
             aria-label="Studio — home"
           >
-            <StudioLogo size={30} />
+            <StudioLogo size={26} />
           </Link>
 
-          {/* Desktop nav links */}
+          {/* Desktop nav links — hidden on mobile */}
           <div className="hidden lg:flex items-center gap-6">
             {[
               { label: "Work", href: "/work" },
@@ -452,7 +466,7 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-satoshi text-sm font-medium transition-colors ${
+                className={`font-satoshi text-sm font-medium transition-colors whitespace-nowrap ${
                   pathname === link.href || pathname.startsWith(link.href + "/")
                     ? "text-ink"
                     : "text-ink-muted hover:text-ink"
@@ -463,7 +477,7 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Right controls — both circular */}
+          {/* Right controls — both circular, min 44px touch targets */}
           <div className="flex items-center gap-2">
             {/* Search button — circular */}
             <button

@@ -30,7 +30,7 @@ export default function Page() {
         </section>
         <section className="pb-12">
           <div className="mx-auto max-w-5xl px-6">
-            <div className="aspect-[16/9] overflow-hidden rounded-full bg-ocean-mist">
+            <div className="aspect-[16/9] overflow-hidden rounded-[25px] bg-ocean-mist">
               <Image src="/images/paintings/contact-invitation-v2.webp" alt="An oil painting of a doorway-like gap formed by two weathered rock walls with cold fog passing through." width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
             </div>
           </div>

@@ -54,7 +54,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="p-8 rounded-full bg-signal-white flex flex-col items-center justify-center text-center min-h-[400px]" role="status" aria-live="polite">
+      <div className="p-8 rounded-[25px] bg-signal-white flex flex-col items-center justify-center text-center min-h-[400px]" role="status" aria-live="polite">
         <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4 bg-signal-teal-button">
           <Check className="w-6 h-6 text-white" />
         </div>
@@ -69,10 +69,10 @@ export function ContactForm() {
     );
   }
 
-  const inputClass = "w-full px-4 py-3 rounded-full bg-signal-white text-ink focus:outline-none focus:ring-2 focus:ring-signal-teal transition-shadow min-h-[48px]";
+  const inputClass = "w-full px-4 py-3 rounded-[25px] bg-signal-white text-ink focus:outline-none focus:ring-2 focus:ring-signal-teal transition-shadow min-h-[48px]";
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="p-6 md:p-8 rounded-full bg-signal-white space-y-5">
+    <form onSubmit={handleSubmit} noValidate className="p-6 md:p-8 rounded-[25px] bg-signal-white space-y-5">
       <div>
         <label htmlFor={`${id}-name`} className="block text-sm font-medium mb-1.5">Name *</label>
         <input id={`${id}-name`} type="text" required maxLength={MAX.name} value={form.name} onChange={(e) => setForm(p => ({ ...p, name: e.target.value }))} aria-invalid={!!errors.name} className={inputClass} />
@@ -95,7 +95,7 @@ export function ContactForm() {
           <p className="text-xs text-ink-muted">{form.message.length} / {MAX.message}</p>
         </div>
       </div>
-      <button type="submit" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-atlantic-black text-skeleton-bone font-satoshi font-medium text-sm min-h-[50px] transition-all active:scale-[0.98] hover:bg-deep-ocean w-full">
+      <button type="submit" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[25px] bg-atlantic-black text-skeleton-bone font-satoshi font-medium text-sm min-h-[50px] transition-all active:scale-[0.98] hover:bg-deep-ocean w-full">
         Open my email client
         <ArrowRight className="w-4 h-4" />
       </button>

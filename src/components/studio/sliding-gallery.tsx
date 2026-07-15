@@ -27,7 +27,7 @@ export function SlidingGallery({ images, interval = 4000 }: SlidingGalleryProps)
   }, [next, interval]);
 
   return (
-    <div className="relative w-full aspect-[16/9] overflow-hidden rounded-full bg-ocean-mist">
+    <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[25px] bg-ocean-mist">
       {/* Slides */}
       {images.map((img, i) => (
         <div

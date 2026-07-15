@@ -95,7 +95,7 @@ export default async function CaseStudyPage({
             <p className="font-satoshi text-lg text-ink-muted max-w-2xl mb-6">{project.descriptor}</p>
             <div className="flex flex-wrap gap-1.5 mb-6">
               {project.services.map((s) => (
-                <span key={s} className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-ocean-mist text-ink">{s}</span>
+                <span key={s} className="inline-flex items-center px-2.5 py-1 rounded-[25px] text-xs font-medium bg-ocean-mist text-ink">{s}</span>
               ))}
             </div>
             {project.url && (
@@ -109,7 +109,7 @@ export default async function CaseStudyPage({
         {/* Oil painting lead visual */}
         <section className="pb-12">
           <div className="mx-auto max-w-5xl px-6">
-            <div className="aspect-[16/9] overflow-hidden rounded-full bg-ocean-mist">
+            <div className="aspect-[16/9] overflow-hidden rounded-[25px] bg-ocean-mist">
               <Image
                 src={painting}
                 alt={`An oil painting representing ${project.name}.`}
@@ -164,7 +164,7 @@ export default async function CaseStudyPage({
           <div className="mx-auto max-w-5xl px-6">
             <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Live proof</p>
             <h2 className="font-display font-bold text-ink text-2xl md:text-3xl mb-6">The production website</h2>
-            <div className="overflow-hidden rounded-full bg-signal-white">
+            <div className="overflow-hidden rounded-[25px] bg-signal-white">
               <div className="flex items-center justify-between px-4 py-3 border-b border-card-border bg-skeleton-bone">
                 <div className="flex items-center gap-2">
                   <Monitor className="w-4 h-4 text-ink-muted" />
@@ -205,7 +205,7 @@ export default async function CaseStudyPage({
                 <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Technology</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((t) => (
-                    <span key={t} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono bg-ocean-mist text-ink">{t}</span>
+                    <span key={t} className="inline-flex items-center px-3 py-1 rounded-[25px] text-xs font-mono bg-ocean-mist text-ink">{t}</span>
                   ))}
                 </div>
               </div>
