@@ -35,7 +35,7 @@ export default function Page() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               {plans.map((plan) => (
-                <div key={plan.id} className={`p-6 rounded-3xl border ${plan.highlighted ? "border-signal-teal bg-ocean-mist/30" : "border-card-border bg-signal-white"}`}>
+                <div key={plan.id} className={`p-6 rounded-full border ${plan.highlighted ? "border-signal-teal bg-ocean-mist/30" : "border-card-border bg-signal-white"}`}>
                   <h2 className="font-display font-bold text-ink text-xl mb-1">{plan.name}</h2>
                   <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-4">{plan.model}</p>
                   <div className="mb-4">

@@ -21,7 +21,7 @@ export default function Page() {
             <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Resources</p>
             <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">Tools and references.</h1>
             <p className="font-satoshi text-lg text-ink-muted max-w-2xl mb-12">A small, curated set of resources for digital product work. We add to this when something proves genuinely useful.</p>
-            <div className="p-10 rounded-3xl border border-card-border bg-signal-white text-center">
+            <div className="p-10 rounded-full border border-card-border bg-signal-white text-center">
               <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Coming soon</p>
               <h2 className="font-display font-bold text-ink text-xl mb-3">Resources are being prepared.</h2>
               <p className="font-satoshi text-sm text-ink-muted max-w-md mx-auto mb-6">This section will hold process guides, design references, and practical tools for teams shipping digital products.</p>

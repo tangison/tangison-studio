@@ -171,7 +171,7 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -20, scale: 0.98 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-2xl bg-skeleton-bone rounded-3xl shadow-2xl overflow-hidden"
+        className="relative w-full max-w-2xl bg-skeleton-bone rounded-full shadow-2xl overflow-hidden"
       >
         {/* Search input */}
         <div className="flex items-center gap-3 px-6 py-5 border-b border-card-border">
@@ -213,7 +213,7 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
                       key={item.href}
                       href={item.href}
                       onClick={onClose}
-                      className={`flex items-center justify-between px-4 py-3 rounded-xl transition-colors ${
+                      className={`flex items-center justify-between px-4 py-3 rounded-full transition-colors ${
                         isSelected ? "bg-ocean-mist" : "hover:bg-ocean-mist/50"
                       }`}
                     >

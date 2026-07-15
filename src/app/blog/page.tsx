@@ -34,7 +34,7 @@ export default function Page() {
           <div className="mx-auto max-w-6xl px-6">
             <Link href={`/blog/${featured.slug}`} className="group block">
               <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
-                <div className="aspect-[4/3] overflow-hidden rounded-3xl bg-ocean-mist">
+                <div className="aspect-[4/3] overflow-hidden rounded-full bg-ocean-mist">
                   <Image src={featured.cover} alt={`An oil painting representing: ${featured.title}`} width={800} height={600} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 540px" />
                 </div>
                 <div>
@@ -58,7 +58,7 @@ export default function Page() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {rest.map((article) => (
                 <Link key={article.slug} href={`/blog/${article.slug}`} className="group block">
-                  <div className="aspect-[3/2] overflow-hidden rounded-3xl bg-ocean-mist mb-4">
+                  <div className="aspect-[3/2] overflow-hidden rounded-full bg-ocean-mist mb-4">
                     <Image src={article.cover} alt={`An oil painting representing: ${article.title}`} width={600} height={400} className="w-full h-full object-cover" loading="lazy" sizes="(max-width: 768px) 100vw, 360px" />
                   </div>
                   <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-1">{article.category}</p>

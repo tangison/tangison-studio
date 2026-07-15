@@ -57,7 +57,7 @@ export default function Page() {
                       </div>
                       <p className="font-satoshi text-base leading-relaxed text-ink-muted">{cap.shortDescription}</p>
                     </div>
-                    <div className="aspect-[3/2] overflow-hidden rounded-3xl bg-ocean-mist">
+                    <div className="aspect-[3/2] overflow-hidden rounded-full bg-ocean-mist">
                       <Image
                         src={capabilityPaintings[cap.id]}
                         alt={`An oil painting representing the ${cap.name} capability.`}
@@ -73,7 +73,7 @@ export default function Page() {
                   {/* Programs */}
                   <div className="grid md:grid-cols-3 gap-4">
                     {cap.programs.map((program) => (
-                      <div key={program.id} className="p-6 rounded-3xl border border-card-border bg-signal-white">
+                      <div key={program.id} className="p-6 rounded-full border border-card-border bg-signal-white">
                         <h3 className="font-display font-bold text-ink text-lg mb-2">{program.name}</h3>
                         <p className="font-satoshi text-sm leading-relaxed text-ink-muted mb-4">{program.situation}</p>
                         <div className="space-y-1.5 mb-4">

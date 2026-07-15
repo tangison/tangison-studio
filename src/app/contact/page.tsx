@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { ContactForm } from "@/components/studio/contact-form";
+import { SlidingGallery } from "@/components/studio/sliding-gallery";
 import { socialLinks, googleBusinessProfile } from "@/config/social";
 import { BreadcrumbJsonLd, LocalBusinessJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
@@ -29,7 +30,7 @@ export default function Page() {
         </section>
         <section className="pb-12">
           <div className="mx-auto max-w-5xl px-6">
-            <div className="aspect-[16/9] overflow-hidden rounded-3xl bg-ocean-mist">
+            <div className="aspect-[16/9] overflow-hidden rounded-full bg-ocean-mist">
               <Image src="/images/paintings/contact-invitation-v2.webp" alt="An oil painting of a doorway-like gap formed by two weathered rock walls with cold fog passing through." width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
             </div>
           </div>
@@ -67,27 +68,23 @@ export default function Page() {
             </div>
           </div>
         </section>
-        {/* Windhoek atmosphere — painting gallery instead of broken maps */}
+        {/* Windhoek atmosphere — sliding painting gallery */}
         <section className="pb-20">
           <div className="mx-auto max-w-5xl px-6">
             <div className="flex items-center gap-2 mb-4">
               <MapPin className="w-4 h-4 text-signal-teal-text" />
               <span className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">Windhoek, Namibia</span>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {[
-                { src: "/images/paintings/about-windhoek-v2.webp", alt: "Oil painting of a Windhoek studio desk facing the horizon" },
+            <SlidingGallery
+              images={[
+                { src: "/images/paintings/contact-gallery-01.webp", alt: "Oil painting of a Namibian desert road at dawn with a signal mast" },
+                { src: "/images/paintings/contact-gallery-02.webp", alt: "Oil painting of the Atlantic coastline with dark rocks and a teal signal light" },
+                { src: "/images/paintings/contact-gallery-03.webp", alt: "Oil painting of a Windhoek cityscape at early morning" },
                 { src: "/images/paintings/contact-invitation-v2.webp", alt: "Oil painting of a telephone receiver beside a handwritten note" },
-                { src: "/images/paintings/hero-skeleton-coast-v2.webp", alt: "Oil painting of the Skeleton Coast signal mast at first light" },
                 { src: "/images/paintings/collaboration-studio-v2.webp", alt: "Oil painting of hands collaborating over sketches" },
-                { src: "/images/paintings/process-progressive-v2.webp", alt: "Oil painting of a winding desert road" },
-                { src: "/images/paintings/work-intro.webp", alt: "Oil painting of an open portfolio folder" },
-              ].map((img, i) => (
-                <div key={i} className="aspect-[4/3] overflow-hidden rounded-3xl bg-ocean-mist">
-                  <Image src={img.src} alt={img.alt} width={400} height={300} className="w-full h-full object-cover" loading="lazy" sizes="(max-width: 768px) 50vw, 33vw" />
-                </div>
-              ))}
-            </div>
+              ]}
+              interval={5000}
+            />
             <p className="mt-4 text-sm text-ink-muted text-center">
               Working from the edge of the Atlantic. Corner of Frans Indongo Street and John Meinert Street, Windhoek.
             </p>

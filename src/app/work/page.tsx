@@ -70,7 +70,7 @@ export default function Page() {
                 return (
                   <article key={project.slug} className={`grid md:grid-cols-2 gap-6 md:gap-10 items-center ${isReversed ? "md:[direction:rtl]" : ""}`}>
                     <div className="[direction:ltr]">
-                      <div className="aspect-[4/3] overflow-hidden rounded-3xl bg-ocean-mist">
+                      <div className="aspect-[4/3] overflow-hidden rounded-full bg-ocean-mist">
                         <Image
                           src={painting}
                           alt={`An oil painting representing ${project.name}.`}

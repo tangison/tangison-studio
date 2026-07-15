@@ -72,7 +72,7 @@ export function ContactForm() {
   const inputClass = "w-full px-4 py-3 rounded-full bg-signal-white text-ink focus:outline-none focus:ring-2 focus:ring-signal-teal transition-shadow min-h-[48px]";
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="p-6 md:p-8 rounded-3xl bg-signal-white space-y-5">
+    <form onSubmit={handleSubmit} noValidate className="p-6 md:p-8 rounded-full bg-signal-white space-y-5">
       <div>
         <label htmlFor={`${id}-name`} className="block text-sm font-medium mb-1.5">Name *</label>
         <input id={`${id}-name`} type="text" required maxLength={MAX.name} value={form.name} onChange={(e) => setForm(p => ({ ...p, name: e.target.value }))} aria-invalid={!!errors.name} className={inputClass} />
