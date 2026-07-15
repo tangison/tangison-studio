@@ -101,7 +101,7 @@ export default function Page() {
         {/* 2. HERO PAINTING — no frame, edge-to-edge editorial */}
         <section className="pb-12 md:pb-20">
           <div className="mx-auto max-w-6xl px-6">
-            <figure className="overflow-hidden rounded-[28px]">
+            <figure className="overflow-hidden rounded-3xl">
               <Image
                 src="/images/paintings/hero-skeleton-coast-v2.webp"
                 alt="An oil painting of a solitary weathered signal mast on the Skeleton Coast shoreline at first light, with heavy impasto waves, dark volcanic rocks, and a tiny teal circular beacon at the mast top."
