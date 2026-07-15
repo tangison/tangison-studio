@@ -28,7 +28,7 @@ export default function Page() {
         </section>
         <section className="pb-12">
           <div className="mx-auto max-w-5xl px-6">
-            <div className="aspect-[16/9] overflow-hidden rounded-[24px] bg-ocean-mist">
+            <div className="aspect-[16/9] overflow-hidden rounded-3xl bg-ocean-mist">
               <Image src="/images/paintings/about-windhoek-v2.webp" alt="An oil painting of a Namibian Atlantic landscape where a hand-built signal structure remains visible through fog." width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
             </div>
           </div>

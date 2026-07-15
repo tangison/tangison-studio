@@ -74,7 +74,7 @@ export function StudioTextInput({
       autoComplete={autoComplete}
       aria-invalid={ariaInvalid}
       aria-describedby={ariaDescribedBy}
-      className="w-full px-4 py-3 rounded-[12px] border border-card-border bg-signal-white text-ink focus:outline-none focus:ring-2 focus:ring-signal-teal focus:border-transparent transition-shadow min-h-[48px]"
+      className="w-full px-4 py-3 rounded-full border border-card-border bg-signal-white text-ink focus:outline-none focus:ring-2 focus:ring-signal-teal focus:border-transparent transition-shadow min-h-[48px]"
     />
   );
 }
@@ -114,7 +114,7 @@ export function StudioTextArea({
       placeholder={placeholder}
       aria-invalid={ariaInvalid}
       aria-describedby={ariaDescribedBy}
-      className="w-full px-4 py-3 rounded-[12px] border border-card-border bg-signal-white text-ink focus:outline-none focus:ring-2 focus:ring-signal-teal focus:border-transparent transition-shadow resize-y min-h-[48px]"
+      className="w-full px-4 py-3 rounded-full border border-card-border bg-signal-white text-ink focus:outline-none focus:ring-2 focus:ring-signal-teal focus:border-transparent transition-shadow resize-y min-h-[48px]"
     />
   );
 }

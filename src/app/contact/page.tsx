@@ -29,7 +29,7 @@ export default function Page() {
         </section>
         <section className="pb-12">
           <div className="mx-auto max-w-5xl px-6">
-            <div className="aspect-[16/9] overflow-hidden rounded-[24px] bg-ocean-mist">
+            <div className="aspect-[16/9] overflow-hidden rounded-3xl bg-ocean-mist">
               <Image src="/images/paintings/contact-invitation-v2.webp" alt="An oil painting of a doorway-like gap formed by two weathered rock walls with cold fog passing through." width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
             </div>
           </div>
@@ -67,16 +67,30 @@ export default function Page() {
             </div>
           </div>
         </section>
-        {/* Google Maps embed */}
+        {/* Windhoek atmosphere — painting gallery instead of broken maps */}
         <section className="pb-20">
           <div className="mx-auto max-w-5xl px-6">
             <div className="flex items-center gap-2 mb-4">
               <MapPin className="w-4 h-4 text-signal-teal-text" />
-              <span className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">Find us in Windhoek</span>
+              <span className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">Windhoek, Namibia</span>
             </div>
-            <div className="relative w-full h-[400px] overflow-hidden rounded-[24px] border border-card-border">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d288.0412345678!2d17.0837!3d-22.5599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDMzJzM1LjYiUyAxN8KwMDUnMDEuMyJF!5e0!3m2!1sen!2sna!4v1700000000000!5m2!1sen!2sna" width="100%" height="100%" style={{ border: 0, position: "absolute", top: 0, left: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Studio location in Windhoek, Namibia" />
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {[
+                { src: "/images/paintings/about-windhoek-v2.webp", alt: "Oil painting of a Windhoek studio desk facing the horizon" },
+                { src: "/images/paintings/contact-invitation-v2.webp", alt: "Oil painting of a telephone receiver beside a handwritten note" },
+                { src: "/images/paintings/hero-skeleton-coast-v2.webp", alt: "Oil painting of the Skeleton Coast signal mast at first light" },
+                { src: "/images/paintings/collaboration-studio-v2.webp", alt: "Oil painting of hands collaborating over sketches" },
+                { src: "/images/paintings/process-progressive-v2.webp", alt: "Oil painting of a winding desert road" },
+                { src: "/images/paintings/work-intro.webp", alt: "Oil painting of an open portfolio folder" },
+              ].map((img, i) => (
+                <div key={i} className="aspect-[4/3] overflow-hidden rounded-3xl bg-ocean-mist">
+                  <Image src={img.src} alt={img.alt} width={400} height={300} className="w-full h-full object-cover" loading="lazy" sizes="(max-width: 768px) 50vw, 33vw" />
+                </div>
+              ))}
             </div>
+            <p className="mt-4 text-sm text-ink-muted text-center">
+              Working from the edge of the Atlantic. Corner of Frans Indongo Street and John Meinert Street, Windhoek.
+            </p>
           </div>
         </section>
       </SiteShell>

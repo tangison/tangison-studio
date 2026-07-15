@@ -137,7 +137,7 @@ export default function Page() {
                   <article key={project.slug} className={`grid md:grid-cols-2 gap-6 md:gap-10 items-center ${isReversed ? "md:[direction:rtl]" : ""}`}>
                     {/* Oil painting */}
                     <div className="[direction:ltr]">
-                      <div className="aspect-[4/3] overflow-hidden rounded-[24px] bg-ocean-mist">
+                      <div className="aspect-[4/3] overflow-hidden rounded-3xl bg-ocean-mist">
                         <Image
                           src={projectPaintings[project.slug]}
                           alt={`An oil painting representing ${project.name} — ${project.industry.toLowerCase()}.`}
@@ -205,7 +205,7 @@ export default function Page() {
             <div className="grid md:grid-cols-3 gap-6">
               {capabilities.map((cap) => (
                 <div key={cap.id} className="flex flex-col">
-                  <div className="aspect-[3/2] overflow-hidden rounded-[20px] bg-ocean-mist mb-5">
+                  <div className="aspect-[3/2] overflow-hidden rounded-3xl bg-ocean-mist mb-5">
                     <Image
                       src={capabilityPaintings[cap.id]}
                       alt={`An oil painting representing the ${cap.name} capability.`}
@@ -241,7 +241,7 @@ export default function Page() {
             <div className="grid md:grid-cols-[1fr_1.5fr] gap-8 md:gap-16 items-start">
               {/* Left — painting + heading */}
               <div>
-                <div className="aspect-[4/3] overflow-hidden rounded-[24px] bg-ocean-mist mb-6">
+                <div className="aspect-[4/3] overflow-hidden rounded-3xl bg-ocean-mist mb-6">
                   <Image
                     src="/images/paintings/capability-brand-v2.webp"
                     alt="An oil painting of a studio work surface with linen, charcoal, teal pigment, and a circular signal dot."
@@ -322,7 +322,7 @@ export default function Page() {
                   About the studio
                 </StudioButton>
               </div>
-              <div className="aspect-[4/3] overflow-hidden rounded-[24px] bg-ocean-mist">
+              <div className="aspect-[4/3] overflow-hidden rounded-3xl bg-ocean-mist">
                 <Image
                   src="/images/paintings/collaboration-studio-v2.webp"
                   alt="An oil painting of two pairs of hands collaborating over interface sketches, color swatches, and a laptop on a worn wooden studio table."

@@ -73,7 +73,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         {/* Cover */}
         <section className="pb-12">
           <div className="mx-auto max-w-4xl px-6">
-            <div className="aspect-[16/9] overflow-hidden rounded-[24px] bg-ocean-mist">
+            <div className="aspect-[16/9] overflow-hidden rounded-3xl bg-ocean-mist">
               <Image src={article.cover} alt={`An oil painting representing: ${article.title}`} width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
             </div>
           </div>
@@ -110,7 +110,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
               <div className="grid md:grid-cols-3 gap-6">
                 {related.map((rel) => (
                   <Link key={rel.slug} href={`/blog/${rel.slug}`} className="group block">
-                    <div className="aspect-[3/2] overflow-hidden rounded-[16px] bg-ocean-mist mb-3">
+                    <div className="aspect-[3/2] overflow-hidden rounded-2xl bg-ocean-mist mb-3">
                       <Image src={rel.cover} alt={`An oil painting representing: ${rel.title}`} width={400} height={267} className="w-full h-full object-cover" loading="lazy" sizes="(max-width: 768px) 100vw, 300px" />
                     </div>
                     <h3 className="font-display font-bold text-ink text-sm group-hover:text-signal-teal-text transition-colors">{rel.title}</h3>
