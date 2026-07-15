@@ -66,7 +66,7 @@ export default function Page() {
             <div className="space-y-12 md:space-y-20">
               {caseStudies.map((project, i) => {
                 const isReversed = i % 2 === 1;
-                const painting = projectPaintings[project.slug] || "/images/paintings/atlantic-signal-hero.webp";
+                const painting = projectPaintings[project.slug] || "/images/paintings/work-intro.webp";
                 return (
                   <article key={project.slug} className={`grid md:grid-cols-2 gap-6 md:gap-10 items-center ${isReversed ? "md:[direction:rtl]" : ""}`}>
                     <div className="[direction:ltr]">

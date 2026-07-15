@@ -61,7 +61,7 @@ export default async function CaseStudyPage({
   const project = getCaseStudy(slug);
   if (!project) notFound();
 
-  const painting = projectPaintings[project.slug] || "/images/paintings/atlantic-signal-hero.webp";
+  const painting = projectPaintings[project.slug] || "/images/paintings/work-intro.webp";
   const screenshotPath = `/images/work/screenshots/full/${project.screenshotSlug}-full.webp`;
   const nextProject = getCaseStudy(project.nextSlug);
 

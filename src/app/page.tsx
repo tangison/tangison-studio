@@ -28,9 +28,9 @@ const featuredWork = featuredSlugs
   .filter((c): c is NonNullable<typeof c> => Boolean(c));
 
 const projectPaintings: Record<string, string> = {
-  proavia: "/images/paintings/projects/proavia-v3.webp",
-  nalago: "/images/paintings/projects/nalago-v2.webp",
-  clusterleaf: "/images/paintings/projects/clusterleaf-v2.webp",
+  proavia: "/images/paintings/projects/homepage-proavia.webp",
+  nalago: "/images/paintings/projects/homepage-nalago.webp",
+  clusterleaf: "/images/paintings/projects/homepage-clusterleaf.webp",
 };
 
 const capabilityPaintings: Record<string, string> = {
