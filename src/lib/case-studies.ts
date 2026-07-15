@@ -372,7 +372,7 @@ export const caseStudies: CaseStudy[] = [
     outcomeH2: "A site that finally matches 16 years of reputation.",
     outcomeBody: [
       "Crescendo launched with a site that treats its history as an asset. The 16-year track record is visible. The shop and academy sections are equally prominent. A new visitor understands what Crescendo is in under five seconds. A returning customer can find what they need in two clicks.",
-      "The primary insight from Crescendo was about leverage. Small businesses in small markets often undervalue their track record. They focus on what they sell, not how long they have been selling it. In a market where longevity is rare, longevity is the brand. The site needed to say that louder than the product catalog.",
+      "The primary insight from Crescendo was about advantage. Small businesses in small markets often undervalue their track record. They focus on what they sell, not how long they have been selling it. In a market where longevity is rare, longevity is the brand. The site needed to say that louder than the product catalog.",
     ],
     nextSlug: "feorm",
   },

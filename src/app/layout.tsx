@@ -100,7 +100,7 @@ export default function RootLayout({
         <OrganizationJsonLd />
       </head>
       <body
-        className="font-satoshi antialiased bg-skeleton-bone text-ink overflow-x-hidden"
+        className="font-satoshi antialiased bg-skeleton-bone text-ink overflow-x-clip"
         style={{ maxWidth: "100%" }}
         data-build={
           process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ??
