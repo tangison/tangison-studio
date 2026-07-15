@@ -49,7 +49,7 @@ export default function Page() {
         <section className="py-16 md:py-24 bg-atlantic-black">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <p className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-3">A Tangison Technologies company</p>
-            <StudioButton as="link" href="/contact" variant="inverse" hasArrow arrowType="up-right">Start a project</StudioButton>
+            <StudioButton href="/contact" variant="inverse" hasArrow arrowType="up-right">Start a project</StudioButton>
           </div>
         </section>
       </SiteShell>

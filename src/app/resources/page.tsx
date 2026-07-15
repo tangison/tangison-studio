@@ -25,7 +25,7 @@ export default function Page() {
               <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Coming soon</p>
               <h2 className="font-display font-bold text-ink text-xl mb-3">Resources are being prepared.</h2>
               <p className="font-satoshi text-sm text-ink-muted max-w-md mx-auto mb-6">This section will hold process guides, design references, and practical tools for teams shipping digital products.</p>
-              <StudioButton as="link" href="/contact" variant="secondary" size="sm">Ask us a question</StudioButton>
+              <StudioButton href="/contact" variant="secondary" size="sm">Ask us a question</StudioButton>
             </div>
           </div>
         </section>

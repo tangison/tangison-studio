@@ -3,24 +3,13 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 
 /**
- * Studio — Unified Button Component
- *
- * ONE button system across the entire application.
- * Only three CTA variants allowed:
- *   1. primary  — Atlantic Black bg, Skeleton Bone text
- *   2. secondary — transparent, fine outline
- *   3. inverse  — Signal Teal or Skeleton Bone on dark sections
- *
- * All variants share:
- *   - border-radius: 9999px (fully rounded pill)
- *   - same height scale (min-h-[48px])
- *   - same horizontal padding (px-6)
- *   - same typography (font-satoshi, text-sm, font-medium)
- *   - same active press motion (scale 0.98)
- *   - optional arrow-island treatment
+ * StudioButton — ONE unified button system.
+ * border:0, no outlines, no static borders.
+ * Keyboard-only focus-visible halo remains.
+ * 3 variants: primary (filled black), secondary (filled tonal), inverse (filled bone).
  */
 
 const buttonVariants = cva(
@@ -37,40 +26,57 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-atlantic-black text-skeleton-bone hover:bg-deep-ocean",
-        secondary: "bg-transparent text-ink border border-ink/15 hover:border-ink/30",
-        inverse: "bg-signal-teal-button text-signal-white hover:opacity-90",
+        secondary: "bg-ocean-mist text-ink hover:bg-fog-gray",
+        inverse: "bg-skeleton-bone text-atlantic-black hover:bg-ocean-mist",
       },
       size: {
-        sm: "px-4 py-2 text-xs min-h-[40px]",
-        md: "px-6 py-3 text-sm min-h-[48px]",
-        lg: "px-8 py-4 text-base min-h-[56px]",
-      },
-      hasArrow: {
-        true: "pr-4",
-        false: "",
+        sm: "px-4 py-2 text-xs min-h-[42px] rounded-[21px]",
+        md: "px-6 py-3 text-sm min-h-[50px] rounded-[25px]",
+        lg: "px-8 py-4 text-base min-h-[56px] rounded-[28px]",
       },
     },
     defaultVariants: {
       variant: "primary",
       size: "md",
-      hasArrow: false,
     },
   }
 );
 
-interface ButtonContentProps {
+interface StudioButtonProps {
   children: React.ReactNode;
+  variant?: "primary" | "secondary" | "inverse";
+  size?: "sm" | "md" | "lg";
   hasArrow?: boolean;
   arrowType?: "right" | "up-right";
+  href?: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: "button" | "submit" | "reset";
+  className?: string;
+  "aria-label"?: string;
 }
 
-function ButtonContent({ children, hasArrow, arrowType = "right" }: ButtonContentProps) {
-  return (
+export function StudioButton({
+  children,
+  variant = "primary",
+  size = "md",
+  hasArrow = false,
+  arrowType = "right",
+  href,
+  onClick,
+  disabled,
+  type = "button",
+  className,
+  ...ariaProps
+}: StudioButtonProps) {
+  const classes = `${buttonVariants({ variant, size })} group ${className || ""}`;
+
+  const content = (
     <>
       {children}
       {hasArrow && (
         <span
-          className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/10 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
+          className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/15 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
           aria-hidden="true"
         >
           {arrowType === "up-right" ? (
@@ -82,65 +88,26 @@ function ButtonContent({ children, hasArrow, arrowType = "right" }: ButtonConten
       )}
     </>
   );
-}
 
-interface StudioButtonAsButton
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  as?: "button";
-  hasArrow?: boolean;
-  arrowType?: "right" | "up-right";
-}
-
-interface StudioButtonAsLink
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof buttonVariants> {
-  as: "link";
-  href: string;
-  hasArrow?: boolean;
-  arrowType?: "right" | "up-right";
-}
-
-type StudioButtonProps = StudioButtonAsButton | StudioButtonAsLink;
-
-export function StudioButton(props: StudioButtonProps) {
-  const { variant, size, hasArrow, arrowType, children, className, ...rest } = props;
-  const classes = `${buttonVariants({ variant, size, hasArrow })} group ${className || ""}`;
-
-  if (props.as === "link") {
-    const { href, ...linkRest } = rest as StudioButtonAsLink;
+  if (href) {
     const isExternal = href.startsWith("http") || href.startsWith("mailto:");
     if (isExternal) {
       return (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes}
-          {...linkRest}
-        >
-          <ButtonContent hasArrow={hasArrow} arrowType={arrowType}>
-            {children}
-          </ButtonContent>
+        <a href={href} target="_blank" rel="noopener noreferrer" className={classes} onClick={onClick} aria-disabled={disabled} {...ariaProps}>
+          {content}
         </a>
       );
     }
     return (
-      <Link href={href} className={classes} {...linkRest}>
-        <ButtonContent hasArrow={hasArrow} arrowType={arrowType}>
-          {children}
-        </ButtonContent>
+      <Link href={href} className={classes} onClick={onClick} aria-disabled={disabled} {...ariaProps}>
+        {content}
       </Link>
     );
   }
 
-  const { type = "button" as const, disabled, as: _as, ...buttonProps } = rest as StudioButtonAsButton;
-  void _as;
   return (
-    <button type={type} disabled={disabled} className={classes} {...buttonProps}>
-      <ButtonContent hasArrow={hasArrow} arrowType={arrowType}>
-        {children}
-      </ButtonContent>
+    <button type={type} disabled={disabled} className={classes} onClick={onClick} {...ariaProps}>
+      {content}
     </button>
   );
 }

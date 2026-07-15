@@ -171,7 +171,7 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -20, scale: 0.98 }}
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full max-w-2xl bg-skeleton-bone rounded-3xl border border-card-border shadow-2xl overflow-hidden"
+        className="relative w-full max-w-2xl bg-skeleton-bone rounded-3xl shadow-2xl overflow-hidden"
       >
         {/* Search input */}
         <div className="flex items-center gap-3 px-6 py-5 border-b border-card-border">
@@ -423,7 +423,7 @@ export function Navigation() {
         aria-label="Main navigation"
       >
         <div
-          className="flex items-center justify-between gap-4 md:gap-8 px-4 md:px-6 py-2.5 rounded-full border border-card-border"
+          className="flex items-center justify-between gap-4 md:gap-8 px-4 md:px-6 py-2.5 rounded-full"
           style={{
             background: isScrolled ? "#F6F4EF" : "rgba(246, 244, 239, 0.92)",
             backdropFilter: "blur(12px)",
@@ -469,7 +469,7 @@ export function Navigation() {
             <button
               type="button"
               onClick={() => setIsSearchOpen(true)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-ink-muted hover:text-ink hover:border-ink/20 transition-colors"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink-muted hover:text-ink hover:border-ink/20 transition-colors"
               aria-label="Open search (Cmd+K)"
             >
               <Search className="w-4 h-4" />
@@ -480,7 +480,7 @@ export function Navigation() {
               ref={menuTriggerRef}
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-card-border text-ink hover:border-ink/20 transition-colors"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink hover:border-ink/20 transition-colors"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
             >

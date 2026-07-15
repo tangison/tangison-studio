@@ -13,7 +13,7 @@ export default function NotFound() {
           <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">404</p>
           <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">Page not found.</h1>
           <p className="font-satoshi text-lg text-ink-muted mb-8 max-w-md mx-auto">The page you are looking for may have been moved, renamed, or is no longer available.</p>
-          <StudioButton as="link" href="/" variant="primary" hasArrow arrowType="right">Back home</StudioButton>
+          <StudioButton href="/" variant="primary" hasArrow arrowType="right">Back home</StudioButton>
         </div>
       </section>
     </SiteShell>

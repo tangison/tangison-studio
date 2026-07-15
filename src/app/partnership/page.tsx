@@ -50,7 +50,7 @@ export default function Page() {
                       </li>
                     ))}
                   </ul>
-                  <StudioButton as="link" href="/contact" variant={plan.highlighted ? "primary" : "secondary"} size="sm" className="w-full">
+                  <StudioButton href="/contact" variant={plan.highlighted ? "primary" : "secondary"} size="sm" className="w-full">
                     {plan.model === "New project" ? "Request a proposal" : "Get started"}
                   </StudioButton>
                 </div>
@@ -62,7 +62,7 @@ export default function Page() {
           <div className="mx-auto max-w-3xl px-6 text-center">
             <h2 className="font-display font-bold text-skeleton-bone text-3xl mb-4">Not sure which model fits?</h2>
             <p className="font-satoshi text-lg text-skeleton-bone/70 mb-8">Tell us what you are working on.</p>
-            <StudioButton as="link" href="/contact" variant="inverse" hasArrow arrowType="up-right">Talk to us</StudioButton>
+            <StudioButton href="/contact" variant="inverse" hasArrow arrowType="up-right">Talk to us</StudioButton>
           </div>
         </section>
       </SiteShell>

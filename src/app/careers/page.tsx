@@ -25,7 +25,7 @@ export default function Page() {
               <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">No open roles</p>
               <h2 className="font-display font-bold text-ink text-xl mb-3">No open positions right now.</h2>
               <p className="font-satoshi text-sm text-ink-muted max-w-md mx-auto mb-6">If you are a designer or developer with experience in the African digital product space, you can introduce yourself by email. We keep good people in mind for when the right project comes along.</p>
-              <StudioButton as="link" href="/contact" variant="secondary" size="sm">Introduce yourself</StudioButton>
+              <StudioButton href="/contact" variant="secondary" size="sm">Introduce yourself</StudioButton>
             </div>
           </div>
         </section>

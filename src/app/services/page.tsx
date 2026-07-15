@@ -102,7 +102,7 @@ export default function Page() {
             <p className="font-satoshi text-lg text-skeleton-bone/70 mb-8">
               Tell us what you are working on. We will help you find the right starting point.
             </p>
-            <StudioButton as="link" href="/contact" variant="inverse" hasArrow arrowType="up-right">
+            <StudioButton href="/contact" variant="inverse" hasArrow arrowType="up-right">
               Start a project
             </StudioButton>
           </div>

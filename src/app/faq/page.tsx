@@ -50,7 +50,7 @@ export default function Page() {
         <section className="py-16 md:py-24 bg-atlantic-black">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <h2 className="font-display font-bold text-skeleton-bone text-3xl mb-4">Still have questions?</h2>
-            <StudioButton as="link" href="/contact" variant="inverse" hasArrow arrowType="up-right">Contact us</StudioButton>
+            <StudioButton href="/contact" variant="inverse" hasArrow arrowType="up-right">Contact us</StudioButton>
           </div>
         </section>
       </SiteShell>

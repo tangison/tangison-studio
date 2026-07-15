@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 const projectPaintings: Record<string, string> = {
-  proavia: "/images/paintings/projects/proavia-v2.webp",
+  proavia: "/images/paintings/projects/proavia-v3.webp",
   nalago: "/images/paintings/projects/nalago-v2.webp",
   clusterleaf: "/images/paintings/projects/clusterleaf-v2.webp",
   smefrog: "/images/paintings/projects/smefrog.webp",
@@ -103,7 +103,7 @@ export default function Page() {
                         ))}
                       </div>
                       <div className="flex flex-wrap items-center gap-4">
-                        <StudioButton as="link" href={`/work/${project.slug}`} variant="secondary" size="sm" hasArrow arrowType="right">
+                        <StudioButton href={`/work/${project.slug}`} variant="secondary" size="sm" hasArrow arrowType="right">
                           Case study
                         </StudioButton>
                         {project.url && (
@@ -129,7 +129,7 @@ export default function Page() {
             <p className="font-satoshi text-lg text-skeleton-bone/70 mb-8">
               Tell us what you are working on.
             </p>
-            <StudioButton as="link" href="/contact" variant="inverse" hasArrow arrowType="up-right">
+            <StudioButton href="/contact" variant="inverse" hasArrow arrowType="up-right">
               Start a project
             </StudioButton>
           </div>

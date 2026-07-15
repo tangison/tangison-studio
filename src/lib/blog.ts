@@ -24,7 +24,7 @@ export const articles: BlogArticle[] = [
     category: "Positioning",
     tags: ["studio", "brand", "product", "intelligence"],
     readingTime: 4,
-    cover: "/images/paintings/collaboration-studio-v2.webp",
+    cover: "/images/paintings/blog/blog-01.webp",
     content: [
       { body: ["Most organizations that need a digital product end up coordinating three separate vendors. A brand consultancy designs the identity. A web studio builds the website. A technology partner handles the backend and any AI features.", "Each vendor has its own timeline, its own priorities, and its own interpretation of what the others are doing. The result is a product that feels like three products stitched together.", "Studio takes a different approach. We handle brand, product, and intelligence under one roof. The people who define the brand are the same people who design the interface and build the systems behind it."] },
       { heading: "What this changes", body: ["When one studio owns all three layers, the handoffs disappear. The brand strategy informs the interface design directly, not through a brief document. The interface design informs the technical architecture, not through a specification call. The technical architecture informs what intelligence features are actually feasible, not through a feasibility study.", "This is not about saving time. It is about saving coherence. A product built by one team with one set of priorities feels different from a product assembled from parts."] },
@@ -40,7 +40,7 @@ export const articles: BlogArticle[] = [
     category: "Strategy",
     tags: ["discovery", "strategy", "process"],
     readingTime: 5,
-    cover: "/images/paintings/capability-brand-v2.webp",
+    cover: "/images/paintings/blog/blog-02.webp",
     content: [
       { body: ["Digital products fail for many reasons. But the most common failure mode is not a technical one. It is a strategic one. The product was built to solve the wrong problem, or the right problem was understood too late.", "This failure happens before development starts. It happens in the discovery phase, or more often, in the absence of one."] },
       { heading: "The skipping discovery pattern", body: ["Many organizations skip discovery because it feels like delay. They have a deadline. They know what they want. They want to see something built.", "So the studio starts building. Two months later, the product launches. It works. It looks good. But it does not solve the problem the organization actually had, because the problem was never properly defined."] },
@@ -56,7 +56,7 @@ export const articles: BlogArticle[] = [
     category: "Brand",
     tags: ["brand", "identity", "namibia"],
     readingTime: 4,
-    cover: "/images/paintings/capability-brand-v2.webp",
+    cover: "/images/paintings/blog/blog-03.webp",
     content: [
       { body: ["A brand system is not a logo. A logo is one piece of a brand system. The system itself is the set of rules, patterns, and decisions that let your organization present itself consistently as it grows.", "For Namibian businesses, this matters more than it might in larger markets. You are building trust with audiences who may not know your company. Consistency is what builds that trust."] },
       { heading: "What a brand system includes", body: ["A complete brand system includes visual identity (logo, colors, typography), verbal identity (messaging, tone, naming), and application rules (how the system works across website, social media, print, and product).", "Without these rules, every new marketing asset is designed from scratch. The website looks one way. The social media looks another. The business card looks like it belongs to a different company. This inconsistency erodes trust."] },
@@ -72,7 +72,7 @@ export const articles: BlogArticle[] = [
     category: "Intelligence",
     tags: ["ai", "intelligence", "product"],
     readingTime: 5,
-    cover: "/images/paintings/capability-intelligence-v2.webp",
+    cover: "/images/paintings/blog/blog-04.webp",
     content: [
       { body: ["There are two kinds of AI features in digital products. The first kind is designed to demonstrate that the product uses AI. The second kind is designed to solve a problem that could not be solved without AI.", "The first kind is everywhere. It includes chatbots that answer questions worse than a FAQ page, recommendation engines that suggest things nobody wants, and search features that are less accurate than keyword matching.", "The second kind is rare. It includes systems that can actually understand unstructured data, automate workflows that require judgment, and provide capabilities that were not possible before."] },
       { heading: "How to tell the difference", body: ["The test is simple. Does the AI feature solve a problem that the user has? Or does it solve a problem that the product team has, which is that they want to use AI?", "If the feature is there because users asked for it, or because it makes a meaningful task faster or easier, it is the second kind. If it is there because the competitor has it, or because it looks impressive in a demo, it is the first kind."] },
@@ -88,7 +88,7 @@ export const articles: BlogArticle[] = [
     category: "Product",
     tags: ["product", "website", "development"],
     readingTime: 4,
-    cover: "/images/paintings/capability-product-v2.webp",
+    cover: "/images/paintings/blog/blog-05.webp",
     content: [
       { body: ["Many organizations start with a website and expect it to become a product. This rarely works. A website and a product are different things, built for different purposes, with different success metrics.", "A website is a marketing surface. Its job is to communicate what your organization does and move visitors toward a conversation. A product is a working tool. Its job is to help users accomplish something they could not accomplish without it."] },
       { heading: "Why the distinction matters", body: ["If you build a website when you need a product, you end up with a marketing surface that users try to use as a tool. It breaks under the weight of expectations it was not designed for. Forms that should be workflows become email chains. Content that should be dynamic becomes static.", "If you build a product when you need a website, you overspend. You build authentication, dashboards, and data models for an audience that just needs to understand what you do and contact you."] },
@@ -104,7 +104,7 @@ export const articles: BlogArticle[] = [
     category: "Design",
     tags: ["design-systems", "design", "process"],
     readingTime: 4,
-    cover: "/images/paintings/capability-product-v2.webp",
+    cover: "/images/paintings/blog/blog-06.webp",
     content: [
       { body: ["A design system is not a Figma file. It is not a component library. It is the shared language that lets your team make consistent design decisions at speed.", "Without a design system, every new screen is a design problem. With one, most screens are an assembly problem. That difference changes how fast you can ship."] },
       { heading: "What changes", body: ["With a design system, a new page takes hours instead of days. The designer does not need to decide on button styles, spacing, typography, or color. Those decisions are already made. The designer focuses on the layout and the content.", "Developers do not need to build new components for each page. They assemble existing ones. The code is more consistent, more maintainable, and less buggy."] },
@@ -120,7 +120,7 @@ export const articles: BlogArticle[] = [
     category: "Studio",
     tags: ["windhoek", "namibia", "africa"],
     readingTime: 4,
-    cover: "/images/paintings/about-windhoek-v2.webp",
+    cover: "/images/paintings/blog/blog-07.webp",
     content: [
       { body: ["Studio is based in Windhoek, Namibia. This is not a footnote. It is a design decision that shapes everything we make.", "Being based in Africa changes how you think about digital products. You design for audiences that often access the web on constrained connections. You design for devices that are not the latest iPhone. You design for contexts where data is expensive and patience is practical."] },
       { heading: "What this means in practice", body: ["It means performance is not optional. A website that loads in two seconds on fiber and eight seconds on 3G is not a fast website. It is a website that excludes half its audience.", "It means accessibility is not optional. Users may be on small screens, on shared devices, or using assistive technology. If your product does not work for them, it does not work.", "It means clarity is not optional. Users may not share your cultural context, your language, or your assumptions. If your interface is not immediately understandable, you have lost them."] },
@@ -136,7 +136,7 @@ export const articles: BlogArticle[] = [
     category: "Accessibility",
     tags: ["accessibility", "quality", "wcag"],
     readingTime: 4,
-    cover: "/images/paintings/capability-product-v2.webp",
+    cover: "/images/paintings/blog/blog-08.webp",
     content: [
       { body: ["Accessibility is often treated as a compliance requirement. Something you do because the law says you must, or because a client asked for it in the contract.", "This framing is wrong. Accessibility is part of product quality. A product that excludes users is not a good product, regardless of how it looks or how fast it loads."] },
       { heading: "What accessibility actually means", body: ["Accessibility means your product works for people with disabilities. That includes users who navigate by keyboard, users who read with screen readers, users who need sufficient color contrast, and users who need larger text or longer interaction times.", "It also means your product works for people in constraining contexts. A user on a slow connection. A user in bright sunlight. A user on a small screen. These are accessibility issues too."] },

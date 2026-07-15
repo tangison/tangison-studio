@@ -126,7 +126,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         <section className="py-16 md:py-24 bg-atlantic-black">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <h2 className="font-display font-bold text-skeleton-bone text-3xl mb-4">Want to work with us?</h2>
-            <StudioButton as="link" href="/contact" variant="inverse" hasArrow arrowType="up-right">Start a project</StudioButton>
+            <StudioButton href="/contact" variant="inverse" hasArrow arrowType="up-right">Start a project</StudioButton>
           </div>
         </section>
       </SiteShell>

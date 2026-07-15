@@ -39,7 +39,7 @@ export async function generateMetadata({
 }
 
 const projectPaintings: Record<string, string> = {
-  proavia: "/images/paintings/projects/proavia-v2.webp",
+  proavia: "/images/paintings/projects/proavia-v3.webp",
   nalago: "/images/paintings/projects/nalago-v2.webp",
   clusterleaf: "/images/paintings/projects/clusterleaf-v2.webp",
   smefrog: "/images/paintings/projects/smefrog.webp",
@@ -99,7 +99,7 @@ export default async function CaseStudyPage({
               ))}
             </div>
             {project.url && (
-              <StudioButton as="link" href={project.url} variant="primary" hasArrow arrowType="up-right">
+              <StudioButton href={project.url} variant="primary" hasArrow arrowType="up-right">
                 Visit live site
               </StudioButton>
             )}
@@ -237,7 +237,7 @@ export default async function CaseStudyPage({
             <p className="font-satoshi text-lg text-skeleton-bone/70 mb-8">
               Tell us about your project.
             </p>
-            <StudioButton as="link" href="/contact" variant="inverse" hasArrow arrowType="up-right">
+            <StudioButton href="/contact" variant="inverse" hasArrow arrowType="up-right">
               Start a project
             </StudioButton>
           </div>

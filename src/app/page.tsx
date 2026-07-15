@@ -28,7 +28,7 @@ const featuredWork = featuredSlugs
   .filter((c): c is NonNullable<typeof c> => Boolean(c));
 
 const projectPaintings: Record<string, string> = {
-  proavia: "/images/paintings/projects/proavia-v2.webp",
+  proavia: "/images/paintings/projects/proavia-v3.webp",
   nalago: "/images/paintings/projects/nalago-v2.webp",
   clusterleaf: "/images/paintings/projects/clusterleaf-v2.webp",
 };
@@ -78,10 +78,10 @@ export default function Page() {
                   One studio instead of three vendors.
                 </p>
                 <div className="mt-7 flex flex-wrap items-center gap-3">
-                  <StudioButton as="link" href="/work" variant="primary" hasArrow arrowType="right">
+                  <StudioButton href="/work" variant="primary" hasArrow arrowType="right">
                     View selected work
                   </StudioButton>
-                  <StudioButton as="link" href="/contact" variant="secondary">
+                  <StudioButton href="/contact" variant="secondary">
                     Start a project
                   </StudioButton>
                 </div>
@@ -125,7 +125,7 @@ export default function Page() {
                   Recent projects
                 </h2>
               </div>
-              <StudioButton as="link" href="/work" variant="secondary" size="sm" hasArrow arrowType="right">
+              <StudioButton href="/work" variant="secondary" size="sm" hasArrow arrowType="right">
                 All work
               </StudioButton>
             </div>
@@ -171,7 +171,7 @@ export default function Page() {
                         ))}
                       </div>
                       <div className="flex flex-wrap items-center gap-4">
-                        <StudioButton as="link" href={`/work/${project.slug}`} variant="secondary" size="sm" hasArrow arrowType="right">
+                        <StudioButton href={`/work/${project.slug}`} variant="secondary" size="sm" hasArrow arrowType="right">
                           Case study
                         </StudioButton>
                         {project.url && (
@@ -318,7 +318,7 @@ export default function Page() {
                 <p className="font-satoshi text-base leading-relaxed text-ink-muted mb-6">
                   The people who scope the work are the same people who design and build it. No account layer, no handoff to juniors. Direct collaboration from discovery to launch.
                 </p>
-                <StudioButton as="link" href="/about" variant="secondary" size="sm" hasArrow arrowType="right">
+                <StudioButton href="/about" variant="secondary" size="sm" hasArrow arrowType="right">
                   About the studio
                 </StudioButton>
               </div>
@@ -346,7 +346,7 @@ export default function Page() {
             <p className="font-satoshi text-lg text-skeleton-bone/70 mb-8">
               Tell us what you are working on.
             </p>
-            <StudioButton as="link" href="mailto:studio@tangison.com" variant="inverse" hasArrow arrowType="up-right">
+            <StudioButton href="mailto:studio@tangison.com" variant="inverse" hasArrow arrowType="up-right">
               studio@tangison.com
             </StudioButton>
           </div>
