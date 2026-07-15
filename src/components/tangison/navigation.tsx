@@ -469,7 +469,7 @@ export function Navigation() {
             <button
               type="button"
               onClick={() => setIsSearchOpen(true)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink-muted hover:text-ink hover:border-ink/20 transition-colors"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink-muted hover:text-ink transition-colors"
               aria-label="Open search (Cmd+K)"
             >
               <Search className="w-4 h-4" />
@@ -480,7 +480,7 @@ export function Navigation() {
               ref={menuTriggerRef}
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink hover:border-ink/20 transition-colors"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink transition-colors"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
             >
