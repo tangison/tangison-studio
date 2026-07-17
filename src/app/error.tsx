@@ -40,7 +40,7 @@ export default function Error({
         </div>
 
         {error.digest && process.env.NODE_ENV === "development" && (
-          <div className="mt-12 font-jetbrains text-[9px] text-ink-muted/40 uppercase tracking-wider">
+          <div className="mt-12 font-jetbrains text-[9px] text-ink-muted/60 uppercase tracking-wider">
             Error ID: {error.digest}
           </div>
         )}

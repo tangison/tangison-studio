@@ -364,7 +364,7 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
             <a href="https://www.facebook.com/namibia.digital" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Facebook</a>
             <a href="https://www.instagram.com/tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Instagram</a>
             <a href="https://www.threads.net/@tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Threads</a>
-            <span className="ml-auto font-jetbrains text-[9px] text-skeleton-bone/40 uppercase tracking-[0.15em] md:tracking-[0.2em]">Windhoek, Namibia</span>
+            <span className="ml-auto font-jetbrains text-[9px] text-skeleton-bone/60 uppercase tracking-[0.15em] md:tracking-[0.2em]">Windhoek, Namibia</span>
           </div>
         </div>
       </motion.div>

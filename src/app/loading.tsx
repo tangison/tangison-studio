@@ -38,7 +38,7 @@ export default function Loading() {
         {/* Status text */}
         <div className="relative h-4 overflow-hidden">
           <span
-            className="font-jetbrains text-[9px] text-ink-muted/40 uppercase tracking-[0.4em] absolute inset-0 flex items-center justify-center"
+            className="font-jetbrains text-[9px] text-ink-muted/60 uppercase tracking-[0.4em] absolute inset-0 flex items-center justify-center"
             style={{
               animation: "text-cycle 4.2s cubic-bezier(0.16, 1, 0.3, 1) infinite",
             }}
@@ -46,7 +46,7 @@ export default function Loading() {
             Loading
           </span>
           <span
-            className="font-jetbrains text-[9px] text-ink-muted/40 uppercase tracking-[0.4em] absolute inset-0 flex items-center justify-center"
+            className="font-jetbrains text-[9px] text-ink-muted/60 uppercase tracking-[0.4em] absolute inset-0 flex items-center justify-center"
             style={{
               animation: "text-cycle 4.2s cubic-bezier(0.16, 1, 0.3, 1) infinite",
               animationDelay: "1.4s",
@@ -55,7 +55,7 @@ export default function Loading() {
             Preparing
           </span>
           <span
-            className="font-jetbrains text-[9px] text-ink-muted/40 uppercase tracking-[0.4em] absolute inset-0 flex items-center justify-center"
+            className="font-jetbrains text-[9px] text-ink-muted/60 uppercase tracking-[0.4em] absolute inset-0 flex items-center justify-center"
             style={{
               animation: "text-cycle 4.2s cubic-bezier(0.16, 1, 0.3, 1) infinite",
               animationDelay: "2.8s",

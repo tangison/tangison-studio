@@ -99,13 +99,13 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-satoshi text-xs text-skeleton-bone/40 hover:text-skeleton-bone/70 transition-colors whitespace-nowrap"
+                className="font-satoshi text-xs text-skeleton-bone/60 hover:text-skeleton-bone/70 transition-colors whitespace-nowrap"
               >
                 {link.label}
               </Link>
             ))}
           </div>
-          <p className="font-jetbrains text-[9px] text-skeleton-bone/40 uppercase tracking-[0.15em] sm:tracking-[0.2em]">
+          <p className="font-jetbrains text-[9px] text-skeleton-bone/60 uppercase tracking-[0.15em] sm:tracking-[0.2em]">
             © 2026 Tangison Studio · Windhoek, Namibia
           </p>
         </div>
