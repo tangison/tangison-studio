@@ -6,7 +6,7 @@ import { caseStudies } from "@/lib/case-studies";
 import { capabilities } from "@/lib/capabilities";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
-import { ScrollReveal, StaggerReveal, StaggerItem, FadeIn } from "@/components/studio/scroll-reveal";
+import { ScrollReveal, StaggerReveal, StaggerItem, FadeIn, ScaleReveal, HoverLift, TextReveal, ParentBadge } from "@/components/studio/scroll-reveal";
 import { WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
@@ -67,29 +67,34 @@ export default function Page() {
         <section className="pt-12 md:pt-20 pb-8">
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-12 items-end">
-              <ScrollReveal slow>
+              <div>
                 <h1
                   className="font-display font-bold text-ink"
                   style={{ fontSize: "clamp(2.2rem, 6vw, 4rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
                 >
-                  We build the brand, the product and the intelligence behind it.
+                  <TextReveal text="We build the brand, the product and the intelligence behind it." />
                 </h1>
-                <p className="mt-5 text-lg md:text-xl font-display font-medium text-ink-muted">
-                  One studio instead of three vendors.
-                </p>
-                <div className="mt-7 flex flex-wrap items-center gap-3">
+                <ScrollReveal delay={0.6}>
+                  <p className="mt-5 text-lg md:text-xl font-display font-medium text-ink-muted">
+                    One studio instead of three vendors.
+                  </p>
+                </ScrollReveal>
+                <ScrollReveal delay={0.8}>
+                  <div className="mt-7 flex flex-wrap items-center gap-3">
                   <StudioButton href="/work" variant="primary" hasArrow arrowType="right">
                     View selected work
                   </StudioButton>
                   <StudioButton href="/contact" variant="secondary">
                     Start a project
                   </StudioButton>
-                </div>
-              </ScrollReveal>
+                  </div>
+                </ScrollReveal>
+                <ParentBadge className="mt-6" />
+              </div>
               <ScrollReveal delay={0.3}>
                 <div className="hidden md:block text-right">
                   <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">
-                    Windhoek · Namibia
+                    Windhoek, Namibia
                   </p>
                   <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mt-1">
                     Independent digital product studio
@@ -103,7 +108,7 @@ export default function Page() {
         {/* 2. HERO PAINTING — no frame, edge-to-edge editorial */}
         <section className="pb-12 md:pb-20">
           <div className="mx-auto max-w-6xl px-6">
-            <FadeIn>
+            <ScaleReveal>
               <figure className="overflow-hidden rounded-[25px]">
                 <Image
                   src="/images/paintings/hero-skeleton-coast-v2.webp"
@@ -115,7 +120,7 @@ export default function Page() {
                   sizes="(max-width: 768px) 100vw, 1080px"
                 />
               </figure>
-            </FadeIn>
+            </ScaleReveal>
           </div>
         </section>
 
@@ -141,6 +146,7 @@ export default function Page() {
                 const isReversed = i % 2 === 1;
                 return (
                   <StaggerItem key={project.slug}>
+                    <HoverLift>
                     <article className={`grid md:grid-cols-2 gap-6 md:gap-10 items-center ${isReversed ? "md:[direction:rtl]" : ""}`}>
                       {/* Oil painting */}
                       <div className="[direction:ltr]">
@@ -194,6 +200,7 @@ export default function Page() {
                         </div>
                       </div>
                     </article>
+                    </HoverLift>
                   </StaggerItem>
                 );
               })}

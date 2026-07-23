@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
-import { ScrollReveal, FadeIn, StaggerReveal, StaggerItem } from "@/components/studio/scroll-reveal";
+import { ScrollReveal, FadeIn, StaggerReveal, StaggerItem, ScaleReveal, HoverLift, ParentBadge } from "@/components/studio/scroll-reveal";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
@@ -26,17 +26,18 @@ export default function Page() {
               <p className="font-satoshi text-lg leading-relaxed text-ink-muted max-w-2xl">
                 Studio is an independent digital product practice in Windhoek, Namibia. We design focused websites, applications and brand systems for ambitious organizations across Africa.
               </p>
+              <ParentBadge className="mt-6" />
             </ScrollReveal>
           </div>
         </section>
 
         <section className="pb-12">
           <div className="mx-auto max-w-5xl px-6">
-            <FadeIn>
+            <ScaleReveal>
               <div className="aspect-[16/9] overflow-hidden rounded-[25px] bg-ocean-mist">
                 <Image src="/images/paintings/about-windhoek-v2.webp" alt="An oil painting of an early-morning Windhoek street scene with soft human activity and restrained painterly light." width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
               </div>
-            </FadeIn>
+            </ScaleReveal>
           </div>
         </section>
 

@@ -58,7 +58,7 @@ export const caseStudies: CaseStudy[] = [
     challengeH2:
       "A Namibian travel company needed a site that could close bookings, not just show destinations.",
     challengeBody: [
-      "ProAvia is a female-owned, ATTA-accredited tour operator based in Walvis Bay. They run transfers, signature tours, car hire, and accommodation across Namibia. The brief was clear: the old digital presence was not converting. Travelers landed on the site, did not find what they needed, and left. The gap between what ProAvia delivered on the ground and what the website communicated was significant.",
+      "ProAvia is a female-owned, ATTA-accredited tour operator based in Walvis Bay. They run transfers, signature tours, car hire, and accommodation across Namibia. The brief was clear: the old digital presence was not converting. Travelers landed on the site, did not find what they needed, and left. The gap between what ProAvia delivered on the ground and what the website communicated was wide.",
       "Namibian tourism is competitive. Operators compete for the same traveler attention, often with nearly identical service categories. A website that lists services without building trust or guiding toward a booking is a website that exists as a brochure. ProAvia needed more than a brochure. They needed a site that worked as hard as their team did in the field.",
       "The challenge was straightforward: build something that makes it easy to understand what ProAvia does, builds trust through accreditation and real photography, and moves people toward a booking. No friction. No ambiguity.",
     ],
@@ -158,7 +158,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     approachH2: "Let the photography speak. Then get out of the way.",
     approachBody: [
-      "The strategic decision was to make Taedza visible. Cluster Leaf Safaris is owner-operated. The same person who runs the company guides the tours. That is a significant trust signal in an industry where many operators outsource their guides. The About section was designed as a confidence builder, not a bio page. Travelers should feel like they know the person leading their trip before they book.",
+      "The strategic decision was to make Taedza visible. Cluster Leaf Safaris is owner-operated. The same person who runs the company guides the tours. That is a strong trust signal in an industry where many operators outsource their guides. The About section was designed as a confidence builder, not a bio page. Travelers should feel like they know the person leading their trip before they book.",
       "The design approach was maximal photography, minimal decoration. Safari photography is inherently compelling. The site's job is to present it at full scale and then stay out of the way. Over-designed layouts compete with the images. Under-designed layouts fail to build trust. The balance was found by treating the photography as the primary content and everything else as supporting structure.",
     ],
     craftNotes: [
@@ -500,7 +500,7 @@ export const caseStudies: CaseStudy[] = [
     approachH2: "Service-led structure. WhatsApp-first booking.",
     approachBody: [
       "The information architecture was built around services first. Routine servicing, brakes and suspension, electrical, pre-purchase inspections, general maintenance. Each service gets its own block with a clear scope. A buyer who knows what they need can find it. A buyer who does not can read and self-diagnose. That is the work the site does.",
-      "The booking flow was designed around how Namibian vehicle owners actually behave. WhatsApp is the primary channel. A WhatsApp button is visible on every section. The Revive Standard — OE parts, workmanship guarantee, expert technicians — is positioned as a commitment, not a tagline. It appears where buyers make decisions, not just on a homepage banner.",
+      "The booking flow was designed around how Namibian vehicle owners actually behave. WhatsApp is the primary channel. A WhatsApp button is visible on every section. The Revive Standard covers OE parts, workmanship guarantee, and expert technicians. It is positioned as a commitment, not a tagline. It appears where buyers make decisions, not just on a homepage banner.",
     ],
     craftNotes: [
       {
@@ -542,12 +542,12 @@ export const caseStudies: CaseStudy[] = [
       "A multi-service business is hard to position. The site needed to make four service lines legible.",
     challengeBody: [
       "MI-WAY by Malu Investment is a northern Namibian enterprise operating across four service lines: taxi transport, construction, logistics, and cleaning. Established in 2017. Operating out of Oshakati, Ongwediva, and Ondangwa. The previous presence did not communicate the scope or the standard. A buyer looking for a taxi and a buyer looking for a construction contractor are different audiences with different needs, and they both need to understand what MI-WAY does within seconds of landing.",
-      "Multi-service businesses struggle with positioning. The temptation is to list everything and hope the visitor finds what they need. That approach assumes the visitor already knows what they are looking for. Most do not. They arrive with a question — can this company help me with this — and they leave if the answer is not obvious. The site needed to answer that question for four different audiences without diluting the brand.",
+      "Multi-service businesses struggle with positioning. The temptation is to list everything and hope the visitor finds what they need. That approach assumes the visitor already knows what they are looking for. Most do not. They arrive with a question: can this company help me with this? They leave if the answer is not obvious. The site needed to answer that question for four different audiences without diluting the brand.",
       "The brief was to build a site that makes a multi-service business legible. Four service lines, one standard, one brand. Northern Namibia roots as positioning, not just geography. A booking path that works for taxi customers without alienating construction clients.",
     ],
     approachH2: "Four services. One standard. Northern roots.",
     approachBody: [
-      "The structure was built around the four service lines as equal pillars. Taxi transport, construction, logistics, cleaning. Each gets its own section with scope, coverage, and a clear next step. The MI-WAY standard — show up, do the work, do it well — runs across all four. A visitor can scan the services and find theirs in seconds.",
+      "The structure was built around the four service lines as equal pillars. Taxi transport, construction, logistics, cleaning. Each gets its own section with scope, coverage, and a clear next step. The MI-WAY standard is show up, do the work, do it well. It runs across all four. A visitor can scan the services and find theirs in seconds.",
       "The positioning leans into northern Namibia. Oshakati, Ongwediva, Ondangwa are not just cities on a map. They are the operating territory. Naming them on the site signals where MI-WAY is strong and filters out inquiries from outside the coverage area. The booking flow is taxi-first because that is the highest-volume service, but every service has a clear contact path.",
     ],
     craftNotes: [

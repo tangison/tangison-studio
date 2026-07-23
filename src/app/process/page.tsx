@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
-import { ScrollReveal, StaggerReveal, StaggerItem, FadeIn } from "@/components/studio/scroll-reveal";
+import { ScrollReveal, StaggerReveal, StaggerItem, FadeIn, ScaleReveal, ParentBadge } from "@/components/studio/scroll-reveal";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
@@ -32,16 +32,17 @@ export default function Page() {
               <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Process</p>
               <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">Five steps, one connecting line.</h1>
               <p className="font-satoshi text-lg text-ink-muted max-w-2xl">We keep the process tight. Each step has a clear purpose, and we do not stretch engagements beyond what the work needs.</p>
+              <ParentBadge className="mt-6" />
             </ScrollReveal>
           </div>
         </section>
         <section className="pb-12">
           <div className="mx-auto max-w-5xl px-6">
-            <FadeIn>
+            <ScaleReveal>
               <div className="aspect-[16/9] overflow-hidden rounded-[25px] bg-ocean-mist">
                 <Image src="/images/paintings/process-progressive-v2.webp" alt="An oil painting of a winding Namibian desert road splitting and resolving into one clear route." width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
               </div>
-            </FadeIn>
+            </ScaleReveal>
           </div>
         </section>
         <section className="py-12">

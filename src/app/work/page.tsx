@@ -6,6 +6,7 @@ import { caseStudies } from "@/lib/case-studies";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
+import { HoverLift, ParentBadge, ScaleReveal } from "@/components/studio/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -57,6 +58,7 @@ export default function Page() {
             <p className="font-satoshi text-lg text-ink-muted max-w-2xl">
               Websites, applications and brand systems designed and built by Studio. Each project is grounded in real client needs and shipped to production.
             </p>
+            <ParentBadge className="mt-6" />
           </div>
         </section>
 
@@ -68,7 +70,8 @@ export default function Page() {
                 const isReversed = i % 2 === 1;
                 const painting = projectPaintings[project.slug] || "/images/paintings/work-intro.webp";
                 return (
-                  <article key={project.slug} className={`grid md:grid-cols-2 gap-6 md:gap-10 items-center ${isReversed ? "md:[direction:rtl]" : ""}`}>
+                  <HoverLift key={project.slug}>
+                  <article className={`grid md:grid-cols-2 gap-6 md:gap-10 items-center ${isReversed ? "md:[direction:rtl]" : ""}`}>
                     <div className="[direction:ltr]">
                       <div className="aspect-[4/3] overflow-hidden rounded-[25px] bg-ocean-mist">
                         <Image
@@ -114,6 +117,7 @@ export default function Page() {
                       </div>
                     </div>
                   </article>
+                  </HoverLift>
                 );
               })}
             </div>

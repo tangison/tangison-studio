@@ -3,7 +3,7 @@ import Image from "next/image";
 import { capabilities } from "@/lib/capabilities";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
-import { ScrollReveal } from "@/components/studio/scroll-reveal";
+import { ScrollReveal, ScaleReveal, HoverLift, ParentBadge } from "@/components/studio/scroll-reveal";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
@@ -41,6 +41,7 @@ export default function Page() {
               <p className="font-satoshi text-lg text-ink-muted max-w-2xl">
                 Brand, product, and the systems behind it. One studio instead of three vendors.
               </p>
+              <ParentBadge className="mt-6" />
             </ScrollReveal>
           </div>
         </section>
@@ -75,7 +76,8 @@ export default function Page() {
                   {/* Programs */}
                   <div className={`grid ${cap.programs.length <= 2 ? "md:grid-cols-2" : "md:grid-cols-3"} gap-4`}>
                     {cap.programs.map((program) => (
-                      <div key={program.id} className="p-6 rounded-[25px] border border-card-border bg-signal-white">
+                      <HoverLift key={program.id}>
+                        <div className="p-6 rounded-[25px] border border-card-border bg-signal-white">
                         <h3 className="font-display font-bold text-ink text-lg mb-2">{program.name}</h3>
                         <p className="font-satoshi text-sm leading-relaxed text-ink-muted mb-4">{program.situation}</p>
                         <div className="space-y-1.5 mb-4">
@@ -86,7 +88,8 @@ export default function Page() {
                             </div>
                           ))}
                         </div>
-                      </div>
+                        </div>
+                      </HoverLift>
                     ))}
                   </div>
                 </article>

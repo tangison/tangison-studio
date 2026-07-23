@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
+import { HoverLift, ParentBadge } from "@/components/studio/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Partnership",
@@ -29,13 +30,15 @@ export default function Page() {
             <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Partnership</p>
             <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">Four ways to work with Studio.</h1>
             <p className="font-satoshi text-lg text-ink-muted max-w-2xl">Partnership plans for live sites, evolving products, and new projects. Pick the model that matches the stage you are at.</p>
+            <ParentBadge className="mt-6" />
           </div>
         </section>
         <section className="pb-12">
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               {plans.map((plan) => (
-                <div key={plan.id} className={`p-6 rounded-[25px] border ${plan.highlighted ? "border-signal-teal bg-ocean-mist/30" : "border-card-border bg-signal-white"}`}>
+                <HoverLift key={plan.id}>
+                <div className={`p-6 rounded-[25px] border ${plan.highlighted ? "border-signal-teal bg-ocean-mist/30" : "border-card-border bg-signal-white"}`}>
                   <h2 className="font-display font-bold text-ink text-xl mb-1">{plan.name}</h2>
                   <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-4">{plan.model}</p>
                   <div className="mb-4">
@@ -54,6 +57,7 @@ export default function Page() {
                     {plan.model === "New project" ? "Request a proposal" : "Get started"}
                   </StudioButton>
                 </div>
+                </HoverLift>
               ))}
             </div>
           </div>

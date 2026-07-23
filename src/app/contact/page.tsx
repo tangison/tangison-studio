@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/studio/contact-form";
 import { SlidingGallery } from "@/components/studio/sliding-gallery";
 import { socialLinks, googleBusinessProfile } from "@/config/social";
 import { BreadcrumbJsonLd, LocalBusinessJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
+import { ParentBadge } from "@/components/studio/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -26,6 +27,7 @@ export default function Page() {
             <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Contact</p>
             <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">Have something worth building?</h1>
             <p className="font-satoshi text-lg text-ink-muted max-w-2xl">Tell us what you are working on. We reply to every serious enquiry within two working days.</p>
+            <ParentBadge className="mt-6" />
           </div>
         </section>
         <section className="pb-12">
