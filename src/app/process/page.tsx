@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
+import { ScrollReveal, StaggerReveal, StaggerItem, FadeIn } from "@/components/studio/scroll-reveal";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
@@ -27,31 +28,37 @@ export default function Page() {
       <SiteShell>
         <section className="pt-12 md:pt-20 pb-8">
           <div className="mx-auto max-w-4xl px-6">
-            <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Process</p>
-            <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">Five steps, one connecting line.</h1>
-            <p className="font-satoshi text-lg text-ink-muted max-w-2xl">We keep the process tight. Each step has a clear purpose, and we do not stretch engagements beyond what the work needs.</p>
+            <ScrollReveal slow>
+              <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Process</p>
+              <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">Five steps, one connecting line.</h1>
+              <p className="font-satoshi text-lg text-ink-muted max-w-2xl">We keep the process tight. Each step has a clear purpose, and we do not stretch engagements beyond what the work needs.</p>
+            </ScrollReveal>
           </div>
         </section>
         <section className="pb-12">
           <div className="mx-auto max-w-5xl px-6">
-            <div className="aspect-[16/9] overflow-hidden rounded-[25px] bg-ocean-mist">
-              <Image src="/images/paintings/process-progressive-v2.webp" alt="An oil painting of a winding Namibian desert road splitting and resolving into one clear route." width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
-            </div>
+            <FadeIn>
+              <div className="aspect-[16/9] overflow-hidden rounded-[25px] bg-ocean-mist">
+                <Image src="/images/paintings/process-progressive-v2.webp" alt="An oil painting of a winding Namibian desert road splitting and resolving into one clear route." width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
+              </div>
+            </FadeIn>
           </div>
         </section>
         <section className="py-12">
           <div className="mx-auto max-w-4xl px-6">
-            <div className="space-y-0">
+            <StaggerReveal className="space-y-0">
               {steps.map((step, i) => (
-                <div key={step.num} className={`flex gap-6 py-8 ${i !== steps.length - 1 ? "border-b border-card-border" : ""}`}>
-                  <span className="font-jetbrains text-3xl font-bold text-signal-teal-text shrink-0">{step.num}</span>
-                  <div>
-                    <h2 className="font-display font-bold text-ink text-xl mb-2">{step.name}</h2>
-                    <p className="font-satoshi text-base text-ink-muted">{step.desc}</p>
+                <StaggerItem key={step.num}>
+                  <div className={`flex gap-6 py-8 ${i !== steps.length - 1 ? "border-b border-card-border" : ""}`}>
+                    <span className="font-jetbrains text-3xl font-bold text-signal-teal-text shrink-0">{step.num}</span>
+                    <div>
+                      <h2 className="font-display font-bold text-ink text-xl mb-2">{step.name}</h2>
+                      <p className="font-satoshi text-base text-ink-muted">{step.desc}</p>
+                    </div>
                   </div>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerReveal>
           </div>
         </section>
         <section className="py-16 md:py-24 bg-atlantic-black">

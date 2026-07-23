@@ -1,18 +1,18 @@
 /**
- * Studio — Three capability groups and nine outcome-led programs.
+ * Studio — Two capability groups and seven outcome-led programs.
  *
- * Replaces the flat seven-service presentation.
- * Source: Follow-up directive sections 4 and 5.
+ * Brand and Product merged into one unified service.
+ * Automation removed from Intelligence entirely.
  *
- * Old services → New capability mapping:
- *   Brand Systems, Creative Direction          → BRAND
+ * Old mapping:
+ *   Brand Systems, Creative Direction,
  *   Website Design, Website Development,
  *   Application Design, Product Design,
- *   Design Systems                             → PRODUCT
- *   (new)                                      → INTELLIGENCE
+ *   Design Systems                             → STUDIO (brand + product combined)
+ *   Applied AI, AI agents, custom systems      → INTELLIGENCE (automation removed)
  */
 
-export type CapabilityId = "brand" | "product" | "intelligence";
+export type CapabilityId = "studio" | "intelligence";
 
 export interface Program {
   id: string;
@@ -40,13 +40,13 @@ export interface Capability {
 
 export const capabilities: Capability[] = [
   {
-    id: "brand",
+    id: "studio",
     number: "01",
-    name: "Brand",
+    name: "Studio",
     shortDescription:
-      "Identity and systems that make organizations easier to recognize, understand and trust.",
+      "Identity, product design, and development. Brand and digital product as one service, not two separate vendors.",
     purpose:
-      "Help organizations become clear, recognizable and coherent.",
+      "Give organizations a coherent brand and a working digital product that carries it.",
     includes: [
       "Brand strategy",
       "Positioning",
@@ -56,14 +56,32 @@ export const capabilities: Capability[] = [
       "Creative direction",
       "Campaign identity",
       "Digital brand application",
+      "Website strategy",
+      "User experience",
+      "User-interface design",
+      "Website development",
+      "Web applications",
+      "Product design",
+      "Prototyping",
+      "Design systems",
+      "Content architecture",
+      "Performance and accessibility",
     ],
-    relatedServices: ["brand-systems", "creative-direction"],
+    relatedServices: [
+      "brand-systems",
+      "creative-direction",
+      "website-design",
+      "website-development",
+      "application-design",
+      "product-design",
+      "design-systems",
+    ],
     visualMode: "studio",
     programs: [
       {
         id: "find-your-position",
         name: "Find Your Position",
-        capability: "brand",
+        capability: "studio",
         situation:
           "For organizations that need a clearer market position, message and point of view.",
         transformation:
@@ -78,7 +96,7 @@ export const capabilities: Capability[] = [
       {
         id: "build-the-identity",
         name: "Build the Identity",
-        capability: "brand",
+        capability: "studio",
         situation:
           "For new organizations or brands that need a complete visual and verbal system.",
         transformation:
@@ -93,7 +111,7 @@ export const capabilities: Capability[] = [
       {
         id: "refresh-the-brand",
         name: "Refresh the Brand",
-        capability: "brand",
+        capability: "studio",
         situation:
           "For established organizations whose identity no longer reflects their value.",
         transformation:
@@ -105,40 +123,10 @@ export const capabilities: Capability[] = [
           "Migration plan",
         ],
       },
-    ],
-  },
-  {
-    id: "product",
-    number: "02",
-    name: "Product",
-    shortDescription:
-      "Websites and digital products designed around real users, business goals and long-term operation.",
-    purpose: "Create digital platforms that make the brand useful.",
-    includes: [
-      "Website strategy",
-      "User experience",
-      "User-interface design",
-      "Website development",
-      "Web applications",
-      "Product design",
-      "Prototyping",
-      "Design systems",
-      "Content architecture",
-      "Performance and accessibility",
-    ],
-    relatedServices: [
-      "website-design",
-      "website-development",
-      "application-design",
-      "product-design",
-      "design-systems",
-    ],
-    visualMode: "studio",
-    programs: [
       {
         id: "launch-the-platform",
         name: "Launch the Platform",
-        capability: "product",
+        capability: "studio",
         situation:
           "For organizations that need a new high-quality website or digital service.",
         transformation:
@@ -154,7 +142,7 @@ export const capabilities: Capability[] = [
       {
         id: "improve-the-journey",
         name: "Improve the Journey",
-        capability: "product",
+        capability: "studio",
         situation:
           "For organizations losing customers through unclear, outdated or inefficient experiences.",
         transformation:
@@ -169,7 +157,7 @@ export const capabilities: Capability[] = [
       {
         id: "build-the-product",
         name: "Build the Product",
-        capability: "product",
+        capability: "studio",
         situation:
           "For portals, dashboards, applications and new digital-product ideas.",
         transformation:
@@ -186,15 +174,14 @@ export const capabilities: Capability[] = [
   },
   {
     id: "intelligence",
-    number: "03",
+    number: "02",
     name: "Intelligence",
     shortDescription:
-      "Applied intelligence, automation and custom systems that turn digital products into working infrastructure.",
+      "Applied AI, custom integrations, and self-hosted infrastructure that turn digital products into working systems.",
     purpose: "Build the systems behind the interface.",
     includes: [
       "Applied AI",
       "AI agents",
-      "Workflow automation",
       "Custom integrations",
       "Knowledge systems",
       "Self-hosted infrastructure",
@@ -204,21 +191,6 @@ export const capabilities: Capability[] = [
     relatedServices: [],
     visualMode: "intelligence",
     programs: [
-      {
-        id: "automate-the-work",
-        name: "Automate the Work",
-        capability: "intelligence",
-        situation:
-          "For repetitive processes, disconnected tools and manual operational tasks.",
-        transformation:
-          "Manual work moved into automated flows that run without supervision.",
-        outputs: [
-          "Process mapping",
-          "Automation build",
-          "Integration setup",
-          "Documentation and handover",
-        ],
-      },
       {
         id: "add-intelligence",
         name: "Add Intelligence",

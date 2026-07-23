@@ -14,8 +14,14 @@ import { socialLinks } from "@/config/social";
 
 const footerLinks = [
   { label: "Work", href: "/work" },
-  { label: "Studio", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+] as const;
+
+const parentLinks = [
+  { label: "Tangison", href: "https://tangison.com" },
+  { label: "Labs", href: "https://labs.tangison.com" },
 ] as const;
 
 const legalLinks = [
@@ -37,7 +43,7 @@ export function Footer() {
           <div className="flex flex-col gap-2">
             <StudioLogo size={28} wordmarkColor="light" />
             <p className="font-satoshi text-xs sm:text-sm text-skeleton-bone/50 max-w-xs">
-              We build the brand, the product and the intelligence behind it.
+              Brand, product, and the systems behind it. One studio instead of three vendors.
             </p>
           </div>
 
@@ -65,6 +71,17 @@ export function Footer() {
               >
                 {link.label}
               </Link>
+            ))}
+            {parentLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-satoshi text-sm text-skeleton-bone/40 hover:text-signal-teal transition-colors whitespace-nowrap"
+              >
+                {link.label}
+              </a>
             ))}
           </nav>
         </div>

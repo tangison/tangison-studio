@@ -70,7 +70,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Studio — Digital products built with clarity, character and purpose.",
+        alt: "Studio: Digital products built with clarity, character and purpose.",
       },
     ],
   },

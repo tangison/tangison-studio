@@ -22,7 +22,7 @@ export default function Page() {
             <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">The studio</p>
             <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-5">An independent practice within Tangison Technologies.</h1>
             <p className="font-satoshi text-lg leading-relaxed text-ink-muted max-w-2xl">
-              Studio is the digital product arm of Tangison Technologies. We operate independently, with our own working culture, but draw on the broader group's technical and strategic capacity when a project requires it.
+              Studio is the digital product arm of <a href="https://tangison.com" target="_blank" rel="noopener noreferrer" className="text-ink hover:text-signal-teal-text transition-colors underline">Tangison Technologies</a>. We operate independently, with our own working culture, but draw on the broader group's technical and strategic capacity when a project requires it.
             </p>
           </div>
         </section>
@@ -36,7 +36,7 @@ export default function Page() {
         <section className="py-12">
           <div className="mx-auto max-w-4xl px-6 space-y-6">
             <p className="font-satoshi text-base leading-relaxed text-ink-muted">
-              The relationship is straightforward: Studio leads on digital product design and development, while Tangison Technologies provides the wider engineering, infrastructure, and operational context. Clients work with Studio directly; the group connection is there when it is useful, not when it is not.
+              The relationship is straightforward: Studio leads on digital product design and development, while Tangison Technologies provides the wider engineering, infrastructure, and operational context. <a href="https://labs.tangison.com" target="_blank" rel="noopener noreferrer" className="text-ink hover:text-signal-teal-text transition-colors underline">Tangison Labs</a> handles the R&D, prototypes, and open-source tools. Clients work with Studio directly; the group connection is there when it is useful, not when it is not.
             </p>
             <p className="font-satoshi text-base leading-relaxed text-ink-muted">
               This structure lets us stay small and focused without being fragile. A two-person project team can pull in specialists from the wider group for a sprint, then return to its working rhythm without the overhead of a large agency.
@@ -48,7 +48,7 @@ export default function Page() {
         </section>
         <section className="py-16 md:py-24 bg-atlantic-black">
           <div className="mx-auto max-w-3xl px-6 text-center">
-            <p className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-3">A Tangison Technologies company</p>
+            <p className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-3">A <a href="https://tangison.com" target="_blank" rel="noopener noreferrer" className="text-signal-teal hover:text-signal-teal-text transition-colors">Tangison Technologies</a> company</p>
             <StudioButton href="/contact" variant="inverse" hasArrow arrowType="up-right">Start a project</StudioButton>
           </div>
         </section>

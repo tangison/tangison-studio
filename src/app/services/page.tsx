@@ -3,24 +3,24 @@ import Image from "next/image";
 import { capabilities } from "@/lib/capabilities";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
+import { ScrollReveal } from "@/components/studio/scroll-reveal";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Three capabilities: Brand, Product, Intelligence. Nine outcome-led programs. One studio instead of three vendors.",
+    "Studio and Intelligence. Seven outcome-led programs. One studio instead of three vendors.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Services | Studio",
-    description: "Three capabilities, nine programs, one studio.",
+    description: "Studio and Intelligence. Seven programs, one practice.",
     url: "/services",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }],
   },
 };
 
 const capabilityPaintings: Record<string, string> = {
-  brand: "/images/paintings/services-brand.webp",
-  product: "/images/paintings/services-product.webp",
+  studio: "/images/paintings/services-brand.webp",
   intelligence: "/images/paintings/services-intelligence.webp",
 };
 
@@ -28,18 +28,20 @@ export default function Page() {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Home", url: "/" }, { name: "Services", url: "/services" }]} />
-      <WebPageJsonLd title="Services" description="Three capabilities, nine programs, one studio." url="/services" />
+      <WebPageJsonLd title="Services" description="Studio and Intelligence. Seven programs, one practice." url="/services" />
       <SiteShell>
         {/* Header */}
         <section className="pt-12 md:pt-20 pb-8">
           <div className="mx-auto max-w-4xl px-6">
-            <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">What we do</p>
-            <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">
-              Three capabilities, one studio.
-            </h1>
-            <p className="font-satoshi text-lg text-ink-muted max-w-2xl">
-              We build the brand, the product and the intelligence behind it, one studio instead of three vendors.
-            </p>
+            <ScrollReveal slow>
+              <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">What we do</p>
+              <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">
+                Studio and Intelligence. One practice.
+              </h1>
+              <p className="font-satoshi text-lg text-ink-muted max-w-2xl">
+                Brand, product, and the systems behind it. One studio instead of three vendors.
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -49,7 +51,7 @@ export default function Page() {
             <div className="space-y-16">
               {capabilities.map((cap) => (
                 <article key={cap.id} id={cap.id} className="scroll-mt-24">
-                  <div className="grid md:grid-cols-[1fr_1.5fr] gap-8 mb-8">
+                  <div className="grid md:grid-cols-[1fr_1.5fr] gap-8 mb-10">
                     <div>
                       <div className="flex items-baseline gap-3 mb-3">
                         <span className="font-jetbrains text-sm text-signal-teal-text">{cap.number}</span>
@@ -71,7 +73,7 @@ export default function Page() {
                   </div>
 
                   {/* Programs */}
-                  <div className="grid md:grid-cols-3 gap-4">
+                  <div className={`grid ${cap.programs.length <= 2 ? "md:grid-cols-2" : "md:grid-cols-3"} gap-4`}>
                     {cap.programs.map((program) => (
                       <div key={program.id} className="p-6 rounded-[25px] border border-card-border bg-signal-white">
                         <h3 className="font-display font-bold text-ink text-lg mb-2">{program.name}</h3>
@@ -97,10 +99,10 @@ export default function Page() {
         <section className="py-16 md:py-24 bg-atlantic-black">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <h2 className="font-display font-bold text-skeleton-bone text-3xl md:text-4xl mb-4">
-              Not sure which capability fits?
+              Not sure where to start?
             </h2>
             <p className="font-satoshi text-lg text-skeleton-bone/70 mb-8">
-              Tell us what you are working on. We will help you find the right starting point.
+              Tell us what you are working on. We will figure out the right starting point together.
             </p>
             <StudioButton href="/contact" variant="inverse" hasArrow arrowType="up-right">
               Start a project

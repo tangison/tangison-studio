@@ -63,7 +63,7 @@
   --color-steel-shadow: #1C1E22;
   --color-deep-ocean: #16353D;
 
-  /* ── Type scale tokens (world-class typography hierarchy) ──── */
+  /* ── Type scale tokens (typography hierarchy) ──── */
   /* COLLINS principle: "Typography must have a clean, muscular voice" */
   --text-display: clamp(2.5rem, 6vw, 6rem);        /* Hero / key moments */
   --text-h1: clamp(2.2rem, 5vw, 4.5rem);           /* Page titles */

@@ -56,15 +56,15 @@ export default function Page() {
             <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-4">Typography</p>
             <div className="space-y-4">
               <div className="p-6 rounded-[25px] border border-card-border bg-signal-white">
-                <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-2">Display — Cabinet Grotesk</p>
+                <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-2">Display: Cabinet Grotesk</p>
                 <p className="font-display font-bold text-ink text-3xl">We build the brand.</p>
               </div>
               <div className="p-6 rounded-[25px] border border-card-border bg-signal-white">
-                <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-2">Body — Satoshi</p>
+                <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-2">Body: Satoshi</p>
                 <p className="font-satoshi text-base text-ink">Studio designs focused websites, applications and brand systems for ambitious organizations across Africa.</p>
               </div>
               <div className="p-6 rounded-[25px] border border-card-border bg-signal-white">
-                <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-2">Technical labels — JetBrains Mono</p>
+                <p className="font-jetbrains text-[9px] text-ink-muted uppercase tracking-[0.2em] mb-2">Technical labels: JetBrains Mono</p>
                 <p className="font-jetbrains text-sm text-ink">SELECTED WORK · WINDHOEK, NAMIBIA</p>
               </div>
             </div>

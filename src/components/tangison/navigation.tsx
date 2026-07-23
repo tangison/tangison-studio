@@ -82,9 +82,10 @@ const searchableItems: SearchItem[] = [
   { label: "Revive Auto Works", href: "/work/reviveautoworks", category: "Work", description: "Automotive — Website design" },
   { label: "MI-WAY", href: "/work/miway", category: "Work", description: "Website design and development" },
   // Capabilities
-  { label: "Brand", href: "/services#brand", category: "Capabilities", description: "Identity and systems" },
-  { label: "Product", href: "/services#product", category: "Capabilities", description: "Websites and applications" },
-  { label: "Intelligence", href: "/services#intelligence", category: "Capabilities", description: "Applied AI and automation" },
+  { label: "Studio", href: "/services#studio", category: "Capabilities", description: "Brand, product, and digital direction" },
+  { label: "Intelligence", href: "/services#intelligence", category: "Capabilities", description: "Applied AI and infrastructure" },
+  { label: "Tangison Labs", href: "https://labs.tangison.com", category: "Related", description: "R&D division, open-source tools, and prototypes" },
+  { label: "Tangison Technologies", href: "https://tangison.com", category: "Related", description: "Parent company" },
 ];
 
 /* ─── Two-Line Menu Toggle (morphs into X) ───────────────────── */
