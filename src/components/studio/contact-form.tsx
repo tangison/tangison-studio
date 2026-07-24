@@ -72,16 +72,16 @@ export function ContactForm() {
   const inputClass = "w-full px-4 py-3 rounded-[25px] bg-signal-white text-ink focus:outline-none focus:ring-2 focus:ring-signal-teal transition-shadow min-h-[48px]";
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="p-6 md:p-8 rounded-[25px] bg-signal-white space-y-5">
+    <form onSubmit={handleSubmit} noValidate className="p-6 md:p-8 rounded-[25px] bg-signal-white space-y-5" aria-live="polite">
       <div>
         <label htmlFor={`${id}-name`} className="block text-sm font-medium mb-1.5">Name *</label>
-        <input id={`${id}-name`} type="text" required maxLength={MAX.name} value={form.name} onChange={(e) => setForm(p => ({ ...p, name: e.target.value }))} aria-invalid={!!errors.name} className={inputClass} />
-        {errors.name && <p role="alert" className="mt-1.5 text-sm text-error">{errors.name}</p>}
+        <input id={`${id}-name`} type="text" required maxLength={MAX.name} value={form.name} onChange={(e) => setForm(p => ({ ...p, name: e.target.value }))} aria-invalid={!!errors.name} aria-errormessage={errors.name ? `${id}-name-error` : undefined} className={inputClass} />
+        {errors.name && <p id={`${id}-name-error`} role="alert" className="mt-1.5 text-sm text-error">{errors.name}</p>}
       </div>
       <div>
         <label htmlFor={`${id}-email`} className="block text-sm font-medium mb-1.5">Email *</label>
-        <input id={`${id}-email`} type="email" required maxLength={MAX.email} value={form.email} onChange={(e) => setForm(p => ({ ...p, email: e.target.value }))} aria-invalid={!!errors.email} className={inputClass} />
-        {errors.email && <p role="alert" className="mt-1.5 text-sm text-error">{errors.email}</p>}
+        <input id={`${id}-email`} type="email" required maxLength={MAX.email} value={form.email} onChange={(e) => setForm(p => ({ ...p, email: e.target.value }))} aria-invalid={!!errors.email} aria-errormessage={errors.email ? `${id}-email-error` : undefined} className={inputClass} />
+        {errors.email && <p id={`${id}-email-error`} role="alert" className="mt-1.5 text-sm text-error">{errors.email}</p>}
       </div>
       <div>
         <label htmlFor={`${id}-org`} className="block text-sm font-medium mb-1.5">Organization <span className="text-xs text-ink-muted">(optional)</span></label>
@@ -89,9 +89,9 @@ export function ContactForm() {
       </div>
       <div>
         <label htmlFor={`${id}-msg`} className="block text-sm font-medium mb-1.5">What are you working on? *</label>
-        <textarea id={`${id}-msg`} required rows={5} maxLength={MAX.message} value={form.message} onChange={(e) => setForm(p => ({ ...p, message: e.target.value }))} aria-invalid={!!errors.message} className={`${inputClass} resize-y`} />
+        <textarea id={`${id}-msg`} required rows={5} maxLength={MAX.message} value={form.message} onChange={(e) => setForm(p => ({ ...p, message: e.target.value }))} aria-invalid={!!errors.message} aria-errormessage={errors.message ? `${id}-msg-error` : undefined} className={`${inputClass} resize-y`} />
         <div className="mt-1.5 flex justify-between">
-          {errors.message ? <p role="alert" className="text-sm text-error">{errors.message}</p> : <span />}
+          {errors.message ? <p id={`${id}-msg-error`} role="alert" className="text-sm text-error">{errors.message}</p> : <span />}
           <p className="text-xs text-ink-muted">{form.message.length} / {MAX.message}</p>
         </div>
       </div>

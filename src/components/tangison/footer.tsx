@@ -36,13 +36,14 @@ export function Footer() {
       className="bg-atlantic-black text-skeleton-bone"
       role="contentinfo"
     >
+      <h2 className="sr-only">Site footer</h2>
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10">
         {/* Row 1 — logo + painting + links */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 items-center">
           {/* Left — logo + tagline */}
           <div className="flex flex-col gap-2">
             <StudioLogo size={28} wordmarkColor="light" />
-            <p className="font-satoshi text-xs sm:text-sm text-skeleton-bone/50 max-w-xs">
+            <p className="font-satoshi text-xs sm:text-sm text-skeleton-bone/70 max-w-xs">
               Brand, product, and the systems behind it. One studio instead of three vendors.
             </p>
           </div>
@@ -78,7 +79,7 @@ export function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-satoshi text-sm text-skeleton-bone/40 hover:text-signal-teal transition-colors whitespace-nowrap"
+                className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors whitespace-nowrap"
               >
                 {link.label}
               </a>

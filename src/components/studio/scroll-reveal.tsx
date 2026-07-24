@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeUp, fadeUpSlow, staggerContainer, staggerItem, delayedFadeUp, STUDIO_EASE, DURATION } from "@/lib/motion";
+import { fadeUp, fadeUpSlow, staggerContainer, staggerItem, STUDIO_EASE, DURATION } from "@/lib/motion";
 
 /**
  * ScrollReveal — wraps content in a Framer Motion whileInView animation.

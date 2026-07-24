@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
-import { ScrollReveal, FadeIn, StaggerReveal, StaggerItem, ScaleReveal, HoverLift, ParentBadge } from "@/components/studio/scroll-reveal";
+import { ScrollReveal, StaggerReveal, StaggerItem, ScaleReveal, ParentBadge } from "@/components/studio/scroll-reveal";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {

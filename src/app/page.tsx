@@ -303,7 +303,7 @@ export default function Page() {
           <div className="mx-auto max-w-6xl px-6">
             <ScrollReveal>
               <div className="mb-10">
-                <p className="font-jetbrains text-[10px] text-signal-teal uppercase tracking-[0.2em] mb-2">Process</p>
+                <p className="font-jetbrains text-[10px] text-signal-teal-text uppercase tracking-[0.2em] mb-2">Process</p>
                 <h2 id="process-heading" className="font-display font-bold text-skeleton-bone text-3xl md:text-4xl">
                   Five steps, one connecting line
                 </h2>
@@ -320,11 +320,11 @@ export default function Page() {
                         aria-hidden="true"
                       />
                     )}
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center font-jetbrains text-sm font-medium mb-4 bg-atlantic-black border border-signal-teal text-signal-teal relative z-10">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center font-jetbrains text-sm font-medium mb-4 bg-atlantic-black border border-signal-teal-text text-signal-teal-text relative z-10">
                       {step.num}
                     </div>
                     <h3 className="font-display font-bold text-skeleton-bone text-base mb-2">{step.name}</h3>
-                    <p className="font-satoshi text-xs leading-relaxed text-skeleton-bone/60">{step.desc}</p>
+                    <p className="font-satoshi text-xs leading-relaxed text-skeleton-bone/70">{step.desc}</p>
                   </div>
                 </StaggerItem>
               ))}

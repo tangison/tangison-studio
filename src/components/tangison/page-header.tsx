@@ -45,7 +45,7 @@ export function PageHeader({
           <Link
             href={backHref}
             className={`inline-flex items-center gap-2 font-jetbrains text-[10px] uppercase tracking-[0.25em] transition-colors duration-300 group ${
-              isDark ? "text-fog-gray/40 hover:text-fog-gray/70" : "text-ink-muted hover:text-ink"
+              isDark ? "text-fog-gray/70 hover:text-fog-gray" : "text-ink-muted hover:text-ink"
             }`}
           >
             <ArrowLeft className="w-3 h-3 transition-transform duration-300 group-hover:-translate-x-1" />
@@ -61,7 +61,7 @@ export function PageHeader({
         >
           <div className="w-2 h-2 bg-signal-teal" aria-hidden="true" />
           <span className={`font-jetbrains text-[10px] uppercase tracking-[0.3em] ${
-            isDark ? "text-fog-gray/50" : "text-ink-muted"
+            isDark ? "text-fog-gray/70" : "text-ink-muted"
           }`}>
             {label}
           </span>

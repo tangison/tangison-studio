@@ -3,7 +3,7 @@ import Image from "next/image";
 import { capabilities } from "@/lib/capabilities";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
-import { ScrollReveal, ScaleReveal, HoverLift, ParentBadge } from "@/components/studio/scroll-reveal";
+import { ScrollReveal, HoverLift, ParentBadge } from "@/components/studio/scroll-reveal";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {

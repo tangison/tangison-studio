@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
+import { SiteShell } from "@/components/tangison/site-shell";
+import { StudioButton } from "@/components/studio/button";
 
 export default function Error({
   error,
@@ -15,36 +16,31 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-skeleton-bone flex flex-col items-center justify-center px-6">
-      <div className="text-center max-w-lg">
-        <h1 className="font-cabinet text-3xl sm:text-4xl md:text-5xl text-ink tracking-tight mb-4">
-          Something went wrong
-        </h1>
-        <p className="font-satoshi text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-10">
-          An unexpected error occurred. Please try again.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={reset}
-            className="bg-signal-teal text-signal-white px-8 py-4 font-cabinet font-bold text-sm tracking-tight hover:opacity-90 hover:-translate-y-px transition-all duration-300"
-          >
-            Try again
-          </button>
-          <Link
-            href="/"
-            className="border border-signal-teal text-signal-teal px-8 py-4 font-cabinet font-bold text-sm tracking-tight hover:bg-ocean-mist transition-all duration-300"
-          >
-            Return home
-          </Link>
-        </div>
-
-        {error.digest && process.env.NODE_ENV === "development" && (
-          <div className="mt-12 font-jetbrains text-[9px] text-ink-muted/60 uppercase tracking-wider">
-            Error ID: {error.digest}
+    <SiteShell>
+      <section className="pt-20 pb-20">
+        <div className="mx-auto max-w-2xl px-6 text-center">
+          <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">Something went wrong.</h1>
+          <p className="font-satoshi text-lg text-ink-muted mb-8 max-w-md mx-auto">
+            An unexpected error occurred. You can try again or return to the home page.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={reset}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-[25px] bg-atlantic-black text-skeleton-bone font-satoshi font-medium text-sm min-h-[50px] transition-all active:scale-[0.98]"
+            >
+              Try again
+            </button>
+            <StudioButton href="/" variant="secondary" hasArrow arrowType="right">
+              Return home
+            </StudioButton>
           </div>
-        )}
-      </div>
-    </div>
+          {error.digest && process.env.NODE_ENV === "development" && (
+            <p className="mt-8 font-jetbrains text-[9px] text-ink-muted uppercase tracking-wider">
+              Error ID: {error.digest}
+            </p>
+          )}
+        </div>
+      </section>
+    </SiteShell>
   );
 }

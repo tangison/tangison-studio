@@ -6,7 +6,7 @@ import { caseStudies } from "@/lib/case-studies";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
-import { HoverLift, ParentBadge, ScaleReveal } from "@/components/studio/scroll-reveal";
+import { HoverLift, ParentBadge } from "@/components/studio/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Work",

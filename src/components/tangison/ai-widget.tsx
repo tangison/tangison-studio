@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowUp, Mic, MicOff, Volume2, Copy, Check, RotateCcw, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useFocusTrap } from "@/lib/use-focus-trap";
 
 /* ─── Types ─── */
 interface Message {
@@ -162,12 +163,12 @@ function CopyButton({ text }: { text: string }) {
       aria-label={copied ? "Copied" : "Copy to clipboard"}
     >
       {copied ? (
-        <Check className="w-3 h-3 text-signal-teal" />
+        <Check className="w-3 h-3 text-signal-teal-text" />
       ) : (
-        <Copy className="w-3 h-3 text-fog-gray/60" />
+        <Copy className="w-3 h-3 text-fog-gray/70" />
       )}
       <span
-        className={`font-jetbrains text-[9px] tracking-[0.08em] ${copied ? "text-signal-teal" : "text-fog-gray/60"}`}
+        className={`font-jetbrains text-[9px] tracking-[0.08em] ${copied ? "text-signal-teal-text" : "text-fog-gray/70"}`}
       >
         {copied ? "COPIED" : "COPY"}
       </span>
@@ -184,17 +185,17 @@ function ArtifactCard({ artifact }: { artifact: ArtifactData }) {
       >
         <div className="px-3 py-2 border-b border-skeleton-bone/[0.06] flex items-center gap-2">
           <div className="w-1.5 h-1.5 bg-signal-teal" />
-          <span className="font-jetbrains text-[9px] text-fog-gray/60 uppercase tracking-[0.15em]">
+          <span className="font-jetbrains text-[9px] text-fog-gray/70 uppercase tracking-[0.15em]">
             {artifact.title}
           </span>
         </div>
         <div className="divide-y divide-skeleton-bone/[0.04]">
           {artifact.items.map((item, i) => (
             <div key={i} className="px-3 py-2 flex gap-2">
-              <span className="font-jetbrains text-[11px] text-signal-teal shrink-0 mt-0.5">+</span>
+              <span className="font-jetbrains text-[11px] text-signal-teal-text shrink-0 mt-0.5">+</span>
               <div>
                 <span className="font-satoshi text-[12px] text-skeleton-bone font-medium">{item.label}</span>
-                <span className="block font-satoshi text-[11px] text-fog-gray/50 leading-snug">{item.desc}</span>
+                <span className="block font-satoshi text-[11px] text-fog-gray/70 leading-snug">{item.desc}</span>
               </div>
             </div>
           ))}
@@ -210,17 +211,17 @@ function ArtifactCard({ artifact }: { artifact: ArtifactData }) {
       >
         <div className="px-3 py-2 border-b border-skeleton-bone/[0.06] flex items-center gap-2">
           <div className="w-1.5 h-1.5 bg-signal-teal" />
-          <span className="font-jetbrains text-[9px] text-fog-gray/60 uppercase tracking-[0.15em]">
+          <span className="font-jetbrains text-[9px] text-fog-gray/70 uppercase tracking-[0.15em]">
             {artifact.title}
           </span>
         </div>
         <div className="divide-y divide-skeleton-bone/[0.04]">
           {artifact.steps.map((step) => (
             <div key={step.num} className="px-3 py-2 flex gap-3 items-start">
-              <span className="font-jetbrains text-[11px] text-signal-teal/70 shrink-0 w-5 text-right">{String(step.num).padStart(2, "0")}</span>
+              <span className="font-jetbrains text-[11px] text-signal-teal-text shrink-0 w-5 text-right">{String(step.num).padStart(2, "0")}</span>
               <div>
                 <span className="font-satoshi text-[12px] text-skeleton-bone font-medium">{step.label}</span>
-                <span className="block font-satoshi text-[11px] text-fog-gray/50 leading-snug">{step.desc}</span>
+                <span className="block font-satoshi text-[11px] text-fog-gray/70 leading-snug">{step.desc}</span>
               </div>
             </div>
           ))}
@@ -236,14 +237,14 @@ function ArtifactCard({ artifact }: { artifact: ArtifactData }) {
       >
         <div className="px-3 py-2 border-b border-skeleton-bone/[0.06] flex items-center gap-2">
           <div className="w-1.5 h-1.5 bg-signal-teal" />
-          <span className="font-jetbrains text-[9px] text-fog-gray/60 uppercase tracking-[0.15em]">
+          <span className="font-jetbrains text-[9px] text-fog-gray/70 uppercase tracking-[0.15em]">
             {artifact.title}
           </span>
         </div>
         <div className="divide-y divide-skeleton-bone/[0.04]">
           {artifact.rows.map((row, i) => (
             <div key={i} className="px-3 py-2 grid grid-cols-3 gap-2 text-[11px]">
-              <span className="font-jetbrains text-fog-gray/50 uppercase tracking-wider">{row.label}</span>
+              <span className="font-jetbrains text-fog-gray/70 uppercase tracking-wider">{row.label}</span>
               <span className="font-satoshi text-skeleton-bone/70">{row.a}</span>
               <span className="font-satoshi text-skeleton-bone/70">{row.b}</span>
             </div>
@@ -260,7 +261,7 @@ function ArtifactCard({ artifact }: { artifact: ArtifactData }) {
       >
         <div className="px-3 py-2 border-b border-skeleton-bone/[0.06] flex items-center gap-2">
           <div className="w-1.5 h-1.5 bg-signal-teal" />
-          <span className="font-jetbrains text-[9px] text-fog-gray/60 uppercase tracking-[0.15em]">
+          <span className="font-jetbrains text-[9px] text-fog-gray/70 uppercase tracking-[0.15em]">
             {artifact.title}
           </span>
         </div>
@@ -272,7 +273,7 @@ function ArtifactCard({ artifact }: { artifact: ArtifactData }) {
               className="px-3 py-2 flex items-center justify-between hover:bg-skeleton-bone/[0.03] transition-colors"
             >
               <span className="font-satoshi text-[12px] text-skeleton-bone/80">{link.label}</span>
-              <ExternalLink className="w-3 h-3 text-fog-gray/30" />
+              <ExternalLink className="w-3 h-3 text-fog-gray/70" />
             </Link>
           ))}
         </div>
@@ -313,6 +314,8 @@ export function TangisonAIWidget() {
   const recognitionRef = useRef<any>(null);
   const synthRef = useRef<SpeechSynthesis | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const trapRef = useFocusTrap(isOpen, triggerRef);
 
   // Mounted state
   const mounted = useSyncExternalStore(
@@ -684,7 +687,7 @@ export function TangisonAIWidget() {
         </AnimatePresence>
 
         {!isOpen && (
-          <span className="absolute right-full mr-3 whitespace-nowrap font-jetbrains text-[10px] text-fog-gray/60 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <span className="absolute right-full mr-3 whitespace-nowrap font-jetbrains text-[10px] text-fog-gray/70 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             Tangison Studio
           </span>
         )}
@@ -702,6 +705,7 @@ export function TangisonAIWidget() {
       <AnimatePresence>
         {showNotification && (
           <motion.div
+            ref={triggerRef}
             initial={{ opacity: 0, x: 8 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 8 }}
@@ -725,7 +729,11 @@ export function TangisonAIWidget() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            ref={panelRef}
+            ref={(el) => {
+              // Merge refs: panelRef for scroll logic + trapRef for focus trap
+              (panelRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
+              (trapRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
+            }}
             initial={{ opacity: 0, y: 16, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.97 }}
@@ -745,7 +753,7 @@ export function TangisonAIWidget() {
                 <div className="font-jetbrains text-[11px] tracking-[0.14em] text-skeleton-bone font-medium">
                   TANGISON STUDIO
                 </div>
-                <div className="font-jetbrains text-[9px] text-fog-gray/50 tracking-[0.1em] mt-0.5">
+                <div className="font-jetbrains text-[9px] text-fog-gray/70 tracking-[0.1em] mt-0.5">
                   Creative Agency. Ask us anything.
                 </div>
               </div>
@@ -757,7 +765,7 @@ export function TangisonAIWidget() {
                     <div className="w-[7px] h-[7px] bg-signal-teal absolute" />
                     <div className="absolute inset-0 w-[7px] h-[7px] bg-signal-teal animate-[pulse-ring_2s_ease-out_infinite]" />
                   </div>
-                  <span className="font-jetbrains text-[9px] text-signal-teal tracking-[0.1em]">
+                  <span className="font-jetbrains text-[9px] text-signal-teal-text tracking-[0.1em]">
                     LIVE
                   </span>
                 </div>
@@ -765,7 +773,7 @@ export function TangisonAIWidget() {
                 {/* Clear button */}
                 <button
                   onClick={clearConversation}
-                  className="p-1 text-fog-gray/50 hover:text-fog-gray/80 transition-colors"
+                  className="p-1 text-fog-gray/70 hover:text-fog-gray/80 transition-colors"
                   title="Clear conversation"
                   aria-label="Clear conversation"
                 >
@@ -790,7 +798,7 @@ export function TangisonAIWidget() {
 
                 <button
                   onClick={closePanel}
-                  className="text-fog-gray/30 hover:text-fog-gray transition-colors p-1"
+                  className="text-fog-gray/70 hover:text-fog-gray transition-colors p-1"
                   aria-label="Close chat"
                 >
                   <X className="w-3.5 h-3.5" />
@@ -816,7 +824,7 @@ export function TangisonAIWidget() {
                       state={voiceState === "speaking" || voiceState === "listening" ? voiceState : "idle"}
                       bars={7}
                     />
-                    <span className="font-jetbrains text-[10px] text-signal-teal tracking-[0.1em]">
+                    <span className="font-jetbrains text-[10px] text-signal-teal-text tracking-[0.1em]">
                       {voiceState === "listening"
                         ? "LISTENING..."
                         : voiceState === "speaking"
@@ -852,7 +860,7 @@ export function TangisonAIWidget() {
                   ) : (
                     /* Bot Bubble */
                     <div className="self-start max-w-[95%] group/bot">
-                      <div className="font-jetbrains text-[9px] text-signal-teal/70 tracking-[0.12em] pl-3 mb-1">
+                      <div className="font-jetbrains text-[9px] text-signal-teal-text tracking-[0.12em] pl-3 mb-1">
                         TANGISON STUDIO
                       </div>
                       <div
@@ -872,8 +880,8 @@ export function TangisonAIWidget() {
                           className="flex items-center gap-1.5 pl-3 opacity-0 group-hover/bot:opacity-60 hover:!opacity-100 transition-opacity"
                           aria-label="Read aloud"
                         >
-                          <Volume2 className="w-3 h-3 text-fog-gray/60" />
-                          <span className="font-jetbrains text-[9px] text-fog-gray/60 tracking-[0.08em]">
+                          <Volume2 className="w-3 h-3 text-fog-gray/70" />
+                          <span className="font-jetbrains text-[9px] text-fog-gray/70 tracking-[0.08em]">
                             {voiceMode ? "REPLAY" : "READ"}
                           </span>
                         </button>
@@ -901,7 +909,7 @@ export function TangisonAIWidget() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3, delay: i * 0.06 }}
                         onClick={() => handlePromptClick(prompt)}
-                        className="text-left font-jetbrains text-[12px] text-fog-gray/50 px-3 py-2 transition-all duration-300 hover:text-skeleton-bone hover:bg-skeleton-bone/[0.03] hover:border-signal-teal/30 bg-transparent border border-skeleton-bone/[0.08]"
+                        className="text-left font-jetbrains text-[12px] text-fog-gray/70 px-3 py-2 transition-all duration-300 hover:text-skeleton-bone hover:bg-skeleton-bone/[0.03] hover:border-signal-teal/30 bg-transparent border border-skeleton-bone/[0.08]"
                       >
                         {prompt}
                       </motion.button>
@@ -936,7 +944,7 @@ export function TangisonAIWidget() {
               {!voiceMode && voiceState !== "idle" && (
                 <div className="flex items-center justify-center gap-2 py-2">
                   <WaveformVisualizer state={voiceState} />
-                  <span className="font-jetbrains text-[9px] text-fog-gray/60 uppercase tracking-wider">
+                  <span className="font-jetbrains text-[9px] text-fog-gray/70 uppercase tracking-wider">
                     {voiceState === "listening"
                       ? "Listening..."
                       : voiceState === "processing"
@@ -951,7 +959,7 @@ export function TangisonAIWidget() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="self-end max-w-[85%] px-3.5 py-2 text-[13px] text-fog-gray/60 italic font-satoshi bg-steel-shadow border-l-2 border-signal-teal/20"
+                  className="self-end max-w-[85%] px-3.5 py-2 text-[13px] text-fog-gray/70 italic font-satoshi bg-steel-shadow border-l-2 border-signal-teal/20"
                 >
                   {transcript}
                   <span className="animate-[blink_1s_infinite] ml-0.5">|</span>
@@ -976,7 +984,7 @@ export function TangisonAIWidget() {
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder="Ask anything..."
-                    className="flex-1 bg-transparent px-3 py-2.5 text-[13px] font-satoshi text-skeleton-bone placeholder:text-fog-gray/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1"
+                    className="flex-1 bg-transparent px-3 py-2.5 text-[13px] font-satoshi text-skeleton-bone placeholder:text-fog-gray/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-teal focus-visible:ring-offset-1"
                     disabled={isLoading || voiceState === "listening"}
                     aria-label="Chat message input"
                   />
@@ -997,7 +1005,7 @@ export function TangisonAIWidget() {
                         <button
                           type="button"
                           onClick={startListening}
-                          className="p-2.5 text-fog-gray/60 hover:text-fog-gray/70 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center border border-skeleton-bone/[0.08]"
+                          className="p-2.5 text-fog-gray/70 hover:text-fog-gray/70 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center border border-skeleton-bone/[0.08]"
                           disabled={isLoading}
                           aria-label="Voice input"
                         >
@@ -1027,10 +1035,10 @@ export function TangisonAIWidget() {
             <div
               className="flex items-center justify-between px-4 py-1.5 shrink-0 bg-terminal-black border-t border-skeleton-bone/[0.04]"
             >
-              <span className="font-jetbrains text-[9px] text-fog-gray/50 tracking-[0.1em]">
+              <span className="font-jetbrains text-[9px] text-fog-gray/70 tracking-[0.1em]">
                 TANGISON STUDIO
               </span>
-              <span className="font-jetbrains text-[9px] text-fog-gray/50 tracking-[0.06em]">
+              <span className="font-jetbrains text-[9px] text-fog-gray/70 tracking-[0.06em]">
                 {voiceMode ? "VOICE" : "TEXT"}
               </span>
             </div>

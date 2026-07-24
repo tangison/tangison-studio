@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, ArrowRight, ArrowUpRight } from "lucide-react";
 import { StudioLogo } from "@/components/studio/studio-logo";
+import { useFocusTrap } from "@/lib/use-focus-trap";
 
 /* ─── Navigation Data (only existing routes) ─────────────────── */
 
@@ -115,6 +116,7 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
+  const trapRef = useFocusTrap(true);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -168,6 +170,7 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
     >
       <div className="absolute inset-0 bg-atlantic-black/60 backdrop-blur-sm" onClick={onClose} />
       <motion.div
+        ref={trapRef}
         initial={{ opacity: 0, y: -20, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -20, scale: 0.98 }}
@@ -187,7 +190,11 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
             }}
             placeholder="Search work, capabilities, pages..."
             className="flex-1 bg-transparent font-satoshi text-lg text-ink placeholder:text-ink-muted/50 focus:outline-none"
+            role="combobox"
             aria-label="Search"
+            aria-expanded="true"
+            aria-controls="search-results-listbox"
+            aria-activedescendant={flatResults[selectedIndex] ? `search-result-${selectedIndex}` : undefined}
           />
           <kbd className="font-jetbrains text-[9px] text-ink-muted border border-card-border px-2 py-1 rounded">
             ESC
@@ -195,9 +202,9 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
         </div>
 
         {/* Results */}
-        <div ref={resultsRef} className="max-h-[50vh] overflow-y-auto p-2">
+        <div ref={resultsRef} id="search-results-listbox" role="listbox" className="max-h-[50vh] overflow-y-auto p-2">
           {flatResults.length === 0 ? (
-            <p className="px-4 py-8 text-center text-sm text-ink-muted">
+            <p className="px-4 py-8 text-center text-sm text-ink-muted" role="status">
               No results for &ldquo;{query}&rdquo;
             </p>
           ) : (
@@ -213,6 +220,9 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
                     <Link
                       key={item.href}
                       href={item.href}
+                      id={`search-result-${idx}`}
+                      role="option"
+                      aria-selected={isSelected}
                       onClick={onClose}
                       className={`flex items-center justify-between px-4 py-3 rounded-[25px] transition-colors ${
                         isSelected ? "bg-ocean-mist" : "hover:bg-ocean-mist/50"
@@ -239,7 +249,9 @@ function SearchOverlay({ onClose }: { onClose: () => void }) {
 
 /* ─── Expanded Editorial Menu Overlay ────────────────────────── */
 
-function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: string }) {
+function ExpandedMenu({ onClose, pathname, triggerRef }: { onClose: () => void; pathname: string; triggerRef: React.RefObject<HTMLElement | null> }) {
+  const trapRef = useFocusTrap(true, triggerRef);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -251,6 +263,7 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
       <div className="absolute inset-0 bg-atlantic-black/80 backdrop-blur-md" onClick={onClose} />
 
       <motion.div
+        ref={trapRef}
         initial={{ x: "100%" }}
         animate={{ x: 0 }}
         exit={{ x: "100%" }}
@@ -331,7 +344,7 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
                   transition={{ duration: 0.5, delay: 0.15 + gi * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   className="mb-6 md:mb-8 last:mb-0"
                 >
-                  <p className="font-jetbrains text-[9px] md:text-[9px] text-signal-teal uppercase tracking-[0.2em] md:tracking-[0.3em] mb-3 md:mb-4">
+                  <p className="font-jetbrains text-[9px] md:text-[9px] text-signal-teal-text uppercase tracking-[0.2em] md:tracking-[0.3em] mb-3 md:mb-4">
                     {group.title}
                   </p>
                   <ul className="space-y-1 md:space-y-2">
@@ -345,7 +358,7 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
                             href={link.href}
                             onClick={onClose}
                             className={`group inline-flex items-center gap-2 font-display text-lg md:text-2xl font-bold tracking-tight transition-colors min-h-[44px] ${
-                              isActive ? "text-signal-teal" : "text-skeleton-bone hover:text-signal-teal"
+                              isActive ? "text-signal-teal-text" : "text-skeleton-bone hover:text-signal-teal-text"
                             }`}
                           >
                             {link.label}
@@ -362,10 +375,10 @@ function ExpandedMenu({ onClose, pathname }: { onClose: () => void; pathname: st
 
           {/* Bottom — social (mobile-optimized) */}
           <div className="flex flex-wrap items-center gap-4 sm:gap-6 px-4 sm:px-6 md:px-12 py-4 md:py-6 border-t border-white/5">
-            <a href="https://www.facebook.com/namibia.digital" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Facebook</a>
-            <a href="https://www.instagram.com/tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Instagram</a>
-            <a href="https://www.threads.net/@tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal transition-colors">Threads</a>
-            <span className="ml-auto font-jetbrains text-[9px] text-skeleton-bone/60 uppercase tracking-[0.15em] md:tracking-[0.2em]">Windhoek, Namibia</span>
+            <a href="https://www.facebook.com/namibia.digital" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal-text transition-colors">Facebook</a>
+            <a href="https://www.instagram.com/tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal-text transition-colors">Instagram</a>
+            <a href="https://www.threads.net/@tangison_studio" target="_blank" rel="noopener noreferrer" className="font-satoshi text-sm text-skeleton-bone/70 hover:text-signal-teal-text transition-colors">Threads</a>
+            <span className="ml-auto font-jetbrains text-[9px] text-skeleton-bone/70 uppercase tracking-[0.15em] md:tracking-[0.2em]">Windhoek, Namibia</span>
           </div>
         </div>
       </motion.div>
@@ -518,7 +531,7 @@ export function Navigation() {
       {/* Expanded Editorial Menu */}
       <AnimatePresence>
         {isMenuOpen && (
-          <ExpandedMenu onClose={() => setIsMenuOpen(false)} pathname={pathname} />
+          <ExpandedMenu onClose={() => setIsMenuOpen(false)} pathname={pathname} triggerRef={menuTriggerRef} />
         )}
       </AnimatePresence>
     </>
