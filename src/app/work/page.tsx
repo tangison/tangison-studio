@@ -33,6 +33,8 @@ const projectPaintings: Record<string, string> = {
   lrclearing: "/images/paintings/projects/lrclearing.webp",
   reviveautoworks: "/images/paintings/projects/reviveautoworks.webp",
   miway: "/images/paintings/projects/miway.webp",
+  dieselman: "/images/paintings/projects/dieselman.webp",
+  enchanted: "/images/paintings/projects/enchanted.webp",
 };
 
 export default function Page() {

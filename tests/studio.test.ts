@@ -67,8 +67,8 @@ describe("Capabilities (3 groups, 9 programs)", () => {
 });
 
 describe("Case studies", () => {
-  it("has 11 case studies", () => {
-    expect(caseStudies).toHaveLength(11);
+  it("has 13 case studies", () => {
+    expect(caseStudies).toHaveLength(13);
   });
 
   it("includes the 3 priority projects", () => {
@@ -76,6 +76,12 @@ describe("Case studies", () => {
     expect(slugs).toContain("proavia");
     expect(slugs).toContain("nalago");
     expect(slugs).toContain("clusterleaf");
+  });
+
+  it("includes the Dieselman and Enchanted case studies added in August 2026", () => {
+    const slugs = caseStudies.map((c) => c.slug);
+    expect(slugs).toContain("dieselman");
+    expect(slugs).toContain("enchanted");
   });
 
   it("each case study has a URL", () => {

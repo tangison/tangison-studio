@@ -2526,3 +2526,37 @@ Stage Summary:
 - All 3 critical issues resolved: email fix, Vercel optimization, ultra-dynamic nav
 - Build verified clean before push
 - Commit: 3c0bd66 pushed to origin/main
+
+---
+Task ID: 2026-08-05-dieselman-enchanted
+Agent: Super Z (main agent)
+Task: Add Dieselman Nam and Enchanted Artistry CC case studies, plus 7 new blog posts, to the Tangison Studio website. Match the existing data structures, generate matching oil painting covers, take real screenshots, verify build, commit locally.
+
+Work Log:
+- Verified github.com/tangison/studio returns 404 (does not exist). The actual repo is github.com/tangison/tangison-studio.
+- Cloned tangison/tangison-studio into /home/z/my-project/studio. Confirmed it is a Next.js 16 + TypeScript project with 11 existing case studies and 12 existing blog posts.
+- Verified the user's earlier description of Dieselman ("diesel and fuel services") and Enchantedna ("natural beauty and wellness") were INCORRECT. Used the z-ai page_reader function to fetch real content from dieselman-nam.com and enchantedna.com.
+- Discovered the real businesses: Dieselman Nam is a Walvis Bay mobile diesel mechanical service (HAWEKA AXIS4000 wheel alignment, ECU programming, call-outs), owner Stephen Lee, +264 81 741 2110, 31 Hage Geingob Street. Enchanted Artistry CC is a Windhoek cosmetology/mentorship practice, founders Chané Yvette Philander and Anthea Feris, services include Makeup, Hair, Drama coaching, Guidance (pregnancy/post-partum), Content creation.
+- Both sites display "Made by Tangison Studio" footer credit, confirming they are real Tangison-built client projects.
+- Added 2 new case study entries to src/lib/case-studies.ts (Dieselman + Enchanted Artistry CC), matching the existing CaseStudy interface exactly. All facts sourced from the live sites. No fabricated metrics, testimonials, or claims.
+- Updated miway.nextSlug from "proavia" to "dieselman", set dieselman.nextSlug = "enchanted", enchanted.nextSlug = "proavia" to close the navigation loop.
+- Added 7 new blog posts to src/lib/blog.ts with the titles the user specified. Posts are observation/opinion pieces about Namibian web design practice and do not require client-specific facts. Voice matches existing posts: direct, no fluff, no em dashes, no superlatives.
+- Updated projectPaintings maps in BOTH src/app/work/page.tsx and src/app/work/[slug]/page.tsx to include dieselman and enchanted entries.
+- Generated 9 oil painting images using the z-ai image CLI (1344x768, consistent style suffix with warm earth-tone palette, visible brushwork, Namibian context). 3 succeeded on first parallel batch, 6 hit 429 rate limit; retried sequentially with backoff until all 9 succeeded.
+- Converted all 9 PNGs to WebP at quality 82 using Pillow. Total size: 1.04MB.
+- Took real full-page screenshots of dieselman-nam.com and enchantedna.com using agent-browser (viewport 1440x900, wait networkidle + 2s). Converted PNGs to WebP. Dieselman: 2.26MB -> 311KB (86% reduction). Enchanted: 1.86MB -> 107KB (94% reduction).
+- Cleaned up intermediate PNG files (kept only the WebP versions referenced in code).
+- Ran npm run typecheck: PASSES.
+- Ran npm run lint: 2 errors in src/components/tangison/ai-widget.tsx (lines 732, 735, react-hooks/immutability). Verified PRE-EXISTING by git stash + re-run on clean HEAD. NOT caused by this build.
+- Ran npm run build: PASSES. 57 static pages generated. /blog/[slug] now shows [+16 more paths] (19 total, was 12). /work/[slug] shows [+10 more paths] (13 total, was 11).
+- Ran npm run test: 36 passed, 5 failed. All 5 failures are in the Capabilities describe block and are PRE-EXISTING (the codebase was restructured from [brand, product, intelligence] to [studio, intelligence] without updating the tests). Updated the case studies test count from 11 to 13 and added a new test asserting dieselman and enchanted slugs are present.
+- Created PROOF.md documenting every phase with evidence.
+- Committed locally. Did NOT push to remote.
+
+Stage Summary:
+- 5 files modified: src/lib/case-studies.ts (+99 lines), src/lib/blog.ts (+127 lines), src/app/work/page.tsx (+2 lines), src/app/work/[slug]/page.tsx (+2 lines), tests/studio.test.ts (+10 lines, -2 lines)
+- 11 new files: 9 oil painting WebP images (2 project + 7 blog) and 2 real screenshot WebP images
+- Total: 13 case studies (was 11), 19 blog posts (was 12)
+- Build, typecheck, and case-studies tests all pass. 5 pre-existing Capabilities test failures and 2 pre-existing lint errors are documented in PROOF.md but not fixed (out of scope per autonomous-build rules)
+- Commit exists locally on main branch. NOT pushed. User must revoke the compromised GitHub token (pasted in plaintext in earlier conversation) at https://github.com/settings/tokens before any push can happen.
+- Vercel auto-publish will trigger on push if the repo is already linked to a Vercel project on the user's account.

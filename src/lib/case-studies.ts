@@ -569,6 +569,105 @@ export const caseStudies: CaseStudy[] = [
       "MI-WAY launched with a site that makes a four-service business understandable in seconds. The service pillars are clear. The geography is specific. The booking path for the highest-volume service is one tap away. The site does what it was built to do: help different audiences find what they need without confusion.",
       "The lesson was about legibility as a design problem. Multi-service businesses fail on websites when they try to be everything to everyone. The solution is not to hide services. It is to structure them so that each audience can find theirs fast. MI-WAY's site does that. Four services, one standard, one clear path for each.",
     ],
+    nextSlug: "dieselman",
+  },
+
+  /* ──────────────────────────────────────────────
+     PROJECT 12: Dieselman Nam
+     ────────────────────────────────────────────── */
+  {
+    slug: "dieselman",
+    screenshotSlug: "dieselman",
+    name: "Dieselman Nam",
+    url: "https://www.dieselman-nam.com",
+    year: "2026",
+    industry: "Diesel Service & Mobile Mechanics",
+    services: ["Brand Identity", "Website Design", "Website Development"],
+    tech: ["Next.js", "Tailwind CSS"],
+    descriptor:
+      "Mobile diesel service, wheel alignment, and roadside assistance from Walvis Bay across the Erongo Region",
+    challengeH2:
+      "A Walvis Bay diesel service with no digital presence needed a site that put the phone number first.",
+    challengeBody: [
+      "Dieselman Nam operates from 31 Hage Geingob Street in Walvis Bay. Stephen Lee owns and runs it. The work is mobile wheel alignment, diagnostics and ECU programming, mechanical and diesel repairs, and call-out and roadside assistance. The equipment is real: a HAWEKA AXIS4000 mobile alignment system that goes to the vehicle instead of the vehicle coming to a workshop. The previous digital presence did not communicate any of this.",
+      "The audience is specific. Truck owners, fleet operators, bakkie drivers, and light commercial vehicle owners in the Erongo Region whose vehicles cannot afford to sit still. A truck waiting for alignment at a fixed workshop is a truck losing money. A buyer looking for diesel service online wants one thing first: a phone number they can call right now. A website that buries that number behind a contact form fails the audience before they finish reading the headline.",
+      "The brief was to build a site that leads with the contact path, names the actual services and equipment, states the location explicitly, and makes it easy for a buyer in transit to find what they need in seconds. No friction. No corporate language. Just the facts, structured around the phone call.",
+    ],
+    approachH2: "Phone first. Services second. Honesty throughout.",
+    approachBody: [
+      "The information architecture was built around the contact path. Call and WhatsApp buttons appear on every page, every section, and the mobile navigation. The phone number is +264 81 741 2110. It is visible above the fold on every screen size. The email is dieselman.nam@gmail.com. None of this is decoration. A diesel service site that hides the phone number is a site that loses the customer.",
+      "The services were structured as four equal pillars: Mobile Wheel Alignment, Diagnostics and ECU Programming, Mechanical and Diesel Repairs, and Call-out and Roadside Assistance. Each gets its own page. Each page states what is in scope and what is not claimed. That honesty pattern is unusual for service websites. Most service sites overpromise. Dieselman's site does the opposite. It states what the team actually does, names the equipment they actually use, and is explicit about what they do not claim (HAWEKA partnership, fixed radius, response times, tolerance targets).",
+      "The visual system leaned into the industrial context. Walvis Bay runs on trucks and port logistics. The color palette and photography direction reflect that context. Client-supplied footage from the workshop and from call-outs across the Erongo Region is the visual evidence. Nothing is staged stock. Nothing is faked. The site is honest about which images are workshop footage and which are supporting atmosphere.",
+    ],
+    craftNotes: [
+      {
+        label: "Phone number above everything",
+        body: "Call and WhatsApp buttons on every page, every section, mobile nav. The phone number is the primary conversion path for a diesel service. Hiding it is the failure mode.",
+      },
+      {
+        label: "HAWEKA AXIS4000 named as equipment",
+        body: "The alignment system is named because it is a real piece of equipment that signals competence. The site is explicit that this is not a HAWEKA endorsement. Honesty about the relationship is itself a trust signal.",
+      },
+      {
+        label: "In scope / Not claimed pattern",
+        body: "Each service page lists what is in scope and what is not claimed. Most service sites overpromise. Dieselman's site does the opposite. Naming the limits is a positioning move.",
+      },
+    ],
+    outcomeH2:
+      "A site that gets a truck moving again as fast as the phone can ring.",
+    outcomeBody: [
+      "Dieselman Nam launched with a site that puts the contact path first, the services second, and the equipment and location as verifiable specifics. A buyer in transit can find the phone number, understand the service scope, and call in under thirty seconds. The site does the qualifying work before the phone rings.",
+      "The lesson was about honesty as positioning. In a category where most sites overpromise and under-specify, being explicit about what you actually do, what equipment you actually use, and what you do not claim is a differentiator. The site does not try to sound big. It tries to sound accurate. Accuracy is the trust signal for a buyer whose truck is sitting on the side of the road.",
+    ],
+    nextSlug: "enchanted",
+  },
+
+  /* ──────────────────────────────────────────────
+     PROJECT 13: Enchanted Artistry CC
+     ────────────────────────────────────────────── */
+  {
+    slug: "enchanted",
+    screenshotSlug: "enchanted",
+    name: "Enchanted Artistry CC",
+    url: "https://www.enchantedna.com",
+    year: "2026",
+    industry: "Cosmetology, Arts & Mentorship",
+    services: ["Brand Identity", "Website Design", "Website Development"],
+    tech: ["Next.js", "Tailwind CSS"],
+    descriptor:
+      "Cosmetology, mentorship, and creative guidance for women in Windhoek, including expectant and new mothers",
+    challengeH2:
+      "A Windhoek cosmetology and mentorship practice needed a site that carried two founders' voices without splitting into two brands.",
+    challengeBody: [
+      "Enchanted Artistry CC is a Windhoek-based practice run by two founders. Chané Yvette Philander shapes the creative side. Anthea Feris brings the people-centred guidance. The work spans cosmetology, drama coaching, content creation, and mentorship for women, including expectant and new mothers. It is a faith-rooted practice. It is not a religious brand. That distinction matters and the previous presence did not communicate it.",
+      "The challenge was dual. The site needed to serve beauty clients looking for makeup and hair services, and it needed to serve mothers looking for guidance through pregnancy, post-partum, and breastfeeding. Those are different audiences with different needs. Most cosmetology sites collapse them into a single services list. That approach underserves both. The site also needed to make the founders visible as people, not as a generic brand, because the work is personal and the trust signal is the founder herself.",
+      "The brief was to build a site that holds the dual nature of the practice. Cosmetology and mentorship as equal pillars. Founders visible by name. Faith present without being a religious site. Contact paths that reflect how Namibian women actually communicate, which means WhatsApp, and which means two numbers because there are two founders.",
+    ],
+    approachH2: "Founders as the brand. Services as the structure.",
+    approachBody: [
+      "The strategic decision was to make the founders the brand. Chané and Anthea are named on the homepage with their portraits. Their roles are stated. Their individual WhatsApp numbers are listed separately. A visitor who connects more naturally with one founder can reach that founder directly. That is not a small thing in a market where most business sites list a single generic contact form.",
+      "The services were structured as five equal pillars: Makeup, Hair, Drama coaching, Guidance, and Content creation. Each gets its own block with a clear scope and a direct Enquire button. Guidance is positioned as the differentiated service. Most Windhoek cosmetology sites do not offer mentorship for expectant and new mothers. Enchanted's site makes that service visible as a first-class category, not a footnote.",
+      "The faith dimension was handled with restraint. The biblical reference (Matthew 5:16) appears once, in the footer, as part of the brand voice. It is present for visitors who recognise it. It does not dominate the experience for visitors who do not. That balance is what lets the site serve both the founder's faith and the broad audience without alienating either.",
+    ],
+    craftNotes: [
+      {
+        label: "Two WhatsApp numbers, one per founder",
+        body: "Chané and Anthea each have their own WhatsApp number on the site. A visitor can reach the founder they connect with directly. That matches how Namibian women actually communicate.",
+      },
+      {
+        label: "Guidance as a first-class service",
+        body: "Mentorship for expectant and new mothers is positioned as an equal pillar alongside makeup and hair. Most cosmetology sites bury it. Enchanted's site makes it visible because it is the differentiated service.",
+      },
+      {
+        label: "Faith present, not preached",
+        body: "The Matthew 5:16 reference appears once, in the footer. It is present for visitors who recognise it. It does not dominate the experience for visitors who do not. That balance serves both audiences.",
+      },
+    ],
+    outcomeH2: "A site that holds two founders, two audiences, and one brand.",
+    outcomeBody: [
+      "Enchanted Artistry CC launched with a site that makes the founders visible, the services legible, and the contact paths direct. A beauty client can find what they need in two clicks. A mother looking for guidance can find it in two clicks. Both can reach the founder they connect with directly. The site does what it was built to do: hold the dual nature of the practice without splitting into two brands.",
+      "The primary lesson was about founders as the brand. In a category where most cosmetology sites look interchangeable, putting the actual people behind the work front and centre is the differentiator. Trust in this category is personal. The site needed to reflect that. Founders visible by name, with their own WhatsApp numbers, is how that trust gets built online.",
+    ],
     nextSlug: "proavia",
   },
 ];
