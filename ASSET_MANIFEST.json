@@ -1,0 +1,2325 @@
+{
+  "schema_version": "1.0.0",
+  "project": "tangison-studio",
+  "description": "Asset inventory for the Tangison Studio website (public/ directory).",
+  "generated_at": "2026-08-05T05:00:00Z",
+  "totals": {
+    "total_assets": 327,
+    "total_bytes": 33527829,
+    "total_bytes_human": "31.97 MB"
+  },
+  "by_category": {
+    "oil-painting": 145,
+    "work-gallery": 44,
+    "pdf-document": 26,
+    "work-screenshot": 22,
+    "gallery": 21,
+    "work-full": 13,
+    "brand-asset": 12,
+    "font": 11,
+    "work-hero": 11,
+    "intelligence-image": 8,
+    "service-image": 7,
+    "other": 4,
+    "partnership-image": 3
+  },
+  "by_extension": {
+    "webp": 206,
+    "jpg": 44,
+    "png": 39,
+    "pdf": 26,
+    "ttf": 11,
+    "ico": 1
+  },
+  "assets": [
+    {
+      "path": "/apple-touch-icon.png",
+      "size_bytes": 43316,
+      "sha256_short": "bf357f9e88a7fddc",
+      "category": "other",
+      "ext": "png"
+    },
+    {
+      "path": "/brand/apple-touch-icon.png",
+      "size_bytes": 43316,
+      "sha256_short": "bf357f9e88a7fddc",
+      "category": "brand-asset",
+      "ext": "png"
+    },
+    {
+      "path": "/brand/favicon.png",
+      "size_bytes": 78629,
+      "sha256_short": "a5202e5bd1405350",
+      "category": "brand-asset",
+      "ext": "png"
+    },
+    {
+      "path": "/brand/favicon.webp",
+      "size_bytes": 32582,
+      "sha256_short": "b37ebf7d6dfe6d30",
+      "category": "brand-asset",
+      "ext": "webp"
+    },
+    {
+      "path": "/brand/icon-128.png",
+      "size_bytes": 24260,
+      "sha256_short": "e7287afcab389df6",
+      "category": "brand-asset",
+      "ext": "png"
+    },
+    {
+      "path": "/brand/icon-256.png",
+      "size_bytes": 78932,
+      "sha256_short": "2679f4b0209be2b2",
+      "category": "brand-asset",
+      "ext": "png"
+    },
+    {
+      "path": "/brand/icon-32.png",
+      "size_bytes": 2581,
+      "sha256_short": "bcbfc38eb9e44a53",
+      "category": "brand-asset",
+      "ext": "png"
+    },
+    {
+      "path": "/brand/icon-64.png",
+      "size_bytes": 7515,
+      "sha256_short": "f3918da4de201ddc",
+      "category": "brand-asset",
+      "ext": "png"
+    },
+    {
+      "path": "/brand/icon-studio.webp",
+      "size_bytes": 32582,
+      "sha256_short": "b37ebf7d6dfe6d30",
+      "category": "brand-asset",
+      "ext": "webp"
+    },
+    {
+      "path": "/brand/logo-dark.png",
+      "size_bytes": 23949,
+      "sha256_short": "1c9bfd8bc66dd251",
+      "category": "brand-asset",
+      "ext": "png"
+    },
+    {
+      "path": "/brand/logo-dark.webp",
+      "size_bytes": 9228,
+      "sha256_short": "e6f707c00772b84d",
+      "category": "brand-asset",
+      "ext": "webp"
+    },
+    {
+      "path": "/brand/logo-light.png",
+      "size_bytes": 20558,
+      "sha256_short": "28867234c453f907",
+      "category": "brand-asset",
+      "ext": "png"
+    },
+    {
+      "path": "/brand/logo-light.webp",
+      "size_bytes": 6952,
+      "sha256_short": "80cd426cfa0c7244",
+      "category": "brand-asset",
+      "ext": "webp"
+    },
+    {
+      "path": "/documents/Tangison_01_The_AI_Blueprint_for_Namibian_Business_v2.0.pdf",
+      "size_bytes": 121085,
+      "sha256_short": "bc738eba63b0f2af",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_02_The_AI_Maturity_Framework_v2.0.pdf",
+      "size_bytes": 113720,
+      "sha256_short": "e805ef0fa4f1697a",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_03_The_AI_ROI_Playbook_v2.0.pdf",
+      "size_bytes": 113250,
+      "sha256_short": "3aada3fa9a91afff",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_04_The_AI_Ethics_and_Governance_Guide_v2.0.pdf",
+      "size_bytes": 111226,
+      "sha256_short": "51ce209348a3d381",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_05_The_AI_Talent_and_Skills_Roadmap_v2.0.pdf",
+      "size_bytes": 108765,
+      "sha256_short": "112088518e531de0",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_06_The_AI_Vendor_and_Tool_Landscape_v2.0.pdf",
+      "size_bytes": 109555,
+      "sha256_short": "03f0c71e7ff533ad",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_07_AI_for_Agriculture_v2.0.pdf",
+      "size_bytes": 110545,
+      "sha256_short": "d9c43b6086bb47ab",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_08_AI_for_Mining_v2.0.pdf",
+      "size_bytes": 111107,
+      "sha256_short": "0d43ced3bc3f15dd",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_09_AI_for_Tourism_v2.0.pdf",
+      "size_bytes": 112520,
+      "sha256_short": "898f8dd7adf17a62",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_10_AI_for_Fishing_and_Marine_v2.0.pdf",
+      "size_bytes": 112904,
+      "sha256_short": "48d3a144ef6b9c0b",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_11_AI_for_Banking_and_Finance_v2.0.pdf",
+      "size_bytes": 112923,
+      "sha256_short": "95cc323eb63ce08f",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_12_AI_for_Retail_and_Commerce_v2.0.pdf",
+      "size_bytes": 112888,
+      "sha256_short": "b8d716c1a73951b6",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_13_AI_for_Healthcare_v2.0.pdf",
+      "size_bytes": 112566,
+      "sha256_short": "a23495acc8c3476e",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_14_AI_for_Education_v2.0.pdf",
+      "size_bytes": 112520,
+      "sha256_short": "3b823d43a3d528a0",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_15_AI_for_Construction_and_Real_Estate_v2.0.pdf",
+      "size_bytes": 112978,
+      "sha256_short": "6f8e0cc8178cf22c",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_16_AI_for_Logistics_and_Transport_v2.0.pdf",
+      "size_bytes": 112925,
+      "sha256_short": "2a5126958d343d5a",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_17_AI_for_Energy_and_Utilities_v2.0.pdf",
+      "size_bytes": 112904,
+      "sha256_short": "a7fda4a06d33f37e",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_18_AI_for_Media_and_Creative_v2.0.pdf",
+      "size_bytes": 112875,
+      "sha256_short": "19f7c03a14e3fd5e",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_19_AI_for_Legal_Services_v2.0.pdf",
+      "size_bytes": 112612,
+      "sha256_short": "9555709038fcbf60",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_20_AI_for_Insurance_v2.0.pdf",
+      "size_bytes": 112483,
+      "sha256_short": "f1483e26e58ed353",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_21_AI_for_Manufacturing_v2.0.pdf",
+      "size_bytes": 112753,
+      "sha256_short": "10eaacc9e5645564",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_22_AI_for_Telecom_v2.0.pdf",
+      "size_bytes": 112539,
+      "sha256_short": "326b2535a5cb93fe",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_23_AI_for_Government_and_Public_Services_v2.0.pdf",
+      "size_bytes": 113081,
+      "sha256_short": "6d9cc9fc257718b0",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_24_AI_for_NGOs_and_Development_v2.0.pdf",
+      "size_bytes": 112954,
+      "sha256_short": "64a36f13995d1350",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_25_AI_for_Sports_and_Entertainment_v2.0.pdf",
+      "size_bytes": 112986,
+      "sha256_short": "f3fa17658e3e8001",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/documents/Tangison_26_AI_for_Hospitality_v2.0.pdf",
+      "size_bytes": 112548,
+      "sha256_short": "0c658e0c4819fbd7",
+      "category": "pdf-document",
+      "ext": "pdf"
+    },
+    {
+      "path": "/favicon.ico",
+      "size_bytes": 4599,
+      "sha256_short": "f3680e3ac34ad65f",
+      "category": "other",
+      "ext": "ico"
+    },
+    {
+      "path": "/favicon.png",
+      "size_bytes": 169198,
+      "sha256_short": "7c96e80400634617",
+      "category": "other",
+      "ext": "png"
+    },
+    {
+      "path": "/fonts/CabinetGrotesk-400.ttf",
+      "size_bytes": 63204,
+      "sha256_short": "982a97b68034bf65",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/fonts/CabinetGrotesk-500.ttf",
+      "size_bytes": 63464,
+      "sha256_short": "e81c93200141dd9f",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/fonts/CabinetGrotesk-700.ttf",
+      "size_bytes": 62816,
+      "sha256_short": "f2e2f7b99f1c1771",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/fonts/CabinetGrotesk-800.ttf",
+      "size_bytes": 62508,
+      "sha256_short": "edd3028b78f00c8c",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/fonts/CabinetGrotesk-900.ttf",
+      "size_bytes": 61740,
+      "sha256_short": "9f1fe6dbc7aaea3f",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/fonts/JetBrainsMono-Regular.ttf",
+      "size_bytes": 270224,
+      "sha256_short": "e6fd0d7e91550b3e",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/fonts/Satoshi-300.ttf",
+      "size_bytes": 71684,
+      "sha256_short": "b54cf06078699089",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/fonts/Satoshi-400.ttf",
+      "size_bytes": 73476,
+      "sha256_short": "243b23f64087e918",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/fonts/Satoshi-500.ttf",
+      "size_bytes": 73756,
+      "sha256_short": "7130cef67527f498",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/fonts/Satoshi-700.ttf",
+      "size_bytes": 73368,
+      "sha256_short": "2c122eabbdcfd48c",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/fonts/Satoshi-900.ttf",
+      "size_bytes": 73176,
+      "sha256_short": "78edaca6fa30d084",
+      "category": "font",
+      "ext": "ttf"
+    },
+    {
+      "path": "/images/gallery/about-philosophy.webp",
+      "size_bytes": 205236,
+      "sha256_short": "c1c07116a02b9d16",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/footer-editorial-left.webp",
+      "size_bytes": 138861,
+      "sha256_short": "31d0f278ac7e7148",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/footer-editorial-right.webp",
+      "size_bytes": 98661,
+      "sha256_short": "b5bdaa881efdb5ba",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/hero-01-digital-interface.webp",
+      "size_bytes": 78402,
+      "sha256_short": "b8c469ba584f44ec",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/hero-02-ai-workflow.webp",
+      "size_bytes": 101772,
+      "sha256_short": "472f4976e9c7bb15",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/hero-03-design-system.webp",
+      "size_bytes": 99940,
+      "sha256_short": "52a707d767cc8bb9",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/hero-bg-skeleton-coast.webp",
+      "size_bytes": 179289,
+      "sha256_short": "213682d57d9436d2",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/hero-editorial-studio.webp",
+      "size_bytes": 112844,
+      "sha256_short": "e5afd7c485104794",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/hero-slider-namibia.webp",
+      "size_bytes": 144671,
+      "sha256_short": "142c1f57e5a61e14",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/nav-about.webp",
+      "size_bytes": 164468,
+      "sha256_short": "d30f3b08ccf630d9",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/nav-services.webp",
+      "size_bytes": 212996,
+      "sha256_short": "18f867b5906a8ca7",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/nav-work.webp",
+      "size_bytes": 175945,
+      "sha256_short": "5806808aa8993908",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/process-flow.webp",
+      "size_bytes": 67724,
+      "sha256_short": "987a9a9a9e0e575c",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/studio-location.webp",
+      "size_bytes": 50856,
+      "sha256_short": "78da201d803736c1",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/studio-workspace.webp",
+      "size_bytes": 102184,
+      "sha256_short": "509e82656d54f377",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/work-ai-research.webp",
+      "size_bytes": 167082,
+      "sha256_short": "6e3823b71971d98f",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/work-feorm.webp",
+      "size_bytes": 142936,
+      "sha256_short": "5e2ab3d273d1bf5f",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/work-skillscamp.webp",
+      "size_bytes": 149991,
+      "sha256_short": "56058ae9385723fd",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/work-smefrog-academy.webp",
+      "size_bytes": 134197,
+      "sha256_short": "ecf77fea9cf27d4d",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/work-studio-brand.webp",
+      "size_bytes": 107165,
+      "sha256_short": "e4c8317aa3d04fc7",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/gallery/work-tangison-agent.webp",
+      "size_bytes": 81129,
+      "sha256_short": "afab72c94ae9ea51",
+      "category": "gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/intelligence/agent-infrastructure.png",
+      "size_bytes": 139509,
+      "sha256_short": "fb75997ada6b2113",
+      "category": "intelligence-image",
+      "ext": "png"
+    },
+    {
+      "path": "/images/intelligence/agent-infrastructure.webp",
+      "size_bytes": 99324,
+      "sha256_short": "297396ff7070507c",
+      "category": "intelligence-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/intelligence/connected-systems.png",
+      "size_bytes": 129363,
+      "sha256_short": "b6c6e5c75c423a1c",
+      "category": "intelligence-image",
+      "ext": "png"
+    },
+    {
+      "path": "/images/intelligence/connected-systems.webp",
+      "size_bytes": 106932,
+      "sha256_short": "4244486bbe40238d",
+      "category": "intelligence-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/intelligence/private-intelligence.png",
+      "size_bytes": 131322,
+      "sha256_short": "ac04b86b25bcfacd",
+      "category": "intelligence-image",
+      "ext": "png"
+    },
+    {
+      "path": "/images/intelligence/private-intelligence.webp",
+      "size_bytes": 95942,
+      "sha256_short": "c0071597ff9f71f2",
+      "category": "intelligence-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/intelligence/workflow-automation.png",
+      "size_bytes": 147703,
+      "sha256_short": "a887925e7d785b35",
+      "category": "intelligence-image",
+      "ext": "png"
+    },
+    {
+      "path": "/images/intelligence/workflow-automation.webp",
+      "size_bytes": 104246,
+      "sha256_short": "c7f2ee146e176152",
+      "category": "intelligence-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/about-windhoek-v2.jpg",
+      "size_bytes": 102774,
+      "sha256_short": "168e83fb82ae1a1d",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/about-windhoek-v2.webp",
+      "size_bytes": 78586,
+      "sha256_short": "c6809a1a145ced81",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/atlantic-signal-hero.png",
+      "size_bytes": 143782,
+      "sha256_short": "9d64477362042c03",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/atlantic-signal-hero.webp",
+      "size_bytes": 120626,
+      "sha256_short": "e14532e67b70727c",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-01.jpg",
+      "size_bytes": 146523,
+      "sha256_short": "7e88759a5b2a3087",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-01.webp",
+      "size_bytes": 136502,
+      "sha256_short": "1c5ca9ce1ca094cb",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-02.jpg",
+      "size_bytes": 99819,
+      "sha256_short": "8efaec2811051e54",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-02.webp",
+      "size_bytes": 73916,
+      "sha256_short": "1e586df1cbb6710f",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-03.jpg",
+      "size_bytes": 94846,
+      "sha256_short": "2228e9c926a5d696",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-03.webp",
+      "size_bytes": 63806,
+      "sha256_short": "9237e78d3b2c3cf7",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-04.jpg",
+      "size_bytes": 117660,
+      "sha256_short": "82e136e7d64d9b98",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-04.webp",
+      "size_bytes": 101788,
+      "sha256_short": "3e3971f0ba3f0c3e",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-05.jpg",
+      "size_bytes": 93570,
+      "sha256_short": "181319358ba8c45f",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-05.webp",
+      "size_bytes": 66734,
+      "sha256_short": "a20214260348ba3f",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-06.jpg",
+      "size_bytes": 135984,
+      "sha256_short": "384b66b12daa16e9",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-06.webp",
+      "size_bytes": 124768,
+      "sha256_short": "4dac73bbbae00499",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-07.jpg",
+      "size_bytes": 86455,
+      "sha256_short": "f357b39aac02af40",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-07.webp",
+      "size_bytes": 63852,
+      "sha256_short": "89c70723d613e921",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-08.jpg",
+      "size_bytes": 131813,
+      "sha256_short": "6fe7cb4774166be3",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-08.webp",
+      "size_bytes": 117544,
+      "sha256_short": "4e8463f7fef919b2",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-09.jpg",
+      "size_bytes": 107152,
+      "sha256_short": "eb4ecb8291a4b492",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-09.webp",
+      "size_bytes": 80416,
+      "sha256_short": "5c2dc3abd9b4679a",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-10.jpg",
+      "size_bytes": 121525,
+      "sha256_short": "f67963522c807ccf",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-10.webp",
+      "size_bytes": 100460,
+      "sha256_short": "7518fa61ff556938",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-11.jpg",
+      "size_bytes": 142109,
+      "sha256_short": "c05ba2288cdbc1f7",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-11.webp",
+      "size_bytes": 124176,
+      "sha256_short": "ffeac77b5fe3becb",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-12.jpg",
+      "size_bytes": 158238,
+      "sha256_short": "00f8e59de49e0b58",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/blog/blog-12.webp",
+      "size_bytes": 147522,
+      "sha256_short": "5e3c34b5fedecfdd",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-13.webp",
+      "size_bytes": 135692,
+      "sha256_short": "7519c7ddc19eb8e2",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-14.webp",
+      "size_bytes": 112712,
+      "sha256_short": "ff3226b5851b8681",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-15.webp",
+      "size_bytes": 112302,
+      "sha256_short": "c77ba00dec805b3b",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-16.webp",
+      "size_bytes": 105580,
+      "sha256_short": "eefd993a138c28cd",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-17.webp",
+      "size_bytes": 127110,
+      "sha256_short": "c091ad293529cd59",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-18.webp",
+      "size_bytes": 149354,
+      "sha256_short": "276c239d6283d040",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/blog/blog-19.webp",
+      "size_bytes": 105408,
+      "sha256_short": "8ba813f411ec8338",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/brand-recognition.png",
+      "size_bytes": 179969,
+      "sha256_short": "47b29ce3fd4107a1",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/brand-recognition.webp",
+      "size_bytes": 155996,
+      "sha256_short": "ed03c630e5e38394",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/built-at-the-edge.png",
+      "size_bytes": 184871,
+      "sha256_short": "f86169c231b49377",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/built-at-the-edge.webp",
+      "size_bytes": 163518,
+      "sha256_short": "1e792efdfc9983f1",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/capability-brand-v2.jpg",
+      "size_bytes": 104498,
+      "sha256_short": "d96aa5e88a32e7dd",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/capability-brand-v2.webp",
+      "size_bytes": 80182,
+      "sha256_short": "5f75048b5c57c22e",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/capability-intelligence-v2.jpg",
+      "size_bytes": 99841,
+      "sha256_short": "012036280997c07d",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/capability-intelligence-v2.webp",
+      "size_bytes": 76980,
+      "sha256_short": "f453f655f2a8378a",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/capability-product-v2.jpg",
+      "size_bytes": 115553,
+      "sha256_short": "8e7390997133cc94",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/capability-product-v2.webp",
+      "size_bytes": 93996,
+      "sha256_short": "37ffc8dc2fe7c43b",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/collaboration-studio-v2.jpg",
+      "size_bytes": 74875,
+      "sha256_short": "a0ae56d305be994e",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/collaboration-studio-v2.webp",
+      "size_bytes": 47752,
+      "sha256_short": "fc3c3408047c5bc5",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/collaboration-studio.png",
+      "size_bytes": 138363,
+      "sha256_short": "8d5c75146c143497",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/collaboration-studio.webp",
+      "size_bytes": 107226,
+      "sha256_short": "7d428e76843fbcd4",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/contact-gallery-01.jpg",
+      "size_bytes": 77173,
+      "sha256_short": "ac8e0c78c869ede0",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/contact-gallery-01.webp",
+      "size_bytes": 50414,
+      "sha256_short": "d295d0f6a8909efc",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/contact-gallery-02.jpg",
+      "size_bytes": 86419,
+      "sha256_short": "d7df536fcad01d9e",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/contact-gallery-02.webp",
+      "size_bytes": 58842,
+      "sha256_short": "ab3ab0def2113a60",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/contact-gallery-03.jpg",
+      "size_bytes": 103039,
+      "sha256_short": "26942bc154bd3414",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/contact-gallery-03.webp",
+      "size_bytes": 77012,
+      "sha256_short": "6ae40cd3c5b21869",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/contact-invitation-v2.jpg",
+      "size_bytes": 102492,
+      "sha256_short": "5438bc4aa04ffd12",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/contact-invitation-v2.webp",
+      "size_bytes": 77198,
+      "sha256_short": "f3f81c9b57079f66",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/desert-threshold.png",
+      "size_bytes": 164129,
+      "sha256_short": "7d7b8f84cc121cab",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/desert-threshold.webp",
+      "size_bytes": 137010,
+      "sha256_short": "cb6cc90b5b1f88f8",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/digital-journey.png",
+      "size_bytes": 175427,
+      "sha256_short": "afaf21d280625351",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/digital-journey.webp",
+      "size_bytes": 151866,
+      "sha256_short": "ae4911021f1d13c9",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/footer-atmosphere.jpg",
+      "size_bytes": 57797,
+      "sha256_short": "c7f5fbea71ea48e6",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/footer-atmosphere.webp",
+      "size_bytes": 35242,
+      "sha256_short": "d23bfb63625e5c57",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/hero-skeleton-coast-v2.jpg",
+      "size_bytes": 99358,
+      "sha256_short": "d6dc907be6c8b9b1",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/hero-skeleton-coast-v2.webp",
+      "size_bytes": 73376,
+      "sha256_short": "a97f247665bc7a94",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/hero-skeleton-coast.png",
+      "size_bytes": 150833,
+      "sha256_short": "7e91fbe47380c2e8",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/hero-skeleton-coast.webp",
+      "size_bytes": 125478,
+      "sha256_short": "1fd34be8d8e6d30c",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/identity-table.png",
+      "size_bytes": 170743,
+      "sha256_short": "6d874e0eb17b3de0",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/identity-table.webp",
+      "size_bytes": 147044,
+      "sha256_short": "26f4170940836c77",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/intelligence-systems.png",
+      "size_bytes": 207718,
+      "sha256_short": "a7b9ed1504dc67e9",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/intelligence-systems.webp",
+      "size_bytes": 188264,
+      "sha256_short": "537950e0623faa33",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/interface-sketch.png",
+      "size_bytes": 158165,
+      "sha256_short": "cdffdc2025f89db8",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/interface-sketch.webp",
+      "size_bytes": 136096,
+      "sha256_short": "04ea481af0b95eea",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/materials-and-craft.png",
+      "size_bytes": 175899,
+      "sha256_short": "6836c3d198a77fa9",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/materials-and-craft.webp",
+      "size_bytes": 168544,
+      "sha256_short": "6e5def19537e38f4",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/night-signal.png",
+      "size_bytes": 154335,
+      "sha256_short": "b8c317123d7e7c98",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/night-signal.webp",
+      "size_bytes": 128930,
+      "sha256_short": "4bcdc2fb92d13e3f",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/not-found-signal-v2.jpg",
+      "size_bytes": 64554,
+      "sha256_short": "3e019558df502071",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/not-found-signal-v2.webp",
+      "size_bytes": 40170,
+      "sha256_short": "f10e29a97306b630",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/painted-signal-flag.png",
+      "size_bytes": 172010,
+      "sha256_short": "137465f262ccb43d",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/painted-signal-flag.webp",
+      "size_bytes": 153520,
+      "sha256_short": "d0615e1ccc3960c8",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/principles-texture.png",
+      "size_bytes": 230272,
+      "sha256_short": "b9baab1db3effe34",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/principles-texture.webp",
+      "size_bytes": 221602,
+      "sha256_short": "daa1b52a25055fab",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/process-progressive-v2.jpg",
+      "size_bytes": 126870,
+      "sha256_short": "1974b9d2c220ec90",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/process-progressive-v2.webp",
+      "size_bytes": 113198,
+      "sha256_short": "bca963874b947648",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/process-progressive.png",
+      "size_bytes": 189453,
+      "sha256_short": "653668f679db5272",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/process-progressive.webp",
+      "size_bytes": 162612,
+      "sha256_short": "bce8fef7f150951e",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/product-detail.png",
+      "size_bytes": 117466,
+      "sha256_short": "a8f826463075f754",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/product-detail.webp",
+      "size_bytes": 86764,
+      "sha256_short": "846fa4fc7b986dc9",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/product-workshop.png",
+      "size_bytes": 143655,
+      "sha256_short": "edcaebf572570549",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/product-workshop.webp",
+      "size_bytes": 112116,
+      "sha256_short": "b3486a097dad22a2",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/clusterleaf-v2.jpg",
+      "size_bytes": 85500,
+      "sha256_short": "8647b675be51d407",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/clusterleaf-v2.webp",
+      "size_bytes": 61532,
+      "sha256_short": "41e0eefb25e63c06",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/clusterleaf.png",
+      "size_bytes": 198262,
+      "sha256_short": "f4419ca422039860",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/projects/clusterleaf.webp",
+      "size_bytes": 180778,
+      "sha256_short": "2cf7073398a53997",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/crescendo.jpg",
+      "size_bytes": 92748,
+      "sha256_short": "748d59738f8ec0db",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/crescendo.webp",
+      "size_bytes": 61828,
+      "sha256_short": "35a089aa4f33c32f",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/dieselman.webp",
+      "size_bytes": 140532,
+      "sha256_short": "f37db6569d6f3e10",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/enchanted.webp",
+      "size_bytes": 132018,
+      "sha256_short": "a18ef0a8f9842150",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/feorm.jpg",
+      "size_bytes": 104237,
+      "sha256_short": "d00faf95c6dafd6e",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/feorm.webp",
+      "size_bytes": 77304,
+      "sha256_short": "fed130619c3cb1fc",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/homepage-clusterleaf.jpg",
+      "size_bytes": 130177,
+      "sha256_short": "e950f0f7cdb46ede",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/homepage-clusterleaf.webp",
+      "size_bytes": 104878,
+      "sha256_short": "e1dabc87d421becb",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/homepage-nalago.jpg",
+      "size_bytes": 106100,
+      "sha256_short": "af5713087aee812f",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/homepage-nalago.webp",
+      "size_bytes": 83000,
+      "sha256_short": "4566c7713e08428b",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/homepage-proavia.jpg",
+      "size_bytes": 83655,
+      "sha256_short": "cd433696b031774c",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/homepage-proavia.webp",
+      "size_bytes": 57896,
+      "sha256_short": "cf6a48ee8bbf0419",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/lrclearing.jpg",
+      "size_bytes": 86244,
+      "sha256_short": "eabca09af2c76f5d",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/lrclearing.webp",
+      "size_bytes": 55754,
+      "sha256_short": "a7370acd70423f68",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/miway.jpg",
+      "size_bytes": 107978,
+      "sha256_short": "a5b585616bcf8cf3",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/miway.webp",
+      "size_bytes": 78874,
+      "sha256_short": "34c4f4d352ef888f",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/nalago-v2.jpg",
+      "size_bytes": 75961,
+      "sha256_short": "c692bc7a7266e691",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/nalago-v2.webp",
+      "size_bytes": 49796,
+      "sha256_short": "850f5128899cb932",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/nalago.png",
+      "size_bytes": 166730,
+      "sha256_short": "9cd55106572fbddf",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/projects/nalago.webp",
+      "size_bytes": 143208,
+      "sha256_short": "6d7a6bbeb8885946",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/petrocor.jpg",
+      "size_bytes": 69967,
+      "sha256_short": "6efb65c7673f577b",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/petrocor.webp",
+      "size_bytes": 45280,
+      "sha256_short": "9ae70c70bcb49510",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/proavia-v2.jpg",
+      "size_bytes": 77136,
+      "sha256_short": "17123909975f97ea",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/proavia-v2.webp",
+      "size_bytes": 49576,
+      "sha256_short": "818d8d78d0d9a78e",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/proavia-v3.jpg",
+      "size_bytes": 110004,
+      "sha256_short": "d8061236433e7da7",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/proavia-v3.webp",
+      "size_bytes": 82886,
+      "sha256_short": "041c1fc175ec97f4",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/proavia.png",
+      "size_bytes": 120582,
+      "sha256_short": "cce8b781aaa54a5b",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/projects/proavia.webp",
+      "size_bytes": 87948,
+      "sha256_short": "04b127b4a6cf8e47",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/reviveautoworks.jpg",
+      "size_bytes": 115246,
+      "sha256_short": "b8d37c8cdb6b5e3f",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/reviveautoworks.webp",
+      "size_bytes": 85346,
+      "sha256_short": "b981947b794ad5f6",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/smefrog.jpg",
+      "size_bytes": 117162,
+      "sha256_short": "d5b0d545e2d1a92c",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/smefrog.webp",
+      "size_bytes": 101136,
+      "sha256_short": "a99be9e187eadd4f",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/tangison-systems.jpg",
+      "size_bytes": 135655,
+      "sha256_short": "e83e8bc962ba35a1",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/projects/tangison-systems.webp",
+      "size_bytes": 117608,
+      "sha256_short": "030aa5af39e73de1",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/responsive-system.png",
+      "size_bytes": 148028,
+      "sha256_short": "26ca1c4f1ccc6c62",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/responsive-system.webp",
+      "size_bytes": 121194,
+      "sha256_short": "e7043bc5b9a2d41b",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/services-brand.jpg",
+      "size_bytes": 114240,
+      "sha256_short": "1e448ec6b01d61f4",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/services-brand.webp",
+      "size_bytes": 92616,
+      "sha256_short": "347298157e26a246",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/services-intelligence.jpg",
+      "size_bytes": 150818,
+      "sha256_short": "4ea05133863b78ec",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/services-intelligence.webp",
+      "size_bytes": 133522,
+      "sha256_short": "50aae069fed3892b",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/services-product.jpg",
+      "size_bytes": 100348,
+      "sha256_short": "d0a2b781dad16b57",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/services-product.webp",
+      "size_bytes": 75514,
+      "sha256_short": "6330921f9e34e0e7",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/studio-portrait.png",
+      "size_bytes": 163090,
+      "sha256_short": "3bfebb42672ecf73",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/studio-portrait.webp",
+      "size_bytes": 128810,
+      "sha256_short": "0334ecf7df9c9a99",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/windhoek-studio-window.png",
+      "size_bytes": 167453,
+      "sha256_short": "7ea6e088421ae9a3",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/windhoek-studio-window.webp",
+      "size_bytes": 139222,
+      "sha256_short": "3beda88dc166e3a4",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/windhoek-working-city.png",
+      "size_bytes": 158537,
+      "sha256_short": "a375947e903ae280",
+      "category": "oil-painting",
+      "ext": "png"
+    },
+    {
+      "path": "/images/paintings/windhoek-working-city.webp",
+      "size_bytes": 130804,
+      "sha256_short": "614c92528c7eb4ee",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/work-intro.jpg",
+      "size_bytes": 119952,
+      "sha256_short": "ec01a8c312b8a119",
+      "category": "oil-painting",
+      "ext": "jpg"
+    },
+    {
+      "path": "/images/paintings/work-intro.webp",
+      "size_bytes": 101036,
+      "sha256_short": "d98873857d5dafa6",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/partnership/plan-care.webp",
+      "size_bytes": 146798,
+      "sha256_short": "76551d8eb3b431b8",
+      "category": "partnership-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/partnership/plan-partner.webp",
+      "size_bytes": 137153,
+      "sha256_short": "ca3e320955d5fa1f",
+      "category": "partnership-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/partnership/plan-studio-plus.webp",
+      "size_bytes": 180745,
+      "sha256_short": "f86ec08bfe765b1a",
+      "category": "partnership-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/services/application-design.webp",
+      "size_bytes": 111471,
+      "sha256_short": "9a9e0b7ee3ec9225",
+      "category": "service-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/services/brand-systems.webp",
+      "size_bytes": 147661,
+      "sha256_short": "edbf4cd615409e59",
+      "category": "service-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/services/creative-direction.webp",
+      "size_bytes": 165289,
+      "sha256_short": "4f320115527e0cba",
+      "category": "service-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/services/design-systems.webp",
+      "size_bytes": 95957,
+      "sha256_short": "2dd79ae6fbf9fec2",
+      "category": "service-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/services/product-design.webp",
+      "size_bytes": 217402,
+      "sha256_short": "e3f4f8411b7966c0",
+      "category": "service-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/services/website-design.webp",
+      "size_bytes": 187803,
+      "sha256_short": "73e142517dd01093",
+      "category": "service-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/services/website-development.webp",
+      "size_bytes": 167568,
+      "sha256_short": "89602906ca678796",
+      "category": "service-image",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/clusterleaf-logo.webp",
+      "size_bytes": 105410,
+      "sha256_short": "4ddb5fc117ceb25c",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/crescendo-logo.webp",
+      "size_bytes": 19274,
+      "sha256_short": "c7fe8277bee22ceb",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/feorm-logo.webp",
+      "size_bytes": 7718,
+      "sha256_short": "93fef014a46e1512",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/clusterleaf-hero.webp",
+      "size_bytes": 212725,
+      "sha256_short": "68b6460bddc3e48c",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/crescendo-hero.webp",
+      "size_bytes": 154424,
+      "sha256_short": "721da65aaeffc372",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/feorm-hero.webp",
+      "size_bytes": 177370,
+      "sha256_short": "d46eb1e9595c505e",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/lrclearing-hero.webp",
+      "size_bytes": 95984,
+      "sha256_short": "bfc31b06fbd94550",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/miway-hero.webp",
+      "size_bytes": 62522,
+      "sha256_short": "7b66bfb268d8bd78",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/nalago-hero.webp",
+      "size_bytes": 151504,
+      "sha256_short": "028a42ea7b6bf330",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/petrocor-hero.webp",
+      "size_bytes": 165632,
+      "sha256_short": "f8a41852c531de8f",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/proavia-hero.webp",
+      "size_bytes": 148770,
+      "sha256_short": "071cfbc28fd7b9db",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/reviveautoworks-hero.webp",
+      "size_bytes": 56744,
+      "sha256_short": "7fc875f3c1fcb2f1",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/smefrog-hero.webp",
+      "size_bytes": 150202,
+      "sha256_short": "0dcb21b9a58583a2",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/hero/tangison-systems-hero.webp",
+      "size_bytes": 99194,
+      "sha256_short": "aee26dc752820c69",
+      "category": "work-hero",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/lrclearing-logo.webp",
+      "size_bytes": 2386,
+      "sha256_short": "8bbacf49f5d31df1",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/miway-logo.webp",
+      "size_bytes": 1826,
+      "sha256_short": "209e54dc5dba9ec7",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/nalago-logo.webp",
+      "size_bytes": 156618,
+      "sha256_short": "a2668585ad0128bd",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/petrocor-logo.webp",
+      "size_bytes": 36824,
+      "sha256_short": "ceb38c8ad1ac431d",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/proavia-logo.webp",
+      "size_bytes": 53626,
+      "sha256_short": "9a28cd7f13e55274",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/reviveautoworks-logo.webp",
+      "size_bytes": 3232,
+      "sha256_short": "1f75975db275da94",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/clusterleaf-screenshot.webp",
+      "size_bytes": 67136,
+      "sha256_short": "688196ad4ecfe5f5",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/crescendo-screenshot.webp",
+      "size_bytes": 38184,
+      "sha256_short": "2428c956fcd013cd",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/feorm-screenshot.webp",
+      "size_bytes": 102046,
+      "sha256_short": "f9a43eeb7de22954",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/clusterleaf-full.webp",
+      "size_bytes": 125518,
+      "sha256_short": "4570835fe2097b5c",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/crescendo-full.webp",
+      "size_bytes": 64892,
+      "sha256_short": "ccd78c74df0f0242",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/dieselman-full.webp",
+      "size_bytes": 310564,
+      "sha256_short": "1fadcc51d1344809",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/enchanted-full.webp",
+      "size_bytes": 106926,
+      "sha256_short": "152f7cc50120170a",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/feorm-full.webp",
+      "size_bytes": 457794,
+      "sha256_short": "c84f8424cd7516d6",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/lrclearing-full.webp",
+      "size_bytes": 218704,
+      "sha256_short": "f5f22643a3d41359",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/miway-full.webp",
+      "size_bytes": 82872,
+      "sha256_short": "343bb955f6fed2e1",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/nalago-full.webp",
+      "size_bytes": 8254,
+      "sha256_short": "ce56eac7b7822199",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/petrocor-full.webp",
+      "size_bytes": 67662,
+      "sha256_short": "ff13688acb0f02c0",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/proavia-full.webp",
+      "size_bytes": 305556,
+      "sha256_short": "93423ad5dfa67233",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/reviveautoworks-full.webp",
+      "size_bytes": 77684,
+      "sha256_short": "4d1a0c3d8a8e9ae0",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/smefrog-full.webp",
+      "size_bytes": 109098,
+      "sha256_short": "555c3296ed5bba7b",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/tangison-full.webp",
+      "size_bytes": 68686,
+      "sha256_short": "e6adf385719c693e",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/clusterleaf-1.webp",
+      "size_bytes": 21366,
+      "sha256_short": "1651a230899b65ef",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/clusterleaf-2.webp",
+      "size_bytes": 65116,
+      "sha256_short": "397d91d78b6aa29d",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/clusterleaf-3.webp",
+      "size_bytes": 32322,
+      "sha256_short": "ea928a398fc7cf6d",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/clusterleaf-4.webp",
+      "size_bytes": 64544,
+      "sha256_short": "8c24655f1452d03c",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/crescendo-1.webp",
+      "size_bytes": 5906,
+      "sha256_short": "e09b758a92e01697",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/crescendo-2.webp",
+      "size_bytes": 47626,
+      "sha256_short": "b346ea5236ff497a",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/crescendo-3.webp",
+      "size_bytes": 9672,
+      "sha256_short": "779aac3c7a3334bb",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/crescendo-4.webp",
+      "size_bytes": 29712,
+      "sha256_short": "035d88387d8aee3f",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/feorm-1.webp",
+      "size_bytes": 14106,
+      "sha256_short": "a935ede967949a0c",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/feorm-2.webp",
+      "size_bytes": 159124,
+      "sha256_short": "020bb0ffee898f79",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/feorm-3.webp",
+      "size_bytes": 45422,
+      "sha256_short": "9c4cd0feedb07414",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/feorm-4.webp",
+      "size_bytes": 126154,
+      "sha256_short": "156d7be6243c9612",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/lrclearing-1.webp",
+      "size_bytes": 62232,
+      "sha256_short": "a152ccab06f65171",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/lrclearing-2.webp",
+      "size_bytes": 9866,
+      "sha256_short": "19ac745c18567cee",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/lrclearing-3.webp",
+      "size_bytes": 20760,
+      "sha256_short": "ecab55c9ec487c40",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/lrclearing-4.webp",
+      "size_bytes": 4494,
+      "sha256_short": "fb12f0ffa4e9f881",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/miway-1.webp",
+      "size_bytes": 48508,
+      "sha256_short": "312a73ed37971645",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/miway-2.webp",
+      "size_bytes": 3956,
+      "sha256_short": "b497e9688e5d3442",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/miway-3.webp",
+      "size_bytes": 6044,
+      "sha256_short": "5f8a5e3e6e25c326",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/miway-4.webp",
+      "size_bytes": 3200,
+      "sha256_short": "db3a21212b5fdc41",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/nalago-1.webp",
+      "size_bytes": 1524,
+      "sha256_short": "282e05a1e412dacc",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/nalago-2.webp",
+      "size_bytes": 64522,
+      "sha256_short": "a2fc4caf4ef3cf57",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/nalago-3.webp",
+      "size_bytes": 8332,
+      "sha256_short": "03e4f0770c21af7f",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/nalago-4.webp",
+      "size_bytes": 79500,
+      "sha256_short": "f265ee71209cee74",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/petrocor-1.webp",
+      "size_bytes": 7028,
+      "sha256_short": "e14dddd14a315afc",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/petrocor-2.webp",
+      "size_bytes": 23716,
+      "sha256_short": "7b9a1a68bfde7ec1",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/petrocor-3.webp",
+      "size_bytes": 5080,
+      "sha256_short": "5bb478c70cd630fa",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/petrocor-4.webp",
+      "size_bytes": 28782,
+      "sha256_short": "25a4571f4f4f9b0c",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/proavia-1.webp",
+      "size_bytes": 6998,
+      "sha256_short": "48b30f7bb66db801",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/proavia-2.webp",
+      "size_bytes": 93598,
+      "sha256_short": "efdbdfb3bcecda56",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/proavia-3.webp",
+      "size_bytes": 9100,
+      "sha256_short": "671b10209cd2618b",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/proavia-4.webp",
+      "size_bytes": 34798,
+      "sha256_short": "5470dcb498b6b311",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/reviveautoworks-1.webp",
+      "size_bytes": 39738,
+      "sha256_short": "1038f1c1903150d1",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/reviveautoworks-2.webp",
+      "size_bytes": 1754,
+      "sha256_short": "fee92814b95e4d2f",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/reviveautoworks-3.webp",
+      "size_bytes": 2284,
+      "sha256_short": "6f50d14aba17307e",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/reviveautoworks-4.webp",
+      "size_bytes": 2896,
+      "sha256_short": "4ad09e96dc6d8e19",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/smefrog-1.webp",
+      "size_bytes": 11464,
+      "sha256_short": "56f37f1de5e90376",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/smefrog-2.webp",
+      "size_bytes": 27040,
+      "sha256_short": "6703caa73c36e6e1",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/smefrog-3.webp",
+      "size_bytes": 19744,
+      "sha256_short": "ab851fa3c9cc9599",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/smefrog-4.webp",
+      "size_bytes": 27814,
+      "sha256_short": "1ea61a09313026f2",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/tangison-1.webp",
+      "size_bytes": 13566,
+      "sha256_short": "70754ffdb5717017",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/tangison-2.webp",
+      "size_bytes": 28726,
+      "sha256_short": "882c520bcad33da1",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/tangison-3.webp",
+      "size_bytes": 4730,
+      "sha256_short": "1928e1c42e62d57f",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/gallery/tangison-4.webp",
+      "size_bytes": 30542,
+      "sha256_short": "f8677d7027023eac",
+      "category": "work-gallery",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/lrclearing-screenshot.webp",
+      "size_bytes": 89534,
+      "sha256_short": "ba4d5fc8332c18b7",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/miway-screenshot.webp",
+      "size_bytes": 72566,
+      "sha256_short": "a7fe22a5cf4df14c",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/nalago-screenshot.webp",
+      "size_bytes": 9216,
+      "sha256_short": "6fdbb5346d86e215",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/petrocor-screenshot.webp",
+      "size_bytes": 55172,
+      "sha256_short": "4f81424f471e229d",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/proavia-screenshot.webp",
+      "size_bytes": 63910,
+      "sha256_short": "74136dae6ed9aa5a",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/reviveautoworks-screenshot.webp",
+      "size_bytes": 60910,
+      "sha256_short": "891f7df1b0b4c66f",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/smefrog-screenshot.webp",
+      "size_bytes": 54044,
+      "sha256_short": "a46e9b409ca81b4e",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/tangison-screenshot.webp",
+      "size_bytes": 45018,
+      "sha256_short": "d9d9ff3aea0f8919",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/smefrog-logo.webp",
+      "size_bytes": 113948,
+      "sha256_short": "e186dd677804bea7",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/tangison-logo.webp",
+      "size_bytes": 12022,
+      "sha256_short": "a806f492fec237ba",
+      "category": "work-screenshot",
+      "ext": "webp"
+    },
+    {
+      "path": "/og.png",
+      "size_bytes": 1085625,
+      "sha256_short": "30b203d0cf7a8656",
+      "category": "other",
+      "ext": "png"
+    }
+  ]
+}
