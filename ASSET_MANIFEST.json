@@ -4,17 +4,17 @@
   "description": "Asset inventory for the Tangison Studio website (public/ directory).",
   "generated_at": "2026-08-05T05:00:00Z",
   "totals": {
-    "total_assets": 327,
-    "total_bytes": 33527829,
-    "total_bytes_human": "31.97 MB"
+    "total_assets": 329,
+    "total_bytes": 33833411,
+    "total_bytes_human": "32.27 MB"
   },
   "by_category": {
-    "oil-painting": 145,
+    "oil-painting": 146,
     "work-gallery": 44,
     "pdf-document": 26,
     "work-screenshot": 22,
     "gallery": 21,
-    "work-full": 13,
+    "work-full": 14,
     "brand-asset": 12,
     "font": 11,
     "work-hero": 11,
@@ -24,7 +24,7 @@
     "partnership-image": 3
   },
   "by_extension": {
-    "webp": 206,
+    "webp": 208,
     "jpg": 44,
     "png": 39,
     "pdf": 26,
@@ -797,50 +797,50 @@
     },
     {
       "path": "/images/paintings/blog/blog-13.webp",
-      "size_bytes": 135692,
-      "sha256_short": "7519c7ddc19eb8e2",
+      "size_bytes": 152208,
+      "sha256_short": "d7dd5cf15c4c46b3",
       "category": "oil-painting",
       "ext": "webp"
     },
     {
       "path": "/images/paintings/blog/blog-14.webp",
-      "size_bytes": 112712,
-      "sha256_short": "ff3226b5851b8681",
+      "size_bytes": 103318,
+      "sha256_short": "1bb45439c8816efc",
       "category": "oil-painting",
       "ext": "webp"
     },
     {
       "path": "/images/paintings/blog/blog-15.webp",
-      "size_bytes": 112302,
-      "sha256_short": "c77ba00dec805b3b",
+      "size_bytes": 163702,
+      "sha256_short": "6bae5b81c76c50fb",
       "category": "oil-painting",
       "ext": "webp"
     },
     {
       "path": "/images/paintings/blog/blog-16.webp",
-      "size_bytes": 105580,
-      "sha256_short": "eefd993a138c28cd",
+      "size_bytes": 124800,
+      "sha256_short": "b9647c744017fbba",
       "category": "oil-painting",
       "ext": "webp"
     },
     {
       "path": "/images/paintings/blog/blog-17.webp",
-      "size_bytes": 127110,
-      "sha256_short": "c091ad293529cd59",
+      "size_bytes": 115564,
+      "sha256_short": "acb96142ece29fec",
       "category": "oil-painting",
       "ext": "webp"
     },
     {
       "path": "/images/paintings/blog/blog-18.webp",
-      "size_bytes": 149354,
-      "sha256_short": "276c239d6283d040",
+      "size_bytes": 104406,
+      "sha256_short": "c7d609a2b4e113ee",
       "category": "oil-painting",
       "ext": "webp"
     },
     {
       "path": "/images/paintings/blog/blog-19.webp",
-      "size_bytes": 105408,
-      "sha256_short": "8ba813f411ec8338",
+      "size_bytes": 155452,
+      "sha256_short": "240453f3063ad8cd",
       "category": "oil-painting",
       "ext": "webp"
     },
@@ -1280,15 +1280,15 @@
     },
     {
       "path": "/images/paintings/projects/dieselman.webp",
-      "size_bytes": 140532,
-      "sha256_short": "f37db6569d6f3e10",
+      "size_bytes": 130554,
+      "sha256_short": "0af3ba2b5e349430",
       "category": "oil-painting",
       "ext": "webp"
     },
     {
       "path": "/images/paintings/projects/enchanted.webp",
-      "size_bytes": 132018,
-      "sha256_short": "a18ef0a8f9842150",
+      "size_bytes": 112826,
+      "sha256_short": "4c268255b8c2e1a8",
       "category": "oil-painting",
       "ext": "webp"
     },
@@ -1499,6 +1499,13 @@
       "path": "/images/paintings/projects/tangison-systems.webp",
       "size_bytes": 117608,
       "sha256_short": "030aa5af39e73de1",
+      "category": "oil-painting",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/paintings/projects/weca.webp",
+      "size_bytes": 130764,
+      "sha256_short": "579a774113e91a64",
       "category": "oil-painting",
       "ext": "webp"
     },
@@ -1933,6 +1940,13 @@
       "path": "/images/work/screenshots/full/tangison-full.webp",
       "size_bytes": 68686,
       "sha256_short": "e6adf385719c693e",
+      "category": "work-full",
+      "ext": "webp"
+    },
+    {
+      "path": "/images/work/screenshots/full/weca-full.webp",
+      "size_bytes": 132696,
+      "sha256_short": "e6af5ba8bd300637",
       "category": "work-full",
       "ext": "webp"
     },

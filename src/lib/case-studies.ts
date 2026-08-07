@@ -668,6 +668,56 @@ export const caseStudies: CaseStudy[] = [
       "Enchanted Artistry CC launched with a site that makes the founders visible, the services legible, and the contact paths direct. A beauty client can find what they need in two clicks. A mother looking for guidance can find it in two clicks. Both can reach the founder they connect with directly. The site does what it was built to do: hold the dual nature of the practice without splitting into two brands.",
       "The primary lesson was about founders as the brand. In a category where most cosmetology sites look interchangeable, putting the actual people behind the work front and centre is the differentiator. Trust in this category is personal. The site needed to reflect that. Founders visible by name, with their own WhatsApp numbers, is how that trust gets built online.",
     ],
+    nextSlug: "weca",
+  },
+
+  /* ──────────────────────────────────────────────
+     PROJECT 14: Weca Offroad Centre
+     ────────────────────────────────────────────── */
+  {
+    slug: "weca",
+    screenshotSlug: "weca",
+    name: "Weca Offroad Centre",
+    url: "https://wecaoffroad.com",
+    year: "2026",
+    industry: "4x4 Offroad Fitment & Accessories",
+    services: ["Brand Identity", "Website Design", "Website Development", "E-commerce Setup"],
+    tech: ["Next.js", "Tailwind CSS"],
+    descriptor:
+      "Namibia's trusted 4x4 specialist in Swakopmund, selling and fitment for 20 leading offroad brands with a price-match guarantee and live Google reviews",
+    challengeH2:
+      "A Swakopmund 4x4 fitment workshop with twenty authorised brands needed a site that made the catalogue legible before the shop even opened.",
+    challengeBody: [
+      "Weca Offroad Centre operates from the corner of Eberston and Nelson Mandela Street in Swakopmund. Established 2015. The workshop sells and fits parts and accessories from twenty authorised brands: Wildog, Dometic, Tentco, Tough Dog, EcoFlow, WARN, Howling Moon, Fox, Runva, GOBI X, Ratel, Moremi, DeGraaf Exhausts, Fredlin Hoists, EFS, Tougher, Beesdam, Escape Gear, AluBlack, and Rockford. The work spans rooftop tent installation, suspension system fitment, bumper replacement, and bespoke canopy building. None of this was on the previous site in a form a buyer could use.",
+      "The audience is specific. Namibian 4x4 owners preparing for a trip into the Namib or the Kaokoveld, safari operators maintaining fleet vehicles, and overland travellers passing through Swakopmund who need a part fitted before they continue north. A buyer in this category has two questions before they make a call. Which brands do you actually stock? And what does fitment actually cost? A site that cannot answer either question forces the buyer onto WhatsApp for a quote, which is friction when the competitor down the road publishes prices.",
+      "The brief was to build a site that names every authorised brand, publishes fitment prices openly, makes WhatsApp the contact path of first resort (because that is how Namibian buyers actually communicate), and surfaces third-party proof that cannot be edited or removed. The site is currently under construction by Tangison Studio, with a public banner stating that content and pricing are not final. That honesty about the in-progress state is itself part of the trust pattern.",
+    ],
+    approachH2: "Brands named. Prices published. WhatsApp first. Google reviews as proof.",
+    approachBody: [
+      "The information architecture leads with the brand catalogue. Twenty authorised brands are listed on the homepage in an auto-scrolling carousel, each with a one-line scope description (Wildog for bumpers and protection, Dometic for camping equipment, Tough Dog for suspension systems, WARN for winches and recovery gear, and so on). A buyer who already knows which brand they want can confirm in seconds that Weca stocks it. A buyer who does not know which brand they want can scan the list and ask. The catalogue is the trust signal. A 4x4 fitment workshop that does not name its brands is a workshop that does not want to be checked.",
+      "The fitment services were structured as four equal pillars with published starting prices: Rooftop Tent Installation from N$ 2,500, Suspension System Fitment from N$ 4,500, Bumper Replacement from N$ 3,500, and Custom Canopy Building on request. Publishing prices is unusual in the Namibian fitment category, where most workshops quote only after a phone call. Weca's site does the opposite because the buyer's first question is what it costs. The price-match guarantee (beat any written quotation in Namibia) is stated explicitly on the Why Weca Offroad section, alongside Expert Fitment, Quality Parts, and After-Sales support.",
+      "The contact path is WhatsApp first, phone second, email third. The phone number is +264 81 169 1942. The email is wecaoffroadcentre@gmail.com. Hours are Mon-Fri 08:00 to 17:00 and Sat 08:00 to 12:00. The location is named explicitly. The trust proof is the live Google Maps embed on the homepage, which pulls reviews directly from Google's listing and cannot be edited or removed by Weca. That detail matters in a category where most sites publish self-curated testimonials. The Weca site does not host testimonials at all. It points at Google.",
+    ],
+    craftNotes: [
+      {
+        label: "Twenty authorised brands named on the homepage",
+        body: "Wildog, Dometic, Tentco, Tough Dog, EcoFlow, WARN, Howling Moon, Fox, Runva, GOBI X, Ratel, Moremi, DeGraaf Exhausts, Fredlin Hoists, EFS, Tougher, Beesdam, Escape Gear, AluBlack, Rockford. The catalogue is the trust signal. A fitment workshop that does not name its brands cannot be checked.",
+      },
+      {
+        label: "Fitment prices published openly",
+        body: "Rooftop Tent Installation from N$ 2,500. Suspension System Fitment from N$ 4,500. Bumper Replacement from N$ 3,500. Custom Canopy Building on request. Most Namibian fitment workshops quote only after a phone call. Weca's site publishes prices because the buyer's first question is what it costs.",
+      },
+      {
+        label: "Live Google reviews as the only testimonial layer",
+        body: "The site embeds the Google Maps listing for Weca Offroad Centre directly on the homepage. Reviews are pulled live from Google. Weca cannot edit or remove them. The site does not host self-curated testimonials. That detail is the trust pattern in a category where most testimonial sections are unverifiable.",
+      },
+    ],
+    outcomeH2:
+      "A site that names its brands, publishes its prices, and points at Google for the proof.",
+    outcomeBody: [
+      "Weca Offroad Centre launched in a public under-construction state with a site that does what the category usually avoids. It names every authorised brand. It publishes fitment prices. It surfaces reviews that cannot be edited or removed. A buyer can confirm the brand they want, see what fitment costs, and read third-party proof before they make the WhatsApp call. The site does the qualifying work before the phone rings.",
+      "The lesson was about proof over claim. In a category where most 4x4 fitment sites promise quality, expertise, and service, the differentiator is publishing the specifics that can be checked. Which brands. What prices. What real customers have actually said. The Weca site does not promise. It shows. The trust signal is the verifiable detail, not the adjective.",
+    ],
     nextSlug: "proavia",
   },
 ];

@@ -52,6 +52,7 @@ const projectPaintings: Record<string, string> = {
   miway: "/images/paintings/projects/miway.webp",
   dieselman: "/images/paintings/projects/dieselman.webp",
   enchanted: "/images/paintings/projects/enchanted.webp",
+  weca: "/images/paintings/projects/weca.webp",
 };
 
 export default async function CaseStudyPage({
