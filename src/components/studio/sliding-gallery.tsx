@@ -41,8 +41,9 @@ export function SlidingGallery({ images, interval = 4000 }: SlidingGalleryProps)
           <Image
             src={img.src}
             alt={img.alt}
-            fill
-            className="object-cover"
+            width={1080}
+            height={608}
+            className="absolute inset-0 w-full h-full object-cover"
             priority={i === 0}
             loading={i === 0 ? "eager" : "lazy"}
             sizes="(max-width: 768px) 100vw, 1080px"

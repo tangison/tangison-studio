@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: "Studio | The Digital Product Arm of Tangison Technologies",
   },
   description:
-    "Studio is the digital product arm of Tangison Technologies, an independent practice based in Windhoek, Namibia. Websites, applications, and brand systems for ambitious organizations across Africa.",
+    "Studio is the digital product arm of Tangison Technologies, based in Windhoek, Namibia. Websites, applications, and brand systems for ambitious organizations across Africa.",
   alternates: { canonical: "/studio" },
   openGraph: {
     title: "Studio | The Digital Product Arm of Tangison Technologies",

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     absolute: "Services | Studio and Intelligence, One Practice in Windhoek",
   },
   description:
-    "Seven outcome-led programs from a single independent practice in Windhoek, Namibia. Brand systems, website development, application design, product design, design systems, creative direction, applied AI.",
+    "Seven outcome-led programs from a single independent practice in Windhoek. Brand systems, website development, application design, product design, design systems, creative direction, applied AI.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Services | Studio and Intelligence, One Practice in Windhoek",

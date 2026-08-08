@@ -368,7 +368,23 @@ export default function Page() {
           </div>
         </section>
 
-        {/* 8. FINAL INVITATION */}
+        {/* 8. LATEST WRITING — link to featured blog post */}
+        <section className="py-16 md:py-24" aria-labelledby="writing-heading">
+          <div className="mx-auto max-w-4xl px-6">
+            <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2">Latest writing</p>
+            <h2 id="writing-heading" className="font-display font-bold text-ink text-3xl md:text-4xl mb-6">
+              One studio instead of three vendors.
+            </h2>
+            <p className="font-satoshi text-base leading-relaxed text-ink-muted mb-6 max-w-2xl">
+              Why we built a single practice to cover brand, product, and the systems behind them, instead of splitting across three vendors that do not talk to each other. The structural argument behind the studio model.
+            </p>
+            <StudioButton href="/blog/one-studio-instead-of-three-vendors" variant="secondary" size="sm" hasArrow arrowType="right">
+              Read the article
+            </StudioButton>
+          </div>
+        </section>
+
+        {/* 9. FINAL INVITATION */}
         <section className="py-16 md:py-24 bg-atlantic-black" aria-labelledby="cta-heading">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <ScrollReveal>
