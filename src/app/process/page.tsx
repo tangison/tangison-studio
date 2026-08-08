@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "Process | Studio's Five-Step Working Method from Windhoek",
   },
   description:
-    "Studio's five-step working method: discover, define, design, build, launch. Each step has a clear purpose. We do not stretch engagements beyond what the work needs.",
+    "Studio's five-step working method: discover, define, design, build, launch. Each step has a clear purpose. We do not stretch engagements beyond what is needed.",
   alternates: { canonical: "/process" },
   openGraph: {
     title: "Process | Five-Step Working Method from Studio in Windhoek",

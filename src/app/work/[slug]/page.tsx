@@ -195,8 +195,9 @@ export default async function CaseStudyPage({
                 <Image
                   src={screenshotPath}
                   alt={`${project.name} live website screenshot`}
-                  fill
-                  className="object-top object-cover"
+                  width={1080}
+                  height={675}
+                  className="absolute inset-0 w-full h-full object-top object-cover"
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, 1080px"
                 />

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "About Studio | Independent Digital Product Practice in Windhoek",
   },
   description:
-    "Independent digital product practice in Windhoek, Namibia. We design focused websites, applications, and brand systems for ambitious organizations across Africa.",
+    "Independent digital product practice in Windhoek, Namibia. We design focused websites, applications, and brand systems for ambitious organizations.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Studio | Independent Digital Product Practice in Windhoek",
