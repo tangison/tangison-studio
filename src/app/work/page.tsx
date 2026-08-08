@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     absolute: "Selected Work | Studio Case Studies in Web, Brand, and Product Design",
   },
   description:
-    "Selected projects by Studio, an independent digital product practice in Windhoek, Namibia. Websites, applications, and brand systems designed and built for organizations across Africa and beyond. Each case study documents the challenge, the approach, the craft, and the outcome.",
+    "Selected projects by Studio, an independent practice in Windhoek, Namibia. Websites, applications, and brand systems for organizations across Africa.",
   alternates: { canonical: "/work" },
   openGraph: {
     title: "Selected Work | Studio Case Studies",

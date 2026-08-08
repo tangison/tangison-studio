@@ -30,7 +30,7 @@ const parentLinks = [
 ] as const;
 
 const legalLinks = [
-  { label: "Privacy", href: "/legal/privacy" },
+  { label: "Privacy Policy", href: "/legal/privacy" },
   { label: "Terms", href: "/legal/terms" },
   { label: "Cookies", href: "/legal/cookies" },
 ] as const;

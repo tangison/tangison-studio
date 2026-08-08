@@ -128,6 +128,7 @@ function StudioAvatar({ size = 20 }: { size?: number }) {
       width={size}
       height={size}
       className="object-contain"
+      sizes={`${size}px`}
       priority
     />
   );

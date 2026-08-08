@@ -38,6 +38,7 @@ export function StudioLogo({
         height={size}
         className="shrink-0"
         style={{ width: `${size}px`, height: `${size}px` }}
+        sizes={`${size}px`}
         priority
       />
       {showWordmark && (

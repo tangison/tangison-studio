@@ -97,6 +97,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${cabinetGrotesk.variable} ${satoshi.variable} ${jetbrainsMono.variable}`} style={{ maxWidth: "100%", overflowX: "hidden" }}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="privacy-policy" href="/legal/privacy" />
+        <link rel="terms-of-service" href="/legal/terms" />
         <OrganizationJsonLd />
       </head>
       <body

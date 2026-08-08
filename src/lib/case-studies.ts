@@ -148,7 +148,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Safari & Tourism",
     services: ["Brand Systems", "Website Design", "Creative Direction"],
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    descriptor: "Owner-operated safari experiences across Southern Africa, built around eleven years of operational trust, transparent pricing, and guides who are visible on the site.",
+    descriptor: "Owner-operated safari experiences across Southern Africa. Built around eleven years of operational trust, transparent pricing, and visible guides.",
     challengeH2:
       "An 11-year-old safari company with 500+ completed tours had no digital presence that reflected the quality of the work.",
     challengeBody: [
@@ -292,7 +292,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Technology / AI",
     services: ["Brand Systems", "Website Design", "Product Design"],
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    descriptor: "Sovereign intelligence infrastructure from Windhoek, Namibia, built so organizations retain control of their data, models, and the decisions that come out of them.",
+    descriptor: "Sovereign intelligence infrastructure from Windhoek, Namibia. Built so organizations retain control of their data, models, and decisions.",
     internal: true,
     challengeH2:
       "Building your own company's site is the hardest brief you will ever write.",

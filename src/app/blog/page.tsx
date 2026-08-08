@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     absolute: "Studio Blog | Notes on Design and Development from Windhoek",
   },
   description:
-    "Field notes from Studio in Windhoek, Namibia, on brand systems, design process, web development, and applied intelligence. Written by the people who do the work.",
+    "Field notes from Studio in Windhoek, Namibia, on brand systems, design process, web development, and applied intelligence. By the people who do the work.",
   alternates: { canonical: "/blog" },
   openGraph: {
     title: "Studio Blog | Notes on Design and Development from Windhoek",
