@@ -7,10 +7,10 @@ import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Studio Blog | Notes on Design, Development, and Digital Product Practice",
+    absolute: "Studio Blog | Notes on Design and Development from Windhoek",
   },
   description:
-    "Field notes from Studio in Windhoek, Namibia, on brand systems, design process, web development, applied intelligence, and what it takes to ship focused digital products for organizations across Africa. Written by the people who do the work.",
+    "Field notes from Studio in Windhoek, Namibia, on brand systems, design process, web development, and applied intelligence. Written by the people who do the work.",
   alternates: { canonical: "/blog" },
   openGraph: {
     title: "Studio Blog | Notes on Design and Development from Windhoek",

@@ -6,9 +6,11 @@ import { ScrollReveal, StaggerReveal, StaggerItem, ScaleReveal, ParentBadge } fr
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Process",
+  title: {
+    absolute: "Process | Studio's Five-Step Working Method from Windhoek",
+  },
   description:
-    "Studio's five-step working method for digital product engagements in Windhoek, Namibia. Discover, define, design, build, launch. Each step has a clear purpose and we do not stretch engagements beyond what the work needs. A thin Signal Teal line connects each step, from first interview to launch and handover.",
+    "Studio's five-step working method: discover, define, design, build, launch. Each step has a clear purpose. We do not stretch engagements beyond what the work needs.",
   alternates: { canonical: "/process" },
   openGraph: {
     title: "Process | Five-Step Working Method from Studio in Windhoek",

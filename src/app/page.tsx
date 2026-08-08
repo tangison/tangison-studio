@@ -186,7 +186,7 @@ export default function Page() {
                         </div>
                         <div className="flex flex-wrap items-center gap-4">
                           <StudioButton href={`/work/${project.slug}`} variant="secondary" size="sm" hasArrow arrowType="right">
-                            Case study
+                            Read {project.name} case study
                           </StudioButton>
                           {project.url && (
                             <a
@@ -195,7 +195,7 @@ export default function Page() {
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:text-signal-teal-text transition-colors"
                             >
-                              Live site <ArrowUpRight className="w-4 h-4" />
+                              {project.name} live site <ArrowUpRight className="w-4 h-4" />
                             </a>
                           )}
                         </div>
@@ -244,7 +244,6 @@ export default function Page() {
                     </p>
                     <Link
                       href={`/services#${cap.id}`}
-                      aria-label={`Learn more about the ${cap.name} capability`}
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:text-signal-teal-text transition-colors"
                     >
                       Explore {cap.name} <ArrowRight className="w-3.5 h-3.5" />

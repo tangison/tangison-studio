@@ -5,12 +5,14 @@ import { StudioButton } from "@/components/studio/button";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Studio",
+  title: {
+    absolute: "Studio | The Digital Product Arm of Tangison Technologies",
+  },
   description:
-    "Studio is the digital product arm of Tangison Technologies, an independent practice based in Windhoek, Namibia. We design and build focused websites, applications, and brand systems for ambitious organizations across Africa, with optional access to the broader group's technical and strategic capacity when a project requires it.",
+    "Studio is the digital product arm of Tangison Technologies, an independent practice based in Windhoek, Namibia. Websites, applications, and brand systems for ambitious organizations across Africa.",
   alternates: { canonical: "/studio" },
   openGraph: {
-    title: "Studio | Independent Practice within Tangison Technologies",
+    title: "Studio | The Digital Product Arm of Tangison Technologies",
     description:
       "The digital product arm of Tangison Technologies. Independent working culture, optional access to broader group capacity.",
     url: "/studio",
@@ -50,6 +52,12 @@ export default function Page() {
             </p>
             <p className="font-satoshi text-base leading-relaxed text-ink-muted">
               We are based in Windhoek, Namibia. The location is not a footnote. It shapes how we work. We design for audiences that often access the web on constrained connections, and we treat performance and accessibility as baseline obligations, not optional polish.
+            </p>
+            <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+              The studio was founded by Tangi Iigonda in 2023, originally as Gemsweb Digital. The rename to Tangison Studio in 2025 was a structural decision, not a rebrand. It clarified what the practice does (digital product work), who it serves (ambitious organizations across Africa), and how it relates to the broader Tangison group. The work itself did not change. The portfolio, the process, and the people remained the same. What changed was the clarity of the offer.
+            </p>
+            <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+              Today Studio works with a mix of new and returning clients across Namibia, Botswana, South Africa, and beyond. We take on a limited number of projects at any given time so that the people who scope the work are the same people who design and build it. There is no account layer between you and the work. That directness is the structural advantage of being a small studio, and we protect it carefully.
             </p>
           </div>
         </section>

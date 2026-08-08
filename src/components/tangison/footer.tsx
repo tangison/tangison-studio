@@ -18,7 +18,7 @@ const footerLinks = [
   { label: "Process", href: "/process" },
   { label: "Partnership", href: "/partnership" },
   { label: "About", href: "/about" },
-  { label: "Studio", href: "/studio" },
+  { label: "The Studio", href: "/studio" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },

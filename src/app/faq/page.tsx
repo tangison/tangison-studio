@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     absolute: "FAQ | Working with Studio on Websites, Apps, and Brand Systems",
   },
   description:
-    "Frequently asked questions about working with Studio in Windhoek, Namibia. Project cost and timeline, working with clients across Africa, our five-step process, ongoing support after launch, the technology we use, and how to start a project. Clear answers from the people who do the work.",
+    "Frequently asked questions about working with Studio in Windhoek, Namibia. Pricing, timelines, process, technology, and how to start a project. Clear answers.",
   alternates: { canonical: "/faq" },
   openGraph: {
     title: "FAQ | Working with Studio on Websites, Apps, and Brand Systems",

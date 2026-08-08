@@ -7,9 +7,11 @@ import { ScrollReveal, HoverLift, ParentBadge } from "@/components/studio/scroll
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: {
+    absolute: "Services | Studio and Intelligence, One Practice in Windhoek",
+  },
   description:
-    "Studio and Intelligence: seven outcome-led programs from a single independent practice in Windhoek, Namibia. Brand systems, website design and development, application design, product design, design systems, creative direction, and applied AI. One studio instead of three vendors, working across the African continent and beyond.",
+    "Seven outcome-led programs from a single independent practice in Windhoek, Namibia. Brand systems, website development, application design, product design, design systems, creative direction, applied AI.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Services | Studio and Intelligence, One Practice in Windhoek",

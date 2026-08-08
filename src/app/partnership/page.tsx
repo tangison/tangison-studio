@@ -7,13 +7,13 @@ import { HoverLift, ParentBadge } from "@/components/studio/scroll-reveal";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Partnership Plans | Studio Care, Partner, Plus, and Project Engagements",
+    absolute: "Partnership Plans | Studio Care, Partner, Plus, and Project",
   },
   description:
-    "Ongoing partnership plans from Studio in Windhoek, Namibia. Four models for different needs: Care for light maintenance, Partner for regular support, Studio Plus for continuous product design and development, and Studio Project for scoped new engagements. Transparent monthly pricing in Namibian dollars.",
+    "Four partnership plans from Studio in Windhoek: Care, Partner, Studio Plus, and Studio Project. Maintenance, support, and continuous design and development.",
   alternates: { canonical: "/partnership" },
   openGraph: {
-    title: "Partnership Plans | Studio Care, Partner, Plus, and Project Engagements",
+    title: "Partnership Plans | Studio Care, Partner, Plus, and Project",
     description:
       "Four partnership plans from Studio: Care, Partner, Studio Plus, and Studio Project. Maintenance, support, and continuous product design.",
     url: "/partnership",
@@ -89,7 +89,10 @@ export default function Page() {
         <section className="py-16 md:py-24 bg-atlantic-black">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <h2 className="font-display font-bold text-skeleton-bone text-3xl mb-4">Not sure which model fits?</h2>
-            <p className="font-satoshi text-lg text-skeleton-bone/70 mb-8">Tell us what you are working on.</p>
+            <p className="font-satoshi text-lg text-skeleton-bone/70 mb-4">Tell us what you are working on.</p>
+            <p className="font-satoshi text-base text-skeleton-bone/60 mb-8 max-w-xl mx-auto">
+              Most engagements begin with a 30-minute call where we figure out together which plan (if any) is the right shape for the work. The first call is free, and we will not push a tier that does not fit. Some projects are better as one-off Studio Project engagements; some need ongoing Studio Plus from day one.
+            </p>
             <StudioButton href="/contact" variant="inverse" hasArrow arrowType="up-right">Talk to us</StudioButton>
           </div>
         </section>

@@ -39,12 +39,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
     description: article.excerpt,
     datePublished: article.date,
     dateModified: article.date,
-    image: {
-      "@type": "ImageObject",
-      url: coverImageUrl,
-      width: { "@type": "QuantitativeValue", value: 1080 },
-      height: { "@type": "QuantitativeValue", value: 608 },
-    },
+    image: coverImageUrl,
     author: { "@type": "Organization", name: "Tangison Studio", url: "https://studio.tangison.com" },
     publisher: {
       "@type": "Organization",
@@ -53,8 +48,8 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
       logo: {
         "@type": "ImageObject",
         url: publisherLogoUrl,
-        width: { "@type": "QuantitativeValue", value: 499 },
-        height: { "@type": "QuantitativeValue", value: 499 },
+        width: 499,
+        height: 499,
       },
     },
     mainEntityOfPage: {

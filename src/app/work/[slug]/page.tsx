@@ -21,15 +21,15 @@ export async function generateMetadata({
   const project = getCaseStudy(slug);
   if (!project) return { title: "Project not found" };
 
-  const title = `${project.name} Case Study`;
+  const title = `${project.name} Case Study | Studio`;
   const description = project.descriptor;
 
   return {
-    title,
+    title: { absolute: `${project.name} Case Study | Studio Design Work in Windhoek` },
     description,
     alternates: { canonical: `/work/${slug}` },
     openGraph: {
-      title: `${title} | Studio`,
+      title,
       description,
       url: `/work/${slug}`,
       type: "article",
@@ -185,7 +185,6 @@ export default async function CaseStudyPage({
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Open the ${project.name} live site in a new tab`}
                     className="inline-flex items-center gap-1 text-xs font-medium text-ink hover:text-signal-teal-text transition-colors"
                   >
                     View {project.name} live site <ArrowUpRight className="w-3 h-3" />

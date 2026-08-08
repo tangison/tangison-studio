@@ -119,7 +119,6 @@ export default function Page() {
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label={`Open the ${project.name} live website in a new tab`}
                             className="inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:text-signal-teal-text transition-colors"
                           >
                             {project.name} live site <ArrowUpRight className="w-4 h-4" />

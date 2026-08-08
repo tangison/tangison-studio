@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     absolute: "Contact Studio | Start a Project in Windhoek, Namibia",
   },
   description:
-    "Start a project with Studio in Windhoek, Namibia. Tell us what you are working on, your timeline, and any budget constraints. We reply to every serious enquiry within two working days. Brand, product, and the systems behind it, one studio instead of three vendors.",
+    "Start a project with Studio in Windhoek, Namibia. Tell us what you are working on, your timeline, and any budget constraints. We reply within two working days.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact Studio | Start a Project in Windhoek, Namibia",
@@ -115,6 +115,24 @@ export default function Page() {
             <p className="mt-4 text-sm text-ink-muted text-center">
               Working from the edge of the Atlantic. Corner of Frans Indongo Street and John Meinert Street, Windhoek.
             </p>
+          </div>
+        </section>
+
+        <section className="py-12 bg-ocean-mist/30">
+          <div className="mx-auto max-w-4xl px-6 py-12">
+            <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Before you write</p>
+            <h2 className="font-display font-bold text-ink text-2xl md:text-3xl mb-6 max-w-xl">A few notes that will make your first message easier to answer well.</h2>
+            <div className="space-y-4">
+              <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+                We work with organizations across Africa and beyond, but our working hours are Windhoek local time, Monday through Friday, 08:00 to 17:00. If your project is time-sensitive, say so explicitly in the subject line. We treat urgency as a fact, not a complaint.
+              </p>
+              <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+                Most engagements start with a 30-minute call after the first email exchange. That call is free. It is where we figure out whether we are the right studio for the work, and whether the work is the right shape for us. We do not chase volume and we do not take on every enquiry.
+              </p>
+              <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+                If you have an existing site, brand, or product, links and screenshots are useful. If you have a brief, send it. If you do not have a brief, that is fine too; the first conversation is often where the brief gets written. The important thing is to start with what you know and let us ask the questions that fill in what you do not.
+              </p>
+            </div>
           </div>
         </section>
       </SiteShell>

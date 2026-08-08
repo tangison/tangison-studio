@@ -2590,3 +2590,45 @@ Stage Summary:
 - Typecheck passes; no new test or lint regressions introduced.
 - Vercel deploy triggered automatically by the push; deploy observable in the Vercel dashboard.
 - SECURITY: The GitHub PAT (`ghp_OpZ0...`) was used once via env var, with output redaction. It remains compromised by virtue of having been pasted in plaintext in conversation history. The user is strongly advised to revoke it at https://github.com/settings/tokens and generate a fresh one.
+
+---
+Task ID: audit-pass-1
+Agent: Super Z (main agent, continuation)
+Task: Install squirrel CLI, audit studio.tangison.com production site, fix all flagged issues, push to GitHub, re-audit until score is 90+ Grade A.
+
+Work Log:
+- Confirmed production URL is studio.tangison.com (per user directive). Verified live with HTTP/2 200 + strong security headers (HSTS, CSP, X-Frame-Options DENY).
+- Cloned squirrelscan/skills repo to /tmp/squirrel-skills and read both skill files (audit-website + squirrelscan).
+- Downloaded and installed squirrel CLI v0.0.84 from install.squirrelscan.com to /home/z/.local/bin/squirrel.
+- Ran first audit: `squirrel audit https://studio.tangison.com --format llm --refresh`. Crawled 25 pages, 2792 checks passed, 245 warnings, 29 failed. Score: 60/D.
+  - SEO: 67 (27 errors, 114 warnings)
+  - Performance: 45 (2 errors, 101 warnings)
+  - Security: 95 (0 errors, 2 warnings)
+  - Agents: 50 (0 errors, 25 warnings)
+  - Categories scoring low: Images 37, Performance 45, Agent Experience 50, Core SEO 63, Content 82, Links 85, E-E-A-T 87, Structured Data 92
+- Mapped every flagged rule to a specific source file fix. Applied fixes in batches:
+
+  Batch 1 (Core SEO): Extended page titles on /about, /blog, /contact, /faq, /partnership, /services, /studio, /process, /work using title.absolute to bypass short template suffix. Extended meta descriptions on 5 short pages to 150+ chars. Extended all 8 case-study descriptors to 120+ chars.
+
+  Batch 2 (Structured Data): Added image, publisher.logo, mainEntityOfPage, dateModified to Article JSON-LD in src/app/blog/[slug]/page.tsx. Added streetAddress + postalCode to LocalBusinessJsonLd + OrganizationJsonLd in src/components/tangison/json-ld.tsx.
+
+  Batch 3 (Accessibility): Wrapped SlidingGallery dot buttons in role="tablist" container with aria-controls/id pairing. Changed H3 -> H2 in /about Principles section. Changed alt="" -> alt="Studio logo" / "Studio assistant avatar" on favicon usages. Replaced generic "case study" / "live site" / "Learn more" link text with descriptive names including project/capability name.
+
+  Batch 4 (Images): Recompressed 4 oversized screenshots (dieselman 303KB->180KB, feorm 447KB->177KB, lrclearing 213KB->153KB, proavia 298KB->170KB) via /home/z/my-project/scripts/recompress_screenshots.py. Added explicit fetchPriority="high" to LCP images on /, /about, /blog, /blog/[slug], /contact, /process, /work/[slug]. Added priority to /loading.tsx logo-dark.webp.
+
+  Batch 5 (Agent Experience): Created public/llms.txt (core page map + contact) and public/llms-full.txt (full prose summary including services, process, partnership plans, principles, case study list).
+
+  Batch 6 (Links): Fixed Crescendo URL typo (cresendona.com -> crescendonamibia.com). Cleared SMEFrog URL (smefrog.tangison.com no longer resolves) and updated work/[slug] page to render "Project archive" label instead of "Visit live site" button when URL is empty. Added 5 orphan pages (Process, Partnership, Studio, Blog, FAQ) to footer navigation.
+
+  Batch 7 (Content depth): Extended /contact with "What to send" list + paragraphs (99 -> ~260 words). Extended /process with "detail" field per step + "Why this shape" section (102 -> ~450 words). Extended /partnership with 3-paragraph intro (138 -> ~330 words). Extended /about with 2 paragraphs on history + clients (251 -> ~430 words). Extended /services with 3-paragraph intro on Studio/Intelligence split (225 -> ~430 words).
+
+- Typecheck passed clean (exit 0).
+- Build passed clean: 58 static pages generated. No errors.
+- Committed as `78e7317 Audit pass 1: fix SEO, a11y, JSON-LD, image weight, agent discovery` (25 files changed, 404 insertions, 65 deletions, 2 new files).
+- Pushed to origin/main: 951d818..78e7317. Vercel auto-deploy triggered.
+
+Stage Summary:
+- First audit: 60/D (SEO 67, Performance 45, Security 95, Agents 50).
+- 25 files modified, 2 new files (llms.txt + llms-full.txt).
+- Build clean, typecheck clean, pushed to GitHub.
+- Will re-audit once Vercel deploy completes (~90s) to verify score improvement toward 90+ (Grade A target 95+).

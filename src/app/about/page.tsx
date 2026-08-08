@@ -7,10 +7,10 @@ import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "About Studio | Independent Digital Product Practice in Windhoek, Namibia",
+    absolute: "About Studio | Independent Digital Product Practice in Windhoek",
   },
   description:
-    "Studio is an independent digital product practice in Windhoek, Namibia, founded by Tangi Iigonda. We design websites, applications, and brand systems for ambitious organizations across Africa. One studio instead of three vendors, with no account layer between you and the work.",
+    "Independent digital product practice in Windhoek, Namibia. We design focused websites, applications, and brand systems for ambitious organizations across Africa.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About Studio | Independent Digital Product Practice in Windhoek",
