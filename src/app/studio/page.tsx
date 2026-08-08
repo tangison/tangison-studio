@@ -6,9 +6,16 @@ import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
   title: "Studio",
-  description: "An independent digital product practice within Tangison Technologies, based in Windhoek, Namibia.",
+  description:
+    "Studio is the digital product arm of Tangison Technologies, an independent practice based in Windhoek, Namibia. We design and build focused websites, applications, and brand systems for ambitious organizations across Africa, with optional access to the broader group's technical and strategic capacity when a project requires it.",
   alternates: { canonical: "/studio" },
-  openGraph: { title: "Studio | Studio", description: "Independent practice within Tangison Technologies.", url: "/studio", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }] },
+  openGraph: {
+    title: "Studio | Independent Practice within Tangison Technologies",
+    description:
+      "The digital product arm of Tangison Technologies. Independent working culture, optional access to broader group capacity.",
+    url: "/studio",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }],
+  },
 };
 
 export default function Page() {

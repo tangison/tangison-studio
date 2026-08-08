@@ -4,10 +4,19 @@ import { StudioButton } from "@/components/studio/button";
 import { BreadcrumbJsonLd, WebPageJsonLd, FAQJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "FAQ",
-  description: "Frequently asked questions about working with Studio: process, pricing, timelines, and partnership.",
+  title: {
+    absolute: "FAQ | Working with Studio on Websites, Apps, and Brand Systems",
+  },
+  description:
+    "Frequently asked questions about working with Studio in Windhoek, Namibia. Project cost and timeline, working with clients across Africa, our five-step process, ongoing support after launch, the technology we use, and how to start a project. Clear answers from the people who do the work.",
   alternates: { canonical: "/faq" },
-  openGraph: { title: "FAQ | Studio", description: "Frequently asked questions.", url: "/faq", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }] },
+  openGraph: {
+    title: "FAQ | Working with Studio on Websites, Apps, and Brand Systems",
+    description:
+      "Frequently asked questions about working with Studio: process, pricing, timelines, partnership, and how to start.",
+    url: "/faq",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio FAQ" }],
+  },
 };
 
 const faqs = [

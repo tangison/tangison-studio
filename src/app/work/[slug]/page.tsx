@@ -101,10 +101,14 @@ export default async function CaseStudyPage({
                 <span key={s} className="inline-flex items-center px-2.5 py-1 rounded-[25px] text-xs font-medium bg-ocean-mist text-ink">{s}</span>
               ))}
             </div>
-            {project.url && (
+            {project.url ? (
               <StudioButton href={project.url} variant="primary" hasArrow arrowType="up-right">
-                Visit live site
+                Visit {project.name} live site
               </StudioButton>
+            ) : (
+              <p className="font-satoshi text-sm text-ink-muted italic">
+                Project archive: this case study documents the work, but the live site is no longer published.
+              </p>
             )}
           </div>
         </section>
@@ -120,6 +124,7 @@ export default async function CaseStudyPage({
                 height={608}
                 className="w-full h-full object-cover"
                 priority
+                fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 1080px"
               />
             </div>
@@ -171,11 +176,19 @@ export default async function CaseStudyPage({
               <div className="flex items-center justify-between px-4 py-3 border-b border-card-border bg-skeleton-bone">
                 <div className="flex items-center gap-2">
                   <Monitor className="w-4 h-4 text-ink-muted" />
-                  <span className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">{project.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</span>
+                  <span className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em]">
+                    {project.url ? project.url.replace(/^https?:\/\//, "").replace(/\/$/, "") : "Project archive"}
+                  </span>
                 </div>
                 {project.url && (
-                  <a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-medium text-ink hover:text-signal-teal-text transition-colors">
-                    View live site <ArrowUpRight className="w-3 h-3" />
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open the ${project.name} live site in a new tab`}
+                    className="inline-flex items-center gap-1 text-xs font-medium text-ink hover:text-signal-teal-text transition-colors"
+                  >
+                    View {project.name} live site <ArrowUpRight className="w-3 h-3" />
                   </a>
                 )}
               </div>

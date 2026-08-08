@@ -15,7 +15,12 @@ import { socialLinks } from "@/config/social";
 const footerLinks = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
+  { label: "Process", href: "/process" },
+  { label: "Partnership", href: "/partnership" },
   { label: "About", href: "/about" },
+  { label: "Studio", href: "/studio" },
+  { label: "Blog", href: "/blog" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ] as const;
 

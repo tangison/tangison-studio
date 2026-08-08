@@ -9,15 +9,17 @@ import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 import { HoverLift, ParentBadge } from "@/components/studio/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: {
+    absolute: "Selected Work | Studio Case Studies in Web, Brand, and Product Design",
+  },
   description:
-    "Selected projects by Studio. Websites, applications and brand systems designed and built for organizations across Africa.",
+    "Selected projects by Studio, an independent digital product practice in Windhoek, Namibia. Websites, applications, and brand systems designed and built for organizations across Africa and beyond. Each case study documents the challenge, the approach, the craft, and the outcome.",
   alternates: { canonical: "/work" },
   openGraph: {
-    title: "Work | Studio",
-    description: "Selected projects by Studio for organizations across Africa.",
+    title: "Selected Work | Studio Case Studies",
+    description: "Websites, applications, and brand systems by Studio for organizations across Africa.",
     url: "/work",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio Work" }],
   },
 };
 
@@ -110,11 +112,17 @@ export default function Page() {
                       </div>
                       <div className="flex flex-wrap items-center gap-4">
                         <StudioButton href={`/work/${project.slug}`} variant="secondary" size="sm" hasArrow arrowType="right">
-                          Case study
+                          Read {project.name} case study
                         </StudioButton>
                         {project.url && (
-                          <a href={project.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:text-signal-teal-text transition-colors">
-                            Live site <ArrowUpRight className="w-4 h-4" />
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Open the ${project.name} live website in a new tab`}
+                            className="inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:text-signal-teal-text transition-colors"
+                          >
+                            {project.name} live site <ArrowUpRight className="w-4 h-4" />
                           </a>
                         )}
                       </div>

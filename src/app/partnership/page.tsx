@@ -6,10 +6,19 @@ import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 import { HoverLift, ParentBadge } from "@/components/studio/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "Partnership",
-  description: "Ongoing partnership plans from Studio: Care, Partner, Studio Plus, and Studio Project. Maintenance, support, and continuous product design and development.",
+  title: {
+    absolute: "Partnership Plans | Studio Care, Partner, Plus, and Project Engagements",
+  },
+  description:
+    "Ongoing partnership plans from Studio in Windhoek, Namibia. Four models for different needs: Care for light maintenance, Partner for regular support, Studio Plus for continuous product design and development, and Studio Project for scoped new engagements. Transparent monthly pricing in Namibian dollars.",
   alternates: { canonical: "/partnership" },
-  openGraph: { title: "Partnership | Studio", description: "Four partnership plans.", url: "/partnership", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }] },
+  openGraph: {
+    title: "Partnership Plans | Studio Care, Partner, Plus, and Project Engagements",
+    description:
+      "Four partnership plans from Studio: Care, Partner, Studio Plus, and Studio Project. Maintenance, support, and continuous product design.",
+    url: "/partnership",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio Partnership Plans" }],
+  },
 };
 
 const plans = [
@@ -31,6 +40,21 @@ export default function Page() {
             <h1 className="font-display font-bold text-ink text-4xl md:text-5xl mb-4">Four ways to work with Studio.</h1>
             <p className="font-satoshi text-lg text-ink-muted max-w-2xl">Partnership plans for live sites, evolving products, and new projects. Pick the model that matches the stage you are at.</p>
             <ParentBadge className="mt-6" />
+          </div>
+        </section>
+        <section className="py-12">
+          <div className="mx-auto max-w-4xl px-6">
+            <div className="space-y-4">
+              <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+                Not every project ends at launch. Some sites need light oversight: a security patch, a content update, an eye on uptime. Others need a continuous design and development capacity because the product is still evolving. The four plans below cover both ends of that spectrum, with two middle options for the projects that fall somewhere between.
+              </p>
+              <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+                Pricing is in Namibian dollars (N$). All plans are billed monthly with no fixed contract; you can step up or down between tiers with one month notice. The Studio Project model is a one-time scoped engagement with a fixed proposal, not a recurring plan, and is the right starting point for any new website, application, or brand system.
+              </p>
+              <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+                Every plan includes direct access to the people doing the work. There is no account manager routing your requests through a queue. The same studio that designed and built your site continues to support it, so institutional knowledge is not lost between phases.
+              </p>
+            </div>
           </div>
         </section>
         <section className="pb-12">

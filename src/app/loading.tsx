@@ -11,6 +11,7 @@ export default function Loading() {
             alt="TANGISON STUDIO"
             width={874}
             height={286}
+            priority
             className="h-8 w-auto opacity-70 relative z-10"
             style={{
               animation: "breathe-glow 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite",

@@ -6,10 +6,19 @@ import { ScrollReveal, StaggerReveal, StaggerItem, ScaleReveal, ParentBadge } fr
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "Studio is an independent digital product practice in Windhoek, Namibia. We design websites, applications and brand systems for organizations across Africa.",
+  title: {
+    absolute: "About Studio | Independent Digital Product Practice in Windhoek, Namibia",
+  },
+  description:
+    "Studio is an independent digital product practice in Windhoek, Namibia, founded by Tangi Iigonda. We design websites, applications, and brand systems for ambitious organizations across Africa. One studio instead of three vendors, with no account layer between you and the work.",
   alternates: { canonical: "/about" },
-  openGraph: { title: "About | Studio", description: "Independent digital product practice in Windhoek, Namibia.", url: "/about", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }] },
+  openGraph: {
+    title: "About Studio | Independent Digital Product Practice in Windhoek",
+    description:
+      "Independent digital product practice in Windhoek, Namibia. We design focused websites, applications, and brand systems for ambitious organizations across Africa.",
+    url: "/about",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "About Studio" }],
+  },
 };
 
 export default function Page() {
@@ -35,7 +44,7 @@ export default function Page() {
           <div className="mx-auto max-w-5xl px-6">
             <ScaleReveal>
               <div className="aspect-[16/9] overflow-hidden rounded-[25px] bg-ocean-mist">
-                <Image src="/images/paintings/about-windhoek-v2.webp" alt="An oil painting of an early-morning Windhoek street scene with soft human activity and restrained painterly light." width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
+                <Image src="/images/paintings/about-windhoek-v2.webp" alt="An oil painting of an early-morning Windhoek street scene with soft human activity and restrained painterly light." width={1080} height={608} className="w-full h-full object-cover" priority fetchPriority="high" sizes="(max-width: 768px) 100vw, 1080px" />
               </div>
             </ScaleReveal>
           </div>
@@ -54,6 +63,12 @@ export default function Page() {
             </p>
             <p className="font-satoshi text-base leading-relaxed text-ink-muted">
               When a project needs deeper technical capacity, research, or <a href="https://labs.tangison.com" target="_blank" rel="noopener noreferrer" className="text-ink hover:text-signal-teal-text transition-colors underline">Tangison Labs</a> can provide it. But you work with Studio directly. The group connection is there when it is useful, not when it is not.
+            </p>
+            <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+              The studio was founded by Tangi Iigonda in 2023, originally under the name Gemsweb Digital. The rename to Tangison Studio in 2025 was a structural decision, not a rebrand. It clarified what the practice does (digital product work), who it serves (ambitious organizations across Africa), and how it relates to the broader Tangison group. The work itself did not change.
+            </p>
+            <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+              Our clients include travel operators in Walvis Bay and Swakopmund, skincare brands sourcing from the Kalahari, safari companies running tours across Southern Africa, financial services firms in Windhoek, petroleum distributors moving fuel across borders, and music academies that have been part of Windhoek's commercial fabric for over a decade. The thread connecting them is not industry, geography, or size. It is the seriousness with which they take their own work.
             </p>
           </div>
         </section>
@@ -74,7 +89,7 @@ export default function Page() {
                   <div className={`flex gap-6 py-6 ${i !== 3 ? "border-b border-card-border" : ""}`}>
                     <span className="font-jetbrains text-2xl font-bold text-signal-teal-text shrink-0">{p.num}</span>
                     <div>
-                      <h3 className="font-display font-bold text-ink text-lg mb-1">{p.title}</h3>
+                      <h2 className="font-display font-bold text-ink text-lg mb-1">{p.title}</h2>
                       <p className="font-satoshi text-sm text-ink-muted">{p.body}</p>
                     </div>
                   </div>

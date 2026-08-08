@@ -6,10 +6,19 @@ import { SiteShell } from "@/components/tangison/site-shell";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Notes on design, development, and digital product practice from Studio in Windhoek, Namibia.",
+  title: {
+    absolute: "Studio Blog | Notes on Design, Development, and Digital Product Practice",
+  },
+  description:
+    "Field notes from Studio in Windhoek, Namibia, on brand systems, design process, web development, applied intelligence, and what it takes to ship focused digital products for organizations across Africa. Written by the people who do the work.",
   alternates: { canonical: "/blog" },
-  openGraph: { title: "Blog | Studio", description: "Notes on design, development, and digital product practice.", url: "/blog", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }] },
+  openGraph: {
+    title: "Studio Blog | Notes on Design and Development from Windhoek",
+    description:
+      "Field notes on design, development, and digital product practice from Studio in Windhoek, Namibia. Written by the people who do the work.",
+    url: "/blog",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio Blog" }],
+  },
 };
 
 export default function Page() {
@@ -35,7 +44,7 @@ export default function Page() {
             <Link href={`/blog/${featured.slug}`} className="group block">
               <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
                 <div className="aspect-[4/3] overflow-hidden rounded-[25px] bg-ocean-mist">
-                  <Image src={featured.cover} alt={`An oil painting representing: ${featured.title}`} width={800} height={600} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 540px" />
+                  <Image src={featured.cover} alt={`An oil painting representing: ${featured.title}`} width={800} height={600} className="w-full h-full object-cover" priority fetchPriority="high" sizes="(max-width: 768px) 100vw, 540px" />
                 </div>
                 <div>
                   <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2">Featured · {featured.category}</p>

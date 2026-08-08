@@ -32,6 +32,9 @@ export function SlidingGallery({ images, interval = 4000 }: SlidingGalleryProps)
       {images.map((img, i) => (
         <div
           key={i}
+          id={`gallery-slide-${i}`}
+          role="tabpanel"
+          aria-labelledby={`gallery-tab-${i}`}
           className="absolute inset-0 transition-opacity duration-700 ease-in-out"
           style={{ opacity: i === current ? 1 : 0 }}
         >
@@ -48,7 +51,11 @@ export function SlidingGallery({ images, interval = 4000 }: SlidingGalleryProps)
       ))}
 
       {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+      <div
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10"
+        role="tablist"
+        aria-label="Gallery slides"
+      >
         {images.map((_, i) => (
           <button
             key={i}
@@ -60,6 +67,8 @@ export function SlidingGallery({ images, interval = 4000 }: SlidingGalleryProps)
             aria-label={`Go to slide ${i + 1}`}
             aria-selected={i === current}
             role="tab"
+            aria-controls={`gallery-slide-${i}`}
+            id={`gallery-tab-${i}`}
           />
         ))}
       </div>

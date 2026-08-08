@@ -1,0 +1,32 @@
+# Tangison Studio
+
+> Tangison Studio is an independent digital product practice based in Windhoek, Namibia, operating as the digital product arm of Tangison Technologies. We design and build focused websites, applications, and brand systems for ambitious organizations across Africa and beyond. Founded by Tangi Iigonda in 2023 as Gemsweb Digital; renamed to Tangison Studio in 2025 to clarify what the practice does and how it relates to the broader Tangison group. One studio instead of three vendors, with no account layer between you and the work.
+
+## Core pages
+
+- [Home](https://studio.tangison.com/): Studio homepage. Overview of what we do, who we work with, and the principles that shape the work.
+- [Selected Work](https://studio.tangison.com/work): 14 case studies of websites, applications, and brand systems built by Studio for organizations across Africa and beyond.
+- [Services](https://studio.tangison.com/services): Two capabilities (Studio and Intelligence) with seven outcome-led programs. Brand systems, website design and development, application design, product design, design systems, creative direction, and applied AI.
+- [About](https://studio.tangison.com/about): Independent digital product practice in Windhoek, Namibia. History, philosophy, and the kind of organizations we work with.
+- [Contact](https://studio.tangison.com/contact): Start a project. Email, location, response time, and what to include in a first message.
+- [Process](https://studio.tangison.com/process): Five-step working method. Discover, define, design, build, launch. Each step has a clear output, and we do not move on until the previous step is signed off.
+- [Partnership](https://studio.tangison.com/partnership): Four ongoing partnership plans (Care, Partner, Studio Plus, Studio Project) with transparent monthly pricing in Namibian dollars.
+- [Studio](https://studio.tangison.com/studio): The digital product arm of Tangison Technologies. Independent working culture with optional access to broader group capacity.
+- [Blog](https://studio.tangison.com/blog): Field notes on design, development, and digital product practice from Windhoek, Namibia.
+- [FAQ](https://studio.tangison.com/faq): Frequently asked questions about working with Studio. Pricing, timelines, process, technology, and how to start.
+- [Brand system](https://studio.tangison.com/brand): The brand system document for Studio itself. Typography, color, components, motion, and the brand tests we apply before any design decision ships.
+
+## Optional links
+
+- [Privacy Policy](https://studio.tangison.com/legal/privacy)
+- [Terms](https://studio.tangison.com/legal/terms)
+- [Cookies](https://studio.tangison.com/legal/cookies)
+- [Parent: Tangison Technologies](https://tangison.com)
+- [Sister: Tangison Labs](https://labs.tangison.com)
+
+## Contact
+
+- Email: studio@tangison.com
+- Location: Corner of Frans Indongo Street and John Meinert Street, Windhoek Central, Windhoek, Namibia
+- Response time: Within two working days for all serious enquiries
+- Social: Facebook (facebook.com/namibia.digital), Instagram (instagram.com/tangison_studio), Threads (threads.net/@tangison_studio)

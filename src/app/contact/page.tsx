@@ -9,10 +9,18 @@ import { BreadcrumbJsonLd, LocalBusinessJsonLd, WebPageJsonLd } from "@/componen
 import { ParentBadge } from "@/components/studio/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Start a project with Studio. Tell us what you are working on. We reply to every serious enquiry within two working days.",
+  title: {
+    absolute: "Contact Studio | Start a Project in Windhoek, Namibia",
+  },
+  description:
+    "Start a project with Studio in Windhoek, Namibia. Tell us what you are working on, your timeline, and any budget constraints. We reply to every serious enquiry within two working days. Brand, product, and the systems behind it, one studio instead of three vendors.",
   alternates: { canonical: "/contact" },
-  openGraph: { title: "Contact | Studio", description: "Start a project with Studio.", url: "/contact", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }] },
+  openGraph: {
+    title: "Contact Studio | Start a Project in Windhoek, Namibia",
+    description: "Start a project with Studio. Tell us what you are working on. We reply within two working days.",
+    url: "/contact",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Contact Studio" }],
+  },
 };
 
 export default function Page() {
@@ -33,7 +41,7 @@ export default function Page() {
         <section className="pb-12">
           <div className="mx-auto max-w-5xl px-6">
             <div className="aspect-[16/9] overflow-hidden rounded-[25px] bg-ocean-mist">
-              <Image src="/images/paintings/contact-invitation-v2.webp" alt="An oil painting of a doorway-like gap formed by two weathered rock walls with cold fog passing through." width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
+              <Image src="/images/paintings/contact-invitation-v2.webp" alt="An oil painting of a doorway-like gap formed by two weathered rock walls with cold fog passing through." width={1080} height={608} className="w-full h-full object-cover" priority fetchPriority="high" sizes="(max-width: 768px) 100vw, 1080px" />
             </div>
           </div>
         </section>
@@ -46,16 +54,33 @@ export default function Page() {
                   <a href="mailto:studio@tangison.com" className="inline-flex items-center gap-2 text-lg font-medium text-ink hover:text-signal-teal-text transition-colors">
                     <Mail className="w-5 h-5 text-signal-teal-text" /> studio@tangison.com
                   </a>
+                  <p className="font-satoshi text-sm leading-relaxed text-ink-muted mt-3 max-w-md">
+                    For new project enquiries, partnership questions, or general conversation. Include your timeline and any budget constraints if you have them. We reply personally to every message, not via an automated form.
+                  </p>
                 </div>
                 <div>
                   <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2">Location</p>
                   <a href={googleBusinessProfile.mapsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-base text-ink hover:text-signal-teal-text transition-colors">
                     <MapPin className="w-5 h-5 text-signal-teal-text" /> Windhoek, Namibia
                   </a>
+                  <p className="font-satoshi text-sm leading-relaxed text-ink-muted mt-3 max-w-md">
+                    Corner of Frans Indongo Street and John Meinert Street, Windhoek Central. We work with clients across Africa and beyond; physical visits are by appointment only.
+                  </p>
                 </div>
                 <div>
                   <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2">Response time</p>
-                  <p className="text-base text-ink-muted">Within two working days for all serious enquiries.</p>
+                  <p className="text-base text-ink-muted leading-relaxed">
+                    Within two working days for all serious enquiries. Faster for time-sensitive project briefs. We do not chase volume, so a thoughtful first message gets a thoughtful first reply.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2">What to send</p>
+                  <ul className="space-y-2 text-sm text-ink-muted leading-relaxed">
+                    <li>The organization or product you are working on.</li>
+                    <li>The outcome you want in three to six months.</li>
+                    <li>Any existing assets, brand material, or briefs you have.</li>
+                    <li>A rough budget range, even if it is wide.</li>
+                  </ul>
                 </div>
                 <div className="pt-4 border-t border-card-border">
                   <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-3">Social</p>

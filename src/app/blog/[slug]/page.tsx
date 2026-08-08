@@ -30,14 +30,37 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   if (!article) notFound();
   const related = getRelatedArticles(slug);
 
+  const coverImageUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com"}${article.cover}`;
+  const publisherLogoUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com"}/brand/favicon.webp`;
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
     description: article.excerpt,
     datePublished: article.date,
-    author: { "@type": "Organization", name: "Tangison Studio" },
-    publisher: { "@type": "Organization", name: "Tangison Studio" },
+    dateModified: article.date,
+    image: {
+      "@type": "ImageObject",
+      url: coverImageUrl,
+      width: { "@type": "QuantitativeValue", value: 1080 },
+      height: { "@type": "QuantitativeValue", value: 608 },
+    },
+    author: { "@type": "Organization", name: "Tangison Studio", url: "https://studio.tangison.com" },
+    publisher: {
+      "@type": "Organization",
+      name: "Tangison Studio",
+      url: "https://studio.tangison.com",
+      logo: {
+        "@type": "ImageObject",
+        url: publisherLogoUrl,
+        width: { "@type": "QuantitativeValue", value: 499 },
+        height: { "@type": "QuantitativeValue", value: 499 },
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com"}/blog/${slug}`,
+    },
   };
 
   return (
@@ -74,7 +97,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         <section className="pb-12">
           <div className="mx-auto max-w-4xl px-6">
             <div className="aspect-[16/9] overflow-hidden rounded-[25px] bg-ocean-mist">
-              <Image src={article.cover} alt={`An oil painting representing: ${article.title}`} width={1080} height={608} className="w-full h-full object-cover" priority sizes="(max-width: 768px) 100vw, 1080px" />
+              <Image src={article.cover} alt={`An oil painting representing: ${article.title}`} width={1080} height={608} className="w-full h-full object-cover" priority fetchPriority="high" sizes="(max-width: 768px) 100vw, 1080px" />
             </div>
           </div>
         </section>

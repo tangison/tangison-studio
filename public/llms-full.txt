@@ -1,0 +1,83 @@
+# Tangison Studio
+
+> Tangison Studio is an independent digital product practice based in Windhoek, Namibia. We design and build focused websites, applications, and brand systems for ambitious organizations across Africa and beyond. Founded by Tangi Iigonda in 2023 as Gemsweb Digital; renamed to Tangison Studio in 2025. One studio instead of three vendors, with no account layer between you and the work.
+
+## Core services
+
+Studio operates around two capabilities, Studio and Intelligence, with seven outcome-led programs underneath.
+
+The Studio capability covers everything you can see and interact with: brand systems, websites, applications, design systems, and creative direction. The Intelligence capability covers applied AI work that has to behave predictably in production: research, model integration, agent design, and the infrastructure that makes sovereign intelligence possible.
+
+The split is structural, not cosmetic. Some clients need only Studio. Some need only Intelligence. Most need both, but at different intensities across the project lifecycle. Pricing each program separately means you pay for what you actually use. There is no minimum retainer, no bundled service you have to opt out of.
+
+## Process
+
+Five-step working method: Discover, Define, Design, Build, Launch. Each step has a clear output (brief, scope, system, build, launch). The same person who scopes the work designs it. The same person who designs it builds it. There is no account layer, no handoff to a separate production team. Engagements are sized to the work: a focused marketing site typically runs four to eight weeks; complex applications can take three to six months. The realistic range is shared in the proposal phase and we stick to it. If scope changes mid-project, we re-scope together.
+
+## Partnership plans
+
+Four ongoing partnership models with transparent pricing in Namibian dollars:
+
+- Care (N$500/month): Light maintenance and monitoring for live websites. Security updates, small content changes, uptime oversight, email support.
+- Partner (N$1,000/month): Ongoing support for sites that change regularly. Everything in Care plus priority response, regular content updates, performance oversight, monthly check-in.
+- Studio Plus (N$2,000/month): Continuous product design and development for evolving digital products. Everything in Partner plus dedicated design and development time, roadmap planning, iterative releases, strategy sessions.
+- Studio Project (custom proposal): A scoped project engagement for new websites, products, or brand systems. Discovery, design, development, launch, and handover with a defined timeline and fixed proposal.
+
+All plans are billed monthly with no fixed contract. You can step up or down between tiers with one month notice. Every plan includes direct access to the people doing the work.
+
+## Selected work (14 case studies)
+
+- ProAvia: Travel logistics, curated tours, and transfer services from Walvis Bay.
+- Nalago: Kalahari-inspired organic skincare formulated for the African market.
+- Cluster Leaf Safaris: Owner-operated safari experiences across Southern Africa.
+- SMEFrog: Remote business registration and compliance for Namibian SMEs (project archive).
+- Petrocor: Wholesale petroleum and chemical distribution across Southern Africa.
+- Tangison Systems: Sovereign intelligence infrastructure from Windhoek, Namibia.
+- Crescendo Namibia: Instruments, lessons, and academy platform since 2009.
+- Feorm: Farm stay discovery and booking platform for Namibia.
+- LRClearing: Logistics and customs clearing services for cross-border trade.
+- Revive Autoworks: Automotive restoration and repair workshop.
+- Miway Insurance: Insurance products and services.
+- Dieselman Nam: Walvis Bay mobile diesel mechanical service.
+- Enchanted Artistry CC: Windhoek cosmetology and mentorship practice.
+- Weca Offroad Centre: Swakopmund 4x4 fitment workshop.
+
+Each case study documents the challenge, the approach, the craft notes, and the outcome. Read them at https://studio.tangison.com/work.
+
+## Studio principles
+
+The brand tests we apply before any design decision ships, drawn from the world's leading brand agencies:
+
+- Pentagram Test: Does every design decision trace back to a strategic principle?
+- Wolff Olins Test: Does this brand behave differently, or just look different?
+- Landor Test: What does the audience feel when they encounter this brand?
+- COLLINS Test: Does this design make something possible that was not possible before?
+- Siegel+Gale Test: Have we removed everything that does not add meaning?
+- Lippincott Test: Will this still work in 20 years?
+
+## Contact
+
+- Email: studio@tangison.com
+- Location: Corner of Frans Indongo Street and John Meinert Street, Windhoek Central, Windhoek, Namibia
+- Response time: Within two working days for all serious enquiries
+- For new project enquiries, include: the organization or product, the outcome you want in three to six months, any existing assets, and a rough budget range.
+- Social: Facebook (facebook.com/namibia.digital), Instagram (instagram.com/tangison_studio), Threads (threads.net/@tangison_studio)
+
+## Optional links
+
+- [Home](https://studio.tangison.com/)
+- [Selected Work](https://studio.tangison.com/work)
+- [Services](https://studio.tangison.com/services)
+- [About](https://studio.tangison.com/about)
+- [Contact](https://studio.tangison.com/contact)
+- [Process](https://studio.tangison.com/process)
+- [Partnership](https://studio.tangison.com/partnership)
+- [Studio](https://studio.tangison.com/studio)
+- [Blog](https://studio.tangison.com/blog)
+- [FAQ](https://studio.tangison.com/faq)
+- [Brand system](https://studio.tangison.com/brand)
+- [Privacy Policy](https://studio.tangison.com/legal/privacy)
+- [Terms](https://studio.tangison.com/legal/terms)
+- [Cookies](https://studio.tangison.com/legal/cookies)
+- [Parent organization: Tangison Technologies](https://tangison.com)
+- [Sister practice: Tangison Labs](https://labs.tangison.com)

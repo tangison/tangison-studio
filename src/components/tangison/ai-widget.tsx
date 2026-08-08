@@ -124,7 +124,7 @@ function StudioAvatar({ size = 20 }: { size?: number }) {
   return (
     <Image
       src="/brand/favicon.webp"
-      alt=""
+      alt="Studio assistant avatar"
       width={size}
       height={size}
       className="object-contain"

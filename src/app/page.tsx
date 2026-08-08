@@ -117,6 +117,7 @@ export default function Page() {
                   height={768}
                   className="w-full h-auto block"
                   priority
+                  fetchPriority="high"
                   sizes="(max-width: 768px) 100vw, 1080px"
                 />
               </figure>
@@ -243,9 +244,10 @@ export default function Page() {
                     </p>
                     <Link
                       href={`/services#${cap.id}`}
+                      aria-label={`Learn more about the ${cap.name} capability`}
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:text-signal-teal-text transition-colors"
                     >
-                      Learn more <ArrowRight className="w-3.5 h-3.5" />
+                      Explore {cap.name} <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </StaggerItem>

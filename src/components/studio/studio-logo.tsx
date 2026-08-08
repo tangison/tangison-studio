@@ -33,7 +33,7 @@ export function StudioLogo({
     >
       <Image
         src="/brand/favicon.webp"
-        alt=""
+        alt="Studio logo"
         width={size}
         height={size}
         className="shrink-0"

@@ -20,8 +20,10 @@ export function OrganizationJsonLd() {
     },
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Corner of Frans Indongo Street and John Meinert Street",
       addressLocality: "Windhoek",
       addressRegion: "Khomas",
+      postalCode: "10001",
       addressCountry: "NA",
     },
     contactPoint: {
@@ -61,8 +63,10 @@ export function LocalBusinessJsonLd() {
       "Creative digital agency in Windhoek, Namibia. Website design, development, brand systems, and creative direction. Founded by Tangi Iigonda.",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Corner of Frans Indongo Street and John Meinert Street",
       addressLocality: "Windhoek",
       addressRegion: "Khomas",
+      postalCode: "10001",
       addressCountry: "NA",
     },
     geo: {

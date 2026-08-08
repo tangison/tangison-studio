@@ -54,7 +54,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Travel & Tourism",
     services: ["Brand Systems", "Website Design", "Digital Direction"],
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    descriptor: "Travel logistics, tours, and transfers from Walvis Bay",
+    descriptor: "Travel logistics, curated tours, and transfer services from Walvis Bay, connecting visitors to the coast, the desert, and the broader Namibian experience.",
     challengeH2:
       "A Namibian travel company needed a site that could close bookings, not just show destinations.",
     challengeBody: [
@@ -101,7 +101,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Beauty & Wellness",
     services: ["Brand Identity", "E-Commerce", "Website Development"],
     tech: ["Next.js", "Tailwind CSS"],
-    descriptor: "Kalahari-inspired organic skincare for the African market",
+    descriptor: "Kalahari-inspired organic skincare formulated for the African market, with ingredient stories and a brand system rooted in Namibian landscape.",
     challengeH2:
       "An organic skincare brand with a real story needed a site that could tell it.",
     challengeBody: [
@@ -148,7 +148,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Safari & Tourism",
     services: ["Brand Systems", "Website Design", "Creative Direction"],
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    descriptor: "Owner-operated safari experiences across Southern Africa",
+    descriptor: "Owner-operated safari experiences across Southern Africa, built around eleven years of operational trust, transparent pricing, and guides who are visible on the site.",
     challengeH2:
       "An 11-year-old safari company with 500+ completed tours had no digital presence that reflected the quality of the work.",
     challengeBody: [
@@ -190,12 +190,12 @@ export const caseStudies: CaseStudy[] = [
     slug: "smefrog",
     screenshotSlug: "smefrog",
     name: "SMEFrog",
-    url: "https://smefrog.tangison.com",
+    url: "",
     year: "2026",
     industry: "LegalTech / Business Services",
     services: ["Product Design", "Website Development"],
     tech: ["Next.js", "Tailwind CSS"],
-    descriptor: "Remote business registration and compliance for Namibian SMEs",
+    descriptor: "Remote business registration and compliance for Namibian SMEs, simplifying what used to require in-person visits, queues, and weeks of back-and-forth.",
     challengeH2:
       "Registering a business in Namibia takes too long and costs too much. SMEFrog was built to fix both.",
     challengeBody: [
@@ -243,7 +243,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Energy & Resources",
     services: ["Brand Identity", "Website Design"],
     tech: ["Next.js", "Tailwind CSS"],
-    descriptor: "Wholesale petroleum and chemical distribution across Southern Africa",
+    descriptor: "Wholesale petroleum and chemical distribution across Southern Africa, with a site that handles trade-specific documentation, pricing, and account workflows.",
     era: "Gemsweb Digital",
     challengeH2:
       "A B2B fuel distributor operating across Namibia and the DRC needed a digital presence that matched the scale of the operation.",
@@ -292,7 +292,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Technology / AI",
     services: ["Brand Systems", "Website Design", "Product Design"],
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    descriptor: "Sovereign intelligence infrastructure from Windhoek",
+    descriptor: "Sovereign intelligence infrastructure from Windhoek, Namibia, built so organizations retain control of their data, models, and the decisions that come out of them.",
     internal: true,
     challengeH2:
       "Building your own company's site is the hardest brief you will ever write.",
@@ -336,12 +336,12 @@ export const caseStudies: CaseStudy[] = [
     slug: "crescendo",
     screenshotSlug: "crescendo",
     name: "Crescendo Namibia",
-    url: "https://cresendona.com",
+    url: "https://crescendonamibia.com",
     year: "2026",
     industry: "Music & Education",
     services: ["Brand Identity", "Website Development", "E-Commerce"],
     tech: ["Next.js", "Tailwind CSS"],
-    descriptor: "Instruments, lessons, and academy platform since 2009",
+    descriptor: "Instruments, lessons, and academy platform since 2009, with retail and education treated as co-equal pillars under a single sixteen-year-old brand.",
     challengeH2:
       "Namibia's longest-running music destination had been operating for 16 years without a site that could carry the weight of that history.",
     challengeBody: [
@@ -389,7 +389,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Agriculture / Farm Stays",
     services: ["Brand Identity", "Website Design"],
     tech: ["Next.js", "Python"],
-    descriptor: "Farm stay discovery and booking platform for Namibia",
+    descriptor: "Farm stay discovery and booking platform for Namibia, connecting travelers with working farms, guesthouses, and lodges across the country.",
     internal: true,
     challengeH2:
       "Namibia has extraordinary farm stays. No platform existed to connect them to the travelers who would love them.",

@@ -9,13 +9,14 @@ import { BreadcrumbJsonLd, WebPageJsonLd } from "@/components/tangison/json-ld";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Studio and Intelligence. Seven outcome-led programs. One studio instead of three vendors.",
+    "Studio and Intelligence: seven outcome-led programs from a single independent practice in Windhoek, Namibia. Brand systems, website design and development, application design, product design, design systems, creative direction, and applied AI. One studio instead of three vendors, working across the African continent and beyond.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Services | Studio",
-    description: "Studio and Intelligence. Seven programs, one practice.",
+    title: "Services | Studio and Intelligence, One Practice in Windhoek",
+    description:
+      "Brand, product, and the systems behind it. Seven outcome-led programs from a single independent practice in Windhoek, Namibia.",
     url: "/services",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Studio Services" }],
   },
 };
 
@@ -43,6 +44,21 @@ export default function Page() {
               </p>
               <ParentBadge className="mt-6" />
             </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Intro */}
+        <section className="pb-8">
+          <div className="mx-auto max-w-4xl px-6 space-y-4">
+            <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+              Studio is organized around two capabilities, Studio and Intelligence, with seven outcome-led programs underneath. The Studio capability covers everything you can see and interact with: brand systems, websites, applications, design systems, and creative direction. The Intelligence capability covers applied AI work that has to behave predictably in production: research, model integration, agent design, and the infrastructure that makes sovereign intelligence possible.
+            </p>
+            <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+              The split is structural, not cosmetic. Some clients need only Studio. Some need only Intelligence. Most need both, but at different intensities across the project lifecycle. Pricing each program separately means you pay for what you actually use. There is no minimum retainer, no bundled service you have to opt out of.
+            </p>
+            <p className="font-satoshi text-base leading-relaxed text-ink-muted">
+              Each program is described below by the situation it fits, the outputs it produces, and the kind of organization it tends to suit. If you are not sure which one applies, send us a message and we will tell you. The first conversation is free, and we will not push a program that does not fit your problem.
+            </p>
           </div>
         </section>
 
