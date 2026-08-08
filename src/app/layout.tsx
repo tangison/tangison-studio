@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type React from "react";
 import localFont from "next/font/local";
 import { OrganizationJsonLd } from "@/components/tangison/json-ld";
@@ -39,6 +39,15 @@ const jetbrainsMono = localFont({
   display: "swap",
   preload: false,
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4efe6" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c1014" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: {
@@ -96,7 +105,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${cabinetGrotesk.variable} ${satoshi.variable} ${jetbrainsMono.variable}`} style={{ maxWidth: "100%", overflowX: "hidden" }}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="privacy-policy" href="/legal/privacy" />
         <link rel="terms-of-service" href="/legal/terms" />
         <OrganizationJsonLd />

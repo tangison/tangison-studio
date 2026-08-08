@@ -731,9 +731,12 @@ export function TangisonAIWidget() {
         {isOpen && (
           <motion.div
             ref={(el) => {
-              // Merge refs: panelRef for scroll logic + trapRef for focus trap
-              (panelRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
-              (trapRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
+              // Merge refs: panelRef for scroll logic + trapRef for focus trap.
+              // `useFocusTrap` returns a MutableRefObject<HTMLDivElement | null>
+              // (initialised with null), so direct .current assignment is type-safe
+              // and satisfies react-hooks/immutability without a cast.
+              panelRef.current = el;
+              trapRef.current = el;
             }}
             initial={{ opacity: 0, y: 16, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}

@@ -4,8 +4,8 @@ import { caseStudies } from "@/lib/case-studies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com";
-  const PRIMARY = new Date("2026-07-14");
-  const SECONDARY = new Date("2026-07-01");
+  const PRIMARY = new Date("2026-08-08");
+  const SECONDARY = new Date("2026-08-08");
   const LEGAL = new Date("2026-01-01");
 
   const staticRoutes: MetadataRoute.Sitemap = [

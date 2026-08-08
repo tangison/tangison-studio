@@ -38,37 +38,43 @@ describe("Social links configuration", () => {
   });
 });
 
-describe("Capabilities (3 groups, 9 programs)", () => {
-  it("has exactly 3 capabilities", () => {
-    expect(capabilities).toHaveLength(3);
+describe("Capabilities (2 groups, 8 programs)", () => {
+  it("has exactly 2 capabilities", () => {
+    expect(capabilities).toHaveLength(2);
   });
 
-  it("capabilities are Brand, Product, Intelligence", () => {
+  it("capabilities are Studio, Intelligence", () => {
     const ids = capabilities.map((c) => c.id);
-    expect(ids).toEqual(["brand", "product", "intelligence"]);
+    expect(ids).toEqual(["studio", "intelligence"]);
   });
 
-  it("each capability has exactly 3 programs", () => {
-    capabilities.forEach((cap) => {
-      expect(cap.programs).toHaveLength(3);
-    });
+  it("studio has 6 programs, intelligence has 2 programs", () => {
+    const studio = capabilities.find((c) => c.id === "studio");
+    const intelligence = capabilities.find((c) => c.id === "intelligence");
+    expect(studio?.programs).toHaveLength(6);
+    expect(intelligence?.programs).toHaveLength(2);
   });
 
-  it("total of 9 programs", () => {
-    expect(allPrograms).toHaveLength(9);
+  it("total of 8 programs", () => {
+    expect(allPrograms).toHaveLength(8);
   });
 
   it("maps old services to correct capabilities", () => {
-    expect(mapServiceToCapability("website-design")).toBe("product");
-    expect(mapServiceToCapability("website-development")).toBe("product");
-    expect(mapServiceToCapability("brand-systems")).toBe("brand");
-    expect(mapServiceToCapability("creative-direction")).toBe("brand");
+    // Brand + Product merged into one capability: studio
+    expect(mapServiceToCapability("website-design")).toBe("studio");
+    expect(mapServiceToCapability("website-development")).toBe("studio");
+    expect(mapServiceToCapability("brand-systems")).toBe("studio");
+    expect(mapServiceToCapability("creative-direction")).toBe("studio");
+    expect(mapServiceToCapability("product-design")).toBe("studio");
+    expect(mapServiceToCapability("design-systems")).toBe("studio");
+    // Intelligence has no relatedServices entries (automation removed)
+    expect(mapServiceToCapability("applied-ai")).toBeNull();
   });
 });
 
 describe("Case studies", () => {
-  it("has 13 case studies", () => {
-    expect(caseStudies).toHaveLength(13);
+  it("has 14 case studies", () => {
+    expect(caseStudies).toHaveLength(14);
   });
 
   it("includes the 3 priority projects", () => {
@@ -84,10 +90,22 @@ describe("Case studies", () => {
     expect(slugs).toContain("enchanted");
   });
 
+  it("includes the Weca Offroad case study added in August 2026", () => {
+    const slugs = caseStudies.map((c) => c.slug);
+    expect(slugs).toContain("weca");
+  });
+
   it("each case study has a URL", () => {
     caseStudies.forEach((cs) => {
       expect(cs.url).toBeDefined();
       expect(cs.url).toMatch(/^https?:\/\//);
+    });
+  });
+
+  it("nextSlug chain is closed (no orphan, no break)", () => {
+    const slugs = new Set(caseStudies.map((c) => c.slug));
+    caseStudies.forEach((cs) => {
+      expect(slugs.has(cs.nextSlug)).toBe(true);
     });
   });
 

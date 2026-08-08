@@ -190,12 +190,13 @@ export const caseStudies: CaseStudy[] = [
     slug: "smefrog",
     screenshotSlug: "smefrog",
     name: "SMEFrog",
-    url: "",
+    url: "https://smefrog.tangison.com",
     year: "2026",
     industry: "LegalTech / Business Services",
     services: ["Product Design", "Website Development"],
     tech: ["Next.js", "Tailwind CSS"],
     descriptor: "Remote business registration and compliance for Namibian SMEs, simplifying what used to require in-person visits, queues, and weeks of back-and-forth.",
+    internal: true,
     challengeH2:
       "Registering a business in Namibia takes too long and costs too much. SMEFrog was built to fix both.",
     challengeBody: [

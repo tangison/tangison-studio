@@ -19,7 +19,7 @@ export function useFocusTrap(
   active: boolean,
   triggerRef?: RefObject<HTMLElement | null>
 ) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const getFocusableElements = useCallback(() => {
     if (!containerRef.current) return [];
