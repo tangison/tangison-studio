@@ -1,37 +1,93 @@
-# ⬡ TANGISON STUDIO
+# Tangison Studio
 
-> **Creative digital agency. Operating from the Atlantic coast.**
+Creative digital agency site for the studio arm of Tangison Technologies.
 
----
+**Live:** [studio.tangison.com](https://studio.tangison.com)  
+**Status:** Production site  
+**Visibility:** Public
 
-### Design. Build. Deploy. Zero Compromise.
+## What this is
 
-Tangison Studio is a creative digital agency that designs, builds, and deploys beautiful digital experiences, brands, and platforms. Based in **Windhoek, Namibia**, operating across the SADC region.
+The studio property. Presents services, process, work case studies, a blog, careers and the studio legal pack. All imagery is a single commissioned painted style held under `public/images/paintings`.
 
----
+## Stack
 
-### Services
+- Next.js (App Router)
+- TypeScript
+- Framer Motion
+- lucide-react icons
+- Astryx design system
 
-| Service | Description | Status |
-|---------|-------------|--------|
-| **[Tangison Studio](https://tangisonstudio.com)** | Creative digital agency for brands that demand more | Active |
+## Getting started
 
----
+```bash
+git clone https://github.com/tangison/tangison-studio.git
+cd tangison-studio
+npm install
+npm run dev
+```
 
-### Core Principles
+The dev server runs on http://localhost:3000.
 
-- **Design First** — Every pixel intentional, every interaction meaningful
-- **Built to Last** — No shortcuts, no templates, no compromises
-- **Africa-First** — Built for African realities, not Western adaptations
-- **Honest Craft** — Quality over quantity, always
-- **SADC Resilience** — Designed for the realities of African infrastructure
+## Scripts
 
----
+| Script | Purpose |
+|---|---|
+| `npm run dev` | Start the development server. |
+| `npm run build` | Production build. |
+| `npm run start` | Serve the production build. |
+| `npm run lint` | Run ESLint. |
+| `npm run typecheck` | Run the TypeScript compiler with no emit. |
+| `npm run test` | Run the test suite. |
+| `npm run audit` | Run the in-repo audit checks. |
+| `npm run agent:audit` | Run the agent-driven audit pass. |
+| `npm run astryx` | Astryx design system CLI. |
 
-### Tech Stack
+## Routes
 
-`Next.js` `TypeScript` `Tailwind CSS` `Framer Motion` `Node.js` `UI/UX` `Brand Design`
+18 page routes.
 
----
+```
+/
+/about
+/blog
+/blog/[slug]
+/brand
+/careers
+/contact
+/faq
+/legal/cookies
+/legal/privacy
+/legal/terms
+/partnership
+/process
+/resources
+/services
+/studio
+/work
+/work/[slug]
+```
 
-© 2026 TANGISON STUDIO. ALL RIGHTS RESERVED.
+## Environment
+
+Copy `.env.example` to `.env.local` and fill in the values. Never commit a populated env file.
+
+## Deployment
+
+Deployed on Vercel. Production domains:
+
+- `studio.tangison.com`
+
+## Maintainer
+
+Built and maintained by **Tangison Technologies**, Windhoek, Namibia.
+
+| | |
+|---|---|
+| Studio line | [+264 85 341 1522](tel:+264853411522) (`0853411522`) |
+| Email | studio@tangison.com |
+| Web | https://tangison.com |
+
+## Licence
+
+Proprietary. Copyright Tangison Technologies. All rights reserved.
