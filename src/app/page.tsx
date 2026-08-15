@@ -8,6 +8,7 @@ import { SiteShell } from "@/components/tangison/site-shell";
 import { StudioButton } from "@/components/studio/button";
 import { ScrollReveal, StaggerReveal, StaggerItem, FadeIn, ScaleReveal, HoverLift, TextReveal, ParentBadge } from "@/components/studio/scroll-reveal";
 import { WebPageJsonLd } from "@/components/tangison/json-ld";
+import { WorkRotator, type WorkRotatorItem } from "@/components/studio/work-rotator";
 
 export const metadata: Metadata = {
   title: "Studio | Digital Product Design and Development in Namibia",
@@ -23,16 +24,39 @@ export const metadata: Metadata = {
   },
 };
 
-const featuredSlugs = ["proavia", "nalago", "clusterleaf"];
-const featuredWork = featuredSlugs
-  .map((slug) => caseStudies.find((c) => c.slug === slug))
-  .filter((c): c is NonNullable<typeof c> => Boolean(c));
-
-const projectPaintings: Record<string, string> = {
+/**
+ * Homepage work rotator source.
+ *
+ * Sourced directly from the Work collection (src/lib/case-studies.ts) so the
+ * homepage never drifts from /work. Newest entry first, so the most recent
+ * project leads the rotation automatically when a case study is added.
+ */
+const homepagePaintings: Record<string, string> = {
+  mendozer: "/images/paintings/projects/mendozer.webp",
   proavia: "/images/paintings/projects/homepage-proavia.webp",
   nalago: "/images/paintings/projects/homepage-nalago.webp",
   clusterleaf: "/images/paintings/projects/homepage-clusterleaf.webp",
+  weca: "/images/paintings/projects/weca.webp",
 };
+
+const ROTATOR_COUNT = 5;
+
+const rotatorItems: WorkRotatorItem[] = [...caseStudies]
+  .reverse()
+  .slice(0, ROTATOR_COUNT)
+  .map((project) => ({
+    slug: project.slug,
+    name: project.name,
+    industry: project.industry,
+    descriptor: project.descriptor,
+    outcomeH2: project.outcomeH2,
+    services: project.services,
+    url: project.url,
+    year: project.year,
+    painting:
+      homepagePaintings[project.slug] ??
+      `/images/paintings/projects/${project.slug}.webp`,
+  }));
 
 const capabilityPaintings: Record<string, string> = {
   studio: "/images/paintings/capability-brand-v2.webp",
@@ -142,70 +166,7 @@ export default function Page() {
               </div>
             </ScrollReveal>
 
-            <StaggerReveal className="space-y-12 md:space-y-20">
-              {featuredWork.map((project, i) => {
-                const isReversed = i % 2 === 1;
-                return (
-                  <StaggerItem key={project.slug}>
-                    <HoverLift>
-                    <article className={`grid md:grid-cols-2 gap-6 md:gap-10 items-center ${isReversed ? "md:[direction:rtl]" : ""}`}>
-                      {/* Oil painting */}
-                      <div className="[direction:ltr]">
-                        <div className="aspect-[4/3] overflow-hidden rounded-[25px] bg-ocean-mist">
-                          <Image
-                            src={projectPaintings[project.slug]}
-                            alt={`An oil painting representing ${project.name}: ${project.industry.toLowerCase()}.`}
-                            width={800}
-                            height={600}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                            sizes="(max-width: 768px) 100vw, 540px"
-                          />
-                        </div>
-                      </div>
-                      {/* Content */}
-                      <div className="[direction:ltr]">
-                        <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2">{project.industry}</p>
-                        <h3 className="font-display font-bold text-ink text-2xl md:text-3xl mb-3">
-                          <Link href={`/work/${project.slug}`} className="hover:text-signal-teal-text transition-colors">
-                            {project.name}
-                          </Link>
-                        </h3>
-                        <p className="font-satoshi text-base leading-relaxed text-ink-muted mb-4">
-                          {project.descriptor}
-                        </p>
-                        <p className="font-satoshi text-sm leading-relaxed text-ink font-medium mb-4">
-                          {project.outcomeH2}
-                        </p>
-                        <div className="flex flex-wrap gap-1.5 mb-5">
-                          {project.services.map((s) => (
-                            <span key={s} className="inline-flex items-center px-2.5 py-1 rounded-[25px] text-xs font-medium bg-ocean-mist text-ink">
-                              {s}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="flex flex-wrap items-center gap-4">
-                          <StudioButton href={`/work/${project.slug}`} variant="secondary" size="sm" hasArrow arrowType="right">
-                            Read {project.name} case study
-                          </StudioButton>
-                          {project.url && (
-                            <a
-                              href={project.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:text-signal-teal-text transition-colors"
-                            >
-                              {project.name} live site <ArrowUpRight className="w-4 h-4" />
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </article>
-                    </HoverLift>
-                  </StaggerItem>
-                );
-              })}
-            </StaggerReveal>
+            <WorkRotator items={rotatorItems} />
           </div>
         </section>
 

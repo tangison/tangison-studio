@@ -53,6 +53,7 @@ interface StudioButtonProps {
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
   className?: string;
+  tabIndex?: number;
   "aria-label"?: string;
 }
 

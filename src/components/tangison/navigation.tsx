@@ -72,16 +72,17 @@ const searchableItems: SearchItem[] = [
   { label: "Brand Identity", href: "/brand", category: "Pages" },
   { label: "Studio", href: "/studio", category: "Pages" },
   // Case studies
-  { label: "ProAvia Travel & Tours", href: "/work/proavia", category: "Work", description: "Travel & Tourism — Website design and development" },
-  { label: "Nalago Skincare", href: "/work/nalago", category: "Work", description: "Beauty & Wellness — E-commerce" },
-  { label: "Cluster Leaf Safaris", href: "/work/clusterleaf", category: "Work", description: "Safari & Tourism — Website design" },
-  { label: "SMEFrog", href: "/work/smefrog", category: "Work", description: "LegalTech — Product design" },
-  { label: "Petrocor", href: "/work/petrocor", category: "Work", description: "Corporate — Website design" },
+  { label: "ProAvia Travel & Tours", href: "/work/proavia", category: "Work", description: "Travel & Tourism: Website design and development" },
+  { label: "Nalago Skincare", href: "/work/nalago", category: "Work", description: "Beauty & Wellness: E-commerce" },
+  { label: "Cluster Leaf Safaris", href: "/work/clusterleaf", category: "Work", description: "Safari & Tourism: Website design" },
+  { label: "SMEFrog", href: "/work/smefrog", category: "Work", description: "LegalTech: Product design" },
+  { label: "Petrocor", href: "/work/petrocor", category: "Work", description: "Corporate: Website design" },
   { label: "Crescendo", href: "/work/crescendo", category: "Work", description: "Website design and development" },
   { label: "FEORM", href: "/work/feorm", category: "Work", description: "Website design and development" },
-  { label: "L&R Clearing Agency", href: "/work/lrclearing", category: "Work", description: "Logistics — Website design" },
-  { label: "Revive Auto Works", href: "/work/reviveautoworks", category: "Work", description: "Automotive — Website design" },
+  { label: "L&R Clearing Agency", href: "/work/lrclearing", category: "Work", description: "Logistics: Website design" },
+  { label: "Revive Auto Works", href: "/work/reviveautoworks", category: "Work", description: "Automotive: Website design" },
   { label: "MI-WAY", href: "/work/miway", category: "Work", description: "Website design and development" },
+  { label: "Mendozer Investments", href: "/work/mendozer", category: "Work", description: "Multi-sector group: Website design and development" },
   // Capabilities
   { label: "Studio", href: "/services#studio", category: "Capabilities", description: "Brand, product, and digital direction" },
   { label: "Intelligence", href: "/services#intelligence", category: "Capabilities", description: "Applied AI and infrastructure" },
@@ -464,7 +465,7 @@ export function Navigation() {
           <Link
             href="/"
             className="flex items-center shrink-0"
-            aria-label="Studio — home"
+            aria-label="Studio home"
           >
             <StudioLogo size={26} />
           </Link>

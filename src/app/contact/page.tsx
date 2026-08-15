@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { SiteShell } from "@/components/tangison/site-shell";
 import { ContactForm } from "@/components/studio/contact-form";
 import { SlidingGallery } from "@/components/studio/sliding-gallery";
@@ -56,6 +56,15 @@ export default function Page() {
                   </a>
                   <p className="font-satoshi text-sm leading-relaxed text-ink-muted mt-3 max-w-md">
                     For new project enquiries, partnership questions, or general conversation. Include your timeline and any budget constraints if you have them. We reply personally to every message, not via an automated form.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-jetbrains text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-2">Phone</p>
+                  <a href="tel:+264853411522" className="inline-flex items-center gap-2 text-lg font-medium text-ink hover:text-signal-teal-text transition-colors">
+                    <Phone className="w-5 h-5 text-signal-teal-text" /> +264 85 341 1522
+                  </a>
+                  <p className="font-satoshi text-sm leading-relaxed text-ink-muted mt-3 max-w-md">
+                    Studio line, Monday to Friday, 08:00 to 17:00 Windhoek time. Call if your brief is easier to explain than to write.
                   </p>
                 </div>
                 <div>

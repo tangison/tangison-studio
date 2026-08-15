@@ -38,6 +38,7 @@ const projectPaintings: Record<string, string> = {
   dieselman: "/images/paintings/projects/dieselman.webp",
   enchanted: "/images/paintings/projects/enchanted.webp",
   weca: "/images/paintings/projects/weca.webp",
+  mendozer: "/images/paintings/projects/mendozer.webp",
 };
 
 export default function Page() {
@@ -71,7 +72,7 @@ export default function Page() {
         <section className="pb-20">
           <div className="mx-auto max-w-6xl px-6">
             <div className="space-y-12 md:space-y-20">
-              {caseStudies.map((project, i) => {
+              {[...caseStudies].reverse().map((project, i) => {
                 const isReversed = i % 2 === 1;
                 const painting = projectPaintings[project.slug] || "/images/paintings/work-intro.webp";
                 return (

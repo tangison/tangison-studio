@@ -719,6 +719,59 @@ export const caseStudies: CaseStudy[] = [
       "Weca Offroad Centre launched in a public under-construction state with a site that does what the category usually avoids. It names every authorised brand. It publishes fitment prices. It surfaces reviews that cannot be edited or removed. A buyer can confirm the brand they want, see what fitment costs, and read third-party proof before they make the WhatsApp call. The site does the qualifying work before the phone rings.",
       "The lesson was about proof over claim. In a category where most 4x4 fitment sites promise quality, expertise, and service, the differentiator is publishing the specifics that can be checked. Which brands. What prices. What real customers have actually said. The Weca site does not promise. It shows. The trust signal is the verifiable detail, not the adjective.",
     ],
+    nextSlug: "mendozer",
+  },
+  /* ──────────────────────────────────────────────
+     PROJECT 15: Mendozer Investments
+     ────────────────────────────────────────────── */
+  {
+    slug: "mendozer",
+    screenshotSlug: "mendozer",
+    name: "Mendozer Investments",
+    url: "https://mendozer.com",
+    year: "2026",
+    industry: "Multi-Sector Group",
+    services: ["Brand Systems", "Website Design", "Website Development", "Content Structure"],
+    tech: ["Next.js", "Tailwind CSS", "TypeScript"],
+    descriptor:
+      "A Namibian group operating across construction, technology, cooling, logistics, fuel and energy, and tourism and agriculture, presented as one accountable structure rather than six separate businesses.",
+    challengeH2:
+      "Six working directions under one group, and no single place that made the whole structure legible.",
+    challengeBody: [
+      "Mendozer Investments works across six directions: construction and infrastructure, technology and systems, cooling and cold chain, logistics and support services, fuel and energy distribution, and tourism and agriculture. Each one has its own buyers, its own procurement language, and its own idea of what proof looks like. A contractor checking whether the group can handle a site build is not reading the same page as a facilities manager checking cold-chain capability.",
+      "A diversified group faces a specific problem online. Say everything at once and the visitor cannot tell what you actually do. Split into six microsites and the group advantage disappears, because the whole argument for a group is that one accountable backbone carries work that crosses disciplines. The site had to hold both ideas at the same time.",
+      "There was a second constraint, and it shaped the build more than anything else. Mendozer would not publish project claims that had not been approved for publication. No invented client list, no unverifiable numbers, no stock photography standing in for site work. That ruled out the usual way a group site builds credibility and forced the structure to earn trust differently.",
+    ],
+    approachH2: "Six clear entry points, one group behind all of them.",
+    approachBody: [
+      "The homepage leads with the group proposition, then branches immediately into the six directions. A visitor picks the direction closest to the work in front of them and moves into a sector page that speaks that sector's language. Nobody has to read about cold chain to find out about construction. The routing question, which sector am I, is answered in the first screen.",
+      "The group argument is carried by a single instruction repeated at each branch: start with the sector closest to the work, and bring the group in when the brief crosses disciplines. That sentence does the work that a generic about-us paragraph usually fails at, because it tells the visitor exactly when the multi-sector structure becomes useful to them rather than asserting that it is impressive.",
+      "Because approved project detail was limited, the site was built so that verifiable material carries the credibility. Real archive imagery from actual sites, published only where it was cleared. A compliance route that surfaces the registration, VAT and licensing record. An updates route for activity that has been approved for publication. The enquiry path sends a prepared message to contact@mendozer.com without storing submissions on the site. Where proof was not available, the site says nothing rather than filling the gap.",
+    ],
+    craftNotes: [
+      {
+        label: "Sector-first routing on the homepage",
+        body: "Six numbered directions, each with a one-line scope statement and its own route. A visitor self-selects in the first screen instead of reading a generic group overview and guessing which part applies to them.",
+      },
+      {
+        label: "Only approved imagery, only approved claims",
+        body: "Project and service detail appears when it has been cleared for publication. Archive photography comes from real Mendozer sites. The site carries no unverified project claims and no self-curated testimonials, because a group that cannot be checked is a group that will be doubted.",
+      },
+      {
+        label: "Public records as the trust layer",
+        body: "Registration, VAT and licensing detail sits on its own route. For procurement buyers in Namibia, a verifiable compliance record answers the qualifying question faster than any claim about capability.",
+      },
+      {
+        label: "One enquiry route across six sectors",
+        body: "The contact path prepares a message to contact@mendozer.com and lets the sender pick a sector or a group enquiry when the brief crosses more than one direction. No enquiry data is stored on the website.",
+      },
+    ],
+    outcomeH2:
+      "One group site that routes six audiences without diluting any of them.",
+    outcomeBody: [
+      "Mendozer Investments has a site where a construction buyer, a cold-chain manager and a fuel distributor each find their own entry point within seconds, while the group structure stays visible behind all six. The multi-sector position reads as coordination rather than as a list of unrelated activities.",
+      "The build also settled a question worth carrying forward. Restraint about unverified claims is not a weakness in a group site. Naming only what has been approved, and pointing at public records for the rest, produces a page that holds up when a procurement officer starts checking. Specificity that can be verified beats scale that cannot.",
+    ],
     nextSlug: "proavia",
   },
 ];

@@ -74,7 +74,7 @@ export function LocalBusinessJsonLd() {
       latitude: -22.5609,
       longitude: 17.0658,
     },
-    telephone: "+264-85-341-1522",
+    telephone: "+264 85 341 1522",
     email: "studio@tangison.com",
     priceRange: "$$",
     openingHours: "Mo-Fr 08:00-17:00",
