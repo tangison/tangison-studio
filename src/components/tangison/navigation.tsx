@@ -42,7 +42,8 @@ const menuGroups = [
   {
     title: "Contact",
     links: [
-      { label: "Start a project", href: "/contact" },
+      { label: "Start a project brief", href: "/contact" },
+      { label: "Free audit", href: "/audit" },
       { label: "studio@tangison.com", href: "mailto:studio@tangison.com" },
     ],
   },
@@ -64,6 +65,7 @@ const searchableItems: SearchItem[] = [
   { label: "Process", href: "/process", category: "Pages" },
   { label: "About", href: "/about", category: "Pages" },
   { label: "Contact", href: "/contact", category: "Pages" },
+  { label: "Free Audit", href: "/audit", category: "Pages", description: "We audit your digital presence at no cost" },
   { label: "Partnership", href: "/partnership", category: "Pages" },
   { label: "Blog", href: "/blog", category: "Pages" },
   { label: "Resources", href: "/resources", category: "Pages" },

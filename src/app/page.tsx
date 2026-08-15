@@ -106,12 +106,22 @@ export default function Page() {
                 <ScrollReveal delay={0.8}>
                   <div className="mt-7 flex flex-wrap items-center gap-3">
                   <StudioButton href="/work" variant="primary" hasArrow arrowType="right">
-                    View selected work
+                    See every project we have shipped
                   </StudioButton>
                   <StudioButton href="/contact" variant="secondary">
-                    Start a project
+                    Start a project brief
                   </StudioButton>
                   </div>
+                  <p className="mt-3 font-satoshi text-sm text-ink-muted">
+                    No cost to scope it. Or{" "}
+                    <Link
+                      href="/audit"
+                      className="text-ink underline underline-offset-4 decoration-fog-gray hover:decoration-ink transition-colors"
+                    >
+                      get a free audit of your current site
+                    </Link>
+                    .
+                  </p>
                 </ScrollReveal>
                 <ParentBadge className="mt-6" />
               </div>

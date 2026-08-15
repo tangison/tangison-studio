@@ -21,6 +21,7 @@ const footerLinks = [
   { label: "The Studio", href: "/studio" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
+  { label: "Free Audit", href: "/audit" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
