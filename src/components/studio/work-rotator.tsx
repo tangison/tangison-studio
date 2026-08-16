@@ -130,11 +130,10 @@ export function WorkRotator({ items }: WorkRotatorProps) {
               role="group"
               aria-roledescription="slide"
               aria-label={`${index + 1} of ${count}: ${project.name}`}
-              aria-hidden={!isActive}
-              /* inert removes the inactive slide's links from the tab order
-                 and the a11y tree together. Without it, aria-hidden wraps
-                 focusable anchors, which is an axe violation even though each
-                 anchor already carries tabIndex={-1}. React 19 supports it. */
+              /* inert alone: it removes the inactive slide from the tab order
+                 AND the accessibility tree, so aria-hidden is redundant here.
+                 Keeping both trips aria-hidden-focus, which counts focusable
+                 descendants of aria-hidden statically. React 19 supports it. */
               inert={!isActive}
               className={
                 isActive
