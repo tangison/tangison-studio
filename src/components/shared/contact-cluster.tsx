@@ -114,7 +114,18 @@ export function ContactCluster() {
         </a>
       </div>
 
-      <div className="cluster-primary-row">
+        <button
+          type="button"
+          className="cluster-btn cluster-btn-top"
+          onClick={toTop}
+          aria-label="Scroll back to top"
+          tabIndex={revealed ? 0 : -1}
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <path d="M12 19V5M5 12l7-7 7 7" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
         <button
           type="button"
           className="cluster-btn cluster-btn-primary"
@@ -132,19 +143,6 @@ export function ContactCluster() {
           </svg>
           <span className="cluster-label">{expanded ? "Close" : "Talk to us"}</span>
         </button>
-
-        <button
-          type="button"
-          className="cluster-btn cluster-btn-top"
-          onClick={toTop}
-          aria-label="Scroll back to top"
-          tabIndex={revealed ? 0 : -1}
-        >
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-            <path d="M12 19V5M5 12l7-7 7 7" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
-      </div>
 
       <style jsx>{`
         .cluster-root {
@@ -182,11 +180,6 @@ export function ContactCluster() {
           opacity: 1;
           transform: translateY(0) scale(1);
           pointer-events: auto;
-        }
-        .cluster-primary-row {
-          display: flex;
-          align-items: center;
-          gap: 14px;
         }
         .cluster-btn {
           display: inline-flex;
