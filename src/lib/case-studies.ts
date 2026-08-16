@@ -189,6 +189,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "smefrog",
     screenshotSlug: "smefrog",
+    url: "https://sme.tangison.com",
     name: "SMEFrog",
     year: "2026",
     industry: "LegalTech / Business Services",
@@ -335,6 +336,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "crescendo",
     screenshotSlug: "crescendo",
+    url: "https://www.crescendona.com",
     name: "Crescendo Namibia",
     year: "2026",
     industry: "Music & Education",

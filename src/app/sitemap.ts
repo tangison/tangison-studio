@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/lib/blog";
 import { caseStudies } from "@/lib/case-studies";
+import { resources } from "@/lib/resources";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://studio.tangison.com";
@@ -20,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/studio`, lastModified: SECONDARY, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/blog`, lastModified: PRIMARY, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/faq`, lastModified: SECONDARY, changeFrequency: "monthly", priority: 0.5 },
-    { url: `${baseUrl}/resources`, lastModified: SECONDARY, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${baseUrl}/resources`, lastModified: PRIMARY, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/careers`, lastModified: SECONDARY, changeFrequency: "monthly", priority: 0.4 },
     { url: `${baseUrl}/brand`, lastModified: SECONDARY, changeFrequency: "yearly", priority: 0.4 },
     { url: `${baseUrl}/legal/privacy`, lastModified: LEGAL, changeFrequency: "yearly", priority: 0.3 },
@@ -42,5 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...caseStudyRoutes, ...blogRoutes];
+  const resourceRoutes: MetadataRoute.Sitemap = resources.map((r) => ({
+    url: `${baseUrl}/resources/${r.slug}`,
+    lastModified: new Date(r.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...caseStudyRoutes, ...blogRoutes, ...resourceRoutes];
 }

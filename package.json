@@ -16,6 +16,7 @@
   "dependencies": {
     "@astryxdesign/core": "^0.1.5",
     "@astryxdesign/theme-neutral": "^0.1.5",
+    "@vercel/analytics": "^2.0.1",
     "class-variance-authority": "^0.7.1",
     "framer-motion": "^12.23.2",
     "lucide-react": "^0.525.0",

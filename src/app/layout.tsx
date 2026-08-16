@@ -3,6 +3,7 @@ import type React from "react";
 import localFont from "next/font/local";
 import { OrganizationJsonLd } from "@/components/tangison/json-ld";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 /* ── next/font/local: Self-hosted, zero render-blocking ── */
 const cabinetGrotesk = localFont({
@@ -119,6 +120,7 @@ export default function RootLayout({
         }
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
