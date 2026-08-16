@@ -31,7 +31,7 @@ export interface WorkRotatorItem {
   descriptor: string;
   outcomeH2: string;
   services: string[];
-  url: string;
+  url?: string;
   painting: string;
   year: string;
 }

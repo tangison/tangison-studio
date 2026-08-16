@@ -21,7 +21,7 @@ export interface CaseStudy {
   /** Screenshot filename prefix — differs from slug when slug has special chars */
   screenshotSlug: string;
   name: string;
-  url: string;
+  url?: string;
   year: string;
   industry: string;
   services: string[];
@@ -190,7 +190,6 @@ export const caseStudies: CaseStudy[] = [
     slug: "smefrog",
     screenshotSlug: "smefrog",
     name: "SMEFrog",
-    url: "https://smefrog.tangison.com",
     year: "2026",
     industry: "LegalTech / Business Services",
     services: ["Product Design", "Website Development"],
@@ -337,7 +336,6 @@ export const caseStudies: CaseStudy[] = [
     slug: "crescendo",
     screenshotSlug: "crescendo",
     name: "Crescendo Namibia",
-    url: "https://crescendonamibia.com",
     year: "2026",
     industry: "Music & Education",
     services: ["Brand Identity", "Website Development", "E-Commerce"],
