@@ -83,7 +83,6 @@ export function ContactCluster() {
     <div
       className="cluster-root"
       data-revealed={revealed ? "true" : "false"}
-      aria-hidden={revealed ? undefined : true}
     >
       {/* Secondary options, revealed from the primary button. */}
       <div className="cluster-options" data-open={expanded ? "true" : "false"}>
@@ -92,7 +91,6 @@ export function ContactCluster() {
           target="_blank"
           rel="noopener noreferrer"
           className="cluster-btn cluster-btn-wa"
-          tabIndex={revealed && expanded ? 0 : -1}
         >
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
             <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.53.07-.8.38-.28.3-1.05 1.02-1.05 2.5 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z" />
@@ -104,7 +102,6 @@ export function ContactCluster() {
         <a
           href={mailHref}
           className="cluster-btn cluster-btn-mail"
-          tabIndex={revealed && expanded ? 0 : -1}
         >
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
             <rect x="2.5" y="4.5" width="19" height="15" rx="2" />
@@ -119,7 +116,6 @@ export function ContactCluster() {
           className="cluster-btn cluster-btn-top"
           onClick={toTop}
           aria-label="Scroll back to top"
-          tabIndex={revealed ? 0 : -1}
         >
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
             <path d="M12 19V5M5 12l7-7 7 7" strokeLinecap="round" strokeLinejoin="round" />
@@ -131,8 +127,7 @@ export function ContactCluster() {
           className="cluster-btn cluster-btn-primary"
           onClick={() => setExpanded((v) => !v)}
           aria-expanded={expanded}
-          aria-label={expanded ? "Hide contact options" : "Show contact options"}
-          tabIndex={revealed ? 0 : -1}
+          aria-label={expanded ? "Close contact options" : "Talk to us, open contact options"}
         >
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
             {expanded ? (
@@ -159,11 +154,13 @@ export function ContactCluster() {
           transform: translateY(12px);
           transition: opacity 260ms ease, transform 260ms ease;
           pointer-events: none;
+          visibility: hidden;
         }
         .cluster-root[data-revealed="true"] {
           opacity: 1;
           transform: translateY(0);
           pointer-events: auto;
+          visibility: visible;
         }
         .cluster-options {
           display: flex;
@@ -175,11 +172,13 @@ export function ContactCluster() {
           transform-origin: bottom right;
           transition: opacity 200ms ease, transform 200ms ease;
           pointer-events: none;
+          visibility: hidden;
         }
         .cluster-options[data-open="true"] {
           opacity: 1;
           transform: translateY(0) scale(1);
           pointer-events: auto;
+          visibility: visible;
         }
         .cluster-btn {
           display: inline-flex;
