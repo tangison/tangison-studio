@@ -37,9 +37,13 @@ export function OrganizationJsonLd() {
       "https://www.threads.net/@tangison_studio",
       "https://github.com/tangison",
     ],
+    /* The parent link needs a resolvable url and @id, otherwise a crawler
+       cannot connect this entity to the one published on tangison.com. */
     parentOrganization: {
       "@type": "Organization",
+      "@id": "https://tangison.com/#organization",
       name: "Tangison Technologies",
+      url: "https://tangison.com",
     },
   };
 

@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { Navigation } from "@/components/tangison/navigation";
 import { Footer } from "@/components/tangison/footer";
+import { ContactCluster } from "@/components/shared/contact-cluster";
 
 /* Defer AI widget — only loads on /contact and /faq */
 const TangisonAIWidget = dynamic(
@@ -26,7 +27,21 @@ export function SiteShell({
   const showChatbot = CHATBOT_ROUTES.includes(pathname);
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-skeleton-bone">
+    <div
+      className="relative min-h-screen flex flex-col bg-skeleton-bone"
+      /* Native Studio palette for the shared cluster. tangison.com sets its
+         own values for these same variables, so structure is shared while
+         colour stays per-domain. */
+      style={
+        {
+          "--cluster-accent": "#0F5C5B",
+          "--cluster-accent-ink": "#FFFFFF",
+          "--cluster-surface": "#FFFFFF",
+          "--cluster-ink": "#111315",
+          "--cluster-border": "rgba(17,19,21,0.12)",
+        } as React.CSSProperties
+      }
+    >
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-[9999] focus:bg-signal-teal focus:text-signal-white focus:px-4 focus:py-2 focus:font-jetbrains focus:text-xs focus:uppercase focus:tracking-widest"
@@ -37,6 +52,7 @@ export function SiteShell({
       <main id="main-content" className="flex-1">{children}</main>
       {footerSlot}
       <Footer />
+      <ContactCluster />
       {showChatbot && <TangisonAIWidget />}
     </div>
   );

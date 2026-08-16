@@ -472,6 +472,16 @@ export function Navigation() {
             <StudioLogo size={26} />
           </Link>
 
+          {/* Cross-domain badge — states the parent relationship on every page.
+              Hidden below md so it never competes with the mobile nav. */}
+          <a
+            href="https://tangison.com/?utm_source=studio.tangison.com&utm_medium=nav-badge&utm_campaign=cross-site"
+            className="hidden md:inline-flex items-center gap-1.5 shrink-0 rounded-full border border-ink/10 px-2.5 py-1 font-jetbrains text-[10px] uppercase tracking-[0.14em] text-ink-muted hover:border-ink/25 hover:text-ink transition-colors"
+          >
+            Part of Tangison Technologies
+            <span aria-hidden="true">&#8599;</span>
+          </a>
+
           {/* Desktop nav links — hidden on mobile */}
           <div className="hidden lg:flex items-center gap-6">
             {[
