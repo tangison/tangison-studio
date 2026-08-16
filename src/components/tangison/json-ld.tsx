@@ -7,6 +7,9 @@ export function OrganizationJsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    /* Stable @id so tangison.com's subOrganization reference resolves to this
+       exact node instead of creating a duplicate, unlinked entity. */
+    "@id": "https://studio.tangison.com/#organization",
     name: "Tangison Studio",
     alternateName: ["TANGISON STUDIO", "Gemsweb Digital"],
     url: SITE_URL,
