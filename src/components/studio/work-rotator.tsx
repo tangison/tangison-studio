@@ -131,6 +131,11 @@ export function WorkRotator({ items }: WorkRotatorProps) {
               aria-roledescription="slide"
               aria-label={`${index + 1} of ${count}: ${project.name}`}
               aria-hidden={!isActive}
+              /* inert removes the inactive slide's links from the tab order
+                 and the a11y tree together. Without it, aria-hidden wraps
+                 focusable anchors, which is an axe violation even though each
+                 anchor already carries tabIndex={-1}. React 19 supports it. */
+              inert={!isActive}
               className={
                 isActive
                   ? "opacity-100 transition-opacity duration-500 ease-out"
