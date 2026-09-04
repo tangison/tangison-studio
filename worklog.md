@@ -88,3 +88,25 @@ Work Log:
 Stage Summary:
 - Deliverables: full site rebuild (committed locally, zip in download/), 31 regenerated Pollinations images, optimized hero video, fixed off-canvas, Cases gallery + dark case pages.
 - To ship: push the repo to the GitHub remote and import on Vercel (hobby-safe: fully static, ~1.5MB video, 4 runtime deps, legacy /work URLs permanently redirected).
+
+---
+Task ID: 5
+Agent: main (Super Z)
+Task: User follow-up on the rebuild — make the home-page cases section even tighter and Collins-like (gallery feel, zoom-in/zoom-out animation, very little copy), tighten case copy in src/lib/projects.ts, and keep individual Pollinations image swaps possible via scripts/generate_images.py.
+
+Work Log:
+- Found the workspace reset had dropped the image-pipeline scripts (only audit scripts survived; all 31 webp images, video, fonts and site source intact). Recreated scripts/generate_images.py from scratch: 31-entry manifest (key, dims, pinned seed, prompt reconstructed from in-code alt texts), one Pollinations call per image, --only/--reseed/--seed/--list/--dry-run flags, serial queue with 25s 429 backoff, center-crop + exact dims + 0.6px gaussian + webp q84 normalize, raw kept in scripts/.raw/, backup-restore on normalize failure. Verified: manifest lists 31/31 on disk; dry-run emits a valid flux URL.
+- src/lib/projects.ts: added `title` (short display name) + `category` (tight sector) to the Project interface and all 15 entries; rewrote every `short` as a punchy one-liner (e.g. mendozer "Six businesses. One accountable platform.", feorm "Our own product — shipping without a client brief."); trimmed long eyebrows (weca, enchanted, reviveautoworks, lrclearing).
+- New src/components/case-card.tsx (server component): image fills the card, caption always visible but minimal — title left, category · year + arrow right; arrow slides in on hover.
+- globals.css: `.case-card-image` zoom-in on hover/focus (scale 1 → 1.07, brightness 1.03, 1.1s --ease-out-expo) and ease-back-out on leave; `.reveal-zoom` entrance (scale 1.045 → 1 over 1.3s expo) with prefers-reduced-motion neutralization added.
+- reveal.tsx: new `variant="rise"|"zoom"` prop.
+- Home page: Selected-work section rebuilt — header reduced to one eyebrow line + "All 15 cases" link; featured case full-width (21:9, zoom-settle entrance, col-span-2) + 4 cases in 2-col 4:3 grid; no description text, no "View case" label.
+- case-tile.tsx (cases page): overlay mono line now `category · 2026`, headline now short `title` (name/short line kept for the on-demand reveal).
+- Removed dead scaffold tailwind.config.ts (Tailwind 4 CSS-first site) — killed the tailwindcss-animate module-not-found build warning.
+- Verified with agent-browser on prod build: 5 cards render, first 21:9 full-width; hover produces computed transform matrix(1.07) with brightness(1.03), leave returns to none; all 5 reveals fire on scroll; mobile 390x844 single column, 16:10 featured, captions fit (24px, no overflow); /cases 15 tiles with "Group platform · 2026 · Mendozer" overlay; /cases/feorm + /cases/mendozer render tightened copy, 0 broken images, 0 console/page errors; lint + build clean (all routes static).
+- Git hygiene: untracked 308 accidentally-committed audit_data files via filter-branch across all history (repo .git 100MB+ → 5.4MB, files kept on disk for the re-runnable audit instrument); .gitignore: /scripts/* with !/scripts/generate_images.py tracked, package-lock.json ignored (bun.lock canonical); core.fileMode false for restore noise; committed @types/node pin. Commits (author Tangi Iigonda <studio@tangison.com>): "Home cases: Collins-style tight gallery with zoom in/out motion" + "chore: pin @types/node, ignore stray npm lockfile (bun.lock is canonical)".
+- Regenerated download/studio-tangison-source.zip from HEAD: 5.5MB, 141 files (was lost in reset; old one was 112MB with audit data). Updated download/README.md.
+
+Stage Summary:
+- Home cases section is now a Collins-style tight gallery with real zoom-in/zoom-out motion and very little copy; all case copy tightened; any of the 31 images can be swapped surgically with `python3 scripts/generate_images.py --only <key>` (one Pollinations call each).
+- Repo is Vercel-hobby-clean (5.4MB history, 4 runtime deps, static output); still no push credentials in this environment — ship via download/studio-tangison-source.zip.
