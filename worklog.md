@@ -62,3 +62,29 @@ Stage Summary:
 - Key findings: copy is strong but presentation-inverted (case studies 1,221-2,015 words vs image-first benchmark; 29 paragraphs >60 words); motion stack present (motion + Lenis + SplitType) but monotone (0.6s duration x28, single expo-out easing, 40 whileInView fade-rise; ZERO useScroll/useTransform/useSpring); layout rhythm uniform; CTA "Contact" x24-32; you/we 0.59 on corporate site. Both sites BEAT COLLINS on alt coverage (100% vs 0/14) and reduced-motion.
 - Studio stack: Next.js + motion + Lenis + SplitType; perf quick wins: 166KB favicon, 126KB TTF mono font.
 - Instrument re-runnable for the roadmap's Phase 3 delta review: fetch_tangison.py + harvest_tangison.py + analyze_js_motion.py + analyze_copy.py.
+
+---
+Task ID: 4
+Agent: main (Super Z)
+Task: Rebuild studio.tangison.com per user brief: rename Work→Cases as a gallery with hidden-text tiles, dark-theme case pages, fixed off-canvas mobile menu, hero replaced with user-supplied video (muted+optimized), and all imagery regenerated via Pollinations in the soft style. Prepare for Vercel hobby push with proper author.
+
+Work Log:
+- Downloaded hero video from filebin (gemini_generated_video_d5c021d5.mp4, 1280x720 h264+aac 4.5MB) → ffmpeg: stripped audio, CRF 27 veryfast, faststart → public/videos/hero.mp4 (1.5MB) + poster frame.
+- Downloaded brand assets (favicon/logo-dark/logo-light webp) + 5 live-site screenshots from studio.tangison.com (reused as real proof, not regenerated).
+- Downloaded all 11 site font files (Cabinet Grotesk 400-900, Satoshi 300-900, JetBrains Mono) → src/fonts + next/font/local (src/lib/fonts.ts).
+- Crawled the 10 remaining case pages (/work/clusterleaf etc.) → scripts/extract_cases_extra.py → audit_data/cases_extra.json.
+- scripts/build_projects_data.py → src/lib/projects.ts: all 15 projects with challenge/approach/craft/outcome parsed from crawled .md + JSON (fixed craft-point extraction bug: short-title/long-body detection inside approach zone).
+- scripts/generate_images.py: 31 images via Pollinations (rate-limit hardening: 1-concurrent-per-IP queue, 25s backoff on 429; proavia needed a manual seed swap). scripts/normalize_images.py: exact target dims (1200x900 / 900x1200 / 1200x675 / 1280x720) + webp q84 + 0.6px gaussian soft finish.
+- VLM QA: contact sheet → consistent soft pastel editorial aesthetic confirmed; individually re-checked 4 flagged tiles (capability-brand, clusterleaf, reviveautoworks, contact-gallery-02) — all clean (thumbnail misreads).
+- Built the site (Next.js 16 App Router): design tokens from the live CSS (paper #f6f4ef / ink #0c1014 / teal #2cb5b4, --ease-primary cubic-bezier(.16,1,.3,1)); dual theme via .theme-ink.
+  - src/components/site-nav.tsx: floating pill nav + REBUILT off-canvas drawer (scroll lock with iOS fixed-body guard, focus trap, Esc/backdrop close, focus return, 100dvh, 48px targets, route-change close, staggered links).
+  - src/components/case-tile.tsx: gallery tile — image fills card, text hidden; overlay reveals on hover/focus (pointer) or the info button (touch, aria-pressed), tap image navigates.
+  - Pages: home (video hero + scrim), /cases (dark gallery, 15 tiles), /cases/[slug] (15 dark case studies with live-proof screenshots + next-case nav), /services, /about, /contact (mailto compose + gallery strip), /audit, /blog/one-studio-instead-of-three-vendors.
+  - SEO: per-page metadata (absolute titles on cases), JSON-LD Organization, sitemap.ts (22 URLs), robots.ts; next.config redirects /work→/cases + /work/:slug→/cases/:slug (308 verified).
+- Trimmed project for Vercel hobby: 4 runtime deps (next/react/react-dom/lucide-react), removed prisma/api/shadcn scaffold (~900→132 packages), plain `next build`, no standalone output; bun.lock regenerated; no-op db scripts kept for sandbox runner.
+- Agent-browser verification (desktop + 390x844): video hero plays (readyState 4), all 15 tiles load, drawer opens/closes correctly (transform, scroll lock, focus, Esc, backdrop, route nav), touch reveal chip pins overlay (opacity 1), tile tap → /cases/mendozer, /work redirect 308→/cases, 0 console errors, 0 page errors; lint clean; scroll-behavior warning fixed via data-scroll-behavior.
+- Git: author Tangi Iigonda <studio@tangison.com>, commit 1c564f6 "Rebuild Studio site: Cases gallery, video hero, soft imagery, fixed off-canvas". No push credentials/remote in this environment — source zip prepared at download/studio-tangison-source.zip (4.4MB).
+
+Stage Summary:
+- Deliverables: full site rebuild (committed locally, zip in download/), 31 regenerated Pollinations images, optimized hero video, fixed off-canvas, Cases gallery + dark case pages.
+- To ship: push the repo to the GitHub remote and import on Vercel (hobby-safe: fully static, ~1.5MB video, 4 runtime deps, legacy /work URLs permanently redirected).
