@@ -41,3 +41,6 @@ server.log
 !/scripts/generate_images.py
 /scripts/.raw/
 /worklog.md
+
+# single lockfile policy (bun.lock is canonical)
+package-lock.json
