@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Build the report body PDF (ReportLab) for the Studio Tanguson vs COLLINS audit.
+"""Build the report body PDF (ReportLab) for the Tangison copy + design audit.
 
-Route: PDF skill / Report brief. Cover is rendered separately via html2poster.js
-(Template 07 Crystal Blue) and merged as page 0 by merge_final.py.
-Numbering: cover/TOC unnumbered; body chapters start at 1. Footer: TOC = 'i',
-body pages = arabic starting at 1 (displayed = doc.page - 1).
+Route: PDF skill / Report brief. Cover rendered separately via html2poster.js
+(Template 01 HUD, cascade seed-7 warm palette) and merged as page 0 by
+merge_tangison.py. Numbering: cover/TOC unnumbered; body chapters start at 1.
+Footer: TOC = 'i', body pages = arabic starting at 1 (displayed = doc.page - 1).
 """
 import hashlib
 import os
@@ -28,11 +28,10 @@ from reportlab.platypus.tableofcontents import TableOfContents
 
 sys.path.insert(0, "/home/z/my-project/scripts")
 sys.path.insert(0, "/home/z/my-project/skills/pdf/scripts")
-from report_content import CHAPTERS, META  # noqa: E402
+from report_content_tangison import CHAPTERS, META  # noqa: E402
 from pdf import install_font_fallback  # noqa: E402
 
-OUT = "/home/z/my-project/audit_data/report_body.pdf"
-CL = "/home/z/my-project/audit_data/collins"
+OUT = "/home/z/my-project/audit_data/report_body_tangison.pdf"
 
 # ------------------------------------------------------------------ fonts
 FONT_DIR = "/usr/share/fonts"
@@ -49,16 +48,17 @@ registerFontFamily("DejaVuSans", normal="DejaVuSans", bold="DejaVuSans")
 registerFontFamily("NotoSerifSC", normal="NotoSerifSC", bold="NotoSerifSC-Bold")
 install_font_fallback()
 
-# ------------------------------------------------------------------ palette (Template 07 Crystal Blue body)
-PAGE_BG = colors.HexColor("#f5f8fc")     # XL
-SECTION_BG = colors.HexColor("#edf2f9")  # XL
-CARD_BG = colors.HexColor("#e4ecf5")     # L
-TABLE_STRIPE = colors.HexColor("#eef3fa")  # L
-HEADER_FILL = colors.HexColor("#1a4a7a")   # M
-BORDER = colors.HexColor("#c0d0e2")        # S
-ACCENT = colors.HexColor("#2d7ab3")        # XS
-TEXT_PRIMARY = colors.HexColor("#142840")
-TEXT_MUTED = colors.HexColor("#5a7a96")
+# ------------------------------------------------------------------ palette (cascade seed 7)
+PAGE_BG = colors.HexColor("#f1f0ef")     # XL
+SECTION_BG = colors.HexColor("#f2f1f0")  # XL
+CARD_BG = colors.HexColor("#e8e7e4")     # L
+TABLE_STRIPE = colors.HexColor("#eeedeb")  # L
+HEADER_FILL = colors.HexColor("#504933")   # M
+BORDER = colors.HexColor("#cfcab8")        # S
+ACCENT = colors.HexColor("#87702a")        # XS gold
+ACCENT_2 = colors.HexColor("#3a95b4")      # XS teal
+TEXT_PRIMARY = colors.HexColor("#1c1c1a")
+TEXT_MUTED = colors.HexColor("#78766f")
 
 MARGIN = 0.9 * inch
 PAGE_W, PAGE_H = A4
@@ -81,7 +81,7 @@ S_BULLET = ParagraphStyle("Bullet", fontName="FreeSerif", fontSize=10.5, leading
 S_CAPTION = ParagraphStyle("Caption", fontName="FreeSerif", fontSize=8.5, leading=12,
                            textColor=TEXT_MUTED, alignment=TA_CENTER,
                            spaceBefore=3, spaceAfter=6)
-S_CODE = ParagraphStyle("Code", fontName="DejaVuSans", fontSize=8, leading=11.5,
+S_CODE = ParagraphStyle("Code", fontName="DejaVuSans", fontSize=7.6, leading=10.5,
                         alignment=TA_LEFT, textColor=TEXT_PRIMARY)
 S_CODE_TITLE = ParagraphStyle("CodeTitle", fontName="FreeSerif", fontSize=8.5, leading=12,
                               textColor=TEXT_MUTED, spaceBefore=6, spaceAfter=3)
@@ -108,11 +108,20 @@ def content_sanitize(text: str) -> str:
     text = text.replace("\ufffd", "")
     text = re.sub(r"[\ufe00-\ufe0f]", "", text)
     text = re.sub(r"[\ue000-\uf8ff]", "", text)
+    # Bind em-dashes and opening quotes to the preceding word with a no-break
+    # space so they never start a wrapped line (QA punctuation rule).
+    text = text.replace(" \u2014", "\u00a0\u2014")
+    text = text.replace(" \u201c", "\u00a0\u201c")
     return text
 
 
 def esc(s: str) -> str:
-    return s.replace("&", "&").replace("<", "<").replace(">", ">")
+    # Build entities at runtime via chr() so code.sanitize cannot collapse them
+    # back into raw characters (it rewrites literal entity strings in source).
+    amp = chr(38)
+    return (s.replace(amp, amp + "amp;")
+             .replace(chr(60), amp + "lt;")
+             .replace(chr(62), amp + "gt;"))
 
 
 def code_markup(text: str) -> str:
@@ -122,9 +131,8 @@ def code_markup(text: str) -> str:
         e = esc(content_sanitize(ln))
         stripped = e.lstrip(" ")
         n = len(e) - len(stripped)
-        e = " " * n + stripped
-        e = re.sub(r"  +", lambda m: " " * len(m.group(0)), e)
-        out.append(e if e else " ")
+        e = "\u00a0" * n + stripped
+        out.append(e if e else "\u00a0")
     return "<br/>".join(out)
 
 
@@ -197,7 +205,7 @@ def build_code(title, text):
     t = Table([[body]], colWidths=[AVAIL_W * 0.96], hAlign="CENTER")
     t.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, -1), SECTION_BG),
-        ("LINEBEFORE", (0, 0), (0, -1), 2, ACCENT),
+        ("LINEBEFORE", (0, 0), (0, -1), 2, ACCENT_2),
         ("LEFTPADDING", (0, 0), (-1, -1), 10),
         ("RIGHTPADDING", (0, 0), (-1, -1), 10),
         ("TOPPADDING", (0, 0), (-1, -1), 8),
@@ -299,23 +307,7 @@ def draw_decorations(canvas, doc):
 
 
 # ------------------------------------------------------------------ story
-def make_cs_hero():
-    src = os.path.join(CL, "pages", "case-studies.png")
-    dst = os.path.join(CL, "cs_hero.jpg")
-    if os.path.exists(dst):
-        return
-    if not os.path.exists(src):
-        return
-    im = PILImage.open(src)
-    im2 = im.crop((0, 0, im.width, min(im.height, 2400)))
-    if im2.width > 1400:
-        r = 1400 / im2.width
-        im2 = im2.resize((1400, int(im2.height * r)), PILImage.LANCZOS)
-    im2.convert("RGB").save(dst, "JPEG", quality=85, optimize=True)
-
-
 def main():
-    make_cs_hero()
     doc = TocDocTemplate(
         OUT,
         pagesize=A4,
@@ -326,7 +318,7 @@ def main():
         title=META["doc_title"],
         author=META["author"],
         creator="Z.ai",
-        subject="Design and motion audit of studio.tanguson.com benchmarked against wearecollins.com (COLLINS)",
+        subject=META["subject"],
     )
     frame = Frame(MARGIN, doc.bottomMargin, doc.width, doc.height, id="normal")
     doc.addPageTemplates([PageTemplate(id="main", frames=[frame], onPage=draw_decorations)])
@@ -373,8 +365,6 @@ def main():
 
         head_group = [h1, hr]
         body = flows
-        # Never nest KeepTogether inside KeepTogether (KT.wrap returns a 0xffffff
-        # sentinel height; nesting it produces phantom blank pages).
         first = body[0] if body else None
         if first is not None and not isinstance(first, (Spacer, KeepTogether)):
             head = safe_keep_together(head_group + [first])

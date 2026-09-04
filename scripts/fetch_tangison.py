@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Fetch audit targets with Scrapling: rendered HTML, full-page screenshots, perf entries, asset inventory.
+"""Fetch the CORRECT audit targets with Scrapling: rendered HTML, full-page screenshots,
+perf entries, asset inventory.
 
-Targets:
-  - tanguson: https://studio.tanguson.com/  (audit subject)
-  - collins:  https://wearecollins.com/     (benchmark / the bar)
+Targets (user-corrected spelling):
+  - tangison: https://tangison.com/
+  - studio:   https://studio.tangison.com/
 
-For each site: homepage + up to 2 subpages. Engine preference: StealthyFetcher -> DynamicFetcher.
+Engine: DynamicFetcher (Playwright/Chromium) first — camoufox unavailable in this env.
+Usage: python3 fetch_tangison.py [tangison|studio|both]
 """
 import json
 import os
@@ -14,14 +16,12 @@ import sys
 from urllib.parse import urljoin, urlparse
 
 from lxml import html as LH
-from scrapling.fetchers import StealthyFetcher, DynamicFetcher
+from scrapling.fetchers import DynamicFetcher
 
 BASE = "/home/z/my-project/audit_data"
-# Benchmark site (the bar). The audit subject (studio.tanguson.com) was NXDOMAIN at audit
-# time; pass its URL as argv[1] to fetch it as tag "subject" once reachable, e.g.:
-#   python3 fetch_sites.py https://studio.tanguson.com/
 SITES = {
-    "collins": "https://wearecollins.com/",
+    "tangison": "https://tangison.com/",
+    "studio": "https://studio.tangison.com/",
 }
 
 for tag in SITES:
@@ -43,11 +43,12 @@ def get_body(page):
     return None
 
 
-def fetch_page(url, out_dir, name, timeout_ms=90000, engine_order=("stealthy", "dynamic")):
+def fetch_page(url, out_dir, name, timeout_ms=90000):
     """Fetch one URL, save full-page screenshot + perf entries + doc meta via page_action."""
     shot = os.path.join(out_dir, f"{name}.png")
     perf_path = os.path.join(out_dir, f"{name}_perf.json")
     meta_path = os.path.join(out_dir, f"{name}_meta.json")
+    md_path = os.path.join(out_dir, f"{name}.md")
 
     # NOTE: scrapling 0.4's sync sessions call page_action(page) WITHOUT await —
     # the callback must be a SYNC function using the sync Playwright API.
@@ -76,6 +77,7 @@ def fetch_page(url, out_dir, name, timeout_ms=90000, engine_order=("stealthy", "
                 "JSON.stringify({title: document.title, "
                 "docHeight: document.body.scrollHeight, "
                 "docWidth: document.documentElement.scrollWidth, "
+                "h1: Array.from(document.querySelectorAll('h1')).map(h=>h.innerText).join(' | '), "
                 "fonts: Array.from(document.fonts).map(f=>f.family+'|'+(f.style||'')+'|'+(f.weight||'')).filter((v,i,a)=>a.indexOf(v)===i)})"
             )
             with open(meta_path, "w") as f:
@@ -84,32 +86,39 @@ def fetch_page(url, out_dir, name, timeout_ms=90000, engine_order=("stealthy", "
         except Exception as e:
             print(f"    [action error] {e!r}")
 
-    fetchers = {"stealthy": StealthyFetcher, "dynamic": DynamicFetcher}
     last_err = None
-    for fname in engine_order:
-        fetcher = fetchers[fname]
-        try:
-            page = fetcher.fetch(
-                url,
-                headless=True,
-                network_idle=True,
-                timeout=timeout_ms,
-                wait=4,
-                page_action=action,
-            )
-            status = getattr(page, "status", None) or 0
-            body_len = len(get_body(page) or "")
-            print(f"    engine={fname} status={status} body_len={body_len}")
-            if page and body_len > 2000 and (status == 0 or status < 400):
-                return page, fname
-            last_err = f"{fname}: status={status} body_len={body_len}"
-        except Exception as e:
-            last_err = f"{fname}: {e!r}"
-            print(f"    {fname} failed: {e!r}")
+    try:
+        page = DynamicFetcher.fetch(
+            url,
+            headless=True,
+            network_idle=True,
+            timeout=timeout_ms,
+            wait=4,
+            page_action=action,
+        )
+        status = getattr(page, "status", None) or 0
+        body_len = len(get_body(page) or "")
+        print(f"    engine=dynamic status={status} body_len={body_len}")
+        if page and body_len > 500 and (status == 0 or status < 400):
+            # best-effort markdown export for copy analysis
+            try:
+                md = getattr(page, "markdown", None)
+                if md:
+                    md = md() if callable(md) else md
+                    with open(md_path, "w") as f:
+                        f.write(str(md))
+                    print("    [action] markdown saved")
+            except Exception as e:
+                print(f"    [markdown error] {e!r}")
+            return page, "dynamic"
+        last_err = f"dynamic: status={status} body_len={body_len}"
+    except Exception as e:
+        last_err = f"dynamic: {e!r}"
+        print(f"    dynamic failed: {e!r}")
     return None, last_err
 
 
-def build_inventory(tag, base_url, html):
+def build_inventory(tag, base_url, html, fname="inventory.json"):
     doc = LH.fromstring(html)
 
     def absolute(u):
@@ -157,7 +166,7 @@ def build_inventory(tag, base_url, html):
         "inline_script_bytes": len(inline_scripts),
         "html_bytes": len(html),
     }
-    with open(os.path.join(BASE, tag, "inventory.json"), "w") as f:
+    with open(os.path.join(BASE, tag, fname), "w") as f:
         json.dump(inv, f, indent=2)
     with open(os.path.join(BASE, tag, "inline_styles.css"), "w") as f:
         f.write(inline_styles)
@@ -166,11 +175,11 @@ def build_inventory(tag, base_url, html):
     return inv
 
 
-def pick_subpages(base_url, links, limit=2):
+def pick_subpages(base_url, links, limit=7):
     host = urlparse(base_url).netloc
     seen = set()
     scored = []
-    priority = ("work", "about", "project", "portfolio", "service", "studio", "contact", "case", "journal", "news")
+    priority = ("work", "about", "project", "portfolio", "service", "studio", "contact", "case", "journal", "news", "team", "services", "blog")
     for href in links or []:
         if not href or href.startswith(("mailto:", "tel:", "javascript:", "#")):
             continue
@@ -198,10 +207,11 @@ def pick_subpages(base_url, links, limit=2):
 
 
 def main():
-    if len(sys.argv) > 1 and sys.argv[1].startswith("http"):
-        SITES["subject"] = sys.argv[1].rstrip("/") + "/"
+    which = sys.argv[1] if len(sys.argv) > 1 else "both"
+    tags = list(SITES.keys()) if which == "both" else [which]
     summary = {}
-    for tag, url in SITES.items():
+    for tag in tags:
+        url = SITES[tag]
         print(f"[{tag}] homepage: {url}", flush=True)
         page, engine = fetch_page(url, os.path.join(BASE, tag), "home")
         if not page:
@@ -223,6 +233,7 @@ def main():
                 h2 = get_body(page2) or ""
                 with open(os.path.join(BASE, tag, "pages", f"{slug}.html"), "w") as f:
                     f.write(h2)
+                build_inventory(tag, sub, h2, fname=f"inventory_{slug}.json")
                 sub_results.append({"url": sub, "slug": slug, "engine": engine2, "bytes": len(h2)})
                 print(f"    ok: {len(h2)}B")
             else:
@@ -231,8 +242,17 @@ def main():
             "homepage": {"url": url, "engine": engine, "bytes": len(html), "title": inv["title"]},
             "subpages": sub_results,
         }
-    with open(os.path.join(BASE, "fetch_summary.json"), "w") as f:
-        json.dump(summary, f, indent=2)
+    out = os.path.join(BASE, "fetch_tangison_summary.json")
+    existing = {}
+    if os.path.exists(out):
+        try:
+            with open(out) as f:
+                existing = json.load(f)
+        except Exception:
+            existing = {}
+    existing.update(summary)
+    with open(out, "w") as f:
+        json.dump(existing, f, indent=2)
     print(json.dumps(summary, indent=2))
 
 

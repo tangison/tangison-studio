@@ -1,0 +1,402 @@
+     1→   401→   401→  - Feorm Agrotourism and equipment rental marketplace (discontinued)
+     2→   402→   402→  - Crescendo Namibia Musical instruments, lessons, and academy platform since 2009
+     3→   403→   403→  - Tangison Systems In-house systems platform
+     4→   404→   404→  - Petrocor Wholesale petroleum and chemical distribution across Southern Africa
+     5→   405→   405→  - SMEFrog Remote business registration and compliance for Namibian SMEs
+     6→   406→   406→  - Cluster Leaf Safaris Owner-operated safari experiences across Southern Africa
+     7→   407→   407→  - Nalago Skincare Kalahari-inspired organic skincare for the African market
+     8→   408→   408→  - ProAvia Travel & Tours Travel logistics and curated tours from Walvis Bay
+     9→   409→   409→CONTACT: ['mailto:info@tangison.com', 'tel:+264813411522', 'mailto:info@tangison.com?subject=Enquiry']
+    10→   410→   410→
+    11→   411→   411→----------------------------------------------------------------------
+    12→   412→   412→PAGE: sitemap   (words: 246)
+    13→   413→   413→----------------------------------------------------------------------
+    14→   414→   414→TITLE: Site Map: Tangison Technologies CC
+    15→   415→   415→META:  A complete index of all pages on the Tangison Technologies CC website.
+    16→   416→   416→OG:    Site Map: Tangison Technologies CC | A complete index of all pages on the Tangison Technologies CC website.
+    17→   417→   417→NAV:   Capabilities, Careers, Company, Contact, Privacy, Projects, Site map, Studio ↗, Terms
+    18→   418→   418→
+    19→   419→   419→HEADINGS:
+    20→   420→   420→  [H1] Every page on this site.
+    21→   421→   421→
+    22→   422→   422→PARAGRAPHS:
+    23→   423→   423→  Site map
+    24→   424→   424→  Related properties
+    25→   425→   425→  Intelligence for imperfect conditions.
+    26→   426→   426→  Registered Close Corporation in Namibia. BO compliant.
+    27→   427→   427→  Tangison Technologies CC
+    28→   428→   428→  Corner Dr Frans Indongo St and John Meinert St, Windhoek West, Namibia 10005
+    29→   429→   429→  © 2026 Tangison Technologies CC . All rights reserved.
+    30→   430→   430→
+    31→   431→   431→BUTTONS/CTAS:
+    32→   432→   432→  [BTN] Contact
+    33→   433→   433→  [BTN] WhatsApp
+    34→   434→   434→  [BTN] Email
+    35→   435→   435→  [BTN] Talk to us
+    36→   436→   436→  [LINK->ACT] Contact  (/contact)
+    37→   437→   437→  [LINK->ACT] Contact  (/contact)
+    38→   438→   438→  [LINK->ACT] Contact and Compliance Address, phone, email, and registration details  (/contact)
+    39→   439→   439→  [LINK->ACT] Contact  (/contact)
+    40→   440→   440→LIST ITEMS (first 25):
+    41→   441→   441→  - Home Executive summary and company overview
+    42→   442→   442→  - Capabilities ICT, AI, digital transformation, consulting, and R&D
+    43→   443→   443→  - Company Profile Ownership, registration, mission, leadership, and local presence
+    44→   444→   444→  - Projects and R&D Selected work and fifteen client projects through Tangison Studio
+    45→   445→   445→  - Contact and Compliance Address, phone, email, and registration details
+    46→   446→   446→  - Careers Working with Tangison Technologies
+    47→   447→   447→  - Privacy Policy How this website handles visitor data
+    48→   448→   448→  - Terms of Service Terms for using this website
+    49→   449→   449→  - Tangison Studio ↗ The design and engineering arm of the Tangison group
+    50→   450→   450→CONTACT: ['mailto:info@tangison.com', 'tel:+264813411522', 'mailto:info@tangison.com?subject=Enquiry']
+    51→   451→   451→==========================================================================================
+    52→   452→   452→SITE: studio
+    53→   453→   453→==========================================================================================
+    54→   454→   454→
+    55→   455→   455→----------------------------------------------------------------------
+    56→   456→   456→PAGE: home   (words: 1261)
+    57→   457→   457→----------------------------------------------------------------------
+    58→   458→   458→TITLE: Studio | Digital Product Design and Development in Namibia
+    59→   459→   459→META:  Studio builds brand, digital product, and applied intelligence for organizations across Africa. One studio instead of three vendors.
+    60→   460→   460→OG:    Studio | Digital Product Design and Development in Namibia | Studio builds brand, digital product, and applied intelligence for organizations across Africa. One studio instead of three vendors.
+    61→   461→   461→NAV:   About, Contact, Part of Tangison Technologies ↗, Services, Studio, Work, studio@tangison.com
+    62→   462→   462→
+    63→   463→   463→HEADINGS:
+    64→   464→   464→  [H1] We build the brand, the product and the intelligence behind it.
+    65→   465→   465→  [H2] Recent projects
+    66→   466→   466→  [H3] Mendozer Investments
+    67→   467→   467→  [H3] Weca Offroad Centre
+    68→   468→   468→  [H3] Enchanted Artistry CC
+    69→   469→   469→  [H3] Dieselman Nam
+    70→   470→   470→  [H3] MI-WAY by Malu Investment
+    71→   471→   471→  [H2] Studio and Intelligence. One practice.
+    72→   472→   472→  [H3] Studio
+    73→   473→   473→  [H3] Intelligence
+    74→   474→   474→  [H2] How we work
+    75→   475→   475→  [H3] Clarity before decoration
+    76→   476→   476→  [H3] Systems over one-offs
+    77→   477→   477→  [H3] Intelligence with purpose
+    78→   478→   478→  [H3] Local context, wider ambition
+    79→   479→   479→  [H2] Five steps, one connecting line
+    80→   480→   480→  [H3] Discover
+    81→   481→   481→  [H3] Define
+    82→   482→   482→  [H3] Design
+    83→   483→   483→  [H3] Build
+    84→   484→   484→  [H3] Launch
+    85→   485→   485→  [H2] Senior craft, direct collaboration.
+    86→   486→   486→  [H2] One studio instead of three vendors.
+    87→   487→   487→  [H2] Have something worth building?
+    88→   488→   488→  [H2] Site footer
+    89→   489→   489→
+    90→   490→   490→PARAGRAPHS:
+    91→   491→   491→  One studio instead of three vendors.
+    92→   492→   492→  No cost to scope it. Or get a free audit of your current site .
+    93→   493→   493→  Windhoek, Namibia
+    94→   494→   494→  Independent digital product studio
+    95→   495→   495→  Selected work
+    96→   496→   496→  Multi-Sector Group · 2026
+    97→   497→   497→  A Namibian group operating across construction, technology, cooling, logistics, fuel and energy, and tourism and agriculture, presented as one accountable structure rather than six separate businesses.
+    98→   498→   498→  One group site that routes six audiences without diluting any of them.
+    99→   499→   499→  4x4 Offroad Fitment & Accessories · 2026
+   100→   500→   500→  Namibia's trusted 4x4 specialist in Swakopmund, selling and fitment for 20 leading offroad brands with a price-match guarantee and live Google reviews
+   101→   501→   501→  A site that names its brands, publishes its prices, and points at Google for the proof.
+   102→   502→   502→  Cosmetology, Arts & Mentorship · 2026
+   103→   503→   503→  Cosmetology, mentorship, and creative guidance for women in Windhoek, including expectant and new mothers
+   104→   504→   504→  A site that holds two founders, two audiences, and one brand.
+   105→   505→   505→  Diesel Service & Mobile Mechanics · 2026
+   106→   506→   506→  Mobile diesel service, wheel alignment, and roadside assistance from Walvis Bay across the Erongo Region
+   107→   507→   507→  A site that gets a truck moving again as fast as the phone can ring.
+   108→   508→   508→  Transport & Multi-Service · 2026
+   109→   509→   509→  Northern Namibia multi-service enterprise spanning taxi, construction, logistics, and cleaning
+   110→   510→   510→  A multi-service business made legible.
+   111→   511→   511→  What we do
+   112→   512→   512→  Identity, product design, and development. Brand and digital product as one service, not two separate vendors.
+   113→   513→   513→  Applied AI, custom integrations, and self-hosted infrastructure that turn digital products into working systems.
+   114→   514→   514→  Principles
+   115→   515→   515→  Every element earns its place. No ornament without purpose.
+   116→   516→   516→  We build frameworks that scale, not just pages that ship.
+   117→   517→   517→  AI applied where it solves a real problem, not where it looks impressive.
+   118→   518→   518→  Windhoek-rooted, built for organizations across Africa and beyond.
+   119→   519→   519→  Process
+   120→   520→   520→  Listen first. Understand the problem before proposing a solution.
+   121→   521→   521→  Frame the scope, audience, and the outcome that matters most.
+   122→   522→   522→  Build the system: identity, structure, interaction.
+   123→   523→   523→  Ship with modern, maintainable technology. Fast and accessible.
+   124→   524→   524→  Deploy, measure, hand over. Launch is a checkpoint, not an ending.
+   125→   525→   525→  Collaboration
+   126→   526→   526→  The people who scope the work are the same people who design and build it. No account layer, no handoff to juniors. Direct collaboration from discovery to launch.
+   127→   527→   527→  Latest writing
+   128→   528→   528→  Why we built a single practice to cover brand, product, and the systems behind them, instead of splitting across three vendors that do not talk to each other. The structural argument behind the studio model.
+   129→   529→   529→  Tell us what you are working on.
+   130→   530→   530→  Brand, product, and the systems behind it.
+   131→   531→   531→  © 2026 Tangison Studio · Windhoek, Namibia
+   132→   532→   532→
+   133→   533→   533→BUTTONS/CTAS:
+   134→   534→   534→  [BTN] WhatsApp
+   135→   535→   535→  [BTN] Email
+   136→   536→   536→  [BTN] Talk to us
+   137→   537→   537→  [LINK->ACT] Contact  (/contact)
+   138→   538→   538→  [LINK->ACT] See every project we have shipped  (/work)
+   139→   539→   539→  [LINK->ACT] Start a project brief  (/contact)
+   140→   540→   540→  [LINK->ACT] get a free audit of your current site  (/audit)
+   141→   541→   541→  [LINK->ACT] Read Mendozer Investments case study  (/work/mendozer)
+   142→   542→   542→  [LINK->ACT] Read Weca Offroad Centre case study  (/work/weca)
+   143→   543→   543→  [LINK->ACT] Read Enchanted Artistry CC case study  (/work/enchanted)
+   144→   544→   544→  [LINK->ACT] Read Dieselman Nam case study  (/work/dieselman)
+   145→   545→   545→  [LINK->ACT] Read MI-WAY by Malu Investment case study  (/work/miway)
+   146→   546→   546→  [LINK->ACT] Explore Studio  (/services#studio)
+   147→   547→   547→  [LINK->ACT] Explore Intelligence  (/services#intelligence)
+   148→   548→   548→  [LINK->ACT] Read the article  (/blog/one-studio-instead-of-three-vendors)
+   149→   549→   549→  [LINK->ACT] Start a project brief →  (/contact)
+   150→   550→   550→  [LINK->ACT] Contact  (/contact)
+   151→   551→   551→CONTACT: ['mailto:studio@tangison.com', 'mailto:studio@tangison.com', 'mailto:studio@tangison.com?subject=Project%20enquiry']
+   152→   552→   552→
+   153→   553→   553→----------------------------------------------------------------------
+   154→   554→   554→PAGE: about   (words: 817)
+   155→   555→   555→----------------------------------------------------------------------
+   156→   556→   556→TITLE: About Studio | Independent Digital Product Practice in Windhoek
+   157→   557→   557→META:  Independent digital product practice in Windhoek, Namibia. We design focused websites, applications, and brand systems for ambitious organizations.
+   158→   558→   558→OG:    About Studio | Independent Digital Product Practice in Windhoek | Independent digital product practice in Windhoek, Namibia. We design focused websites, applications, and brand systems for ambitious organizations across Africa.
+   159→   559→   559→NAV:   About, Contact, Part of Tangison Technologies ↗, Services, Studio, Work, studio@tangison.com
+   160→   560→   560→
+   161→   561→   561→HEADINGS:
+   162→   562→   562→  [H1] Built at the edge.
+   163→   563→   563→  [H2] Clarity before decoration
+   164→   564→   564→  [H2] Systems over one-offs
+   165→   565→   565→  [H2] Intelligence with purpose
+   166→   566→   566→  [H2] Local context, wider ambition
+   167→   567→   567→  [H2] Work with us.
+   168→   568→   568→  [H2] Site footer
+   169→   569→   569→
+   170→   570→   570→PARAGRAPHS:
+   171→   571→   571→  About
+   172→   572→   572→  Studio is an independent digital product practice in Windhoek, Namibia. We design focused websites, applications and brand systems for ambitious organizations across Africa.
+   173→   573→   573→  Studio operates with a simple belief: clear signals, useful work. We turn ambiguous ambitions into focused digital experiences by staying small, staying direct, and refusing to separate strategy from craft.
+   174→   574→   574→  The studio is part of Tangison Technologies , but its working culture is independent. We take on a limited number of projects at a time so that the people who scope the work are the same people who design and build it. There is no account layer between you and the work.
+   175→   575→   575→  We work across the African continent, with a particular focus on organizations that need a digital presence equal to their ambition. Tourism operators, skincare brands, financial services, and public-sector work where trust and clarity matter more than flashy features.
+   176→   576→   576→  When a project needs deeper technical capacity, research, or Tangison Labs can provide it. But you work with Studio directly. The group connection is there when it is useful, not when it is not.
+   177→   577→   577→  The studio was founded by Tangi Iigonda in 2023, originally under the name Gemsweb Digital. The rename to Tangison Studio in 2025 was a structural decision, not a rebrand. It clarified what the practice does (digital product work), who it serves (ambitious organizations across Africa), and how it relates to the broader Tangison group. The work itself did not change.
+   178→   578→   578→  Our clients include travel operators in Walvis Bay and Swakopmund, skincare brands sourcing from the Kalahari, safari companies running tours across Southern Africa, financial services firms in Windhoek, petroleum distributors moving fuel across borders, and music academies that have been part of Windhoek's commercial fabric for over a decade. The thread connecting them is not industry, geography, or size. It is the seriousness with which they take their own work.
+   179→   579→   579→  Principles
+   180→   580→   580→  Every element earns its place. No ornament without purpose.
+   181→   581→   581→  We build frameworks that scale, not just pages that ship.
+   182→   582→   582→  AI applied where it solves a real problem, not where it looks impressive.
+   183→   583→   583→  Windhoek-rooted, built for organizations across Africa and beyond.
+   184→   584→   584→  Brand, product, and the systems behind it.
+   185→   585→   585→  © 2026 Tangison Studio · Windhoek, Namibia
+   186→   586→   586→
+   187→   587→   587→BUTTONS/CTAS:
+   188→   588→   588→  [BTN] WhatsApp
+   189→   589→   589→  [BTN] Email
+   190→   590→   590→  [BTN] Talk to us
+   191→   591→   591→  [LINK->ACT] Contact  (/contact)
+   192→   592→   592→  [LINK->ACT] Start a project  (/contact)
+   193→   593→   593→  [LINK->ACT] Start a project brief →  (/contact)
+   194→   594→   594→  [LINK->ACT] Contact  (/contact)
+   195→   595→   595→CONTACT: ['mailto:studio@tangison.com', 'mailto:studio@tangison.com?subject=Project%20enquiry']
+   196→   596→   596→
+   197→   597→   597→----------------------------------------------------------------------
+   198→   598→   598→PAGE: work-dieselman   (words: 1589)
+   199→   599→   599→----------------------------------------------------------------------
+   200→   600→   600→TITLE: Dieselman Nam Case Study | Studio Design Work in Windhoek
+   201→   601→   601→META:  Mobile diesel service, wheel alignment, and roadside assistance from Walvis Bay across the Erongo Region
+   202→   602→   602→OG:    Dieselman Nam Case Study | Studio | Mobile diesel service, wheel alignment, and roadside assistance from Walvis Bay across the Erongo Region
+   203→   603→   603→NAV:   About, Contact, Free audit, Part of Tangison Technologies ↗, Services, Studio, Work, studio@tangison.com
+   204→   604→   604→
+   205→   605→   605→HEADINGS:
+   206→   606→   606→  [H1] Dieselman Nam
+   207→   607→   607→  [H2] A Walvis Bay diesel service with no digital presence needed a site that put the phone number first.
+   208→   608→   608→  [H2] Phone first. Services second. Honesty throughout.
+   209→   609→   609→  [H2] The production website
+   210→   610→   610→  [H2] A site that gets a truck moving again as fast as the phone can ring.
+   211→   611→   611→  [H3] Enchanted Artistry CC
+   212→   612→   612→  [H2] Want something like this?
+   213→   613→   613→  [H2] Site footer
+   214→   614→   614→
+   215→   615→   615→PARAGRAPHS:
+   216→   616→   616→  Diesel Service & Mobile Mechanics
+   217→   617→   617→  Mobile diesel service, wheel alignment, and roadside assistance from Walvis Bay across the Erongo Region
+   218→   618→   618→  Challenge
+   219→   619→   619→  Dieselman Nam operates from 31 Hage Geingob Street in Walvis Bay. Stephen Lee owns and runs it. The work is mobile wheel alignment, diagnostics and ECU programming, mechanical and diesel repairs, and call-out and roadside assistance. The equipment is real: a HAWEKA AXIS4000 mobile alignment system that goes to the vehicle instead of the vehicle coming to a workshop. The previous digital presence did not communicate any of this.
+   220→   620→   620→  The audience is specific. Truck owners, fleet operators, bakkie drivers, and light commercial vehicle owners in the Erongo Region whose vehicles cannot afford to sit still. A truck waiting for alignment at a fixed workshop is a truck losing money. A buyer looking for diesel service online wants one thing first: a phone number they can call right now. A website that buries that number behind a contact form fails the audience before they finish reading the headline.
+   221→   621→   621→  The brief was to build a site that leads with the contact path, names the actual services and equipment, states the location explicitly, and makes it easy for a buyer in transit to find what they need in seconds. No friction. No corporate language. Just the facts, structured around the phone call.
+   222→   622→   622→  Approach
+   223→   623→   623→  The information architecture was built around the contact path. Call and WhatsApp buttons appear on every page, every section, and the mobile navigation. The phone number is +264 81 741 2110. It is visible above the fold on every screen size. The email is dieselman.nam@gmail.com. None of this is decoration. A diesel service site that hides the phone number is a site that loses the customer.
+   224→   624→   624→  The services were structured as four equal pillars: Mobile Wheel Alignment, Diagnostics and ECU Programming, Mechanical and Diesel Repairs, and Call-out and Roadside Assistance. Each gets its own page. Each page states what is in scope and what is not claimed. That honesty pattern is unusual for service websites. Most service sites overpromise. Dieselman's site does the opposite. It states what the team actually does, names the equipment they actually use, and is explicit about what they do not claim (HAWEKA partnership, fixed radius, response times, tolerance targets).
+   225→   625→   625→  The visual system leaned into the industrial context. Walvis Bay runs on trucks and port logistics. The color palette and photography direction reflect that context. Client-supplied footage from the workshop and from call-outs across the Erongo Region is the visual evidence. Nothing is staged stock. Nothing is faked. The site is honest about which images are workshop footage and which are supporting atmosphere.
+   226→   626→   626→  Phone number above everything
+   227→   627→   627→  Call and WhatsApp buttons on every page, every section, mobile nav. The phone number is the primary conversion path for a diesel service. Hiding it is the failure mode.
+   228→   628→   628→  HAWEKA AXIS4000 named as equipment
+   229→   629→   629→  The alignment system is named because it is a real piece of equipment that signals competence. The site is explicit that this is not a HAWEKA endorsement. Honesty about the relationship is itself a trust signal.
+   230→   630→   630→  In scope / Not claimed pattern
+   231→   631→   631→  Each service page lists what is in scope and what is not claimed. Most service sites overpromise. Dieselman's site does the opposite. Naming the limits is a positioning move.
+   232→   632→   632→  Live proof
+   233→   633→   633→  Outcome
+   234→   634→   634→  Dieselman Nam launched with a site that puts the contact path first, the services second, and the equipment and location as verifiable specifics. A buyer in transit can find the phone number, understand the service scope, and call in under thirty seconds. The site does the qualifying work before the phone rings.
+   235→   635→   635→  The lesson was about honesty as positioning. In a category where most sites overpromise and under-specify, being explicit about what you actually do, what equipment you actually use, and what you do not claim is a differentiator. The site does not try to sound big. It tries to sound accurate. Accuracy is the trust signal for a buyer whose truck is sitting on the side of the road.
+   236→   636→   636→  Technology
+   237→   637→   637→  Next project
+   238→   638→   638→  Cosmetology, mentorship, and creative guidance for women in Windhoek, including expectant and new mothers
+   239→   639→   639→  Tell us about your project.
+   240→   640→   640→  Seen enough? Tell us what you are building.
+   241→   641→   641→  © 2026 Tangison Studio · Windhoek, Namibia
+   242→   642→   642→
+   243→   643→   643→BUTTONS/CTAS:
+   244→   644→   644→  [BTN] WhatsApp
+   245→   645→   645→  [BTN] Email
+   246→   646→   646→  [BTN] Talk to us
+   247→   647→   647→  [LINK->ACT] Contact  (/contact)
+   248→   648→   648→  [LINK->ACT] Visit Dieselman Nam live site  (https://www.dieselman-nam.com)
+   249→   649→   649→  [LINK->ACT] View Dieselman Nam live site  (https://www.dieselman-nam.com)
+   250→   650→   650→  [LINK->ACT] Start a project  (/contact)
+   251→   651→   651→  [LINK->ACT] Start a project brief →  (/contact)
+   252→   652→   652→  [LINK->ACT] Contact  (/contact)
+   253→   653→   653→CONTACT: ['mailto:studio@tangison.com', 'mailto:studio@tangison.com?subject=Project%20enquiry']
+   254→   654→   654→
+   255→   655→   655→----------------------------------------------------------------------
+   256→   656→   656→PAGE: work-enchanted   (words: 1569)
+   257→   657→   657→----------------------------------------------------------------------
+   258→   658→   658→TITLE: Enchanted Artistry CC Case Study | Studio Design Work in Windhoek
+   259→   659→   659→META:  Cosmetology, mentorship, and creative guidance for women in Windhoek, including expectant and new mothers
+   260→   660→   660→OG:    Enchanted Artistry CC Case Study | Studio | Cosmetology, mentorship, and creative guidance for women in Windhoek, including expectant and new mothers
+   261→   661→   661→NAV:   About, Contact, Free audit, Part of Tangison Technologies ↗, Services, Studio, Work, studio@tangison.com
+   262→   662→   662→
+   263→   663→   663→HEADINGS:
+   264→   664→   664→  [H1] Enchanted Artistry CC
+   265→   665→   665→  [H2] A Windhoek cosmetology and mentorship practice needed a site that carried two founders' voices without splitting into two brands.
+   266→   666→   666→  [H2] Founders as the brand. Services as the structure.
+   267→   667→   667→  [H2] The production website
+   268→   668→   668→  [H2] A site that holds two founders, two audiences, and one brand.
+   269→   669→   669→  [H3] Weca Offroad Centre
+   270→   670→   670→  [H2] Want something like this?
+   271→   671→   671→  [H2] Site footer
+   272→   672→   672→
+   273→   673→   673→PARAGRAPHS:
+   274→   674→   674→  Cosmetology, Arts & Mentorship
+   275→   675→   675→  Cosmetology, mentorship, and creative guidance for women in Windhoek, including expectant and new mothers
+   276→   676→   676→  Challenge
+   277→   677→   677→  Enchanted Artistry CC is a Windhoek-based practice run by two founders. Chané Yvette Philander shapes the creative side. Anthea Feris brings the people-centred guidance. The work spans cosmetology, drama coaching, content creation, and mentorship for women, including expectant and new mothers. It is a faith-rooted practice. It is not a religious brand. That distinction matters and the previous presence did not communicate it.
+   278→   678→   678→  The challenge was dual. The site needed to serve beauty clients looking for makeup and hair services, and it needed to serve mothers looking for guidance through pregnancy, post-partum, and breastfeeding. Those are different audiences with different needs. Most cosmetology sites collapse them into a single services list. That approach underserves both. The site also needed to make the founders visible as people, not as a generic brand, because the work is personal and the trust signal is the founder herself.
+   279→   679→   679→  The brief was to build a site that holds the dual nature of the practice. Cosmetology and mentorship as equal pillars. Founders visible by name. Faith present without being a religious site. Contact paths that reflect how Namibian women actually communicate, which means WhatsApp, and which means two numbers because there are two founders.
+   280→   680→   680→  Approach
+   281→   681→   681→  The strategic decision was to make the founders the brand. Chané and Anthea are named on the homepage with their portraits. Their roles are stated. Their individual WhatsApp numbers are listed separately. A visitor who connects more naturally with one founder can reach that founder directly. That is not a small thing in a market where most business sites list a single generic contact form.
+   282→   682→   682→  The services were structured as five equal pillars: Makeup, Hair, Drama coaching, Guidance, and Content creation. Each gets its own block with a clear scope and a direct Enquire button. Guidance is positioned as the differentiated service. Most Windhoek cosmetology sites do not offer mentorship for expectant and new mothers. Enchanted's site makes that service visible as a first-class category, not a footnote.
+   283→   683→   683→  The faith dimension was handled with restraint. The biblical reference (Matthew 5:16) appears once, in the footer, as part of the brand voice. It is present for visitors who recognise it. It does not dominate the experience for visitors who do not. That balance is what lets the site serve both the founder's faith and the broad audience without alienating either.
+   284→   684→   684→  Two WhatsApp numbers, one per founder
+   285→   685→   685→  Chané and Anthea each have their own WhatsApp number on the site. A visitor can reach the founder they connect with directly. That matches how Namibian women actually communicate.
+   286→   686→   686→  Guidance as a first-class service
+   287→   687→   687→  Mentorship for expectant and new mothers is positioned as an equal pillar alongside makeup and hair. Most cosmetology sites bury it. Enchanted's site makes it visible because it is the differentiated service.
+   288→   688→   688→  Faith present, not preached
+   289→   689→   689→  The Matthew 5:16 reference appears once, in the footer. It is present for visitors who recognise it. It does not dominate the experience for visitors who do not. That balance serves both audiences.
+   290→   690→   690→  Live proof
+   291→   691→   691→  Outcome
+   292→   692→   692→  Enchanted Artistry CC launched with a site that makes the founders visible, the services legible, and the contact paths direct. A beauty client can find what they need in two clicks. A mother looking for guidance can find it in two clicks. Both can reach the founder they connect with directly. The site does what it was built to do: hold the dual nature of the practice without splitting into two brands.
+   293→   693→   693→  The primary lesson was about founders as the brand. In a category where most cosmetology sites look interchangeable, putting the actual people behind the work front and centre is the differentiator. Trust in this category is personal. The site needed to reflect that. Founders visible by name, with their own WhatsApp numbers, is how that trust gets built online.
+   294→   694→   694→  Technology
+   295→   695→   695→  Next project
+   296→   696→   696→  Namibia's trusted 4x4 specialist in Swakopmund, selling and fitment for 20 leading offroad brands with a price-match guarantee and live Google reviews
+   297→   697→   697→  Tell us about your project.
+   298→   698→   698→  Seen enough? Tell us what you are building.
+   299→   699→   699→  © 2026 Tangison Studio · Windhoek, Namibia
+   300→   700→   700→
+   301→   701→   701→BUTTONS/CTAS:
+   302→   702→   702→  [BTN] WhatsApp
+   303→   703→   703→  [BTN] Email
+   304→   704→   704→  [BTN] Talk to us
+   305→   705→   705→  [LINK->ACT] Contact  (/contact)
+   306→   706→   706→  [LINK->ACT] Visit Enchanted Artistry CC live site  (https://www.enchantedna.com)
+   307→   707→   707→  [LINK->ACT] View Enchanted Artistry CC live site  (https://www.enchantedna.com)
+   308→   708→   708→  [LINK->ACT] Start a project  (/contact)
+   309→   709→   709→  [LINK->ACT] Start a project brief →  (/contact)
+   310→   710→   710→  [LINK->ACT] Contact  (/contact)
+   311→   711→   711→CONTACT: ['mailto:studio@tangison.com', 'mailto:studio@tangison.com?subject=Project%20enquiry']
+   312→   712→   712→
+   313→   713→   713→----------------------------------------------------------------------
+   314→   714→   714→PAGE: work-mendozer   (words: 1669)
+   315→   715→   715→----------------------------------------------------------------------
+   316→   716→   716→TITLE: Mendozer Investments Case Study | Studio Design Work in Windhoek
+   317→   717→   717→META:  A Namibian group operating across construction, technology, cooling, logistics, fuel and energy, and tourism and agriculture, presented as one accountable structure rather than six separate businesses.
+   318→   718→   718→OG:    Mendozer Investments Case Study | Studio | A Namibian group operating across construction, technology, cooling, logistics, fuel and energy, and tourism and agriculture, presented as one accountable structure rather than six separate businesses.
+   319→   719→   719→NAV:   About, Contact, Free audit, Part of Tangison Technologies ↗, Services, Studio, Work, studio@tangison.com
+   320→   720→   720→
+   321→   721→   721→HEADINGS:
+   322→   722→   722→  [H1] Mendozer Investments
+   323→   723→   723→  [H2] Six working directions under one group, and no single place that made the whole structure legible.
+   324→   724→   724→  [H2] Six clear entry points, one group behind all of them.
+   325→   725→   725→  [H2] The production website
+   326→   726→   726→  [H2] One group site that routes six audiences without diluting any of them.
+   327→   727→   727→  [H3] ProAvia Travel & Tours
+   328→   728→   728→  [H2] Want something like this?
+   329→   729→   729→  [H2] Site footer
+   330→   730→   730→
+   331→   731→   731→PARAGRAPHS:
+   332→   732→   732→  Multi-Sector Group
+   333→   733→   733→  A Namibian group operating across construction, technology, cooling, logistics, fuel and energy, and tourism and agriculture, presented as one accountable structure rather than six separate businesses.
+   334→   734→   734→  Challenge
+   335→   735→   735→  Mendozer Investments works across six directions: construction and infrastructure, technology and systems, cooling and cold chain, logistics and support services, fuel and energy distribution, and tourism and agriculture. Each one has its own buyers, its own procurement language, and its own idea of what proof looks like. A contractor checking whether the group can handle a site build is not reading the same page as a facilities manager checking cold-chain capability.
+   336→   736→   736→  A diversified group faces a specific problem online. Say everything at once and the visitor cannot tell what you actually do. Split into six microsites and the group advantage disappears, because the whole argument for a group is that one accountable backbone carries work that crosses disciplines. The site had to hold both ideas at the same time.
+   337→   737→   737→  There was a second constraint, and it shaped the build more than anything else. Mendozer would not publish project claims that had not been approved for publication. No invented client list, no unverifiable numbers, no stock photography standing in for site work. That ruled out the usual way a group site builds credibility and forced the structure to earn trust differently.
+   338→   738→   738→  Approach
+   339→   739→   739→  The homepage leads with the group proposition, then branches immediately into the six directions. A visitor picks the direction closest to the work in front of them and moves into a sector page that speaks that sector's language. Nobody has to read about cold chain to find out about construction. The routing question, which sector am I, is answered in the first screen.
+   340→   740→   740→  The group argument is carried by a single instruction repeated at each branch: start with the sector closest to the work, and bring the group in when the brief crosses disciplines. That sentence does the work that a generic about-us paragraph usually fails at, because it tells the visitor exactly when the multi-sector structure becomes useful to them rather than asserting that it is impressive.
+   341→   741→   741→  Because approved project detail was limited, the site was built so that verifiable material carries the credibility. Real archive imagery from actual sites, published only where it was cleared. A compliance route that surfaces the registration, VAT and licensing record. An updates route for activity that has been approved for publication. The enquiry path sends a prepared message to contact@mendozer.com without storing submissions on the site. Where proof was not available, the site says nothing rather than filling the gap.
+   342→   742→   742→  Sector-first routing on the homepage
+   343→   743→   743→  Six numbered directions, each with a one-line scope statement and its own route. A visitor self-selects in the first screen instead of reading a generic group overview and guessing which part applies to them.
+   344→   744→   744→  Only approved imagery, only approved claims
+   345→   745→   745→  Project and service detail appears when it has been cleared for publication. Archive photography comes from real Mendozer sites. The site carries no unverified project claims and no self-curated testimonials, because a group that cannot be checked is a group that will be doubted.
+   346→   746→   746→  Public records as the trust layer
+   347→   747→   747→  Registration, VAT and licensing detail sits on its own route. For procurement buyers in Namibia, a verifiable compliance record answers the qualifying question faster than any claim about capability.
+   348→   748→   748→  One enquiry route across six sectors
+   349→   749→   749→  The contact path prepares a message to contact@mendozer.com and lets the sender pick a sector or a group enquiry when the brief crosses more than one direction. No enquiry data is stored on the website.
+   350→   750→   750→  Live proof
+   351→   751→   751→  Outcome
+   352→   752→   752→  Mendozer Investments has a site where a construction buyer, a cold-chain manager and a fuel distributor each find their own entry point within seconds, while the group structure stays visible behind all six. The multi-sector position reads as coordination rather than as a list of unrelated activities.
+   353→   753→   753→  The build also settled a question worth carrying forward. Restraint about unverified claims is not a weakness in a group site. Naming only what has been approved, and pointing at public records for the rest, produces a page that holds up when a procurement officer starts checking. Specificity that can be verified beats scale that cannot.
+   354→   754→   754→  Technology
+   355→   755→   755→  Next project
+   356→   756→   756→  Travel logistics, curated tours, and transfer services from Walvis Bay, connecting visitors to the coast, the desert, and the broader Namibian experience.
+   357→   757→   757→  Tell us about your project.
+   358→   758→   758→  Seen enough? Tell us what you are building.
+   359→   759→   759→  © 2026 Tangison Studio · Windhoek, Namibia
+   360→   760→   760→
+   361→   761→   761→BUTTONS/CTAS:
+   362→   762→   762→  [BTN] WhatsApp
+   363→   763→   763→  [BTN] Email
+   364→   764→   764→  [BTN] Talk to us
+   365→   765→   765→  [LINK->ACT] Contact  (/contact)
+   366→   766→   766→  [LINK->ACT] Visit Mendozer Investments live site  (https://mendozer.com)
+   367→   767→   767→  [LINK->ACT] View Mendozer Investments live site  (https://mendozer.com)
+   368→   768→   768→  [LINK->ACT] Start a project  (/contact)
+   369→   769→   769→  [LINK->ACT] Start a project brief →  (/contact)
+   370→   770→   770→  [LINK->ACT] Contact  (/contact)
+   371→   771→   771→CONTACT: ['mailto:studio@tangison.com', 'mailto:studio@tangison.com?subject=Project%20enquiry']
+   372→   772→   772→
+   373→   773→   773→----------------------------------------------------------------------
+   374→   774→   774→PAGE: work-miway   (words: 1221)
+   375→   775→   775→----------------------------------------------------------------------
+   376→   776→   776→TITLE: MI-WAY by Malu Investment Case Study | Studio Design Work in Windhoek
+   377→   777→   777→META:  Northern Namibia multi-service enterprise spanning taxi, construction, logistics, and cleaning
+   378→   778→   778→OG:    MI-WAY by Malu Investment Case Study | Studio | Northern Namibia multi-service enterprise spanning taxi, construction, logistics, and cleaning
+   379→   779→   779→NAV:   About, Contact, Free audit, Part of Tangison Technologies ↗, Services, Studio, Work, studio@tangison.com
+   380→   780→   780→
+   381→   781→   781→HEADINGS:
+   382→   782→   782→  [H1] MI-WAY by Malu Investment
+   383→   783→   783→  [H2] A multi-service business is hard to position. The site needed to make four service lines legible.
+   384→   784→   784→  [H2] Four services. One standard. Northern roots.
+   385→   785→   785→  [H2] The production website
+   386→   786→   786→  [H2] A multi-service business made legible.
+   387→   787→   787→  [H3] Dieselman Nam
+   388→   788→   788→  [H2] Want something like this?
+   389→   789→   789→  [H2] Site footer
+   390→   790→   790→
+   391→   791→   791→PARAGRAPHS:
+   392→   792→   792→  Transport & Multi-Service
+   393→   793→   793→  Northern Namibia multi-service enterprise spanning taxi, construction, logistics, and cleaning
+   394→   794→   794→  Challenge
+   395→   795→   795→  MI-WAY by Malu Investment is a northern Namibian enterprise operating across four service lines: taxi transport, construction, logistics, and cleaning. Established in 2017. Operating out of Oshakati, Ongwediva, and Ondangwa. The previous presence did not communicate the scope or the standard. A buyer looking for a taxi and a buyer looking for a construction contractor are different audiences with different needs, and they both need to understand what MI-WAY does within seconds of landing.
+   396→   796→   796→  Multi-service businesses struggle with positioning. The temptation is to list everything and hope the visitor finds what they need. That approach assumes the visitor already knows what they are looking for. Most do not. They arrive with a question: can this company help me with this? They leave if the answer is not obvious. The site needed to answer that question for four different audiences without diluting the brand.
+   397→   797→   797→  The brief was to build a site that makes a multi-service business legible. Four service lines, one standard, one brand. Northern Namibia roots as positioning, not just geography. A booking path that works for taxi customers without alienating construction clients.
+   398→   798→   798→  Approach
+   399→   799→   799→  The structure was built around the four service lines as equal pillars. Taxi transport, construction, logistics, cleaning. Each gets its own section with scope, coverage, and a clear next step. The MI-WAY standard is show up, do the work, do it well. It runs across all four. A visitor can scan the services and find theirs in seconds.
+   400→   800→   800→  The positioning leans into northern Namibia. Oshakati, Ongwediva, Ondangwa are not just cities on a map. They are the operating territory. Naming them on the site signals where MI-WAY is strong and filters out inquiries from outside the coverage area. The booking flow is taxi-first because that is the highest-volume service, but every service has a clear contact path.
+   401→
+   402→[showing lines 401-800 of 991; use offset=801 with limit to continue reading]
