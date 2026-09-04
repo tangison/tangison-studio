@@ -1,2 +1,40 @@
-skills/
-node_modules/
+# dependencies
+node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+*.log
+
+# env files
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# sandbox infra (not part of the site)
+.zscripts/
+Caddyfile
+agent-ctx/
+dev.log
+server.log
+
+# skills + audit working data (not site source)
+/skills/
+/audit_data/
+/tool-results/
+/download/
+/scripts/
+/worklog.md

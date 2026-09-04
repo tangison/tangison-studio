@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Studio Tangison — design tokens
+   Two route themes: paper (light, default) and ink (dark).
+   Ink is applied by adding .theme-ink to a page wrapper.
+   ============================================================ */
+
+@theme inline {
+  --font-display: var(--font-cabinet), Georgia, serif;
+  --font-body: var(--font-satoshi), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
+
+  --color-paper: var(--paper);
+  --color-paper-raise: var(--paper-raise);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-teal: var(--teal);
+  --color-teal-mist: var(--teal-mist);
+  --color-surface: var(--surface);
+  --color-overlay: var(--overlay);
+
+  --ease-primary: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+:root {
+  /* paper theme (light) */
+  --paper: #f6f4ef;
+  --paper-raise: #ffffff;
+  --ink: #111315;
+  --ink-muted: rgba(17, 19, 21, 0.62);
+  --ink-faint: rgba(17, 19, 21, 0.38);
+  --line: rgba(17, 19, 21, 0.1);
+  --line-strong: rgba(17, 19, 21, 0.2);
+  --teal: #2cb5b4;
+  --teal-mist: #e6f2f1;
+  --surface: rgba(255, 255, 255, 0.72);
+  --overlay: rgba(17, 19, 21, 0.5);
+
+  color-scheme: light;
+}
+
+.theme-ink {
+  /* ink theme (dark) — cases gallery & case studies */
+  --paper: #0c1014;
+  --paper-raise: #14181d;
+  --ink: #f6f4ef;
+  --ink-muted: rgba(246, 244, 239, 0.64);
+  --ink-faint: rgba(246, 244, 239, 0.4);
+  --line: rgba(246, 244, 239, 0.14);
+  --line-strong: rgba(246, 244, 239, 0.28);
+  --teal: #3ecbca;
+  --teal-mist: rgba(46, 181, 180, 0.14);
+  --surface: rgba(20, 24, 29, 0.86);
+  --overlay: rgba(6, 8, 10, 0.6);
+
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--teal);
+  color: #f6f4ef;
+}
+
+/* display type scale */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-muted);
+}
+
+.prose-body p {
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.75;
+  color: var(--ink-muted);
+  max-width: 68ch;
+}
+
+/* motion primitives */
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s var(--ease-primary),
+    transform 0.9s var(--ease-primary);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* gallery card image reveal */
+.case-tile .case-overlay {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.45s var(--ease-primary),
+    transform 0.45s var(--ease-primary);
+}
+
+.case-tile:hover .case-overlay,
+.case-tile:focus-visible .case-overlay,
+.case-tile.reveal-on .case-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.case-tile .case-image {
+  transition: transform 0.8s var(--ease-primary), filter 0.8s var(--ease-primary);
+}
+
+.case-tile:hover .case-image,
+.case-tile:focus-visible .case-image,
+.case-tile.reveal-on .case-image {
+  transform: scale(1.04);
+}
+
+/* underline links */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease-primary);
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* off-canvas drawer */
+.drawer-panel {
+  transition: transform 0.55s var(--ease-primary);
+}
+
+.drawer-backdrop {
+  transition: opacity 0.4s var(--ease-primary);
+}
+
+/* custom scrollbar for long lists */
+.scroll-slim::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-slim::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 3px;
+}
