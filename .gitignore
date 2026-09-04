@@ -36,5 +36,8 @@ server.log
 /audit_data/
 /tool-results/
 /download/
-/scripts/
+/scripts/*
+# the image pipeline is part of the site's workflow — keep it tracked
+!/scripts/generate_images.py
+/scripts/.raw/
 /worklog.md

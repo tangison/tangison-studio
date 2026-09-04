@@ -17,6 +17,10 @@ export interface CaseContent {
 export interface Project {
   slug: string;
   name: string;
+  /** Short display name for tight gallery captions (Collins-style). */
+  title: string;
+  /** Tight sector label, 1–2 words, for captions and tile overlays. */
+  category: string;
   eyebrow: string;
   short: string;
   description: string;
@@ -30,8 +34,10 @@ export const projects: Project[] = [
   {
     slug: "mendozer",
     name: "Mendozer Investments",
+    title: "Mendozer",
+    category: "Group platform",
     eyebrow: "Multi-Sector Group · 2026",
-    short: "One group site that routes six audiences without diluting any of them.",
+    short: "Six businesses. One accountable platform.",
     description: "A Namibian group operating across construction, technology, cooling, logistics, fuel and energy, and tourism and agriculture, presented as one accountable structure rather than six separate businesses.",
     tags: ["Brand Systems", "Website Design", "Website Development", "Content Structure"],
     live: "https://mendozer.com",
@@ -48,8 +54,10 @@ export const projects: Project[] = [
   {
     slug: "weca",
     name: "Weca Offroad Centre",
-    eyebrow: "4x4 Offroad Fitment & Accessories · 2026",
-    short: "A site that names its brands, publishes its prices, and points at Google for the proof.",
+    title: "Weca",
+    category: "Offroad retail",
+    eyebrow: "Offroad Fitment & Accessories · 2026",
+    short: "Brands, prices, proof. All published.",
     description: "Namibia's trusted 4x4 specialist in Swakopmund, selling and fitment for 20 leading offroad brands with a price-match guarantee and live Google reviews.",
     tags: ["Brand Identity", "Website Design", "Website Development", "E-commerce Setup"],
     live: "https://wecaoffroad.com",
@@ -66,8 +74,10 @@ export const projects: Project[] = [
   {
     slug: "enchanted",
     name: "Enchanted Artistry CC",
-    eyebrow: "Cosmetology, Arts & Mentorship · 2026",
-    short: "A site that holds two founders, two audiences, and one brand.",
+    title: "Enchanted",
+    category: "Beauty & mentorship",
+    eyebrow: "Cosmetology & Mentorship · 2026",
+    short: "Two founders, two audiences, one brand.",
     description: "Cosmetology, mentorship, and creative guidance for women in Windhoek, including expectant and new mothers.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     live: "https://www.enchantedna.com",
@@ -84,8 +94,10 @@ export const projects: Project[] = [
   {
     slug: "dieselman",
     name: "Dieselman Nam",
+    title: "Dieselman",
+    category: "Diesel service",
     eyebrow: "Diesel Service & Mobile Mechanics · 2026",
-    short: "A site that gets a truck moving again as fast as the phone can ring.",
+    short: "A truck moving again as fast as the phone rings.",
     description: "Mobile diesel service, wheel alignment, and roadside assistance from Walvis Bay across the Erongo Region.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     live: "https://www.dieselman-nam.com",
@@ -102,6 +114,8 @@ export const projects: Project[] = [
   {
     slug: "miway",
     name: "MI-WAY by Malu Investment",
+    title: "MI-WAY",
+    category: "Transport & services",
     eyebrow: "Transport & Multi-Service · 2026",
     short: "A multi-service business made legible.",
     description: "Northern Namibia multi-service enterprise spanning taxi, construction, logistics, and cleaning.",
@@ -120,8 +134,10 @@ export const projects: Project[] = [
   {
     slug: "reviveautoworks",
     name: "Revive Auto Works",
-    eyebrow: "Automotive Repair & Servicing · 2026",
-    short: "A site that makes the value visible.",
+    title: "Revive",
+    category: "Auto repair",
+    eyebrow: "Auto Repair & Servicing · 2026",
+    short: "The value, made visible.",
     description: "Auto repairs and servicing in Namibia with WhatsApp booking and OE parts.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     live: "https://reviveautoworks.cc",
@@ -138,8 +154,10 @@ export const projects: Project[] = [
   {
     slug: "lrclearing",
     name: "L&R Clearing Agency",
-    eyebrow: "Logistics & Customs Clearing · 2026",
-    short: "A site that signals competence before the first call.",
+    title: "L&R Clearing",
+    category: "Customs clearing",
+    eyebrow: "Customs Clearing · 2026",
+    short: "Competence, clear before the first call.",
     description: "Customs clearing and freight forwarding across Walvis Bay, Lüderitz, and Southern African borders.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     live: "https://lrclearing.com",
@@ -156,8 +174,10 @@ export const projects: Project[] = [
   {
     slug: "feorm",
     name: "Feorm",
+    title: "Feorm",
+    category: "Own product",
     eyebrow: "Agriculture / Farm Stays · 2026",
-    short: "An active product. Still being built. Already a proof of concept for what Tangison can ship without a client brief.",
+    short: "Our own product — shipping without a client brief.",
     description: "Farm stay discovery and booking platform for Namibia, connecting travelers with working farms, guesthouses, and lodges across the country.",
     tags: ["Product Design", "Website Development", "Booking Systems"],
     live: undefined,
@@ -174,8 +194,10 @@ export const projects: Project[] = [
   {
     slug: "crescendo",
     name: "Crescendo Namibia",
+    title: "Crescendo",
+    category: "Music & education",
     eyebrow: "Music & Education · 2026",
-    short: "A site that finally matches 16 years of reputation.",
+    short: "16 years of reputation, finally matched.",
     description: "Instruments, lessons, and academy platform since 2009, with retail and education treated as co-equal pillars under a single sixteen-year-old brand.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     live: "https://www.crescendona.com",
@@ -192,8 +214,10 @@ export const projects: Project[] = [
   {
     slug: "tangison-systems",
     name: "Tangison Systems",
+    title: "Tangison Systems",
+    category: "Technology / AI",
     eyebrow: "Technology / AI · 2026",
-    short: "A company site that sounds like a company that knows exactly what it is.",
+    short: "A company that knows exactly what it is.",
     description: "Sovereign intelligence infrastructure from Windhoek, Namibia. Built so organizations retain control of their data, models, and decisions.",
     tags: ["Brand Systems", "Website Design", "Website Development"],
     live: undefined,
@@ -210,8 +234,10 @@ export const projects: Project[] = [
   {
     slug: "petrocor",
     name: "Petrocor",
+    title: "Petrocor",
+    category: "Fuel wholesale",
     eyebrow: "Energy & Resources · 2026",
-    short: "A trade-ready site for a wholesale fuel distributor.",
+    short: "Trade-ready, for wholesale fuel.",
     description: "Wholesale petroleum and chemical distribution across Southern Africa, with a site that handles trade-specific documentation, pricing, and account workflows.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     live: "https://petrocor.blackstarhorizon.com",
@@ -228,6 +254,8 @@ export const projects: Project[] = [
   {
     slug: "smefrog",
     name: "SMEFrog",
+    title: "SMEFrog",
+    category: "Compliance",
     eyebrow: "Business Services · 2026",
     short: "Compliance without the queue.",
     description: "Remote business registration and compliance for Namibian SMEs, simplifying what used to require in-person visits, queues, and weeks of back-and-forth.",
@@ -246,8 +274,10 @@ export const projects: Project[] = [
   {
     slug: "clusterleaf",
     name: "Cluster Leaf Safaris",
+    title: "Cluster Leaf",
+    category: "Safaris",
     eyebrow: "Safari & Tourism · 2026",
-    short: "A site that finally matches the reputation the work had built.",
+    short: "The reputation, finally online.",
     description: "Owner-operated safari experiences across Southern Africa. Built around eleven years of operational trust, transparent pricing, and visible guides.",
     tags: ["Brand Identity", "Website Design", "Website Development", "Booking Systems"],
     live: "https://www.clusterleafsafaris.com",
@@ -264,8 +294,10 @@ export const projects: Project[] = [
   {
     slug: "nalago",
     name: "Nalago Skincare",
+    title: "Nalago",
+    category: "Skincare",
     eyebrow: "Skincare & Wellness · 2026",
-    short: "A brand system rooted in the Namibian landscape.",
+    short: "Skincare rooted in the Namib.",
     description: "Kalahari-inspired organic skincare formulated for the African market, with ingredient stories and a brand system rooted in Namibian landscape.",
     tags: ["Brand Identity", "Website Design", "Website Development", "E-commerce Setup"],
     live: "https://nalago-nam.com",
@@ -282,8 +314,10 @@ export const projects: Project[] = [
   {
     slug: "proavia",
     name: "ProAvia Travel & Tours",
+    title: "ProAvia",
+    category: "Travel & tours",
     eyebrow: "Travel & Tours · 2026",
-    short: "Logistics, tours, and transfers — legible at a glance.",
+    short: "Tours and transfers, legible at a glance.",
     description: "Travel logistics, curated tours, and transfer services from Walvis Bay, connecting visitors to the coast, the desert, and the broader Namibian experience.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     live: "https://proaviainc.com",

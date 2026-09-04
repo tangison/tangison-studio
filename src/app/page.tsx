@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
-import { CaseTile } from "@/components/case-tile";
+import { CaseCard } from "@/components/case-card";
 import { projects } from "@/lib/projects";
 import { capabilities, principles, processSteps, site } from "@/lib/site";
 
@@ -92,28 +92,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ Selected work ============ */}
+      {/* ============ Selected work — tight gallery ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
         <Reveal>
-          <div className="flex items-end justify-between gap-6 flex-wrap">
-            <div>
-              <p className="eyebrow">Selected work</p>
-              <h2 className="h2 mt-3">Recent projects</h2>
-            </div>
+          <div className="flex items-end justify-between gap-6">
+            <p className="eyebrow">Selected work</p>
             <Link
               href="/cases"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-line-strong text-sm font-medium hover:bg-teal-mist transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-medium link-underline"
             >
-              All cases
-              <ArrowRight aria-hidden="true" className="w-4 h-4" />
+              All {projects.length} cases
+              <ArrowUpRight aria-hidden="true" className="w-4 h-4" />
             </Link>
           </div>
         </Reveal>
 
-        <div className="mt-10 md:mt-14 grid gap-6 md:gap-8 sm:grid-cols-2">
+        <div className="mt-8 md:mt-12 grid gap-6 md:gap-8 sm:grid-cols-2">
           {featured.map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 2) * 90}>
-              <CaseTile project={p} priority={i < 2} />
+            <Reveal
+              key={p.slug}
+              delay={i === 0 ? 0 : (i % 2) * 90}
+              variant={i === 0 ? "zoom" : "rise"}
+              className={i === 0 ? "sm:col-span-2" : ""}
+            >
+              <CaseCard
+                project={p}
+                featured={i === 0}
+                priority={i < 2}
+                sizes={
+                  i === 0
+                    ? "(max-width: 768px) 100vw, 1360px"
+                    : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 660px"
+                }
+              />
             </Reveal>
           ))}
         </div>

@@ -4,6 +4,8 @@ import { useEffect, useRef, type ReactNode } from "react";
 
 /**
  * Scroll reveal wrapper: fades content up as it enters the viewport.
+ * variant="zoom" settles the block into place (slightly enlarged -> 1)
+ * instead of rising, for the Collins-style gallery cards.
  * Uses IntersectionObserver; degrades to visible when IO is unavailable
  * and respects prefers-reduced-motion via the CSS layer.
  */
@@ -12,11 +14,13 @@ export function Reveal({
   className = "",
   delay = 0,
   as: Tag = "div",
+  variant = "rise",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
   as?: "div" | "section" | "article" | "li" | "figure";
+  variant?: "rise" | "zoom";
 }) {
   const ref = useRef<HTMLElement | null>(null);
 
@@ -45,7 +49,7 @@ export function Reveal({
   return (
     <Tag
       ref={ref as never}
-      className={`reveal ${className}`}
+      className={`reveal ${variant === "zoom" ? "reveal-zoom" : ""} ${className}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

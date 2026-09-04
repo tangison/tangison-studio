@@ -27,6 +27,7 @@ export function CaseTile({
 }) {
   const [pinned, setPinned] = useState(false);
   const linkRef = useRef<HTMLAnchorElement>(null);
+  const year = project.eyebrow.split(" · ").pop() ?? "";
 
   return (
     <article
@@ -59,10 +60,13 @@ export function CaseTile({
             <div className="p-5 sm:p-7 flex items-end justify-between gap-4">
               <div className="min-w-0">
                 <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-white/70">
-                  {project.eyebrow}
+                  {project.category}
+                  {year && (
+                    <span className="text-white/45"> · {year}</span>
+                  )}
                 </p>
                 <h3 className="mt-1.5 font-display font-bold text-white text-xl sm:text-2xl tracking-[-0.02em] truncate">
-                  {project.name}
+                  {project.title}
                 </h3>
                 <p className="mt-1.5 hidden sm:block text-sm text-white/75 line-clamp-2 max-w-md">
                   {project.short}
