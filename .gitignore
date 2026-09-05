@@ -44,3 +44,6 @@ server.log
 
 # single lockfile policy (bun.lock is canonical)
 package-lock.json
+
+# local Claude Code MCP config — real key lives here, never in the repo
+.mcp.json
