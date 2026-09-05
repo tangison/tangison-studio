@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 /**
- * Contact endpoint — delivers project briefs to the studio inbox via Resend.
+ * Contact endpoint: delivers project briefs to the studio inbox via Resend.
  *
  * Setup (.env locally, and Project → Settings → Environment Variables on Vercel):
  *     RESEND_API_KEY=re_xxxxxxxxx     <- your real Resend API key
@@ -49,7 +49,7 @@ export async function POST(req: Request) {
   const budget = str(body.budget);
   const company = str(body.company); // honeypot
 
-  // honeypot: bots fill hidden fields — pretend success, send nothing
+  // honeypot: bots fill hidden fields: pretend success, send nothing
   if (company) {
     return NextResponse.json({ ok: true });
   }

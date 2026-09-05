@@ -11,55 +11,77 @@ import { getArticleSummaries } from "@/lib/articles";
 import { formatDate } from "@/lib/article-types";
 
 export default function HomePage() {
-  // the hero poster is the largest above-fold paint — start it immediately
-  preload("/videos/hero-poster-v2.webp", { as: "image", fetchPriority: "high" });
+  // the film poster sits just below the fold line on mobile and inside the
+  // first screen on desktop: start it immediately, it is only ~16KB
+  preload("/videos/hero-poster-v3.webp", { as: "image", fetchPriority: "high" });
 
   const featured = projects.slice(0, 5);
   const articles = getArticleSummaries();
   const latest = articles.slice(0, 3);
   const total = articles.length;
+  const trust = projects.slice(0, 5);
+  const rest = projects.length - trust.length;
 
   return (
     <>
-      {/* ============ Hero — the studio film full-bleed behind the tagline ============ */}
-      <section className="relative min-h-[76vh] sm:min-h-[84vh] md:min-h-[92vh] flex flex-col justify-end overflow-hidden bg-ink">
-        <div className="absolute inset-0" aria-hidden="true">
-          <HeroVideo />
-        </div>
-        {/* scrim: dark where the copy sits, clearing toward the top */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/5"
-        />
-        <div className="relative mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-28 md:pt-44 pb-16 md:pb-24">
-          <Reveal>
-            <p className="eyebrow !text-white/70">
-              Windhoek West · Namibia
+      {/* ============ Hero: the tagline leads, the studio film follows ============ */}
+      <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-32 md:pt-44">
+        <Reveal>
+          <h1 className="h1 max-w-5xl">
+            Rebuilding how the world
+            <span className="block">sees your brand.</span>
+          </h1>
+        </Reveal>
+        <Reveal delay={90}>
+          <p className="mt-6 md:mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-ink-muted">
+            Visitors judge your business in seconds. We design and build
+            websites that make those seconds count.
+          </p>
+        </Reveal>
+        <Reveal delay={180}>
+          <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3">
+            <Link href="/contact" className="btn btn-primary">
+              Start a project
+            </Link>
+            <Link href="/cases" className="btn btn-outline">
+              See the work
+            </Link>
+          </div>
+        </Reveal>
+
+        {/* the studio film follows the tagline, inline */}
+        <Reveal variant="zoom" delay={120} className="mt-12 md:mt-16">
+          <div className="art-tile art-shadow bg-ink aspect-[16/10]">
+            <HeroVideo />
+          </div>
+        </Reveal>
+
+        {/* trust layer: real clients, a path to the record */}
+        <div className="mt-10 md:mt-12 flex flex-wrap items-baseline gap-x-8 gap-y-4">
+          <div className="min-w-0">
+            <p className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint">
+              Selected clients
             </p>
-          </Reveal>
-          <Reveal delay={90}>
-            <h1 className="h1 mt-5 max-w-4xl text-white [text-shadow:0_2px_30px_rgba(8,10,12,0.35)]">
-              Independent digital
-              <span className="block text-white/80">product studio.</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={180}>
-            <div className="mt-10 md:mt-12 flex flex-wrap items-center gap-4">
-              <Link href="/cases" className="btn btn-hero">
-                See the work
-              </Link>
-              <Link
-                href="/contact"
-                className="text-sm font-medium text-white/85 link-underline-light"
-              >
-                Start a project brief
-              </Link>
-            </div>
-          </Reveal>
+            <ul className="mt-3 flex flex-wrap items-baseline gap-x-7 gap-y-2 font-display font-semibold text-[17px] md:text-xl tracking-[-0.01em]">
+              {trust.map((p) => (
+                <li key={p.slug} className="whitespace-nowrap">
+                  {p.title}
+                </li>
+              ))}
+              <li className="whitespace-nowrap">
+                <Link
+                  href="/cases"
+                  className="text-ink-faint font-medium text-[15px] md:text-base link-underline"
+                >
+                  and {rest} more
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* ============ Selected work — tight gallery ============ */}
+      {/* ============ Selected work: tight gallery ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <div className="flex items-end justify-between gap-6">
           <h2 className="h2">Selected work.</h2>

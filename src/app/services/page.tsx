@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <div className="theme-ink bg-paper text-ink min-h-screen">
-      {/* ============ Header — one painting, one line ============ */}
+      {/* ============ Header: one painting, one line ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-end">
           <div>

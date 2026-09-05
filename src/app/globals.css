@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ============================================================
-   The Tangison Studio — design tokens (design.md is source of truth)
+   The Tangison Studio: design tokens (design.md is source of truth)
    /* Hallmark · genre: editorial-studio · macrostructure: Portfolio Grid (light) + Long Document (ink) · design-system: design.md · designed-as-app
    Two route themes: paper (light, default) and ink (dark, text-heavy).
    Ink is applied by adding .theme-ink to a page wrapper.
@@ -41,14 +41,14 @@
   --teal-mist: #e6f2f1;
   --surface: rgba(254, 253, 251, 0.74);
   --overlay: rgba(17, 19, 21, 0.5);
-  /* one soft radiating shadow under imagery — light paper only */
+  /* one soft radiating shadow under imagery: light paper only */
   --shadow-soft: 0 24px 60px -24px rgba(12, 16, 20, 0.18);
 
   color-scheme: light;
 }
 
 .theme-ink {
-  /* ink theme (dark) — text-heavy pages: articles, case studies, about,
+  /* ink theme (dark): text-heavy pages: articles, case studies, about,
      services, audit, search. No shadows on dark (no glow): elevation by
      lighter surface instead. */
   --paper: #0c1014;
@@ -122,7 +122,7 @@ body {
   letter-spacing: -0.015em;
 }
 
-/* metadata label — mono, small caps. NOT a section eyebrow: reserved for
+/* metadata label: mono, small caps. NOT a section eyebrow: reserved for
    real data (category · year, dates, coordinates). Max two roles per page. */
 .eyebrow {
   font-family: var(--font-mono);
@@ -344,7 +344,7 @@ body {
 /* ============================================================
    Collins-style gallery cards (home + cases gallery).
    The image slowly zooms IN on hover / focus and eases back
-   OUT on leave — long expo-out both ways, no snap.
+   OUT on leave: long expo-out both ways, no snap.
    ============================================================ */
 .case-card .case-card-image {
   transition:

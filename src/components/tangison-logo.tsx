@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 /**
- * Tangison wordmark — inline SVG (true vector, fills with currentColor so it
+ * Tangison wordmark: inline SVG (true vector, fills with currentColor so it
  * inherits the surrounding text colour on light and dark themes alike).
  * Source: the canonical logo from tangison.com, single path, no text.
  */

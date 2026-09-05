@@ -16,7 +16,7 @@ export const poppins = localFont({
   fallback: ["Satoshi", "system-ui", "sans-serif"],
 });
 
-/** Satoshi — body. Sourced from the production site. 400/500/700 only. */
+/** Satoshi: body. Sourced from the production site. 400/500/700 only. */
 export const satoshi = localFont({
   src: [
     { path: "../fonts/Satoshi-400.woff2", weight: "400", style: "normal" },
@@ -28,7 +28,7 @@ export const satoshi = localFont({
   fallback: ["system-ui", "sans-serif"],
 });
 
-/** JetBrains Mono — labels. Latin-subset woff2, ~28KB. */
+/** JetBrains Mono: labels. Latin-subset woff2, ~28KB. */
 export const jetbrainsMono = localFont({
   src: [{ path: "../fonts/JetBrainsMono-400-latin.woff2", weight: "400", style: "normal" }],
   variable: "--font-jetbrains",

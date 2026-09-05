@@ -8,11 +8,11 @@ import type { Project } from "@/lib/projects";
  *
  * Image-led: the artwork fills the card and slowly zooms IN while you
  * hover or focus it, then eases back OUT when you leave (see
- * `.case-card-image` in globals.css — 1.1s expo-out both ways).
+ * `.case-card-image` in globals.css: 1.1s expo-out both ways).
  *
  * Two caption placements, both minimal (title + category · year):
- *  - variant="below"  — tight caption row under the image (home + grid)
- *  - variant="overlay" — caption inside the image over a gradient, for
+ *  - variant="below" : tight caption row under the image (home + grid)
+ *  - variant="overlay": caption inside the image over a gradient, for
  *    the featured slot (the Collins "Learning to see." pattern)
  */
 export function CaseCard({
@@ -83,7 +83,7 @@ export function CaseCard({
         )}
       </div>
 
-      {/* variant="below" — tight caption row: title left, category · year right */}
+      {/* variant="below": tight caption row: title left, category · year right */}
       {variant === "below" && (
         <div className="mt-4 flex items-baseline justify-between gap-4">
           <h3

@@ -13,8 +13,10 @@ the named reference for craft level, not for its visual identity.
 
 ## Macrostructure family
 
-- Marketing / gallery pages (home, /cases): **Portfolio Grid** — short tagline
-  head, image-led grid, no display-heavy intro. One featured full-width tile,
+- Marketing / gallery pages (home, /cases): **Portfolio Grid** — tagline head
+  (the studio slogan, hero copy only, never location or positioning text),
+  inline studio film tile below the copy, trust layer of real client names,
+  image-led grid, no display-heavy intro. One featured full-width tile,
   tight 2-col grid below.
 - Content pages (/blog/[slug], /about, /services, /audit): **Long Document** —
   dark ink surface, single reading column (65–68ch), hanging section heads,
@@ -83,6 +85,12 @@ by design. One break-out or asymmetry per page minimum.
 
 ## Imagery
 
+- **Hero film (user-mandated exception, v3)**: the studio painting film runs
+  INLINE after the hero tagline (never a full-bleed background, never before
+  the copy). 752x470 (16:10), muted + loop + playsinline, poster-first
+  (16KB WebP, preloaded), playback starts on intersection only, ~510KB mp4
+  fetched lazily. The bottom-right watermark zone is delogo'd and the corner
+  precision-cropped; the filename is versioned (hero-v3) to bust caches.
 - Every page hero carries ONE minimal oil painting element (Pollinations,
   pinned seeds), single subject, light bone ground, biased off-centre — light
   and lean. Case covers and article covers keep their own art.
@@ -115,5 +123,7 @@ dividers prefer negative space; where a rule is needed it fades at the edges
 
 ## Performance contract
 
-Sub-500KB page transfer (3G). No hero video. WebP imagery, lazy below fold,
-priority on LCP art. Three font families max, subset woff2, swap display.
+Sub-500KB page transfer (3G). Hero film allowed as the one documented
+exception: inline, lazy, poster-first, so it never counts against first paint
+or LCP. WebP imagery, lazy below fold, priority on LCP art. Three font
+families max, subset woff2, swap display.

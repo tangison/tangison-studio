@@ -1,5 +1,5 @@
 /**
- * Search index — built at build time from articles, cases, and site pages.
+ * Search index: built at build time from articles, cases, and site pages.
  * SERVER-ONLY (imports the fs-based article loader); search-client.tsx
  * receives the plain JSON entries as props.
  */

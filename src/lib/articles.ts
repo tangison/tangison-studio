@@ -1,5 +1,5 @@
 /**
- * Article loader — reads content/articles/*.md (frontmatter + markdown) at
+ * Article loader: reads content/articles/*.md (frontmatter + markdown) at
  * build time. Articles are fully static (SSG), so the filesystem is never
  * touched at runtime in production.
  *
@@ -61,7 +61,7 @@ export function getArticles(): Article[] {
   try {
     files = fs.readdirSync(DIR).filter((f) => f.endsWith(".md"));
   } catch {
-    // content dir missing — no articles
+    // content dir missing: no articles
     return (cache = []);
   }
   for (const file of files) {

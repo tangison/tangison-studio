@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  // lean summaries — never ship 47 markdown bodies to the client
+  // lean summaries: never ship 47 markdown bodies to the client
   const articles = getArticleSummaries();
   const categories = getArticleCategories();
 

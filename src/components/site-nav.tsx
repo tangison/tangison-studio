@@ -29,7 +29,7 @@ export function SiteNav() {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  // route change closes the menu — state adjusted during render
+  // route change closes the menu: state adjusted during render
   // (the React-endorsed pattern; avoids setState-in-effect)
   if (pathname !== prevPathname) {
     setPrevPathname(pathname);
@@ -200,7 +200,7 @@ export function SiteNav() {
         </div>
       </nav>
 
-      {/* full-screen mobile menu — COLLINS-style takeover */}
+      {/* full-screen mobile menu: COLLINS-style takeover */}
       <div
         className="fixed inset-0 z-[200] lg:hidden"
         aria-hidden={!open}

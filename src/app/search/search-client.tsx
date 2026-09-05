@@ -19,7 +19,7 @@ const SUGGESTIONS = ["AI adoption", "mining", "website cost", "brand", "agricult
  * the query must appear in the entry's corpus; title matches rank higher.
  *
  * The index itself is a static JSON asset (/search-index.json, prerendered
- * at build time) fetched once on mount and cached by the browser — the
+ * at build time) fetched once on mount and cached by the browser: the
  * page shell paints immediately and the index bytes transfer only when
  * search is actually used.
  */

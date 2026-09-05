@@ -24,7 +24,7 @@ export default function CasesPage() {
 
   return (
     <div className="bg-paper text-ink min-h-screen">
-      {/* ============ Gallery header — one painting, one line ============ */}
+      {/* ============ Gallery header: one painting, one line ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-end">
           <Reveal>
@@ -51,7 +51,7 @@ export default function CasesPage() {
 
       {/* ============ Gallery ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-12 md:pt-16 pb-8">
-        {/* featured case — full-bleed, caption inside the image */}
+        {/* featured case: full-bleed, caption inside the image */}
         <Reveal variant="zoom">
           <CaseCard
             project={featured}
@@ -62,7 +62,7 @@ export default function CasesPage() {
           />
         </Reveal>
 
-        {/* the rest — tight 2-col grid, same zoom treatment as home */}
+        {/* the rest: tight 2-col grid, same zoom treatment as home */}
         <div className="mt-6 md:mt-8 grid gap-6 md:gap-8 sm:grid-cols-2">
           {rest.map((p, i) => (
             <Reveal

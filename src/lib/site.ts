@@ -1,9 +1,9 @@
-/** The Tangison Studio — shared site constants. */
+/** The Tangison Studio: shared site constants. */
 
 export const site = {
   name: "The Tangison Studio",
   legalName: "Tangison Studio",
-  tagline: "Windhoek, Namibia · Independent digital product studio",
+  tagline: "Rebuilding how the world sees your brand.",
   positioning: "One studio instead of three vendors.",
   url: "https://studio.tangison.com",
   email: "studio@tangison.com",

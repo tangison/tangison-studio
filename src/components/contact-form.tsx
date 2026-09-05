@@ -80,7 +80,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate={false} className="flex flex-col gap-5">
-      {/* honeypot — hidden from humans, irresistible to bots */}
+      {/* honeypot: hidden from humans, irresistible to bots */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
         <label htmlFor="company">Company (leave empty)</label>
         <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />

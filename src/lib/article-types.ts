@@ -1,5 +1,5 @@
 /**
- * Client-safe article types and helpers (no filesystem imports — safe to
+ * Client-safe article types and helpers (no filesystem imports: safe to
  * import from client components). The server-only loader lives in
  * articles.ts.
  */
@@ -21,7 +21,7 @@ export interface Article {
 }
 
 /**
- * An article without its markdown body — what list views and client
+ * An article without its markdown body: what list views and client
  * components receive. Passing the full Article (with body) into a client
  * component serializes every body into the page payload; summaries keep
  * the /blog index lean.

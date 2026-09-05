@@ -4,9 +4,9 @@ import { ArrowUpRight } from "lucide-react";
 import { formatDate, type ArticleSummary } from "@/lib/article-types";
 
 /**
- * Article card for the blog index — same motion language as the Cases
+ * Article card for the blog index: same motion language as the Cases
  * gallery: the artwork fills the card and zooms on hover/focus
- * (`.case-card-image`, 1.1s expo-out both ways). Takes a lean summary —
+ * (`.case-card-image`, 1.1s expo-out both ways). Takes a lean summary : 
  * bodies are never serialized into client payloads.
  */
 export function ArticleCard({

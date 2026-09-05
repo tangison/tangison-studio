@@ -3,16 +3,16 @@
 import { useEffect, useRef } from "react";
 
 /**
- * The studio hero film — a short looping painting-style clip, full-bleed
- * behind the hero copy. It never blocks first paint: the browser draws the
- * lean WebP poster immediately, and playback (muted, inline, looped) starts
- * only once the element is on screen. With prefers-reduced-motion the
- * poster simply stays, motionless.
+ * The studio hero film: a short looping painting-style clip that follows
+ * the hero tagline inline (never a full-bleed background). It never blocks
+ * first paint: the browser draws the lean WebP poster immediately, and
+ * playback (muted, inline, looped) starts only once the element is on
+ * screen. With prefers-reduced-motion the poster simply stays, motionless.
  *
- * v2: the clip was re-cut — the right edge (where the source carried a
- * watermark) is precision-cropped away and the corner softened, then
- * re-encoded and shipped under a new filename so every browser drops the
- * immutable-cached predecessor.
+ * v3: re-cut from v2 with the bottom-right watermark zone delogo'd
+ * (interpolated away), the corner precision-cropped (752x470, exact 16:10),
+ * and re-encoded under a new filename so every cache layer (browser and
+ * CDN edge) drops any previously cached copy.
  */
 export function HeroVideo() {
   const ref = useRef<HTMLVideoElement>(null);
@@ -22,7 +22,7 @@ export function HeroVideo() {
     if (!video) return;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return; // poster only — no autoplay, no fetch
+      return; // poster only: no autoplay, no fetch
     }
 
     if (typeof IntersectionObserver === "undefined") {
@@ -52,12 +52,12 @@ export function HeroVideo() {
       loop
       playsInline
       preload="none"
-      poster="/videos/hero-poster-v2.webp"
+      poster="/videos/hero-poster-v3.webp"
       disablePictureInPicture
       aria-hidden="true"
       className="h-full w-full object-cover"
     >
-      <source src="/videos/hero-v2.mp4" type="video/mp4" />
+      <source src="/videos/hero-v3.mp4" type="video/mp4" />
     </video>
   );
 }
