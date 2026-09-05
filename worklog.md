@@ -110,3 +110,22 @@ Work Log:
 Stage Summary:
 - Home cases section is now a Collins-style tight gallery with real zoom-in/zoom-out motion and very little copy; all case copy tightened; any of the 31 images can be swapped surgically with `python3 scripts/generate_images.py --only <key>` (one Pollinations call each).
 - Repo is Vercel-hobby-clean (5.4MB history, 4 runtime deps, static output); still no push credentials in this environment — ship via download/studio-tangison-source.zip.
+
+---
+Task ID: 6
+Agent: main (Super Z)
+Task: User follow-up: re-adjust the cases section as a gallery like the filebin references (m6p0fb3x6hfhgrc5), give ALL tiles the same zoom treatment (not just the new home ones), rework the mobile off-canvas per the reference screenshots, set up Resend properly (env key + contact form + MCP), and push.
+
+Work Log:
+- Downloaded 11 reference screenshots from filebin (curl default UA + -L required: browser UA gets the HTML preview, plain curl gets a 302 to a signed storage URL). 6 were gallery-style design templates (Tokyo travel, Great Outdoors, Apex, MNTN, GAZU, Elomar); 5 were Android Brave shots of wearecollins.com mobile — the COLLINS patterns for both the gallery and the menu.
+- VLM analysis of all 11: the decisive references were Collins' mobile work grid (rounded full-bleed tiles, caption overlaid bottom-left: category + big title + Explore CTA) and Collins' full-screen menu takeover (dark, big stacked serif links, white pill CTA, scrollable project list: thumbnail + label + title + arrow rows).
+- /cases rebuilt as a gallery: header cut to one line; featured case (Mendozer) full-bleed 21:9 with overlay caption inside the image over a gradient; remaining 14 in a tight 2-col grid with under-image captions. CaseCard gained variant="overlay" | "below"; CaseTile deleted (unused). Every tile has the same zoom-in/out motion (scale 1 -> 1.07, 1.1s expo-out, brightness 1.03) as home.
+- Mobile menu rewritten as a Collins-style full-screen takeover (#0c1014, always dark): brand + X header, 4 big stacked links with stagger, white pill CTA, all 15 cases as scrollable rows (68px rounded thumbs + category + title + arrow), email/phone/location footer, WhatsApp pill with safe-area padding. Kept the whole a11y contract (scroll lock w/ iOS guard, focus trap, Esc, focus return, route-change close, 100dvh, reduced-motion).
+- Resend integration: resend@6.26.0; /api/contact (node runtime) with validation (name/email/message caps), honeypot ("company" field -> fake ok), readable 503 while RESEND_API_KEY is the placeholder, escapeHtml'd text+html email to studio@tangison.com with replyTo. Contact page: whatToSend list + new ContactForm client component (success/error states, spinner); mailto retired (contact points still link email/phone). .env untracked (was tracked by the old scaffold! git rm --cached), .env.example + .mcp.json (@resend/mcp via npx for Claude Code) added.
+- Verified with agent-browser + curl: cases featured overlay card + 2-col grid + hover zoom matrix(1.07) both pages; menu takeover full-screen 390x844, 15 rows, scrollable (1956px content), Esc/X/route-close all work with focus return + scroll unlock; contact API: 400 invalid, 503 unconfigured, 200 honeypot; form submit shows the 503 message in the UI; 0 console/page errors; lint + build clean (all pages static, /api/contact dynamic).
+- VLM QA on screenshots: gallery passes after ruling out a screenshot artifact (full-page capture shows opacity-0 unrevealed tiles as a black void — real scroll reveals them; re-shot after scrolling: all 15 tiles even and clean). Menu passes; bumped row-label contrast white/55 -> white/65.
+- Committed as "Cases gallery, Collins-style mobile menu takeover, Resend contact form" (author Tangi Iigonda). No git remote in this environment — download/studio-tangison-source.zip regenerated from HEAD (5.5MB, 145 files, .env excluded, .env.example/.mcp.json included).
+
+Stage Summary:
+- Cases page is a Collins-style gallery (full-bleed featured overlay + tight grid, same zoom treatment on all 15); mobile menu is the Collins full-screen takeover with case rows; Resend is wired end-to-end and fails gracefully until the real key lands.
+- TO SHIP: replace re_xxxxxxxxx in .env (and Vercel env vars) with the real Resend API key; push the repo to GitHub (no remote/credentials available here — use download/studio-tangison-source.zip or git bundle) and import on Vercel.
