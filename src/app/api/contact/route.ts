@@ -4,23 +4,21 @@ import { Resend } from "resend";
 /**
  * Contact endpoint — delivers project briefs to the studio inbox via Resend.
  *
- * Setup (replace the placeholders before going live):
- *   .env / Vercel project env:
+ * Setup (.env locally, and Project → Settings → Environment Variables on Vercel):
  *     RESEND_API_KEY=re_xxxxxxxxx     <- your real Resend API key
  *     CONTACT_TO=studio@tangison.com  <- optional override
- *     CONTACT_FROM=Tangison Studio <onboarding@resend.dev>
+ *     CONTACT_FROM=Studio <briefs@studio.tangison.com>
  *
- * Note: while CONTACT_FROM is Resend's test sender (onboarding@resend.dev),
- * Resend only delivers to the email address that owns the account. Make sure
- * studio@tangison.com owns the Resend account — or verify the tangison.com
- * domain in Resend and set CONTACT_FROM to e.g. "Studio <briefs@tangison.com>".
+ * Note: studio.tangison.com is verified in Resend (sending enabled), so the
+ * default sender already delivers to any inbox. Only override CONTACT_FROM
+ * if you want briefs to appear from a different address.
  */
 
 export const runtime = "nodejs";
 
 const TO = process.env.CONTACT_TO ?? "studio@tangison.com";
 const FROM =
-  process.env.CONTACT_FROM ?? "Tangison Studio <onboarding@resend.dev>";
+  process.env.CONTACT_FROM ?? "Studio <briefs@studio.tangison.com>";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
