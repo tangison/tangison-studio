@@ -167,34 +167,8 @@ body {
   }
 }
 
-/* gallery card image reveal */
-.case-tile .case-overlay {
-  opacity: 0;
-  transform: translateY(8px);
-  transition:
-    opacity 0.45s var(--ease-primary),
-    transform 0.45s var(--ease-primary);
-}
-
-.case-tile:hover .case-overlay,
-.case-tile:focus-visible .case-overlay,
-.case-tile.reveal-on .case-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.case-tile .case-image {
-  transition: transform 0.8s var(--ease-primary), filter 0.8s var(--ease-primary);
-}
-
-.case-tile:hover .case-image,
-.case-tile:focus-visible .case-image,
-.case-tile.reveal-on .case-image {
-  transform: scale(1.04);
-}
-
 /* ============================================================
-   Collins-style gallery card (home page).
+   Collins-style gallery cards (home + cases gallery).
    The image slowly zooms IN on hover / focus and eases back
    OUT on leave — long expo-out both ways, no snap.
    ============================================================ */
@@ -251,13 +225,28 @@ body {
   transform-origin: left;
 }
 
-/* off-canvas drawer */
-.drawer-panel {
-  transition: transform 0.55s var(--ease-primary);
+/* full-screen mobile menu (Collins-style takeover) */
+.menu-takeover {
+  transition:
+    opacity 0.45s var(--ease-primary),
+    transform 0.55s var(--ease-primary),
+    visibility 0.55s;
 }
 
-.drawer-backdrop {
-  transition: opacity 0.4s var(--ease-primary);
+.menu-takeover-link {
+  transition:
+    opacity 0.5s var(--ease-primary),
+    transform 0.5s var(--ease-primary),
+    color 0.3s var(--ease-primary);
+}
+
+.menu-case-row {
+  transition: background-color 0.3s var(--ease-primary);
+}
+
+.menu-case-row:hover,
+.menu-case-row:focus-visible {
+  background: rgba(246, 244, 239, 0.06);
 }
 
 /* custom scrollbar for long lists */

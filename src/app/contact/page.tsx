@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Reveal } from "@/components/reveal";
+import { ContactForm } from "@/components/contact-form";
 import { contactPoints, site, whatToSend } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,15 +12,6 @@ export const metadata: Metadata = {
     "Start a project with Studio in Windhoek, Namibia. Tell us what you are working on, your timeline, and any budget constraints. We reply within two working days.",
   alternates: { canonical: "/contact" },
 };
-
-/** Builds a mailto: link with the enquiry prefilled, as on the production site. */
-function mailtoEnquiry(body?: string) {
-  const subject = "Project enquiry";
-  const text =
-    body ??
-    "Hello Studio,%0D%0A%0D%0AHere is what I am working on:%0D%0A%0D%0A%0D%0ATimeline:%0D%0ABudget range:";
-  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${text}`;
-}
 
 export default function ContactPage() {
   const gallery = [
@@ -77,18 +69,18 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ============ Compose + invitation ============ */}
+      {/* ============ Brief form + invitation ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <Reveal>
-            <div className="rounded-[24px] border border-line bg-paper-raise p-6 md:p-10 h-full flex flex-col">
-              <p className="eyebrow">What to send</p>
-              <ul className="mt-6 flex flex-col gap-4">
+            <div className="rounded-[24px] border border-line bg-paper p-6 md:p-10 h-full flex flex-col relative">
+              <p className="eyebrow">Start a project brief</p>
+              <ul className="mt-6 flex flex-col gap-3">
                 {whatToSend.map((item) => (
-                  <li key={item} className="flex gap-3 text-ink-muted leading-relaxed">
+                  <li key={item} className="flex gap-3 text-ink-muted leading-relaxed text-[15px]">
                     <span
                       aria-hidden="true"
-                      className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-mist text-teal"
+                      className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-mist text-teal"
                     >
                       <Check className="w-3.5 h-3.5" />
                     </span>
@@ -96,18 +88,8 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto pt-8">
-                <a
-                  href={mailtoEnquiry()}
-                  className="inline-flex items-center gap-2 h-12 px-7 rounded-full bg-ink text-paper text-sm font-medium hover:opacity-90 transition-opacity"
-                >
-                  Open my email client
-                  <ArrowUpRight aria-hidden="true" className="w-4 h-4" />
-                </a>
-                <p className="mt-4 text-sm text-ink-faint">
-                  Your email opens with the message prefilled. Nothing is stored
-                  on our server.
-                </p>
+              <div className="mt-8 pt-8 border-t border-line">
+                <ContactForm />
               </div>
             </div>
           </Reveal>

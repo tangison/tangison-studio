@@ -2,22 +2,26 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, X } from "lucide-react";
 import { navLinks, site } from "@/lib/site";
+import { projects } from "@/lib/projects";
 
 /**
- * Floating pill navigation + off-canvas drawer.
+ * Floating pill navigation + full-screen mobile menu.
  *
- * The drawer is rebuilt from scratch because the production off-canvas was
- * broken on mobile. This implementation handles, in order of importance:
+ * The mobile menu follows the COLLINS reference: a full-screen dark
+ * takeover with big stacked links, a pill CTA, and a scrollable list
+ * of case rows (thumbnail + category + title) below it.
+ *
+ * Accessibility contract (rebuilt from scratch, kept from v2):
  *  - body scroll lock (overflow + position, restores on close)
  *  - focus trap + focus return to the trigger button
  *  - Escape key closes
- *  - backdrop click closes
- *  - 48px+ touch targets, dvh-aware height (no iOS 100vh jump)
+ *  - 48px+ touch targets, 100dvh height (no iOS vh jump)
  *  - route change closes the menu
- *  - reduced-motion respected via CSS transitions
+ *  - reduced-motion respected via the CSS transition layer
  */
 export function SiteNav() {
   const pathname = usePathname();
@@ -26,7 +30,7 @@ export function SiteNav() {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  // route change closes the drawer — state adjusted during render
+  // route change closes the menu — state adjusted during render
   // (the React-endorsed pattern; avoids setState-in-effect)
   if (pathname !== prevPathname) {
     setPrevPathname(pathname);
@@ -82,7 +86,7 @@ export function SiteNav() {
     };
 
     document.addEventListener("keydown", onKey);
-    // move focus into the drawer
+    // move focus into the menu
     const t = window.setTimeout(() => {
       panelRef.current?.querySelector<HTMLElement>("a[href]")?.focus();
     }, 80);
@@ -190,104 +194,160 @@ export function SiteNav() {
         </div>
       </nav>
 
-      {/* off-canvas drawer */}
+      {/* full-screen mobile menu — COLLINS-style takeover */}
       <div
         className="fixed inset-0 z-[200] lg:hidden"
         aria-hidden={!open}
         style={{ pointerEvents: open ? "auto" : "none" }}
       >
-        {/* backdrop */}
-        <button
-          type="button"
-          tabIndex={open ? 0 : -1}
-          aria-label="Close menu"
-          onClick={close}
-          className="drawer-backdrop absolute inset-0"
-          style={{
-            background: "var(--overlay)",
-            backdropFilter: "blur(6px)",
-            WebkitBackdropFilter: "blur(6px)",
-            opacity: open ? 1 : 0,
-            pointerEvents: open ? "auto" : "none",
-          }}
-        />
-        {/* panel */}
         <div
           id="offcanvas-menu"
           ref={panelRef}
           role="dialog"
           aria-modal={open}
           aria-label="Menu"
-          className="drawer-panel absolute right-0 top-0 h-[100dvh] w-full sm:max-w-[420px] flex flex-col border-l border-line"
+          className="menu-takeover flex h-[100dvh] w-full flex-col"
           style={{
-            background: "var(--paper)",
-            transform: open ? "translateX(0)" : "translateX(102%)",
+            background: "#0c1014",
+            color: "#f6f4ef",
+            opacity: open ? 1 : 0,
+            transform: open ? "translateY(0)" : "translateY(6%)",
             visibility: open ? "visible" : "hidden",
           }}
         >
-          <div className="flex items-center justify-between px-6 py-5 border-b border-line shrink-0">
-            <span className="eyebrow">Menu</span>
+          {/* header */}
+          <div className="flex items-center justify-between px-6 py-5 shrink-0">
+            <span className="flex items-center gap-2">
+              <img
+                src="/brand/favicon.webp"
+                alt=""
+                width={26}
+                height={26}
+                style={{ width: 26, height: 26 }}
+              />
+              <span className="font-display font-bold text-[15px] tracking-[-0.02em]">
+                Studio
+              </span>
+            </span>
             <button
               type="button"
               onClick={close}
               aria-label="Close menu"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-line hover:bg-teal-mist transition-colors"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border transition-colors"
+              style={{ borderColor: "rgba(246,244,239,0.24)" }}
             >
               <X aria-hidden="true" className="w-5 h-5" />
             </button>
           </div>
 
-          <nav aria-label="Mobile navigation" className="flex-1 overflow-y-auto scroll-slim px-6 py-8">
-            <ul className="flex flex-col gap-2">
+          {/* scrollable body: links → CTA → case rows → contact */}
+          <div className="flex-1 overflow-y-auto scroll-slim px-6 pb-6">
+            <ul className="flex flex-col">
               {navLinks.map((l, i) => (
-                <li
-                  key={l.href}
-                  className="reveal"
-                  style={{
-                    transition: `opacity .5s var(--ease-primary) ${0.08 + i * 0.06}s, transform .5s var(--ease-primary) ${0.08 + i * 0.06}s`,
-                    opacity: open ? 1 : 0,
-                    transform: open ? "translateY(0)" : "translateY(14px)",
-                  }}
-                >
+                <li key={l.href}>
                   <Link
                     href={l.href}
                     onClick={close}
-                    className="group flex items-center justify-between min-h-[64px] px-4 -mx-4 rounded-2xl hover:bg-teal-mist transition-colors"
+                    className="menu-takeover-link flex items-center justify-between min-h-[68px] border-b"
+                    style={{
+                      borderColor: "rgba(246,244,239,0.12)",
+                      opacity: open ? 1 : 0,
+                      transform: open ? "translateY(0)" : "translateY(16px)",
+                      transitionDelay: open
+                        ? `${0.06 + i * 0.06}s`
+                        : "0s",
+                    }}
                   >
-                    <span className="font-display font-bold text-[clamp(1.6rem,6vw,2rem)] tracking-[-0.02em]">
+                    <span className="font-display font-bold text-[clamp(1.9rem,8vw,2.4rem)] tracking-[-0.02em]">
                       {l.label}
                     </span>
                     <ArrowUpRight
                       aria-hidden="true"
-                      className="w-6 h-6 text-ink-faint group-hover:text-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                      className="w-6 h-6"
+                      style={{ color: "rgba(246,244,239,0.4)" }}
                     />
                   </Link>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-10 pt-8 border-t border-line flex flex-col gap-4">
-              <a
-                href={`mailto:${site.email}`}
-                className="text-base font-medium link-underline"
-              >
-                {site.email}
-              </a>
-              <a href={site.phoneHref} className="text-base font-medium link-underline">
-                {site.phone}
-              </a>
-              <p className="eyebrow mt-2">{site.location} · {site.hours}</p>
-            </div>
-          </nav>
-
-          <div className="px-6 py-6 border-t border-line shrink-0" style={{ paddingBottom: "calc(1.5rem + env(safe-area-inset-bottom))" }}>
             <Link
               href="/contact"
               onClick={close}
-              className="flex items-center justify-center min-h-[56px] w-full rounded-full bg-ink text-paper font-medium"
+              className="mt-8 flex items-center justify-center min-h-[56px] w-full rounded-full font-medium"
+              style={{
+                background: "#f6f4ef",
+                color: "#111315",
+              }}
             >
               Start a project
             </Link>
+
+            <p
+              className="eyebrow mt-10"
+              style={{ color: "rgba(246,244,239,0.5)" }}
+            >
+              Selected cases
+            </p>
+            <ul className="mt-3 flex flex-col">
+              {projects.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={`/cases/${p.slug}`}
+                    onClick={close}
+                    className="menu-case-row flex items-center gap-4 rounded-2xl py-2.5 pr-2"
+                  >
+                    <span className="relative h-[68px] w-[68px] shrink-0 overflow-hidden rounded-[14px]">
+                      <Image
+                        src={`/images/paintings/projects/${p.slug}.webp`}
+                        alt={`Soft artwork representing ${p.name}`}
+                        fill
+                        sizes="136px"
+                        className="object-cover"
+                      />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-white/65">
+                        {p.category}
+                      </span>
+                      <span className="mt-1 block truncate font-display font-bold text-[17px] tracking-[-0.01em]">
+                        {p.title}
+                      </span>
+                    </span>
+                    <ArrowUpRight
+                      aria-hidden="true"
+                      className="w-5 h-5 shrink-0"
+                      style={{ color: "rgba(246,244,239,0.4)" }}
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-10 pt-8 flex flex-col gap-3" style={{ borderTop: "1px solid rgba(246,244,239,0.12)" }}>
+              <a href={`mailto:${site.email}`} className="text-[15px] font-medium link-underline">
+                {site.email}
+              </a>
+              <a href={site.phoneHref} className="text-[15px] font-medium link-underline">
+                {site.phone}
+              </a>
+              <p className="eyebrow mt-2" style={{ color: "rgba(246,244,239,0.5)" }}>
+                {site.location} · {site.hours}
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="shrink-0 px-6 pb-6"
+            style={{ paddingBottom: "calc(1.5rem + env(safe-area-inset-bottom))" }}
+          >
+            <a
+              href={site.whatsapp}
+              className="flex items-center justify-center min-h-[52px] w-full rounded-full border font-medium"
+              style={{ borderColor: "rgba(246,244,239,0.28)" }}
+            >
+              WhatsApp the studio
+            </a>
           </div>
         </div>
       </div>
