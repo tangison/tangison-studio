@@ -1,36 +1,62 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { capabilities, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services | Studio and Intelligence, One Practice in Windhoek",
   description:
-    "Seven outcome-led programs from a practice in Windhoek. Brand systems, website development, application design, product design, design systems, applied AI.",
+    "Seven outcome-led programs from The Tangison Studio in Windhoek. Brand systems, website development, application design, product design, design systems, applied AI.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Services | The Tangison Studio",
+    description:
+      "Brand, product, and the systems behind it. One studio instead of three vendors.",
+    images: [{ url: "/images/og/services.png", width: 1200, height: 630 }],
+  },
 };
 
 export default function ServicesPage() {
   return (
-    <>
+    <div className="theme-ink bg-paper text-ink min-h-screen">
+      {/* ============ Header — one painting, one line ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
-        <Reveal>
-          <p className="eyebrow">What we do</p>
-          <h1 className="h1 mt-5 max-w-4xl">Studio and Intelligence. One practice.</h1>
-        </Reveal>
-        <Reveal delay={100}>
-          <p className="mt-6 max-w-2xl text-lg text-ink-muted leading-relaxed">
-            Brand, product, and the systems behind it. One studio instead of
-            three vendors.
-          </p>
-        </Reveal>
+        <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-end">
+          <div>
+            <Reveal>
+              <h1 className="h1 max-w-3xl">
+                Studio and Intelligence.
+                <span className="block text-ink-muted">One practice.</span>
+              </h1>
+            </Reveal>
+            <Reveal delay={120}>
+              <p className="mt-6 max-w-xl text-lg text-ink-muted leading-relaxed">
+                Brand, product, and the systems behind it. One studio instead
+                of three vendors.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal variant="zoom" delay={100}>
+            <div className="relative art-tile art-shadow aspect-[4/3] max-w-[380px] w-full ml-auto bg-paper-raise">
+              <Image
+                src="/images/paintings/heroes/hero-services.webp"
+                alt="A single fountain pen resting on plain warm paper, a minimal oil painting."
+                fill
+                priority
+                fetchPriority="high"
+                sizes="380px"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
+
         <Reveal delay={160}>
-          <div className="mt-10 max-w-3xl prose-body flex flex-col gap-5">
+          <div className="mt-12 max-w-3xl prose-body flex flex-col gap-5">
             <p>
-              Studio is organized around two capabilities, Studio and
-              Intelligence, with seven outcome-led programs underneath. The
+              The Tangison Studio is organized around two capabilities, Studio
+              and Intelligence, with seven outcome-led programs underneath. The
               Studio capability covers everything you can see and interact with:
               brand systems, websites, applications, design systems, and creative
               direction. The Intelligence capability covers applied AI work that
@@ -45,13 +71,6 @@ export default function ServicesPage() {
               program separately means you pay for what you actually use. There
               is no minimum retainer, no bundled service you have to opt out of.
             </p>
-            <p>
-              Each program is described below by the situation it fits, the
-              outputs it produces, and the kind of organization it tends to suit.
-              If you are not sure which one applies, send us a message and we
-              will tell you. The first conversation is free, and we will not
-              push a program that does not fit your problem.
-            </p>
           </div>
         </Reveal>
       </section>
@@ -65,14 +84,13 @@ export default function ServicesPage() {
           <Reveal>
             <div className="grid gap-10 lg:grid-cols-2 items-center">
               <div className={idx % 2 === 1 ? "lg:order-2" : ""}>
-                <p className="eyebrow text-teal">0{idx + 1}</p>
-                <h2 className="h2 mt-3">{cap.title}</h2>
+                <h2 className="h2">{cap.title}</h2>
                 <p className="mt-5 text-ink-muted text-lg leading-relaxed max-w-xl">
                   {cap.lead}
                 </p>
               </div>
               <div
-                className={`relative aspect-[4/3] rounded-[20px] overflow-hidden border border-line ${
+                className={`relative art-tile art-shadow aspect-[4/3] bg-paper-raise ${
                   idx % 2 === 1 ? "lg:order-1" : ""
                 }`}
               >
@@ -91,12 +109,10 @@ export default function ServicesPage() {
             </div>
           </Reveal>
 
-          <div className="mt-10 md:mt-14 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3 rounded-[20px] overflow-hidden border border-line">
+          <div className="mt-10 md:mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {cap.programs.map((program) => (
-              <div key={program.name} className="bg-paper-raise p-6 md:p-8">
-                <h3 className="font-display font-bold text-xl tracking-[-0.02em]">
-                  {program.name}
-                </h3>
+              <div key={program.name} className="rounded-[20px] border border-line bg-paper-raise p-6 md:p-8">
+                <h3 className="h3">{program.name}</h3>
                 <p className="mt-3 text-ink-muted text-[15px] leading-relaxed">
                   {program.fit}
                 </p>
@@ -107,56 +123,41 @@ export default function ServicesPage() {
       ))}
 
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
-        <Reveal>
-          <div className="rounded-[24px] border border-line bg-teal-mist px-6 py-14 md:p-16 text-center">
-            <h2 className="h2">Not sure where to start?</h2>
-            <p className="mt-4 text-ink-muted max-w-xl mx-auto">
-              Tell us what you are working on. We will figure out the right
-              starting point together.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 h-12 px-7 rounded-full bg-ink text-paper text-sm font-medium hover:opacity-90 transition-opacity"
-              >
-                Talk to us
-                <ArrowRight aria-hidden="true" className="w-4 h-4" />
-              </Link>
-              <a
-                href={site.whatsapp}
-                className="inline-flex items-center gap-2 h-12 px-7 rounded-full border border-line-strong text-sm font-medium hover:bg-paper-raise transition-colors"
-              >
-                WhatsApp
-              </a>
-            </div>
-            <p className="mt-6 text-sm text-ink-muted">
-              Or start with{" "}
-              <Link href="/audit" className="link-underline text-ink">
-                a free audit of your current site
-              </Link>
-              .
-            </p>
+        <div className="art-tile bg-teal-mist px-6 py-14 md:p-16 text-center">
+          <h2 className="h2">Not sure where to start?</h2>
+          <p className="mt-4 text-ink-muted max-w-xl mx-auto">
+            Tell us what you are working on. We will figure out the right
+            starting point together.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link href="/contact" className="btn btn-primary">
+              Talk to us
+            </Link>
+            <a href={site.whatsapp} className="btn btn-outline">
+              WhatsApp
+            </a>
           </div>
-        </Reveal>
+          <p className="mt-6 text-sm text-ink-muted">
+            Or start with{" "}
+            <Link href="/audit" className="link-underline text-ink">
+              a free audit of your current site
+            </Link>
+            .
+          </p>
+        </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
-        <Reveal>
-          <div className="flex items-end justify-between gap-6 flex-wrap">
-            <div>
-              <p className="eyebrow">Rather read than talk?</p>
-              <h2 className="h2 mt-3">The work speaks first</h2>
-            </div>
-            <Link
-              href="/cases"
-              className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-line-strong text-sm font-medium hover:bg-teal-mist transition-colors"
-            >
-              All cases
-              <ArrowUpRight aria-hidden="true" className="w-4 h-4" />
-            </Link>
-          </div>
-        </Reveal>
+      <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32 pb-24">
+        <div className="flex items-end justify-between gap-6 flex-wrap">
+          <h2 className="h2">The work speaks first.</h2>
+          <Link
+            href="/cases"
+            className="btn btn-outline btn-sm"
+          >
+            All cases
+          </Link>
+        </div>
       </section>
-    </>
+    </div>
   );
 }

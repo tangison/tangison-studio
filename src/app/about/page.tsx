@@ -1,64 +1,69 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { principles, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Studio | Independent Digital Product Practice in Windhoek",
+  title: "About | Independent Digital Product Practice in Windhoek",
   description:
-    "Independent digital product practice in Windhoek, Namibia. We design focused websites, applications, and brand systems for ambitious organizations.",
+    "The Tangison Studio is an independent digital product practice in Windhoek, Namibia. We design focused websites, applications, and brand systems for ambitious organizations.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About | The Tangison Studio",
+    description:
+      "Independent digital product practice in Windhoek, Namibia. One studio instead of three vendors.",
+    images: [{ url: "/images/og/about.png", width: 1200, height: 630 }],
+  },
 };
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="theme-ink bg-paper text-ink min-h-screen">
+      {/* ============ Header — one painting, one line ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
-        <Reveal>
-          <p className="eyebrow">About</p>
-          <h1 className="h1 mt-5 max-w-4xl">Built at the edge.</h1>
-        </Reveal>
-        <Reveal delay={100}>
-          <p className="mt-6 max-w-2xl text-lg text-ink-muted leading-relaxed">
-            Studio is an independent digital product practice in Windhoek,
-            Namibia. We design focused websites, applications and brand systems
-            for ambitious organizations across Africa.
+        <div className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-end">
+          <Reveal>
+            <h1 className="h1 max-w-3xl">Built at the edge.</h1>
+          </Reveal>
+          <Reveal variant="zoom" delay={100}>
+            <div className="relative art-tile art-shadow aspect-[4/3] w-[240px] sm:w-[320px] lg:w-[380px] bg-paper-raise">
+              <Image
+                src="/images/paintings/heroes/hero-about.webp"
+                alt="A single wooden studio chair in soft window light, a minimal oil painting."
+                fill
+                priority
+                fetchPriority="high"
+                sizes="380px"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
+        <Reveal delay={160}>
+          <p className="mt-8 max-w-2xl text-lg text-ink-muted leading-relaxed">
+            The Tangison Studio is an independent digital product practice in
+            Windhoek West, Namibia. We design focused websites, applications
+            and brand systems for ambitious organizations across Africa.
           </p>
         </Reveal>
       </section>
 
-      <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-14 md:pt-20">
-        <Reveal>
-          <div className="relative aspect-[16/10] md:aspect-[21/9] rounded-[24px] overflow-hidden border border-line">
-            <Image
-              src="/images/paintings/about-windhoek.webp"
-              alt="A quiet Windhoek hillside street in soft early morning light, with acacia trees and low fences in pastel haze."
-              fill
-              priority
-              sizes="(max-width: 1400px) 100vw, 1360px"
-              className="object-cover"
-            />
-          </div>
-        </Reveal>
-      </section>
-
+      {/* ============ The practice ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.6fr]">
           <Reveal>
             <div className="lg:sticky lg:top-28">
-              <p className="eyebrow text-teal">The practice</p>
-              <h2 className="h3 mt-4">Clear signals, useful work.</h2>
+              <h2 className="h3">Clear signals, useful work.</h2>
             </div>
           </Reveal>
           <Reveal delay={80}>
             <div className="prose-body flex flex-col gap-5">
               <p>
-                Studio operates with a simple belief: clear signals, useful work.
-                We turn ambiguous ambitions into focused digital experiences by
-                staying small, staying direct, and refusing to separate strategy
-                from craft.
+                The studio operates with a simple belief: clear signals, useful
+                work. We turn ambiguous ambitions into focused digital
+                experiences by staying small, staying direct, and refusing to
+                separate strategy from craft.
               </p>
               <p>
                 The studio is part of{" "}
@@ -93,7 +98,7 @@ export default function AboutPage() {
                 >
                   Tangison Labs
                 </a>{" "}
-                can provide it. But you work with Studio directly. The group
+                can provide it. But you work with the studio directly. The group
                 connection is there when it is useful, not when it is not.
               </p>
               <p>
@@ -120,47 +125,37 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ============ Principles ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
-        <Reveal>
-          <p className="eyebrow">Principles</p>
-        </Reveal>
-        <div className="mt-10 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4 rounded-[20px] overflow-hidden border border-line">
-          {principles.map((p, i) => (
-            <Reveal key={p.title} delay={i * 70} className="bg-paper-raise p-6 md:p-8">
-              <p className="font-mono text-[11px] text-teal">{String(i + 1).padStart(2, "0")}</p>
-              <h3 className="h3 mt-4">{p.title}</h3>
+        <h2 className="h2">How we work.</h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {principles.map((p) => (
+            <div key={p.title} className="rounded-[20px] border border-line bg-paper-raise p-6 md:p-7">
+              <h3 className="h3">{p.title}</h3>
               <p className="mt-3 text-ink-muted text-[15px] leading-relaxed">{p.body}</p>
-            </Reveal>
+            </div>
           ))}
         </div>
       </section>
 
+      {/* ============ CTA ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
-        <Reveal>
-          <div className="rounded-[24px] border border-line bg-teal-mist px-6 py-14 md:p-16 text-center">
-            <h2 className="h2">Work with us.</h2>
-            <p className="mt-4 text-ink-muted max-w-xl mx-auto">
-              Tell us what you are building. We reply to every serious enquiry
-              within two working days.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 h-12 px-7 rounded-full bg-ink text-paper text-sm font-medium hover:opacity-90 transition-opacity"
-              >
-                Start a project
-                <ArrowRight aria-hidden="true" className="w-4 h-4" />
-              </Link>
-              <a
-                href={site.whatsapp}
-                className="inline-flex items-center gap-2 h-12 px-7 rounded-full border border-line-strong text-sm font-medium hover:bg-paper-raise transition-colors"
-              >
-                WhatsApp
-              </a>
-            </div>
+        <div className="art-tile bg-teal-mist px-6 py-14 md:p-16 text-center">
+          <h2 className="h2">Work with us.</h2>
+          <p className="mt-4 text-ink-muted max-w-xl mx-auto">
+            Tell us what you are building. We reply to every serious enquiry
+            within two working days.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link href="/contact" className="btn btn-primary">
+              Start a project
+            </Link>
+            <a href={site.whatsapp} className="btn btn-outline">
+              WhatsApp
+            </a>
           </div>
-        </Reveal>
+        </div>
       </section>
-    </>
+    </div>
   );
 }

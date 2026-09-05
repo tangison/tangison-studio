@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { cabinetGrotesk, satoshi, jetbrainsMono } from "@/lib/fonts";
+import { poppins, satoshi, jetbrainsMono } from "@/lib/fonts";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/lib/site";
@@ -8,35 +8,38 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Studio | Digital Product Design and Development in Namibia",
-    template: "%s | Studio",
+    default:
+      "The Tangison Studio | Digital Product Design and Development in Namibia",
+    template: "%s | The Tangison Studio",
   },
   description:
-    "Studio builds brand, digital product, and applied intelligence for organizations across Africa. One studio instead of three vendors.",
+    "The Tangison Studio is an independent digital product studio in Windhoek, Namibia. Brand, digital product, and applied intelligence for organizations across Africa. One studio instead of three vendors.",
   authors: [{ name: site.founder, url: site.url }],
   creator: site.founder,
   publisher: site.legalName,
   keywords: [
     "digital product studio",
     "Namibia web design",
-    "Windhoek",
+    "Windhoek web design",
+    "Windhoek West",
     "brand systems",
     "applied AI",
-    "website development",
+    "website development Namibia",
   ],
   icons: {
     icon: "/brand/favicon.webp",
     apple: "/brand/favicon.webp",
   },
   openGraph: {
-    title: "Studio | Digital Product Design and Development in Namibia",
+    title:
+      "The Tangison Studio | Independent Digital Product Studio, Windhoek, Namibia",
     description:
       "One studio instead of three vendors. Brand, product, and the intelligence behind it.",
     url: site.url,
-    siteName: site.legalName,
+    siteName: "The Tangison Studio",
     locale: "en_NA",
     type: "website",
-    images: [{ url: "/images/paintings/hero-poster.webp", width: 1280, height: 720 }],
+    images: [{ url: "/images/og/home.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
@@ -46,7 +49,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4efe6" },
+    { media: "(prefers-color-scheme: light)", color: "#f6f4ef" },
     { media: "(prefers-color-scheme: dark)", color: "#0c1014" },
   ],
   width: "device-width",
@@ -58,26 +61,50 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: site.legalName,
-    url: site.url,
-    email: site.email,
-    telephone: site.phone,
-    founder: { "@type": "Person", name: site.founder },
-    foundingDate: site.founded,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Windhoek",
-      addressCountry: "NA",
-    },
-    parentOrganization: { "@type": "Organization", name: site.group.name, url: site.group.url },
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "The Tangison Studio",
+        url: site.url,
+        email: site.email,
+        telephone: site.phone,
+        founder: { "@type": "Person", name: site.founder },
+        foundingDate: site.founded,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "Corner of Frans Indongo Street and John Meinert Street",
+          addressLocality: "Windhoek West",
+          addressRegion: "Khomas",
+          addressCountry: "NA",
+        },
+        parentOrganization: {
+          "@type": "Organization",
+          name: site.group.name,
+          url: site.group.url,
+        },
+      },
+      {
+        "@type": "WebSite",
+        name: "The Tangison Studio",
+        url: site.url,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${site.url}/search?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+    ],
   };
 
   return (
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${cabinetGrotesk.variable} ${satoshi.variable} ${jetbrainsMono.variable}`}
+      className={`${poppins.variable} ${satoshi.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen flex flex-col">
         <script

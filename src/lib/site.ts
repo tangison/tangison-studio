@@ -1,8 +1,10 @@
-/** Studio Tangison — shared site constants. */
+/** The Tangison Studio — shared site constants. */
 
 export const site = {
-  name: "Studio",
+  name: "The Tangison Studio",
   legalName: "Tangison Studio",
+  tagline: "Windhoek, Namibia · Independent digital product studio",
+  positioning: "One studio instead of three vendors.",
   url: "https://studio.tangison.com",
   email: "studio@tangison.com",
   phone: "+264 85 341 1522",
@@ -10,11 +12,12 @@ export const site = {
   whatsapp:
     "https://wa.me/264853411522?text=Hello%20Tangison%20Studio.%20I%20would%20like%20to%20start%20a%20project%20brief.",
   location: "Windhoek, Namibia",
-  address: "Corner of Frans Indongo Street and John Meinert Street, Windhoek Central",
+  locationPrecise: "Windhoek West, Namibia",
+  address: "Corner of Frans Indongo Street and John Meinert Street, Windhoek West",
   hours: "Monday to Friday, 08:00 to 17:00 Windhoek time",
   founded: "2023",
   founder: "Tangi Iigonda",
-  copyright: "© 2026 Tangison Studio · Windhoek, Namibia",
+  copyright: "© 2026 The Tangison Studio · Windhoek, Namibia",
   group: {
     name: "Tangison Technologies",
     url: "https://tangison.com",
@@ -222,8 +225,8 @@ export const contactPoints = [
   },
   {
     name: "Location",
-    value: "Windhoek Central",
-    body: "Corner of Frans Indongo Street and John Meinert Street, Windhoek Central. We work with clients across Africa and beyond; physical visits are by appointment only.",
+    value: "Windhoek West",
+    body: "Corner of Frans Indongo Street and John Meinert Street, Windhoek West. We work with clients across Africa and beyond; physical visits are by appointment only.",
   },
   {
     name: "Response time",

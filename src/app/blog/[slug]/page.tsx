@@ -152,7 +152,7 @@ export default async function ArticlePage({
           </Reveal>
           <Reveal delay={240}>
             <p className="mt-6 text-sm text-ink-faint">
-              By {article.author}, Tangison Studio
+              By {article.author}, The Tangison Studio
             </p>
           </Reveal>
         </div>
@@ -228,7 +228,7 @@ export default async function ArticlePage({
       {/* ============ Related ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pb-20 md:pb-28">
         <Reveal>
-          <p className="eyebrow">Keep reading</p>
+          <h2 className="h3">Keep reading.</h2>
         </Reveal>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {related.map((r, i) => (
@@ -265,22 +265,17 @@ export default async function ArticlePage({
         <Reveal>
           <div className="rounded-[24px] border border-line bg-paper-raise p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-xl">
-              <p className="eyebrow">Work with us</p>
-              <h2 className="h3 mt-3">
+              <h2 className="h3">
                 Turning this research into a working advantage?
               </h2>
               <p className="mt-3 text-ink-muted leading-relaxed">
-                Studio Tangison designs and builds the brand, product, and
+                The Tangison Studio designs and builds the brand, product, and
                 systems behind intelligent organizations. Start with a
                 conversation, not a contract.
               </p>
             </div>
-            <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full bg-ink text-paper text-sm font-medium hover:opacity-90 transition-opacity"
-            >
+            <Link href="/contact" className="btn btn-primary shrink-0">
               Start a project brief
-              <ArrowRight aria-hidden="true" className="w-4 h-4" />
             </Link>
           </div>
         </Reveal>

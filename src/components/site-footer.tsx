@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { navLinks, site } from "@/lib/site";
 import { TangisonLogo } from "@/components/tangison-logo";
 
@@ -16,14 +15,10 @@ export function SiteFooter() {
           <div>
             <h2 className="h3">Seen enough? Tell us what you are building.</h2>
             <p className="mt-3 text-ink-muted max-w-md">
-              Brand, product, and the systems behind it.
+              One studio instead of three vendors.
             </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex items-center gap-2 rounded-full border border-line-strong px-6 h-12 text-sm font-medium hover:bg-teal-mist transition-colors"
-            >
+            <Link href="/contact" className="btn btn-outline mt-6">
               Start a project brief
-              <ArrowRight aria-hidden="true" className="w-4 h-4" />
             </Link>
           </div>
 
@@ -53,13 +48,12 @@ export function SiteFooter() {
             >
               {site.email}
             </a>
-            <p className="mt-4 text-sm text-ink-muted">{site.location}</p>
+            <p className="mt-4 text-sm text-ink-muted">{site.locationPrecise}</p>
             <a
               href={site.group.utm}
               className="mt-6 inline-flex items-center gap-1.5 text-sm text-ink-muted hover:text-ink link-underline"
             >
               Part of {site.group.name}
-              <ArrowRight aria-hidden="true" className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>

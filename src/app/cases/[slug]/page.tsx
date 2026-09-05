@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { getProject, nextProject, projects } from "@/lib/projects";
 import { site } from "@/lib/site";
@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!project) return {};
   return {
     title: {
-      absolute: `${project.name} Case Study | Studio Design Work in Windhoek`,
+      absolute: `${project.name} Case Study | The Tangison Studio, Windhoek`,
     },
     description: project.description,
     alternates: { canonical: `/cases/${project.slug}` },
@@ -39,13 +39,15 @@ export async function generateMetadata({
   };
 }
 
-/** Live-proof screenshot exists for five shipped projects. */
+/** Live-proof screenshot exists for shipped projects with a reachable site. */
 const SCREENSHOTS: Record<string, string> = {
   weca: "/images/work/screenshots/full/weca-full.webp",
   mendozer: "/images/work/screenshots/full/mendozer-full.webp",
   enchanted: "/images/work/screenshots/full/enchanted-full.webp",
   dieselman: "/images/work/screenshots/full/dieselman-full.webp",
   miway: "/images/work/screenshots/full/miway-full.webp",
+  oci: "/images/work/screenshots/full/oci-full.webp",
+  giftedwithpurpose: "/images/work/screenshots/full/giftedwithpurpose-full.webp",
 };
 
 export default async function CaseStudyPage({
@@ -104,10 +106,9 @@ export default async function CaseStudyPage({
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center gap-2 h-12 px-6 rounded-full bg-ink text-paper text-sm font-medium hover:opacity-90 transition-opacity"
+                className="btn btn-primary mt-8"
               >
-                Visit {project.name} live site
-                <ArrowUpRight aria-hidden="true" className="w-4 h-4" />
+                Visit the live site
               </a>
             </Reveal>
           )}
@@ -135,8 +136,7 @@ export default async function CaseStudyPage({
         <div className="grid gap-14 lg:grid-cols-[1fr_1.6fr]">
           <Reveal>
             <div className="lg:sticky lg:top-28">
-              <p className="eyebrow text-teal">Challenge</p>
-              <h2 className="h3 mt-4">{c.challengeSub || "The problem in front of us"}</h2>
+              <h2 className="h3">{c.challengeSub || "The problem in front of us"}</h2>
             </div>
           </Reveal>
           <Reveal delay={80}>
@@ -151,8 +151,7 @@ export default async function CaseStudyPage({
         <div className="mt-20 md:mt-28 grid gap-14 lg:grid-cols-[1fr_1.6fr]">
           <Reveal>
             <div className="lg:sticky lg:top-28">
-              <p className="eyebrow text-teal">Approach</p>
-              <h2 className="h3 mt-4">{c.approachSub || "How we answered it"}</h2>
+              <h2 className="h3">{c.approachSub || "How we answered it"}</h2>
             </div>
           </Reveal>
           <Reveal delay={80}>
@@ -169,20 +168,13 @@ export default async function CaseStudyPage({
       {c.craft.length > 0 && (
         <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
           <Reveal>
-            <p className="eyebrow">Craft</p>
-            <h2 className="h2 mt-3 max-w-2xl">What carried the result</h2>
+            <h2 className="h2 max-w-2xl">What carried the result</h2>
           </Reveal>
           <div className="mt-10 grid gap-6 md:gap-8 md:grid-cols-3">
             {c.craft.map((point, i) => (
               <Reveal key={point.title} delay={i * 80}>
                 <article className="h-full rounded-[20px] border border-line bg-paper-raise p-6 md:p-8">
-                  <span
-                    aria-hidden="true"
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-teal-mist text-teal"
-                  >
-                    <Check className="w-4 h-4" />
-                  </span>
-                  <h3 className="h3 mt-5">{point.title}</h3>
+                  <h3 className="h3">{point.title}</h3>
                   <p className="mt-3 text-ink-muted text-[15px] leading-relaxed">
                     {point.body}
                   </p>
@@ -197,8 +189,7 @@ export default async function CaseStudyPage({
       {screenshot && (
         <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
           <Reveal>
-            <p className="eyebrow">Live proof</p>
-            <h2 className="h2 mt-3">The production website</h2>
+            <h2 className="h2">The production website</h2>
             {project.live && (
               <a
                 href={project.live}
@@ -230,8 +221,7 @@ export default async function CaseStudyPage({
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <Reveal>
           <div className="rounded-[24px] border border-line bg-teal-mist px-6 py-12 md:p-16 max-w-4xl">
-            <p className="eyebrow">Outcome</p>
-            <h2 className="h2 mt-4">{project.short}</h2>
+            <h2 className="h2">{project.short}</h2>
             <div className="mt-6 flex flex-col gap-4 text-ink-muted leading-relaxed max-w-2xl">
               {c.outcome.map((p, i) => (
                 <p key={i}>{p}</p>
@@ -244,7 +234,7 @@ export default async function CaseStudyPage({
       {/* ============ Technology ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <Reveal>
-          <p className="eyebrow">Technology</p>
+          <h3 className="h3">Built with</h3>
           <div className="mt-5 flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <span
@@ -297,17 +287,10 @@ export default async function CaseStudyPage({
               Tell us about your project. We reply within two working days.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 h-12 px-7 rounded-full bg-ink text-paper text-sm font-medium hover:opacity-90 transition-opacity"
-              >
+              <Link href="/contact" className="btn btn-primary">
                 Start a project
-                <ArrowRight aria-hidden="true" className="w-4 h-4" />
               </Link>
-              <a
-                href={site.whatsapp}
-                className="inline-flex items-center gap-2 h-12 px-7 rounded-full border border-line-strong text-sm font-medium hover:bg-teal-mist transition-colors"
-              >
+              <a href={site.whatsapp} className="btn btn-outline">
                 WhatsApp
               </a>
             </div>

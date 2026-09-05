@@ -9,13 +9,12 @@ import { navLinks, site } from "@/lib/site";
 import { projects } from "@/lib/projects";
 
 /**
- * Floating pill navigation + full-screen mobile menu.
+ * Floating pill navigation + full-screen mobile takeover.
  *
- * The mobile menu follows the COLLINS reference: a full-screen dark
- * takeover with big stacked links, a pill CTA, and a scrollable list
- * of case rows (thumbnail + category + title) below it.
+ * Wordmark: "The Tangison Studio" in Poppins with a staggered word
+ * reveal on first paint (CSS keyframes, reduced-motion safe).
  *
- * Accessibility contract (rebuilt from scratch, kept from v2):
+ * Accessibility contract:
  *  - body scroll lock (overflow + position, restores on close)
  *  - focus trap + focus return to the trigger button
  *  - Escape key closes
@@ -66,7 +65,7 @@ export function SiteNav() {
       }
       if (e.key === "Tab" && panelRef.current) {
         const focusables = panelRef.current.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
         );
         if (focusables.length === 0) return;
         const first = focusables[0];
@@ -110,7 +109,7 @@ export function SiteNav() {
         style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
         <div
-          className="flex items-center justify-between gap-2 sm:gap-4 md:gap-8 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 rounded-[25px] border border-line"
+          className="flex items-center justify-between gap-2 sm:gap-4 md:gap-7 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 rounded-[25px] border border-line"
           style={{
             background: "var(--surface)",
             backdropFilter: "blur(14px)",
@@ -119,8 +118,8 @@ export function SiteNav() {
         >
           <Link
             href="/"
-            aria-label="Studio home"
-            className="flex items-center gap-2 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal"
+            aria-label="The Tangison Studio — home"
+            className="flex items-center gap-2.5 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal"
           >
             {/* favicon is a tiny brand asset; plain img avoids optimizer overhead */}
             <img
@@ -131,20 +130,20 @@ export function SiteNav() {
               className="shrink-0"
               style={{ width: 26, height: 26 }}
             />
-            <span className="font-display font-bold text-[14.5px] tracking-[-0.02em] leading-none">
-              Studio
+            <span className="wordmark text-[14px] md:text-[15px] whitespace-nowrap">
+              <span className="wordmark-word" style={{ ["--i" as never]: 0 }}>
+                The&nbsp;
+              </span>
+              <span className="wordmark-word" style={{ ["--i" as never]: 1 }}>
+                Tangison&nbsp;
+              </span>
+              <span className="wordmark-word" style={{ ["--i" as never]: 2 }}>
+                Studio
+              </span>
             </span>
           </Link>
 
-          <a
-            href={site.group.utm}
-            className="hidden md:inline-flex items-center gap-1.5 shrink-0 rounded-full border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] text-ink-muted hover:border-line-strong hover:text-ink transition-colors"
-          >
-            Part of Tangison Technologies
-            <ArrowUpRight aria-hidden="true" className="w-3 h-3" />
-          </a>
-
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-7">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
@@ -170,7 +169,7 @@ export function SiteNav() {
             </Link>
             <Link
               href="/contact"
-              className="hidden sm:inline-flex items-center h-10 px-5 rounded-full bg-ink text-paper text-sm font-medium hover:opacity-90 transition-opacity"
+              className="hidden md:inline-flex items-center h-10 px-5 rounded-full bg-ink text-paper text-sm font-medium hover:bg-[color-mix(in_srgb,var(--ink)_90%,var(--paper))] transition-colors"
             >
               Start a project
             </Link>
@@ -188,11 +187,11 @@ export function SiteNav() {
                 className="w-5 h-5 flex flex-col justify-center gap-[5px] relative"
               >
                 <span
-                  className="block w-full h-[1.5px] bg-current transition-all duration-300 origin-center"
+                  className="block w-full h-[1.5px] bg-current transition-transform duration-300 origin-center"
                   style={{ transform: open ? "rotate(45deg)" : "none" }}
                 />
                 <span
-                  className="block w-full h-[1.5px] bg-current transition-all duration-300 origin-center"
+                  className="block w-full h-[1.5px] bg-current transition-transform duration-300 origin-center"
                   style={{ transform: open ? "rotate(-45deg)" : "none" }}
                 />
               </span>
@@ -224,7 +223,7 @@ export function SiteNav() {
         >
           {/* header */}
           <div className="flex items-center justify-between px-6 py-5 shrink-0">
-            <span className="flex items-center gap-2">
+            <span className="wordmark flex items-center gap-2.5 text-[15px]">
               <img
                 src="/brand/favicon.webp"
                 alt=""
@@ -232,9 +231,7 @@ export function SiteNav() {
                 height={26}
                 style={{ width: 26, height: 26 }}
               />
-              <span className="font-display font-bold text-[15px] tracking-[-0.02em]">
-                Studio
-              </span>
+              The Tangison Studio
             </span>
             <button
               type="button"
@@ -286,7 +283,7 @@ export function SiteNav() {
                         : "0s",
                     }}
                   >
-                    <span className="font-display font-bold text-[clamp(1.9rem,8vw,2.4rem)] tracking-[-0.02em]">
+                    <span className="wordmark font-semibold text-[clamp(1.9rem,8vw,2.4rem)] tracking-[-0.02em]">
                       {l.label}
                     </span>
                     <ArrowUpRight
@@ -338,7 +335,7 @@ export function SiteNav() {
                       <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-white/65">
                         {p.category}
                       </span>
-                      <span className="mt-1 block truncate font-display font-bold text-[17px] tracking-[-0.01em]">
+                      <span className="mt-1 block truncate wordmark font-semibold text-[17px] tracking-[-0.01em]">
                         {p.title}
                       </span>
                     </span>
@@ -360,7 +357,7 @@ export function SiteNav() {
                 {site.phone}
               </a>
               <p className="eyebrow mt-2" style={{ color: "rgba(246,244,239,0.5)" }}>
-                {site.location} · {site.hours}
+                {site.locationPrecise} · {site.hours}
               </p>
             </div>
           </div>

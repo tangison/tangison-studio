@@ -23,9 +23,34 @@ export function SearchClient({ entries }: { entries: SearchEntry[] }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
+  // URL-sync must not fire on mount before the deep-link query has been
+  // consumed, or it would strip ?q= from the address bar before it is read.
+  const urlSyncArmedRef = useRef(false);
+
   useEffect(() => {
     inputRef.current?.focus();
+    // deep-link support: /search?q=... (matches the JSON-LD SearchAction).
+    // Deferred to a macrotask so state is set outside the effect body.
+    const t = window.setTimeout(() => {
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get("q");
+      if (q) setQuery(q);
+    }, 0);
+    return () => window.clearTimeout(t);
   }, []);
+
+  // keep the URL in sync so a running query is shareable / back-button friendly
+  useEffect(() => {
+    if (!urlSyncArmedRef.current) {
+      // skip the first run (mount): the deep-link read owns the URL until it lands
+      urlSyncArmedRef.current = true;
+      return;
+    }
+    const url = new URL(window.location.href);
+    if (query.trim()) url.searchParams.set("q", query.trim());
+    else url.searchParams.delete("q");
+    window.history.replaceState(null, "", url);
+  }, [query]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -145,7 +170,7 @@ export function SearchClient({ entries }: { entries: SearchEntry[] }) {
                     </div>
                     <ArrowUpRight
                       aria-hidden="true"
-                      className="w-5 h-5 shrink-0 mt-1 text-ink-faint transition-all duration-500 group-hover:text-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      className="w-5 h-5 shrink-0 mt-1 text-ink-faint transition-[color,transform] duration-500 group-hover:text-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     />
                   </Link>
                 </li>

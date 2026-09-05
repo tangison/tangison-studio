@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { ArrowRight, Check, LoaderCircle } from "lucide-react";
+import { Check, LoaderCircle } from "lucide-react";
 
 /**
  * Project-brief form → POST /api/contact → Resend → studio@tangison.com.
@@ -99,7 +99,7 @@ export function ContactForm() {
             maxLength={120}
             autoComplete="name"
             className={inputClass}
-            placeholder="Jane Mwangi"
+            placeholder="Tomas Nakale"
           />
         </div>
         <div>
@@ -114,7 +114,7 @@ export function ContactForm() {
             maxLength={200}
             autoComplete="email"
             className={inputClass}
-            placeholder="jane@example.com"
+            placeholder="tomas@example.com"
           />
         </div>
       </div>
@@ -174,7 +174,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center gap-2 h-12 px-7 rounded-full bg-ink text-paper text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-60"
+          className="btn btn-primary disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {status === "sending" ? (
             <>
@@ -182,10 +182,7 @@ export function ContactForm() {
               <LoaderCircle aria-hidden="true" className="w-4 h-4 animate-spin" />
             </>
           ) : (
-            <>
-              Send the brief
-              <ArrowRight aria-hidden="true" className="w-4 h-4" />
-            </>
+            "Send the brief"
           )}
         </button>
         <p className="text-sm text-ink-faint">

@@ -189,6 +189,55 @@ _add("hero-poster", "hero-poster.webp", 1280, 720, 25001,
      "drifting light" + STYLE)
 
 
+# ---------------- minimal single-element hero paintings (design.md) ----------------
+# Every page hero carries ONE element, light and lean: vast negative space,
+# warm bone ground, soft oil texture. Custom minimal style, NOT the soft
+# pastel STYLE suffix used by the case covers.
+MINIMAL_STYLE = (
+    ", minimalist oil painting, exactly one single object as the only element "
+    "in the whole image, plain light warm cream ivory background filling the "
+    "entire canvas, vast empty negative space all around the object, bright "
+    "airy daylight, soft visible brush strokes, muted warm palette, no other "
+    "objects, no shadows of other objects, no text, no watermark, no border"
+)
+
+def _add_min(key: str, rel: str, w: int, h: int, seed: int, prompt: str) -> None:
+    MANIFEST[key] = {
+        "out": PAINTINGS / rel,
+        "rel": rel,
+        "w": w,
+        "h": h,
+        "seed": seed,
+        "prompt": prompt + MINIMAL_STYLE,
+    }
+
+_add_min("hero-home", "heroes/hero-home.webp", 1200, 900, 26001,
+     "A single small pale sage-green ceramic bowl, one quiet object, on a plain warm cream background")
+_add_min("hero-cases", "heroes/hero-cases.webp", 1200, 900, 26002,
+     "One small empty wooden picture frame leaning against a plain warm cream wall")
+_add_min("hero-services", "heroes/hero-services.webp", 1200, 900, 26003,
+     "One single black fountain pen lying flat on plain warm cream paper")
+_add_min("hero-about", "heroes/hero-about.webp", 1200, 900, 26004,
+     "One simple light wooden chair standing alone in soft warm window light")
+_add_min("hero-blog", "heroes/hero-blog.webp", 1200, 900, 26005,
+     "One single closed book with a plain cloth cover on a calm cream table")
+_add_min("hero-contact", "heroes/hero-contact.webp", 1200, 900, 26006,
+     "One cream envelope resting on warm linen")
+_add_min("hero-audit", "heroes/hero-audit.webp", 1200, 900, 26007,
+     "One brass magnifying glass on warm plain paper")
+
+# ---------------- 3 new case covers (soft style, same as the other 15) ----------------
+_p("oci", 21056,
+   "soft scene of a single truck on a long southern desert road under warm "
+   "morning light")
+_p("giftedwithpurpose", 21057,
+   "soft still life of a pastel tumbler cup, ribbons and a small gift box "
+   "on cream linen")
+_p("emeraldspacc", 21058,
+   "soft spa still life with folded warm towels, eucalyptus leaves and "
+   "gentle steam light")
+
+
 # ---------------------------------------------------------------- fetch ----
 def fetch(key: str, spec: dict, seed: int, dry: bool) -> Path | None:
     """One Pollinations call. Returns path to the raw download."""
