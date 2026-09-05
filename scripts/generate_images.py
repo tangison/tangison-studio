@@ -255,6 +255,97 @@ def normalize(key: str, spec: dict, raw: Path) -> None:
 
 
 # ------------------------------------------------------------------ cli ----
+
+
+
+# ---------------- 47 article hero images (1200x675, /blog) ----------------
+_p("ai-blueprint-for-namibian-business", _seed("ai-blueprint-for-namibian-business"),
+   "soft abstract blueprint composition of layered pastel geometric city forms", w=1200, h=675, rel="blog/ai-blueprint-for-namibian-business.webp")
+_p("ai-ethics-and-governance-guide", _seed("ai-ethics-and-governance-guide"),
+   "soft still life with scales of justice and a shield in muted tones", w=1200, h=675, rel="blog/ai-ethics-and-governance-guide.webp")
+_p("ai-for-agriculture-in-namibia", _seed("ai-for-agriculture-in-namibia"),
+   "soft pastoral farmland with distant irrigation pivots under a wide pastel sky", w=1200, h=675, rel="blog/ai-for-agriculture-in-namibia.webp")
+_p("ai-for-banking-and-finance-in-namibia", _seed("ai-for-banking-and-finance-in-namibia"),
+   "soft still life with stacked coins, a pen and linen drape in gentle light", w=1200, h=675, rel="blog/ai-for-banking-and-finance-in-namibia.webp")
+_p("ai-for-construction-and-real-estate-in-namibia", _seed("ai-for-construction-and-real-estate-in-namibia"),
+   "soft architectural forms and scaffolding silhouette in warm light", w=1200, h=675, rel="blog/ai-for-construction-and-real-estate-in-namibia.webp")
+_p("ai-for-education-in-namibia", _seed("ai-for-education-in-namibia"),
+   "soft desk still life with open book, pencils and morning light", w=1200, h=675, rel="blog/ai-for-education-in-namibia.webp")
+_p("ai-for-energy-and-utilities-in-namibia", _seed("ai-for-energy-and-utilities-in-namibia"),
+   "soft landscape with distant power lines and pastel horizon", w=1200, h=675, rel="blog/ai-for-energy-and-utilities-in-namibia.webp")
+_p("ai-for-fishing-and-marine-in-namibia", _seed("ai-for-fishing-and-marine-in-namibia"),
+   "soft harbour scene with fishing boats at rest in pale morning light", w=1200, h=675, rel="blog/ai-for-fishing-and-marine-in-namibia.webp")
+_p("ai-for-government-in-namibia", _seed("ai-for-government-in-namibia"),
+   "soft civic building facade with columns in pale light", w=1200, h=675, rel="blog/ai-for-government-in-namibia.webp")
+_p("ai-for-healthcare-in-namibia", _seed("ai-for-healthcare-in-namibia"),
+   "soft clinical still life with a stethoscope and folded towel on a pale surface", w=1200, h=675, rel="blog/ai-for-healthcare-in-namibia.webp")
+_p("ai-for-hospitality-in-namibia", _seed("ai-for-hospitality-in-namibia"),
+   "soft hotel lobby still life with a brass key, linen and flowers", w=1200, h=675, rel="blog/ai-for-hospitality-in-namibia.webp")
+_p("ai-for-insurance-in-namibia", _seed("ai-for-insurance-in-namibia"),
+   "soft still life with an umbrella, documents and calm neutral tones", w=1200, h=675, rel="blog/ai-for-insurance-in-namibia.webp")
+_p("ai-for-legal-services-in-namibia", _seed("ai-for-legal-services-in-namibia"),
+   "soft still life with scales of justice, books and a fountain pen", w=1200, h=675, rel="blog/ai-for-legal-services-in-namibia.webp")
+_p("ai-for-logistics-and-transport-in-namibia", _seed("ai-for-logistics-and-transport-in-namibia"),
+   "soft still life of a toy truck and parcels on cream linen", w=1200, h=675, rel="blog/ai-for-logistics-and-transport-in-namibia.webp")
+_p("ai-for-manufacturing-in-namibia", _seed("ai-for-manufacturing-in-namibia"),
+   "soft factory interior with quiet machines in gentle light", w=1200, h=675, rel="blog/ai-for-manufacturing-in-namibia.webp")
+_p("ai-for-media-and-creative-in-namibia", _seed("ai-for-media-and-creative-in-namibia"),
+   "soft studio still life with camera, film rolls and paper", w=1200, h=675, rel="blog/ai-for-media-and-creative-in-namibia.webp")
+_p("ai-for-mining-in-namibia", _seed("ai-for-mining-in-namibia"),
+   "soft mineral landscape with terraced earth and quiet machinery in dawn haze", w=1200, h=675, rel="blog/ai-for-mining-in-namibia.webp")
+_p("ai-for-ngos-and-development-in-namibia", _seed("ai-for-ngos-and-development-in-namibia"),
+   "soft hands cupping a seedling over fertile soil in gentle light", w=1200, h=675, rel="blog/ai-for-ngos-and-development-in-namibia.webp")
+_p("ai-for-retail-and-commerce-in-namibia", _seed("ai-for-retail-and-commerce-in-namibia"),
+   "soft shop counter still life with folded textiles and a small scale", w=1200, h=675, rel="blog/ai-for-retail-and-commerce-in-namibia.webp")
+_p("ai-for-sports-and-entertainment-in-namibia", _seed("ai-for-sports-and-entertainment-in-namibia"),
+   "soft stadium lights and a resting ball on pale grass", w=1200, h=675, rel="blog/ai-for-sports-and-entertainment-in-namibia.webp")
+_p("ai-for-telecom-in-namibia", _seed("ai-for-telecom-in-namibia"),
+   "soft still life with a vintage telephone and signal waves motif", w=1200, h=675, rel="blog/ai-for-telecom-in-namibia.webp")
+_p("ai-for-tourism-in-namibia", _seed("ai-for-tourism-in-namibia"),
+   "soft travel still life with a folded map, camera and sun hat on warm linen", w=1200, h=675, rel="blog/ai-for-tourism-in-namibia.webp")
+_p("ai-maturity-framework", _seed("ai-maturity-framework"),
+   "soft ascending pastel staircase of geometric steps in gentle light", w=1200, h=675, rel="blog/ai-maturity-framework.webp")
+_p("ai-roi-playbook", _seed("ai-roi-playbook"),
+   "soft still life with coins, a small plant and a balance on a desk", w=1200, h=675, rel="blog/ai-roi-playbook.webp")
+_p("ai-talent-and-skills-roadmap", _seed("ai-talent-and-skills-roadmap"),
+   "soft scene of hands passing a glowing orb between people in pastel light", w=1200, h=675, rel="blog/ai-talent-and-skills-roadmap.webp")
+_p("ai-vendor-and-tool-landscape", _seed("ai-vendor-and-tool-landscape"),
+   "soft landscape of organized pastel tools arranged on shelves", w=1200, h=675, rel="blog/ai-vendor-and-tool-landscape.webp")
+_p("brand-identity-vs-logo-what-you-actually-get", _seed("brand-identity-vs-logo-what-you-actually-get"),
+   "soft composition of one large pastel circle among a coordinated set of pastel shapes and wooden tiles", w=1200, h=675, rel="blog/brand-identity-vs-logo-what-you-actually-get.webp")
+_p("core-web-vitals-explained-for-business-owners", _seed("core-web-vitals-explained-for-business-owners"),
+   "Soft analog stopwatch and small gauge resting on a pale surface in gentle light.", w=1200, h=675, rel="blog/core-web-vitals-explained-for-business-owners.webp")
+_p("e-commerce-payments-in-namibia", _seed("e-commerce-payments-in-namibia"),
+   "Soft still life of a small card reader, coins and a folded receipt on a shop counter.", w=1200, h=675, rel="blog/e-commerce-payments-in-namibia.webp")
+_p("from-brief-to-launch-how-tangison-runs-a-project", _seed("from-brief-to-launch-how-tangison-runs-a-project"),
+   "Soft sequence of small numbered paper tiles arranged in a gentle arc on cream paper.", w=1200, h=675, rel="blog/from-brief-to-launch-how-tangison-runs-a-project.webp")
+_p("how-long-does-a-website-take-to-build", _seed("how-long-does-a-website-take-to-build"),
+   "Soft scene of an hourglass and neatly arranged tools on a pale workbench in morning light.", w=1200, h=675, rel="blog/how-long-does-a-website-take-to-build.webp")
+_p("how-much-does-a-website-cost-in-namibia", _seed("how-much-does-a-website-cost-in-namibia"),
+   "Soft still life of coins, a calculator and folded invoices on a cream desk in gentle light.", w=1200, h=675, rel="blog/how-much-does-a-website-cost-in-namibia.webp")
+_p("how-to-choose-a-web-studio-12-questions", _seed("how-to-choose-a-web-studio-12-questions"),
+   "Soft scene of two chairs facing each other across a small table in calm pastel light.", w=1200, h=675, rel="blog/how-to-choose-a-web-studio-12-questions.webp")
+_p("mobile-first-web-design-namibia", _seed("mobile-first-web-design-namibia"),
+   "Soft still life of a phone resting on linen beside a cup in warm morning light.", w=1200, h=675, rel="blog/mobile-first-web-design-namibia.webp")
+_p("na-domain-vs-com-for-namibian-businesses", _seed("na-domain-vs-com-for-namibian-businesses"),
+   "Soft still life of two small paper tags and string on a warm linen surface in gentle light.", w=1200, h=675, rel="blog/na-domain-vs-com-for-namibian-businesses.webp")
+_p("seo-basics-for-namibian-businesses", _seed("seo-basics-for-namibian-businesses"),
+   "Soft scene of a small shopfront with a clear sign on a quiet pastel street.", w=1200, h=675, rel="blog/seo-basics-for-namibian-businesses.webp")
+_p("the-true-cost-of-a-cheap-website", _seed("the-true-cost-of-a-cheap-website"),
+   "Soft still life of a thin paper chain linking small coins on a pale surface.", w=1200, h=675, rel="blog/the-true-cost-of-a-cheap-website.webp")
+_p("website-accessibility-wcag-basics", _seed("website-accessibility-wcag-basics"),
+   "Soft close-up of hands reading a textured page with large clear type in gentle light.", w=1200, h=675, rel="blog/website-accessibility-wcag-basics.webp")
+_p("website-maintenance-what-it-covers", _seed("website-maintenance-what-it-covers"),
+   "Soft still life of a small toolbox, folded cloth and oil can on a clean workbench.", w=1200, h=675, rel="blog/website-maintenance-what-it-covers.webp")
+_p("website-redesign-checklist-15-steps", _seed("website-redesign-checklist-15-steps"),
+   "soft still life of small wooden blocks and a brass paper clip arranged in a neat row on a pale desk", w=1200, h=675, rel="blog/website-redesign-checklist-15-steps.webp")
+_p("what-is-a-design-system-and-when-you-need-one", _seed("what-is-a-design-system-and-when-you-need-one"),
+   "Soft rows of labeled pastel drawers and swatch cards arranged neatly on a workshop shelf.", w=1200, h=675, rel="blog/what-is-a-design-system-and-when-you-need-one.webp")
+_p("why-we-build-on-next-js", _seed("why-we-build-on-next-js"),
+   "Soft still life of neatly stacked wooden blocks and a small tool on a workbench in warm light.", w=1200, h=675, rel="blog/why-we-build-on-next-js.webp")
+_p("writing-website-copy-that-converts", _seed("writing-website-copy-that-converts"),
+   "soft still life of a vintage fountain pen beside a single dried flower on smooth cream fabric", w=1200, h=675, rel="blog/writing-website-copy-that-converts.webp")
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                   formatter_class=argparse.RawDescriptionHelpFormatter)

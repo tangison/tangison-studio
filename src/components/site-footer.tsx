@@ -1,12 +1,18 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { navLinks, site } from "@/lib/site";
+import { TangisonLogo } from "@/components/tangison-logo";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-line mt-32">
       <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-16 md:py-24">
-        <div className="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
+        <TangisonLogo
+          href="/"
+          className="h-9 md:h-11 w-auto text-ink select-none"
+        />
+
+        <div className="mt-10 md:mt-14 grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <h2 className="h3">Seen enough? Tell us what you are building.</h2>
             <p className="mt-3 text-ink-muted max-w-md">

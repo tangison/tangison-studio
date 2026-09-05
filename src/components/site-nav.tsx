@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight, Search, X } from "lucide-react";
 import { navLinks, site } from "@/lib/site";
 import { projects } from "@/lib/projects";
 
@@ -162,6 +162,13 @@ export function SiteNav() {
 
           <div className="flex items-center gap-2">
             <Link
+              href="/search"
+              aria-label="Search the site"
+              className="hidden sm:inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink-muted hover:border-line-strong hover:text-ink transition-colors"
+            >
+              <Search aria-hidden="true" className="w-4 h-4" />
+            </Link>
+            <Link
               href="/contact"
               className="hidden sm:inline-flex items-center h-10 px-5 rounded-full bg-ink text-paper text-sm font-medium hover:opacity-90 transition-opacity"
             >
@@ -240,8 +247,29 @@ export function SiteNav() {
             </button>
           </div>
 
-          {/* scrollable body: links → CTA → case rows → contact */}
+          {/* scrollable body: search → links → CTA → case rows → contact */}
           <div className="flex-1 overflow-y-auto scroll-slim px-6 pb-6">
+            <Link
+              href="/search"
+              onClick={close}
+              className="mt-2 mb-6 flex items-center gap-3 min-h-[56px] w-full rounded-full border"
+              style={{
+                borderColor: "rgba(246,244,239,0.2)",
+                opacity: open ? 1 : 0,
+                transform: open ? "translateY(0)" : "translateY(16px)",
+                transitionDelay: open ? "0.04s" : "0s",
+              }}
+            >
+              <span
+                className="inline-flex h-11 w-11 items-center justify-center"
+                aria-hidden="true"
+              >
+                <Search className="w-5 h-5" style={{ color: "rgba(246,244,239,0.6)" }} />
+              </span>
+              <span className="font-body text-[15px]" style={{ color: "rgba(246,244,239,0.8)" }}>
+                Search articles and cases
+              </span>
+            </Link>
             <ul className="flex flex-col">
               {navLinks.map((l, i) => (
                 <li key={l.href}>

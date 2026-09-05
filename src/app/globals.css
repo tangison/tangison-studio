@@ -123,6 +123,42 @@ body {
   max-width: 68ch;
 }
 
+/* article bullet lists (converted PDF tables & checklists) */
+.article-list {
+  margin: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 68ch;
+  padding-left: 0;
+  list-style: none;
+}
+
+.article-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--ink-muted);
+}
+
+.article-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--teal);
+  opacity: 0.7;
+}
+
+.article-list strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 /* motion primitives */
 @keyframes fade-rise {
   from {

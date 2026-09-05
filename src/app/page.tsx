@@ -5,6 +5,8 @@ import { Reveal } from "@/components/reveal";
 import { CaseCard } from "@/components/case-card";
 import { projects } from "@/lib/projects";
 import { capabilities, principles, processSteps, site } from "@/lib/site";
+import { getArticles } from "@/lib/articles";
+import { formatDate } from "@/lib/article-types";
 
 /** Hero video: muted, looping, optimized (audio stripped, faststart). */
 function HeroVideo() {
@@ -35,12 +37,8 @@ function HeroVideo() {
 
 export default function HomePage() {
   const featured = projects.slice(0, 5);
-  const blog = {
-    title: "One Studio Instead of Three Vendors",
-    excerpt:
-      "Why we collapsed brand, product, and intelligence into a single studio, and what that changes for the organizations we work with.",
-    image: "/images/paintings/blog/blog-01.webp",
-  };
+  const latest = getArticles().slice(0, 3);
+  const total = getArticles().length;
 
   return (
     <>
@@ -259,36 +257,50 @@ export default function HomePage() {
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div>
               <p className="eyebrow">Latest writing</p>
-              <h2 className="h2 mt-3">One studio instead of three vendors</h2>
+              <h2 className="h2 mt-3">Insights from the studio</h2>
             </div>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-sm font-medium link-underline"
+            >
+              All {total} articles
+              <ArrowRight aria-hidden="true" className="w-4 h-4" />
+            </Link>
           </div>
         </Reveal>
-        <Reveal delay={80}>
-          <Link
-            href="/blog/one-studio-instead-of-three-vendors"
-            className="group mt-8 grid gap-0 md:grid-cols-[1.1fr_1fr] rounded-[20px] border border-line bg-paper-raise overflow-hidden hover:border-line-strong transition-colors"
-          >
-            <div className="relative aspect-video md:aspect-auto md:min-h-[300px]">
-              <Image
-                src={blog.image}
-                alt="Three ceramic vessels of different sizes resting together on a cream table."
-                fill
-                sizes="(max-width: 768px) 100vw, 640px"
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                style={{ transitionTimingFunction: "var(--ease-primary)" }}
-              />
-            </div>
-            <div className="p-6 md:p-10 flex flex-col justify-center">
-              <p className="eyebrow">Positioning · 4 min read</p>
-              <h3 className="h3 mt-4 group-hover:text-teal transition-colors">{blog.title}</h3>
-              <p className="mt-4 text-ink-muted leading-relaxed">{blog.excerpt}</p>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium">
-                Read the article
-                <ArrowRight aria-hidden="true" className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </span>
-            </div>
-          </Link>
-        </Reveal>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {latest.map((a, i) => (
+            <Reveal key={a.slug} delay={i * 80}>
+              <Link
+                href={`/blog/${a.slug}`}
+                className="group block rounded-[20px] border border-line bg-paper-raise overflow-hidden hover:border-line-strong transition-colors"
+              >
+                <div className="relative aspect-video">
+                  <Image
+                    src={a.image}
+                    alt={a.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 420px"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    style={{ transitionTimingFunction: "var(--ease-primary)" }}
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted">
+                    {a.category}
+                    <span className="text-ink-faint">
+                      {" · "}
+                      {formatDate(a.date)} · {a.readingMinutes} min
+                    </span>
+                  </p>
+                  <h3 className="mt-3 font-display font-bold tracking-[-0.02em] text-lg leading-snug group-hover:text-teal transition-colors">
+                    {a.title}
+                  </h3>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* ============ CTA ============ */}
