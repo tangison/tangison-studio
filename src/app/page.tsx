@@ -12,7 +12,7 @@ import { formatDate } from "@/lib/article-types";
 
 export default function HomePage() {
   // the hero poster is the largest above-fold paint — start it immediately
-  preload("/videos/hero-poster.webp", { as: "image", fetchPriority: "high" });
+  preload("/videos/hero-poster-v2.webp", { as: "image", fetchPriority: "high" });
 
   const featured = projects.slice(0, 5);
   const articles = getArticleSummaries();
@@ -21,39 +21,46 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ============ Hero — light and lean: the tagline, the studio film, one button ============ */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44 pb-16 md:pb-24 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-8 items-end">
-          <div className="order-2 lg:order-1">
-            <Reveal>
-              <h1 className="h1 max-w-3xl">
-                Windhoek, Namibia.
-                <span className="block text-ink-muted">
-                  Independent digital product studio.
-                </span>
-              </h1>
-            </Reveal>
-            <Reveal delay={120}>
-              <div className="mt-9">
-                <Link href="/cases" className="btn btn-primary">
-                  See the work
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* the studio film — one small moving painting, biased off-centre.
-              Poster paints instantly; the 454KB clip streams async. */}
-          <Reveal variant="zoom" className="order-1 lg:order-2">
-            <div className="relative art-tile art-shadow aspect-video max-w-[480px] w-full ml-auto bg-paper-raise">
-              <HeroVideo />
+      {/* ============ Hero — the studio film full-bleed behind the tagline ============ */}
+      <section className="relative min-h-[76vh] sm:min-h-[84vh] md:min-h-[92vh] flex flex-col justify-end overflow-hidden bg-ink">
+        <div className="absolute inset-0" aria-hidden="true">
+          <HeroVideo />
+        </div>
+        {/* scrim: dark where the copy sits, clearing toward the top */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/5"
+        />
+        <div className="relative mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-28 md:pt-44 pb-16 md:pb-24">
+          <Reveal>
+            <p className="eyebrow !text-white/70">
+              Windhoek West · Namibia
+            </p>
+          </Reveal>
+          <Reveal delay={90}>
+            <h1 className="h1 mt-5 max-w-4xl text-white [text-shadow:0_2px_30px_rgba(8,10,12,0.35)]">
+              Independent digital
+              <span className="block text-white/80">product studio.</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={180}>
+            <div className="mt-10 md:mt-12 flex flex-wrap items-center gap-4">
+              <Link href="/cases" className="btn btn-hero">
+                See the work
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm font-medium text-white/85 link-underline-light"
+              >
+                Start a project brief
+              </Link>
             </div>
           </Reveal>
         </div>
       </section>
 
       {/* ============ Selected work — tight gallery ============ */}
-      <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-16 md:pt-24">
+      <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <div className="flex items-end justify-between gap-6">
           <h2 className="h2">Selected work.</h2>
           <Link

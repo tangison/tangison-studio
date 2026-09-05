@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Website Audit | The Tangison Studio",
     description:
-      "Send us your website address. A written report in five working days — speed, mobile, search visibility, trust signals.",
+      "Send us your website address. A written report in five working days: speed, mobile, search visibility, and trust signals.",
     images: [{ url: "/images/og/audit.png", width: 1200, height: 630 }],
   },
 };

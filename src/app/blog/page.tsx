@@ -5,12 +5,12 @@ import { BlogIndex } from "./blog-client";
 import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
-  title: "Insights — AI Adoption, Web Design, and Brand in Namibia",
+  title: "Insights: AI Adoption, Web Design, and Brand in Namibia",
   description:
     "Research-backed guides from The Tangison Studio: AI adoption playbooks for 20 Namibian industries, plus practical writing on web design, branding, and digital product work in Windhoek.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "The Tangison Studio — Insights",
+    title: "The Tangison Studio: Insights",
     description:
       "AI adoption playbooks for Namibian industries, plus practical writing on web design and brand systems.",
     type: "website",

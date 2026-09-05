@@ -22,7 +22,7 @@ export function ArticleCard({
     <Link
       href={`/blog/${article.slug}`}
       className="case-card group block rounded-[20px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal"
-      aria-label={`${article.title} — read article`}
+      aria-label={`${article.title}: read article`}
     >
       <div className="relative overflow-hidden rounded-[20px] aspect-[16/9] bg-paper-raise">
         <Image

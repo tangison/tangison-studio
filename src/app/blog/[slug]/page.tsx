@@ -135,7 +135,7 @@ export default async function ArticlePage({
             <span className="text-ink-faint">{article.category}</span>
           </nav>
         </Reveal>
-        <div className="mt-8 max-w-3xl">
+        <div className="mt-8 md:mt-12 max-w-3xl">
           <Reveal delay={60}>
             <p className="eyebrow">
               {article.category} · {formatDate(article.date)} ·{" "}
@@ -151,7 +151,7 @@ export default async function ArticlePage({
             </p>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-6 text-sm text-ink-faint">
+            <p className="mt-8 md:mt-10 text-sm text-ink-faint">
               By {article.author}, The Tangison Studio
             </p>
           </Reveal>
@@ -159,7 +159,7 @@ export default async function ArticlePage({
       </section>
 
       {/* ============ Hero image ============ */}
-      <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-10 md:pt-14">
+      <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-12 md:pt-14">
         <Reveal>
           <div className="relative aspect-[16/9] max-w-4xl rounded-[24px] overflow-hidden border border-line">
             <Image

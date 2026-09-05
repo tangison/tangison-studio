@@ -11,6 +11,8 @@ imageAlt: "Three ceramic vessels of different sizes resting together on a cream 
 author: "Tangi Iigonda"
 ---
 
+
+
 Most organizations that need a digital product end up coordinating three separate vendors. A brand consultancy designs the identity. A web studio builds the website. A technology partner handles the backend and any AI features.
 
 Each vendor has its own timeline, its own priorities, and its own interpretation of what the others are doing. The result is a product that feels like three products stitched together.

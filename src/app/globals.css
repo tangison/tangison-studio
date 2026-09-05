@@ -399,6 +399,37 @@ body {
   transform-origin: left;
 }
 
+/* light underline link for copy sitting on the hero film / dark scrim */
+.link-underline-light {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 2px;
+  transition:
+    color 0.15s var(--ease-primary),
+    border-color 0.15s var(--ease-primary);
+}
+
+.link-underline-light:hover,
+.link-underline-light:focus-visible {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* hero button: light pill that reads against the dark scrim */
+.btn-hero {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.btn-hero:hover {
+  background: color-mix(in srgb, var(--paper) 88%, var(--teal));
+}
+
+.btn-hero:active {
+  background: color-mix(in srgb, var(--paper) 80%, var(--teal));
+}
+
 /* full-screen mobile menu (Collins-style takeover) */
 .menu-takeover {
   transition:

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: "/brand/favicon.webp",
-    apple: "/brand/favicon.webp",
+    apple: "/brand/apple-touch-icon.webp",
   },
   openGraph: {
     title:

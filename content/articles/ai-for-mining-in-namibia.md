@@ -1,7 +1,7 @@
 ---
 title: "AI for Mining in Namibia: A Practical Adoption Guide"
 slug: "ai-for-mining-in-namibia"
-description: "Mining has been the backbone of the Namibian economy since the discovery of diamonds at Kolmanskop over a century ago. Today, the mining sector contributes…"
+description: "Mining has been the backbone of the Namibian economy since the discovery of diamonds at Kolmanskop over a century ago."
 keywords: [AI, artificial intelligence, Namibia, mining, AI adoption, African business, Tangison, practical, adoption, guide]
 category: "AI by Industry"
 date: "2026-05-08"
@@ -10,6 +10,8 @@ image: /images/paintings/blog/ai-for-mining-in-namibia.webp
 imageAlt: "soft mineral landscape with terraced earth and quiet machinery in dawn haze"
 author: "Tangi Iigonda"
 ---
+
+
 
 Mining has been the backbone of the Namibian economy since the discovery of diamonds at Kolmanskop over a century ago. Today, the mining sector contributes approximately twelve percent of GDP and represents the lion's share of export earnings. Yet the industry faces mounting pressures: declining ore grades, increasing depth and complexity of operations, rising energy and water costs, and growing expectations for environmental stewardship and community benefit. Artificial intelligence offers mining operations a path toward safer, more efficient, and more sustainable extraction that addresses these challenges while strengthening the sector's contribution to national development.
 
@@ -59,21 +61,21 @@ The company invested in a predictive maintenance platform that integrated data f
 
 ## Recommended AI Tools and Platforms
 
-- **DataRobot / H2O.ai** — Predictive maintenance, process optimisation, geological modelling. Cloud-based, moderate expertise required. Medium to high subscription.
-- **Bentley / Seequent** — Geological modelling and mine planning with AI integration. Specialist software, significant training. High licence cost.
-- **OSIsoft PI / AVEVA** — Real-time operational data infrastructure for AI analytics. Enterprise platform, requires integration. High initial investment.
-- **Dassault GEOVIA** — Resource estimation and mine planning with ML augmentation. Specialist software, moderate learning curve. High licence cost.
-- **Custom CV Solutions** — Safety monitoring, PPE detection, personnel tracking. Requires development or specialist vendor. Variable.
+- **DataRobot / H2O.ai**: Predictive maintenance, process optimisation, geological modelling. Cloud-based, moderate expertise required. Medium to high subscription.
+- **Bentley / Seequent**: Geological modelling and mine planning with AI integration. Specialist software, significant training. High licence cost.
+- **OSIsoft PI / AVEVA**: Real-time operational data infrastructure for AI analytics. Enterprise platform, requires integration. High initial investment.
+- **Dassault GEOVIA**: Resource estimation and mine planning with ML augmentation. Specialist software, moderate learning curve. High licence cost.
+- **Custom CV Solutions**: Safety monitoring, PPE detection, personnel tracking. Requires development or specialist vendor. Variable.
 
 
 ## Implementation Roadmap
 
 Mining AI adoption should follow a phased approach that builds data infrastructure before deploying advanced analytics.
 
-- **Data Foundation** — Months one to six. Sensor deployment, data platform build, connectivity upgrade. Real-time operational data available for analysis.
-- **Predictive Analytics** — Months seven to fifteen. Predictive maintenance pilots, process optimisation, geological model enhancement. Measurable downtime reduction and recovery improvement.
-- **Intelligent Operations** — Months sixteen to twenty-four. Autonomous systems, integrated operations centre, AI-driven planning. Significant efficiency gains, safety improvement.
-- **Ecosystem Integration** — Months twenty-five plus. Supply chain AI, sustainability reporting, community impact monitoring. AI embedded across mining value chain.
+- **Data Foundation**: Months one to six. Sensor deployment, data platform build, connectivity upgrade. Real-time operational data available for analysis.
+- **Predictive Analytics**: Months seven to fifteen. Predictive maintenance pilots, process optimisation, geological model enhancement. Measurable downtime reduction and recovery improvement.
+- **Intelligent Operations**: Months sixteen to twenty-four. Autonomous systems, integrated operations centre, AI-driven planning. Significant efficiency gains, safety improvement.
+- **Ecosystem Integration**: Months twenty-five plus. Supply chain AI, sustainability reporting, community impact monitoring. AI embedded across mining value chain.
 
 
 ## Conclusion

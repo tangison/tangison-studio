@@ -1,5 +1,5 @@
 /**
- * Studio Tangison — project data for the Cases gallery & case studies.
+ * Studio Tangison, project data for the Cases gallery & case studies.
  * Copy sourced from the production site (studio.tangison.com), rebuilt 2026.
  */
 
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     eyebrow: "Family Investment Group · 2026",
     short: "One family. Six services. One standard.",
     description:
-      "A proudly Namibian family company running transport, fleet, consultancy, real estate, construction, mechanical and security since 2014 — presented as one accountable standard across southern Namibia.",
+      "A proudly Namibian family company running transport, fleet, consultancy, real estate, construction, mechanical and security since 2014, presented as one accountable standard across southern Namibia.",
     tags: ["Website Design", "Website Development", "Content Structure"],
     live: "https://oci.com.na",
     tech: ["Next.js", "Tailwind CSS"],
@@ -54,13 +54,13 @@ export const projects: Project[] = [
       ],
       approach: [
         "Six named services, one family name behind all of them.",
-        "The site leads with the company's own line: One family. Six services. One standard. From there it branches into the six services, each with a one-line promise (Transport and Supply — arrive on time, every time; Fleet Management — one system, not five problems; Consultancy — compliance off your desk; Real Estate — assets that keep earning; Construction and Mechanical — built once, built right; Security — designed around your risk). A buyer picks their direction in the first screen and never has to read about the other five.",
+        "The site leads with the company's own line: One family. Six services. One standard. From there it branches into the six services, each with a one-line promise (Transport and Supply (arrive on time, every time; Fleet Management) one system, not five problems; Consultancy (compliance off your desk; Real Estate) assets that keep earning; Construction and Mechanical (built once, built right; Security) designed around your risk). A buyer picks their direction in the first screen and never has to read about the other five.",
         "The family accountability is carried by the founder story. Kurt Sauerwein founded the company in 2014 and the Sauerwein family name is on every job, so drivers, mechanics and guards treat the work like their own. The site says that plainly instead of hiding it behind corporate language, because in a family business the name is the differentiator.",
         "The corridor is mapped explicitly: Oranjemund, Lüderitz, Keetmanshoop, Windhoek. Regular routes connect the towns with shuttle services, car rentals and specialised crew and airport transfers. The track record lists six recorded engagements since 2020, for Namdeb, shipping companies, developers and property owners, each with client, location and dates, including the Namdeb staff shuttle contract running since 2022 and airport transfer services since 2021. The contact path is direct: +264 83 675 5493 and info@oci.com.na. Nothing on the site asks you to fill in a form and wait.",
       ],
       outcome: [
         "A site that routes six services without diluting the family behind them.",
-        "Oom Carlo's Investments launched with a site where a transport planner, a property owner and a developer each find their own entry point in seconds, while one standard stays visible behind all six. The one-call positioning — one roof, one invoice, one accountable family — is stated rather than argued.",
+        "Oom Carlo's Investments launched with a site where a transport planner, a property owner and a developer each find their own entry point in seconds, while one standard stays visible behind all six. The one-call positioning (one roof, one invoice, one accountable family) is stated rather than argued.",
         "The site carries a visible Made by Tangison Studio credit, and the pattern is the same one this studio practices everywhere: name what can be checked, date what can be verified, and let the record carry the credibility.",
       ],
       craft: [
@@ -78,7 +78,7 @@ export const projects: Project[] = [
         },
         {
           title: "Phone-first contact",
-          body: "Two mobile numbers and a direct email, visible without hunting. On a family-group site for operational buyers, the call is the conversion — the site's job is to make it one tap away.",
+          body: "Two mobile numbers and a direct email, visible without hunting. On a family-group site for operational buyers, the call is the conversion, the site's job is to make it one tap away.",
         },
       ],
     },
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     eyebrow: "Personalised Gifts · 2026",
     short: "Your name on it.",
     description:
-      "Personalised tumblers, mugs and kids cups made by a mother-and-daughter team in Windhoek — 141 designs, printed on order, bought in one WhatsApp message.",
+      "Personalised tumblers, mugs and kids cups made by a mother-and-daughter team in Windhoek, 141 designs, printed on order, bought in one WhatsApp message.",
     tags: ["Brand Identity", "Website Design", "Website Development", "E-commerce Setup"],
     live: "https://www.giftedwithpurpose.net",
     tech: ["Next.js", "Tailwind CSS"],
@@ -99,20 +99,20 @@ export const projects: Project[] = [
       challengeSub: "Want something like this?",
       approachSub: "Pick the item. Pick the design. Send it on WhatsApp.",
       challenge: [
-        "A Windhoek gift business run by a mother and daughter needed their WhatsApp catalogue to become a real shop — without abandoning WhatsApp.",
-        "Gifted with Purpose (Geneveve Gift Shop t/a Gifted with Purpose) personalises mugs, tumblers and kids cups: affirmation drinkware, faith-based designs, kids sippy cups and teacher gifts, from N$ 200. The entire business runs on WhatsApp. The catalogue lived in chat threads, prices were quoted per conversation, and a first-time buyer had no way to see the range before messaging. At the same time, forcing that audience into a conventional checkout would have broken how they actually buy — Namibian shoppers message first.",
-        "The audience is specific: someone buying a named gift for a teacher, a child, a friend — often that week. They want to browse designs, know the price, and feel the maker behind it. The shop is a family story: a mother-and-daughter dream, printed on order in Namibia.",
-        "The brief was to build the catalogue online — 141 designs across 10 items with published prices — and turn browsing into one structured WhatsApp message, so Geneveve replies once and confirms before anything is made.",
+        "A Windhoek gift business run by a mother and daughter needed their WhatsApp catalogue to become a real shop, without abandoning WhatsApp.",
+        "Gifted with Purpose (Geneveve Gift Shop t/a Gifted with Purpose) personalises mugs, tumblers and kids cups: affirmation drinkware, faith-based designs, kids sippy cups and teacher gifts, from N$ 200. The entire business runs on WhatsApp. The catalogue lived in chat threads, prices were quoted per conversation, and a first-time buyer had no way to see the range before messaging. At the same time, forcing that audience into a conventional checkout would have broken how they actually buy, Namibian shoppers message first.",
+        "The audience is specific: someone buying a named gift for a teacher, a child, a friend, often that week. They want to browse designs, know the price, and feel the maker behind it. The shop is a family story: a mother-and-daughter dream, printed on order in Namibia.",
+        "The brief was to build the catalogue online (141 designs across 10 items with published prices) and turn browsing into one structured WhatsApp message, so Geneveve replies once and confirms before anything is made.",
       ],
       approach: [
         "Pick the item. Pick the design. Send it on WhatsApp.",
-        "The site is structured as a three-step order path, stated in plain words: one, pick the item (ten to choose from — mugs, tumblers, sippy cups and kids bottles, from N$ 200); two, pick the design (141 ready-made designs, filtered by what fits the item, or describe your own and they draw it); three, send it on WhatsApp — your choices arrive as one message with the reference and price written out, and Geneveve replies to confirm.",
-        "The designs are browsable as collections that match how people actually gift: Encourage (self-love gifts), Inspire (faith-based gifts), Kids Selection (sippy cups and bottles), Teacher Appreciation, Seasonal and Old School Vibes. Each collection is a real shelf, not a tag cloud. Prices are published on every item — the 12oz coffee mug at N$ 230, the 20oz skinny tumbler at N$ 250, the 400ml can tumbler at N$ 200 — because a gift buyer's first question is what it costs.",
+        "The site is structured as a three-step order path, stated in plain words: one, pick the item (ten to choose from, mugs, tumblers, sippy cups and kids bottles, from N$ 200); two, pick the design (141 ready-made designs, filtered by what fits the item, or describe your own and they draw it); three, send it on WhatsApp, your choices arrive as one message with the reference and price written out, and Geneveve replies to confirm.",
+        "The designs are browsable as collections that match how people actually gift: Encourage (self-love gifts), Inspire (faith-based gifts), Kids Selection (sippy cups and bottles), Teacher Appreciation, Seasonal and Old School Vibes. Each collection is a real shelf, not a tag cloud. Prices are published on every item, the 12oz coffee mug at N$ 230, the 20oz skinny tumbler at N$ 250, the 400ml can tumbler at N$ 200, because a gift buyer's first question is what it costs.",
         "The brand carries the makers. The story page tells the mother-and-daughter dream plainly, the products state that everything is printed on order in Namibia, and the whole ordering conversation happens with a person, not a cart. The footer says it outright: Made with love in Namibia. Site designed and built by Tangison Studio.",
       ],
       outcome: [
         "A WhatsApp shop with a real storefront in front of it.",
-        "Gifted with Purpose launched with 141 designs and 10 items browsable online, every price published, and an order path that ends in one structured WhatsApp message instead of a checkout nobody asked for. The gift bag — add designs, send once — replaced the per-item quote thread.",
+        "Gifted with Purpose launched with 141 designs and 10 items browsable online, every price published, and an order path that ends in one structured WhatsApp message instead of a checkout nobody asked for. The gift bag (add designs, send once) replaced the per-item quote thread.",
         "The lesson generalises for Namibian small retail: meet the buyer on the channel they already trust, and put the structure (catalogue, prices, collections) on the site where it is cheap to browse and easy to link. The site does the browsing work; WhatsApp does the relationship.",
       ],
       craft: [
@@ -122,11 +122,11 @@ export const projects: Project[] = [
         },
         {
           title: "141 designs, actually browsable",
-          body: "Designs are filtered by item fit and grouped into gift-intent collections — Encourage, Inspire, Kids, Teacher Appreciation, Seasonal, Old School Vibes. Browsing mirrors gifting, not inventory.",
+          body: "Designs are filtered by item fit and grouped into gift-intent collections: Encourage, Inspire, Kids, Teacher Appreciation, Seasonal, Old School Vibes. Browsing mirrors gifting, not inventory.",
         },
         {
           title: "Every price published",
-          body: "Ten items with prices from N$ 200, stated on the item — mug N$ 230, skinny tumbler N$ 250, can tumbler N$ 200. Gift buyers decide on price; hiding it just moves the question back into chat.",
+          body: "Ten items with prices from N$ 200, stated on the item, mug N$ 230, skinny tumbler N$ 250, can tumbler N$ 200. Gift buyers decide on price; hiding it just moves the question back into chat.",
         },
         {
           title: "The makers as the brand",
@@ -143,7 +143,7 @@ export const projects: Project[] = [
     eyebrow: "Spa & Wellness · 2026",
     short: "Quiet luxury in Windhoek West.",
     description:
-      "A spa and wellness centre at 7 Blackett Street, Windhoek West — 90 treatments across massage, facials, hydrotherapy, nails, lashes and hair removal, open seven days.",
+      "A spa and wellness centre at 7 Blackett Street, Windhoek West, 90 treatments across massage, facials, hydrotherapy, nails, lashes and hair removal, open seven days.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     live: "https://emeraldspacc.com",
     tech: ["Next.js", "Tailwind CSS"],
@@ -152,19 +152,19 @@ export const projects: Project[] = [
       approachSub: "A full treatment catalogue with prices, a gallery that calms, and booking one tap away.",
       challenge: [
         "A Windhoek West spa with a deep treatment menu needed a site that could hold 90 services without becoming a price list.",
-        "Emerald Spa & Wellness Centre operates from 7 Blackett Street in Windhoek West, open seven days. The menu spans massages, facials, hydrotherapy, nails, lashes and hair removal — 90 treatments in total, each with its own duration and price. Spas sell calm; a 90-row table sells nothing. The site had to present the full catalogue with prices while still feeling like the place it describes.",
+        "Emerald Spa & Wellness Centre operates from 7 Blackett Street in Windhoek West, open seven days. The menu spans massages, facials, hydrotherapy, nails, lashes and hair removal, 90 treatments in total, each with its own duration and price. Spas sell calm; a 90-row table sells nothing. The site had to present the full catalogue with prices while still feeling like the place it describes.",
         "The audience is local and deciding between spas: residents booking a regular treatment, visitors to Windhoek booking around a trip, and people buying gift visits. Their questions are concrete. What exactly do you offer? What does it cost? Where are you and when are you open? Can I book right now?",
-        "The brief was to build the full treatment catalogue with prices, show the rooms honestly in a gallery, name the team, and make booking effortless — call +264 85 607 7143, message on WhatsApp, or book online, seven days a week.",
+        "The brief was to build the full treatment catalogue with prices, show the rooms honestly in a gallery, name the team, and make booking effortless, call +264 85 607 7143, message on WhatsApp, or book online, seven days a week.",
       ],
       approach: [
         "A full treatment catalogue with prices, a gallery that calms, and booking one tap away.",
-        "The services are organised by treatment family — massage, facials, hydrotherapy, nails, lashes, hair removal — so a returning guest finds their regular treatment in two taps and a new guest can compare within one family. Every treatment carries its price. Nothing is quote-on-request, because a spa that hides prices makes the caller do the work.",
-        "The gallery shows the real rooms: treatment rooms, the reception, the hydrotherapy suite, the garden and finished treatments. For a business whose product is the atmosphere, the photographs are the argument. The team page names the people who do the work, and the visit page states the essentials in one place — 7 Blackett Street, Windhoek West, open seven days, +264 85 607 7143.",
-        "The voice throughout is the spa's own positioning: quiet luxury in the heart of Windhoek West. Relax the body, renew the mind, rejuvenate the soul. The site stays unhurried — generous space, no urgency banners, no countdown offers — because the fastest way to communicate calm is to be calm.",
+        "The services are organised by treatment family (massage, facials, hydrotherapy, nails, lashes, hair removal) so a returning guest finds their regular treatment in two taps and a new guest can compare within one family. Every treatment carries its price. Nothing is quote-on-request, because a spa that hides prices makes the caller do the work.",
+        "The gallery shows the real rooms: treatment rooms, the reception, the hydrotherapy suite, the garden and finished treatments. For a business whose product is the atmosphere, the photographs are the argument. The team page names the people who do the work, and the visit page states the essentials in one place, 7 Blackett Street, Windhoek West, open seven days, +264 85 607 7143.",
+        "The voice throughout is the spa's own positioning: quiet luxury in the heart of Windhoek West. Relax the body, renew the mind, rejuvenate the soul. The site stays unhurried (generous space, no urgency banners, no countdown offers) because the fastest way to communicate calm is to be calm.",
       ],
       outcome: [
         "A site where 90 treatments stay browsable and the spa stays quiet.",
-        "Emerald Spa & Wellness Centre launched with the full treatment catalogue published, real room photography, a named team, and booking reachable by call, WhatsApp or online, seven days a week. A guest can go from landing to a chosen treatment with a price in under a minute — without the site ever raising its voice.",
+        "Emerald Spa & Wellness Centre launched with the full treatment catalogue published, real room photography, a named team, and booking reachable by call, WhatsApp or online, seven days a week. A guest can go from landing to a chosen treatment with a price in under a minute, without the site ever raising its voice.",
         "The pattern repeats what this studio keeps learning in Windhoek: publish the specifics (menu, prices, address, hours), show the real rooms, name the real people, and keep one contact path always visible. Calm is a design decision.",
       ],
       craft: [
@@ -329,7 +329,7 @@ export const projects: Project[] = [
     title: "Feorm",
     category: "Own product",
     eyebrow: "Agriculture / Farm Stays · 2026",
-    short: "Our own product — shipping without a client brief.",
+    short: "Our own product, shipping without a client brief.",
     description: "Farm stay discovery and booking platform for Namibia, connecting travelers with working farms, guesthouses, and lodges across the country.",
     tags: ["Product Design", "Website Development", "Booking Systems"],
     live: undefined,

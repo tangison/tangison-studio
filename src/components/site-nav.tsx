@@ -118,7 +118,7 @@ export function SiteNav() {
         >
           <Link
             href="/"
-            aria-label="The Tangison Studio — home"
+            aria-label="The Tangison Studio home"
             className="flex items-center gap-2.5 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal"
           >
             {/* favicon is a tiny brand asset; plain img avoids optimizer overhead */}

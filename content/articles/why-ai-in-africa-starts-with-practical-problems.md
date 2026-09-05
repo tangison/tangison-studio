@@ -1,7 +1,7 @@
 ---
 title: "Why AI in Africa Starts with Practical Problems"
 slug: "why-ai-in-africa-starts-with-practical-problems"
-description: "The most useful AI on the continent is not the most advanced. It is the kind that answers a question a business already has — and that changes what building it looks like."
+description: "The most useful AI on the continent is not the most advanced. It is the kind that answers a question a business already has, and that changes what building it looks like."
 keywords: [AI in Africa, applied AI, AI adoption, Namibia, emerging markets, practical AI, Tangison]
 category: "Studio Notes"
 date: "2026-08-30"
@@ -11,6 +11,8 @@ imageAlt: "Seedlings sprouting in small terracotta pots on a windowsill in gentl
 author: "Tangi Iigonda"
 ---
 
+
+
 There is a version of AI adoption that starts with the technology: pick a model, then hunt for a problem it can be pointed at. It fails predictably, everywhere in the world, and it fails faster in markets where margins are thin and patience is finite.
 
 The version that works starts at the other end. A question the business already pays for today, answered faster or cheaper. A document that is currently retyped by hand. An enquiry queue that eats an hour a morning. AI attached to a real cost is an investment. AI attached to an ambition is a demo.
@@ -19,7 +21,7 @@ The version that works starts at the other end. A question the business already 
 
 Building in Namibia and across the region means building inside constraints: connectivity that varies, data that is scattered, budgets that are honest. These constraints are a filter. They kill projects that would have wasted money anywhere, and they leave standing the applications that genuinely carry their weight.
 
-DataReportal's Digital 2025 report counts around 1.97 million internet users in Namibia at the start of 2025, about 64 percent of the population. That is a real, reachable audience — but it is an audience on phones and prepaid data, which rules out anything that assumes a desktop browser and unlimited bandwidth. The products that work here are the ones designed for that reality from the first sketch.
+DataReportal's Digital 2025 report counts around 1.97 million internet users in Namibia at the start of 2025, about 64 percent of the population. That is a real, reachable audience, but it is an audience on phones and prepaid data, which rules out anything that assumes a desktop browser and unlimited bandwidth. The products that work here are the ones designed for that reality from the first sketch.
 
 ## Where the practical wins are
 
@@ -39,6 +41,6 @@ The same discipline applies to what the system claims. An assistant that guesses
 
 ## Why this is a studio position
 
-We are a studio, not a research lab. The work we take on — the [intelligence side](/services) of what we do — is judged by whether an organization's week got easier, not by whether the model was interesting. That is why our applied AI work starts with the same [audit](/audit) discipline as our web work: look at what is actually happening before proposing what should be.
+We are a studio, not a research lab. The work we take on (the [intelligence side](/services) of what we do) is judged by whether an organization's week got easier, not by whether the model was interesting. That is why our applied AI work starts with the same [audit](/audit) discipline as our web work: look at what is actually happening before proposing what should be.
 
 AI in Africa does not need to catch up to anywhere. It needs to be useful here, at the prices and speeds and reliabilities that exist here. That is not a smaller ambition. It is a more durable one.

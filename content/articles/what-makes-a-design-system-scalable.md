@@ -1,7 +1,7 @@
 ---
 title: "What Makes a Design System Scalable"
 slug: "what-makes-a-design-system-scalable"
-description: "Tokens, components, and the rules that keep them together — the difference between a shared library that compounds and one that collapses at the third product."
+description: "Tokens, components, and the rules that keep them together, the difference between a shared library that compounds and one that collapses at the third product."
 keywords: [design system, component library, design tokens, brand consistency, product design, Namibia, Tangison]
 category: "Studio Notes"
 date: "2026-09-01"
@@ -10,6 +10,8 @@ image: /images/paintings/blog/blog-02.webp
 imageAlt: "A grid of neatly organized pastel paper cards and swatches pinned to a soft board."
 author: "Tangi Iigonda"
 ---
+
+
 
 A design system is a shared library of interface decisions: color tokens, type scales, spacing steps, and components built once and reused everywhere. Done well, it is the reason a 40-page website and a customer portal built by different people still feel like one product. Done badly, it is a folder of screens nobody opens.
 

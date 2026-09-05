@@ -39,7 +39,7 @@ export function CaseCard({
     <Link
       href={`/cases/${project.slug}`}
       className={`case-card group block rounded-[20px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal`}
-      aria-label={`${project.name} — view case study`}
+      aria-label={`${project.name}: view case study`}
     >
       <div className={`relative overflow-hidden art-tile art-shadow ${aspect} bg-paper-raise`}>
         <Image

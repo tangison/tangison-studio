@@ -162,13 +162,13 @@ export function SearchClient() {
 
       <p className="mt-8 text-sm text-ink-muted" aria-live="polite" role="status">
         {loadError
-          ? "The search index could not load — refresh the page and try again."
+          ? "The search index could not load. Refresh the page and try again."
           : entries === null
             ? "Loading the index…"
             : query.trim() === ""
               ? `${entries.length} things to find.`
               : results.length === 0
-                ? "Nothing matches that search — try fewer or different words."
+                ? "Nothing matches that search. Try fewer or different words."
                 : `${results.length} result${results.length === 1 ? "" : "s"} for “${query.trim()}”`}
       </p>
 

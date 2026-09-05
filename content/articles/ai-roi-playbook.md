@@ -1,7 +1,7 @@
 ---
 title: "The AI ROI Playbook: Measuring AI Returns Honestly"
 slug: "ai-roi-playbook"
-description: "For every organisation contemplating AI investment, the fundamental question is deceptively simple: what return can we expect, and over what timeframe? Yet…"
+description: "For every organisation contemplating AI investment, the fundamental question is deceptively simple: what return can we expect, and over what timeframe?"
 keywords: [AI, artificial intelligence, Namibia, AI adoption, African business, Tangison, playbook, measuring, returns, honestly]
 category: "AI Strategy"
 date: "2026-05-03"
@@ -10,6 +10,8 @@ image: /images/paintings/blog/ai-roi-playbook.webp
 imageAlt: "soft still life with coins, a small plant and a balance on a desk"
 author: "Tangi Iigonda"
 ---
+
+
 
 For every organisation contemplating AI investment, the fundamental question is deceptively simple: what return can we expect, and over what timeframe? Yet answering this question with rigour and honesty is among the most challenging aspects of AI adoption. Unlike traditional capital investments, where returns follow relatively predictable patterns, AI investments involve intangible benefits, compounding returns, and significant uncertainty. The AI ROI Playbook provides Namibian organisations with a practical methodology for quantifying, tracking, and maximising the return on their AI investments.
 
@@ -50,24 +52,12 @@ The most commonly overlooked ROI component is the value of organisational learni
 
 This section presents a structured methodology for calculating AI ROI that accounts for the full spectrum of costs and benefits. The framework is designed to be practical for Namibian organisations, requiring no specialised financial expertise while still producing defensible, decision-relevant results.
 
-Cost Category Components Typical Range as Percentage of
+- **Technology (twenty-five to forty percent of total investment)**: software licences, cloud computing, the data platform, and model development tools.
+- **Data (twenty to thirty-five percent)**: data acquisition, cleaning, labelling, storage, and governance infrastructure.
+- **Talent (twenty to thirty percent)**: hiring, training, external consultants, and knowledge transfer.
 
-Total Investment
-
-Technology Software licences, cloud computing, data Twenty-five to forty percent
-
-platform, model development tools
-
-Data Data acquisition, cleaning, labelling, storage, Twenty to thirty-five percent
-
-and governance infrastructure
-
-Talent Hiring, training, external consultants, and Twenty to thirty percent
-
-knowledge transfer
-
-- **Management** — End users, stakeholder engagement.
-- **Opportunity Cost** — Management attention, diverted resources, and delayed alternative investments. Five to fifteen percent.
+- **Management**: End users, stakeholder engagement.
+- **Opportunity Cost**: Management attention, diverted resources, and delayed alternative investments. Five to fifteen percent.
 
 
 ## Case Study: Kuiseb Capital Partners
@@ -83,27 +73,27 @@ By the end of the second year, the cumulative ROI exceeded four hundred percent 
 
 ## Maximising AI ROI: Ten Proven Strategies
 
-- **Start with the problem, not the technology** — The highest-ROI AI projects begin with a clear business problem and work backward to the technology solution, rather than starting with an exciting technology and searching for a problem to solve.
+- **Start with the problem, not the technology**: The highest-ROI AI projects begin with a clear business problem and work backward to the technology solution, rather than starting with an exciting technology and searching for a problem to solve.
 
-- **Invest in data quality before model complexity** — The single largest determinant of AI project ROI is data quality. Organisations that invest in cleaning, structuring, and governing their data before pursuing complex models consistently achieve better returns.
+- **Invest in data quality before model complexity**: The single largest determinant of AI project ROI is data quality. Organisations that invest in cleaning, structuring, and governing their data before pursuing complex models consistently achieve better returns.
 
 - Measure early and often Establish baseline metrics before deployment and track
 
 impact continuously. Early measurement enables rapid course correction and prevents the sunk-cost fallacy of continuing with underperforming projects.
 
-- **Design for adoption from the start** — The most technically impressive AI solution
+- **Design for adoption from the start**: The most technically impressive AI solution
 
 delivers zero ROI if users do not adopt it. Involve end users in design, prioritise usability, and invest in change management.
 
-- **Build for compounding returns** — Design AI systems that generate data, insights, and
+- **Build for compounding returns**: Design AI systems that generate data, insights, and
 
 capabilities that feed future projects. Each deployment should make the next one faster, cheaper, and more impactful.
 
-- **Embrace iterative development** — Deploy minimum viable AI solutions quickly,
+- **Embrace iterative development**: Deploy minimum viable AI solutions quickly,
 
 gather feedback, and refine. This approach reduces time-to-value and minimises the risk of large-scale project failures.
 
-- **Capture indirect returns systematically** — Document improvements in decision
+- **Capture indirect returns systematically**: Document improvements in decision
 
 quality, customer satisfaction, employee engagement, and organisational learning alongside direct financial returns.
 
@@ -115,7 +105,7 @@ long-term lock-in with specific vendors or platforms. Negotiate contracts that a
 
 distributions shift. Budget for ongoing monitoring, retraining, and replacement from the start.
 
-- **Share success stories internally** — Visible success stories build organisational
+- **Share success stories internally**: Visible success stories build organisational
 
 momentum and attract the talent and budget needed for larger AI initiatives. Document and communicate wins comprehensively.
 

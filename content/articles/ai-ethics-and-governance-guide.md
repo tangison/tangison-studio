@@ -1,7 +1,7 @@
 ---
 title: "The AI Ethics and Governance Guide"
 slug: "ai-ethics-and-governance-guide"
-description: "As artificial intelligence moves from experimental curiosity to operational reality across Namibian industries, the ethical dimensions of this technology…"
+description: "As artificial intelligence moves from experimental curiosity to operational reality across Namibian industries, the ethical dimensions of this technology."
 keywords: [AI, artificial intelligence, Namibia, AI adoption, African business, Tangison, ethics, governance, guide]
 category: "AI Strategy"
 date: "2026-05-04"
@@ -10,6 +10,8 @@ image: /images/paintings/blog/ai-ethics-and-governance-guide.webp
 imageAlt: "soft still life with scales of justice and a shield in muted tones"
 author: "Tangi Iigonda"
 ---
+
+
 
 As artificial intelligence moves from experimental curiosity to operational reality across Namibian industries, the ethical dimensions of this technology transition demand urgent attention. Every AI system encodes values, makes trade-offs, and produces consequences that extend far beyond technical performance metrics. The question is not whether AI raises ethical challenges but whether Namibian organisations will address those challenges proactively, thoughtfully, and in a manner consistent with the nation's constitutional values of equality, dignity, and social justice.
 
@@ -56,10 +58,10 @@ Governance Responsibility Key Activities Frequency Layer
 
 Board Oversight Strategic direction and AI strategy review, risk tolerance Quarterly risk appetite setting, ethical policy approval
 
-- **Committee** — Guidance. Review, stakeholder engagement.
-- **Data Governance Office** — Data quality and compliance. Data classification, access control, privacy impact assessment. Ongoing.
-- **AI Product Teams** — Implementation and monitoring. Model documentation, performance monitoring, incident reporting. Daily.
-- **External Audit** — Independent assurance. Algorithmic audit, compliance verification, stakeholder report review. Annually.
+- **Committee**: Guidance. Review, stakeholder engagement.
+- **Data Governance Office**: Data quality and compliance. Data classification, access control, privacy impact assessment. Ongoing.
+- **AI Product Teams**: Implementation and monitoring. Model documentation, performance monitoring, incident reporting. Daily.
+- **External Audit**: Independent assurance. Algorithmic audit, compliance verification, stakeholder report review. Annually.
 
 
 ## Case Study: NamRights Advisory
@@ -73,11 +75,11 @@ The firm's AI Ethics Committee, established as part of its governance framework,
 
 To facilitate practical implementation, the following tools and templates are recommended for Namibian organisations at various stages of AI maturity. These tools are designed to be adaptable, recognising that governance requirements evolve as an organisation's AI capabilities mature.
 
-- **AI Ethics Checklist** — Pre-project ethical assessment covering fairness, privacy, transparency, and accountability. Before every new AI project initiation.
-- **Bias Audit Template** — Structured framework for testing AI system outputs across demographic groups. Before deployment and at regular intervals post-deployment.
-- **Model Documentation Card** — Standardised summary of model purpose, data, performance, limitations, and ethical considerations. For every model in production.
-- **Stakeholder Impact Assessment** — Framework for evaluating how AI systems affect different stakeholder groups. During design phase and after significant model updates.
-- **Incident Response Protocol** — Procedures for identifying, reporting, and remediating AI system failures or harms. As needed; reviewed and tested quarterly.
+- **AI Ethics Checklist**: Pre-project ethical assessment covering fairness, privacy, transparency, and accountability. Before every new AI project initiation.
+- **Bias Audit Template**: Structured framework for testing AI system outputs across demographic groups. Before deployment and at regular intervals post-deployment.
+- **Model Documentation Card**: Standardised summary of model purpose, data, performance, limitations, and ethical considerations. For every model in production.
+- **Stakeholder Impact Assessment**: Framework for evaluating how AI systems affect different stakeholder groups. During design phase and after significant model updates.
+- **Incident Response Protocol**: Procedures for identifying, reporting, and remediating AI system failures or harms. As needed; reviewed and tested quarterly.
 
 
 ## Conclusion: Ethics as Competitive Advantage

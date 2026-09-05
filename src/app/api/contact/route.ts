@@ -96,7 +96,7 @@ export async function POST(req: Request) {
     from: FROM,
     to: [TO],
     replyTo: email,
-    subject: `Project brief — ${name}`,
+    subject: `Project brief: ${name}`,
     text: lines.join("\n"),
     html: [
       `<div style="font-family:Georgia,serif;color:#111315;font-size:16px;line-height:1.6">`,

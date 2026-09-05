@@ -19,21 +19,21 @@ export interface SearchEntry {
 
 const PAGES: { title: string; href: string; meta: string; excerpt: string }[] = [
   {
-    title: "Cases — our work",
+    title: "Cases: our work",
     href: "/cases",
     meta: "Gallery · 15 case studies",
     excerpt:
       "All fifteen case studies: brand systems, websites, and platforms built in and beyond Namibia.",
   },
   {
-    title: "Services — what we do",
+    title: "Services: what we do",
     href: "/services",
     meta: "Services",
     excerpt:
       "Brand and identity, website design and development, digital products, and applied AI.",
   },
   {
-    title: "Insights — articles and research",
+    title: "Insights: articles and research",
     href: "/blog",
     meta: "Blog · research library",
     excerpt:
@@ -47,7 +47,7 @@ const PAGES: { title: string; href: string; meta: string; excerpt: string }[] = 
       "Studio Tangison: one team for brand, product, and intelligence, based in Windhoek.",
   },
   {
-    title: "Contact — start a project",
+    title: "Contact: start a project",
     href: "/contact",
     meta: "Contact",
     excerpt:

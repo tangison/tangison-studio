@@ -11,21 +11,23 @@ imageAlt: "Soft analog stopwatch and small gauge resting on a pale surface in ge
 author: "Tangi Iigonda"
 ---
 
+
+
 Core Web Vitals is Google's name for three measurements of how a page actually feels to use: how fast the main content appears, how quickly the page responds when tapped, and whether things jump around while it loads. Google uses them as ranking signals, which is why they escaped the engineering world and landed in marketing meetings. Here is what each one means in language that survives translation.
 
 ## The three measurements
 
-**LCP — Largest Contentful Paint.** How long until the biggest visible element (usually the hero image or headline) finishes appearing. Under 2.5 seconds is good. On prepaid mobile data, this is the number most Namibian visitors actually experience.
+**LCP, Largest Contentful Paint.** How long until the biggest visible element (usually the hero image or headline) finishes appearing. Under 2.5 seconds is good. On prepaid mobile data, this is the number most Namibian visitors actually experience.
 
-**INP — Interaction to Next Paint.** How quickly the page visibly responds when someone taps a button or a menu. Under 200 milliseconds feels instant; over half a second feels broken. INP replaced an older metric in 2024 and is stricter: it measures the whole visit, not the first click.
+**INP, Interaction to Next Paint.** How quickly the page visibly responds when someone taps a button or a menu. Under 200 milliseconds feels instant; over half a second feels broken. INP replaced an older metric in 2024 and is stricter: it measures the whole visit, not the first click.
 
-**CLS — Cumulative Layout Shift.** Whether elements move after they have appeared — the text you were reading that jumps down when an image loads, the button that slides away as your finger lands on it. Under 0.1 is good. CLS is the quiet one: it does not feel like "slow," it feels like a site that fights you.
+**CLS (Cumulative Layout Shift.** Whether elements move after they have appeared) the text you were reading that jumps down when an image loads, the button that slides away as your finger lands on it. Under 0.1 is good. CLS is the quiet one: it does not feel like "slow," it feels like a site that fights you.
 
 ## Why Google cares
 
-Google's stated position is straightforward: it ranks pages by the experience of using them, measured on real visits, from real devices, on real connections — not lab conditions. The data comes from actual Chrome users who opted in. Mobile experience is indexed first, so the phone version of your site is the one being scored.
+Google's stated position is straightforward: it ranks pages by the experience of using them, measured on real visits, from real devices, on real connections, not lab conditions. The data comes from actual Chrome users who opted in. Mobile experience is indexed first, so the phone version of your site is the one being scored.
 
-The vitals are not the biggest ranking factor — relevant content beats fast irrelevance — but between two equally relevant competitors, the faster page wins the tie. And speed has an effect that predates Google entirely: visitors who wait, leave.
+The vitals are not the biggest ranking factor (relevant content beats fast irrelevance) but between two equally relevant competitors, the faster page wins the tie. And speed has an effect that predates Google entirely: visitors who wait, leave.
 
 ## What moves the numbers most
 
@@ -40,6 +42,6 @@ From [audits](/audit) of real sites in this market, four fixes account for most 
 
 Google's PageSpeed Insights reports the vitals for any URL, splitting lab data from real visitor data. The real-user data is the truth; the lab data is the diagnosis. For a fuller picture, Search Console shows vitals across your whole site, page by page.
 
-One honest caveat: scores vary by connection. A page that scores well on fiber can still feel slow on the mobile network your customers actually use, which is why we test on real phones and metered connections before we call a build finished — the same discipline behind our [free audit](/audit), which includes speed and data cost as standard checks.
+One honest caveat: scores vary by connection. A page that scores well on fiber can still feel slow on the mobile network your customers actually use, which is why we test on real phones and metered connections before we call a build finished, the same discipline behind our [free audit](/audit), which includes speed and data cost as standard checks.
 
 Fast is not a feature you add at the end. It is the accumulated result of a hundred small decisions, made early, by people who measure.

@@ -58,7 +58,7 @@ export function ContactForm() {
           </h3>
           <p className="mt-2 text-ink-muted leading-relaxed">
             Thank you. We reply to every serious enquiry within two working
-            days — usually sooner.
+            days, usually sooner.
           </p>
         </div>
         <button
@@ -160,7 +160,7 @@ export function ContactForm() {
           maxLength={5000}
           rows={6}
           className={inputClass + " py-3.5 min-h-[150px] resize-y"}
-          placeholder="The organization or product, the outcome you want, and anything you already have — brand material, a brief, links."
+          placeholder="The organization or product, the outcome you want, and anything you already have: brand material, a brief, links."
         />
       </div>
 
