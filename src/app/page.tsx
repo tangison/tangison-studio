@@ -1,21 +1,27 @@
+import { preload } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { CaseCard } from "@/components/case-card";
+import { HeroVideo } from "@/components/hero-video";
 import { projects } from "@/lib/projects";
 import { capabilities, principles, processSteps, site } from "@/lib/site";
-import { getArticles } from "@/lib/articles";
+import { getArticleSummaries } from "@/lib/articles";
 import { formatDate } from "@/lib/article-types";
 
 export default function HomePage() {
+  // the hero poster is the largest above-fold paint — start it immediately
+  preload("/videos/hero-poster.webp", { as: "image", fetchPriority: "high" });
+
   const featured = projects.slice(0, 5);
-  const latest = getArticles().slice(0, 3);
-  const total = getArticles().length;
+  const articles = getArticleSummaries();
+  const latest = articles.slice(0, 3);
+  const total = articles.length;
 
   return (
     <>
-      {/* ============ Hero — light and lean: the tagline, one painting, one button ============ */}
+      {/* ============ Hero — light and lean: the tagline, the studio film, one button ============ */}
       <section className="relative overflow-hidden">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44 pb-16 md:pb-24 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-8 items-end">
           <div className="order-2 lg:order-1">
@@ -36,18 +42,11 @@ export default function HomePage() {
             </Reveal>
           </div>
 
-          {/* one minimal oil painting — single element, biased off-centre */}
+          {/* the studio film — one small moving painting, biased off-centre.
+              Poster paints instantly; the 454KB clip streams async. */}
           <Reveal variant="zoom" className="order-1 lg:order-2">
-            <div className="relative art-tile art-shadow aspect-[4/3] max-w-[560px] w-full ml-auto bg-paper-raise">
-              <Image
-                src="/images/paintings/heroes/hero-home.webp"
-                alt="A single teal brushstroke on warm cream, a minimal oil painting."
-                fill
-                priority
-                fetchPriority="high"
-                sizes="(max-width: 1024px) 100vw, 560px"
-                className="object-cover"
-              />
+            <div className="relative art-tile art-shadow aspect-video max-w-[480px] w-full ml-auto bg-paper-raise">
+              <HeroVideo />
             </div>
           </Reveal>
         </div>

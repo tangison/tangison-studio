@@ -20,6 +20,19 @@ export interface Article {
   excerpt: string;
 }
 
+/**
+ * An article without its markdown body — what list views and client
+ * components receive. Passing the full Article (with body) into a client
+ * component serializes every body into the page payload; summaries keep
+ * the /blog index lean.
+ */
+export type ArticleSummary = Omit<Article, "body">;
+
+export function toSummary(a: Article): ArticleSummary {
+  const { body: _body, ...summary } = a;
+  return summary;
+}
+
 export function formatDate(iso: string): string {
   const d = new Date(`${iso}T00:00:00Z`);
   return d.toLocaleDateString("en-GB", {

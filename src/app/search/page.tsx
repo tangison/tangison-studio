@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { buildSearchIndex } from "@/lib/search-index";
 import { SearchClient } from "./search-client";
 import { Reveal } from "@/components/reveal";
 
@@ -12,8 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function SearchPage() {
-  const entries = buildSearchIndex();
-
   return (
     <div className="theme-ink bg-paper text-ink min-h-screen">
       <section className="mx-auto w-full max-w-[900px] px-6 md:px-12 pt-32 md:pt-40 pb-24 md:pb-32">
@@ -30,7 +27,7 @@ export default function SearchPage() {
         </div>
         <div className="mt-10">
           <Reveal delay={180}>
-            <SearchClient entries={entries} />
+            <SearchClient />
           </Reveal>
         </div>
       </section>

@@ -8,10 +8,11 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import type { Article } from "./article-types";
+import type { Article, ArticleSummary } from "./article-types";
+import { toSummary } from "./article-types";
 
-export type { Article } from "./article-types";
-export { formatDate } from "./article-types";
+export type { Article, ArticleSummary } from "./article-types";
+export { formatDate, toSummary } from "./article-types";
 
 const DIR = path.join(process.cwd(), "content", "articles");
 
@@ -95,6 +96,15 @@ export function getArticles(): Article[] {
 
 export function getArticle(slug: string): Article | undefined {
   return getArticles().find((a) => a.slug === slug);
+}
+
+/**
+ * All articles as lean summaries (no markdown body). The body is only ever
+ * needed by the article page renderer; lists, cards, and client search
+ * filters work off summaries so page payloads stay small.
+ */
+export function getArticleSummaries(): ArticleSummary[] {
+  return getArticles().map(toSummary);
 }
 
 export function getArticleCategories(): { name: string; count: number }[] {

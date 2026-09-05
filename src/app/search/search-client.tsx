@@ -17,15 +17,37 @@ const SUGGESTIONS = ["AI adoption", "mining", "website cost", "brand", "agricult
 /**
  * Instant client-side search over articles, cases, and pages. Every word of
  * the query must appear in the entry's corpus; title matches rank higher.
+ *
+ * The index itself is a static JSON asset (/search-index.json, prerendered
+ * at build time) fetched once on mount and cached by the browser — the
+ * page shell paints immediately and the index bytes transfer only when
+ * search is actually used.
  */
-export function SearchClient({ entries }: { entries: SearchEntry[] }) {
+export function SearchClient() {
   const [query, setQuery] = useState("");
+  const [entries, setEntries] = useState<SearchEntry[] | null>(null);
+  const [loadError, setLoadError] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
-  // URL-sync must not fire on mount before the deep-link query has been
-  // consumed, or it would strip ?q= from the address bar before it is read.
-  const urlSyncArmedRef = useRef(false);
+  // fetch the search index once (cached static asset)
+  useEffect(() => {
+    let alive = true;
+    fetch("/search-index.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`index ${r.status}`);
+        return r.json() as Promise<SearchEntry[]>;
+      })
+      .then((data) => {
+        if (alive) setEntries(data);
+      })
+      .catch(() => {
+        if (alive) setLoadError(true);
+      });
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -40,6 +62,7 @@ export function SearchClient({ entries }: { entries: SearchEntry[] }) {
   }, []);
 
   // keep the URL in sync so a running query is shareable / back-button friendly
+  const urlSyncArmedRef = useRef(false);
   useEffect(() => {
     if (!urlSyncArmedRef.current) {
       // skip the first run (mount): the deep-link read owns the URL until it lands
@@ -53,6 +76,7 @@ export function SearchClient({ entries }: { entries: SearchEntry[] }) {
   }, [query]);
 
   const results = useMemo(() => {
+    if (!entries) return [];
     const q = query.trim().toLowerCase();
     if (!q) return [];
     const words = q.split(/\s+/).filter(Boolean);
@@ -113,7 +137,7 @@ export function SearchClient({ entries }: { entries: SearchEntry[] }) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder={`Search ${entries.length} articles, cases, and pages…`}
+          placeholder="Search articles, cases, and pages…"
           autoComplete="off"
           className="w-full h-14 md:h-16 rounded-full border border-line bg-paper-raise pr-5 md:pr-6 text-base md:text-lg placeholder:text-ink-faint focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/25 transition-colors"
           style={{ paddingLeft: "3.25rem" }}
@@ -137,11 +161,15 @@ export function SearchClient({ entries }: { entries: SearchEntry[] }) {
       )}
 
       <p className="mt-8 text-sm text-ink-muted" aria-live="polite" role="status">
-        {query.trim() === ""
-          ? `${entries.length} things to find.`
-          : results.length === 0
-            ? "Nothing matches that search — try fewer or different words."
-            : `${results.length} result${results.length === 1 ? "" : "s"} for “${query.trim()}”`}
+        {loadError
+          ? "The search index could not load — refresh the page and try again."
+          : entries === null
+            ? "Loading the index…"
+            : query.trim() === ""
+              ? `${entries.length} things to find.`
+              : results.length === 0
+                ? "Nothing matches that search — try fewer or different words."
+                : `${results.length} result${results.length === 1 ? "" : "s"} for “${query.trim()}”`}
       </p>
 
       <div className="mt-6 flex flex-col gap-10">

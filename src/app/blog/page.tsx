@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { getArticles, getArticleCategories } from "@/lib/articles";
+import { getArticleSummaries, getArticleCategories } from "@/lib/articles";
 import { BlogIndex } from "./blog-client";
 import { Reveal } from "@/components/reveal";
 
@@ -19,7 +19,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const articles = getArticles();
+  // lean summaries — never ship 47 markdown bodies to the client
+  const articles = getArticleSummaries();
   const categories = getArticleCategories();
 
   return (

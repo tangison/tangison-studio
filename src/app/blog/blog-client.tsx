@@ -2,19 +2,20 @@
 
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import type { Article } from "@/lib/article-types";
+import type { ArticleSummary } from "@/lib/article-types";
 import { ArticleCard } from "@/components/article-card";
 
 /**
  * Blog index interactivity: instant client-side search across titles,
- * categories and excerpts + category filter chips. 47 articles filter in
- * under a millisecond — no server round-trip, no search dependency.
+ * categories and excerpts + category filter chips. Receives lean article
+ * summaries (no markdown bodies) so the page payload stays small; 47
+ * articles filter in under a millisecond — no server round-trip.
  */
 export function BlogIndex({
   articles,
   categories,
 }: {
-  articles: Article[];
+  articles: ArticleSummary[];
   categories: { name: string; count: number }[];
 }) {
   const [query, setQuery] = useState("");

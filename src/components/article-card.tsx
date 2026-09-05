@@ -1,19 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { formatDate, type Article } from "@/lib/article-types";
+import { formatDate, type ArticleSummary } from "@/lib/article-types";
 
 /**
  * Article card for the blog index — same motion language as the Cases
  * gallery: the artwork fills the card and zooms on hover/focus
- * (`.case-card-image`, 1.1s expo-out both ways).
+ * (`.case-card-image`, 1.1s expo-out both ways). Takes a lean summary —
+ * bodies are never serialized into client payloads.
  */
 export function ArticleCard({
   article,
   priority = false,
   sizes = "(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw",
 }: {
-  article: Article;
+  article: ArticleSummary;
   priority?: boolean;
   sizes?: string;
 }) {
