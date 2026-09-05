@@ -4,15 +4,14 @@ import { useEffect, useRef } from "react";
 
 /**
  * The studio hero film: a short looping painting-style clip that follows
- * the hero tagline inline (never a full-bleed background). It never blocks
+ * the hero slogan inline (never a full-bleed background). It never blocks
  * first paint: the browser draws the lean WebP poster immediately, and
  * playback (muted, inline, looped) starts only once the element is on
  * screen. With prefers-reduced-motion the poster simply stays, motionless.
  *
- * v3: re-cut from v2 with the bottom-right watermark zone delogo'd
- * (interpolated away), the corner precision-cropped (752x470, exact 16:10),
- * and re-encoded under a new filename so every cache layer (browser and
- * CDN edge) drops any previously cached copy.
+ * v4: served as WebM (VP9) first — roughly a third lighter than H.264 at
+ * matched quality — with the v3 MP4 kept as a fallback for any browser
+ * without WebM support. The browser downloads only the source it can use.
  */
 export function HeroVideo() {
   const ref = useRef<HTMLVideoElement>(null);
@@ -57,6 +56,7 @@ export function HeroVideo() {
       aria-hidden="true"
       className="h-full w-full object-cover"
     >
+      <source src="/videos/hero-v4.webm" type="video/webm" />
       <source src="/videos/hero-v3.mp4" type="video/mp4" />
     </video>
   );

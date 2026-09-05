@@ -9,6 +9,18 @@ import { navLinks, site } from "@/lib/site";
 import { projects } from "@/lib/projects";
 
 /**
+ * Bundle-loaded gate: this module ships in the nav chunk that every page
+ * loads. The moment it executes we mark <html> with .js, which is the ONLY
+ * thing that allows reveal animations to hide content (see globals.css:
+ * html.js .reveal). If this chunk never loads — stale cache after a
+ * deploy, network failure, blocked script — the class is never set and
+ * every page renders fully visible. Progressive enhancement, not luck.
+ */
+if (typeof document !== "undefined") {
+  document.documentElement.classList.add("js");
+}
+
+/**
  * Floating pill navigation + full-screen mobile takeover.
  *
  * Wordmark: "The Tangison Studio" in Poppins with a staggered word

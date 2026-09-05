@@ -24,33 +24,18 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ============ Hero: the tagline leads, the studio film follows ============ */}
-      <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-32 md:pt-44">
+      {/* ============ Hero: the slogan and nothing else (Collins-style
+          statement lead), the studio film follows inline ============ */}
+      <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-52">
         <Reveal>
-          <h1 className="h1 max-w-5xl">
+          <h1 className="h1 max-w-6xl">
             Rebuilding how the world
             <span className="block">sees your brand.</span>
           </h1>
         </Reveal>
-        <Reveal delay={90}>
-          <p className="mt-6 md:mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-ink-muted">
-            Visitors judge your business in seconds. We design and build
-            websites that make those seconds count.
-          </p>
-        </Reveal>
-        <Reveal delay={180}>
-          <div className="mt-8 md:mt-10 flex flex-wrap items-center gap-3">
-            <Link href="/contact" className="btn btn-primary">
-              Start a project
-            </Link>
-            <Link href="/cases" className="btn btn-outline">
-              See the work
-            </Link>
-          </div>
-        </Reveal>
 
-        {/* the studio film follows the tagline, inline */}
-        <Reveal variant="zoom" delay={120} className="mt-12 md:mt-16">
+        {/* the studio film follows the slogan, inline */}
+        <Reveal variant="zoom" delay={140} className="mt-14 md:mt-20">
           <div className="art-tile art-shadow bg-ink aspect-[16/10]">
             <HeroVideo />
           </div>

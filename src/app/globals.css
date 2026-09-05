@@ -276,7 +276,9 @@ body {
   line-height: 1;
 }
 
-.wordmark > .wordmark-word {
+/* animated wordmark: gated on .js with the same progressive-enhancement
+   rule — without JS the words simply sit there, fully visible. */
+html.js .wordmark > .wordmark-word {
   display: inline-block;
   opacity: 0;
   transform: translateY(0.32em);
@@ -304,30 +306,38 @@ body {
   }
 }
 
-.reveal {
+/* Progressive enhancement, observe-time hide: content is visible by
+   default. JS (site-nav chunk, every page) sets .js on <html>; the Reveal
+   component then adds .prepare (hidden, NO transition) and .revealed
+   (animate in) at observe time. If the bundle never loads, nothing is
+   ever hidden: no blank page, no flash, no lost animations. */
+html.js .reveal.prepare {
   opacity: 0;
   transform: translateY(28px);
+  transition: none;
+}
+
+html.js .reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
   transition:
     opacity 0.9s var(--ease-primary),
     transform 0.9s var(--ease-primary);
-}
-
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .reveal,
-  .reveal-zoom {
+  html.js .reveal.prepare,
+  html.js .reveal-zoom.prepare,
+  html.js .reveal.revealed,
+  html.js .reveal-zoom.revealed {
     opacity: 1;
     transform: none;
     transition: none;
   }
-  .wordmark > .wordmark-word {
+  html.js .wordmark > .wordmark-word {
     animation: none;
     opacity: 1;
     transform: none;
@@ -358,20 +368,20 @@ body {
   filter: brightness(1.03);
 }
 
-/* zoom-settle entrance: card starts slightly enlarged and settles
-   into place as it enters the viewport (paired with Reveal
-   variant="zoom"). Defined after .reveal so it overrides it. */
-.reveal-zoom {
+/* zoom-settle entrance: card starts slightly enlarged and settles into
+   place (paired with Reveal variant="zoom"). Same prepare/revealed flow. */
+html.js .reveal-zoom.prepare {
   opacity: 0;
   transform: scale(1.045);
+  transition: none;
+}
+
+html.js .reveal-zoom.revealed {
+  opacity: 1;
+  transform: scale(1);
   transition:
     opacity 1s var(--ease-primary),
     transform 1.3s var(--ease-out-expo);
-}
-
-.reveal-zoom.revealed {
-  opacity: 1;
-  transform: scale(1);
 }
 
 /* underline links */
