@@ -67,9 +67,9 @@ export function CaseCard({
                 {project.category}
                 <span className="text-white/45"> · {year}</span>
               </p>
-              <h3 className="mt-2 font-display font-bold text-white tracking-[-0.02em] text-2xl sm:text-3xl md:text-5xl max-w-3xl">
+              <h2 className="mt-2 font-display font-bold text-white tracking-[-0.02em] text-2xl sm:text-3xl md:text-5xl max-w-3xl">
                 {project.title}
-              </h3>
+              </h2>
               <span className="mt-3 md:mt-5 inline-flex items-center gap-2 text-sm font-medium text-white">
                 Explore case
                 <ArrowUpRight
@@ -86,13 +86,13 @@ export function CaseCard({
       {/* variant="below": tight caption row: title left, category · year right */}
       {variant === "below" && (
         <div className="mt-4 flex items-baseline justify-between gap-4">
-          <h3
+          <h2
             className={`font-display font-bold tracking-[-0.02em] truncate ${
               featured ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"
             }`}
           >
             {project.title}
-          </h3>
+          </h2>
           <p className="flex shrink-0 items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted">
             {project.category}
             <span aria-hidden="true" className="text-ink-faint">

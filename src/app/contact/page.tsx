@@ -4,19 +4,21 @@ import Image from "next/image";
 import { Reveal } from "@/components/reveal";
 import { ContactForm } from "@/components/contact-form";
 import { contactPoints, site, whatToSend } from "@/lib/site";
+import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact | Start a Project in Windhoek, Namibia",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Start a Project in Windhoek",
   description:
-    "Start a project with The Tangison Studio in Windhoek West, Namibia. Tell us what you are working on, your timeline, and any budget constraints. We reply within two working days.",
-  alternates: { canonical: "/contact" },
-  openGraph: {
-    title: "Contact | The Tangison Studio",
-    description:
-      "Tell us what you are building. We reply to every serious enquiry within two working days.",
-    images: [{ url: "/images/og/contact.png", width: 1200, height: 630 }],
+    "Start a project with The Tangison Studio in Windhoek West, Namibia. Tell us what you are building, your timeline, and budget. Replies within two working days.",
+  path: "/contact",
+  ogTitle: "Contact | The Tangison Studio",
+  ogImage: {
+    url: "/images/og/contact.png",
+    width: 1200,
+    height: 630,
+    alt: "Contact The Tangison Studio to start a project in Windhoek.",
   },
-};
+});
 
 export default function ContactPage() {
   const gallery = [
@@ -36,6 +38,13 @@ export default function ContactPage() {
 
   return (
     <>
+      <JsonLdScript
+        data={pageJsonLd(
+          "Start a Project in Windhoek | The Tangison Studio",
+          "Start a project with The Tangison Studio in Windhoek West, Namibia. Tell us what you are building, your timeline, and budget. Replies within two working days.",
+          "/contact",
+        )}
+      />
       {/* ============ Header: one painting, one line ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-end">

@@ -3,20 +3,21 @@ import Image from "next/image";
 import { getArticleSummaries, getArticleCategories } from "@/lib/articles";
 import { BlogIndex } from "./blog-client";
 import { Reveal } from "@/components/reveal";
+import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Insights: AI Adoption, Web Design, and Brand in Namibia",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Insights: AI and Web Design in Namibia",
   description:
-    "Research-backed guides from The Tangison Studio: AI adoption playbooks for 20 Namibian industries, plus practical writing on web design, branding, and digital product work in Windhoek.",
-  alternates: { canonical: "/blog" },
-  openGraph: {
-    title: "The Tangison Studio: Insights",
-    description:
-      "AI adoption playbooks for Namibian industries, plus practical writing on web design and brand systems.",
-    type: "website",
-    images: [{ url: "/images/og/blog.png", width: 1200, height: 630 }],
+    "Research-backed guides from The Tangison Studio: AI adoption playbooks for Namibian industries, plus notes on web design and brand systems.",
+  path: "/blog",
+  ogTitle: "The Tangison Studio: Insights",
+  ogImage: {
+    url: "/images/og/blog.png",
+    width: 1200,
+    height: 630,
+    alt: "Insights from The Tangison Studio on AI adoption and web design in Namibia.",
   },
-};
+});
 
 export default function BlogPage() {
   // lean summaries: never ship 47 markdown bodies to the client
@@ -25,6 +26,13 @@ export default function BlogPage() {
 
   return (
     <div className="theme-ink bg-paper text-ink min-h-screen">
+      <JsonLdScript
+        data={pageJsonLd(
+          "Insights: AI and Web Design in Namibia | The Tangison Studio",
+          "Research-backed guides from The Tangison Studio: AI adoption playbooks for Namibian industries, plus notes on web design and brand systems.",
+          "/blog",
+        )}
+      />
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-32 md:pt-40 pb-10 md:pb-14">
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-end">
           <div>

@@ -1,7 +1,7 @@
 ---
 title: "Why AI in Africa Starts with Practical Problems"
 slug: "why-ai-in-africa-starts-with-practical-problems"
-description: "The most useful AI on the continent is not the most advanced. It is the kind that answers a question a business already has, and that changes what building it looks like."
+description: "The most useful AI on the continent is not the most advanced. It answers a question a business already has, and that changes what building it looks like."
 keywords: [AI in Africa, applied AI, AI adoption, Namibia, emerging markets, practical AI, Tangison]
 category: "Studio Notes"
 date: "2026-08-30"

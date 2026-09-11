@@ -17,8 +17,12 @@ import { Resend } from "resend";
 export const runtime = "nodejs";
 
 const TO = process.env.CONTACT_TO ?? "studio@tangison.com";
+// One sender for the whole estate: the tangison.com domain is the only
+// Resend-verified sending domain (contact@tangison.com). A
+// briefs@studio.tangison.com sender would be rejected by Resend with a
+// domain-not-verified error, so the form would silently break.
 const FROM =
-  process.env.CONTACT_FROM ?? "Studio <briefs@studio.tangison.com>";
+  process.env.CONTACT_FROM ?? "Tangison Studio <contact@tangison.com>";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

@@ -1,7 +1,7 @@
 ---
 title: "E-Commerce in Namibia: Getting Paid Online"
 slug: "e-commerce-payments-in-namibia"
-description: "The practical payment landscape for selling online in Namibia: the gateways that operate locally, what integration involves, and how local businesses actually close sales."
+description: "The payment picture for selling online in Namibia: the gateways that operate locally, what integration involves, and how local businesses actually close sales."
 keywords: [e-commerce Namibia, online payments Namibia, DPO Group, payment gateway, online shop, PayToday]
 category: "Design & Build"
 date: "2026-08-19"
@@ -13,7 +13,7 @@ author: "Tangi Iigonda"
 
 
 
-The question every Namibian retailer asks about selling online is not "can I build a shop", it is "how does the money arrive." The payment layer is the honest constraint, and it has become genuinely workable. Here is the landscape as it stands, and the decisions that follow from it.
+The question every Namibian retailer asks about selling online is not "can I build a shop", it is "how does the money arrive." The payment layer is the honest constraint, and it has become genuinely workable. Here is the picture as it stands, and the decisions that follow from it.
 
 ## The gateways that operate locally
 

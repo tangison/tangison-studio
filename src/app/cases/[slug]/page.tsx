@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { getProject, nextProject, projects } from "@/lib/projects";
 import { site } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -19,24 +20,26 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return {
-    title: {
-      absolute: `${project.name} Case Study | The Tangison Studio, Windhoek`,
-    },
+  // SERP title policy: the long legal name + suffix can run past the ~60
+  // char slot (e.g. Emerald Spa & Wellness Centre at 62), so fall back to
+  // the short project title when the branded form does not fit.
+  const branded = `${project.name} Case Study | The Tangison Studio`;
+  const pageTitle =
+    branded.length <= 60
+      ? branded
+      : `${project.title} Case Study | The Tangison Studio`;
+  return buildPageMetadata({
+    title: { absolute: pageTitle },
     description: project.description,
-    alternates: { canonical: `/cases/${project.slug}` },
-    openGraph: {
-      title: `${project.name} Case Study`,
-      description: project.description,
-      images: [
-        {
-          url: `/images/paintings/projects/${project.slug}.webp`,
-          width: 1200,
-          height: 900,
-        },
-      ],
+    path: `/cases/${project.slug}`,
+    ogTitle: `${project.name} Case Study`,
+    ogImage: {
+      url: `/images/paintings/projects/${project.slug}.webp`,
+      width: 1200,
+      height: 900,
+      alt: `${project.name}: case study by The Tangison Studio.`,
     },
-  };
+  });
 }
 
 /** Live-proof screenshot exists for shipped projects with a reachable site. */

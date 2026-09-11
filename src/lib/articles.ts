@@ -75,6 +75,8 @@ export function getArticles(): Article[] {
     out.push({
       slug,
       title: data.title ?? slug,
+      // Only set when present in frontmatter; undefined otherwise.
+      ...(data.seoTitle ? { seoTitle: data.seoTitle } : {}),
       description: data.description ?? "",
       keywords: parseKeywords(data.keywords),
       category: data.category ?? "Notes",

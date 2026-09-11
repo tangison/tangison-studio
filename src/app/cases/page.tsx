@@ -5,32 +5,56 @@ import { Reveal } from "@/components/reveal";
 import { CaseCard } from "@/components/case-card";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
+import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Cases | Studio Case Studies in Web, Brand, and Product Design",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Case Studies: Web, Brand, Product",
   description:
-    "Selected projects by The Tangison Studio, an independent practice in Windhoek, Namibia. Websites, applications, and brand systems for organizations across Africa.",
-  alternates: { canonical: "/cases" },
-  openGraph: {
-    title: "Cases | The Tangison Studio",
-    description:
-      "Websites, applications, and brand systems by The Tangison Studio for organizations across Africa.",
-    images: [{ url: "/images/og/cases.png", width: 1200, height: 630 }],
+    "Selected case studies by The Tangison Studio in Windhoek, Namibia: websites, applications, and brand systems for organizations across Africa.",
+  path: "/cases",
+  ogTitle: "Cases | The Tangison Studio",
+  ogImage: {
+    url: "/images/og/cases.png",
+    width: 1200,
+    height: 630,
+    alt: "Case studies by The Tangison Studio: web, brand, and product design.",
   },
-};
+});
 
 export default function CasesPage() {
   const [featured, ...rest] = projects;
 
   return (
     <div className="bg-paper text-ink min-h-screen">
+      <JsonLdScript
+        data={pageJsonLd(
+          "Case Studies: Web, Brand, Product | The Tangison Studio",
+          "Selected case studies by The Tangison Studio in Windhoek, Namibia: websites, applications, and brand systems for organizations across Africa.",
+          "/cases",
+        )}
+      />
       {/* ============ Gallery header: one painting, one line ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-end">
           <Reveal>
             <h1 className="h1">The work.</h1>
             <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
-              {projects.length} cases · 2015–{new Date().getFullYear()}
+              {projects.length} cases · 2015-{new Date().getFullYear()}
+            </p>
+            <p className="mt-6 max-w-2xl text-lg text-ink-muted leading-relaxed">
+              Brand systems, websites, applications, and e-commerce built for
+              organizations across Namibia and Southern Africa: offroad
+              specialists in Swakopmund, spas and skincare makers in Windhoek,
+              clearing agents at the coast, safari operators, music educators,
+              fuel distributors, and applied-AI systems in between. Each case
+              has its own page with what was asked for, what was built, and
+              what happened after launch, and where a site is live, the case
+              links to it as proof. That includes the projects that were
+              discontinued: the statuses are stated exactly as they stand,
+              because a portfolio that only shows the wins is not a
+              portfolio, it is a pitch. The paintings beside the cases are
+              the studio's own work, and the screenshots on shipped
+              projects are live captures.
             </p>
           </Reveal>
           <Reveal variant="zoom" delay={100}>

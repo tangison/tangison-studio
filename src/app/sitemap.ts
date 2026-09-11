@@ -13,7 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.7 },
     { url: `${site.url}/audit`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${site.url}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${site.url}/search`, lastModified: now, changeFrequency: "weekly", priority: 0.5 },
+    // /search is intentionally excluded: it is noindex (a utility page,
+    // not content) and a sitemap must list only indexable URLs.
   ];
   const casePages: MetadataRoute.Sitemap = projects.map((p) => ({
     url: `${site.url}/cases/${p.slug}`,

@@ -1,5 +1,6 @@
 ---
 title: "Mobile-First Web Design in Namibia: Designing for the Phones People Have"
+seoTitle: "Mobile-First Web Design in Namibia"
 slug: "mobile-first-web-design-namibia"
 description: "Most Namibian traffic is mobile and metered. What mobile-first means as a working method, and the design decisions that respect data, sun, and one-handed use."
 keywords: [mobile-first design, responsive design, mobile users Namibia, data cost, mobile UX, responsive website]

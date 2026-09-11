@@ -3,23 +3,32 @@ import Link from "next/link";
 import Image from "next/image";
 import { Reveal } from "@/components/reveal";
 import { capabilities, site } from "@/lib/site";
+import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Services | Studio and Intelligence, One Practice in Windhoek",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Services: Brand, Web, Product, AI",
   description:
-    "Seven outcome-led programs from The Tangison Studio in Windhoek. Brand systems, website development, application design, product design, design systems, applied AI.",
-  alternates: { canonical: "/services" },
-  openGraph: {
-    title: "Services | The Tangison Studio",
-    description:
-      "Brand, product, and the systems behind it. One studio instead of three vendors.",
-    images: [{ url: "/images/og/services.png", width: 1200, height: 630 }],
+    "Seven outcome-led programs from The Tangison Studio in Windhoek: brand systems, website development, product design, design systems, and applied AI.",
+  path: "/services",
+  ogTitle: "Services | The Tangison Studio",
+  ogImage: {
+    url: "/images/og/services.png",
+    width: 1200,
+    height: 630,
+    alt: "Studio and intelligence services from The Tangison Studio, Windhoek.",
   },
-};
+});
 
 export default function ServicesPage() {
   return (
     <div className="theme-ink bg-paper text-ink min-h-screen">
+      <JsonLdScript
+        data={pageJsonLd(
+          "Services: Brand, Web, Product, AI | The Tangison Studio",
+          "Seven outcome-led programs from The Tangison Studio in Windhoek: brand systems, website development, product design, design systems, and applied AI.",
+          "/services",
+        )}
+      />
       {/* ============ Header: one painting, one line ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-end">

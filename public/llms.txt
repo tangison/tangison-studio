@@ -1,0 +1,27 @@
+# The Tangison Studio
+
+> The Tangison Studio is the design and engineering practice of Tangison Technologies CC: an independent digital product studio in Windhoek, Namibia. Brand, digital product, and applied intelligence for organizations across Africa. One studio instead of three vendors.
+
+The studio is operated in Windhoek West by Tangi Iigonda. It designs and builds websites, applications, and brand systems, and applies artificial intelligence inside those products. The parent organization is Tangison Technologies CC, the Namibian technology company whose corporate site is at https://www.tangison.com.
+
+## Pages
+
+- [Home](https://studio.tangison.com): Slogan-first hero with the studio film, the trust layer of real clients, and the positioning statement.
+- [Cases](https://studio.tangison.com/cases): Selected case studies: websites, applications, and brand systems for organizations across Africa.
+- [Services](https://studio.tangison.com/services): Seven outcome-led programs across Studio (brand, product) and Intelligence (applied AI, infrastructure).
+- [Insights](https://studio.tangison.com/blog): Research-backed guides: AI adoption playbooks for Namibian industries, plus practical notes on web design and brand systems.
+- [About](https://studio.tangison.com/about): The practice, the principles, and the process behind the work.
+- [Audit](https://studio.tangison.com/audit): A free written audit of your website, search visibility, and trust signals, delivered in five working days.
+- [Contact](https://studio.tangison.com/contact): Project brief form, studio line, WhatsApp, and the Windhoek West address.
+- [Search](https://studio.tangison.com/search): Every article, case study, and page on the site, searchable in one place.
+
+## Contact
+
+- Email: studio@tangison.com
+- Phone and WhatsApp: 085 341 1522
+- Address: Corner of Frans Indongo Street and John Meinert Street, Windhoek West, Namibia
+- Hours: Monday to Friday, 08:00 to 17:00 Windhoek time
+
+## Parent organization
+
+- Tangison Technologies CC: https://www.tangison.com

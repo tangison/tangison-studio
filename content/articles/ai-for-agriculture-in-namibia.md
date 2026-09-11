@@ -40,7 +40,7 @@ The economic case is compelling. Early detection of disease outbreaks can preven
 
 The Otavi Grain Cooperative, representing over two hundred smallholder and commercial grain farmers in the fertile Otavi triangle, faced a persistent challenge: post-harvest losses averaging eighteen percent due to inadequate storage conditions, unpredictable market prices, and limited access to timely market information. With technical support from an agritech partner, the cooperative deployed an AI-powered platform that integrated weather forecasting, storage condition monitoring, and market price prediction.
 
-The results were transformative. Storage losses dropped to under five percent within the first season through AI-optimised ventilation and moisture control. Market price predictions enabled farmers to time their sales for maximum revenue, generating an average price improvement of twelve percent compared to the previous season's sales
+The results were far-reaching. Storage losses dropped to under five percent within the first season through AI-optimised ventilation and moisture control. Market price predictions enabled farmers to time their sales for maximum revenue, generating an average price improvement of twelve percent compared to the previous season's sales
 
 patterns. The cooperative also used the platform's yield prediction capabilities to negotiate better terms with bulk buyers, who valued the improved forecasting accuracy. Total economic benefit across the cooperative was estimated at seven million Namibian dollars in the first year, against a technology investment of one point two million.
 

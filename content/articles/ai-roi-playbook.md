@@ -26,7 +26,7 @@ AI returns typically materialise across three time horizons, each requiring diff
 
 Horizon One returns come from relatively straightforward AI applications that address clearly defined operational pain points. These typically involve automation of repetitive tasks, basic predictive analytics, or conversational AI for customer service. The investment required is modest, the implementation timeline is short, and the returns are tangible and easily measured. Examples include automated document processing that reduces manual data entry by sixty percent, demand forecasting that cuts inventory waste by twenty percent, or chatbot deployment that handles thirty percent of customer inquiries without human intervention.
 
-These quick wins serve a dual purpose: they deliver immediate financial returns that justify continued investment, and they build organisational confidence in AI capabilities. However, it is important not to overstate their strategic significance. Quick wins are necessary but not sufficient for realising the transformative potential of AI. Organisations that confine themselves to Horizon One applications risk creating a patchwork of point solutions that fail to generate compounding strategic value.
+These quick wins serve a dual purpose: they deliver immediate financial returns that justify continued investment, and they build organisational confidence in AI capabilities. However, it is important not to overstate their strategic significance. Quick wins are necessary but not sufficient for realising the far-reaching potential of AI. Organisations that confine themselves to Horizon One applications risk creating a patchwork of point solutions that fail to generate compounding strategic value.
 
 
 ## Horizon Two: Strategic Returns (Six to Eighteen Months)
@@ -107,7 +107,7 @@ distributions shift. Budget for ongoing monitoring, retraining, and replacement 
 
 - **Share success stories internally**: Visible success stories build organisational
 
-momentum and attract the talent and budget needed for larger AI initiatives. Document and communicate wins comprehensively.
+momentum and attract the talent and budget needed for larger AI initiatives. Document and communicate wins in full.
 
 
 ## Conclusion: ROI as a Discipline, Not a Destination

@@ -1,7 +1,7 @@
 ---
 title: "Website Accessibility: The WCAG Basics That Matter"
 slug: "website-accessibility-wcag-basics"
-description: "The checks that cover most real accessibility failures: contrast, keyboard use, alt text, and labels, why they matter and how to verify them without special training."
+description: "The checks that cover most real accessibility failures: contrast, keyboard use, alt text, and labels, and how to verify them without special training."
 keywords: [website accessibility, WCAG, screen reader, alt text, color contrast, keyboard navigation, inclusive design]
 category: "Design & Build"
 date: "2026-08-17"

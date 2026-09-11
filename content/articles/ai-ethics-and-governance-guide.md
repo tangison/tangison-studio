@@ -34,12 +34,12 @@ Individuals affected by AI-driven decisions have the right to understand how tho
 
 ## Privacy and Data Protection
 
-Namibia's data protection landscape is evolving, with the Data Protection Bill progressing through legislative processes. Responsible organisations should not wait for final legislation before implementing robust data protection practices. AI systems that process personal data must comply with the principles of data minimisation, purpose limitation, and consent. Special care must be taken with sensitive categories of data, including health records, biometric data, and information relating to children.
+Namibia's data protection framework is evolving, with the Data Protection Bill progressing through legislative processes. Responsible organisations should not wait for final legislation before implementing resilient data protection practices. AI systems that process personal data must comply with the principles of data minimisation, purpose limitation, and consent. Special care must be taken with sensitive categories of data, including health records, biometric data, and information relating to children.
 
 
 ## Accountability and Oversight
 
-Every AI system must have clearly designated human accountability. The allure of algorithmic decision-making is efficiency, but efficiency without accountability is a recipe for harm. Organisations must establish clear lines of responsibility for AI system outcomes, implement robust oversight mechanisms, and ensure that affected individuals have accessible channels for raising concerns and seeking redress.
+Every AI system must have clearly designated human accountability. The allure of algorithmic decision-making is efficiency, but efficiency without accountability is a recipe for harm. Organisations must establish clear lines of responsibility for AI system outcomes, implement solid oversight mechanisms, and ensure that affected individuals have accessible channels for raising concerns and seeking redress.
 
 
 ## Inclusive Benefit Sharing
@@ -68,7 +68,7 @@ Board Oversight Strategic direction and AI strategy review, risk tolerance Quart
 
 NamRights Advisory, a governance and compliance consultancy based in Windhoek, faced a particularly nuanced ethical challenge when it deployed an AI system to automate the initial screening of regulatory compliance reports for its clients. The system was highly effective at identifying potential compliance gaps, but early testing revealed that it was significantly more likely to flag reports from companies operating in northern Namibia, a region with historically different reporting conventions, as potentially non-compliant. This bias, while unintentional, would have resulted in disproportionate scrutiny of companies in regions with predominantly Oshiwambo-speaking business communities.
 
-The firm's AI Ethics Committee, established as part of its governance framework, identified the bias during a mandatory pre-deployment review. Rather than deploying the system and attempting to fix the bias post-hoc, the committee recommended a comprehensive data augmentation exercise that incorporated diverse regional reporting patterns into the training data. The resulting system performed equally well across all regions, and the firm's transparent communication about the bias discovery and remediation process enhanced its reputation for integrity. This case illustrates that ethical governance is not a constraint on innovation but a quality assurance mechanism that produces better, more reliable AI systems.
+The firm's AI Ethics Committee, established as part of its governance framework, identified the bias during a mandatory pre-deployment review. Rather than deploying the system and attempting to fix the bias post-hoc, the committee recommended a complete data augmentation exercise that incorporated diverse regional reporting patterns into the training data. The resulting system performed equally well across all regions, and the firm's transparent communication about the bias discovery and remediation process enhanced its reputation for integrity. This case illustrates that ethical governance is not a constraint on innovation but a quality assurance mechanism that produces better, more reliable AI systems.
 
 
 ## Implementation Toolkit

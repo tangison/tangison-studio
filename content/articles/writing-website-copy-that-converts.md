@@ -1,7 +1,7 @@
 ---
 title: "Writing Website Copy That Converts"
 slug: "writing-website-copy-that-converts"
-description: "The copy rules that survive contact with real visitors: specificity, structure, one idea per screen, and the discipline of answering the question the reader arrived with."
+description: "The copy rules that survive contact with real visitors: specificity, structure, one idea per screen, and answering the question the reader arrived with."
 keywords: [website copywriting, conversion copy, writing for the web, call to action, headline writing, UX writing]
 category: "Design & Build"
 date: "2026-08-10"

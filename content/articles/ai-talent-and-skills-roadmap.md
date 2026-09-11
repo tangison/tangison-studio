@@ -15,18 +15,18 @@ author: "Tangi Iigonda"
 
 The success of any AI initiative ultimately depends on people. Technology provides the tools, data provides the fuel, but it is skilled, motivated, and well-led people who transform potential into value. For Namibia, the talent challenge is both the most significant barrier to AI adoption and the greatest opportunity for differentiation. A nation that can build, attract, and retain AI talent will find itself at the centre of Africa's intelligent future. A nation that cannot will remain a consumer of others' innovations, perpetually dependent on external expertise and technology.
 
-This roadmap presents a comprehensive strategy for developing AI talent and skills across Namibia, addressing the needs of individuals, organisations, and the national ecosystem. It is grounded in the recognition that talent development is not a one-time investment but an ongoing commitment that must be sustained through economic cycles, technological shifts, and competitive pressures. The roadmap is designed to be actionable at every level, from individual career planning to national policy development.
+This roadmap presents a complete strategy for developing AI talent and skills across Namibia, addressing the needs of individuals, organisations, and the national ecosystem. It is grounded in the recognition that talent development is not a one-time investment but an ongoing commitment that must be sustained through economic cycles, technological shifts, and competitive pressures. The roadmap is designed to be actionable at every level, from individual career planning to national policy development.
 
-## The Namibian Talent Landscape
+## The Namibian Talent Pool
 
 Namibia's current AI talent pool is small but growing. The University of Namibia and the Namibia University of Science and Technology collectively produce fewer than one hundred graduates per year with relevant technical skills in computer science, statistics, and data analysis. Of these, a significant proportion emigrate within three years, attracted by higher salaries and greater professional opportunities in South Africa, Europe, and the Middle East. The resulting talent gap forces Namibian organisations to rely heavily on external consultants and vendors, increasing costs and reducing the rate of knowledge transfer.
 
-However, the picture is not uniformly bleak. Several factors create a foundation upon which a robust AI talent ecosystem can be built. Namibia's literacy rate exceeds ninety percent, providing a strong base for technical upskilling. The country's multilingual population, with most citizens speaking two or more languages, provides a natural advantage in natural language processing applications across African languages. The growing digital infrastructure, including expanding broadband access and mobile penetration, creates opportunities for remote learning and distributed work.
+However, the picture is not uniformly bleak. Several factors create a foundation upon which a solid AI talent ecosystem can be built. Namibia's literacy rate exceeds ninety percent, providing a strong base for technical upskilling. The country's multilingual population, with most citizens speaking two or more languages, provides a natural advantage in natural language processing applications across African languages. The growing digital infrastructure, including expanding broadband access and mobile penetration, creates opportunities for remote learning and distributed work.
 
 
 ## The AI Skills Framework
 
-Effective AI talent development requires a clear understanding of the skills landscape. The following framework categorises AI skills into four tiers, each representing different depths of expertise and different roles within the AI value chain.
+Effective AI talent development requires a clear understanding of the skills picture. The following framework categorises AI skills into four tiers, each representing different depths of expertise and different roles within the AI value chain.
 
 - **AI Literate**: Business leaders, managers, general staff. Understanding AI capabilities and limitations, identifying use cases, interpreting AI outputs, ethical awareness. Workshops, online courses, internal seminars.
 - **AI Practitioner**: Data analysts, business analysts, product managers. Data wrangling, basic modelling, prompt engineering, AI tool usage, project management for AI. Certification programmes, bootcamps, project-based learning.
@@ -43,7 +43,7 @@ The results exceeded expectations. Of the first cohort of twenty-five participan
 
 ## Strategic Recommendations
 
-Based on the analysis of Namibia's talent landscape and international best practices, the following strategic recommendations are offered for organisations, educational institutions, and policymakers seeking to accelerate AI talent development.
+Based on the analysis of Namibia's talent pool and international best practices, the following strategic recommendations are offered for organisations, educational institutions, and policymakers seeking to accelerate AI talent development.
 
 - **Establish AI apprenticeship programmes**: Formal apprenticeship structures that
 
@@ -51,7 +51,7 @@ combine structured learning with on-the-job experience provide the most effectiv
 
 - **Create AI talent retention incentives**: Financial incentives, professional
 
-development opportunities, and quality-of-life advantages should be leveraged to retain AI talent within Namibia. Specific measures include competitive salary benchmarks, research funding for AI professionals, and remote work policies that enable Namibian-based professionals to serve international clients.
+development opportunities, and quality-of-life advantages should be used to retain AI talent within Namibia. Specific measures include competitive salary benchmarks, research funding for AI professionals, and remote work policies that enable Namibian-based professionals to serve international clients.
 
 - **Invest in AI literacy at scale**: Every Namibian worker, regardless of role or industry, should have access to basic AI literacy training. This can be delivered through a combination of online platforms, employer-sponsored programmes, and community-based workshops. The goal is to create a workforce that can engage intelligently with AI tools and contribute to AI adoption decisions.
 

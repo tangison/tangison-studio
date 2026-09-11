@@ -42,9 +42,9 @@ export function ArticleCard({
             {formatDate(article.date)} · {article.readingMinutes} min
           </span>
         </p>
-        <h3 className="mt-2 font-display font-bold tracking-[-0.02em] text-lg sm:text-xl leading-snug group-hover:text-teal transition-colors duration-300">
+        <h2 className="mt-2 font-display font-bold tracking-[-0.02em] text-lg sm:text-xl leading-snug group-hover:text-teal transition-colors duration-300">
           {article.title}
-        </h3>
+        </h2>
         <p className="mt-2 text-[15px] leading-relaxed text-ink-muted line-clamp-2">
           {article.excerpt}
         </p>

@@ -3,23 +3,32 @@ import Link from "next/link";
 import Image from "next/image";
 import { Reveal } from "@/components/reveal";
 import { principles, site } from "@/lib/site";
+import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About | Independent Digital Product Practice in Windhoek",
+export const metadata: Metadata = buildPageMetadata({
+  title: "About the Studio in Windhoek",
   description:
-    "The Tangison Studio is an independent digital product practice in Windhoek, Namibia. We design focused websites, applications, and brand systems for ambitious organizations.",
-  alternates: { canonical: "/about" },
-  openGraph: {
-    title: "About | The Tangison Studio",
-    description:
-      "Independent digital product practice in Windhoek, Namibia. One studio instead of three vendors.",
-    images: [{ url: "/images/og/about.png", width: 1200, height: 630 }],
+    "The Tangison Studio is an independent practice in Windhoek, Namibia: focused websites, applications, and brand systems for ambitious organizations.",
+  path: "/about",
+  ogTitle: "About | The Tangison Studio",
+  ogImage: {
+    url: "/images/og/about.png",
+    width: 1200,
+    height: 630,
+    alt: "About The Tangison Studio, an independent digital product practice in Windhoek.",
   },
-};
+});
 
 export default function AboutPage() {
   return (
     <div className="theme-ink bg-paper text-ink min-h-screen">
+      <JsonLdScript
+        data={pageJsonLd(
+          "About the Studio in Windhoek | The Tangison Studio",
+          "The Tangison Studio is an independent practice in Windhoek, Namibia: focused websites, applications, and brand systems for ambitious organizations.",
+          "/about",
+        )}
+      />
       {/* ============ Header: one painting, one line ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-end">

@@ -6,6 +6,9 @@
 export interface Article {
   slug: string;
   title: string;
+  /** Optional shorter SERP title (absolute, no template suffix) for
+   *  articles whose natural title would run past the ~60 char SERP cap. */
+  seoTitle?: string;
   description: string;
   keywords: string[];
   category: string;

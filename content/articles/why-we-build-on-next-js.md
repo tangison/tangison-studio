@@ -1,7 +1,7 @@
 ---
 title: "Why We Build on Next.js (and What That Means for Clients)"
 slug: "why-we-build-on-next-js"
-description: "The engineering rationale behind our stack: static-first rendering, image and font handling, and why the technology choice shows up in the invoice as speed, not jargon."
+description: "The engineering rationale behind our stack: static-first rendering, image and font handling, and why it shows up in the invoice as speed, not jargon."
 keywords: [Next.js, React, web development framework, static site generation, website performance, web stack]
 category: "Design & Build"
 date: "2026-08-21"

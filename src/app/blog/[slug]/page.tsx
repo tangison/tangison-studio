@@ -14,6 +14,7 @@ import {
   relatedArticles,
 } from "@/lib/articles";
 import { site } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return getArticles().map((a) => ({ slug: a.slug }));
@@ -27,24 +28,32 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = getArticle(slug);
   if (!article) return {};
+  // SERP title policy: prefer an explicit seoTitle; else keep the branded
+  // template when it fits the ~60 character SERP slot; else drop the
+  // suffix and ship the article title alone (45-57 chars).
+  const branded = `${article.title} | Tangison Studio`;
+  const pageTitle = article.seoTitle
+    ? { absolute: article.seoTitle }
+    : branded.length <= 60
+      ? { absolute: branded }
+      : { absolute: article.title };
   return {
-    title: { absolute: `${article.title} | Tangison Studio` },
-    description: article.description,
-    keywords: article.keywords,
-    alternates: { canonical: `/blog/${article.slug}` },
-    openGraph: {
-      title: article.title,
+    ...buildPageMetadata({
+      title: pageTitle,
       description: article.description,
+      path: `/blog/${article.slug}`,
+      ogTitle: article.title,
+      ogImage: {
+        url: article.image,
+        width: 1200,
+        height: 675,
+        alt: article.title,
+      },
       type: "article",
       publishedTime: `${article.date}T08:00:00+02:00`,
-      authors: [article.author],
-      images: [{ url: article.image, width: 1200, height: 675 }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: article.title,
-      description: article.description,
-    },
+      articleAuthor: article.author,
+    }),
+    keywords: article.keywords,
   };
 }
 
