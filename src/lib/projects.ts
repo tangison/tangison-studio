@@ -145,7 +145,9 @@ export const projects: Project[] = [
     description:
       "A spa and wellness centre at 7 Blackett Street, Windhoek West, 90 treatments across massage, facials, hydrotherapy, nails, lashes and hair removal, open seven days.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
-    live: "https://emeraldspacc.com",
+    // Live site suspended by its host (HTTP 402 on apex and www, checked 2026-09-13);
+    // link removed so the portfolio carries no dead external URL. Restore `live`
+    // if the client's site comes back online.
     tech: ["Next.js", "Tailwind CSS"],
     case: {
       challengeSub: "Want something like this?",
