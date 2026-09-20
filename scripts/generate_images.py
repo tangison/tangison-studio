@@ -236,6 +236,10 @@ _p("giftedwithpurpose", 21057,
 _p("emeraldspacc", 21058,
    "soft spa still life with folded warm towels, eucalyptus leaves and "
    "gentle steam light")
+_p("smarth2o", 21059,
+   "soft impressionist oil painting still life of a clear water refill "
+   "bottle, two drinking glasses and a small ceramic water jug on a cream "
+   "counter, visible painterly brush strokes")
 
 
 # ---------------------------------------------------------------- fetch ----

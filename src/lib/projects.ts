@@ -32,6 +32,58 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "smarth2o",
+    name: "Smart H₂O Solutions and Trading CC",
+    title: "Smart H₂O",
+    category: "Water vending",
+    eyebrow: "Water Vending · 2026",
+    short: "Purified water where people already are.",
+    description:
+      "Water-refill vending machines for Namibian campuses, hospitals, workplaces and public facilities. Smart H₂O installs, services and monitors the machines; the host provides the location, water and power. Windhoek based.",
+    tags: ["Website Design", "Website Development", "Content Structure"],
+    live: "https://smarth2o.com.na",
+    tech: ["Next.js", "Tailwind CSS"],
+    case: {
+      challengeSub: "Want something like this?",
+      approachSub: "The host provides the basics. Smart H₂O runs the machine.",
+      challenge: [
+        "A Windhoek water business needed a site that could explain an unfamiliar model: a vending machine that purifies water on site, hosted by the institution it serves.",
+        "Smart H₂O Solutions and Trading CC installs and maintains water-refill machines where people already spend their day: campuses, hospitals, workplaces and public facilities. The model splits cleanly. The host provides a suitable location, a water supply and electrical power. Smart H₂O handles installation and commissioning, filter changes and sanitation, servicing and customer support. People refill their own bottles, cashless or prepaid, and the company keeps the machines running. None of that fits a normal product page, because the buyer is not the user. The host decides; hundreds of refillers use.",
+        "The audience is two-sided. An institution asks one set of questions: what do we provide, what do you cover, what plays on the screen, and what are the terms. An advertiser asks another: where do the machines sit, how does host approval work, what does a placement cost. Both had to leave the same site with their answers, and neither should have to read the other's page to find them.",
+        "The brief was to state the model in plain words, walk the four-step process from site assessment to monitoring, publish the quality discipline without making health claims the company does not make, and route every path to one action: request a site assessment.",
+      ],
+      approach: [
+        "The host provides the basics. Smart H₂O runs the machine.",
+        "The site is split the way the business is split. Vending explains the host model and the two unit types, branded refill unit or plain unit, with what each side provides written out in lists, because the split is the product. Institutions has its own section for campuses, hospitals, workplaces and public facilities, each stated with how the machine actually behaves there: class-change capacity on a campus, announcements on the screen, final terms in the institutional agreement.",
+        "The process is four steps, numbered and honest: site assessment (visit, check water, power and foot traffic, pick the spot), agreement (terms in writing), installation (delivered, installed, commissioned, refilling starts), monitoring (scheduled filters, sanitation, servicing, local response). Assessments in Windhoek are arranged directly with the team. The advertising section states the screen model plainly: the hosting institution's messaging comes first, remaining slots open to advertisers the institution approves.",
+        "The quality page carries the discipline without overclaiming: treatment runs inside the machine and is checked on a service schedule, no health claims, local technical response, filters and sanitation between visits. A contact section with one form and a WhatsApp line closes it, and the footer credits the build: Made by Tangison Studio.",
+      ],
+      outcome: [
+        "A site that explains a two-sided model without scrambling it.",
+        "Smart H₂O launched with the host model, the four-step process, the institution and advertising tracks, and the quality discipline all published in the company's own words. A facilities manager can read what their side owes and what Smart H₂O covers in under a minute; an advertiser can see the placement and approval path without wading through the vending story.",
+        "The pattern holds for institutional products in Namibia: name both audiences, split the site the way the deal is split, publish the process, and keep the claims inside what the company actually does. The machine purifies water on a schedule; the site does the same for information.",
+      ],
+      craft: [
+        {
+          title: "Buyer and user, both served",
+          body: "The host decides, the refillers use. Vending, Institutions, Advertising and Process each speak to the person reading it, and neither audience has to cross into the other's pages to get its answer.",
+        },
+        {
+          title: "The split is the product",
+          body: "What the host provides (location, water supply, power) and what Smart H₂O provides (installation, filters, sanitation, servicing, support) is written out in lists. The clean division is the pitch, so the design refuses to blur it.",
+        },
+        {
+          title: "Quality without health claims",
+          body: "Treatment checked on a service schedule, local technical response, filters and sanitation between visits. The quality page says what the company does and stops exactly where the evidence stops.",
+        },
+        {
+          title: "One action per track",
+          body: "Request a site assessment, host a machine, advertise on the screens, or send an enquiry. Every section ends at the action its reader actually needs, with WhatsApp always one tap away.",
+        },
+      ],
+    },
+  },
+  {
     slug: "oci",
     name: "Oom Carlo's Investments CC",
     title: "Oom Carlo's",

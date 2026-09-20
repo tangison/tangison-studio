@@ -5,7 +5,7 @@ import { Reveal } from "@/components/reveal";
 export const metadata: Metadata = {
   title: "Search: Articles, Cases, and Pages",
   description:
-    "Search everything on The Tangison Studio: 47 research-backed articles on AI adoption in Namibia, 18 case studies, and every page of the studio.",
+    "Search everything on The Tangison Studio: 47 research-backed articles on AI adoption in Namibia, 19 case studies, and every page of the studio.",
   alternates: { canonical: "/search" },
   robots: { index: false, follow: true },
 };
