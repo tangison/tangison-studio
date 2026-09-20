@@ -37,6 +37,21 @@ export function SiteFooter() {
                   Free audit
                 </Link>
               </li>
+              <li>
+                <Link href="/brand" className="text-ink-muted hover:text-ink link-underline">
+                  Brand system
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="text-ink-muted hover:text-ink link-underline">
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="text-ink-muted hover:text-ink link-underline">
+                  Terms
+                </Link>
+              </li>
             </ul>
           </nav>
 
@@ -59,7 +74,15 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-line flex flex-col sm:flex-row justify-between gap-3">
-          <p className="text-sm text-ink-faint">{site.copyright}</p>
+          <p className="text-sm text-ink-faint">
+            {site.copyright} · Made by{" "}
+            <a
+              href="https://studio.tangison.com"
+              className="text-ink-faint hover:text-ink link-underline"
+            >
+              Tangison Studio
+            </a>
+          </p>
           <p className="text-sm text-ink-faint">{site.hours}</p>
         </div>
       </div>
