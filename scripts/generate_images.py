@@ -236,10 +236,15 @@ _p("giftedwithpurpose", 21057,
 _p("emeraldspacc", 21058,
    "soft spa still life with folded warm towels, eucalyptus leaves and "
    "gentle steam light")
-_p("smarth2o", 21059,
-   "soft impressionist oil painting still life of a clear water refill "
-   "bottle, two drinking glasses and a small ceramic water jug on a cream "
-   "counter, visible painterly brush strokes")
+# smarth2o v2: re-aligned to the standard soft style shared by every other
+# case cover (the v1 impressionist direction stood out in the gallery);
+# new pinned seed so the redo is a fresh Pollinations roll, not a cache hit.
+_p("smarth2o", 21060,
+   "soft still life of a clear water refill bottle, two drinking glasses "
+   "and a small ceramic water jug on a cream counter")
+_p("c4studentstay", 21061,
+   "soft still life of a tidy student room corner with a bunk bed frame, a "
+   "study desk with textbooks and a set of keys on cream linen")
 
 
 # ---------------------------------------------------------------- fetch ----

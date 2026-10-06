@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import { SearchClient } from "./search-client";
 import { Reveal } from "@/components/reveal";
+import { projects } from "@/lib/projects";
+import { getArticleSummaries } from "@/lib/articles";
+
+// Counts computed from the source of truth so the copy can never go stale
+// (this line previously hardcoded "47 articles, 19 case studies").
+const articleCount = getArticleSummaries().length;
+const caseCount = projects.length;
 
 export const metadata: Metadata = {
   title: "Search: Articles, Cases, and Pages",
-  description:
-    "Search everything on The Tangison Studio: 47 research-backed articles on AI adoption in Namibia, 19 case studies, and every page of the studio.",
+  description: `Search everything on The Tangison Studio: ${articleCount} research-backed articles on AI adoption in Namibia, ${caseCount} case studies, and every page of the studio.`,
   alternates: { canonical: "/search" },
   robots: { index: false, follow: true },
 };

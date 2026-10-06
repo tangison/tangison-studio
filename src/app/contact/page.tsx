@@ -9,7 +9,7 @@ import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Start a Project in Windhoek",
   description:
-    "Start a project with The Tangison Studio in Windhoek West, Namibia. Tell us what you are building, your timeline, and budget. Replies within two working days.",
+    "Start a project with The Tangison Studio in Windhoek West, Namibia. Tell us what you are building, your timeline and budget. Replies within two days.",
   path: "/contact",
   ogTitle: "Contact | The Tangison Studio",
   ogImage: {

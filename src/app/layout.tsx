@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | The Tangison Studio",
   },
   description:
-    "Independent digital product studio in Windhoek, Namibia. Brand, websites, and applied intelligence for organizations across Africa. One studio, not three vendors.",
+    "Independent digital product studio in Windhoek, Namibia. Brand, websites and applied intelligence for organizations across Africa. One studio, not three.",
   alternates: { canonical: "/" },
   authors: [{ name: site.founder, url: site.url }],
   creator: site.founder,

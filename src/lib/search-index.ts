@@ -17,14 +17,9 @@ export interface SearchEntry {
   haystack: string;
 }
 
+/** Static page entries except /cases, which carries live counts and is
+ *  built in buildSearchIndex so the numbers can never go stale. */
 const PAGES: { title: string; href: string; meta: string; excerpt: string }[] = [
-  {
-    title: "Cases: our work",
-    href: "/cases",
-    meta: "Gallery · 15 case studies",
-    excerpt:
-      "All fifteen case studies: brand systems, websites, and platforms built in and beyond Namibia.",
-  },
   {
     title: "Services: what we do",
     href: "/services",
@@ -64,6 +59,17 @@ const PAGES: { title: string; href: string; meta: string; excerpt: string }[] = 
 
 export function buildSearchIndex(): SearchEntry[] {
   const entries: SearchEntry[] = [];
+
+  // /cases page entry with live counts (was hardcoded "15 case studies"
+  // while the gallery grew to 19; now computed so it stays true forever).
+  entries.push({
+    type: "page",
+    title: "Cases: our work",
+    href: "/cases",
+    meta: `Gallery · ${projects.length} case studies`,
+    excerpt: `All ${projects.length} case studies: brand systems, websites, and platforms built in and beyond Namibia.`,
+    haystack: "cases our work gallery case studies brand systems websites platforms namibia",
+  });
 
   for (const a of getArticles()) {
     // headings from the body make searches like "checklist" or "roadmap"

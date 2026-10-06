@@ -6,7 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Insights: AI and Web Design in Namibia",
+  title: "AI and Web Design Insights Namibia",
   description:
     "Research-backed guides from The Tangison Studio: AI adoption playbooks for Namibian industries, plus notes on web design and brand systems.",
   path: "/blog",

@@ -4,7 +4,7 @@ import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Brand System",
   description:
-    "The Tangison Studio brand system: the editorial genre, the locked palette of bone, Atlantic black, and Signal Teal, the type stack, and the rules every page obeys.",
+    "The Tangison Studio brand system: the editorial genre, the locked palette of bone, Atlantic black and Signal Teal, the type stack, and the page rules.",
   path: "/brand",
   ogTitle: "Brand System | The Tangison Studio",
 });

@@ -8,7 +8,7 @@ import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Free Website Audit in Namibia",
   description:
-    "Free audit of your website, search visibility and social presence. A Windhoek studio checks speed, mobile, SEO and trust signals, then sends a written report.",
+    "Free audit of your website, search visibility and social presence. A Windhoek studio checks speed, mobile, SEO and trust, then sends a written report.",
   path: "/audit",
   ogTitle: "Free Website Audit | The Tangison Studio",
   ogImage: {

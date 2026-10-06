@@ -32,6 +32,57 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "c4studentstay",
+    name: "C4 Student Accommodations CC",
+    title: "C4 Student Stay",
+    category: "Student housing",
+    eyebrow: "Student Housing · 2026",
+    short: "Everything a student needs, already in the rate.",
+    description:
+      "Fully furnished student accommodation in Khomasdal and Rocky Crest, Windhoek. One monthly rate covers the room, fibre Wi-Fi, cleaning and laundry.",
+    tags: ["Website Design", "Website Development", "Content Structure"],
+    live: "https://c4studentstay.com",
+    tech: ["Next.js", "Tailwind CSS"],
+    case: {
+      challengeSub: "Want something like this?",
+      approachSub: "The rate is the promise. The site keeps it itemized.",
+      challenge: [
+        "Student housing in Windhoek is usually sold in fragments: a room number, then utilities extra, Wi-Fi extra, cleaning nobody promised. C4 Student Accommodations CC runs student stays in Khomasdal and Rocky Crest on the opposite model. One rate of N$2,800 per person per month already includes the furnished room, fibre Wi-Fi, cleaning, laundry and hot water, and a N$2,000 deposit secures a spot for the 2027 academic year.",
+        "The audience is two-sided, and the two sides worry about different things. Students ask what the room is actually like, whether the Wi-Fi holds up for online lectures, and what the house provides before they arrive. Parents ask the harder questions: is the house safe, who is on site, and what exactly happens between the deposit and move-in day. A site that answered only one side would lose the other before the first WhatsApp message.",
+        "The booking behaviour set the shape of the brief. Bookings for 2027 run on WhatsApp and most are finished the same day: a message, the deposit, a confirmed room. So the site had to state the rate item by item, show the real rooms photographed this year, publish the three-step booking path, and route every page to one WhatsApp number, +264 81 437 8400, without ever pretending to be a booking engine.",
+      ],
+      approach: [
+        "The rate is the promise. The site keeps it itemized.",
+        "The rooms page lists what is waiting before arrival: bunk beds with mattresses, bedding and linen, a study desk and charging cables, crockery, cutlery, a microwave and a kettle, an iron and ironing board, hot water. The framing line does the selling: every item below is inside the N$2,800 monthly rate, nothing here is an extra. A second pass, the rate item by item, walks the same number through fibre Wi-Fi and the study area with free PC use, cleaning and laundry, the shared kitchen, and the honest edges: the shuttle is paid, printing costs a small fee. What a month does not buy is in the same breath as what it does.",
+        "The booking page is three steps and one conversation: message the house on WhatsApp, secure the spot with the N$2,000 deposit, arrive to a room that is furnished and made up. The contact block repeats the same three routes, WhatsApp, call, info@c4studentstay.com, with the line that a person answers, not a bot. The FAQ carries the questions parents actually ask, safety, location, transport, the deposit, in plain answers.",
+        "One decision matters more than it looks. The reviews on the site are labeled as samples: verified resident stories will be added as the 2027 residents move in. Until the stories are real, the site says so in the same panel. The footer closes with the studio credit: Made by Tangison Studio.",
+      ],
+      outcome: [
+        "A site that sells one number and explains every line of it.",
+        "C4 launched for the 2027 intake with the rate itemized, the rooms shown as photographed this year, and the WhatsApp booking path one tap from every page. A parent can read what the N$2,800 covers and what it does not in under a minute; a student can see the room, the study area and the transport answer without hunting. The booking conversation starts with both sides already briefed.",
+        "The pattern holds for subscription-style local services in Namibia: publish the rate as a list, state the exclusions with the inclusions, keep one action per page, and label every claim that is not yet proven. An honest rate survives a parent's second reading; a vague one does not survive the first.",
+      ],
+      craft: [
+        {
+          title: "One rate, zero fine print",
+          body: "The N$2,800 monthly rate is itemized twice, as room contents and as monthly services, and the exclusions sit beside the inclusions. No surprise line items means no refund conversations later.",
+        },
+        {
+          title: "Two audiences, one house",
+          body: "Students read the rooms, the Wi-Fi and the study area. Parents read the on-site team, the safety answers and the deposit terms. Same pages, different reassurances, no separate funnel for either.",
+        },
+        {
+          title: "Sample reviews, labeled as samples",
+          body: "Until verified 2027 resident stories exist, the review panel says exactly that. Trust is built by disclosure, not by invented quotes, and the label itself becomes a proof of how C4 communicates.",
+        },
+        {
+          title: "WhatsApp closes the booking",
+          body: "Every Book Now button opens the same +264 81 437 8400 chat. Three steps, most bookings finished the same day, and the site never asks a student to fill in a form the house would answer faster in chat.",
+        },
+      ],
+    },
+  },
+  {
     slug: "smarth2o",
     name: "Smart H₂O Solutions and Trading CC",
     title: "Smart H₂O",
@@ -39,7 +90,7 @@ export const projects: Project[] = [
     eyebrow: "Water Vending · 2026",
     short: "Purified water where people already are.",
     description:
-      "Water-refill vending machines for Namibian campuses, hospitals, workplaces and public facilities. Smart H₂O installs, services and monitors the machines; the host provides the location, water and power. Windhoek based.",
+      "Water-refill vending machines for Namibian campuses, hospitals and public facilities. Smart H₂O installs, services and monitors; hosts provide the site.",
     tags: ["Website Design", "Website Development", "Content Structure"],
     live: "https://smarth2o.com.na",
     tech: ["Next.js", "Tailwind CSS"],
@@ -91,7 +142,7 @@ export const projects: Project[] = [
     eyebrow: "Family Investment Group · 2026",
     short: "One family. Six services. One standard.",
     description:
-      "A Namibian family company running transport, fleet, consultancy, real estate, construction, mechanical and security since 2014, under one accountable standard.",
+      "A Namibian family company running transport, fleet, consultancy, real estate, construction, mechanical and security since 2014, under one standard.",
     tags: ["Website Design", "Website Development", "Content Structure"],
     live: "https://oci.com.na",
     tech: ["Next.js", "Tailwind CSS"],
