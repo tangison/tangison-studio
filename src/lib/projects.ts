@@ -39,7 +39,7 @@ export const projects: Project[] = [
     eyebrow: "Restaurant & Bar · 2026",
     short: "The braai corner of Swakopmund, two taps away.",
     description:
-      "Flame-grilled plates, pap and chakalaka, seafood and ice-cold draught on the corner of Aaron Edward and Kovambo Nujoma Street, Swakopmund. Orders and bookings run on WhatsApp.",
+      "Flame-grilled plates, pap and chakalaka, seafood and ice-cold draught on a Swakopmund corner. Orders and bookings run on WhatsApp.",
     tags: ["Website Design", "Website Development", "Content Structure"],
     live: "https://www.c4restaurant.com",
     tech: ["Next.js", "Tailwind CSS"],
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     eyebrow: "Trade Services · 2026",
     short: "Eight trade services. One number to call.",
     description:
-      "Air conditioning, refrigeration, electrical work, cleaning, construction and maintenance for government, mining, retail and hospitality clients across Namibia, since 2016.",
+      "Air conditioning, refrigeration, electrical work, cleaning and maintenance for government, mining, retail and hospitality clients across Namibia, since 2016.",
     tags: ["Website Design", "Website Development", "Content Structure"],
     live: "https://mundesha.com",
     tech: ["Astro", "Custom CSS"],
