@@ -245,6 +245,22 @@ _p("smarth2o", 21060,
 _p("c4studentstay", 21061,
    "soft still life of a tidy student room corner with a bunk bed frame, a "
    "study desk with textbooks and a set of keys on cream linen")
+_p("kalinasho", 21062,
+   "soft still life of harvested maize cobs, fresh vegetables and a woven "
+   "market basket on a farm table")
+# mundesha v3 + c4restaurant v4: Flux kept photographing the subjects.
+# mundesha landed painterly with the medium named. The braai grill and
+# charcoal pulled dark, high-contrast renders, so the c4restaurant cover
+# moved to the plated meal on a pale surface, the treatment the rest of
+# the gallery uses; shared STYLE suffix unchanged.
+_p("mundesha", 21067,
+   "soft oil painting still life of a worn wooden toolbox, a coil of "
+   "electrical wire and a brass wrench resting on cream linen, gentle "
+   "visible brush strokes")
+_p("c4restaurant", 21071,
+   "soft oil painting still life of a braai platter with grilled wors, "
+   "pap and chakalaka, fresh bread rolls, a cool drink and a sage green "
+   "napkin on a pale cream linen table, gentle visible brush strokes")
 
 
 # ---------------------------------------------------------------- fetch ----

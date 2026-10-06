@@ -32,6 +32,159 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "c4restaurant",
+    name: "C4 Restaurant & Bar CC",
+    title: "C4 Restaurant",
+    category: "Restaurant & bar",
+    eyebrow: "Restaurant & Bar · 2026",
+    short: "The braai corner of Swakopmund, two taps away.",
+    description:
+      "Flame-grilled plates, pap and chakalaka, seafood and ice-cold draught on the corner of Aaron Edward and Kovambo Nujoma Street, Swakopmund. Orders and bookings run on WhatsApp.",
+    tags: ["Website Design", "Website Development", "Content Structure"],
+    live: "https://www.c4restaurant.com",
+    tech: ["Next.js", "Tailwind CSS"],
+    case: {
+      challengeSub: "Want something like this?",
+      approachSub: "No forms, no accounts. The menu ends in a WhatsApp chat.",
+      challenge: [
+        "A braai restaurant on a corner in Swakopmund needed a site that could take orders without a booking engine. C4 Restaurant & Bar CC cooks the food people actually want after a day on the beach or the site: pap and chakalaka, wors straight off the coals, fresh hake, an oxtail that took its time. The bar keeps pouring after the kitchen closes. The site had to work for both moods.",
+        "The audience orders on the move. Regulars decide dinner while walking to the corner of Aaron Edward and Kovambo Nujoma Street, behind the blue fence they have driven past a hundred times. Nobody in that moment creates an account or types a card number. On the coast the order path that actually works is a WhatsApp message, and the site had to end there from every screen.",
+        "The brief was to publish the menus with real prices in Namibian dollars, show the patio and the plates from the pass, state the hours honestly, kitchen till 21:00, bar till late, and make ordering and booking a two-tap conversation instead of a checkout.",
+      ],
+      approach: [
+        "No forms, no accounts. The menu ends in a WhatsApp chat.",
+        "The menu is the site. Five groups, Starters & salads, From the braai, Mains & stews, Takeaway & breakfast and From the bar, carry the plates with their prices in plain rows, from the house salad at N$55 to the squid and pineapple platter at N$120. Nothing hides behind a PDF, and every price is edited in one content file, so the page tells the truth again the same day the kitchen changes it.",
+        "The order path is a basket that ends in a chat. Tap the plates, the basket keeps the list, and the order button opens WhatsApp with the list pre-written. The restaurant confirms the total and the prep time in the reply. Booking a table is the same motion: one tap, one message to the same numbers, landline 083 783 7780, mobile and WhatsApp 081 400 6471.",
+        "The rest of the site answers the corner questions. The Bar states the draught, wine, gin and cocktail offer and that the patio does not have to close when the kitchen does. The Gallery shows plates from the pass, Find us carries the map, the hours from 11:00 daily and the good-to-know details, and the takeaway counter packs boxes that travel, from breakfast boxes to the braai pack for two. The footer closes with the studio credit: Made by Tangison Studio.",
+      ],
+      outcome: [
+        "A restaurant site that takes orders the way the coast actually orders.",
+        "C4 launched with the full menu, the bar list, the gallery and the WhatsApp order path live on every screen. The owner changes prices, plates, hours and FAQ answers in one content file without touching code, and the site stays fast on mobile data because it is static content with no cart, no accounts and no tracking weight.",
+        "The pattern holds for Namibian hospitality: sell the food with real prices, state the hours honestly, and end every path in the conversation the kitchen already answers. A website cannot smell like a braai, but it can get the order there before the coals cool.",
+      ],
+      craft: [
+        {
+          title: "The basket that becomes a chat",
+          body: "Tapping plates builds an order on the page, and the send step opens WhatsApp with the list pre-written. No checkout, no account, and the restaurant confirms the total and prep time in the reply it was already going to send.",
+        },
+        {
+          title: "Prices in the open",
+          body: "Every plate carries its price in Namibian dollars on the page, from the house salad at N$55 to the calamari strips at N$85. Regulars decide faster when the numbers are visible before the tap.",
+        },
+        {
+          title: "Honest hours, honest corner",
+          body: "Open daily from 11:00, kitchen till 21:00, bar till late, behind the blue fence on Aaron Edward and Kovambo Nujoma Street. The site describes the place as it is, sand between your feet and the street.",
+        },
+        {
+          title: "One file to run it",
+          body: "Phone numbers, menu groups, bar list, hours, FAQ answers and gallery photos all live in a single content file. The owner changes a price or a dish without a developer, and the build stays static and quick.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "mundesha",
+    name: "Mundesha Investment One CC",
+    title: "Mundesha",
+    category: "Trade services",
+    eyebrow: "Trade Services · 2026",
+    short: "Eight trade services. One number to call.",
+    description:
+      "Air conditioning, refrigeration, electrical work, cleaning, construction and maintenance for government, mining, retail and hospitality clients across Namibia, since 2016.",
+    tags: ["Website Design", "Website Development", "Content Structure"],
+    live: "https://mundesha.com",
+    tech: ["Astro", "Custom CSS"],
+    case: {
+      challengeSub: "Want something like this?",
+      approachSub: "Eight services under one roof, routed in the first screen.",
+      challenge: [
+        "A Windhoek trade services company had to explain eight lines of work without sounding like eight different companies. Mundesha Investment One CC has served government, mining, retail and hospitality clients since 2016: air conditioning, refrigeration, electrical works, cleaning, construction and tiling, catering and events, supply and logistics, maintenance and repairs. The owner carries over 20 years in electrical, air conditioning and refrigeration alone.",
+        "The audience is institutional. A facilities manager at a mine, a government procurement officer or a hotel group asks three questions fast: do you actually do this trade, do you reach my region, and can I check your record. Mundesha works across Omaheke, Erongo, Otjozondjupa, Oshana, Oshikoto and Khomas, with a project record from 2016 to 2025 that includes Swakop Uranium, GIPF, Coca-Cola and the Ministry of Justice. That record is the pitch, and it had to be published, not summarized.",
+        "The brief was to keep the company's own line, Your needs, Our Business, present the eight services as one team under one number, +264 81 277 7553, publish the project record with named clients, and make Request a quote the single action every page supports.",
+      ],
+      approach: [
+        "Eight services under one roof, routed in the first screen.",
+        "The home page answers with the promise the owner makes on site: one number to call, one team that shows up. Each of the eight services gets its own page with its own scope, split units for offices, clinics, schools and government buildings; cold rooms, freezer rooms and reefer service; distribution boards, underground cable, solar gates; commercial cleaning delivered to site; renovations, water tank stands, brickwork and tiling; catering for corporate and site clients; supply and delivery of maintenance equipment; laundry machinery, hot water systems and general building maintenance. A buyer picks their trade in the first screen and never reads the other seven.",
+        "The numbers stand where procurement looks for them. Founded 2016, over 20 years of owner experience, six regions served, and a project record from 2016 to 2025 naming Swakop Uranium, GIPF, Coca-Cola and the Ministry of Justice. In institutional buying, a checkable name with a date beats an adjective, so the record is a page, not a logo wall.",
+        "The process is four steps, stated plainly: tell the team what you need by call, WhatsApp or form, get the quote, the job runs, the site is left clean. Every page ends at Request a quote or the phone number, and the footer closes with the studio credit: Made by Tangison Studio.",
+      ],
+      outcome: [
+        "A site that shows one accountable team behind eight trades.",
+        "Mundesha launched with all eight services, the regional footprint, the named project record and one quote path on every page. A procurement officer can verify the record in one visit, and a facilities manager can dial +264 81 277 7553 from any screen without hunting for a contact page.",
+        "The pattern holds for multi-trade Namibian contractors: route by trade, not by company structure, publish the record with names and dates, and keep one action per page. Eight doors into one house works better than one crowded hallway.",
+      ],
+      craft: [
+        {
+          title: "Routed by trade",
+          body: "Each service owns a page with its real scope, from reefer units to solar gates. A mining facilities manager lands on refrigeration without reading past seven other trades to find it.",
+        },
+        {
+          title: "The record is the pitch",
+          body: "Swakop Uranium, GIPF, Coca-Cola and the Ministry of Justice, with dates from 2016 to 2025, published as a page. Institutional buyers check claims; the site hands them the names to check.",
+        },
+        {
+          title: "Six regions, stated",
+          body: "Omaheke, Erongo, Otjozondjupa, Oshana, Oshikoto and Khomas are written out, not implied by a map. Reach is a promise a buyer can hold the company to.",
+        },
+        {
+          title: "One number closes it",
+          body: "Request a quote, call, or WhatsApp all end at +264 81 277 7553. Eight services, one conversation, no form that swallows an urgent job.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "kalinasho",
+    name: "Kalinasho Trading Enterprises CC",
+    title: "Kalinasho",
+    category: "Food supply chain",
+    eyebrow: "Food Supply Chain · 2026",
+    short: "From farm to shelf, at scale.",
+    description:
+      "Building Namibia's local food supply chain, from farm to shelf. The platform is in development; the launch page states the ambition and takes the enquiries.",
+    tags: ["Website Design", "Website Development", "Content Structure"],
+    live: "https://kalinasho.com",
+    tech: ["Next.js", "Tailwind CSS", "Prisma"],
+    case: {
+      challengeSub: "Want something like this?",
+      approachSub: "Say what is coming. Take the enquiries. Launch nothing empty.",
+      challenge: [
+        "A trading company with a long build ahead needed a web presence that would not embarrass the finished product. Kalinasho Trading Enterprises CC is building Namibia's local food supply chain, from farm to shelf, at scale. The full platform, with product lines, suppliers and fulfilment, is under active development, and it will take the time a real supply chain takes.",
+        "The temptation with a coming-soon page is to either skip it and let the domain sit blank, or to pad it with vague paragraphs that age badly. Both cost the same thing: the enquiries that arrive while the build is running, from farmers, retailers and partners who hear about the plan early and want in.",
+        "The brief was to publish one honest page: name the ambition exactly as the company states it, open one clear enquiry channel, and set the expectation that the website is coming, without inventing services, timelines or claims the business has not launched yet.",
+      ],
+      approach: [
+        "Say what is coming. Take the enquiries. Launch nothing empty.",
+        "The page carries one statement, the company's own: Building Namibia's Local Food Supply Chain. From Farm to Shelf: At Scale. No invented service lists, no placeholder team photos, no countdown the build cannot promise. What the company does is stated in the same words the founders use, because the page has to survive the day the full platform launches beside it.",
+        "The enquiry path is one route: an email link to info@kalinasho.com with the subject line pre-written, Enquiry for Kalinasho Trading CC. Early interest lands in a mailbox the company already reads, and nothing waits on a form behind a half-built admin panel.",
+        "Under the page, the platform work continues: a Next.js and Prisma build that will carry the product catalogue, supplier records and the operational side of the supply chain. When it ships, the launch page is replaced by the system it promised, not by a second promise. The footer carries the studio credit from day one: Made by Tangison Studio.",
+      ],
+      outcome: [
+        "A launch page that holds the door open while the real platform is built.",
+        "Kalinasho's domain now states the plan in the company's own words, takes enquiries at info@kalinasho.com, and owes nobody an apology for what it does not yet show. The platform build continues in the repository beside it, and the page will be judged against the system it precedes.",
+        "The pattern holds for any Namibian business with a long build ahead: publish the ambition exactly, open one real channel, and label the state of things truthfully. A quiet domain gathers nothing; an honest page gathers the enquiries that become the first customers.",
+      ],
+      craft: [
+        {
+          title: "The company's own words",
+          body: "The single statement on the page is the founders' phrasing, not agency copy. From Farm to Shelf: At Scale says what the business intends, and the page promises nothing beyond it.",
+        },
+        {
+          title: "One real enquiry route",
+          body: "A pre-written email to info@kalinasho.com instead of a form wired to an unfinished backend. Every early enquiry reaches a mailbox that already exists and is already read.",
+        },
+        {
+          title: "No invented anything",
+          body: "No fabricated launch dates, no sample products, no placeholder testimonials. The page says the website is coming soon because it is, and that label is the whole of the claim.",
+        },
+        {
+          title: "Built to be replaced",
+          body: "The page is a small Next.js build in the same repository as the platform it precedes. When the supply chain system ships, the holding page is retired by the product, not by a redesign.",
+        },
+      ],
+    },
+  },
+  {
     slug: "c4studentstay",
     name: "C4 Student Accommodations CC",
     title: "C4 Student Stay",
