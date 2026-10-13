@@ -156,19 +156,28 @@ export function SiteNav() {
           </Link>
 
           <div className="hidden lg:flex items-center gap-7">
-            {navLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`font-body text-sm font-medium transition-colors whitespace-nowrap rounded-full px-1 py-2 ${
-                  pathname === l.href || pathname.startsWith(`${l.href}/`)
-                    ? "text-ink"
-                    : "text-ink-muted hover:text-ink"
-                }`}
-              >
-                {l.label}
-              </Link>
-            ))}
+            {navLinks.map((l) => {
+              const active =
+                pathname === l.href || pathname.startsWith(`${l.href}/`);
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`font-body text-sm font-medium transition-colors whitespace-nowrap rounded-full px-1 py-2 ${
+                    active ? "text-ink" : "text-ink-muted hover:text-ink"
+                  }`}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {l.label}
+                  {active && (
+                    <span
+                      aria-hidden="true"
+                      className="ml-2 inline-block h-[5px] w-[5px] rounded-full bg-teal align-[2px]"
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-2">

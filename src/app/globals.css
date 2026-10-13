@@ -42,6 +42,7 @@
   --line-strong: rgba(17, 19, 21, 0.18);
   --teal: #2cb5b4;
   --teal-mist: #e6f2f1;
+  --error: #b0483e;
   --surface: rgba(254, 253, 251, 0.74);
   --overlay: rgba(17, 19, 21, 0.5);
   /* one soft radiating shadow under imagery: light paper only */
@@ -64,6 +65,7 @@
   --line-strong: rgba(246, 244, 239, 0.26);
   --teal: #3ecbca;
   --teal-mist: rgba(46, 181, 180, 0.14);
+  --error: #e08a80;
   --surface: rgba(20, 24, 29, 0.86);
   --overlay: rgba(6, 8, 10, 0.6);
   --shadow-soft: none;
@@ -392,6 +394,26 @@ html.js .reveal-zoom.revealed {
 .link-underline {
   position: relative;
   text-decoration: none;
+}
+
+/* in-article links carry the teal accent on the underline itself: instant
+   link recognition without trading text legibility (text stays ink). */
+.prose-body .link-underline::after,
+.article-list a.link-underline::after {
+  background: var(--teal);
+}
+
+/* form error state: the one semantic exception to the ink/teal palette.
+   A warm red keyed to the paper/ink world, used only where something
+   actually failed (success keeps teal-mist). */
+.form-error {
+  border: 1px solid color-mix(in srgb, var(--error) 40%, transparent);
+  background: color-mix(in srgb, var(--error) 9%, var(--paper-raise));
+  color: var(--ink);
+}
+
+.form-error-icon {
+  color: var(--error);
 }
 
 .link-underline::after {

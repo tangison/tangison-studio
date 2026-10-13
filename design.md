@@ -33,6 +33,8 @@ Two route themes, flipped by `.theme-ink` on the page wrapper.
 - `--ink` #111315 (Atlantic black), `--ink-muted` ink @ 64%, `--ink-faint` ink @ 40%
 - `--line` ink @ 8% (faded hairline), `--line-strong` ink @ 18%
 - `--teal` #2CB5B4 (Signal Teal, dark theme #3ECBCA) — the ONLY accent, ≤ 5% per viewport
+- `--error` #B0483E (dark theme #E08A80) — semantic exception, form failures
+  only. Success keeps teal-mist. Never decorative.
 - Ink theme: paper #0C1014, raise #14181D, ink #F6F4EF, line bone @ 12% / 26%
 
 No gradients except photo scrims. No pure #000/#FFF. Neutrals carry no extra hue
@@ -57,15 +59,23 @@ by design. One break-out or asymmetry per page minimum.
 
 ## Motion
 
+- Engine: GSAP ScrollTrigger (registered once per client component,
+  `useGSAP` scoped, reverted on unmount; refresh on window load).
 - Easings: `--ease-primary` cubic-bezier(0.16, 1, 0.3, 1) (expo-out). No bounce,
-  no elastic, no `ease` default, no linear except loaders.
+  no elastic, no `ease` default, no linear except loaders and scrub parallax.
 - Durations: micro 150ms / short 300ms / long 500–900ms (gallery zoom 1.1s).
-- Reveal: IntersectionObserver reveal-once, fade-rise only. ONE orchestrated
-  page-load entrance (hero stagger). Below-fold content settles without stagger
-  cascades.
+- Reveal: ScrollTrigger-driven reveal-once (start "top 88%"), fade-rise /
+  zoom-settle only, same observe-time prepare/revealed contract: content is
+  visible in delivered HTML, hidden only at trigger time. No reverse, no
+  replay. ONE orchestrated page-load entrance (hero stagger). Below-fold
+  content settles without stagger cascades.
+- Scroll-linked parallax (scrub 1, ±3% drift on a pre-scaled inner layer):
+  page hero paintings and large home tiles only. Never on case cards (the
+  zoom interaction stays pure) and never on text.
 - Wordmark: "The Tangison Studio" — staggered word fade-rise on first paint,
   CSS-only, reduced-motion collapses to opacity.
-- Reduced motion: all spatial motion collapses to ≤150ms opacity crossfade.
+- Reduced motion: all spatial motion collapses to ≤150ms opacity crossfade;
+  parallax and reveals resolve to their settled state immediately.
 
 ## Microinteractions stance
 

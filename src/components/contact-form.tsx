@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Check, LoaderCircle } from "lucide-react";
+import { Check, CircleAlert, LoaderCircle } from "lucide-react";
 
 /**
  * Project-brief form → POST /api/contact → Resend → studio@tangison.com.
@@ -165,9 +165,16 @@ export function ContactForm() {
       </div>
 
       {status === "error" && (
-        <p role="alert" className="rounded-[14px] border border-line bg-teal-mist px-4 py-3 text-sm text-ink">
-          {error}
-        </p>
+        <div
+          role="alert"
+          className="form-error flex items-start gap-3 rounded-[14px] px-4 py-3 text-sm"
+        >
+          <CircleAlert
+            aria-hidden="true"
+            className="form-error-icon mt-0.5 h-4 w-4 shrink-0"
+          />
+          <span>{error}</span>
+        </div>
       )}
 
       <div className="flex flex-wrap items-center gap-4">

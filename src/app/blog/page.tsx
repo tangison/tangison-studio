@@ -4,6 +4,7 @@ import { getArticleSummaries, getArticleCategories } from "@/lib/articles";
 import { BlogIndex } from "./blog-client";
 import { Reveal } from "@/components/reveal";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
+import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "AI and Web Design Insights Namibia",
@@ -49,6 +50,7 @@ export default function BlogPage() {
           </div>
           <Reveal variant="zoom" delay={100}>
             <div className="relative art-tile art-shadow aspect-[4/3] w-[240px] sm:w-[300px] lg:w-[360px] ml-auto bg-paper-raise">
+<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-blog.webp"
                 alt="A single open book with blank pages on a calm cream table, a minimal oil painting."
@@ -58,6 +60,7 @@ export default function BlogPage() {
                 sizes="360px"
                 className="object-cover"
               />
+</ParallaxArt>
             </div>
           </Reveal>
         </div>

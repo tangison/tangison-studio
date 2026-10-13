@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Reveal } from "@/components/reveal";
 import { principles, site } from "@/lib/site";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
+import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "About the Studio in Windhoek",
@@ -37,6 +38,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal variant="zoom" delay={100}>
             <div className="relative art-tile art-shadow aspect-[4/3] w-[240px] sm:w-[320px] lg:w-[380px] bg-paper-raise">
+<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-about.webp"
                 alt="A single wooden studio chair in soft window light, a minimal oil painting."
@@ -46,6 +48,7 @@ export default function AboutPage() {
                 sizes="380px"
                 className="object-cover"
               />
+</ParallaxArt>
             </div>
           </Reveal>
         </div>

@@ -6,6 +6,7 @@ import { CaseCard } from "@/components/case-card";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
+import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Case Studies: Web, Brand, Product",
@@ -59,6 +60,7 @@ export default function CasesPage() {
           </Reveal>
           <Reveal variant="zoom" delay={100}>
             <div className="relative art-tile art-shadow aspect-[4/3] w-[240px] sm:w-[320px] lg:w-[380px] bg-paper-raise">
+<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-cases.webp"
                 alt="A single small framed painting leaning against a warm wall, a minimal oil painting."
@@ -68,6 +70,7 @@ export default function CasesPage() {
                 sizes="380px"
                 className="object-cover"
               />
+</ParallaxArt>
             </div>
           </Reveal>
         </div>

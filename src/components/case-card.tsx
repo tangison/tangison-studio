@@ -161,7 +161,7 @@ export function CaseCard({
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className={chip("border-line-strong text-ink")}
+            className={chip("border-teal/45 bg-teal-mist text-ink")}
           >
             Live site
             <ArrowUpRight aria-hidden="true" className="w-3.5 h-3.5" />

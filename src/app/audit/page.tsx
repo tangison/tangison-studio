@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Reveal } from "@/components/reveal";
 import { auditAreas, auditSteps, auditTerms, site } from "@/lib/site";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
+import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Free Website Audit in Namibia",
@@ -58,6 +59,7 @@ export default function AuditPage() {
           </div>
           <Reveal variant="zoom" delay={100}>
             <div className="relative art-tile art-shadow aspect-[4/3] max-w-[380px] w-full ml-auto bg-paper-raise">
+<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-audit.webp"
                 alt="A single brass magnifying glass on warm plain paper, a minimal oil painting."
@@ -67,6 +69,7 @@ export default function AuditPage() {
                 sizes="380px"
                 className="object-cover"
               />
+</ParallaxArt>
             </div>
           </Reveal>
         </div>

@@ -5,6 +5,7 @@ import { Reveal } from "@/components/reveal";
 import { ContactForm } from "@/components/contact-form";
 import { contactPoints, site, whatToSend } from "@/lib/site";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
+import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Start a Project in Windhoek",
@@ -61,6 +62,7 @@ export default function ContactPage() {
           </div>
           <Reveal variant="zoom" delay={100}>
             <div className="relative art-tile art-shadow aspect-[4/3] max-w-[380px] w-full ml-auto bg-paper-raise">
+<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-contact.webp"
                 alt="A single cream envelope resting on warm linen, a minimal oil painting."
@@ -70,6 +72,7 @@ export default function ContactPage() {
                 sizes="380px"
                 className="object-cover"
               />
+</ParallaxArt>
             </div>
           </Reveal>
         </div>
@@ -127,6 +130,7 @@ export default function ContactPage() {
 
           <Reveal delay={80}>
             <div className="relative art-tile art-shadow h-full min-h-[380px] bg-paper-raise">
+<ParallaxArt>
               <Image
                 src="/images/paintings/contact-invitation.webp"
                 alt="A narrow doorway of light between two soft weathered rock walls, with gentle fog passing through."
@@ -134,6 +138,7 @@ export default function ContactPage() {
                 sizes="(max-width: 1024px) 100vw, 560px"
                 className="object-cover"
               />
+</ParallaxArt>
               <div
                 aria-hidden="true"
                 className="absolute inset-0"
@@ -156,6 +161,7 @@ export default function ContactPage() {
           {gallery.map((g, i) => (
             <Reveal key={g.src} delay={i * 80}>
               <div className="relative art-tile art-shadow aspect-[4/3] bg-paper-raise">
+<ParallaxArt>
                 <Image
                   src={g.src}
                   alt={g.alt}
@@ -163,6 +169,7 @@ export default function ContactPage() {
                   sizes="(max-width: 768px) 100vw, 420px"
                   className="object-cover"
                 />
+</ParallaxArt>
               </div>
             </Reveal>
           ))}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
+import { ParallaxArt } from "@/components/parallax-art";
 import { CaseCard } from "@/components/case-card";
 import { HeroVideo } from "@/components/hero-video";
 import { projects } from "@/lib/projects";
@@ -111,14 +112,16 @@ export default function HomePage() {
             <Reveal key={cap.key} delay={i * 100}>
               <article className="group art-tile art-shadow bg-paper-raise">
                 <div className="relative aspect-[4/3]">
-                  <Image
-                    src={cap.image}
-                    alt={cap.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 640px"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    style={{ transitionTimingFunction: "var(--ease-primary)" }}
-                  />
+                  <ParallaxArt>
+                    <Image
+                      src={cap.image}
+                      alt={cap.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 640px"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      style={{ transitionTimingFunction: "var(--ease-primary)" }}
+                    />
+                  </ParallaxArt>
                 </div>
                 <div className="p-6 md:p-8">
                   <h3 className="h3">{cap.title}</h3>
@@ -178,13 +181,15 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
         <div className="grid gap-10 lg:grid-cols-2 items-center">
           <div className="relative art-tile art-shadow aspect-[4/3] order-2 lg:order-1 bg-paper-raise">
-            <Image
-              src="/images/paintings/collaboration-studio.webp"
-              alt="Two pairs of hands collaborating over interface sketches, color swatches, and a laptop on a warm wooden studio table."
-              fill
-              sizes="(max-width: 1024px) 100vw, 640px"
-              className="object-cover"
-            />
+            <ParallaxArt>
+              <Image
+                src="/images/paintings/collaboration-studio.webp"
+                alt="Two pairs of hands collaborating over interface sketches, color swatches, and a laptop on a warm wooden studio table."
+                fill
+                sizes="(max-width: 1024px) 100vw, 640px"
+                className="object-cover"
+              />
+            </ParallaxArt>
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="h2">Senior craft, direct collaboration.</h2>

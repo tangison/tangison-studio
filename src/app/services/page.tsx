@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Reveal } from "@/components/reveal";
 import { capabilities, site } from "@/lib/site";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
+import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Services: Brand, Web, Product, AI",
@@ -48,6 +49,7 @@ export default function ServicesPage() {
           </div>
           <Reveal variant="zoom" delay={100}>
             <div className="relative art-tile art-shadow aspect-[4/3] max-w-[380px] w-full ml-auto bg-paper-raise">
+<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-services.webp"
                 alt="A single fountain pen resting on plain warm paper, a minimal oil painting."
@@ -57,6 +59,7 @@ export default function ServicesPage() {
                 sizes="380px"
                 className="object-cover"
               />
+</ParallaxArt>
             </div>
           </Reveal>
         </div>
@@ -103,17 +106,19 @@ export default function ServicesPage() {
                   idx % 2 === 1 ? "lg:order-1" : ""
                 }`}
               >
-                <Image
-                  src={
-                    cap.key === "studio"
-                      ? "/images/paintings/services-brand.webp"
-                      : "/images/paintings/services-intelligence.webp"
-                  }
-                  alt={cap.alt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 640px"
-                  className="object-cover"
-                />
+                <ParallaxArt>
+                  <Image
+                    src={
+                      cap.key === "studio"
+                        ? "/images/paintings/services-brand.webp"
+                        : "/images/paintings/services-intelligence.webp"
+                    }
+                    alt={cap.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 640px"
+                    className="object-cover"
+                  />
+                </ParallaxArt>
               </div>
             </div>
           </Reveal>
