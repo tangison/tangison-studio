@@ -3,7 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
+import { KineticLines } from "@/components/kinetic-lines";
 import { ParallaxArt } from "@/components/parallax-art";
+import { ProcessLine } from "@/components/process-line";
+import { WipeReveal } from "@/components/wipe-reveal";
 import { CaseCard } from "@/components/case-card";
 import { HeroVideo } from "@/components/hero-video";
 import { projects } from "@/lib/projects";
@@ -28,12 +31,10 @@ export default function HomePage() {
       {/* ============ Hero: the slogan and nothing else (Collins-style
           statement lead), the studio film follows inline ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-52">
-        <Reveal>
-          <h1 className="h1 max-w-6xl">
-            Rebuilding how the world
-            <span className="block">sees your brand.</span>
-          </h1>
-        </Reveal>
+        <KineticLines
+          className="max-w-6xl"
+          lines={["Rebuilding how the world", "sees your brand."]}
+        />
 
         {/* the studio film follows the slogan, inline */}
         <Reveal variant="zoom" delay={140} className="mt-14 md:mt-20">
@@ -156,21 +157,18 @@ export default function HomePage() {
       {/* ============ Process ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
         <h2 className="h2">Five steps, one connecting line.</h2>
-        <ol className="mt-10 md:mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        {/* the heading made literal: one scroll-drawn teal hairline threads
+            the five cards (replaces the old segmented connector stubs) */}
+        <ol className="relative mt-10 md:mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <ProcessLine />
           {processSteps.map((step, i) => (
-            <li key={step.name}>
+            <li key={step.name} className="relative">
               <div className="relative rounded-[20px] border border-line bg-paper-raise p-6 h-full">
                 <p className="font-mono text-[11px] text-ink-faint">
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="h3 mt-3">{step.name}</h3>
                 <p className="mt-3 text-ink-muted text-[15px] leading-relaxed">{step.body}</p>
-                {i < processSteps.length - 1 && (
-                  <span
-                    aria-hidden="true"
-                    className="hidden lg:block absolute top-1/2 -right-[calc(1.5rem+1px)] w-6 h-px bg-line-strong"
-                  />
-                )}
               </div>
             </li>
           ))}
@@ -257,6 +255,8 @@ export default function HomePage() {
 
       {/* ============ CTA ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
+        {/* the page's one wipe: a change of state into the commitment ask */}
+        <WipeReveal>
         <div className="relative art-tile bg-teal-mist px-6 py-16 md:p-20 text-center">
           <h2 className="h2">Have something worth building?</h2>
           <p className="mt-4 text-ink-muted max-w-xl mx-auto">
@@ -272,6 +272,7 @@ export default function HomePage() {
             </a>
           </div>
         </div>
+        </WipeReveal>
       </section>
     </>
   );

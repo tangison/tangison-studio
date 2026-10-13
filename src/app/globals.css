@@ -299,6 +299,25 @@ html.js .wordmark > .wordmark-word {
   }
 }
 
+/* ---------- kinetic headline: masked line rise (hero) ----------
+   Same progressive-enhancement contract as .reveal: lines are visible
+   without JS. The mask reserves descender room (padding-bottom +
+   negative margin) so the tails of g, y and p clear the clip. */
+html.js .kinetic-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(1.2em); /* one line box incl. descender reserve */
+  animation: kinetic-rise 0.9s var(--ease-primary) forwards;
+  animation-delay: calc(140ms + var(--i, 0) * 130ms);
+}
+
+@keyframes kinetic-rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ---------- motion primitives ---------- */
 
 @keyframes fade-rise {
@@ -344,6 +363,11 @@ html.js .reveal.revealed {
     transition: none;
   }
   html.js .wordmark > .wordmark-word {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  html.js .kinetic-line {
     animation: none;
     opacity: 1;
     transform: none;
