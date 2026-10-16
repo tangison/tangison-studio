@@ -257,6 +257,9 @@ _p("mundesha", 21067,
    "soft oil painting still life of a worn wooden toolbox, a coil of "
    "electrical wire and a brass wrench resting on cream linen, gentle "
    "visible brush strokes")
+_p("bigbrotherguesthouse", 21072,
+   "soft scene of a desert guesthouse veranda at dusk with a still pool, "
+   "a thatched lapa and distant mountains in warm pastel haze")
 _p("c4restaurant", 21071,
    "soft oil painting still life of a braai platter with grilled wors, "
    "pap and chakalaka, fresh bread rolls, a cool drink and a sage green "
@@ -302,11 +305,21 @@ def fetch(key: str, spec: dict, seed: int, dry: bool) -> Path | None:
 
 
 # ------------------------------------------------------------- normalize ----
+# Pollinations raws carry a subtle 'pollinations.ai' watermark in the
+# bottom-right corner (discovered 2026-10-16: every 4:3 target shipped
+# with it because the aspect crop never removed the strip). The bottom
+# strip crop below removes it for every future generation.
+WM_STRIP = 0.09  # fraction of source height cropped from the bottom
+
 def normalize(key: str, spec: dict, raw: Path) -> None:
-    """Center-crop -> exact dims -> 0.6px gaussian soft finish -> webp q84."""
+    """Watermark strip crop -> center-crop -> exact dims -> 0.6px gaussian
+    soft finish -> webp q84."""
     im = Image.open(raw).convert("RGB")
     tw, th = spec["w"], spec["h"]
-    # center-crop to the target aspect first
+    # 1. remove the pollinations watermark strip from the bottom
+    sw, sh = im.size
+    im = im.crop((0, 0, sw, int(sh * (1 - WM_STRIP))))
+    # 2. center-crop to the target aspect
     sw, sh = im.size
     target_ratio = tw / th
     src_ratio = sw / sh

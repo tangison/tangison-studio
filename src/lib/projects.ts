@@ -32,6 +32,57 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "bigbrotherguesthouse",
+    name: "Big Brother Guesthouse",
+    title: "Big Brother",
+    category: "Guesthouse & restaurant",
+    eyebrow: "Guesthouse & B&B · 2026",
+    short: "Rooms from N$450 on the B2 at Usakos. Book on WhatsApp.",
+    description:
+      "A registered guesthouse and B&B on the B2 at Usakos with pools, lapa and secure parking, plus Big Brothers Restaurant in town. Rooms from N$450, booked on WhatsApp.",
+    tags: ["Website Design", "Website Development", "Content Structure"],
+    live: "https://bigbrotherguesthouse.com",
+    tech: ["Next.js", "Tailwind CSS"],
+    case: {
+      challengeSub: "Want something like this?",
+      approachSub: "Two addresses, one gate, one number per question.",
+      challenge: [
+        "A registered guesthouse on the B2 at Plot 7, Laaste Begin, Usakos South, runs two businesses under one name: the guesthouse and B&B behind one gate on the highway side, and Big Brothers Restaurant in Usakos town centre at the corner of Theo-Ben Gurirab and Bismarck. The B2 is the road between Windhoek and the coast, and every traveller on it makes the same decision in the same second: stop here, or push on. The site had to answer that question before it was asked.",
+        "The audience decides on a phone, often with one bar of MTC signal somewhere past Karibib. They want to know what a room costs tonight, whether the kitchen is open, whether the car will be safe, and how far off the road the gate actually is: one kilometre turn-off south, opposite the Shell station. In Usakos the booking path that works is a WhatsApp message to a number a person answers, and the site had to end there from every screen.",
+        "The brief was to carry both addresses honestly under one brand: rooms and rates from N$450, the facilities as they are (pools, lapa, garden, secure parking, mountain views), the full restaurant menu with real prices in Namibian dollars, a gallery photographed by the owners themselves, the VIP card, and one WhatsApp path per question, the stay line and the eat line.",
+      ],
+      approach: [
+        "Two addresses, one gate, one number per question.",
+        "The homepage answers the B2 question first. Home away from home, halfway to everywhere: the position on the bench of the Khan River, the one kilometre turn-off opposite the Shell station, rooms from N$450, and a Book on WhatsApp button that opens the chat with the stay line, 081 264 7606, ready. The traveller still rolling at 100 km/h gets the whole argument in one screen.",
+        "The restaurant gets its own address treatment because it has its own address. Big Brothers Restaurant is stated as a different location in Usakos town centre, with its own line, 081 302 9522, and the full menu: 139 items, every price, from matangara and pap at N$120 and mopani worms and pap at N$100 to the T-bone and chips at N$230, hake fillet at N$100, schnitzel and cheddarmelt at N$150, pizza from N$190, chicken wings from N$80, and a tequila sunrise at N$100. Nothing hides behind a PDF.",
+        "The property pages carry the stay itself. Rooms & Rates states what a room costs and what it holds. Facilities lists the pools, the lapa, the garden and the secure parking as they stand. Plot 7 tells the property story, the Gallery carries photographs the owners took themselves, and the VIP card gets its own explanation. The email, bigbrotherguest@gmail.com, is published for the people who still write emails, and the listing links (SafariNow, Agoda, TripAdvisor, Google) point where reviews already live.",
+      ],
+      outcome: [
+        "A guesthouse site that answers the B2's real question: stop here or push on?",
+        "Big Brother launched with rooms and rates, facilities, the Plot 7 story, the gallery, the VIP card, the full 139-item menu and both WhatsApp paths live on every screen. The owner edits rooms, prices and menu items in one content file without touching code, and the site stays quick on the mobile data the B2 actually has.",
+        "The pattern holds for Namibian road-side hospitality: publish the room price, name the turn-off, and put the booking in the chat the gate already answers. The B2 is long, and the site's whole job is to make the stop the easy decision.",
+      ],
+      craft: [
+        {
+          title: "Rooms priced in the open",
+          body: "From N$450 a night, stated on the homepage. A traveller comparing stops on the B2 makes the comparison in seconds; a site that makes them phone for a price loses the seconds.",
+        },
+        {
+          title: "Two numbers, one gate",
+          body: "The stay line 081 264 7606 and the eat line 081 302 9522 are separated everywhere they appear. A room question lands at the phone that books rooms, a table question at the phone that holds tables. Each number is a WhatsApp tap away.",
+        },
+        {
+          title: "The 139-item menu, every price",
+          body: "Big Brothers Restaurant's full menu is published with real Namibian-dollar prices, from chicken wings at N$80 to the T-bone at N$230, not a sample card and not a download. A kitchen that publishes 139 prices is a kitchen that stands behind them.",
+        },
+        {
+          title: "The long middle of the B2",
+          body: "Usakos sits on the bench of the Khan River, roughly halfway between Windhoek and the coast. The site says where it is the way a traveller needs it said: one kilometre turn-off south, opposite the Shell station, secure parking behind the gate.",
+        },
+      ],
+    },
+  },
+  {
     slug: "c4restaurant",
     name: "C4 Restaurant & Bar CC",
     title: "C4 Restaurant",
