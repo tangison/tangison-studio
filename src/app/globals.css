@@ -283,7 +283,7 @@ body {
 }
 
 /* animated wordmark: gated on .js with the same progressive-enhancement
-   rule — without JS the words simply sit there, fully visible. */
+   rule - without JS the words simply sit there, fully visible. */
 html.js .wordmark > .wordmark-word {
   display: inline-block;
   opacity: 0;
@@ -413,6 +413,29 @@ html.js .reveal-zoom.revealed {
     opacity 1s var(--ease-primary),
     transform 1.3s var(--ease-out-expo);
 }
+
+
+/* bottom-up clip wipe (WipeReveal): the block is visible by default;
+   after the first paint JS arms it (hidden, no transition) and on entry
+   plays one bottom-up wipe. power3.inOut equivalent easing. */
+html.js .wipe-armed {
+  clip-path: inset(0% 0% 100% 0%);
+  transition: none;
+}
+
+html.js .wipe-play {
+  clip-path: inset(0% 0% 0% 0%);
+  transition: clip-path 1.1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .wipe-armed,
+  html.js .wipe-play {
+    clip-path: none;
+    transition: none;
+  }
+}
+
 
 /* underline links */
 .link-underline {

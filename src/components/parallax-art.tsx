@@ -1,16 +1,12 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+import { useEffect, useRef, type ReactNode } from "react";
+import { scrub, reducedMotion } from "@/lib/scroll-motion";
 
 /**
- * Scroll-scrubbed parallax for the studio's painting tiles (GSAP
- * ScrollTrigger, scrub 1). Place INSIDE an art-tile (which clips via
- * overflow hidden) and wrap the <Image>:
+ * Scroll-scrubbed parallax for the studio's painting tiles (native rAF
+ * edition of the ScrollTrigger original, scrub 1). Place INSIDE an art-tile
+ * (which clips via overflow hidden) and wrap the <Image>:
  *
  *   <div className="relative art-tile art-shadow aspect-[4/3]">
  *     <ParallaxArt>
@@ -20,9 +16,10 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
  *
  * The inner layer scales up just enough (distance*2%) that the ±distance/2
  * y-drift never exposes an edge, then the drift follows the tile crossing
- * the viewport. Reduced motion or no JS: no scale, no drift, the image sits
- * at its natural framing. The case-card gallery keeps its zoom interaction
- * untouched: parallax lives on the wrapper, hover-zoom on the image itself.
+ * the viewport (start "top bottom", end "bottom top"). Reduced motion or
+ * no JS: no scale, no drift, the image sits at its natural framing. The
+ * case-card gallery keeps its zoom interaction untouched: parallax lives
+ * on the wrapper, hover-zoom on the image itself.
  */
 export function ParallaxArt({
   children,
@@ -35,32 +32,23 @@ export function ParallaxArt({
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      const el = ref.current;
-      if (!el) return;
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (reducedMotion()) return;
 
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)")
-        .matches;
-      if (reduce) return;
-
-      gsap.fromTo(
-        el,
-        { yPercent: -distance / 2, scale: 1 + (distance * 2) / 100 },
-        {
-          yPercent: distance / 2,
-          ease: "none",
-          scrollTrigger: {
-            trigger: el.parentElement ?? el,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1,
-          },
-        }
-      );
-    },
-    { scope: ref }
-  );
+    const scale = 1 + (distance * 2) / 100;
+    return scrub(
+      el.parentElement ?? el,
+      100,
+      0,
+      (p) => {
+        const y = -distance / 2 + distance * p;
+        el.style.transform = `translate3d(0, ${y.toFixed(3)}%, 0) scale(${scale})`;
+      },
+      true
+    );
+  }, []);
 
   return (
     <div ref={ref} className={`absolute inset-0 ${className}`}>
