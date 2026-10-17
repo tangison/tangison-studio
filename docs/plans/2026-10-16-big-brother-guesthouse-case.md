@@ -42,3 +42,9 @@ Commit: "New case: Big Brother Guesthouse (Usakos, B2) - guesthouse and restaura
 1. Confirm tech stack tags (or leave tech empty).
 2. Confirm the eyebrow year (2026) and whether the VIP Card angle should be mentioned in the case copy.
 3. The painting seed: first accepted roll is recorded in the commit, per house convention.
+
+## Verification (17 October 2026, wave 2 of the main-site run)
+
+- Case live and complete at 527bce9/dpl_GNHM: ledger card with neutral artwork alt, full case page (GUESTHOUSE & B&B, N$450 room rate, services chips, live-site link, body copy), 10 homepage mentions across the featured row and work sections
+- Route sweep at 375px (home, cases, services, about, contact, audit): no light-gap defects between dark bands
+- fbe01d6 adds the checklist brand bar (4px teal fixed overlay, zero layout shift), deployed dpl_5qYibz READY
