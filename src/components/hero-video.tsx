@@ -5,13 +5,22 @@ import { useEffect, useRef } from "react";
 /**
  * The studio hero film: a short looping painting-style clip that follows
  * the hero slogan inline (never a full-bleed background). It never blocks
- * first paint: the browser draws the lean WebP poster immediately, and
- * playback (muted, inline, looped) starts only once the element is on
- * screen. With prefers-reduced-motion the poster simply stays, motionless.
+ * first paint: the WebP poster draws immediately, and the film's source
+ * attaches at the window load event (not mid-download), so the poster,
+ * the fonts and hydration never compete with it. Playback (muted, inline,
+ * looped) starts as soon as a frame is ready. With prefers-reduced-motion
+ * the poster simply stays, motionless.
  *
- * v4: served as WebM (VP9) first — roughly a third lighter than H.264 at
- * matched quality — with the v3 MP4 kept as a fallback for any browser
- * without WebM support. The browser downloads only the source it can use.
+ * LCP note: Chromium makes the first decoded film frame this page's LCP
+ * element (a poster display does not count). That is why the loop is so
+ * small and why it loads the moment the critical path is done: a small,
+ * early film keeps LCP under 2.5s while total transfer stays inside the
+ * 500KB budget.
+ *
+ * v5: re-encoded at 640x400 with a light denoise pass. The painting
+ * texture survives (verified frame-by-frame) and the loop drops from
+ * 418KB to ~110KB webm (~140KB mp4 fallback). The browser downloads
+ * only the source it can use.
  */
 export function HeroVideo() {
   const ref = useRef<HTMLVideoElement>(null);
@@ -24,24 +33,35 @@ export function HeroVideo() {
       return; // poster only: no autoplay, no fetch
     }
 
-    if (typeof IntersectionObserver === "undefined") {
+    let cancelled = false;
+
+    const arm = () => {
+      if (cancelled || !video.isConnected) return;
+      const sources = video.querySelectorAll("source");
+      // data-src holds the real source until this moment; without JS the
+      // poster stands in, exactly as reduced-motion does.
+      sources.forEach((s) => {
+        const real = s.getAttribute("data-src");
+        if (real) {
+          s.setAttribute("src", real);
+          s.removeAttribute("data-src");
+        }
+      });
+      video.load();
+      // A poster-only element has nothing to play until now; request
+      // playback once the film is loaded. Muted autoplay, so allowed.
       video.play().catch(() => {});
-      return;
+    };
+
+    if (document.readyState === "complete") {
+      arm();
+    } else {
+      window.addEventListener("load", arm, { once: true });
     }
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            video.play().catch(() => {});
-            io.disconnect();
-          }
-        }
-      },
-      { threshold: 0.25 }
-    );
-    io.observe(video);
-    return () => io.disconnect();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return (
@@ -56,8 +76,8 @@ export function HeroVideo() {
       aria-hidden="true"
       className="h-full w-full object-cover"
     >
-      <source src="/videos/hero-v4.webm" type="video/webm" />
-      <source src="/videos/hero-v3.mp4" type="video/mp4" />
+      <source data-src="/videos/hero-v5.webm" type="video/webm" />
+      <source data-src="/videos/hero-v5.mp4" type="video/mp4" />
     </video>
   );
 }
