@@ -110,6 +110,11 @@ export default function RootLayout({
           Skip to main content
         </a>
         <SiteNav />
+        {/* Brand bar: the checklist accent at the extreme top edge,
+            colored from the brand token. A fixed overlay painted before
+            first paint: reserved space, zero layout shift, under every
+            interactive layer. */}
+        <div aria-hidden="true" className="fixed inset-x-0 top-0 z-20 h-1 bg-teal" />
         <main id="main-content" className="flex-1 flex flex-col">
           {children}
         </main>
