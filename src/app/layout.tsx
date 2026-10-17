@@ -76,7 +76,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col">
         {/* The .js gate class is added by the client bundle itself
-            (module scope of site-nav.tsx, present on every page) — NOT by
+            (module scope of site-nav.tsx, present on every page) - NOT by
             an inline script. If the bundle fails to load (stale cache,
             blocked, crashed) the class is never set and content stays
             fully visible: no blank pages, ever. */}

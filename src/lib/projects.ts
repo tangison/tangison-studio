@@ -19,7 +19,7 @@ export interface Project {
   name: string;
   /** Short display name for tight gallery captions (Collins-style). */
   title: string;
-  /** Tight sector label, 1–2 words, for captions and tile overlays. */
+  /** Tight sector label, 1-2 words, for captions and tile overlays. */
   category: string;
   eyebrow: string;
   short: string;
