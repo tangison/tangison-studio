@@ -108,6 +108,7 @@ export function CaseCard({
             outside this element, so links never nest. */}
         <Link
           href={`/cases/${project.slug}`}
+          prefetch={false}
           className="absolute inset-0 z-[1] rounded-[20px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal"
           aria-label={`${project.name}: preview the case study`}
         />
@@ -123,6 +124,7 @@ export function CaseCard({
           >
             <Link
               href={`/cases/${project.slug}`}
+              prefetch={false}
               className="hover:text-teal transition-colors duration-300"
             >
               {project.title}
@@ -151,7 +153,7 @@ export function CaseCard({
         }`}
       >
         {variant === "below" && (
-          <Link href={`/cases/${project.slug}`} className={chip("")}>
+          <Link href={`/cases/${project.slug}`} prefetch={false} className={chip("")}>
             Preview case
             <ArrowRight aria-hidden="true" className="w-3.5 h-3.5" />
           </Link>

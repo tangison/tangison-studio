@@ -21,6 +21,7 @@ export function ArticleCard({
   return (
     <Link
       href={`/blog/${article.slug}`}
+      prefetch={false}
       className="case-card group block rounded-[20px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal"
       aria-label={`${article.title}: read article`}
     >

@@ -143,7 +143,7 @@ export function ContactForm() {
             type="text"
             maxLength={80}
             className={inputClass}
-            placeholder="N$ 20–40k"
+            placeholder="N$ 20-40k"
           />
         </div>
       </div>

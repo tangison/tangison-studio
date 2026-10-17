@@ -129,6 +129,7 @@ export default function HomePage() {
                   <p className="mt-3 text-ink-muted">{cap.lead}</p>
                   <Link
                     href={`/services#${cap.key}`}
+                    prefetch={false}
                     className="mt-5 inline-flex items-center gap-2 text-sm font-medium link-underline"
                   >
                     Explore {cap.title}
@@ -197,6 +198,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/about"
+              prefetch={false}
               className="mt-6 inline-flex items-center gap-2 text-sm font-medium link-underline"
             >
               About the studio
@@ -212,6 +214,7 @@ export default function HomePage() {
           <h2 className="h2">Latest writing.</h2>
           <Link
             href="/blog"
+            prefetch={false}
             className="inline-flex items-center gap-2 text-sm font-medium link-underline"
           >
             All {total} articles
@@ -223,6 +226,7 @@ export default function HomePage() {
             <Reveal key={a.slug} delay={i * 80}>
               <Link
                 href={`/blog/${a.slug}`}
+                prefetch={false}
                 className="group block art-tile art-shadow bg-paper-raise hover:border-line-strong transition-colors"
               >
                 <div className="relative aspect-video">

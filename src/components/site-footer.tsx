@@ -17,7 +17,7 @@ export function SiteFooter() {
             <p className="mt-3 text-ink-muted max-w-md">
               One studio instead of three vendors.
             </p>
-            <Link href="/contact" className="btn btn-outline mt-6">
+            <Link href="/contact" prefetch={false} className="btn btn-outline mt-6">
               Start a project brief
             </Link>
           </div>
@@ -27,28 +27,28 @@ export function SiteFooter() {
             <ul className="flex flex-col gap-3">
               {navLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-ink-muted hover:text-ink link-underline">
+                  <Link href={l.href} prefetch={false} className="text-ink-muted hover:text-ink link-underline">
                     {l.label}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/audit" className="text-ink-muted hover:text-ink link-underline">
+                <Link href="/audit" prefetch={false} className="text-ink-muted hover:text-ink link-underline">
                   Free audit
                 </Link>
               </li>
               <li>
-                <Link href="/brand" className="text-ink-muted hover:text-ink link-underline">
+                <Link href="/brand" prefetch={false} className="text-ink-muted hover:text-ink link-underline">
                   Brand system
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-ink-muted hover:text-ink link-underline">
+                <Link href="/privacy" prefetch={false} className="text-ink-muted hover:text-ink link-underline">
                   Privacy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-ink-muted hover:text-ink link-underline">
+                <Link href="/terms" prefetch={false} className="text-ink-muted hover:text-ink link-underline">
                   Terms
                 </Link>
               </li>

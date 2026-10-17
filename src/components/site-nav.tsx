@@ -12,8 +12,8 @@ import { projects } from "@/lib/projects";
  * Bundle-loaded gate: this module ships in the nav chunk that every page
  * loads. The moment it executes we mark <html> with .js, which is the ONLY
  * thing that allows reveal animations to hide content (see globals.css:
- * html.js .reveal). If this chunk never loads — stale cache after a
- * deploy, network failure, blocked script — the class is never set and
+ * html.js .reveal). If this chunk never loads - stale cache after a
+ * deploy, network failure, blocked script - the class is never set and
  * every page renders fully visible. Progressive enhancement, not luck.
  */
 if (typeof document !== "undefined") {
@@ -130,6 +130,7 @@ export function SiteNav() {
         >
           <Link
             href="/"
+            prefetch={false}
             aria-label="The Tangison Studio home"
             className="flex items-center gap-2.5 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal"
           >
@@ -163,6 +164,7 @@ export function SiteNav() {
                 <Link
                   key={l.href}
                   href={l.href}
+                  prefetch={false}
                   className={`font-body text-sm font-medium transition-colors whitespace-nowrap rounded-full px-1 py-2 ${
                     active ? "text-ink" : "text-ink-muted hover:text-ink"
                   }`}
@@ -183,6 +185,7 @@ export function SiteNav() {
           <div className="flex items-center gap-2">
             <Link
               href="/search"
+              prefetch={false}
               aria-label="Search the site"
               className="hidden sm:inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink-muted hover:border-line-strong hover:text-ink transition-colors"
             >
@@ -190,6 +193,7 @@ export function SiteNav() {
             </Link>
             <Link
               href="/contact"
+              prefetch={false}
               className="hidden md:inline-flex items-center h-10 px-5 rounded-full bg-ink text-paper text-sm font-medium hover:bg-[color-mix(in_srgb,var(--ink)_90%,var(--paper))] transition-colors"
             >
               Start a project
