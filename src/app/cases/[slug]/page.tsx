@@ -44,13 +44,13 @@ export async function generateMetadata({
 
 /** Live-proof screenshot exists for shipped projects with a reachable site. */
 const SCREENSHOTS: Record<string, string> = {
-  weca: "/images/work/screenshots/full/weca-full.webp",
-  mendozer: "/images/work/screenshots/full/mendozer-full.webp",
-  enchanted: "/images/work/screenshots/full/enchanted-full.webp",
-  dieselman: "/images/work/screenshots/full/dieselman-full.webp",
-  miway: "/images/work/screenshots/full/miway-full.webp",
-  oci: "/images/work/screenshots/full/oci-full.webp",
-  giftedwithpurpose: "/images/work/screenshots/full/giftedwithpurpose-full.webp",
+  weca: "/images/work/screenshots/full/weca-full.avif",
+  mendozer: "/images/work/screenshots/full/mendozer-full.avif",
+  enchanted: "/images/work/screenshots/full/enchanted-full.avif",
+  dieselman: "/images/work/screenshots/full/dieselman-full.avif",
+  miway: "/images/work/screenshots/full/miway-full.avif",
+  oci: "/images/work/screenshots/full/oci-full.avif",
+  giftedwithpurpose: "/images/work/screenshots/full/giftedwithpurpose-full.avif",
 };
 
 export default async function CaseStudyPage({
