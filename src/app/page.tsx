@@ -9,6 +9,8 @@ import { ProcessLine } from "@/components/process-line";
 import { WipeReveal } from "@/components/wipe-reveal";
 import { CaseCard } from "@/components/case-card";
 import { HeroVideo } from "@/components/hero-video";
+import { ScrubWords } from "@/components/scrub-words";
+import { CLIENT_BY_SLUG, ClientMarkLogo } from "@/components/client-mark";
 import { projects } from "@/lib/projects";
 import { capabilities, principles, processSteps, site } from "@/lib/site";
 import { getArticleSummaries } from "@/lib/articles";
@@ -43,18 +45,37 @@ export default function HomePage() {
           </div>
         </Reveal>
 
-        {/* trust layer: real clients, a path to the record */}
+        {/* trust layer: the real marks, pulled from each client's own
+            site and linking back out to it; the full record is one
+            path away on /cases */}
         <div className="mt-10 md:mt-12 flex flex-wrap items-baseline gap-x-8 gap-y-4">
           <div className="min-w-0">
             <p className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint">
               Selected clients
             </p>
-            <ul className="mt-3 flex flex-wrap items-baseline gap-x-7 gap-y-2 font-display font-semibold text-[17px] md:text-xl tracking-[-0.01em]">
-              {trust.map((p) => (
-                <li key={p.slug} className="whitespace-nowrap">
-                  {p.title}
-                </li>
-              ))}
+            <ul className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+              {trust.map((p) => {
+                const mark = CLIENT_BY_SLUG.get(p.slug);
+                return (
+                  <li key={p.slug}>
+                    {mark ? (
+                      <a
+                        href={mark.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${mark.name} - visit website`}
+                        className="inline-flex items-center rounded-sm outline-offset-6 outline-teal focus-visible:outline-2"
+                      >
+                        <ClientMarkLogo mark={mark} />
+                      </a>
+                    ) : (
+                      <span className="whitespace-nowrap font-display font-semibold text-[17px] md:text-xl tracking-[-0.01em]">
+                        {p.title}
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
               <li className="whitespace-nowrap">
                 <Link
                   href="/cases"
@@ -106,7 +127,11 @@ export default function HomePage() {
 
       {/* ============ Capabilities ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
-        <h2 className="h2 max-w-3xl">Studio and Intelligence. One practice.</h2>
+        <ScrubWords
+          as="h2"
+          className="h2 max-w-3xl"
+          text="Studio and Intelligence. One practice."
+        />
 
         <div className="mt-10 md:mt-14 grid gap-6 md:gap-8 md:grid-cols-2">
           {capabilities.map((cap, i) => (

@@ -398,6 +398,58 @@ html.js .reveal.revealed {
   filter: brightness(1.03);
 }
 
+/* hover lift: the tile rises a step while its shadow deepens, paired
+   with the image zoom above. Transform + shadow only: no layout cost,
+   no repaint of the artwork. Focus moves the same way as hover so the
+   keyboard gets the same read. */
+.case-card .art-tile {
+  transition:
+    transform 0.55s var(--ease-primary),
+    box-shadow 0.55s var(--ease-primary);
+}
+
+.case-card:hover .art-tile,
+.case-card:focus-within .art-tile {
+  transform: translateY(-6px);
+  box-shadow: 0 36px 72px -30px rgba(12, 16, 20, 0.34);
+}
+
+/* the caption row breathes with the lift: the title picks up a teal
+   tint as the card rises, so the eye lands on the name. */
+.case-card h2 a {
+  transition: color 0.4s var(--ease-primary);
+}
+
+.case-card:hover h2 a,
+.case-card:focus-within h2 a {
+  color: var(--teal);
+}
+
+/* ---------- client marks (trust layer) ---------- */
+
+/* quiet grayscale until approached: colour returns on hover/focus */
+.client-logo-mark {
+  filter: grayscale(1);
+  opacity: 0.66;
+  transition:
+    filter 0.3s var(--ease-primary),
+    opacity 0.3s var(--ease-primary);
+}
+
+a:hover .client-logo-mark,
+a:focus-visible .client-logo-mark {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-logo-mark {
+    filter: none;
+    opacity: 1;
+    transition: none;
+  }
+}
+
 /* zoom-settle entrance: card starts slightly enlarged and settles into
    place (paired with Reveal variant="zoom"). Same prepare/revealed flow. */
 html.js .reveal-zoom.prepare {
@@ -433,6 +485,22 @@ html.js .wipe-play {
   html.js .wipe-play {
     clip-path: none;
     transition: none;
+  }
+  /* the case-card lift and its paired zoom are motion: remove the
+     transforms entirely, keep the shadow change as the only signal */
+  .case-card .art-tile,
+  .case-card .case-card-image {
+    transition: none;
+  }
+  .case-card:hover .art-tile,
+  .case-card:focus-within .art-tile {
+    transform: none;
+    box-shadow: var(--shadow-soft);
+  }
+  .case-card:hover .case-card-image,
+  .case-card:focus-visible .case-card-image {
+    transform: none;
+    filter: none;
   }
 }
 

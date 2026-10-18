@@ -1,0 +1,137 @@
+{
+  "c4studentstay": {
+    "source": "img-logo-3.svg",
+    "kind": "svg",
+    "result": "svg-direct",
+    "bytes": 78973
+  },
+  "dieselman": {
+    "source": "img-logo-2.svg",
+    "kind": "svg",
+    "result": "svg-direct",
+    "bytes": 91496
+  },
+  "giftedwithpurpose": {
+    "source": "img-logo-2.svg",
+    "kind": "svg",
+    "result": "svg-direct",
+    "bytes": 25944
+  },
+  "kalinasho": {
+    "source": "jsonld-logo.svg",
+    "kind": "svg",
+    "result": "svg-direct",
+    "bytes": 7080
+  },
+  "mendozer": {
+    "source": "jsonld-logo.svg",
+    "kind": "svg",
+    "result": "svg-direct",
+    "bytes": 8893
+  },
+  "mundesha": {
+    "source": "img-logo-2.svg",
+    "kind": "svg",
+    "result": "svg-direct",
+    "bytes": 61671
+  },
+  "smarth2o": {
+    "source": "img-logo-2.svg",
+    "kind": "svg",
+    "result": "svg-direct",
+    "bytes": 104632
+  },
+  "bigbrotherguesthouse": {
+    "source": "img-logo-2.pngw",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 19323,
+    "src_dims": "198x185"
+  },
+  "c4restaurant": {
+    "source": "jsonld-logo.png",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 17295,
+    "src_dims": "816x246"
+  },
+  "clusterleaf": {
+    "source": "jsonld-logo.png",
+    "kind": "raster",
+    "result": "webp-fallback",
+    "bytes": 52770,
+    "src_dims": "520x310",
+    "why": "trace too heavy (721830B) or empty"
+  },
+  "crescendo": {
+    "source": "img-logo-2.webp",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 127243,
+    "src_dims": "1600x1579"
+  },
+  "enchanted": {
+    "source": "jsonld-logo.png",
+    "kind": "raster",
+    "result": "webp-fallback",
+    "bytes": 98116,
+    "src_dims": "520x549",
+    "why": "trace too heavy (600181B) or empty"
+  },
+  "lrclearing": {
+    "source": "apple-touch-icon.png",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 69062,
+    "src_dims": "560x330"
+  },
+  "miway": {
+    "source": "apple-touch-icon.png",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 111768,
+    "src_dims": "425x543"
+  },
+  "nalago": {
+    "source": "jsonld-logo.png",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 26674,
+    "src_dims": "1508x693"
+  },
+  "oci": {
+    "source": "img-logo-3.png",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 42670,
+    "src_dims": "258x128"
+  },
+  "petrocor": {
+    "source": "img-logo-2.webp",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 33185,
+    "src_dims": "342x561"
+  },
+  "proavia": {
+    "source": "apple-touch-icon.png",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 2513,
+    "src_dims": "196x196"
+  },
+  "reviveautoworks": {
+    "source": "img-logo-2.png",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 32897,
+    "src_dims": "452x460"
+  },
+  "weca": {
+    "source": "apple-touch-icon.png",
+    "kind": "raster",
+    "result": "svg-traced",
+    "bytes": 36334,
+    "src_dims": "196x196"
+  }
+}

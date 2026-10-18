@@ -41,3 +41,31 @@ files leave in one separate cleanup commit after this deploy is READY
 and the live URL spot-checks pass (house deletion rule; originals stay
 until then). The Poppins 400/500 source files in src/fonts are unused by
 fonts.ts and leave in the same commit.
+
+## S7. Client marks in the trust layer, and the case-card lift
+
+Owner request (2026-10-18) reached the studio through the home-page
+logo strip: extract the clients' own logos from their websites and
+use the real marks instead of plain text names. The trust row now
+renders the five featured clients' marks (the same sanitized and
+traced SVGs the Technologies site ships, one asset set), each linking
+to the client's live site in a new tab; the text fallback stays for
+any future case without a usable mark.
+
+The marks sit grayscale at 66% and return to full colour on hover or
+keyboard focus; reduced motion keeps them at full colour always.
+
+The case gallery gains one lift: on hover or focus-within the tile
+rises 6px, its shadow deepens, the artwork zooms (existing) and the
+title takes the teal. Transform and shadow only, no layout cost.
+Reduced motion removes the lift and the zoom, keeping the shadow
+change as the only hover signal.
+
+## S8. ScrubWords on the capabilities heading
+
+The "Studio and Intelligence. One practice." heading types itself in
+as it scrolls into reading position, built on the studio's own scrub()
+helper (rAF, lerp, parked off-screen). Words render at full opacity in
+the delivered HTML; the faint floor (0.14) only exists once the block
+approaches the viewport, so the static page always passes the
+colour-contrast audit. Reduced motion never arms it.
