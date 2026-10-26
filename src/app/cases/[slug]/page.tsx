@@ -51,6 +51,7 @@ const SCREENSHOTS: Record<string, string> = {
   miway: "/images/work/screenshots/full/miway-full.avif",
   oci: "/images/work/screenshots/full/oci-full.avif",
   giftedwithpurpose: "/images/work/screenshots/full/giftedwithpurpose-full.avif",
+  ligertours: "/images/work/screenshots/full/ligertours-full.avif",
 };
 
 export default async function CaseStudyPage({

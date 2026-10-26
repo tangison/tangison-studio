@@ -26,6 +26,7 @@ export const CLIENTS: ClientMark[] = [
   { slug: "enchanted", name: "Enchanted Artistry CC", href: "https://www.enchantedna.com", logo: "/images/clients/enchanted.webp", width: 520, height: 549 },
   { slug: "giftedwithpurpose", name: "Gifted with Purpose", href: "https://www.giftedwithpurpose.net", logo: "/images/clients/giftedwithpurpose.svg", width: 1024, height: 1014 },
   { slug: "kalinasho", name: "Kalinasho Trading Enterprises", href: "https://kalinasho.com", logo: "/images/clients/kalinasho.svg", width: 1024, height: 1024 },
+  { slug: "ligertours", name: "Liger Tours Namibia", href: "https://ligertours.com", logo: "/images/clients/ligertours.svg", width: 2560, height: 841 },
   { slug: "lrclearing", name: "L&R Clearing Agency", href: "https://lrclearing.com", logo: "/images/clients/lrclearing.svg", width: 560, height: 330 },
   { slug: "mendozer", name: "Mendozer Investments", href: "https://mendozer.com", logo: "/images/clients/mendozer.svg", width: 1024, height: 401 },
   { slug: "miway", name: "MI-WAY by Malu Investment", href: "https://mi-way.org", logo: "/images/clients/miway.svg", width: 425, height: 543 },

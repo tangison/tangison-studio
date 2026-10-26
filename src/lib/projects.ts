@@ -792,6 +792,27 @@ export const projects: Project[] = [
       craft: [{"title": "Real photography over stock", "body": "Every hero and tour image is from actual ProAvia expeditions. Nothing generic. The Sandwich Harbour dunes are their dunes."}, {"title": "Accreditations above the fold", "body": "ATTA, NIPDB, and NTB logos are placed deliberately. First-time visitors do not know ProAvia. Third-party recognition changes that."}, {"title": "WhatsApp as primary CTA", "body": "For Namibian tourism, WhatsApp converts better than a contact form. We designed around that behavior."}],
     },
   },
+  {
+    slug: "ligertours",
+    name: "Liger Tours Namibia",
+    title: "Liger Tours",
+    category: "Guided tours",
+    eyebrow: "Guided Tours · 2026",
+    short: "Namibia, unhurried.",
+    description:
+      "A locally owned, NTB-registered tour operator running group guided tours from Windhoek to Sossusvlei, Swakopmund, Spitzkoppe, Etosha, the Kalahari and Fish River Canyon, plus short day experiences for travelers on tight schedules.",
+    tags: ["Website Design", "Website Development", "Content Structure"],
+    live: "https://ligertours.com",
+    tech: ["Next.js", "Tailwind CSS"],
+    case: {
+      challengeSub: "The whole holiday is booked from another continent, on the strength of one website.",
+      approachSub: "Trust is the product.",
+      challenge: ["Liger Tours is a locally owned Windhoek operator registered with the Namibia Tourism Board. They run signature routes across the country, Sossusvlei, Swakopmund, Spitzkoppe, Etosha, the Kalahari, Fish River Canyon, plus short day experiences for travelers with limited time. The operation is real and the guides are local. The site had to make both facts legible to a visitor who has never set foot in Namibia and is deciding who to trust with a two-week holiday.", "International travelers compare operators from thousands of kilometers away, and their questions are blunt. Are you registered? Where do tours start? What does it cost? When is the best time? Can you build a custom route? A tourism site that answers those questions slowly, or not at all, loses the enquiry to one that answers them on the page. Liger Tours needed every answer visible before the traveler ever sends a message."],
+      approach: ["The positioning came from the operator's own character: Namibia, unhurried. That line sets the pacing of the whole site. Real photography from actual tours instead of stock. Plain sentences in the operator's own voice. And the local difference stated as fact, not slogan: guides who know the quiet corners most itineraries skip, lodges chosen the way you would choose for family, bushmen walks and township tours arranged with respect.", "The structure serves two kinds of traveler with equal weight. Signature tours carry the multi-day routes the operator is known for, and a separate shelf of day trips answers the short-on-time visitor: game drives, a city and township tour, a traditional cooking class, Windhoek by night. The trust work is structural rather than decorative. NTB registration sits beside the contact details, the FAQ answers the six questions guests actually ask before booking, and every page ends at the same place: tell us your dates, and the trip is built around them."],
+      outcome: ["Liger Tours launched with a site that presents the operation exactly as it runs: locally owned, NTB-registered, group guided tours across the country, and short experiences for tight schedules. The booking path is WhatsApp-first with the number one tap away, which is how Namibian travel is actually arranged.", "The lesson this case confirms: in tourism, trust is the product. A traveler cannot inspect the vehicle or meet the guide before flying in. A registration number, real photographs, direct answers and a phone that gets answered are what turn curiosity into an itinerary."],
+      craft: [{"title": "Namibia, unhurried", "body": "The client's own line became the design brief. Unhurried pacing, real photography, and a hero that shows the actual product: a guide's vehicle on a red dirt road."}, {"title": "Two shelves, two travelers", "body": "Signature multi-day routes for the long trip, day trips for the tight one. Both are first-class paths in the navigation, not an afterthought section."}, {"title": "Answers where the questions are", "body": "Registration, start points, cost, season, group size, custom routes: the pre-booking questions each get a direct answer on the site, not in a follow-up email."}],
+    },
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
