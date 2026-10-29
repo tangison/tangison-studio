@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-15"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-construction-and-real-estate-in-namibia.webp
-imageAlt: "soft architectural forms and scaffolding silhouette in warm light"
+imageAlt: "Minimal illustration of forms and scaffolding silhouette in."
 author: "Tangi Iigonda"
 ---
 

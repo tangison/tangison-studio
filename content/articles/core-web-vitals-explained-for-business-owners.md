@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-22"
 readingMinutes: 3
 image: /images/paintings/blog/core-web-vitals-explained-for-business-owners.webp
-imageAlt: "Soft analog stopwatch and small gauge resting on a pale surface in gentle light."
+imageAlt: "Minimal illustration of analog stopwatch and small gauge resting on a pale surface."
 author: "Tangi Iigonda"
 ---
 

@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-01"
 readingMinutes: 10
 image: /images/paintings/blog/ai-blueprint-for-namibian-business.webp
-imageAlt: "soft abstract blueprint composition of layered pastel geometric city forms"
+imageAlt: "Minimal illustration of blueprint composition of layered geometric city forms."
 author: "Tangi Iigonda"
 ---
 

@@ -5,7 +5,7 @@ import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Terms of Service",
   description:
-    "Terms for using The Tangison Studio website, including what the free audit is and is not.",
+    "The terms that govern use of The Tangison Studio website: how the free audit works, what the site's content is and is not, and the law that applies.",
   path: "/terms",
   ogTitle: "Terms of Service | The Tangison Studio",
 });

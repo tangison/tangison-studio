@@ -8,7 +8,7 @@ category: "Design & Build"
 date: "2026-08-12"
 readingMinutes: 3
 image: /images/paintings/blog/mobile-first-web-design-namibia.webp
-imageAlt: "Soft still life of a phone resting on linen beside a cup in warm morning light."
+imageAlt: "Minimal illustration of of a phone resting on linen beside a cup in warm morning light."
 author: "Tangi Iigonda"
 ---
 

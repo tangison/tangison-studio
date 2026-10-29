@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-15"
 readingMinutes: 3
 image: /images/paintings/blog/how-long-does-a-website-take-to-build.webp
-imageAlt: "Soft scene of an hourglass and neatly arranged tools on a pale workbench in morning light."
+imageAlt: "Minimal illustration of scene of an hourglass and neatly arranged tools on a pale workbench in morning light."
 author: "Tangi Iigonda"
 ---
 

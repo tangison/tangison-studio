@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-04"
 readingMinutes: 5
 image: /images/paintings/blog/ai-ethics-and-governance-guide.webp
-imageAlt: "soft still life with scales of justice and a shield in muted tones"
+imageAlt: "Minimal illustration of with scales of justice and a shield."
 author: "Tangi Iigonda"
 ---
 

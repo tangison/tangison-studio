@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-02"
 readingMinutes: 7
 image: /images/paintings/blog/ai-maturity-framework.webp
-imageAlt: "soft ascending pastel staircase of geometric steps in gentle light"
+imageAlt: "Minimal illustration of ascending staircase of geometric steps."
 author: "Tangi Iigonda"
 ---
 

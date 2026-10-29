@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/lib/projects";
 
 /**
@@ -15,15 +15,16 @@ import type { Project } from "@/lib/projects";
  *  - variant="overlay": caption inside the image over a gradient, for
  *    the featured slot (the Collins "Learning to see." pattern)
  *
- * Every card carries an explicit action row under the artwork:
- *  - "Preview case" opens the case study on this site
- *  - "Live site" (where the client site is live) opens it in a new tab
  * The image itself stays a full-card link to the case study, so the
  * actions are additive, never a replacement for the existing path.
  *
  * The live-site link is rendered as a SIBLING of the case-study link
  * (never nested inside it): the case-study link is stretched over the
- * artwork, and the action chips sit below it in their own row.
+ * artwork, and the action chip sits below it in its own row. The chip
+ * carries a per-case accessible name ("Live site: {name}"), so two
+ * cards never offer two identical link names for two different
+ * destinations, and the redundant "Preview case" chip was removed:
+ * the whole artwork already previews the case.
  */
 
 /** Small pill chip used for the per-case actions. */
@@ -65,11 +66,12 @@ export function CaseCard({
       >
         <Image
           src={`/images/paintings/projects/${project.slug}.webp`}
-          alt={`Soft artwork representing ${project.name}: ${project.eyebrow}`}
-          fill
+          alt={`Minimal artwork representing ${project.name}: ${project.eyebrow}`}
+        width={1200}
+        height={900}
           priority={priority}
           sizes={sizes}
-          className="case-card-image object-cover"
+          className="absolute inset-0 h-full w-full case-card-image object-cover"
         />
 
         {variant === "overlay" && (
@@ -144,32 +146,30 @@ export function CaseCard({
         </div>
       )}
 
-      {/* Action row: preview the case, and where the client site is
-          live, go straight to it. Every case carries at least the
-          preview action; live proof is one tap away when it exists. */}
-      <div
-        className={`flex flex-wrap items-center gap-2 ${
-          variant === "overlay" ? "mt-4 md:mt-5 justify-end" : "mt-3"
-        }`}
-      >
-        {variant === "below" && (
-          <Link href={`/cases/${project.slug}`} prefetch={false} className={chip("")}>
-            Preview case
-            <ArrowRight aria-hidden="true" className="w-3.5 h-3.5" />
-          </Link>
-        )}
-        {project.live && (
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={chip("border-teal/45 bg-teal-mist text-ink")}
-          >
-            Live site
-            <ArrowUpRight aria-hidden="true" className="w-3.5 h-3.5" />
-          </a>
-        )}
-      </div>
+      {/* Action row: where the client site is live, go straight to it.
+          The artwork itself is the preview path; the chip's accessible
+          name names the case so identical link texts never point at
+          different destinations. */}
+      {(variant === "overlay" || project.live) && (
+        <div
+          className={`flex flex-wrap items-center gap-2 ${
+            variant === "overlay" ? "mt-4 md:mt-5 justify-end" : "mt-3"
+          }`}
+        >
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={chip("border-teal/45 bg-teal-mist text-ink")}
+              aria-label={`Live site: ${project.name}`}
+            >
+              Live site
+              <ArrowUpRight aria-hidden="true" className="w-3.5 h-3.5" />
+            </a>
+          )}
+        </div>
+      )}
     </article>
   );
 }

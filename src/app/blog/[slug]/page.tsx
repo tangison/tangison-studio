@@ -54,6 +54,10 @@ export async function generateMetadata({
       articleAuthor: article.author,
     }),
     keywords: article.keywords,
+    alternates: {
+      canonical: `/blog/${article.slug}`,
+      types: { "text/markdown": `/blog/${article.slug}.md` },
+    },
   };
 }
 
@@ -82,10 +86,12 @@ export default async function ArticlePage({
         datePublished: `${article.date}T08:00:00+02:00`,
         author: {
           "@type": "Person",
+          "@id": `${site.url}/#founder`,
           name: article.author,
         },
         publisher: {
           "@type": "Organization",
+          "@id": `${site.url}/#organization`,
           name: "Tangison Studio",
           url: site.url,
         },
@@ -174,10 +180,11 @@ export default async function ArticlePage({
             <Image
               src={article.image}
               alt={article.imageAlt}
-              fill
+            width={960}
+            height={540}
               priority
               sizes="(max-width: 1200px) 100vw, 960px"
-              className="object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
         </Reveal>
@@ -250,9 +257,10 @@ export default async function ArticlePage({
                   <Image
                     src={r.image}
                     alt={r.imageAlt}
-                    fill
+                  width={960}
+                  height={540}
                     sizes="80px"
-                    className="case-card-image object-cover"
+                    className="absolute inset-0 h-full w-full case-card-image object-cover"
                   />
                 </div>
                 <div>

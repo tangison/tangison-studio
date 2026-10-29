@@ -39,7 +39,7 @@ export const projects: Project[] = [
     eyebrow: "Guesthouse & B&B · 2026",
     short: "Rooms from N$450 on the B2 at Usakos. Book on WhatsApp.",
     description:
-      "A registered guesthouse and B&B on the B2 at Usakos with pools, lapa and secure parking, plus Big Brothers Restaurant in town. Rooms from N$450, booked on WhatsApp.",
+      "A registered guesthouse and B&B on the B2 at Usakos with pools, lapa and secure parking, plus Big Brothers Restaurant in town. Rooms from N$450.",
     tags: ["Website Design", "Website Development", "Content Structure"],
     live: "https://bigbrotherguesthouse.com",
     tech: ["Next.js", "Tailwind CSS"],
@@ -450,7 +450,7 @@ export const projects: Project[] = [
     eyebrow: "Spa & Wellness · 2026",
     short: "Quiet luxury in Windhoek West.",
     description:
-      "A spa and wellness centre at 7 Blackett Street, Windhoek West, 90 treatments across massage, facials, hydrotherapy, nails, lashes and hair removal, open seven days.",
+      "A spa and wellness centre at 7 Blackett Street, Windhoek West: 90 treatments across massage, facials, hydrotherapy, nails and hair removal, open seven days.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     // Live site suspended by its host (HTTP 402 on apex and www, checked 2026-09-13);
     // link removed so the portfolio carries no dead external URL. Restore `live`
@@ -539,7 +539,7 @@ export const projects: Project[] = [
     category: "Beauty & mentorship",
     eyebrow: "Cosmetology & Mentorship · 2026",
     short: "Two founders, two audiences, one brand.",
-    description: "Cosmetology, mentorship, and creative guidance for women in Windhoek, including expectant and new mothers.",
+    description: "Cosmetology school, mentorship and creative guidance for women in Windhoek, including expectant and new mothers, from studios in the city centre.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     live: "https://www.enchantedna.com",
     tech: ["Next.js", "Tailwind CSS"],
@@ -559,7 +559,7 @@ export const projects: Project[] = [
     category: "Diesel service",
     eyebrow: "Diesel Service & Mobile Mechanics · 2026",
     short: "A truck moving again as fast as the phone rings.",
-    description: "Mobile diesel service, wheel alignment, and roadside assistance from Walvis Bay across the Erongo Region.",
+    description: "Mobile diesel service, wheel alignment and roadside assistance from Walvis Bay across the Erongo Region, with workshop servicing for fleets.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
     live: "https://www.dieselman-nam.com",
     tech: ["Next.js", "Tailwind CSS"],
@@ -619,9 +619,8 @@ export const projects: Project[] = [
     category: "Customs clearing",
     eyebrow: "Customs Clearing · 2026",
     short: "Competence, clear before the first call.",
-    description: "Customs clearing and freight forwarding across Walvis Bay, Lüderitz, and Southern African borders.",
+    description: "Customs clearing and freight forwarding across Walvis Bay, Lüderitz and five Southern African border posts, with pricing and permit processes published.",
     tags: ["Brand Identity", "Website Design", "Website Development"],
-    live: "https://lrclearing.com",
     tech: ["Next.js", "Tailwind CSS"],
     case: {
       challengeSub: "Customs clearance is a trust business. The site needed to prove operational competence, not list services.",
@@ -813,11 +812,165 @@ export const projects: Project[] = [
       craft: [{"title": "Namibia, unhurried", "body": "The client's own line became the design brief. Unhurried pacing, real photography, and a hero that shows the actual product: a guide's vehicle on a red dirt road."}, {"title": "Two shelves, two travelers", "body": "Signature multi-day routes for the long trip, day trips for the tight one. Both are first-class paths in the navigation, not an afterthought section."}, {"title": "Answers where the questions are", "body": "Registration, start points, cost, season, group size, custom routes: the pre-booking questions each get a direct answer on the site, not in a follow-up email."}],
     },
   },
+  {
+    slug: "namproff",
+    name: "NAMproff Group",
+    title: "NAMproff",
+    category: "Group of companies",
+    eyebrow: "Group of Companies · 2026",
+    short: "One group. Six companies. Your needs, handled.",
+    description:
+      "One umbrella site for a 100% Namibian group of six service companies est. 2013: high-rise cleaning, construction, student accommodation, security and truck rental.",
+    tags: ["Website Design", "Website Development", "Content Structure"],
+    live: "https://www.namproff.com",
+    tech: ["Next.js", "Tailwind CSS", "GSAP"],
+    case: {
+      challengeSub: "Six companies were telling six stories. The group needed one.",
+      approachSub: "One umbrella, six specialities.",
+      challenge: [
+        "NAMproff Group (Garden Town Cleaning Services CC, Reg. No. CC/2013/11733) is a 100% Namibian-owned group that has grown since 2013 into six service companies: High Rise Cleaners Namibia, Erongo Cleaning Services, Erongo Construction, KK Accommodation, Erongo Security Services and Rent-A-Truck. Each company keeps its own speciality and its own team, and every one of them works to the same stated standard: the customer is key. The digital presence did not say any of that with one voice.",
+        "A group site carries a specific buyers' question that a single-company site never faces: which company handles my need, and how do I reach the right team without phoning the wrong one? A facilities manager with a high-rise contract, a student looking for a room and a site foreman hiring a truck arrive with different questions, and the site had to route each of them to the right company in one step.",
+      ],
+      approach: [
+        "The structure is the argument. One umbrella brand states the group facts once, registration, ownership, standard, and then hands over to six company pages, each with its own name, speciality, services and gallery. The home page works as a switchboard: six companies introduced in the same order, in the same voice, each with a direct path into its own pages.",
+        "Conversion is a quote, not a form. A Get a Quote path sits beside the group story, and every company page ends at contact. The scroll choreography stays light: the build is Next.js with restrained GSAP transitions, so the site stays quick on Namibian mobile data while still reading as one considered group presence rather than six stapled brochures.",
+      ],
+      outcome: [
+        "The group launched with one address that presents all six companies honestly: same standard, different specialities, each company reachable in one step from the home page. Group facts are stated once and reused everywhere, so the story cannot drift apart between pages.",
+        "Content lives in one structured file the client edits directly: company names, services, price rows and gallery captions. Adding a seventh company is a content edit, not a redesign, which is what an umbrella structure owes the people who run it.",
+      ],
+      craft: [
+        {
+          title: "One umbrella, six specialities",
+          body: "The group states the shared facts once, then each company page carries its own services and team. One voice at the top, six specialists underneath.",
+        },
+        {
+          title: "The quote is the conversion",
+          body: "A Get a Quote path sits beside the group story and every company page ends at contact. A buyer with a high-rise, a room or a truck reaches the right team in one step.",
+        },
+        {
+          title: "Facts stated once",
+          body: "Registration CC/2013/11733, 100% Namibian ownership and the customer-is-key standard are written once and reused everywhere, so the six pages can never tell six different stories.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "oryxinstitute",
+    name: "Oryx Institute",
+    title: "Oryx Institute",
+    category: "Education",
+    eyebrow: "Education · 2026",
+    short: "A live address before launch day.",
+    description:
+      "A launching-soon site for a Namibian institute: one calm holding page with a direct contact line and an email list, live before the full site follows.",
+    tags: ["Website Design", "Website Development", "Content Structure"],
+    live: "https://oryxinstitute.com",
+    tech: ["Next.js", "Tailwind CSS"],
+    case: {
+      challengeSub: "The institute exists before its programs do. The site had to say so honestly.",
+      approachSub: "One page, one job.",
+      challenge: [
+        "The Oryx Institute was preparing to open with programs still being finalised. It needed a live address now, before the full site could exist, because a domain that resolves to nothing reads as an organisation that does not exist. The trap in a launching-soon page is decoration: countdown timers, vague promises and invented details age badly and create expectations the institute never set.",
+        "The brief was a holding presence that could carry the brand with dignity, invite contact from partners and early students, and make no claim the institute could not yet stand behind. Whatever the page promised, it had to be true the day it shipped.",
+      ],
+      approach: [
+        "One page, one job: say who is coming, invite contact, stop. The page states the institute's name and intent in plain language, offers a direct contact path and an email list for updates, and politely declines to list programs, dates or fees that are not final. Restraint is the design: the same editorial palette and type system the studio's work is known for, with nothing shouting over an organisation that has not started yet.",
+        "The page is built to be replaced. It runs on the same stack as the studio's full builds, so the launching-soon page lifts directly into the future site's structure: when the programs are final, the holding page retires and the real site takes the same address without ceremony.",
+      ],
+      outcome: [
+        "Oryx Institute has a live, honest address before launch day: a calm page that confirms the institute is real, collects genuine enquiries, and promises nothing it cannot deliver. Early interest lands in an inbox instead of a void.",
+        "The case is a small one and says so. Not every build needs thirty pages; this one needed one good page at the right time, built so the full site can follow without throwing it away.",
+      ],
+      craft: [
+        {
+          title: "Honest before launch",
+          body: "No countdown timers, no invented programs, no placeholder fees. The page says what is true today: the institute is coming, and here is how to reach it.",
+        },
+        {
+          title: "One page, one job",
+          body: "Confirm existence, invite contact, collect updates. Everything else waits for launch day. A holding page that does less, does it credibly.",
+        },
+        {
+          title: "Built to be replaced",
+          body: "The holding page runs on the same foundation as the studio's full builds, so launch day is a handover, not a rebuild.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "hola",
+    name: "Hola Credit",
+    title: "Hola Credit",
+    category: "Inhouse product",
+    eyebrow: "Inhouse Product · 2026",
+    short: "Say hola to the income a payslip never shows.",
+    description:
+      "The studio's inhouse cash-flow underwriting product for Namibian microlenders and retailers: a borrower-authorised bank statement becomes structured evidence.",
+    tags: ["Product Design", "Applied AI", "Inhouse R&D"],
+    live: "https://hola.tangison.com",
+    tech: ["Next.js", "TypeScript", "Applied AI"],
+    case: {
+      challengeSub: "Salary-only underwriting reads irregular earners as blank pages.",
+      approachSub: "Evidence, not a score.",
+      challenge: [
+        "Across Namibia, freelancers, contractors, traders, transport operators and shop owners earn consistently without ever receiving a fixed salary deposit. Salary-only underwriting reads them as blank pages and declines them, not because they are unreliable but because the evidence format does not recognise them. Their bank statements tell a different story; microlenders and retailers have no tool that reads it.",
+        "Hola Credit is the studio's own answer, built inhouse on the prototype-first pattern the practice runs: test the hard technical assumption in a working slice before committing to the full build. The hard part was never the interface. It was turning a real bank statement into structured, checkable evidence that a credit desk can read, question and stand behind, without the system ever making the decision for them.",
+      ],
+      approach: [
+        "The product converts a borrower-authorised bank statement into structured cash-flow evidence: an income floor, consistency, volatility and red flags, in plain language, for the desk that has to decide. From statement to signal in four steps, no black box: every step leaves an auditable trace, and every assessment can be walked back to the transactions behind it.",
+        "The decision stays where it belongs. Hola Credit is explainable by design and its extraction is checkable by design; it produces evidence a lender can interrogate, not a score a lender must obey. The public site carries the product story the same way: what it does, the four steps, a working demo, and a waitlist for lenders and retailers who want it in their decision flow.",
+      ],
+      outcome: [
+        "Hola Credit is live and public at hola.tangison.com, the studio's active inhouse product: prototype proven, product shipped, demo and waitlist open. It runs on the same domain the studio publishes its own work on, which is the point: the studio eats its own cooking, in the open.",
+        "The build validates the prototype-first rule the practice sells to clients. The risky assumption was tested in a working slice before the product committed, and the shipped product keeps the auditable trace that prototype proved out.",
+      ],
+      craft: [
+        {
+          title: "Prototype the hard part first",
+          body: "The statement-to-evidence extraction was proven in a working slice before the product committed. The interface was never the risk; the evidence was.",
+        },
+        {
+          title: "Evidence, not a score",
+          body: "Income floor, consistency, volatility and red flags, each one traceable back to the transactions behind it. The desk reads the evidence; the tool does not decide.",
+        },
+        {
+          title: "Irregular does not mean invisible",
+          body: "The product exists for the earners salary-only underwriting cannot see. A bank statement is a story; Hola Credit makes it legible to the desk that has to trust it.",
+        },
+      ],
+    },
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
+
+/** Every case slug: static params for the markdown variant routes. */
+export function getProjectSlugs(): string[] {
+  return projects.map((p) => p.slug);
+}
+
+/**
+ * Slim case list for the site navigation's mobile takeover. The nav is a
+ * client component rendered on every page: it must serialize four small
+ * strings per case, not the full case bodies (the full objects shipped in
+ * every page's RSC payload and blew up the token weight of the whole site).
+ */
+export interface CaseLink {
+  slug: string;
+  name: string;
+  title: string;
+  category: string;
+}
+
+export const caseLinks: CaseLink[] = projects.map((p) => ({
+  slug: p.slug,
+  name: p.name,
+  title: p.title,
+  category: p.category,
+}));
 
 export function nextProject(slug: string): Project {
   const i = projects.findIndex((p) => p.slug === slug);

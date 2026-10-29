@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
     // AVIF first where the browser supports it — meaningfully smaller than
     // WebP for the painting-style imagery, WebP as the fallback.
     formats: ["image/avif", "image/webp"],
+    // Cap the srcset ladder: the site's largest intrinsic art is 1200px
+    // wide, so 2048/3840 candidates only ever produced dead URLs
+    // (SquirrelScan images/dimensions flagged the 3840 candidates).
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
   async headers() {
     return [
@@ -63,6 +67,14 @@ const nextConfig: NextConfig = {
     return [
       { source: "/work", destination: "/cases", permanent: true },
       { source: "/work/:slug", destination: "/cases/:slug", permanent: true },
+    ];
+  },
+  async rewrites() {
+    // Markdown variants for agents (SquirrelScan ax/markdown-response):
+    // every article and case study is also available as text/markdown.
+    return [
+      { source: "/blog/:slug.md", destination: "/md/blog/:slug" },
+      { source: "/cases/:slug.md", destination: "/md/cases/:slug" },
     ];
   },
 };

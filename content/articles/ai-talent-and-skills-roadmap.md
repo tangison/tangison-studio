@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-05"
 readingMinutes: 5
 image: /images/paintings/blog/ai-talent-and-skills-roadmap.webp
-imageAlt: "soft scene of hands passing a glowing orb between people in pastel light"
+imageAlt: "Minimal illustration of scene of hands passing a glowing orb between people in light."
 author: "Tangi Iigonda"
 ---
 

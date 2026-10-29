@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-17"
 readingMinutes: 3
 image: /images/paintings/blog/website-accessibility-wcag-basics.webp
-imageAlt: "Soft close-up of hands reading a textured page with large clear type in gentle light."
+imageAlt: "Minimal illustration of close-up of hands reading a textured page with large clear type."
 author: "Tangi Iigonda"
 ---
 

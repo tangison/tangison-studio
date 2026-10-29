@@ -41,12 +41,13 @@ export default function AboutPage() {
 <ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-about.webp"
-                alt="A single wooden studio chair in soft window light, a minimal oil painting."
-                fill
+                alt="A single wooden studio chair in soft window light, a minimal illustration."
+              width={1200}
+              height={900}
                 priority
                 fetchPriority="high"
                 sizes="380px"
-                className="object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
 </ParallaxArt>
             </div>
@@ -101,16 +102,8 @@ export default function AboutPage() {
               </p>
               <p>
                 When a project needs deeper technical capacity, research, or
-                production muscle,{" "}
-                <a
-                  href="https://labs.tangison.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline text-ink"
-                >
-                  Tangison Labs
-                </a>{" "}
-                can provide it. But you work with the studio directly. The group
+                production muscle, Tangison Labs, a group division, can provide
+                it. But you work with the studio directly. The group
                 connection is there when it is useful, not when it is not.
               </p>
               <p>

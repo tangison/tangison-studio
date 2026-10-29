@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-21"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-manufacturing-in-namibia.webp
-imageAlt: "soft factory interior with quiet machines in gentle light"
+imageAlt: "Minimal illustration of factory interior with quiet machines."
 author: "Tangi Iigonda"
 ---
 

@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-14"
 readingMinutes: 3
 image: /images/paintings/blog/website-maintenance-what-it-covers.webp
-imageAlt: "Soft still life of a small toolbox, folded cloth and oil can on a clean workbench."
+imageAlt: "Minimal illustration of of a small toolbox, folded cloth and oil can on a clean workbench."
 author: "Tangi Iigonda"
 ---
 

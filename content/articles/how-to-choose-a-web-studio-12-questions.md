@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-13"
 readingMinutes: 3
 image: /images/paintings/blog/how-to-choose-a-web-studio-12-questions.webp
-imageAlt: "Soft scene of two chairs facing each other across a small table in calm pastel light."
+imageAlt: "Minimal illustration of scene of two chairs facing each other across a small table in calm light."
 author: "Tangi Iigonda"
 ---
 

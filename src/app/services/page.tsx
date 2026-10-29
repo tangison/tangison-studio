@@ -52,12 +52,13 @@ export default function ServicesPage() {
 <ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-services.webp"
-                alt="A single fountain pen resting on plain warm paper, a minimal oil painting."
-                fill
+                alt="A single fountain pen resting on plain warm paper, a minimal illustration."
+              width={1200}
+              height={900}
                 priority
                 fetchPriority="high"
                 sizes="380px"
-                className="object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
 </ParallaxArt>
             </div>
@@ -114,9 +115,10 @@ export default function ServicesPage() {
                         : "/images/paintings/services-intelligence.webp"
                     }
                     alt={cap.alt}
-                    fill
+                  width={1200}
+                  height={900}
                     sizes="(max-width: 1024px) 100vw, 640px"
-                    className="object-cover"
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                 </ParallaxArt>
               </div>

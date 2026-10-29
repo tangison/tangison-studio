@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-08"
 readingMinutes: 5
 image: /images/paintings/blog/ai-for-mining-in-namibia.webp
-imageAlt: "soft mineral landscape with terraced earth and quiet machinery in dawn haze"
+imageAlt: "Minimal illustration of mineral landscape with terraced earth and quiet machinery in dawn haze."
 author: "Tangi Iigonda"
 ---
 

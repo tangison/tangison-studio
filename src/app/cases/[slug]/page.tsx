@@ -125,11 +125,12 @@ export default async function CaseStudyPage({
           <div className="relative aspect-[16/10] md:aspect-[21/9] rounded-[24px] overflow-hidden border border-line">
             <Image
               src={`/images/paintings/projects/${project.slug}.webp`}
-              alt={`Soft artwork representing ${project.name}`}
-              fill
+              alt={`Minimal artwork representing ${project.name}`}
+            width={1200}
+            height={900}
               priority
               sizes="(max-width: 1400px) 100vw, 1360px"
-              className="object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
         </Reveal>
@@ -262,10 +263,11 @@ export default async function CaseStudyPage({
             <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[280px]">
               <Image
                 src={`/images/paintings/projects/${next.slug}.webp`}
-                alt={`Soft artwork representing ${next.name}`}
-                fill
+                alt={`Minimal artwork representing ${next.name}`}
+              width={1200}
+              height={900}
                 sizes="(max-width: 768px) 100vw, 560px"
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 style={{ transitionTimingFunction: "var(--ease-primary)" }}
               />
             </div>

@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-08-20"
 readingMinutes: 4
 image: /images/paintings/blog/blog-01.webp
-imageAlt: "Three ceramic vessels of different sizes resting together on a cream table in soft light."
+imageAlt: "Minimal illustration of Three ceramic vessels of different sizes resting together on a cream table in light."
 author: "Tangi Iigonda"
 ---
 

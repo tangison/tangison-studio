@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-22"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-telecom-in-namibia.webp
-imageAlt: "soft still life with a vintage telephone and signal waves motif"
+imageAlt: "Minimal illustration of with a vintage telephone and signal waves motif."
 author: "Tangi Iigonda"
 ---
 

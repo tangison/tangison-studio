@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-06"
 readingMinutes: 4
 image: /images/paintings/blog/ai-vendor-and-tool-landscape.webp
-imageAlt: "soft landscape of organized pastel tools arranged on shelves"
+imageAlt: "Minimal illustration of landscape of organized tools arranged on shelves."
 author: "Tangi Iigonda"
 ---
 

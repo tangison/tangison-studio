@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-24"
 readingMinutes: 3
 image: /images/paintings/blog/website-redesign-checklist-15-steps.webp
-imageAlt: "A soft clipboard with an organized paper checklist and pencil on a pale desk."
+imageAlt: "Minimal illustration of clipboard with an organized paper checklist and pencil on a pale desk."
 author: "Tangi Iigonda"
 ---
 

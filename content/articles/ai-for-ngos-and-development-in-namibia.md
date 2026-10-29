@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-24"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-ngos-and-development-in-namibia.webp
-imageAlt: "soft hands cupping a seedling over fertile soil in gentle light"
+imageAlt: "Minimal illustration of hands cupping a seedling over fertile soil."
 author: "Tangi Iigonda"
 ---
 

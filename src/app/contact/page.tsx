@@ -25,15 +25,15 @@ export default function ContactPage() {
   const gallery = [
     {
       src: "/images/paintings/contact-gallery-01.webp",
-      alt: "A lone desert road at dawn with a distant signal mast, in soft pastel light.",
+      alt: "A small framed artwork of a lone desert road at dawn with a distant signal mast.",
     },
     {
       src: "/images/paintings/contact-gallery-02.webp",
-      alt: "The Atlantic coastline with dark rocks softened by haze and a single teal light glow.",
+      alt: "A small framed artwork of the Atlantic coastline with dark rocks and one teal light.",
     },
     {
       src: "/images/paintings/contact-gallery-03.webp",
-      alt: "A Windhoek cityscape at early morning, rooftops and hills in soft pastel light.",
+      alt: "A small framed artwork of the Windhoek cityscape at early morning, rooftops and hills.",
     },
   ];
 
@@ -65,12 +65,13 @@ export default function ContactPage() {
 <ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-contact.webp"
-                alt="A single cream envelope resting on warm linen, a minimal oil painting."
-                fill
+                alt="A single cream envelope resting on warm linen, a minimal illustration."
+              width={1200}
+              height={900}
                 priority
                 fetchPriority="high"
                 sizes="380px"
-                className="object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
 </ParallaxArt>
             </div>
@@ -133,10 +134,12 @@ export default function ContactPage() {
 <ParallaxArt>
               <Image
                 src="/images/paintings/contact-invitation.webp"
-                alt="A narrow doorway of light between two soft weathered rock walls, with gentle fog passing through."
-                fill
+                alt="A narrow doorway of warm light between two tall weathered rock walls, a thin fog drifting through."
+              width={1200}
+              height={900}
+                priority
                 sizes="(max-width: 1024px) 100vw, 560px"
-                className="object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
 </ParallaxArt>
               <div
@@ -165,9 +168,10 @@ export default function ContactPage() {
                 <Image
                   src={g.src}
                   alt={g.alt}
-                  fill
+                width={1200}
+                height={900}
                   sizes="(max-width: 768px) 100vw, 420px"
-                  className="object-cover"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
 </ParallaxArt>
               </div>

@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-28"
 readingMinutes: 3
 image: /images/paintings/blog/how-much-does-a-website-cost-in-namibia.webp
-imageAlt: "Soft still life of coins, a calculator and folded invoices on a cream desk in gentle light."
+imageAlt: "Minimal illustration of of coins, a calculator and folded invoices on a cream desk."
 author: "Tangi Iigonda"
 ---
 

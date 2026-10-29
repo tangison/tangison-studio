@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-10"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-fishing-and-marine-in-namibia.webp
-imageAlt: "soft harbour scene with fishing boats at rest in pale morning light"
+imageAlt: "Minimal illustration of harbour scene with fishing boats at rest in pale morning light."
 author: "Tangi Iigonda"
 ---
 

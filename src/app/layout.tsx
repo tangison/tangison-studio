@@ -3,6 +3,7 @@ import { poppins, satoshi, jetbrainsMono } from "@/lib/fonts";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/lib/site";
+import { caseLinks } from "@/lib/projects";
 import { JsonLdScript, siteJsonLdGraph } from "@/lib/seo";
 import "./globals.css";
 
@@ -109,7 +110,9 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <SiteNav />
+        {/* Slim case links only: the nav never serializes the full case
+            bodies into every page's payload. */}
+        <SiteNav caseLinks={caseLinks} />
         {/* Brand bar: the checklist accent at the extreme top edge,
             colored from the brand token. A fixed overlay painted before
             first paint: reserved space, zero layout shift, under every

@@ -23,16 +23,16 @@ export function ArticleCard({
       href={`/blog/${article.slug}`}
       prefetch={false}
       className="case-card group block rounded-[20px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal"
-      aria-label={`${article.title}: read article`}
     >
       <div className="relative overflow-hidden rounded-[20px] aspect-[16/9] bg-paper-raise">
         <Image
           src={article.image}
           alt={article.imageAlt}
-          fill
+        width={960}
+        height={540}
           priority={priority}
           sizes={sizes}
-          className="case-card-image object-cover"
+          className="absolute inset-0 h-full w-full case-card-image object-cover"
         />
       </div>
       <div className="mt-4">

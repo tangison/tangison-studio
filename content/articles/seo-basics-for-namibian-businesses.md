@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-20"
 readingMinutes: 3
 image: /images/paintings/blog/seo-basics-for-namibian-businesses.webp
-imageAlt: "Soft scene of a small shopfront with a clear sign on a quiet pastel street."
+imageAlt: "Minimal illustration of scene of a small shopfront with a clear sign on a quiet street."
 author: "Tangi Iigonda"
 ---
 

@@ -43,7 +43,7 @@ export const capabilities = [
     key: "studio",
     title: "Studio",
     image: "/images/paintings/capability-brand.webp",
-    alt: "A soft still life of layered paper swatches, color cards and a pencil on warm cream linen.",
+    alt: "Minimal illustration of layered paper swatches, color cards and a pencil on warm cream linen.",
     lead: "Identity, product design, and development. Brand and digital product as one service, not two separate vendors.",
     programs: [
       {
@@ -76,7 +76,7 @@ export const capabilities = [
     key: "intelligence",
     title: "Intelligence",
     image: "/images/paintings/capability-intelligence.webp",
-    alt: "A soft abstract of a gentle constellation of light nodes over a calm dark sage gradient.",
+    alt: "Minimal illustration of a quiet constellation of connected light nodes on calm paper.",
     lead: "Applied AI, custom integrations, and self-hosted infrastructure that turn digital products into working systems.",
     programs: [
       {

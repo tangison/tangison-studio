@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-11"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-banking-and-finance-in-namibia.webp
-imageAlt: "soft still life with stacked coins, a pen and linen drape in gentle light"
+imageAlt: "Minimal illustration of with stacked coins, a pen and linen drape."
 author: "Tangi Iigonda"
 ---
 

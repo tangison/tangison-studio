@@ -53,7 +53,7 @@ export default function CasesPage() {
               links to it as proof. That includes the projects that were
               discontinued: the statuses are stated exactly as they stand,
               because a portfolio that only shows the wins is not a
-              portfolio, it is a pitch. The paintings beside the cases are
+              portfolio, it is a pitch. The artwork beside the cases is
               the studio's own work, and the screenshots on shipped
               projects are live captures.
             </p>
@@ -63,12 +63,13 @@ export default function CasesPage() {
 <ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-cases.webp"
-                alt="A single small framed painting leaning against a warm wall, a minimal oil painting."
-                fill
+                alt="A single small framed artwork leaning against a warm wall, a minimal illustration."
+              width={1200}
+              height={900}
                 priority
                 fetchPriority="high"
                 sizes="380px"
-                className="object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
 </ParallaxArt>
             </div>

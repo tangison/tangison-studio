@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Search, X } from "lucide-react";
 import { navLinks, site } from "@/lib/site";
-import { projects } from "@/lib/projects";
+import type { CaseLink } from "@/lib/projects";
 
 /**
  * Bundle-loaded gate: this module ships in the nav chunk that every page
@@ -34,7 +34,7 @@ if (typeof document !== "undefined") {
  *  - route change closes the menu
  *  - reduced-motion respected via the CSS transition layer
  */
-export function SiteNav() {
+export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [prevPathname, setPrevPathname] = useState(pathname);
@@ -225,10 +225,13 @@ export function SiteNav() {
         </div>
       </nav>
 
-      {/* full-screen mobile menu: COLLINS-style takeover */}
+      {/* full-screen mobile menu: COLLINS-style takeover. `inert` keeps
+          the closed panel out of the tab order and the a11y tree entirely
+          (stronger than visibility alone); aria-hidden mirrors it. */}
       <div
         className="fixed inset-0 z-[200] lg:hidden"
         aria-hidden={!open}
+        inert={!open}
         style={{ pointerEvents: open ? "auto" : "none" }}
       >
         <div
@@ -340,7 +343,7 @@ export function SiteNav() {
               Selected cases
             </p>
             <ul className="mt-3 flex flex-col">
-              {projects.map((p) => (
+              {caseLinks.map((p) => (
                 <li key={p.slug}>
                   <Link
                     href={`/cases/${p.slug}`}
@@ -350,10 +353,11 @@ export function SiteNav() {
                     <span className="relative h-[68px] w-[68px] shrink-0 overflow-hidden rounded-[14px]">
                       <Image
                         src={`/images/paintings/projects/${p.slug}.webp`}
-                        alt={`Soft artwork representing ${p.name}`}
-                        fill
+                        alt={`Minimal artwork representing ${p.name}`}
+                        width={136}
+                        height={136}
                         sizes="136px"
-                        className="object-cover"
+                        className="object-cover h-full w-full"
                       />
                     </span>
                     <span className="min-w-0 flex-1">

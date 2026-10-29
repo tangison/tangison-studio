@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-03"
 readingMinutes: 7
 image: /images/paintings/blog/ai-roi-playbook.webp
-imageAlt: "soft still life with coins, a small plant and a balance on a desk"
+imageAlt: "Minimal illustration of with coins, a small plant and a balance on a desk."
 author: "Tangi Iigonda"
 ---
 

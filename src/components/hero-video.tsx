@@ -17,10 +17,11 @@ import { useEffect, useRef } from "react";
  * early film keeps LCP under 2.5s while total transfer stays inside the
  * 500KB budget.
  *
- * v5: re-encoded at 640x400 with a light denoise pass. The painting
- * texture survives (verified frame-by-frame) and the loop drops from
- * 418KB to ~110KB webm (~140KB mp4 fallback). The browser downloads
- * only the source it can use.
+ * v6: the v5 clip re-timed to 0.8x playback speed (setpts 1.25, 180 frames
+ * over 9.3s) and re-encoded under hard bitrate ceilings (~75kbps webm,
+ * ~99kbps mp4) at the same 640x400. The loop reads calmer and drops from
+ * ~110KB to ~87KB webm (~115KB mp4). The browser downloads only the
+ * source it can use.
  */
 export function HeroVideo() {
   const ref = useRef<HTMLVideoElement>(null);
@@ -76,8 +77,8 @@ export function HeroVideo() {
       aria-hidden="true"
       className="h-full w-full object-cover"
     >
-      <source data-src="/videos/hero-v5.webm" type="video/webm" />
-      <source data-src="/videos/hero-v5.mp4" type="video/mp4" />
+      <source data-src="/videos/hero-v6.webm" type="video/webm" />
+      <source data-src="/videos/hero-v6.mp4" type="video/mp4" />
     </video>
   );
 }

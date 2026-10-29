@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-18"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-media-and-creative-in-namibia.webp
-imageAlt: "soft studio still life with camera, film rolls and paper"
+imageAlt: "Minimal illustration of studio still life with camera, film rolls and paper."
 author: "Tangi Iigonda"
 ---
 

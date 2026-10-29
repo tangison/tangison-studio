@@ -53,12 +53,13 @@ export default function BlogPage() {
 <ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-blog.webp"
-                alt="A single open book with blank pages on a calm cream table, a minimal oil painting."
-                fill
+                alt="A single open book with blank pages on a calm cream table, a minimal illustration."
+              width={1200}
+              height={900}
                 priority
                 fetchPriority="high"
                 sizes="360px"
-                className="object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
 </ParallaxArt>
             </div>

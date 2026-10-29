@@ -47,7 +47,14 @@ function parseKeywords(v: string | undefined): string[] {
 function excerptFrom(body: string, description: string): string {
   const first = body.split(/\n\s*\n/).find((p) => p.trim().length > 40);
   if (!first) return description;
-  const text = first.replace(/[#*\-]/g, " ").replace(/\s+/g, " ").trim();
+  // Render markdown inline constructs before stripping: links/images must
+  // become their label text, not leak raw [label](url) into the excerpt.
+  const text = first
+    .replace(/!\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/[#*`>_]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
   const sentences = text.split(/(?<=[.!?])\s+/);
   return sentences.slice(0, 2).join(" ").slice(0, 220);
 }

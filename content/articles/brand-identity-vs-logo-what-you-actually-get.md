@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-16"
 readingMinutes: 3
 image: /images/paintings/blog/brand-identity-vs-logo-what-you-actually-get.webp
-imageAlt: "Soft still life of one large letterform card among a set of coordinated pastel cards and tiles."
+imageAlt: "Minimal illustration of of one large letterform card among a set of coordinated cards and tiles."
 author: "Tangi Iigonda"
 ---
 

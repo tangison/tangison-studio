@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-07"
 readingMinutes: 5
 image: /images/paintings/blog/ai-for-agriculture-in-namibia.webp
-imageAlt: "soft pastoral farmland with distant irrigation pivots under a wide pastel sky"
+imageAlt: "Minimal illustration of farmland with distant irrigation pivots under a."
 author: "Tangi Iigonda"
 ---
 

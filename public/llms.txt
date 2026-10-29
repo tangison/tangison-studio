@@ -15,6 +15,10 @@ The studio is operated in Windhoek West by Tangi Iigonda. It designs and builds 
 - [Contact](https://studio.tangison.com/contact): Project brief form, studio line, WhatsApp, and the Windhoek West address.
 - [Search](https://studio.tangison.com/search): Every article, case study, and page on the site, searchable in one place.
 
+## Markdown variants
+
+Every article and case study also serves clean markdown for agents: request `Accept: text/markdown` or fetch `https://studio.tangison.com/blog/{slug}.md` and `https://studio.tangison.com/cases/{slug}.md` directly. The full article list is on the Insights page; the full case list is on the Cases page.
+
 ## Contact
 
 - Email: studio@tangison.com

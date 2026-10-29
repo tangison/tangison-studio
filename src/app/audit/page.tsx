@@ -63,11 +63,12 @@ export default function AuditPage() {
               <Image
                 src="/images/paintings/heroes/hero-audit.webp"
                 alt="A single brass magnifying glass on warm plain paper, a minimal oil painting."
-                fill
+              width={1200}
+              height={900}
                 priority
                 fetchPriority="high"
                 sizes="380px"
-                className="object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
 </ParallaxArt>
             </div>

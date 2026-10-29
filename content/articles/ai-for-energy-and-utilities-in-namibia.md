@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-17"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-energy-and-utilities-in-namibia.webp
-imageAlt: "soft landscape with distant power lines and pastel horizon"
+imageAlt: "Minimal illustration of landscape with distant power lines and horizon."
 author: "Tangi Iigonda"
 ---
 

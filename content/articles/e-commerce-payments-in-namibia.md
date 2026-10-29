@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-19"
 readingMinutes: 3
 image: /images/paintings/blog/e-commerce-payments-in-namibia.webp
-imageAlt: "Soft still life of a small card reader, coins and a folded receipt on a shop counter."
+imageAlt: "Minimal illustration of of a small card reader, coins and a folded receipt on a shop counter."
 author: "Tangi Iigonda"
 ---
 

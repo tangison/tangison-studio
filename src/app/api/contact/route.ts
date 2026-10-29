@@ -52,6 +52,7 @@ export async function POST(req: Request) {
   const timeline = str(body.timeline);
   const budget = str(body.budget);
   const company = str(body.company); // honeypot
+  const mathAnswer = str(body.mathAnswer); // human check, always 47
 
   // honeypot: bots fill hidden fields: pretend success, send nothing
   if (company) {
@@ -73,6 +74,15 @@ export async function POST(req: Request) {
   if (message.length < 10 || message.length > 5000) {
     return NextResponse.json(
       { error: "Tell us a little about the project (10+ characters)." },
+      { status: 400 }
+    );
+  }
+
+  // Human check: every generated sequence sums to 47, so the server
+  // validates that single invariant without carrying question state.
+  if (Number(mathAnswer) !== 47) {
+    return NextResponse.json(
+      { error: "The human check did not add up. Try the sum once more." },
       { status: 400 }
     );
   }

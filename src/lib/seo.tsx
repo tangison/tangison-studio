@@ -90,7 +90,13 @@ export function siteJsonLdGraph() {
         logo: `${site.url}/brand/favicon.webp`,
         email: site.email,
         telephone: site.phone,
-        founder: { "@type": "Person", name: site.founder },
+        founder: {
+          "@type": "Person",
+          "@id": `${site.url}/#founder`,
+          name: site.founder,
+          jobTitle: "Founder & Principal",
+          worksFor: { "@id": `${site.url}/#organization` },
+        },
         foundingDate: site.founded,
         address: {
           "@type": "PostalAddress",
@@ -144,6 +150,14 @@ export function siteJsonLdGraph() {
           },
           "query-input": "required name=search_term_string",
         },
+      },
+      {
+        "@type": "Person",
+        "@id": `${site.url}/#founder`,
+        name: site.founder,
+        jobTitle: "Founder & Principal",
+        worksFor: { "@id": `${site.url}/#organization` },
+        url: site.url,
       },
     ],
   };

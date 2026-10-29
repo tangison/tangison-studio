@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-09-03"
 readingMinutes: 3
 image: /images/paintings/blog/blog-04.webp
-imageAlt: "A small glowing orb held gently between cupped hands in soft dusk light."
+imageAlt: "Minimal illustration of A small glowing orb held gently between cupped hands in dusk light."
 author: "Tangi Iigonda"
 ---
 

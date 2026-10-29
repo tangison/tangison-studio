@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-08-11"
 readingMinutes: 3
 image: /images/paintings/blog/from-brief-to-launch-how-tangison-runs-a-project.webp
-imageAlt: "Soft sequence of small numbered paper tiles arranged in a gentle arc on cream paper."
+imageAlt: "Minimal illustration of sequence of small numbered paper tiles arranged in a arc on cream paper."
 author: "Tangi Iigonda"
 ---
 

@@ -15,11 +15,33 @@ import { projects } from "@/lib/projects";
 import { capabilities, principles, processSteps, site } from "@/lib/site";
 import { getArticleSummaries } from "@/lib/articles";
 import { formatDate } from "@/lib/article-types";
+import { JsonLdScript } from "@/lib/seo";
+
+/** The studio film's real, measured facts (ffprobe on hero-v6). */
+const FILM_DURATION = "PT9S";
+const FILM_UPLOAD = "2026-10-30";
 
 export default function HomePage() {
   // the film poster sits just below the fold line on mobile and inside the
   // first screen on desktop: start it immediately, it is only ~16KB
   preload("/videos/hero-poster-v3.webp", { as: "image", fetchPriority: "high" });
+
+  const filmJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "The Tangison Studio: studio film",
+    description:
+      "The studio's looping hero film: a short painting-style animation that follows the studio slogan inline on the home page.",
+    thumbnailUrl: [`${site.url}/videos/hero-poster-v3.webp`],
+    uploadDate: `${FILM_UPLOAD}T08:00:00+02:00`,
+    duration: FILM_DURATION,
+    contentUrl: [
+      `${site.url}/videos/hero-v6.webm`,
+      `${site.url}/videos/hero-v6.mp4`,
+    ],
+    isFamilyFriendly: true,
+    publisher: { "@type": "Organization", "@id": `${site.url}/#organization` },
+  };
 
   const featured = projects.slice(0, 5);
   const articles = getArticleSummaries();
@@ -30,6 +52,7 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLdScript data={filmJsonLd} />
       {/* ============ Hero: the slogan and nothing else (Collins-style
           statement lead), the studio film follows inline ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-52">
@@ -142,9 +165,10 @@ export default function HomePage() {
                     <Image
                       src={cap.image}
                       alt={cap.alt}
-                      fill
+                    width={1200}
+                    height={900}
                       sizes="(max-width: 768px) 100vw, 640px"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                       style={{ transitionTimingFunction: "var(--ease-primary)" }}
                     />
                   </ParallaxArt>
@@ -184,21 +208,25 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
         <h2 className="h2">Five steps, one connecting line.</h2>
         {/* the heading made literal: one scroll-drawn teal hairline threads
-            the five cards (replaces the old segmented connector stubs) */}
-        <ol className="relative mt-10 md:mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            the five cards (replaces the old segmented connector stubs).
+            The line art is a sibling of the list, not a child: an <ol>
+            may only contain <li> items. */}
+        <div className="relative mt-10 md:mt-14">
           <ProcessLine />
-          {processSteps.map((step, i) => (
-            <li key={step.name} className="relative">
-              <div className="relative rounded-[20px] border border-line bg-paper-raise p-6 h-full">
-                <p className="font-mono text-[11px] text-ink-faint">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="h3 mt-3">{step.name}</h3>
-                <p className="mt-3 text-ink-muted text-[15px] leading-relaxed">{step.body}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+          <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {processSteps.map((step, i) => (
+              <li key={step.name} className="relative">
+                <div className="relative rounded-[20px] border border-line bg-paper-raise p-6 h-full">
+                  <p className="font-mono text-[11px] text-ink-faint">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="h3 mt-3">{step.name}</h3>
+                  <p className="mt-3 text-ink-muted text-[15px] leading-relaxed">{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
 
       {/* ============ Collaboration ============ */}
@@ -209,9 +237,10 @@ export default function HomePage() {
               <Image
                 src="/images/paintings/collaboration-studio.webp"
                 alt="Two pairs of hands collaborating over interface sketches, color swatches, and a laptop on a warm wooden studio table."
-                fill
+              width={1200}
+              height={900}
                 sizes="(max-width: 1024px) 100vw, 640px"
-                className="object-cover"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </ParallaxArt>
           </div>
@@ -258,9 +287,10 @@ export default function HomePage() {
                   <Image
                     src={a.image}
                     alt={a.imageAlt}
-                    fill
+                  width={960}
+                  height={540}
                     sizes="(max-width: 768px) 100vw, 420px"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                     style={{ transitionTimingFunction: "var(--ease-primary)" }}
                   />
                 </div>

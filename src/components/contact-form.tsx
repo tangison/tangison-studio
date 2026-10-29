@@ -1,22 +1,55 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { Check, CircleAlert, LoaderCircle } from "lucide-react";
 
 /**
  * Project-brief form → POST /api/contact → Resend → studio@tangison.com.
  * Falls back gracefully: server returns a readable error when the API key
  * is not configured yet, and the page keeps the mailto/WhatsApp routes.
+ *
+ * Spam protection (mirrors the Technologies site, owner-approved 2026-09):
+ * a honeypot plus one arithmetic human check. Every generated sequence
+ * evaluates to 47, and the server re-checks that single invariant.
  */
+
+type MathQuestion = { text: string; answer: 47 };
+
+function makeMathQuestion(): MathQuestion {
+  if (Math.random() < 0.5) {
+    const a = 2 + Math.floor(Math.random() * 9);
+    const bMax = Math.max(2, Math.floor(46 / a));
+    const b = 2 + Math.floor(Math.random() * Math.max(1, bMax - 1));
+    const c = 47 - a * b;
+    if (c > 0) return { text: `${a} × ${b} + ${c}`, answer: 47 };
+  }
+  const a = 5 + Math.floor(Math.random() * 15);
+  const b = 5 + Math.floor(Math.random() * 15);
+  const c = 47 - a - b;
+  if (c > 0) return { text: `${a} + ${b} + ${c}`, answer: 47 };
+  return { text: "20 + 27", answer: 47 };
+}
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [error, setError] = useState("");
+  // The question is generated after mount only: a Math.random() question
+  // rendered during SSR would never match the client's own render and React
+  // would raise a hydration text mismatch (error #418).
+  const [math, setMath] = useState<MathQuestion | null>(null);
+  useEffect(() => setMath(makeMathQuestion()), []);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const fd = new FormData(form);
     const payload = Object.fromEntries(fd.entries());
+
+    if (Number(String(payload.mathAnswer ?? "").trim()) !== (math?.answer ?? NaN)) {
+      setStatus("error");
+      setError("The human check did not add up. Try the sum once more.");
+      return;
+    }
 
     setStatus("sending");
     setError("");
@@ -98,6 +131,7 @@ export function ContactForm() {
             required
             maxLength={120}
             autoComplete="name"
+            enterKeyHint="next"
             className={inputClass}
             placeholder="Tomas Nakale"
           />
@@ -113,6 +147,7 @@ export function ContactForm() {
             required
             maxLength={200}
             autoComplete="email"
+            enterKeyHint="next"
             className={inputClass}
             placeholder="tomas@example.com"
           />
@@ -129,6 +164,7 @@ export function ContactForm() {
             name="timeline"
             type="text"
             maxLength={80}
+            enterKeyHint="next"
             className={inputClass}
             placeholder="Next 3 months"
           />
@@ -142,6 +178,7 @@ export function ContactForm() {
             name="budget"
             type="text"
             maxLength={80}
+            enterKeyHint="next"
             className={inputClass}
             placeholder="N$ 20-40k"
           />
@@ -159,10 +196,31 @@ export function ContactForm() {
           minLength={10}
           maxLength={5000}
           rows={6}
+          enterKeyHint="enter"
           className={inputClass + " py-3.5 min-h-[150px] resize-y"}
           placeholder="The organization or product, the outcome you want, and anything you already have: brand material, a brief, links."
         />
       </div>
+
+      {math && (
+        <div>
+          <label htmlFor="math" className={labelClass}>
+            Human check: what does {math.text} equal?
+          </label>
+          <input
+            id="math"
+            name="mathAnswer"
+            type="text"
+            required
+            inputMode="numeric"
+            autoComplete="off"
+            enterKeyHint="done"
+            maxLength={6}
+            className={inputClass}
+            placeholder="47"
+          />
+        </div>
+      )}
 
       {status === "error" && (
         <div

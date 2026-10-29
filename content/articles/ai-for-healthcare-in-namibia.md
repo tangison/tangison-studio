@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-13"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-healthcare-in-namibia.webp
-imageAlt: "soft clinical still life with a stethoscope and folded towel on a pale surface"
+imageAlt: "Minimal illustration of clinical still life with a stethoscope and folded towel on a pale surface."
 author: "Tangi Iigonda"
 ---
 

@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-20"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-insurance-in-namibia.webp
-imageAlt: "soft still life with an umbrella, documents and calm neutral tones"
+imageAlt: "Minimal illustration of with an umbrella, documents and calm neutral tones."
 author: "Tangi Iigonda"
 ---
 

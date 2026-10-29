@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-08-30"
 readingMinutes: 3
 image: /images/paintings/blog/blog-03.webp
-imageAlt: "Seedlings sprouting in small terracotta pots on a windowsill in gentle morning light."
+imageAlt: "Minimal illustration of Seedlings sprouting in small terracotta pots on a windowsill in morning light."
 author: "Tangi Iigonda"
 ---
 

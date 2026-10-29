@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-16"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-logistics-and-transport-in-namibia.webp
-imageAlt: "soft still life of a toy truck and parcels on cream linen"
+imageAlt: "Minimal illustration of of a toy truck and parcels on cream linen."
 author: "Tangi Iigonda"
 ---
 
