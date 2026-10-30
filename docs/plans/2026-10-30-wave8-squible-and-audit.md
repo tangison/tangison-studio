@@ -12,7 +12,7 @@ an insight note saying the studio might be rebranding to times_studio soon.
 - squirrel quick audit (25 pages): 79/100 C. 2 errors (a11y/label-content-name-mismatch
   x47 on /blog, a11y/list-structure on /), 196 warnings. Weakest cats: Images 51,
   Agent Experience 50, Performance 65, Accessibility 75.
-- Repo head e1dd345 (Liger Tours case). Liger Tours = the owner's "ligertoirs.com" —
+- Repo head e1dd345 (Liger Tours case). Liger Tours = the owner's "ligertours.com" —
   already live in the gallery; no new work needed for it.
 
 ## Work map

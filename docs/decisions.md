@@ -76,7 +76,7 @@ Owner instruction (2026-10-30) bundled four things: regenerate every artwork
 image on the site in an ultra-minimal "squible" style with AI generation,
 compress and slow the hero film without changing it, add namproff.com,
 oryxinstitute.com and the inhouse hola.tangison.com as cases (Liger Tours,
-the owner's "ligertoirs.com", shipped at e1dd345), and run the squirrelscan
+the owner's "ligertours.com", shipped at e1dd345), and run the squirrelscan
 audit-website skill on studio.tangison.com and drive the score up.
 
 - Generator: Pollination was tried first and rejected on evidence - the free
@@ -120,3 +120,8 @@ audit-website skill on studio.tangison.com and drive the score up.
 - CSP keeps 'unsafe-inline' for scripts: a nonce policy is a middleware
   rollout with real breakage risk (Next hydration payloads, JSON-LD blocks)
   and the Technologies site holds the same documented trade-off.
+- Deploy target for the studio moves to a separate Vercel account (owner's
+  choice, 2026-10-30): the shared team token keeps hitting the team fair-use
+  block, so production deploys happen from the other account once the domain
+  is wired there; the repo stays the source of truth on GitHub. The client
+  domain is spelled ligertours.com everywhere (docs corrected today).
