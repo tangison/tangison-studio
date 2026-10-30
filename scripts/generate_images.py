@@ -264,6 +264,14 @@ _p("c4restaurant", 21071,
    "soft oil painting still life of a braai platter with grilled wors, "
    "pap and chakalaka, fresh bread rolls, a cool drink and a sage green "
    "napkin on a pale cream linen table, gentle visible brush strokes")
+# ligertours v3: vehicle prompts keep coming back photographic (v1 photo
+# capture, v2 seed 21078 photo again) - the shared fix is dropping the
+# subject Flux insists on rendering literally; a plain savanna landscape
+# holds the flat family look (same treatment as the miway dune road).
+_p("ligertours", 21080,
+   "soft oil painting of a wide namibian savanna plain with one lone "
+   "acacia tree, a pale sand track winding toward distant dunes, warm "
+   "morning haze, gentle visible brush strokes, no vehicles")
 
 
 # ---------------------------------------------------------------- fetch ----
