@@ -214,6 +214,8 @@ export default async function CaseStudyPage({
                 alt={`${project.name} live website screenshot`}
                 width={1920}
                 height={1080}
+                priority
+                fetchPriority="high"
                 sizes="(max-width: 1400px) 100vw, 1360px"
                 className="w-full h-auto"
               />

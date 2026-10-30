@@ -70,6 +70,7 @@ export function CaseCard({
         width={1200}
         height={900}
           priority={priority}
+          quality={60}
           sizes={sizes}
           className="absolute inset-0 h-full w-full case-card-image object-cover"
         />
@@ -124,13 +125,9 @@ export function CaseCard({
               featured ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"
             }`}
           >
-            <Link
-              href={`/cases/${project.slug}`}
-              prefetch={false}
-              className="hover:text-teal transition-colors duration-300"
-            >
-              {project.title}
-            </Link>
+            {/* one link per card: the stretched link already covers the
+                title, so this stays text and the link count stays lean */}
+            <span>{project.title}</span>
           </h2>
           <p className="flex shrink-0 items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted">
             {project.category}
@@ -164,7 +161,7 @@ export function CaseCard({
               className={chip("border-teal/45 bg-teal-mist text-ink")}
               aria-label={`Live site: ${project.name}`}
             >
-              Live site
+              {project.name}
               <ArrowUpRight aria-hidden="true" className="w-3.5 h-3.5" />
             </a>
           )}

@@ -100,7 +100,6 @@ export default function CasesPage() {
             >
               <CaseCard
                 project={p}
-                priority={i < 2}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 660px"
               />
             </Reveal>

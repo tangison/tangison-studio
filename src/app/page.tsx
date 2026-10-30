@@ -136,7 +136,6 @@ export default function HomePage() {
               <CaseCard
                 project={p}
                 featured={i === 0}
-                priority={i < 2}
                 sizes={
                   i === 0
                     ? "(max-width: 768px) 100vw, 1360px"

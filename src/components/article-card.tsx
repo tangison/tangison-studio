@@ -31,6 +31,7 @@ export function ArticleCard({
         width={960}
         height={540}
           priority={priority}
+          quality={60}
           sizes={sizes}
           className="absolute inset-0 h-full w-full case-card-image object-cover"
         />
