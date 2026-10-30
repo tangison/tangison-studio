@@ -67,6 +67,9 @@ const nextConfig: NextConfig = {
     return [
       { source: "/work", destination: "/cases", permanent: true },
       { source: "/work/:slug", destination: "/cases/:slug", permanent: true },
+      // The webmaster checklist names /privacy-policy; the canonical route is
+      // /privacy — alias it so both paths resolve.
+      { source: "/privacy-policy", destination: "/privacy", permanent: true },
     ];
   },
   async rewrites() {
