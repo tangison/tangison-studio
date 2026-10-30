@@ -125,3 +125,19 @@ audit-website skill on studio.tangison.com and drive the score up.
   block, so production deploys happen from the other account once the domain
   is wired there; the repo stays the source of truth on GitHub. The client
   domain is spelled ligertours.com everywhere (docs corrected today).
+- Squirrel loop on the live Wave 8 site (2026-10-30): 79/100 C baseline to
+  89/100 B surface, 0 rule errors across 87 pages. Accepted trade-offs,
+  documented: the >100-internal-links warning on /blog and /cases is the
+  price of full 47-article and 24-case indexes plus a conversion footer;
+  TTFB failures (600-1200ms on static pages) are probe-region edge latency,
+  not code; the large inline SVG is the deliberate footer logo component.
+- /search gives up noindex: the global JSON-LD graph lives in the root
+  layout, scoping it per route means headers() in the layout (dynamic
+  rendering everywhere, SSG gone) or a dual-root-layout restructure. The
+  page is a real discovery page with a canonical; it stays out of the
+  sitemap by design.
+- Next 16 silently drops quality values not listed in images.qualities;
+  whitelisted [60, 75] so the grid paintings actually serve at q60.
+- ligertours cover v3: flux photographs vehicles no matter the prompt
+  (v1 live capture, v2 oil-painting vehicle attempt), so the cover became
+  the savanna landscape, same treatment as the miway dune road.
