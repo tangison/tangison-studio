@@ -13,7 +13,10 @@ export const metadata: Metadata = {
   title: "Search: Articles, Cases, and Pages",
   description: `Search everything on The Tangison Studio: ${articleCount} research-backed articles on AI adoption in Namibia, ${caseCount} case studies, and every page of the studio.`,
   alternates: { canonical: "/search" },
-  robots: { index: false, follow: true },
+  // indexable: the global JSON-LD graph lives in the root layout, and
+  // noindex + rich schema reads as a conflict to crawlers (SquirrelScan
+  // crawl/schema-noindex-conflict). /search is a real discovery page with
+  // a canonical; it stays out of the sitemap by design.
 };
 
 export default function SearchPage() {
