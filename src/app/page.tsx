@@ -47,7 +47,12 @@ export default function HomePage() {
   const articles = getArticleSummaries();
   const latest = articles.slice(0, 3);
   const total = articles.length;
-  const trust = projects.slice(0, 5);
+  // Trust row: the first four portfolio anchors plus the Oryx Polytechnic
+  // Institute, whose lockup and partnership are new (2026-11).
+  const trust = [
+    ...projects.slice(0, 4),
+    projects.find((p) => p.slug === "oryxinstitute"),
+  ].filter(Boolean);
   const rest = projects.length - trust.length;
 
   return (
