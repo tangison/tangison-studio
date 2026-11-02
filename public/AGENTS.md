@@ -1,7 +1,7 @@
 # AGENTS.md — studio.tangison.com
 
 The Tangison Studio: the design and engineering practice of Tangison
-Technologies CC, Windhoek, Namibia. One studio instead of three vendors:
+Technologies, Windhoek, Namibia. One studio instead of three vendors:
 brand, digital product, and applied intelligence for organizations across
 Africa.
 
@@ -32,7 +32,7 @@ Africa.
 ## Facts the studio publishes
 
 - Studio: The Tangison Studio, Windhoek West, Namibia. Founded 2023 by
-  Tangi Iigonda. Parent: Tangison Technologies CC (tangison.com).
+  Tangi Iigonda. Parent: Tangison Technologies (tangison.com).
 - Contact: studio@tangison.com, 085 341 1522, WhatsApp.
 - The artwork across the site is the studio's own: minimal, flat,
   bone-paper illustrations generated in the site's design system.

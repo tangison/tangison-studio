@@ -27,7 +27,7 @@ There is a practical layer too. The studio's work increasingly lives in products
 
 ## What would change, and what would not
 
-If the rename happens, the name changes: the site, the email addresses, the documents, the social handles, and the marks. The legal entity stays the same. The people stay the same. The client work stays the same, and every case study on this site stays exactly where it is, under redirects that will keep working long after any rename. The parent relationship with Tangison Technologies CC stays exactly as it is; a studio rename does not touch the group structure.
+If the rename happens, the name changes: the site, the email addresses, the documents, the social handles, and the marks. The legal entity stays the same. The people stay the same. The client work stays the same, and every case study on this site stays exactly where it is, under redirects that will keep working long after any rename. The parent relationship with Tangison Technologies stays exactly as it is; a studio rename does not touch the group structure.
 
 What also does not change is the standard the work is held to. The studio's positioning has been one sentence since the beginning: one studio instead of three vendors. No name we have used, and no name we are considering, changes that sentence. If a future name made that sentence harder to say, we would not adopt it.
 

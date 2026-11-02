@@ -33,6 +33,7 @@ export const CLIENTS: ClientMark[] = [
   { slug: "mundesha", name: "Mundesha Investment One", href: "https://mundesha.com", logo: "/images/clients/mundesha.svg", width: 3510, height: 1107 },
   { slug: "nalago", name: "Nalago Skincare", href: "https://nalago-nam.com", logo: "/images/clients/nalago.svg", width: 1508, height: 693 },
   { slug: "oci", name: "Oom Carlo's Investments", href: "https://oci.com.na", logo: "/images/clients/oci.svg", width: 258, height: 128 },
+  { slug: "oryxinstitute", name: "Oryx Polytechnic Institute", href: "https://oryxinstitute.org", logo: "/images/clients/oryx.svg", width: 646, height: 223 },
   { slug: "petrocor", name: "Petrocor", href: "https://petrocor.blackstarhorizon.com", logo: "/images/clients/petrocor.svg", width: 342, height: 561 },
   { slug: "proavia", name: "ProAvia Travel & Tours", href: "https://proaviainc.com", logo: "/images/clients/proavia.svg", width: 196, height: 196 },
   { slug: "reviveautoworks", name: "Revive Auto Works", href: "https://reviveautoworks.cc", logo: "/images/clients/reviveautoworks.svg", width: 452, height: 460 },

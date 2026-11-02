@@ -1,8 +1,8 @@
 # The Tangison Studio
 
-> The Tangison Studio is the design and engineering practice of Tangison Technologies CC: an independent digital product studio in Windhoek, Namibia. Brand, digital product, and applied intelligence for organizations across Africa. One studio instead of three vendors.
+> The Tangison Studio is the design and engineering practice of Tangison Technologies: an independent digital product studio in Windhoek, Namibia. Brand, digital product, and applied intelligence for organizations across Africa. One studio instead of three vendors.
 
-The studio is operated in Windhoek West by Tangi Iigonda. It designs and builds websites, applications, and brand systems, and applies artificial intelligence inside those products. The parent organization is Tangison Technologies CC, the Namibian technology company whose corporate site is at https://www.tangison.com.
+The studio is operated in Windhoek West by Tangi Iigonda. It designs and builds websites, applications, and brand systems, and applies artificial intelligence inside those products. The parent organization is Tangison Technologies, the Namibian technology company whose corporate site is at https://www.tangison.com.
 
 ## Pages
 
@@ -28,4 +28,4 @@ Every article and case study also serves clean markdown for agents: request `Acc
 
 ## Parent organization
 
-- Tangison Technologies CC: https://www.tangison.com
+- Tangison Technologies: https://www.tangison.com
