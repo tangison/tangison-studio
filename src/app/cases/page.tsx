@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Reveal } from "@/components/reveal";
 import { CaseCard } from "@/components/case-card";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
-import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Case Studies: Web, Brand, Product",
@@ -37,7 +35,7 @@ export default function CasesPage() {
       {/* ============ Gallery header: one painting, one line ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-end">
-          <Reveal>
+          <div>
             <h1 className="h1">The work.</h1>
             <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
               {projects.length} cases · 2015-{new Date().getFullYear()}
@@ -57,13 +55,12 @@ export default function CasesPage() {
               the studio's own work, and the screenshots on shipped
               projects are live captures.
             </p>
-          </Reveal>
-          <Reveal variant="zoom" delay={100}>
+          </div>
+          <div>
             <div className="relative art-tile art-shadow aspect-[4/3] w-[240px] sm:w-[320px] lg:w-[380px] bg-paper-raise">
-<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-cases.webp"
-                alt="A single small framed artwork leaning against a warm wall, a minimal illustration."
+                alt="Ruggedised sensor nodes linked across coastal dunes by a wireframe mesh."
               width={1200}
               height={900}
                 priority
@@ -71,16 +68,15 @@ export default function CasesPage() {
                 sizes="380px"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-</ParallaxArt>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
       {/* ============ Gallery ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-12 md:pt-16 pb-8">
         {/* featured case: full-bleed, caption inside the image */}
-        <Reveal variant="zoom">
+        <div>
           <CaseCard
             project={featured}
             featured
@@ -88,21 +84,17 @@ export default function CasesPage() {
             variant="overlay"
             sizes="(max-width: 1400px) 100vw, 1360px"
           />
-        </Reveal>
+        </div>
 
         {/* the rest: tight 2-col grid, same zoom treatment as home */}
         <div className="mt-6 md:mt-8 grid gap-6 md:gap-8 sm:grid-cols-2">
           {rest.map((p, i) => (
-            <Reveal
-              key={p.slug}
-              delay={(i % 2) * 90}
-              variant={i < 2 ? "zoom" : "rise"}
-            >
+            <div key={p.slug}>
               <CaseCard
                 project={p}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 660px"
               />
-            </Reveal>
+            </div>
           ))}
         </div>
       </section>

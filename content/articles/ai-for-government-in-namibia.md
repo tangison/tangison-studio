@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-23"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-government-in-namibia.webp
-imageAlt: "Minimal illustration of civic building facade with columns in pale light."
+imageAlt: "A command dashboard displayed on a reception desk terminal."
 author: "Tangi Iigonda"
 ---
 

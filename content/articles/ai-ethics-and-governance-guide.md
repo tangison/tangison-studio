@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-04"
 readingMinutes: 5
 image: /images/paintings/blog/ai-ethics-and-governance-guide.webp
-imageAlt: "Minimal illustration of with scales of justice and a shield."
+imageAlt: "A dark equipment aisle lined with network appliances, status lights marking passing traffic."
 author: "Tangi Iigonda"
 ---
 

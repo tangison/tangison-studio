@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Reveal } from "@/components/reveal";
 import { capabilities, site } from "@/lib/site";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
-import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Services: Brand, Web, Product, AI",
@@ -34,25 +32,24 @@ export default function ServicesPage() {
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-end">
           <div>
-            <Reveal>
+            <div>
               <h1 className="h1 max-w-3xl">
                 Studio and Intelligence.
                 <span className="block text-ink-muted">One practice.</span>
               </h1>
-            </Reveal>
-            <Reveal delay={120}>
+            </div>
+            <div>
               <p className="mt-6 max-w-xl text-lg text-ink-muted leading-relaxed">
                 Brand, product, and the systems behind it. One studio instead
                 of three vendors.
               </p>
-            </Reveal>
+            </div>
           </div>
-          <Reveal variant="zoom" delay={100}>
+          <div>
             <div className="relative art-tile art-shadow aspect-[4/3] max-w-[380px] w-full ml-auto bg-paper-raise">
-<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-services.webp"
-                alt="A single fountain pen resting on plain warm paper, a minimal illustration."
+                alt="A thin graphite lattice receding diagonally into dense coastal fog, one teal status light at the nearest joint."
               width={1200}
               height={900}
                 priority
@@ -60,12 +57,11 @@ export default function ServicesPage() {
                 sizes="380px"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-</ParallaxArt>
             </div>
-          </Reveal>
+          </div>
         </div>
 
-        <Reveal delay={160}>
+        <div>
           <div className="mt-12 max-w-3xl prose-body flex flex-col gap-5">
             <p>
               The Tangison Studio is organized around two capabilities, Studio
@@ -85,7 +81,7 @@ export default function ServicesPage() {
               is no minimum retainer, no bundled service you have to opt out of.
             </p>
           </div>
-        </Reveal>
+        </div>
       </section>
 
       {capabilities.map((cap, idx) => (
@@ -94,7 +90,7 @@ export default function ServicesPage() {
           id={cap.key}
           className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32 scroll-mt-28"
         >
-          <Reveal>
+          <div>
             <div className="grid gap-10 lg:grid-cols-2 items-center">
               <div className={idx % 2 === 1 ? "lg:order-2" : ""}>
                 <h2 className="h2">{cap.title}</h2>
@@ -107,7 +103,6 @@ export default function ServicesPage() {
                   idx % 2 === 1 ? "lg:order-1" : ""
                 }`}
               >
-                <ParallaxArt>
                   <Image
                     src={
                       cap.key === "studio"
@@ -120,10 +115,9 @@ export default function ServicesPage() {
                     sizes="(max-width: 1024px) 100vw, 640px"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
-                </ParallaxArt>
               </div>
             </div>
-          </Reveal>
+          </div>
 
           <div className="mt-10 md:mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {cap.programs.map((program) => (

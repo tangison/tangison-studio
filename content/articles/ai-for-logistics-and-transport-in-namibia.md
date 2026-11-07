@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-16"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-logistics-and-transport-in-namibia.webp
-imageAlt: "Minimal illustration of of a toy truck and parcels on cream linen."
+imageAlt: "A distant vessel silhouette fading into Skeleton Coast fog."
 author: "Tangi Iigonda"
 ---
 

@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-18"
 readingMinutes: 3
 image: /images/paintings/blog/the-true-cost-of-a-cheap-website.webp
-imageAlt: "Minimal illustration of of a thin paper chain linking small coins on a pale surface."
+imageAlt: "Close view of a salt-worn steel shackle and bolt, rusted at the joints and still holding its load."
 author: "Tangi Iigonda"
 ---
 

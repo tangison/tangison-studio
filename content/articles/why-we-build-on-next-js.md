@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-21"
 readingMinutes: 3
 image: /images/paintings/blog/why-we-build-on-next-js.webp
-imageAlt: "Minimal illustration of of neatly stacked wooden blocks and a small tool on a workbench in."
+imageAlt: "Sensor units seated in desert sand, a translucent wireframe mesh linking them toward the coast."
 author: "Tangi Iigonda"
 ---
 

@@ -9,22 +9,11 @@ import { navLinks, site } from "@/lib/site";
 import type { CaseLink } from "@/lib/projects";
 
 /**
- * Bundle-loaded gate: this module ships in the nav chunk that every page
- * loads. The moment it executes we mark <html> with .js, which is the ONLY
- * thing that allows reveal animations to hide content (see globals.css:
- * html.js .reveal). If this chunk never loads - stale cache after a
- * deploy, network failure, blocked script - the class is never set and
- * every page renders fully visible. Progressive enhancement, not luck.
- */
-if (typeof document !== "undefined") {
-  document.documentElement.classList.add("js");
-}
-
-/**
  * Floating pill navigation + full-screen mobile takeover.
  *
- * Wordmark: "The Tangison Studio" in Poppins with a staggered word
- * reveal on first paint (CSS keyframes, reduced-motion safe).
+ * Static by owner instruction (2026-11): the menu opens and closes
+ * instantly, no transition layer. Hover states are instant colour
+ * changes only.
  *
  * Accessibility contract:
  *  - body scroll lock (overflow + position, restores on close)
@@ -32,7 +21,6 @@ if (typeof document !== "undefined") {
  *  - Escape key closes
  *  - 48px+ touch targets, 100dvh height (no iOS vh jump)
  *  - route change closes the menu
- *  - reduced-motion respected via the CSS transition layer
  */
 export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
   const pathname = usePathname();
@@ -144,15 +132,7 @@ export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
               style={{ width: 26, height: 26 }}
             />
             <span className="wordmark text-[14px] md:text-[15px] whitespace-nowrap">
-              <span className="wordmark-word" style={{ ["--i" as never]: 0 }}>
-                The&nbsp;
-              </span>
-              <span className="wordmark-word" style={{ ["--i" as never]: 1 }}>
-                Tangison&nbsp;
-              </span>
-              <span className="wordmark-word" style={{ ["--i" as never]: 2 }}>
-                Studio
-              </span>
+              The&nbsp;Tangison&nbsp;Studio
             </span>
           </Link>
 
@@ -165,7 +145,7 @@ export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
                   key={l.href}
                   href={l.href}
                   prefetch={false}
-                  className={`font-body text-sm font-medium transition-colors whitespace-nowrap rounded-full px-1 py-2 ${
+                  className={`font-body text-sm font-medium whitespace-nowrap rounded-full px-1 py-2 ${
                     active ? "text-ink" : "text-ink-muted hover:text-ink"
                   }`}
                   aria-current={active ? "page" : undefined}
@@ -187,14 +167,14 @@ export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
               href="/search"
               prefetch={false}
               aria-label="Search the site"
-              className="hidden sm:inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink-muted hover:border-line-strong hover:text-ink transition-colors"
+              className="hidden sm:inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink-muted hover:border-line-strong hover:text-ink"
             >
               <Search aria-hidden="true" className="w-4 h-4" />
             </Link>
             <Link
               href="/contact"
               prefetch={false}
-              className="hidden md:inline-flex items-center h-10 px-5 rounded-full bg-ink text-paper text-sm font-medium hover:bg-[color-mix(in_srgb,var(--ink)_90%,var(--paper))] transition-colors"
+              className="hidden md:inline-flex items-center h-10 px-5 rounded-full bg-ink text-paper text-sm font-medium hover:bg-[color-mix(in_srgb,var(--ink)_90%,var(--paper))]"
             >
               Start a project
             </Link>
@@ -205,18 +185,18 @@ export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="offcanvas-menu"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink hover:bg-teal-mist transition-colors lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full text-ink hover:bg-teal-mist lg:hidden"
             >
               <span
                 aria-hidden="true"
                 className="w-5 h-5 flex flex-col justify-center gap-[5px] relative"
               >
                 <span
-                  className="block w-full h-[1.5px] bg-current transition-transform duration-300 origin-center"
+                  className="block w-full h-[1.5px] bg-current origin-center"
                   style={{ transform: open ? "rotate(45deg)" : "none" }}
                 />
                 <span
-                  className="block w-full h-[1.5px] bg-current transition-transform duration-300 origin-center"
+                  className="block w-full h-[1.5px] bg-current origin-center"
                   style={{ transform: open ? "rotate(-45deg)" : "none" }}
                 />
               </span>
@@ -225,9 +205,10 @@ export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
         </div>
       </nav>
 
-      {/* full-screen mobile menu: COLLINS-style takeover. `inert` keeps
-          the closed panel out of the tab order and the a11y tree entirely
-          (stronger than visibility alone); aria-hidden mirrors it. */}
+      {/* full-screen mobile menu: COLLINS-style takeover, instant open.
+          `inert` keeps the closed panel out of the tab order and the a11y
+          tree entirely (stronger than visibility alone); aria-hidden
+          mirrors it. */}
       <div
         className="fixed inset-0 z-[200] lg:hidden"
         aria-hidden={!open}
@@ -240,12 +221,10 @@ export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
           role="dialog"
           aria-modal={open}
           aria-label="Menu"
-          className="menu-takeover flex h-[100dvh] w-full flex-col"
+          className="flex h-[100dvh] w-full flex-col"
           style={{
             background: "#0c1014",
             color: "#f6f4ef",
-            opacity: open ? 1 : 0,
-            transform: open ? "translateY(0)" : "translateY(6%)",
             visibility: open ? "visible" : "hidden",
           }}
         >
@@ -265,7 +244,7 @@ export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
               type="button"
               onClick={close}
               aria-label="Close menu"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full border transition-colors"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border"
               style={{ borderColor: "rgba(246,244,239,0.24)" }}
             >
               <X aria-hidden="true" className="w-5 h-5" />
@@ -278,12 +257,7 @@ export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
               href="/search"
               onClick={close}
               className="mt-2 mb-6 flex items-center gap-3 min-h-[56px] w-full rounded-full border"
-              style={{
-                borderColor: "rgba(246,244,239,0.2)",
-                opacity: open ? 1 : 0,
-                transform: open ? "translateY(0)" : "translateY(16px)",
-                transitionDelay: open ? "0.04s" : "0s",
-              }}
+              style={{ borderColor: "rgba(246,244,239,0.2)" }}
             >
               <span
                 className="inline-flex h-11 w-11 items-center justify-center"
@@ -296,20 +270,13 @@ export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
               </span>
             </Link>
             <ul className="flex flex-col">
-              {navLinks.map((l, i) => (
+              {navLinks.map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
                     onClick={close}
-                    className="menu-takeover-link flex items-center justify-between min-h-[68px] border-b"
-                    style={{
-                      borderColor: "rgba(246,244,239,0.12)",
-                      opacity: open ? 1 : 0,
-                      transform: open ? "translateY(0)" : "translateY(16px)",
-                      transitionDelay: open
-                        ? `${0.06 + i * 0.06}s`
-                        : "0s",
-                    }}
+                    className="flex items-center justify-between min-h-[68px] border-b"
+                    style={{ borderColor: "rgba(246,244,239,0.12)" }}
                   >
                     <span className="wordmark font-semibold text-[clamp(1.9rem,8vw,2.4rem)] tracking-[-0.02em]">
                       {l.label}

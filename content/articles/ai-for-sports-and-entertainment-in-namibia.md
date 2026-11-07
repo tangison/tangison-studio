@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-25"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-sports-and-entertainment-in-namibia.webp
-imageAlt: "Minimal illustration of stadium lights and a resting ball on pale grass."
+imageAlt: "Sand streaming off a dune crest under a steady wind."
 author: "Tangi Iigonda"
 ---
 

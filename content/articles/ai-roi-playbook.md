@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-03"
 readingMinutes: 7
 image: /images/paintings/blog/ai-roi-playbook.webp
-imageAlt: "Minimal illustration of with coins, a small plant and a balance on a desk."
+imageAlt: "Intersecting smoke-glass planes joined by a precise teal seam."
 author: "Tangi Iigonda"
 ---
 

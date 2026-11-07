@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-25"
 readingMinutes: 3
 image: /images/paintings/blog/what-is-a-design-system-and-when-you-need-one.webp
-imageAlt: "Minimal illustration of rows of labeled drawers and swatch cards arranged neatly on a workshop shelf."
+imageAlt: "An archival binder beside a desktop and tablet running workflow software."
 author: "Tangi Iigonda"
 ---
 

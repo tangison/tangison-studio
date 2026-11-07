@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-07"
 readingMinutes: 5
 image: /images/paintings/blog/ai-for-agriculture-in-namibia.webp
-imageAlt: "Minimal illustration of farmland with distant irrigation pivots under a."
+imageAlt: "Black mineral sand under soft raking coastal light."
 author: "Tangi Iigonda"
 ---
 

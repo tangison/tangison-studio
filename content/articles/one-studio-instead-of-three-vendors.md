@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-08-20"
 readingMinutes: 4
 image: /images/paintings/blog/blog-01.webp
-imageAlt: "Minimal illustration of Three ceramic vessels of different sizes resting together on a cream table in light."
+imageAlt: "A single dark plinth on a fog-covered plain at dawn, one thin teal line across the fog."
 author: "Tangi Iigonda"
 ---
 

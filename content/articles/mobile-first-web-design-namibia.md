@@ -8,7 +8,7 @@ category: "Design & Build"
 date: "2026-08-12"
 readingMinutes: 3
 image: /images/paintings/blog/mobile-first-web-design-namibia.webp
-imageAlt: "Minimal illustration of of a phone resting on linen beside a cup in warm morning light."
+imageAlt: "A smartphone lying face-up with a dark screen and a single muted teal charge light."
 author: "Tangi Iigonda"
 ---
 

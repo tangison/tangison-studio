@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-11-02"
 readingMinutes: 4
 image: /images/paintings/projects/oryxinstitute.webp
-imageAlt: "A minimal illustration of an open blank book resting on a desert plain with a yellow sun rising behind low dunes."
+imageAlt: "A brushed steel drafting compass with a graphite tip resting on warm paper."
 author: "Tangi Iigonda"
 ---
 

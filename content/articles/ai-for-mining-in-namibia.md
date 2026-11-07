@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-08"
 readingMinutes: 5
 image: /images/paintings/blog/ai-for-mining-in-namibia.webp
-imageAlt: "Minimal illustration of mineral landscape with terraced earth and quiet machinery in dawn haze."
+imageAlt: "Close view of a rusted steel shackle and bolt, salt-worn hardware that still holds."
 author: "Tangi Iigonda"
 ---
 

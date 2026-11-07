@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-16"
 readingMinutes: 3
 image: /images/paintings/blog/brand-identity-vs-logo-what-you-actually-get.webp
-imageAlt: "Minimal illustration of of one large letterform card among a set of coordinated cards and tiles."
+imageAlt: "A stack of three grey paper swatch cards with one muted teal corner tab."
 author: "Tangi Iigonda"
 ---
 

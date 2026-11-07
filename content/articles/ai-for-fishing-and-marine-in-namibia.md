@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-10"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-fishing-and-marine-in-namibia.webp
-imageAlt: "Minimal illustration of harbour scene with fishing boats at rest in pale morning light."
+imageAlt: "Aerial view of a shipwreck resting where the Skeleton Coast dunes meet the surf."
 author: "Tangi Iigonda"
 ---
 

@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-09-03"
 readingMinutes: 3
 image: /images/paintings/blog/blog-04.webp
-imageAlt: "Minimal illustration of A small glowing orb held gently between cupped hands in dusk light."
+imageAlt: "A self-hosted AI server blade beside a printed research and development dossier."
 author: "Tangi Iigonda"
 ---
 

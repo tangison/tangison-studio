@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-15"
 readingMinutes: 3
 image: /images/paintings/blog/how-long-does-a-website-take-to-build.webp
-imageAlt: "Minimal illustration of scene of an hourglass and neatly arranged tools on a pale workbench in morning light."
+imageAlt: "Hands reviewing a printed network architecture blueprint with a drafting stylus."
 author: "Tangi Iigonda"
 ---
 

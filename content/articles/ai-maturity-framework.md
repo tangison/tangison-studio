@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-02"
 readingMinutes: 7
 image: /images/paintings/blog/ai-maturity-framework.webp
-imageAlt: "Minimal illustration of ascending staircase of geometric steps."
+imageAlt: "A registration and compliance checklist tablet held beside a Tangison folder."
 author: "Tangi Iigonda"
 ---
 

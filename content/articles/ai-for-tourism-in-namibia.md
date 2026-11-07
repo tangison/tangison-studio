@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-09"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-tourism-in-namibia.webp
-imageAlt: "Minimal illustration of travel still life with a folded map, camera and sun hat on warm linen."
+imageAlt: "A macro view of rippled dune sand in low fog, one wind-carved ridge catching the light."
 author: "Tangi Iigonda"
 ---
 

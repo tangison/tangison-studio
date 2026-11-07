@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-11"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-banking-and-finance-in-namibia.webp
-imageAlt: "Minimal illustration of with stacked coins, a pen and linen drape."
+imageAlt: "A closed hardcover ledger with a muted teal ribbon bookmark on warm bone paper."
 author: "Tangi Iigonda"
 ---
 

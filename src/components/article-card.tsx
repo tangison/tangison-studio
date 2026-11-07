@@ -44,7 +44,7 @@ export function ArticleCard({
             {formatDate(article.date)} · {article.readingMinutes} min
           </span>
         </p>
-        <h2 className="mt-2 font-display font-bold tracking-[-0.02em] text-lg sm:text-xl leading-snug group-hover:text-teal transition-colors duration-300">
+        <h2 className="mt-2 font-display font-bold tracking-[-0.02em] text-lg sm:text-xl leading-snug group-hover:text-teal">
           {article.title}
         </h2>
         <p className="mt-2 text-[15px] leading-relaxed text-ink-muted line-clamp-2">
@@ -54,8 +54,7 @@ export function ArticleCard({
           Read article
           <ArrowUpRight
             aria-hidden="true"
-            className="w-4 h-4 -translate-x-1 opacity-0 transition-transform duration-500 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100"
-            style={{ transitionTimingFunction: "var(--ease-primary)" }}
+            className="w-4 h-4 -translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100"
           />
         </p>
       </div>

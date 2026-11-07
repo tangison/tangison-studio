@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-18"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-media-and-creative-in-namibia.webp
-imageAlt: "Minimal illustration of studio still life with camera, film rolls and paper."
+imageAlt: "A distant vessel silhouette fading into Skeleton Coast fog."
 author: "Tangi Iigonda"
 ---
 

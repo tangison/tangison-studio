@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-19"
 readingMinutes: 3
 image: /images/paintings/blog/e-commerce-payments-in-namibia.webp
-imageAlt: "Minimal illustration of of a small card reader, coins and a folded receipt on a shop counter."
+imageAlt: "A tablet carrying the Hola Credit risk telemetry interface beside a specification card."
 author: "Tangi Iigonda"
 ---
 

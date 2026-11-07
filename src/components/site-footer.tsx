@@ -75,13 +75,7 @@ export function SiteFooter() {
 
         <div className="mt-16 pt-8 border-t border-line flex flex-col sm:flex-row justify-between gap-3">
           <p className="text-sm text-ink-faint">
-            {site.copyright} · Made by{" "}
-            <a
-              href="https://studio.tangison.com"
-              className="text-ink-faint hover:text-ink link-underline"
-            >
-              Tangison Studio
-            </a>
+            {site.copyright}
           </p>
           <p className="text-sm text-ink-faint">{site.hours}</p>
         </div>

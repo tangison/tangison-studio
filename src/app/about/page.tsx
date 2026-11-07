@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Reveal } from "@/components/reveal";
 import { principles, site } from "@/lib/site";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
-import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "About the Studio in Windhoek",
@@ -33,15 +31,14 @@ export default function AboutPage() {
       {/* ============ Header: one painting, one line ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-end">
-          <Reveal>
+          <div>
             <h1 className="h1 max-w-3xl">Built at the edge.</h1>
-          </Reveal>
-          <Reveal variant="zoom" delay={100}>
+          </div>
+          <div>
             <div className="relative art-tile art-shadow aspect-[4/3] w-[240px] sm:w-[320px] lg:w-[380px] bg-paper-raise">
-<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-about.webp"
-                alt="A single wooden studio chair in soft window light, a minimal illustration."
+                alt="A distant vessel silhouette fading into Skeleton Coast fog."
               width={1200}
               height={900}
                 priority
@@ -49,28 +46,27 @@ export default function AboutPage() {
                 sizes="380px"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-</ParallaxArt>
             </div>
-          </Reveal>
+          </div>
         </div>
-        <Reveal delay={160}>
+        <div>
           <p className="mt-8 max-w-2xl text-lg text-ink-muted leading-relaxed">
             The Tangison Studio is an independent digital product practice in
             Windhoek West, Namibia. We design focused websites, applications
             and brand systems for ambitious organizations across Africa.
           </p>
-        </Reveal>
+        </div>
       </section>
 
       {/* ============ The practice ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.6fr]">
-          <Reveal>
+          <div>
             <div className="lg:sticky lg:top-28">
               <h2 className="h3">Clear signals, useful work.</h2>
             </div>
-          </Reveal>
-          <Reveal delay={80}>
+          </div>
+          <div>
             <div className="prose-body flex flex-col gap-5">
               <p>
                 The studio operates with a simple belief: clear signals, useful
@@ -126,7 +122,7 @@ export default function AboutPage() {
                 seriousness with which they take their own work.
               </p>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 

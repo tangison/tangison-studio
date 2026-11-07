@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-28"
 readingMinutes: 3
 image: /images/paintings/blog/how-much-does-a-website-cost-in-namibia.webp
-imageAlt: "Minimal illustration of of coins, a calculator and folded invoices on a cream desk."
+imageAlt: "A single brass coin resting on warm bone paper under a long soft shadow."
 author: "Tangi Iigonda"
 ---
 

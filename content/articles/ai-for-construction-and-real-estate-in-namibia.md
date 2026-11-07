@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-15"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-construction-and-real-estate-in-namibia.webp
-imageAlt: "Minimal illustration of forms and scaffolding silhouette in."
+imageAlt: "Brand system swatches and sketchbooks on a studio worktable under soft coastal light."
 author: "Tangi Iigonda"
 ---
 

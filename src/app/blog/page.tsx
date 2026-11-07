@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getArticleSummaries, getArticleCategories } from "@/lib/articles";
 import { BlogIndex } from "./blog-client";
-import { Reveal } from "@/components/reveal";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
-import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "AI and Web Design Insights Namibia",
@@ -37,23 +35,22 @@ export default function BlogPage() {
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-32 md:pt-40 pb-10 md:pb-14">
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-end">
           <div>
-            <Reveal>
+            <div>
               <h1 className="h1 max-w-3xl">Thinking that does the work.</h1>
-            </Reveal>
-            <Reveal delay={120}>
+            </div>
+            <div>
               <p className="mt-6 text-lg md:text-xl text-ink-muted leading-relaxed max-w-2xl">
                 {articles.length} research-backed guides on AI adoption across
                 Namibian industries, and practical notes on design, brand, and
                 building digital products from Windhoek.
               </p>
-            </Reveal>
+            </div>
           </div>
-          <Reveal variant="zoom" delay={100}>
+          <div>
             <div className="relative art-tile art-shadow aspect-[4/3] w-[240px] sm:w-[300px] lg:w-[360px] ml-auto bg-paper-raise">
-<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-blog.webp"
-                alt="A single open book with blank pages on a calm cream table, a minimal illustration."
+                alt="An automated newsroom portal monitor beside folded print gazette broadsheets."
               width={1200}
               height={900}
                 priority
@@ -61,16 +58,15 @@ export default function BlogPage() {
                 sizes="360px"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-</ParallaxArt>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pb-24 md:pb-32">
-        <Reveal delay={100}>
+        <div>
           <BlogIndex articles={articles} categories={categories} />
-        </Reveal>
+        </div>
       </section>
     </div>
   );

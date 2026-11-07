@@ -6,9 +6,9 @@ import type { Project } from "@/lib/projects";
 /**
  * Gallery card used on the home page and the Cases gallery.
  *
- * Image-led: the artwork fills the card and slowly zooms IN while you
- * hover or focus it, then eases back OUT when you leave (see
- * `.case-card-image` in globals.css: 1.1s expo-out both ways).
+ * Image-led: the artwork fills the card. Static by owner instruction
+ * (2026-11): no zoom, no lift; hover only tints the title teal,
+ * instantly.
  *
  * Two caption placements, both minimal (title + category · year):
  *  - variant="below" : tight caption row under the image (home + grid)
@@ -32,7 +32,7 @@ function chip(base: string) {
   return (
     "inline-flex items-center gap-1.5 rounded-full border border-line " +
     "px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] " +
-    "text-ink-muted transition-colors duration-300 " +
+    "text-ink-muted " +
     "hover:border-teal hover:text-teal focus-visible:outline-2 " +
     "focus-visible:outline-offset-4 focus-visible:outline-teal " +
     base
@@ -98,8 +98,7 @@ export function CaseCard({
                 Preview case
                 <ArrowUpRight
                   aria-hidden="true"
-                  className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-focus-visible:translate-x-0.5 group-focus-visible:-translate-y-0.5"
-                  style={{ transitionTimingFunction: "var(--ease-primary)" }}
+                  className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-focus-visible:translate-x-0.5 group-focus-visible:-translate-y-0.5"
                 />
               </span>
             </div>
@@ -136,8 +135,7 @@ export function CaseCard({
             </span>
             <ArrowUpRight
               aria-hidden="true"
-              className="w-4 h-4 -translate-x-1 opacity-0 transition-transform duration-500 group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:translate-x-0 group-focus-within:opacity-100"
-              style={{ transitionTimingFunction: "var(--ease-primary)" }}
+              className="w-4 h-4 -translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-focus-within:translate-x-0 group-focus-within:opacity-100"
             />
           </p>
         </div>

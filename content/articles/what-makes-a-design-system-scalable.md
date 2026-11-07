@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-09-01"
 readingMinutes: 3
 image: /images/paintings/blog/blog-02.webp
-imageAlt: "Minimal illustration of A grid of neatly organized paper cards and swatches pinned to a board."
+imageAlt: "A tactile teal pigment circle pressed into black mineral sand."
 author: "Tangi Iigonda"
 ---
 

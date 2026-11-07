@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-13"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-healthcare-in-namibia.webp
-imageAlt: "Minimal illustration of clinical still life with a stethoscope and folded towel on a pale surface."
+imageAlt: "A self-hosted on-premise AI compute workstation with braided fiber cabling."
 author: "Tangi Iigonda"
 ---
 

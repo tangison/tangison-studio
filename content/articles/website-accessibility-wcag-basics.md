@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-17"
 readingMinutes: 3
 image: /images/paintings/blog/website-accessibility-wcag-basics.webp
-imageAlt: "Minimal illustration of close-up of hands reading a textured page with large clear type."
+imageAlt: "A digital caliper measuring a matte hardware prototype module."
 author: "Tangi Iigonda"
 ---
 

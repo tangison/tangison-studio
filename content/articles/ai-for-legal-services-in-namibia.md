@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-19"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-legal-services-in-namibia.webp
-imageAlt: "Minimal illustration of with scales of justice, books and a fountain pen."
+imageAlt: "A closed hardcover ledger with a muted teal ribbon bookmark on warm bone paper."
 author: "Tangi Iigonda"
 ---
 

@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-27"
 readingMinutes: 3
 image: /images/paintings/blog/na-domain-vs-com-for-namibian-businesses.webp
-imageAlt: "Minimal illustration of of two small paper tags and string on a warm linen surface."
+imageAlt: "A thin graphite lattice receding diagonally into dense coastal fog, one teal status light at the nearest joint."
 author: "Tangi Iigonda"
 ---
 

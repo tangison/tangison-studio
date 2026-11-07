@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-08-30"
 readingMinutes: 3
 image: /images/paintings/blog/blog-03.webp
-imageAlt: "Minimal illustration of Seedlings sprouting in small terracotta pots on a windowsill in morning light."
+imageAlt: "A minimal graphite control node with a single teal status light."
 author: "Tangi Iigonda"
 ---
 

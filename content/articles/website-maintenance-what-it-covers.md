@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-14"
 readingMinutes: 3
 image: /images/paintings/blog/website-maintenance-what-it-covers.webp
-imageAlt: "Minimal illustration of of a small toolbox, folded cloth and oil can on a clean workbench."
+imageAlt: "Close view of a rusted steel shackle and bolt, salt-worn hardware that still holds."
 author: "Tangi Iigonda"
 ---
 

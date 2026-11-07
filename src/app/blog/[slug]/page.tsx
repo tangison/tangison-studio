@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Reveal } from "@/components/reveal";
 import { renderMarkdown } from "@/lib/markdown";
 import {
   formatDate,
@@ -132,7 +131,7 @@ export default async function ArticlePage({
 
       {/* ============ Header ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-32 md:pt-40">
-        <Reveal>
+        <div>
           <nav
             aria-label="Breadcrumb"
             className="flex items-center gap-2 text-sm text-ink-muted"
@@ -149,33 +148,33 @@ export default async function ArticlePage({
             </span>
             <span className="text-ink-faint">{article.category}</span>
           </nav>
-        </Reveal>
+        </div>
         <div className="mt-8 md:mt-12 max-w-3xl">
-          <Reveal delay={60}>
+          <div>
             <p className="eyebrow">
               {article.category} · {formatDate(article.date)} ·{" "}
               {article.readingMinutes} min read
             </p>
-          </Reveal>
-          <Reveal delay={120}>
+          </div>
+          <div>
             <h1 className="h1 mt-4">{article.title}</h1>
-          </Reveal>
-          <Reveal delay={180}>
+          </div>
+          <div>
             <p className="mt-6 text-lg md:text-xl text-ink-muted leading-relaxed">
               {article.description}
             </p>
-          </Reveal>
-          <Reveal delay={240}>
+          </div>
+          <div>
             <p className="mt-8 md:mt-10 text-sm text-ink-faint">
               By {article.author}, The Tangison Studio
             </p>
-          </Reveal>
+          </div>
         </div>
       </section>
 
       {/* ============ Hero image ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-12 md:pt-14">
-        <Reveal>
+        <div>
           <div className="relative aspect-[16/9] max-w-4xl rounded-[24px] overflow-hidden border border-line">
             <Image
               src={article.image}
@@ -187,13 +186,13 @@ export default async function ArticlePage({
               className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
-        </Reveal>
+        </div>
       </section>
 
       {/* ============ Body ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-14 md:pt-20 pb-20">
         <div className="prose-body max-w-[72ch]">
-          <Reveal>{renderMarkdown(article.body)}</Reveal>
+          <div>{renderMarkdown(article.body)}</div>
         </div>
       </section>
 
@@ -201,15 +200,15 @@ export default async function ArticlePage({
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pb-20">
         <div className="grid gap-4 md:grid-cols-2">
           {prev && (
-            <Reveal>
+            <div>
               <Link
                 href={`/blog/${prev.slug}`}
-                className="group flex flex-col rounded-[20px] border border-line bg-paper-raise p-6 hover:border-line-strong transition-colors"
+                className="group flex flex-col rounded-[20px] border border-line bg-paper-raise p-6 hover:border-line-strong"
               >
                 <span className="flex items-center gap-2 text-sm text-ink-muted">
                   <ArrowLeft
                     aria-hidden="true"
-                    className="w-4 h-4 transition-transform duration-500 group-hover:-translate-x-1"
+                    className="w-4 h-4 group-hover:-translate-x-1"
                   />
                   Previous
                 </span>
@@ -217,41 +216,41 @@ export default async function ArticlePage({
                   {prev.title}
                 </span>
               </Link>
-            </Reveal>
+            </div>
           )}
           {next && (
-            <Reveal delay={80}>
+            <div>
               <Link
                 href={`/blog/${next.slug}`}
-                className="group flex flex-col items-end text-right rounded-[20px] border border-line bg-paper-raise p-6 hover:border-line-strong transition-colors"
+                className="group flex flex-col items-end text-right rounded-[20px] border border-line bg-paper-raise p-6 hover:border-line-strong"
               >
                 <span className="flex items-center gap-2 text-sm text-ink-muted">
                   Next
                   <ArrowRight
                     aria-hidden="true"
-                    className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1"
+                    className="w-4 h-4 group-hover:translate-x-1"
                   />
                 </span>
                 <span className="mt-2 font-display font-bold tracking-[-0.02em] text-lg leading-snug">
                   {next.title}
                 </span>
               </Link>
-            </Reveal>
+            </div>
           )}
         </div>
       </section>
 
       {/* ============ Related ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pb-20 md:pb-28">
-        <Reveal>
+        <div>
           <h2 className="h3">Keep reading.</h2>
-        </Reveal>
+        </div>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {related.map((r, i) => (
-            <Reveal key={r.slug} delay={i * 80}>
+            <div key={r.slug}>
               <Link
                 href={`/blog/${r.slug}`}
-                className="group flex gap-4 rounded-[20px] border border-line bg-paper-raise p-5 hover:border-line-strong transition-colors"
+                className="group flex gap-4 rounded-[20px] border border-line bg-paper-raise p-5 hover:border-line-strong"
               >
                 <div className="relative w-20 h-20 shrink-0 overflow-hidden rounded-[12px] bg-paper">
                   <Image
@@ -267,19 +266,19 @@ export default async function ArticlePage({
                   <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink-muted">
                     {r.category}
                   </p>
-                  <p className="mt-1 font-display font-bold tracking-[-0.02em] leading-snug group-hover:text-teal transition-colors duration-300">
+                  <p className="mt-1 font-display font-bold tracking-[-0.02em] leading-snug group-hover:text-teal">
                     {r.title}
                   </p>
                 </div>
               </Link>
-            </Reveal>
+            </div>
           ))}
         </div>
       </section>
 
       {/* ============ CTA ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pb-24 md:pb-32">
-        <Reveal>
+        <div>
           <div className="rounded-[24px] border border-line bg-paper-raise p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-xl">
               <h2 className="h3">
@@ -295,7 +294,7 @@ export default async function ArticlePage({
               Start a project brief
             </Link>
           </div>
-        </Reveal>
+        </div>
       </section>
     </div>
   );

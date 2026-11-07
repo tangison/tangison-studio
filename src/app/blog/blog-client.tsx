@@ -56,7 +56,7 @@ export function BlogIndex({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={`Search ${articles.length} articles…`}
-            className="w-full h-12 rounded-full border border-line bg-paper-raise pl-11 pr-5 text-sm placeholder:text-ink-faint focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/25 transition-colors"
+            className="w-full h-12 rounded-full border border-line bg-paper-raise pl-11 pr-5 text-sm placeholder:text-ink-faint focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/25"
           />
         </label>
 
@@ -69,7 +69,7 @@ export function BlogIndex({
             type="button"
             onClick={() => setCategory(null)}
             aria-pressed={category === null}
-            className={`h-9 px-4 rounded-full font-mono text-[10px] uppercase tracking-[0.12em] border transition-colors ${
+            className={`h-9 px-4 rounded-full font-mono text-[10px] uppercase tracking-[0.12em] border ${
               category === null
                 ? "border-teal bg-teal-mist text-ink"
                 : "border-line text-ink-muted hover:border-line-strong hover:text-ink"
@@ -85,7 +85,7 @@ export function BlogIndex({
                 setCategory((prev) => (prev === c.name ? null : c.name))
               }
               aria-pressed={category === c.name}
-              className={`h-9 px-4 rounded-full font-mono text-[10px] uppercase tracking-[0.12em] border transition-colors ${
+              className={`h-9 px-4 rounded-full font-mono text-[10px] uppercase tracking-[0.12em] border ${
                 category === c.name
                   ? "border-teal bg-teal-mist text-ink"
                   : "border-line text-ink-muted hover:border-line-strong hover:text-ink"

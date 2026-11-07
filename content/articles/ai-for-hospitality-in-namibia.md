@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-26"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-hospitality-in-namibia.webp
-imageAlt: "Minimal illustration of hotel lobby still life with a brass key, linen and flowers."
+imageAlt: "A salt-bleached concrete surface under soft raking coastal light."
 author: "Tangi Iigonda"
 ---
 

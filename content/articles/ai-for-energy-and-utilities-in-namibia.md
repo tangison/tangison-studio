@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-17"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-energy-and-utilities-in-namibia.webp
-imageAlt: "Minimal illustration of landscape with distant power lines and horizon."
+imageAlt: "A thin graphite lattice receding diagonally into dense coastal fog, one teal status light at the nearest joint."
 author: "Tangi Iigonda"
 ---
 

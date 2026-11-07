@@ -108,7 +108,7 @@ export function ContactForm() {
   const inputClass =
     "w-full rounded-[14px] border border-line bg-paper-raise px-4 min-h-[52px] text-[15px] " +
     "text-ink placeholder:text-ink-faint focus:outline-none focus:border-teal " +
-    "focus:ring-2 focus:ring-teal/25 transition-colors";
+    "focus:ring-2 focus:ring-teal/25";
   const labelClass = "block eyebrow mb-2.5";
 
   return (

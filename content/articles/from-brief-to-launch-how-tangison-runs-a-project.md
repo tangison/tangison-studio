@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-08-11"
 readingMinutes: 3
 image: /images/paintings/blog/from-brief-to-launch-how-tangison-runs-a-project.webp
-imageAlt: "Minimal illustration of sequence of small numbered paper tiles arranged in a arc on cream paper."
+imageAlt: "An annotated tender specification contract beside a compliance matrix laptop."
 author: "Tangi Iigonda"
 ---
 

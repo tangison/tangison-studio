@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Reveal } from "@/components/reveal";
 import { auditAreas, auditSteps, auditTerms, site } from "@/lib/site";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
-import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Free Website Audit in Namibia",
@@ -34,10 +32,10 @@ export default function AuditPage() {
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-end">
           <div>
-            <Reveal>
+            <div>
               <h1 className="h1 max-w-3xl">We audit your digital presence for free.</h1>
-            </Reveal>
-            <Reveal delay={120}>
+            </div>
+            <div>
               <p className="mt-6 max-w-xl text-lg text-ink-muted leading-relaxed">
                 Send us your website address and we will tell you exactly where you
                 are losing customers: load speed, mobile experience, search
@@ -45,8 +43,8 @@ export default function AuditPage() {
                 written report in five working days. No cost, and no obligation to
                 hire us afterwards.
               </p>
-            </Reveal>
-            <Reveal delay={180}>
+            </div>
+            <div>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="#request" className="btn btn-primary">
                   Request your free audit
@@ -55,11 +53,10 @@ export default function AuditPage() {
                   See what happens next
                 </a>
               </div>
-            </Reveal>
+            </div>
           </div>
-          <Reveal variant="zoom" delay={100}>
+          <div>
             <div className="relative art-tile art-shadow aspect-[4/3] max-w-[380px] w-full ml-auto bg-paper-raise">
-<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-audit.webp"
                 alt="A single brass magnifying glass on warm plain paper, a minimal oil painting."
@@ -70,16 +67,15 @@ export default function AuditPage() {
                 sizes="380px"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-</ParallaxArt>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
       {/* ============ Six areas ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.6fr]">
-          <Reveal>
+          <div>
             <div className="lg:sticky lg:top-28">
               <h2 className="h3">Six areas, every time.</h2>
               <p className="mt-4 text-ink-muted text-[15px] leading-relaxed max-w-sm">
@@ -87,8 +83,8 @@ export default function AuditPage() {
                 happen to notice on the day.
               </p>
             </div>
-          </Reveal>
-          <Reveal delay={80}>
+          </div>
+          <div>
             <div className="grid gap-6">
               {auditAreas.map((area) => (
                 <div
@@ -104,13 +100,13 @@ export default function AuditPage() {
                 </div>
               ))}
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
       {/* ============ Timeline ============ */}
       <section id="what-happens" className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32 scroll-mt-28">
-        <Reveal>
+        <div>
           <h2 className="h2 max-w-2xl">
             From request to report in five working days.
           </h2>
@@ -118,10 +114,10 @@ export default function AuditPage() {
             Every step below says who is acting and how long it takes, so you are
             never waiting without knowing why.
           </p>
-        </Reveal>
+        </div>
         <div className="mt-10 md:mt-14 flex flex-col gap-0">
           {auditSteps.map((step, i) => (
-            <Reveal key={step.step} delay={i * 60}>
+            <div key={step.step}>
               <div className="grid gap-3 md:grid-cols-[90px_1fr_2fr] md:gap-10 py-8 border-t border-line">
                 <p className="font-mono text-sm text-teal pt-1">{step.step}</p>
                 <div>
@@ -132,20 +128,20 @@ export default function AuditPage() {
                   {step.body}
                 </p>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </section>
 
       {/* ============ Terms ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32">
-        <Reveal>
+        <div>
           <h2 className="h2 max-w-2xl">What free actually means here.</h2>
           <p className="mt-5 max-w-xl text-ink-muted leading-relaxed">
             A free offer with no stated limits usually has unstated ones. Here
             are ours.
           </p>
-        </Reveal>
+        </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {auditTerms.map((term) => (
             <div key={term.name} className="rounded-[20px] border border-line bg-paper-raise p-6 md:p-8">
@@ -160,7 +156,7 @@ export default function AuditPage() {
 
       {/* ============ Request ============ */}
       <section id="request" className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-24 md:pt-32 scroll-mt-28">
-        <Reveal>
+        <div>
           <div className="art-tile bg-teal-mist px-6 py-14 md:p-16">
             <h2 className="h2">Send us the address. We will do the rest.</h2>
             <p className="mt-4 text-ink-muted max-w-xl">
@@ -189,7 +185,7 @@ export default function AuditPage() {
               will audit that.
             </p>
           </div>
-        </Reveal>
+        </div>
       </section>
 
       {/* ============ Cases CTA ============ */}

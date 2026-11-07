@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Reveal } from "@/components/reveal";
 import { ContactForm } from "@/components/contact-form";
 import { contactPoints, site, whatToSend } from "@/lib/site";
 import { buildPageMetadata, JsonLdScript, pageJsonLd } from "@/lib/seo";
-import { ParallaxArt } from "@/components/parallax-art";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Start a Project in Windhoek",
@@ -25,15 +23,15 @@ export default function ContactPage() {
   const gallery = [
     {
       src: "/images/paintings/contact-gallery-01.webp",
-      alt: "A small framed artwork of a lone desert road at dawn with a distant signal mast.",
+      alt: "A studio desk corner with an open blank sketchbook and fanned swatch cards.",
     },
     {
       src: "/images/paintings/contact-gallery-02.webp",
-      alt: "A small framed artwork of the Atlantic coastline with dark rocks and one teal light.",
+      alt: "A Sentry reception kiosk terminal standing on a studio desk.",
     },
     {
       src: "/images/paintings/contact-gallery-03.webp",
-      alt: "A small framed artwork of the Windhoek cityscape at early morning, rooftops and hills.",
+      alt: "A closed hardcover brand guidelines book with a muted teal spine edge.",
     },
   ];
 
@@ -50,22 +48,21 @@ export default function ContactPage() {
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-36 md:pt-44">
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-end">
           <div>
-            <Reveal>
+            <div>
               <h1 className="h1 max-w-3xl">Have something worth building?</h1>
-            </Reveal>
-            <Reveal delay={120}>
+            </div>
+            <div>
               <p className="mt-6 max-w-xl text-lg text-ink-muted leading-relaxed">
                 Tell us what you are working on. We reply to every serious
                 enquiry within two working days.
               </p>
-            </Reveal>
+            </div>
           </div>
-          <Reveal variant="zoom" delay={100}>
+          <div>
             <div className="relative art-tile art-shadow aspect-[4/3] max-w-[380px] w-full ml-auto bg-paper-raise">
-<ParallaxArt>
               <Image
                 src="/images/paintings/heroes/hero-contact.webp"
-                alt="A single cream envelope resting on warm linen, a minimal illustration."
+                alt="A slender dark monolith standing on a fog-covered dune crest at dawn."
               width={1200}
               height={900}
                 priority
@@ -73,9 +70,8 @@ export default function ContactPage() {
                 sizes="380px"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-</ParallaxArt>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
@@ -83,7 +79,7 @@ export default function ContactPage() {
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-14 md:pt-20">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {contactPoints.map((cp, i) => (
-            <Reveal key={cp.name} delay={i * 60} className="rounded-[20px] border border-line bg-paper-raise p-6 md:p-7">
+            <div key={cp.name} className="rounded-[20px] border border-line bg-paper-raise p-6 md:p-7">
               <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted">
                 {cp.name}
               </p>
@@ -101,7 +97,7 @@ export default function ContactPage() {
                 )}
               </p>
               <p className="mt-3 text-ink-muted text-[15px] leading-relaxed">{cp.body}</p>
-            </Reveal>
+            </div>
           ))}
         </div>
       </section>
@@ -109,7 +105,7 @@ export default function ContactPage() {
       {/* ============ Brief form + invitation ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
-          <Reveal>
+          <div>
             <div className="rounded-[24px] border border-line bg-paper-raise p-6 md:p-10 h-full flex flex-col relative art-shadow">
               <h2 className="h3">Start a project brief</h2>
               <ul className="mt-6 flex flex-col gap-3">
@@ -127,21 +123,19 @@ export default function ContactPage() {
                 <ContactForm />
               </div>
             </div>
-          </Reveal>
+          </div>
 
-          <Reveal delay={80}>
+          <div>
             <div className="relative art-tile art-shadow h-full min-h-[380px] bg-paper-raise">
-<ParallaxArt>
               <Image
                 src="/images/paintings/contact-invitation.webp"
-                alt="A narrow doorway of warm light between two tall weathered rock walls, a thin fog drifting through."
+                alt="A single blank printed invitation card on warm bone paper with one muted teal edge."
               width={1200}
               height={900}
                 priority
                 sizes="(max-width: 1024px) 100vw, 560px"
                 className="absolute inset-0 h-full w-full object-cover"
               />
-</ParallaxArt>
               <div
                 aria-hidden="true"
                 className="absolute inset-0"
@@ -154,7 +148,7 @@ export default function ContactPage() {
                 Working from the edge of the Atlantic. {site.address}.
               </p>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
@@ -162,9 +156,8 @@ export default function ContactPage() {
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <div className="grid gap-6 md:gap-8 sm:grid-cols-3">
           {gallery.map((g, i) => (
-            <Reveal key={g.src} delay={i * 80}>
+            <div key={g.src}>
               <div className="relative art-tile art-shadow aspect-[4/3] bg-paper-raise">
-<ParallaxArt>
                 <Image
                   src={g.src}
                   alt={g.alt}
@@ -173,9 +166,8 @@ export default function ContactPage() {
                   sizes="(max-width: 768px) 100vw, 420px"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
-</ParallaxArt>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </section>
@@ -183,15 +175,15 @@ export default function ContactPage() {
       {/* ============ Before you write ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.6fr]">
-          <Reveal>
+          <div>
             <div className="lg:sticky lg:top-28">
               <h2 className="h3">
                 A few notes that will make your first message easier to answer
                 well.
               </h2>
             </div>
-          </Reveal>
-          <Reveal delay={80}>
+          </div>
+          <div>
             <div className="prose-body flex flex-col gap-5">
               <p>
                 We work with organizations across Africa and beyond, but our
@@ -224,7 +216,7 @@ export default function ContactPage() {
                 </Link>
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
     </>

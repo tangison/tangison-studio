@@ -139,7 +139,7 @@ export function SearchClient() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search articles, cases, and pages…"
           autoComplete="off"
-          className="w-full h-14 md:h-16 rounded-full border border-line bg-paper-raise pr-5 md:pr-6 text-base md:text-lg placeholder:text-ink-faint focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/25 transition-colors"
+          className="w-full h-14 md:h-16 rounded-full border border-line bg-paper-raise pr-5 md:pr-6 text-base md:text-lg placeholder:text-ink-faint focus:outline-none focus:border-teal focus:ring-2 focus:ring-teal/25"
           style={{ paddingLeft: "3.25rem" }}
         />
       </form>
@@ -152,7 +152,7 @@ export function SearchClient() {
               key={s}
               type="button"
               onClick={() => setQuery(s)}
-              className="h-9 px-4 rounded-full border border-line font-mono text-[10px] uppercase tracking-[0.12em] text-ink-muted hover:border-line-strong hover:text-ink transition-colors"
+              className="h-9 px-4 rounded-full border border-line font-mono text-[10px] uppercase tracking-[0.12em] text-ink-muted hover:border-line-strong hover:text-ink"
             >
               {s}
             </button>
@@ -183,13 +183,13 @@ export function SearchClient() {
                 <li key={r.href}>
                   <Link
                     href={r.href}
-                    className="group flex items-start justify-between gap-4 rounded-[16px] border border-line bg-paper-raise p-5 hover:border-line-strong transition-colors"
+                    className="group flex items-start justify-between gap-4 rounded-[16px] border border-line bg-paper-raise p-5 hover:border-line-strong"
                   >
                     <div className="min-w-0">
                       <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink-muted">
                         {r.meta}
                       </p>
-                      <p className="mt-1 font-display font-bold tracking-[-0.01em] text-lg leading-snug group-hover:text-teal transition-colors duration-300">
+                      <p className="mt-1 font-display font-bold tracking-[-0.01em] text-lg leading-snug group-hover:text-teal">
                         {r.title}
                       </p>
                       <p className="mt-1 text-sm text-ink-muted leading-relaxed line-clamp-2">
@@ -198,7 +198,7 @@ export function SearchClient() {
                     </div>
                     <ArrowUpRight
                       aria-hidden="true"
-                      className="w-5 h-5 shrink-0 mt-1 text-ink-faint transition-[color,transform] duration-500 group-hover:text-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      className="w-5 h-5 shrink-0 mt-1 text-ink-faint group-hover:text-teal group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     />
                   </Link>
                 </li>

@@ -92,7 +92,7 @@ export function getArticles(): Article[] {
         ? Number(data.readingMinutes)
         : Math.max(3, Math.round(words / 220)),
       image: data.image ?? "/images/paintings/blog/blog-01.webp",
-      imageAlt: data.imageAlt ?? data.title ?? "Article illustration",
+      imageAlt: data.imageAlt ?? data.title ?? "Article cover photograph",
       author: data.author ?? "Tangi Iigonda",
       body,
       excerpt: excerptFrom(body, data.description ?? ""),

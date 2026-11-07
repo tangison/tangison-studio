@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-import { Reveal } from "@/components/reveal";
 import { getProject, nextProject, projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
@@ -71,7 +70,7 @@ export default async function CaseStudyPage({
     <div className="theme-ink bg-paper text-ink min-h-screen">
       {/* ============ Header ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-32 md:pt-40">
-        <Reveal>
+        <div>
           <Link
             href="/cases"
             className="inline-flex items-center gap-2 text-sm text-ink-muted hover:text-ink link-underline"
@@ -79,20 +78,20 @@ export default async function CaseStudyPage({
             <ArrowLeft aria-hidden="true" className="w-4 h-4" />
             All cases
           </Link>
-        </Reveal>
+        </div>
         <div className="mt-8 md:mt-10 max-w-4xl">
-          <Reveal delay={60}>
+          <div>
             <p className="eyebrow">{project.eyebrow}</p>
-          </Reveal>
-          <Reveal delay={120}>
+          </div>
+          <div>
             <h1 className="h1 mt-4">{project.name}</h1>
-          </Reveal>
-          <Reveal delay={180}>
+          </div>
+          <div>
             <p className="mt-6 text-lg md:text-xl text-ink-muted leading-relaxed max-w-2xl">
               {project.description}
             </p>
-          </Reveal>
-          <Reveal delay={240}>
+          </div>
+          <div>
             <div className="mt-7 flex flex-wrap gap-2">
               {project.tags.map((t) => (
                 <span
@@ -103,9 +102,9 @@ export default async function CaseStudyPage({
                 </span>
               ))}
             </div>
-          </Reveal>
+          </div>
           {project.live && (
-            <Reveal delay={300}>
+            <div>
               <a
                 href={project.live}
                 target="_blank"
@@ -114,14 +113,14 @@ export default async function CaseStudyPage({
               >
                 Visit the live site
               </a>
-            </Reveal>
+            </div>
           )}
         </div>
       </section>
 
       {/* ============ Hero image ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-10 md:pt-14">
-        <Reveal>
+        <div>
           <div className="relative aspect-[16/10] md:aspect-[21/9] rounded-[24px] overflow-hidden border border-line">
             <Image
               src={`/images/paintings/projects/${project.slug}.webp`}
@@ -133,58 +132,58 @@ export default async function CaseStudyPage({
               className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
-        </Reveal>
+        </div>
       </section>
 
       {/* ============ Challenge / Approach ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.6fr]">
-          <Reveal>
+          <div>
             <div className="lg:sticky lg:top-28">
               <h2 className="h3">{c.challengeSub || "The problem in front of us"}</h2>
             </div>
-          </Reveal>
-          <Reveal delay={80}>
+          </div>
+          <div>
             <div className="prose-body flex flex-col gap-5">
               {c.challenge.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
-          </Reveal>
+          </div>
         </div>
 
         <div className="mt-20 md:mt-28 grid gap-14 lg:grid-cols-[1fr_1.6fr]">
-          <Reveal>
+          <div>
             <div className="lg:sticky lg:top-28">
               <h2 className="h3">{c.approachSub || "How we answered it"}</h2>
             </div>
-          </Reveal>
-          <Reveal delay={80}>
+          </div>
+          <div>
             <div className="prose-body flex flex-col gap-5">
               {c.approach.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
       {/* ============ Craft points ============ */}
       {c.craft.length > 0 && (
         <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
-          <Reveal>
+          <div>
             <h2 className="h2 max-w-2xl">What carried the result</h2>
-          </Reveal>
+          </div>
           <div className="mt-10 grid gap-6 md:gap-8 md:grid-cols-3">
             {c.craft.map((point, i) => (
-              <Reveal key={point.title} delay={i * 80}>
+              <div key={point.title}>
                 <article className="h-full rounded-[20px] border border-line bg-paper-raise p-6 md:p-8">
                   <h3 className="h3">{point.title}</h3>
                   <p className="mt-3 text-ink-muted text-[15px] leading-relaxed">
                     {point.body}
                   </p>
                 </article>
-              </Reveal>
+              </div>
             ))}
           </div>
         </section>
@@ -193,7 +192,7 @@ export default async function CaseStudyPage({
       {/* ============ Live proof ============ */}
       {screenshot && (
         <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
-          <Reveal>
+          <div>
             <h2 className="h2">The production website</h2>
             {project.live && (
               <a
@@ -206,8 +205,8 @@ export default async function CaseStudyPage({
                 <ArrowUpRight aria-hidden="true" className="w-4 h-4" />
               </a>
             )}
-          </Reveal>
-          <Reveal delay={80}>
+          </div>
+          <div>
             <div className="mt-8 relative rounded-[24px] overflow-hidden border border-line">
               <Image
                 src={screenshot}
@@ -220,13 +219,13 @@ export default async function CaseStudyPage({
                 className="w-full h-auto"
               />
             </div>
-          </Reveal>
+          </div>
         </section>
       )}
 
       {/* ============ Outcome ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
-        <Reveal>
+        <div>
           <div className="rounded-[24px] border border-line bg-teal-mist px-6 py-12 md:p-16 max-w-4xl">
             <h2 className="h2">{project.short}</h2>
             <div className="mt-6 flex flex-col gap-4 text-ink-muted leading-relaxed max-w-2xl">
@@ -235,12 +234,12 @@ export default async function CaseStudyPage({
               ))}
             </div>
           </div>
-        </Reveal>
+        </div>
       </section>
 
       {/* ============ Technology ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
-        <Reveal>
+        <div>
           <h3 className="h3">Built with</h3>
           <div className="mt-5 flex flex-wrap gap-2">
             {project.tech.map((t) => (
@@ -252,15 +251,15 @@ export default async function CaseStudyPage({
               </span>
             ))}
           </div>
-        </Reveal>
+        </div>
       </section>
 
       {/* ============ Next project ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
-        <Reveal>
+        <div>
           <Link
             href={`/cases/${next.slug}`}
-            className="group grid gap-6 md:grid-cols-[1fr_1.4fr] items-center rounded-[24px] border border-line bg-paper-raise overflow-hidden hover:border-line-strong transition-colors"
+            className="group grid gap-6 md:grid-cols-[1fr_1.4fr] items-center rounded-[24px] border border-line bg-paper-raise overflow-hidden hover:border-line-strong"
           >
             <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[280px]">
               <Image
@@ -269,26 +268,25 @@ export default async function CaseStudyPage({
               width={1200}
               height={900}
                 sizes="(max-width: 768px) 100vw, 560px"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                style={{ transitionTimingFunction: "var(--ease-primary)" }}
+                className="absolute inset-0 h-full w-full object-cover group-hover:scale-[1.03]"
               />
             </div>
             <div className="p-6 md:p-10 md:pr-14">
               <p className="eyebrow">Next case</p>
-              <h3 className="h3 mt-4 group-hover:text-teal transition-colors">{next.name}</h3>
+              <h3 className="h3 mt-4 group-hover:text-teal">{next.name}</h3>
               <p className="mt-4 text-ink-muted leading-relaxed">{next.description}</p>
               <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium">
                 Read the case
-                <ArrowRight aria-hidden="true" className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight aria-hidden="true" className="w-4 h-4 group-hover:translate-x-1" />
               </span>
             </div>
           </Link>
-        </Reveal>
+        </div>
       </section>
 
       {/* ============ CTA ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
-        <Reveal>
+        <div>
           <div className="rounded-[24px] border border-line bg-paper-raise px-6 py-14 md:p-16 text-center">
             <h2 className="h2">Want something like this?</h2>
             <p className="mt-4 text-ink-muted max-w-xl mx-auto">
@@ -303,7 +301,7 @@ export default async function CaseStudyPage({
               </a>
             </div>
           </div>
-        </Reveal>
+        </div>
       </section>
     </div>
   );

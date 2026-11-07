@@ -2,9 +2,14 @@
 
 /* ============================================================
    The Tangison Studio: design tokens (design.md is source of truth)
-   /* Hallmark · genre: editorial-studio · macrostructure: Portfolio Grid (light) + Long Document (ink) · design-system: design.md · designed-as-app
    Two route themes: paper (light, default) and ink (dark, text-heavy).
    Ink is applied by adding .theme-ink to a page wrapper.
+
+   2026-11 motion note (owner instruction): the site is static. No
+   scroll reveals, no load animations, no hover zooms or lifts, no
+   smooth scrolling, and no grayscale wash on client marks. Every
+   element renders in its final state from the delivered HTML. Hover
+   and focus are instant colour changes only.
    ============================================================ */
 
 @theme inline {
@@ -23,9 +28,6 @@
   --color-teal-mist: var(--teal-mist);
   --color-surface: var(--surface);
   --color-overlay: var(--overlay);
-
-  --ease-primary: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 :root {
@@ -74,7 +76,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   overflow-x: clip;
 }
 
@@ -197,10 +198,6 @@ body {
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
-  transition:
-    background-color 0.15s var(--ease-primary),
-    border-color 0.15s var(--ease-primary),
-    color 0.15s var(--ease-primary);
 }
 
 .btn:focus-visible {
@@ -273,7 +270,7 @@ body {
   );
 }
 
-/* ---------- animated wordmark: staggered word reveal on load ---------- */
+/* ---------- wordmark: static brand type ---------- */
 
 .wordmark {
   font-family: var(--font-display);
@@ -282,230 +279,25 @@ body {
   line-height: 1;
 }
 
-/* animated wordmark: gated on .js with the same progressive-enhancement
-   rule - without JS the words simply sit there, fully visible. */
-html.js .wordmark > .wordmark-word {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(0.32em);
-  animation: wordmark-rise 0.7s var(--ease-primary) forwards;
-  animation-delay: calc(var(--i, 0) * 90ms);
-}
+/* ---------- client marks (trust layer) ----------
+   Full colour, full opacity, always. The previous grayscale-until-hover
+   wash is gone by owner instruction (2026-11). */
 
-@keyframes wordmark-rise {
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* ---------- kinetic headline: masked line rise (hero) ----------
-   Same progressive-enhancement contract as .reveal: lines are visible
-   without JS. The mask reserves descender room (padding-bottom +
-   negative margin) so the tails of g, y and p clear the clip. */
-html.js .kinetic-line {
-  display: block;
-  opacity: 0;
-  transform: translateY(1.2em); /* one line box incl. descender reserve */
-  animation: kinetic-rise 0.9s var(--ease-primary) forwards;
-  animation-delay: calc(140ms + var(--i, 0) * 130ms);
-}
-
-@keyframes kinetic-rise {
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* ---------- motion primitives ---------- */
-
-@keyframes fade-rise {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Progressive enhancement, observe-time hide: content is visible by
-   default. JS (site-nav chunk, every page) sets .js on <html>; the Reveal
-   component then adds .prepare (hidden, NO transition) and .revealed
-   (animate in) at observe time. If the bundle never loads, nothing is
-   ever hidden: no blank page, no flash, no lost animations. */
-html.js .reveal.prepare {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: none;
-}
-
-html.js .reveal.revealed {
+.client-logo-mark {
   opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity 0.9s var(--ease-primary),
-    transform 0.9s var(--ease-primary);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  html.js .reveal.prepare,
-  html.js .reveal-zoom.prepare,
-  html.js .reveal.revealed,
-  html.js .reveal-zoom.revealed {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  html.js .wordmark > .wordmark-word {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-  html.js .kinetic-line {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ============================================================
-   Collins-style gallery cards (home + cases gallery).
-   The image slowly zooms IN on hover / focus and eases back
-   OUT on leave: long expo-out both ways, no snap.
-   ============================================================ */
-.case-card .case-card-image {
-  transition:
-    transform 1.1s var(--ease-out-expo),
-    filter 1.1s var(--ease-out-expo);
-}
-
-.case-card:hover .case-card-image,
-.case-card:focus-visible .case-card-image {
-  transform: scale(1.07);
-  filter: brightness(1.03);
-}
-
-/* hover lift: the tile rises a step while its shadow deepens, paired
-   with the image zoom above. Transform + shadow only: no layout cost,
-   no repaint of the artwork. Focus moves the same way as hover so the
-   keyboard gets the same read. */
-.case-card .art-tile {
-  transition:
-    transform 0.55s var(--ease-primary),
-    box-shadow 0.55s var(--ease-primary);
-}
-
-.case-card:hover .art-tile,
-.case-card:focus-within .art-tile {
-  transform: translateY(-6px);
-  box-shadow: 0 36px 72px -30px rgba(12, 16, 20, 0.34);
-}
-
-/* the caption row breathes with the lift: the title picks up a teal
-   tint as the card rises, so the eye lands on the name. */
-.case-card h2 a {
-  transition: color 0.4s var(--ease-primary);
-}
+/* ---------- gallery cards (home + cases gallery): static ----------
+   No zoom, no lift, no transform. Hover feedback is an instant title
+   colour change only. */
 
 .case-card:hover h2 a,
 .case-card:focus-within h2 a {
   color: var(--teal);
 }
 
-/* ---------- client marks (trust layer) ---------- */
+/* underline links: instant on hover, no sliding animation */
 
-/* quiet grayscale until approached: colour returns on hover/focus */
-.client-logo-mark {
-  filter: grayscale(1);
-  opacity: 0.66;
-  transition:
-    filter 0.3s var(--ease-primary),
-    opacity 0.3s var(--ease-primary);
-}
-
-a:hover .client-logo-mark,
-a:focus-visible .client-logo-mark {
-  filter: grayscale(0);
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .client-logo-mark {
-    filter: none;
-    opacity: 1;
-    transition: none;
-  }
-}
-
-/* zoom-settle entrance: card starts slightly enlarged and settles into
-   place (paired with Reveal variant="zoom"). Same prepare/revealed flow. */
-html.js .reveal-zoom.prepare {
-  opacity: 0;
-  transform: scale(1.045);
-  transition: none;
-}
-
-html.js .reveal-zoom.revealed {
-  opacity: 1;
-  transform: scale(1);
-  transition:
-    opacity 1s var(--ease-primary),
-    transform 1.3s var(--ease-out-expo);
-}
-
-
-/* bottom-up clip wipe (WipeReveal): the block is visible by default;
-   after the first paint JS arms it (hidden, no transition) and on entry
-   plays one bottom-up wipe. power3.inOut equivalent easing. */
-html.js .wipe-armed {
-  clip-path: inset(0% 0% 100% 0%);
-  transition: none;
-}
-
-html.js .wipe-play {
-  clip-path: inset(0% 0% 0% 0%);
-  transition: clip-path 1.1s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html.js .wipe-armed,
-  html.js .wipe-play {
-    clip-path: none;
-    transition: none;
-  }
-  /* the case-card lift and its paired zoom are motion: remove the
-     transforms entirely, keep the shadow change as the only signal */
-  .case-card .art-tile,
-  .case-card .case-card-image {
-    transition: none;
-  }
-  .case-card:hover .art-tile,
-  .case-card:focus-within .art-tile {
-    transform: none;
-    box-shadow: var(--shadow-soft);
-  }
-  .case-card:hover .case-card-image,
-  .case-card:focus-visible .case-card-image {
-    transform: none;
-    filter: none;
-  }
-}
-
-
-/* underline links */
 .link-underline {
   position: relative;
   text-decoration: none;
@@ -518,19 +310,6 @@ html.js .wipe-play {
   background: var(--teal);
 }
 
-/* form error state: the one semantic exception to the ink/teal palette.
-   A warm red keyed to the paper/ink world, used only where something
-   actually failed (success keeps teal-mist). */
-.form-error {
-  border: 1px solid color-mix(in srgb, var(--error) 40%, transparent);
-  background: color-mix(in srgb, var(--error) 9%, var(--paper-raise));
-  color: var(--ink);
-}
-
-.form-error-icon {
-  color: var(--error);
-}
-
 .link-underline::after {
   content: "";
   position: absolute;
@@ -541,7 +320,6 @@ html.js .wipe-play {
   background: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.5s var(--ease-primary);
 }
 
 .link-underline:hover::after,
@@ -550,15 +328,12 @@ html.js .wipe-play {
   transform-origin: left;
 }
 
-/* light underline link for copy sitting on the hero film / dark scrim */
+/* light underline link for copy sitting on dark scrims */
 .link-underline-light {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.35);
   padding-bottom: 2px;
-  transition:
-    color 0.15s var(--ease-primary),
-    border-color 0.15s var(--ease-primary);
 }
 
 .link-underline-light:hover,
@@ -581,24 +356,8 @@ html.js .wipe-play {
   background: color-mix(in srgb, var(--paper) 80%, var(--teal));
 }
 
-/* full-screen mobile menu (Collins-style takeover) */
-.menu-takeover {
-  transition:
-    opacity 0.45s var(--ease-primary),
-    transform 0.55s var(--ease-primary),
-    visibility 0.55s;
-}
-
-.menu-takeover-link {
-  transition:
-    opacity 0.5s var(--ease-primary),
-    transform 0.5s var(--ease-primary),
-    color 0.3s var(--ease-primary);
-}
-
-.menu-case-row {
-  transition: background-color 0.3s var(--ease-primary);
-}
+/* full-screen mobile menu: opens and closes instantly (no takeover
+   transition). The layout, scroll lock and focus trap are unchanged. */
 
 .menu-case-row:hover,
 .menu-case-row:focus-visible {

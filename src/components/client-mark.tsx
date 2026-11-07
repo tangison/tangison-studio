@@ -6,10 +6,10 @@ import { CLIENTS } from "@/lib/clients";
  * site ships, keyed by project slug so the featured cases' clients
  * can be shown as real marks instead of plain text names.
  *
- * Marks sit quiet in grayscale and come to full colour as the pointer
- * or keyboard focus reaches them; every one links to the client's own
- * live site (2026-10-18 instruction: the marks go to their sites,
- * never to studio artefacts).
+ * Marks render in full colour at full opacity, always (2026-11 owner
+ * instruction: the grayscale wash is gone). Every mark links to the
+ * client's own live site (2026-10-18 instruction: the marks go to
+ * their sites, never to studio artefacts).
  */
 
 export const CLIENT_BY_SLUG = new Map(CLIENTS.map((c) => [c.slug, c]));

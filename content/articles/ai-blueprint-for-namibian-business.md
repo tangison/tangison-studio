@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-01"
 readingMinutes: 10
 image: /images/paintings/blog/ai-blueprint-for-namibian-business.webp
-imageAlt: "Minimal illustration of blueprint composition of layered geometric city forms."
+imageAlt: "Sensor units seated in desert sand, a translucent wireframe mesh linking them toward the coast."
 author: "Tangi Iigonda"
 ---
 

@@ -7,7 +7,7 @@ category: "AI Strategy"
 date: "2026-05-05"
 readingMinutes: 5
 image: /images/paintings/blog/ai-talent-and-skills-roadmap.webp
-imageAlt: "Minimal illustration of scene of hands passing a glowing orb between people in light."
+imageAlt: "An engineer calibrating a modular IoT sensor node beside an engineering schematic."
 author: "Tangi Iigonda"
 ---
 

@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-24"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-ngos-and-development-in-namibia.webp
-imageAlt: "Minimal illustration of hands cupping a seedling over fertile soil."
+imageAlt: "A slender dark monolith standing on a fog-covered dune crest at dawn."
 author: "Tangi Iigonda"
 ---
 

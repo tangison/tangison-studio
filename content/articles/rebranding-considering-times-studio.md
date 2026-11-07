@@ -7,7 +7,7 @@ category: "Studio Notes"
 date: "2026-10-30"
 readingMinutes: 4
 image: /images/paintings/blog/rebranding-considering-times-studio.webp
-imageAlt: "Minimal illustration of a wooden signboard on two posts being freshly painted by a single roller, one brush resting in a tin below."
+imageAlt: "An automated newsroom portal monitor beside folded print gazette broadsheets."
 author: "Tangi Iigonda"
 ---
 

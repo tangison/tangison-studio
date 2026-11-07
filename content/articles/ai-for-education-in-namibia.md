@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-14"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-education-in-namibia.webp
-imageAlt: "Minimal illustration of desk still life with open book, pencils and morning light."
+imageAlt: "A printed system specification sheet beside a relational database schema display."
 author: "Tangi Iigonda"
 ---
 

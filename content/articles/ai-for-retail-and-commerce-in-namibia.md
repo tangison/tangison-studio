@@ -7,7 +7,7 @@ category: "AI by Industry"
 date: "2026-05-12"
 readingMinutes: 6
 image: /images/paintings/blog/ai-for-retail-and-commerce-in-namibia.webp
-imageAlt: "Minimal illustration of shop counter still life with folded textiles and a small scale."
+imageAlt: "A rugged entrance access terminal mounted at a doorway."
 author: "Tangi Iigonda"
 ---
 

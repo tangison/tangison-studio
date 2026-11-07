@@ -7,7 +7,7 @@ category: "Design & Build"
 date: "2026-08-10"
 readingMinutes: 3
 image: /images/paintings/blog/writing-website-copy-that-converts.webp
-imageAlt: "Minimal illustration of of a fountain pen resting on a page of clear large type."
+imageAlt: "A sharpened graphite pencil with a muted teal ferrule resting on warm bone paper."
 author: "Tangi Iigonda"
 ---
 
