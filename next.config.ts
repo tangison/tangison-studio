@@ -7,16 +7,14 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: false,
   images: {
-    // AVIF first where the browser supports it — meaningfully smaller than
-    // WebP for the painting-style imagery, WebP as the fallback.
-    formats: ["image/avif", "image/webp"],
-    // Cap the srcset ladder: the site's largest intrinsic art is 1200px
-    // wide, so 2048/3840 candidates only ever produced dead URLs
-    // (SquirrelScan images/dimensions flagged the 3840 candidates).
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-    // grid paintings are soft art: q60 is indistinguishable and ~30% lighter
-    // (Next 16 only honours quality values listed here)
-    qualities: [60, 75],
+    // Owner complaint 2026-11-08: images read as "just not there". Root
+    // cause found on the live site: Vercel's image optimizer answers 402
+    // (the account hold extends to image optimization), so every
+    // /_next/image URL on the site broke while the raw files kept
+    // serving. All artwork already ships as budget-sized WebP with exact
+    // intrinsic dimensions, so the optimizer adds little; images now
+    // bypass it entirely and render straight from the edge.
+    unoptimized: true,
   },
   async headers() {
     return [
