@@ -280,11 +280,33 @@ body {
 }
 
 /* ---------- client marks (trust layer) ----------
-   Full colour, full opacity, always. The previous grayscale-until-hover
-   wash is gone by owner instruction (2026-11). */
+   Quiet monochrome at rest, colour on approach. Owner instruction
+   2026-11-08 (second pass): "the monochrome on the logos was fine" -
+   the earlier full-colour removal over-corrected, and the marks now
+   match the corporate site's treatment (grayscale at rest at 72%
+   strength, full colour on hover or keyboard focus, so no mark ever
+   reads as a missing image). */
 
 .client-logo-mark {
+  filter: grayscale(1);
+  opacity: 0.72;
+  transition:
+    filter 0.3s var(--ease-primary),
+    opacity 0.3s var(--ease-primary);
+}
+
+a:hover .client-logo-mark,
+a:focus-visible .client-logo-mark {
+  filter: grayscale(0);
   opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-logo-mark {
+    filter: none;
+    opacity: 1;
+    transition: none;
+  }
 }
 
 /* ---------- gallery cards (home + cases gallery): static ----------
