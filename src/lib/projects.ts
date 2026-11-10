@@ -856,6 +856,54 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "mmengineering",
+    name: "M&M Engineering & Consultancy CC",
+    title: "M&M Engineering",
+    category: "Engineering & construction",
+    eyebrow: "Engineering & Construction · 2026",
+    short: "The proof is in the paperwork.",
+    description:
+      "A Windhoek contracting, construction and civil engineering company with 25 verified contracts totaling N$ 152.77 million, published contract by contract with their values.",
+    tags: ["Website Design", "Website Development", "Content Structure"],
+    live: "https://www.mmengineeringcc.com",
+    tech: ["Static HTML", "Custom CSS", "Vanilla JavaScript"],
+    case: {
+      challengeSub: "A tender shortlist is decided by documents, not adjectives.",
+      approachSub: "Publish the record, route the rest to a human.",
+      challenge: [
+        "M&M Engineering & Consultancy CC (Reg. CC/2013/6661) has been building Namibia's public works since 2013: hospitals, police stations, tertiary clinics, mass housing and township electrical networks, 25 documented contracts worth N$ 152,768,801.37 for ministries, municipalities, tertiary institutions and state enterprises. The company was formed within the Africa School of Engineering and Technology network and runs thirteen disciplines from owned cranes and 4x4 field trucks to 10 kV test gear. None of that was visible online in a form a procurement officer could use.",
+        "The audience decides differently from a restaurant guest or a tour traveller. A procurement officer at a ministry, a municipal engineer or a private developer arrives with one question: can this company stand behind its record with documents? The decision feeds a tender shortlist, and a shortlist is decided by verifiable facts, registration numbers, contract values, completion certificates, not by a hero video. The site had to argue the way that audience argues.",
+      ],
+      approach: [
+        "The record became the homepage. Twenty-five verified contracts and their cumulative value are published openly, with the flagship works named as they stand: the UNAM Clinic Main Campus and Ongwediva facilities, the Nyae Nyae Police Station and Barracks for the Ministry of Safety and Security, mass housing and township electrical reticulation across nine regions and the SADC corridors. Registration CC/2013/6661, tax standing and statutory compliance under the Labour Act and Government Notice No. 156 sit in the header of the story, where a tender writer needs them.",
+        "Thirteen disciplines got one page each, written as capability rather than brochure copy, and every page ends at a human channel. The contact paths are the ones Namibian site work actually runs on: WhatsApp and a landline, email, and WeChat for the partners who work that way, each stated with its number so the first message carries the context. The company profile PDF serves the tender pack, and the journal carries the field notes.",
+        "The build stays hand-made static: HTML, CSS and a small scroll layer, no framework weight, so the site loads fast on the mobile connections a site visit happens on. Every page carries the studio credit in the footer, and the structure is plain enough that the client's own people can keep the record current as contracts complete.",
+      ],
+      outcome: [
+        "M&M Engineering launched with its track record as the argument: 25 contracts, real values, real employers, real consultants, stated in the open. A procurement officer can lift what they need for a shortlist without phoning first, and every path from the record ends at a person on WhatsApp, WeChat, email or the phone.",
+        "The case confirms the studio's pattern for established Namibian firms: the record is the marketing. A company with twenty-five completed contracts does not need slogans; it needs its documents arranged so a stranger can check them in one sitting.",
+      ],
+      craft: [
+        {
+          title: "Values in the open",
+          body: "N$ 152.77 million across 25 contracts, published contract by contract with employers and consultants named. A track record a reader can check beats a claim a reader must trust.",
+        },
+        {
+          title: "Thirteen disciplines, one standard",
+          body: "From MV/LV switchgear to solar hybrid microgrids, fibre splicing, roads and rail, hospital HVAC and independent consulting: each discipline stands alone and each one holds up the others.",
+        },
+        {
+          title: "Channels that answer",
+          body: "WhatsApp, WeChat, telephone and email each stated with the number to reach, and two Windhoek offices with real addresses. The first message arrives with its context already written.",
+        },
+        {
+          title: "Fast enough for a site visit",
+          body: "Hand-built static pages, no framework weight, so the record loads on the mobile connection a foreman actually has on site.",
+        },
+      ],
+    },
+  },
+  {
     slug: "oryxinstitute",
     name: "Oryx Institute",
     title: "Oryx Institute",

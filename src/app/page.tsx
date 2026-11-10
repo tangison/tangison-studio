@@ -31,6 +31,21 @@ export default function HomePage() {
           <span className="block">sees your brand.</span>
         </h1>
 
+        {/* One primary action, reachable in the first phone viewport
+            (conversion audit 2026-11-10: the fold held only the slogan,
+            the still image and the client strip, so a first-time
+            visitor had no visible next step without scrolling or
+            opening the menu). One quiet primary button, one outline
+            companion; the image keeps its place directly after. */}
+        <div className="mt-10 md:mt-12 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <Link href="/contact" className="btn btn-primary">
+            Start a project
+          </Link>
+          <Link href="/cases" className="btn btn-outline">
+            See the work
+          </Link>
+        </div>
+
         <div className="mt-14 md:mt-20">
           <div className="art-tile art-shadow bg-ink aspect-[16/10]">
             <Image

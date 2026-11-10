@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { poppins, satoshi, jetbrainsMono } from "@/lib/fonts";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -122,6 +123,11 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        {/* Pageview measurement (conversion audit 2026-11-10: the site
+            shipped with no analytics at all, so nothing on it could be
+            optimised). Web-vitals collection stays off; pageviews are
+            the honest minimum. */}
+        <Analytics />
       </body>
     </html>
   );

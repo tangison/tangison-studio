@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import { track } from "@vercel/analytics";
 import { Check, CircleAlert, LoaderCircle } from "lucide-react";
 
 /**
@@ -66,6 +67,9 @@ export function ContactForm() {
       if (res.ok && data.ok) {
         setStatus("success");
         form.reset();
+        // One conversion event per real submit (conversion audit
+        // 2026-11-10: pageviews alone cannot answer where briefs die).
+        track("brief_submitted");
       } else {
         setStatus("error");
         setError(data.error ?? "Something went wrong. Please try again.");
