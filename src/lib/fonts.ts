@@ -12,7 +12,10 @@ export const poppins = localFont({
     { path: "../fonts/poppins/Poppins-700.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-poppins",
-  display: "swap",
+  /* optional, not swap: a late swap re-paints display headings and
+     re-records LCP after first paint (wave 17 audit). optional keeps
+     the first paint final; cached visitors still get Poppins. */
+  display: "optional",
   fallback: ["Satoshi", "system-ui", "sans-serif"],
 });
 
@@ -27,7 +30,7 @@ export const satoshi = localFont({
     { path: "../fonts/Satoshi-700-latin.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-satoshi",
-  display: "swap",
+  display: "optional",
   fallback: ["system-ui", "sans-serif"],
 });
 
@@ -35,6 +38,6 @@ export const satoshi = localFont({
 export const jetbrainsMono = localFont({
   src: [{ path: "../fonts/JetBrainsMono-400-latin.woff2", weight: "400", style: "normal" }],
   variable: "--font-jetbrains",
-  display: "swap",
+  display: "optional",
   fallback: ["monospace"],
 });

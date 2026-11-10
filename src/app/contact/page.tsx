@@ -80,7 +80,7 @@ export default function ContactPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {contactPoints.map((cp, i) => (
             <div key={cp.name} className="rounded-[20px] border border-line bg-paper-raise p-6 md:p-7">
-              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted">
+              <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted">
                 {cp.name}
               </p>
               <p className="mt-3 h3 !text-lg">

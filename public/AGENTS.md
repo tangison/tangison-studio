@@ -18,8 +18,9 @@ Africa.
 
 ## Key routes
 
-- `/` home: slogan-first hero, the studio film, selected clients, gallery.
-- `/cases` and `/cases/{slug}`: 31 case studies, each with the challenge,
+- `/` home: slogan-first hero with the primary actions, the trust layer
+  of real clients, and the positioning statement.
+- `/cases` and `/cases/{slug}`: 29 case studies, each with the challenge,
   the approach, what carried the result, and the outcome. Where a client
   site is live, the case links to it; where a project was discontinued,
   the status is stated.

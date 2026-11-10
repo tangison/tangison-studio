@@ -96,7 +96,7 @@ export default async function CaseStudyPage({
               {project.tags.map((t) => (
                 <span
                   key={t}
-                  className="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-muted"
+                  className="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted"
                 >
                   {t}
                 </span>

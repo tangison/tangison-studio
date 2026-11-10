@@ -152,7 +152,7 @@ export function SearchClient() {
               key={s}
               type="button"
               onClick={() => setQuery(s)}
-              className="h-9 px-4 rounded-full border border-line font-mono text-[10px] uppercase tracking-[0.12em] text-ink-muted hover:border-line-strong hover:text-ink"
+              className="h-9 px-4 rounded-full border border-line font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted hover:border-line-strong hover:text-ink"
             >
               {s}
             </button>
@@ -186,7 +186,7 @@ export function SearchClient() {
                     className="group flex items-start justify-between gap-4 rounded-[16px] border border-line bg-paper-raise p-5 hover:border-line-strong"
                   >
                     <div className="min-w-0">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink-muted">
+                      <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted">
                         {r.meta}
                       </p>
                       <p className="mt-1 font-display font-bold tracking-[-0.01em] text-lg leading-snug group-hover:text-teal">

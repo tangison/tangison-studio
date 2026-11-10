@@ -54,6 +54,7 @@ export default function HomePage() {
               width={1200}
               height={750}
               priority
+              fetchPriority="high"
               sizes="(max-width: 768px) 100vw, 1200px"
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -266,7 +267,7 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-6">
-                <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted">
+                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted">
                   {a.category}
                   <span className="text-ink-faint">
                     {" · "}

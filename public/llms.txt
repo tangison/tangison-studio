@@ -6,7 +6,7 @@ The studio is operated in Windhoek West by Tangi Iigonda. It designs and builds 
 
 ## Pages
 
-- [Home](https://studio.tangison.com): Slogan-first hero with the studio film, the trust layer of real clients, and the positioning statement.
+- [Home](https://studio.tangison.com): Slogan-first hero with the primary actions, the trust layer of real clients, and the positioning statement.
 - [Cases](https://studio.tangison.com/cases): Selected case studies: websites, applications, and brand systems for organizations across Africa.
 - [Services](https://studio.tangison.com/services): Seven outcome-led programs across Studio (brand, product) and Intelligence (applied AI, infrastructure).
 - [Insights](https://studio.tangison.com/blog): Research-backed guides: AI adoption playbooks for Namibian industries, plus practical notes on web design and brand systems.

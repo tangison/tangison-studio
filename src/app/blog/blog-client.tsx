@@ -69,7 +69,7 @@ export function BlogIndex({
             type="button"
             onClick={() => setCategory(null)}
             aria-pressed={category === null}
-            className={`h-9 px-4 rounded-full font-mono text-[10px] uppercase tracking-[0.12em] border ${
+            className={`h-9 px-4 rounded-full font-mono text-[11px] uppercase tracking-[0.12em] border ${
               category === null
                 ? "border-teal bg-teal-mist text-ink"
                 : "border-line text-ink-muted hover:border-line-strong hover:text-ink"
@@ -85,7 +85,7 @@ export function BlogIndex({
                 setCategory((prev) => (prev === c.name ? null : c.name))
               }
               aria-pressed={category === c.name}
-              className={`h-9 px-4 rounded-full font-mono text-[10px] uppercase tracking-[0.12em] border ${
+              className={`h-9 px-4 rounded-full font-mono text-[11px] uppercase tracking-[0.12em] border ${
                 category === c.name
                   ? "border-teal bg-teal-mist text-ink"
                   : "border-line text-ink-muted hover:border-line-strong hover:text-ink"

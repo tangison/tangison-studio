@@ -328,7 +328,7 @@ export function SiteNav({ caseLinks }: { caseLinks: CaseLink[] }) {
                       />
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-white/65">
+                      <span className="block font-mono text-[11px] uppercase tracking-[0.16em] text-white/65">
                         {p.category}
                       </span>
                       <span className="mt-1 block truncate wordmark font-semibold text-[17px] tracking-[-0.01em]">

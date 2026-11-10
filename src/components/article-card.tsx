@@ -37,7 +37,7 @@ export function ArticleCard({
         />
       </div>
       <div className="mt-4">
-        <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted">
+        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted">
           {article.category}
           <span aria-hidden="true" className="text-ink-faint">
             {" · "}

@@ -1,7 +1,7 @@
 ---
 title: "Tangison and Oryx Institute: a Training Partnership"
 slug: "tangison-oryx-institute-training-partnership"
-description: "We are working with the Oryx Polytechnic Institute on training and education in Windhoek: practitioner-taught modules, internship pipelines, and joint applied research. Stated as exactly what it covers."
+description: "Working with the Oryx Polytechnic Institute on training and education in Windhoek: practitioner-taught modules, internship pipelines, joint applied research."
 keywords: [Oryx Institute, polytechnic, training, education, partnership, Namibia, Windhoek, Tangison]
 category: "Studio Notes"
 date: "2026-11-02"

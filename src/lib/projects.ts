@@ -799,7 +799,7 @@ export const projects: Project[] = [
     eyebrow: "Guided Tours · 2026",
     short: "Namibia, unhurried.",
     description:
-      "A locally owned, NTB-registered tour operator running group guided tours from Windhoek to Sossusvlei, Swakopmund, Spitzkoppe, Etosha, the Kalahari and Fish River Canyon, plus short day experiences for travelers on tight schedules.",
+      "Locally owned, NTB-registered tour operator: guided group tours from Windhoek to Sossusvlei, Swakopmund, Etosha and Fish River Canyon, plus short day trips.",
     tags: ["Website Design", "Website Development", "Content Structure"],
     live: "https://ligertours.com",
     tech: ["Next.js", "Tailwind CSS"],
@@ -863,7 +863,7 @@ export const projects: Project[] = [
     eyebrow: "Engineering & Construction · 2026",
     short: "The proof is in the paperwork.",
     description:
-      "A Windhoek contracting, construction and civil engineering company with 25 verified contracts totaling N$ 152.77 million, published contract by contract with their values.",
+      "A Windhoek contracting, construction and civil engineering company with 25 verified contracts totaling N$ 152.77 million, published contract by contract.",
     tags: ["Website Design", "Website Development", "Content Structure"],
     live: "https://www.mmengineeringcc.com",
     tech: ["Static HTML", "Custom CSS", "Vanilla JavaScript"],

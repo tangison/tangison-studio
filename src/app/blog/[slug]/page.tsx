@@ -263,7 +263,7 @@ export default async function ArticlePage({
                   />
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink-muted">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted">
                     {r.category}
                   </p>
                   <p className="mt-1 font-display font-bold tracking-[-0.02em] leading-snug group-hover:text-teal">

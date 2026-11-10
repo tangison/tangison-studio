@@ -31,7 +31,7 @@ import type { Project } from "@/lib/projects";
 function chip(base: string) {
   return (
     "inline-flex items-center gap-1.5 rounded-full border border-line " +
-    "px-3.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] " +
+    "px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] " +
     "text-ink-muted " +
     "hover:border-teal hover:text-teal focus-visible:outline-2 " +
     "focus-visible:outline-offset-4 focus-visible:outline-teal " +
@@ -87,7 +87,7 @@ export function CaseCard({
               }}
             />
             <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8 md:p-10">
-              <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-white/70">
+              <p className="font-mono text-[11px] sm:text-[12px] uppercase tracking-[0.16em] text-white/70">
                 {project.category}
                 <span className="text-white/45"> · {year}</span>
               </p>
@@ -128,7 +128,7 @@ export function CaseCard({
                 title, so this stays text and the link count stays lean */}
             <span>{project.title}</span>
           </h2>
-          <p className="flex shrink-0 items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink-muted">
+          <p className="flex shrink-0 items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted">
             {project.category}
             <span aria-hidden="true" className="text-ink-faint">
               {year}
