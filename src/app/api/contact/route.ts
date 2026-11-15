@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { put } from "@vercel/blob";
 import { Resend } from "resend";
 
 /**
@@ -12,6 +13,11 @@ import { Resend } from "resend";
  * Note: studio.tangison.com is verified in Resend (sending enabled), so the
  * default sender already delivers to any inbox. Only override CONTACT_FROM
  * if you want briefs to appear from a different address.
+ *
+ * While email is unconfigured, briefs are stored durably in Vercel Blob
+ * (store: tangison-applications, prefix briefs/) so nothing is lost; they
+ * are readable via GET /api/inbox with the APPLICATIONS_TOKEN. A brief
+ * succeeds if EITHER path works.
  */
 
 export const runtime = "nodejs";
@@ -88,14 +94,7 @@ export async function POST(req: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey || apiKey.startsWith("re_xxxxx")) {
-    return NextResponse.json(
-      { error: "Email delivery is not configured yet. Use WhatsApp or email for now." },
-      { status: 503 }
-    );
-  }
-
-  const resend = new Resend(apiKey);
+  let emailSent = false;
 
   const lines = [
     `Name: ${name}`,
@@ -106,33 +105,73 @@ export async function POST(req: Request) {
     message,
   ].filter((l): l is string => typeof l === "string");
 
-  const { error } = await resend.emails.send({
-    from: FROM,
-    to: [TO],
-    replyTo: email,
-    subject: `Project brief: ${name}`,
-    text: lines.join("\n"),
-    html: [
-      `<div style="font-family:Georgia,serif;color:#111315;font-size:16px;line-height:1.6">`,
-      `<p style="font-size:18px"><strong>New project brief from ${escapeHtml(name)}</strong></p>`,
-      `<p><strong>Email:</strong> ${escapeHtml(email)}</p>`,
-      timeline && `<p><strong>Timeline:</strong> ${escapeHtml(timeline)}</p>`,
-      budget && `<p><strong>Budget range:</strong> ${escapeHtml(budget)}</p>`,
-      `<hr style="border:none;border-top:1px solid #ddd;margin:16px 0" />`,
-      `<p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
-      `</div>`,
-    ]
-      .filter((l): l is string => typeof l === "string")
-      .join(""),
-  });
-
-  if (error) {
-    console.error("[contact] resend error:", error);
-    return NextResponse.json(
-      { error: "The message could not be sent right now. Please try email or WhatsApp." },
-      { status: 500 }
-    );
+  if (apiKey && !apiKey.startsWith("re_xxxxx")) {
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from: FROM,
+      to: [TO],
+      replyTo: email,
+      subject: `Project brief: ${name}`,
+      text: lines.join("\n"),
+      html: [
+        `<div style="font-family:Georgia,serif;color:#111315;font-size:16px;line-height:1.6">`,
+        `<p style="font-size:18px"><strong>New project brief from ${escapeHtml(name)}</strong></p>`,
+        `<p><strong>Email:</strong> ${escapeHtml(email)}</p>`,
+        timeline && `<p><strong>Timeline:</strong> ${escapeHtml(timeline)}</p>`,
+        budget && `<p><strong>Budget range:</strong> ${escapeHtml(budget)}</p>`,
+        `<hr style="border:none;border-top:1px solid #ddd;margin:16px 0" />`,
+        `<p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
+        `</div>`,
+      ]
+        .filter((l): l is string => typeof l === "string")
+        .join(""),
+    });
+    if (error) {
+      console.error("[contact] resend error:", error);
+    } else {
+      emailSent = true;
+    }
   }
 
-  return NextResponse.json({ ok: true });
+  // Durable fallback: keep the brief in Vercel Blob until email works.
+  const blobToken =
+    process.env.BLOB_READ_WRITE_TOKEN ?? process.env.VERCEL_BLOB_READ_WRITE_TOKEN;
+  if (!emailSent) {
+    if (!blobToken) {
+      return NextResponse.json(
+        { error: "Email delivery is not configured yet. Use WhatsApp or email for now." },
+        { status: 503 }
+      );
+    }
+    const reference = `BRF-${Date.now().toString(36).toUpperCase()}${Math.floor(Math.random() * 1296)
+      .toString(36)
+      .toUpperCase()
+      .padStart(2, "0")}`;
+    try {
+      const record = {
+        reference,
+        submittedAt: new Date().toISOString(),
+        name,
+        email,
+        timeline,
+        budget,
+        message,
+        delivery: { email: apiKey ? "failed" : "no-key", stored: true },
+      };
+      await put(`briefs/${reference}/brief.json`, JSON.stringify(record, null, 2), {
+        access: "public",
+        contentType: "application/json",
+        addRandomSuffix: false,
+      });
+      return NextResponse.json({ ok: true, reference, delivered: "stored" });
+    } catch (err) {
+      console.error("[contact] blob error:", err);
+      return NextResponse.json(
+        { error: "The message could not be sent right now. Please try email or WhatsApp." },
+        { status: 500 }
+      );
+    }
+  }
+
+  return NextResponse.json({ ok: true, delivered: "email" });
 }
