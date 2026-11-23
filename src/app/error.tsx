@@ -34,7 +34,7 @@ export default function Error({
         <p className="mt-6 max-w-xl text-lg text-ink-muted leading-relaxed">
           The page exists but refused to render this time. Trying again
           usually clears it. If it keeps happening, tell the studio and we
-          will fix the underlying fault, not just the symptom.
+          will fix the underlying fault, not the symptom alone.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <button type="button" onClick={reset} className="btn btn-primary">

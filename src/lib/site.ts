@@ -98,7 +98,7 @@ export const principles = [
   },
   {
     title: "Systems over one-offs",
-    body: "We build frameworks that scale, not just pages that ship.",
+    body: "We build frameworks that scale, and pages that ship on them.",
   },
   {
     title: "Intelligence with purpose",
