@@ -21,7 +21,7 @@ import {
   GENERIC_WA_URL,
   nowMs,
   promoCta,
-  remainingMs,
+  effectiveRemainingMs,
 } from "@/lib/campaign";
 
 function fmt(n: number): string {
@@ -35,7 +35,7 @@ export function CampaignOffer() {
   useEffect(() => {
     const watch = () => {
       setPhase(effectivePhase());
-      setRemaining(remainingMs(nowMs()));
+      setRemaining(effectiveRemainingMs());
     };
     watch();
     const iv = window.setInterval(watch, 1000);

@@ -157,6 +157,21 @@ export function remainingMs(nowMs: number = Date.now()): number {
   return Math.max(0, at(CAMPAIGN[p].to) + 1000 - nowMs);
 }
 
+
+/**
+ * Force-aware countdown: under ?promo=force the countdown follows the
+ * forced phase, so previewing before the real window still shows the
+ * real time left in that phase (not 00:00:00).
+ */
+export function effectiveRemainingMs(): number {
+  if (typeof window !== "undefined" && promoForced()) {
+    const ph = new URLSearchParams(window.location.search).get("phase");
+    const key = ph === "2" ? "phase2" : "phase1";
+    return Math.max(0, at(CAMPAIGN[key].to) + 1000 - nowMs());
+  }
+  return remainingMs(nowMs());
+}
+
 // ---------------------------------------------------------------------------
 // Visitor-time plumbing (client only; SSR renders nothing)
 // ---------------------------------------------------------------------------

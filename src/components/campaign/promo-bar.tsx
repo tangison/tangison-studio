@@ -20,7 +20,7 @@ import {
   effectivePhase,
   nowMs,
   promoCta,
-  remainingMs,
+  effectiveRemainingMs,
   trackCampaign,
 } from "@/lib/campaign";
 
@@ -39,7 +39,7 @@ export function PromoBar() {
     const watch = () => {
       const p = effectivePhase();
       setPhase(p);
-      setRemaining(remainingMs(nowMs()));
+      setRemaining(effectiveRemainingMs());
       let barDismissed = false;
       try {
         barDismissed = sessionStorage.getItem(BF_KEYS.barDismissed) === "1";
