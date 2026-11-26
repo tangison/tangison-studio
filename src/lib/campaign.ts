@@ -19,9 +19,13 @@ export const CAMPAIGN = {
   tz: "Africa/Windhoek" as const,
 
   // ---- schedule (absolute instants, Windhoek time) ----
+  // Phase 1 pulled forward to 26 Nov on the owner's call (2026-11-26):
+  // the offer starts the moment this build ships instead of waiting
+  // for the 27th. Everything else — last-chance phase, expiry, copy —
+  // is unchanged.
   phase1: {
     name: "Black Friday",
-    from: "2026-11-27T00:00:00+02:00",
+    from: "2026-11-26T00:00:00+02:00",
     to: "2026-11-30T23:59:59+02:00",
     headline: "Black Friday: 20% off your website.",
     barCopy: "Black Friday: 20% off Starter websites. Now N$1,760 (was N$2,200).",
