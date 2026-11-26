@@ -3,6 +3,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { poppins, satoshi, jetbrainsMono } from "@/lib/fonts";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { PromoBar } from "@/components/campaign/promo-bar";
+import { FloatingWhatsApp } from "@/components/campaign/floating-whatsapp";
 import { site } from "@/lib/site";
 import { caseLinks } from "@/lib/projects";
 import { JsonLdScript, siteJsonLdGraph } from "@/lib/seo";
@@ -123,6 +125,12 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        {/* Black Friday 2026 campaign layer (site-wide surfaces: dock +
+            floating handoff). Both render nothing outside the campaign
+            window, so the paper site is untouched before 27 November and
+            automatically restored after 7 December. */}
+        <PromoBar />
+        <FloatingWhatsApp />
         {/* Pageview measurement (conversion audit 2026-11-10: the site
             shipped with no analytics at all, so nothing on it could be
             optimised). Web-vitals collection stays off; pageviews are

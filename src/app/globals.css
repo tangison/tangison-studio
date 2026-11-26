@@ -394,3 +394,850 @@ a:focus-visible .client-logo-mark {
   background: var(--line-strong);
   border-radius: 3px;
 }
+
+/* ============================================================
+   Black Friday 2026 campaign layer (bf-*)
+   Fixed dark palette drawn from the studio's own ink theme
+   (#0c1014 / #14181d / #f6f4ef / signal teal) so the campaign
+   reads as the site's own dark voice, identically on every
+   route regardless of the page theme. Scoped class names only;
+   nothing here touches site chrome. The whole layer renders
+   nothing outside the campaign window (2026-11-27 → 12-07,
+   Windhoek time) and expires itself automatically.
+   ============================================================ */
+
+.bf-bar,
+.bf-dialog,
+.bf-fab,
+.bf-band {
+  --bf-bg: #0c1014;
+  --bf-raise: #14181d;
+  --bf-ink: #f6f4ef;
+  --bf-muted: rgba(246, 244, 239, 0.66);
+  --bf-faint: rgba(246, 244, 239, 0.5);
+  --bf-line: rgba(246, 244, 239, 0.12);
+  --bf-line-strong: rgba(246, 244, 239, 0.26);
+  --bf-teal: #3ecbca;
+  --bf-error: #e08a80;
+}
+
+.bf-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- announcement dock (bottom; the nav pill owns the top) ---------- */
+
+.bf-bar {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bf-bg);
+  color: var(--bf-ink);
+  border-top: 1px solid var(--bf-line);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  font-family: var(--font-body);
+}
+
+.bf-count {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--bf-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.bf-bar-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--bf-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.bf-bar-copy-short {
+  display: none;
+}
+
+/* small screens: the copy takes its own full-width line and the
+   countdown/CTA/dismiss row wraps below it — no mid-word truncation */
+@media (max-width: 620px) {
+  .bf-bar {
+    flex-wrap: wrap;
+    row-gap: 7px;
+    padding-top: 9px;
+  }
+
+  .bf-bar-copy {
+    order: -1;
+    flex-basis: 100%;
+    white-space: normal;
+    font-size: 13px;
+  }
+
+  .bf-bar-copy-full {
+    display: none;
+  }
+  .bf-bar-copy-short {
+    display: inline;
+  }
+
+  .bf-count {
+    font-size: 12px;
+    color: var(--bf-muted);
+  }
+
+  .bf-bar-cta {
+    min-height: 38px;
+    padding-inline: 15px;
+    font-size: 13px;
+  }
+
+  .bf-bar-dismiss {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.bf-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.bf-bar-cta {
+  min-height: 40px;
+  padding-inline: 16px;
+  border: none;
+  border-radius: 999px;
+  background: var(--bf-ink);
+  color: #0c1014;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.bf-bar-cta:hover {
+  background: color-mix(in srgb, var(--bf-ink) 92%, var(--bf-teal));
+}
+
+.bf-bar-dismiss {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--bf-line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--bf-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.bf-bar-dismiss:hover {
+  color: var(--bf-ink);
+  border-color: var(--bf-ink);
+}
+
+.bf-bar-x {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- promo dialog: desktop two-column modal, mobile bottom sheet ---------- */
+
+.bf-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: var(--bf-ink);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bf-dialog[open] {
+  display: flex;
+}
+
+.bf-dialog::backdrop {
+  background: rgba(6, 8, 10, 0.66);
+}
+
+/* the one authored motion moment: a 180ms opacity settle (collapses
+   under prefers-reduced-motion); everything else is instant, per the
+   site's static-by-instruction order */
+@media (prefers-reduced-motion: no-preference) {
+  .bf-dialog[open] {
+    animation: bf-fade-in 180ms ease-out;
+  }
+  .bf-dialog[open]::backdrop {
+    animation: bf-fade-in 180ms ease-out;
+  }
+}
+
+@keyframes bf-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.bf-sheet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(880px, calc(100vw - 32px));
+  max-height: min(92dvh, 100%);
+  background: var(--bf-raise);
+  border: 1px solid var(--bf-line);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.bf-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--bf-line-strong);
+  border-radius: 999px;
+  background: rgba(12, 16, 20, 0.72);
+  color: var(--bf-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.bf-close:hover {
+  background: rgba(12, 16, 20, 0.9);
+  border-color: var(--bf-ink);
+}
+
+.bf-close-x {
+  width: 18px;
+  height: 18px;
+}
+
+.bf-cols {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+}
+
+.bf-hero {
+  flex: 0 0 44%;
+  min-height: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--bf-bg);
+}
+
+.bf-hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bf-body {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 24px 26px calc(22px + env(safe-area-inset-bottom));
+  font-family: var(--font-body);
+}
+
+/* the heading is focused programmatically (APG long-content pattern)
+   for assistive tech; it is not a control, so it carries no visible
+   focus ring — rings live on the interactive controls only */
+.bf-heading:focus {
+  outline: none;
+}
+
+.bf-handle {
+  display: none;
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--bf-line-strong);
+  margin: 4px auto 12px;
+}
+
+.bf-body {
+  padding: 24px 26px calc(22px + env(safe-area-inset-bottom));
+  overflow-y: auto;
+  max-height: min(92dvh, 100%);
+  font-family: var(--font-body);
+}
+
+.bf-eyebrow {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--bf-teal);
+}
+
+.bf-heading {
+  margin: 10px 0 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.bf-subline {
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--bf-muted);
+  max-width: 46ch;
+}
+
+.bf-subline strong {
+  color: var(--bf-ink);
+  font-weight: 600;
+}
+
+.bf-subline s {
+  color: var(--bf-faint);
+}
+
+/* ---------- the five-question form ---------- */
+
+.bf-form {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.bf-field label,
+.bf-field legend {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--bf-ink);
+}
+
+.bf-input {
+  width: 100%;
+  min-height: 48px;
+  background: var(--bf-bg);
+  border: 1px solid var(--bf-line-strong);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--bf-ink);
+  appearance: none;
+}
+
+.bf-input::placeholder {
+  color: var(--bf-faint);
+}
+
+.bf-input:focus-visible {
+  outline: 2px solid var(--bf-teal);
+  outline-offset: 2px;
+}
+
+.bf-input[aria-invalid="true"] {
+  border-color: var(--bf-error);
+}
+
+.bf-selectwrap {
+  position: relative;
+}
+
+.bf-select {
+  padding-right: 40px;
+}
+
+.bf-chev {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  translate: 0 -50%;
+  pointer-events: none;
+  color: var(--bf-muted);
+}
+
+.bf-error {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--bf-error);
+}
+
+.bf-radios {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.bf-radio {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--bf-line-strong);
+  border-radius: 12px;
+  background: var(--bf-bg);
+  color: var(--bf-ink);
+  font-size: 14px;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.bf-radio:has(input:checked) {
+  border-color: var(--bf-teal);
+  background: rgba(62, 203, 202, 0.07);
+}
+
+.bf-radio input {
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 0;
+  flex-shrink: 0;
+  accent-color: var(--bf-teal);
+}
+
+.bf-submit {
+  min-height: 52px;
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  background: var(--bf-ink);
+  color: #0c1014;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.bf-submit:hover {
+  background: color-mix(in srgb, var(--bf-ink) 92%, var(--bf-teal));
+}
+
+.bf-submit:disabled {
+  opacity: 0.75;
+  cursor: default;
+}
+
+.bf-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 2px solid rgba(12, 16, 20, 0.25);
+  border-top-color: #0c1014;
+  animation: bf-spin 0.7s linear infinite;
+}
+
+@keyframes bf-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.bf-fallback {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--bf-muted);
+  text-align: center;
+}
+
+.bf-fallback a {
+  color: var(--bf-teal);
+}
+
+.bf-secondary {
+  display: block;
+  margin: 14px auto 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--bf-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.bf-secondary:hover,
+.bf-secondary:focus-visible {
+  color: var(--bf-teal);
+}
+
+.bf-micro {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--bf-faint);
+  text-align: center;
+}
+
+/* mobile: full-width bottom sheet */
+@media (max-width: 767px) {
+  .bf-dialog {
+    align-items: flex-end;
+  }
+
+  .bf-sheet {
+    width: 100vw;
+    max-width: 100vw;
+    border-inline: none;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    max-height: 92dvh;
+  }
+
+  .bf-cols {
+    display: block;
+    overflow-y: auto;
+  }
+
+  .bf-hero {
+    flex: initial;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* the drag handle rides on the banner's top edge, centered, where a
+     bottom sheet's handle belongs */
+  .bf-handle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    translate: -50% 0;
+    z-index: 2;
+    width: 42px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(246, 244, 239, 0.9);
+    margin: 0;
+  }
+
+  .bf-body {
+    padding: 8px 18px calc(20px + env(safe-area-inset-bottom));
+    overflow-y: visible;
+  }
+}
+
+/* ---------- floating WhatsApp handoff ---------- */
+
+.bf-fab {
+  position: fixed;
+  right: clamp(14px, 3vw, 26px);
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 140;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--bf-bg);
+  border: 1px solid var(--bf-line-strong);
+  color: var(--bf-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bf-fab:hover {
+  background: var(--bf-raise);
+  color: var(--bf-teal);
+}
+
+/* lifts above the announcement dock while the dock is on screen */
+html[data-bf-bar="on"] .bf-fab {
+  bottom: calc(16px + 58px + env(safe-area-inset-bottom));
+}
+
+/* ---------- home offer band (dark ink campaign block) ---------- */
+
+.bf-band {
+  margin-top: 80px;
+  padding: 72px clamp(20px, 5vw, 48px) 88px;
+  background: var(--bf-bg);
+  color: var(--bf-ink);
+  border-block: 1px solid var(--bf-line);
+}
+
+.bf-band-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(36px, 5vw, 72px);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .bf-band {
+    margin-top: 64px;
+    padding: 56px clamp(18px, 5vw, 24px) 72px;
+  }
+
+  .bf-band-inner {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.bf-band-h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+}
+
+.bf-band-sub {
+  margin: 18px 0 0;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--bf-muted);
+  max-width: 52ch;
+}
+
+.bf-band-sub strong {
+  color: var(--bf-ink);
+  font-weight: 600;
+}
+
+.bf-band-sub s {
+  color: var(--bf-faint);
+}
+
+.bf-band-count {
+  margin: 26px 0 0;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.bf-band-count-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: var(--bf-ink);
+}
+
+.bf-band-count-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--bf-muted);
+}
+
+.bf-band-ctas {
+  margin: 26px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.bf-btn-primary {
+  min-height: 48px;
+  padding-inline: 22px;
+  border: none;
+  border-radius: 999px;
+  background: var(--bf-ink);
+  color: #0c1014;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.bf-btn-primary:hover {
+  background: color-mix(in srgb, var(--bf-ink) 92%, var(--bf-teal));
+}
+
+.bf-btn-quiet {
+  min-height: 48px;
+  padding-inline: 20px;
+  border: 1px solid var(--bf-line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--bf-ink);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.bf-btn-quiet:hover {
+  background: rgba(246, 244, 239, 0.06);
+  border-color: var(--bf-ink);
+}
+
+.bf-band-fine {
+  margin: 22px 0 0;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--bf-faint);
+  max-width: 48ch;
+}
+
+.bf-price {
+  background: var(--bf-raise);
+  border: 1px solid var(--bf-line);
+  border-radius: 20px;
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.bf-price-name {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--bf-muted);
+}
+
+.bf-price-line {
+  margin: 14px 0 0;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.bf-price-was {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--bf-faint);
+}
+
+.bf-price-now {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.bf-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  height: 26px;
+  padding-inline: 12px;
+  border-radius: 999px;
+  background: rgba(62, 203, 202, 0.12);
+  color: var(--bf-teal);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.bf-price-save {
+  margin: 8px 0 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--bf-muted);
+}
+
+.bf-rule {
+  border: 0;
+  height: 1px;
+  background: var(--bf-line);
+  margin: 24px 0;
+}
+
+.bf-price-dynamic {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.bf-price-dynamic-sub {
+  margin: 8px 0 0;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--bf-muted);
+}
+
+/* ---------- campaign focus rings (teal, instant like the site's) ---------- */
+
+.bf-bar-cta:focus-visible,
+.bf-bar-dismiss:focus-visible,
+.bf-close:focus-visible,
+.bf-submit:focus-visible,
+.bf-btn-primary:focus-visible,
+.bf-btn-quiet:focus-visible,
+.bf-fab:focus-visible,
+.bf-radio:focus-within {
+  outline: 2px solid var(--bf-teal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bf-dialog[open],
+  .bf-dialog[open]::backdrop {
+    animation: none;
+  }
+}
