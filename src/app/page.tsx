@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { CaseCard } from "@/components/case-card";
+import { CampaignOffer } from "@/components/campaign/campaign-offer";
+import { PromoPopup } from "@/components/campaign/promo-popup";
 import { CLIENT_BY_SLUG, ClientMarkLogo } from "@/components/client-mark";
 import { projects } from "@/lib/projects";
 import { capabilities, principles, processSteps, site } from "@/lib/site";
@@ -104,6 +106,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ============ Black Friday campaign band (2026-11-27 → 12-07,
+          Windhoek time): dark ink-theme offer block; renders nothing
+          outside the campaign window. ============ */}
+      <CampaignOffer />
 
       {/* ============ Selected work: tight gallery ============ */}
       <section className="mx-auto w-full max-w-[1400px] px-6 md:px-12 pt-20 md:pt-28">
@@ -301,6 +308,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ============ Black Friday pop-up (home page only; renders
+          nothing outside the campaign window) ============ */}
+      <PromoPopup />
     </>
   );
 }
